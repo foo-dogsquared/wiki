@@ -1,0 +1,41 @@
+#+title: Org-mode as todo list manager
+#+ROAM_TAGS: pim
+
+
+As previously stated, [[file:org-mode.org][Org-mode]] is first created as an outliner enabling you to manage tasks.
+Here's some of the features you might be interested when using it as such.
+
+
+
+
+* Repeated tasks
+
+Org-mode features [[https://orgmode.org/manual/Repeated-tasks.html][repeated tasks]] and it looks like the following.
+
+#+BEGIN_SRC org  :results silent
+SCHEDULED: <2020-06-22 Mon +2d>
+#+END_SRC
+
+Any missed session will cause the agenda to keep overdued sessions and accumulate to repeat the tasks 'X' number of times with the number of overdued sessions.
+
+Some tasks does not work this way, however.
+You don't need to replace the batteries 5 times or brush your teeth 10 times to make up for it.
+For this, you can do the following.
+
+#+BEGIN_SRC org  :results silent
+SCHEDULED: <2020-06-22 Mon ++2d>
+#+END_SRC
+
+One cool thing about it if you mark a task as done, it will simply create an entry of the task completed and update the base date.
+
+#+BEGIN_SRC org  :results silent
+\* TODO Watch the lectures from Brian Harvey's SICP series (https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=titleSorter)
+SCHEDULED: <2020-06-24 Wed .+2d>
+:PROPERTIES:
+:LAST_REPEAT: [2020-06-22 Mon 22:01]
+:END:
+- State "DONE"       from "TODO"       [2020-06-22 Mon 22:01]
+#+END_SRC
+
+This will also integrate with certain features like the agenda views.
+You can see future entries along with the number of times you have to do to make up for the missed sessions.

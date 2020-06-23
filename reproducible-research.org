@@ -1,0 +1,7 @@
+#+TITLE: Reproducible research
+
+
+Creating your research reproducible can create the following benefits:
+
+- Easy to verify by others.
+- Help improve the accuracy of your research.

@@ -1,0 +1,22 @@
+#+TITLE: Text Encoding Initiative
+
+
+Having your research stored as text files written in a lightweight markup language is great.
+However, certain information can still get lost in the way.
+For example, certain words like "London" can either mean the famous capital of England, a city in France, or certain people with the name.
+You can find similar situations with Wikipedia disambiguation pages (like the [[https://en.wikipedia.org/wiki/London_(disambiguation)][previous example]]).
+
+[[https://tei-c.org/][Text Encoding Initiative]] (TEI) attempts to solve exactly that.
+It's a standard that focuses on the semantic meaning of the words.
+Being a standard, it also frees the writers from software dependency and developers have to follow it instead.
+
+The specification uses XML for markup and there are [[https://wiki.tei-c.org/index.php/Category:Tools][various tools]] for creating TEI-specific contents aside from the already existing ecosystem of XML-related tools.
+It can also export into various formats through [[https://github.com/TEIC/Stylesheets][XSLT 2.0 stylesheets]] including HTML, LaTeX, and JSON files.
+
+
+
+
+* Relevant notes
+
+- [[file:note-taking.org][Note-taking]]
+- [[file:reproducible-research.org][Reproducible research]]

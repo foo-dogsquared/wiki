@@ -1,0 +1,67 @@
+#+TITLE: A good tagging system for files
+#+AUTHOR: Gabriel Arazas
+#+EMAIL: foo.dogsquared@gmail.com
+#+TAGS: writing note-taking
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+
+
+Digital note-taking is certainly different from traditional note-taking especially nowadays where topics are leaning toward heterogeneity.
+In my ideal system, topics that seems unrelated can easily link to one another and easily retrieve them whenever I want.
+Moreover, non-textual files such as images and videos should be included within the retrieval.
+This is ideal especially if you want to create your personal library of various stuff from books, images, videos, etc.
+This will also make [[file:maintaining-a-digital-library.org][digital library maintenance]] way easier as it is one of the top priority to make your library easy to navigate and refer to certain resources (like real-life libraries).
+
+
+
+
+* Related notes
+
+- [[file:note-taking.org][Note taking]]
+- [[file:personal-information-management.org][Personal information management]]
+
+
+
+
+* What is good tagging
+
+To take advantage of tagging, we must ask what is good tagging.
+Just like how webpages used to fill up SEO metadata with tags [fn:: Tags are ignored by most search engines nowadays because of spam issues.], good tagging allows for easy retrieval of your files.
+In order to take advantage of it, we must establish good tagging practices.
+
+Stealing from [[https://www.youtube.com/watch?v=rckSVmYCH90][this talk]], the best (personal) practice for tagging include the following.
+
+- Limiting the vocabulary into a set number.
+  The author recommends to limit it to 100 but lesser is better.
+- Tags should always be in plural.
+- Keep tags general (e.g., ~sports~ instead of ~bowling~, ~basketball~, or ~volleyball~).
+- No tags should be derived from file extensions (e.g., photographs, books, documents).
+
+In my case, this is not enough since I want tags for specific things.
+I've come across [[https://docs.tildes.net/instructions/hierarchical-tags][how a certain website tags its topics]] which also happens to fit my use case so I decided to add one more rule.
+
+- Any topic-specific should be appended as a subtag (e.g., ~sports.bowling~, ~sports.basketball~, ~sports.volleyball~).
+  If a subtag are established enough, then you may classify it as a general tag.
+
+Since the above rule is not always applicable for easy retrieval (e.g., publishing as a website in Hugo), the resulting improvised system instead encourages the hierarchical tag to be the whole list itself.
+For example, ~sports.bowling~ should now be composed of two tags, ~sports~ and ~bowling~, and nothing else.
+Most systems should let you order the tags as-is so not much worry there.
+
+This type of tagging does have its problem with searching which can render this system useless.
+For this, a rule of thumb when it comes to searching is that always search with the general tag first before looking into its subtags.
+
+
+
+
+* Applying tags to files
+
+Now that we have established what is good tagging, the general question of "how to apply it" remains.
+
+For text files, most of the lightweight markup languages offer a way to define variables (e.g., Asciidoctor, Org-mode) and comments (e.g., Markdown, reStructuredText).
+Taking advantage of comments and/or variables, if applicable, we could create explicit tags/labels.
+
+To create our specific labels, we could format tags in certain ways.
+For example, you could format in ~[[-<NAME>-]]~ (e.g., ~??programming??~, ~;;physics;;~).
+This is mostly the same as creating tags in [[https://orgmode.org/manual/Setting-Tags.html][Org-mode with ~+#TAGS~]] or in [[https://gohugo.io/content-management/taxonomies#readout][Hugo SSG with the taxonomy system]].
+
+We can then search through it with tools like [[https://github.com/BurntSushi/ripgrep][ripgrep]] to more sophiscated solutions such as [[https://www.lesbonscomptes.com/recoll/][Recoll]] where it can not only search text files fast but also metadata within certain media files such as audio (e.g., MP3, OGG), documents (e.g., PDF), and images (e.g., PNG, JPG, WebP).

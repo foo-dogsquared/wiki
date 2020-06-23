@@ -1,0 +1,30 @@
+#+TITLE: Search tools and techniques
+#+ROAM_TAGS: pim
+
+
+With digital files comes digital tools (and some techniques) to help us in searching for our notes.
+These can vary from complex technologies to simple format-agnostic techniques that can make querying files with specific information to be a breeze.
+[fn:: If you want to maintain your personal digital library, make sure to document how you work.
+Your future self will thank you later.]
+
+In order to search effectively, you need to consider [[file:desktop-search-engines.org][Desktop search engines]] that can also search [[file:file-metadata.org][File metadata]].
+This is also great if you consider [[file:maintaining-a-digital-library.org][Maintaining a digital library]] for yourself.
+
+For text files, you can consider [[file:a-good-tagging-system-for-files.org][A good tagging system for files]] that also consider publication to the public (e.g., digital gardens, static site generators).
+
+Creating a search interface is one thing;
+having the ability for retrieving resources is a must especially if your collection is getting big.
+Like real-life libraries, you need a system to refer to certain resources easily while adding new ones.
+What is the use of a collection if it's not being used?
+It is just like my unread collection of digital books I've sworn to read.
+
+Applying well-thought searching practices and precautions reduces [[https://en.wikipedia.org/wiki/Information_overload][information overload]] especially when looking for broad domain topics.
+This is useful for researching technical topics where domain-specific topics are often present and you need a way to refer back to wider subjects;
+much more so if you want to create [[file:reproducible-research.org][Reproducible research]].
+
+
+
+
+* References
+
+[[https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/info][Reproducible research: principles for transparent science]], Module 1: Lab books and notebooks, Section 5: Finding one's way with tags and desktop search application, retrieved as of June 2020 (2020-06-24)

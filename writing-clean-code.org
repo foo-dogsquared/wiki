@@ -1,0 +1,15 @@
+#+TITLE: Writing clean code
+
+
+Code should be readable, simple, and concise.
+There are a few things to consider when writing code.
+
+- When naming stuff like variables and functions, be clear and concise.
+  Furthermore, if applicable, imply its type.
+  For example, when the variable holds an array, you can append ~_list~ to its name (e.g., ~grade_list~ vs ~grades~).
+  If it's a boolean, you can prepend the name with ~is_~ or ~has_~.
+
+- Use whitespace properly and consistently.
+  For example, in Python, spaces are preferred to tabs and a "tab" is made up of 4 spaces following [[https://www.python.org/dev/peps/pep-0008/][PEP 8 standard]] which is a style guide for Python.
+
+This could be inapplicable if you're worrying about how to create the code that works so be sure to apply it when refactoring.

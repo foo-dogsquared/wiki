@@ -1,0 +1,74 @@
+#+TITLE: The overview of a programming environment
+#+TAGS: compsci
+
+
+The study of [[file:computational-processes.org][computational processes]] start with the study of a programming environment.
+The programming environment is mostly a given in programming but let's inspect and state some things (and some are obvious) about it.
+
+
+
+
+* The elements of programming
+
+A programming language enables you to make the following:
+
+- Expressions ranging from a primitive value to a complex type.
+- A way to combine simple things into complex ones.
+- A way to abstract.
+
+
+
+
+* Expressions
+
+Expressions may be of a primitive value (e.g., ~265~, ~-1.0~, ~'string~) or *combinations* which are composed of operators and expressions (e.g., ~(+ 2 6)~, ~(* 6 3)~).
+An expression can also hold expressions referred to as a subexpression (e.g., ~(+ (* 5 12) (- 54 6) 9)~).
+[fn:: In Lisp, it uses the *prefix notation* which places the operator in the leftmost of the expression.
+It has the advantage of removing ambiguity for indicating its arguments (e.g., ~5 + 67 + (6 * 4)~ vs ~(+ 5 67 (* 6 4))~).]
+
+
+
+
+* Namespacing and function composition
+
+A programming environment should have a way to refer to computational objects.
+These often comes in the form of names with each referring to a value (e.g., ~(define x 10)~).
+
+A programming language should also provide the way to combine simple procedures to compound procedures (e.g., ~(define (square x) (* x x))~) which can be referred to by name (e.g., ~(square 10)~ evaluates to ~100~).
+With that said, we can then combine compound procedures to create a procedure of higher level (e.g., ~(define (sum-of-squares x y) (+ (square x) (square y)))~).
+
+
+
+
+* Conditionals
+
+With expressions, environment, and function composition, we can create simple programs.
+However, we cannot create functions that may test for the value (e.g., [[wikipedia:Piecewise functions][piecewise functions]]).
+For this, a way to conditionally evaluate a value is a must for a programming language.
+
+Here's an example function of getting the absolute value of a number.
+
+#+BEGIN_SRC scheme  :results silent
+(define (abs x)
+  (cond
+   ((< x 0) (- x))
+   (else x)))
+#+END_SRC
+
+
+
+
+* Evaluation model
+
+Each interpreter implements a different way to evaluate expressions.
+
+One of the simplest evaluation model is the *substitution model* [fn:: It is also used as a introductory tool for learning interpreters even though this is not how interpreters really work.].
+The substitution model works by knowing the meaning of each value and substituting the value with its equivalent.
+[fn:: The substitution model can also evaluate in *applicative* or *normal* order.]
+
+
+
+
+* Related resources
+
+- [[https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-10.html][/Structure and interpretation of computer programs/, chapter 1]]

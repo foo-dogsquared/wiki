@@ -1,0 +1,20 @@
+#+TITLE: File metadata
+
+
+With our desktop search engine in place, we could take advantage of its features that can search with media files as well through its metadata.
+[[https://en.wikipedia.org/wiki/Metadata][Each type of files have different ways of embedding metadata.]]
+
+- Image files such as JPEG or PNG, metadata are embedded in [[https://wikipedia.org/wiki/Exchangeable_image_file_format][Exchangeable image file format]] (EXIF) and you can modify it with various tools such as [[http://owl.phy.queensu.ca/~phil/exiftool/][ExifTool]].
+- MP3 files have the [[https://en.wikipedia.org/wiki/ID3][ID3]] as the de-facto standard for embedding contextual information such as the artist, album, genre, comments, and others. [fn:: Though the standard is designed with MP3 in mind, it can be freely included in other formats such as MP4 or WAV files.]
+- HTML documents contain the [[https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML][~<head>~]] element to store the metadata.
+
+However, modern standards such as [[https://fr.wikipedia.org/wiki/Extensible_Metadata_Platform][Extensible metadata platform]] (XMP) targets unison of creating metadata among media files: images (e.g., MP3, OGG), videos (e.g., MP4, MKV), documents (e.g., PDF).
+It also supports file formats that doesn't support embedding them as a buddy file stored in ~.xmp~.
+Certain search engines such as Recoll and Tracker currently support searching metadata with XMP.
+
+Speaking of media files, some formats allow embedding of metadata for other software to integrate with (e.g., showing of the album and the composer for media players, retrieving camera info from a photograph).
+Certain desktop search engines such as Recoll and DocFetcher can search through the metadata of certain files.
+
+To modify the metadata of a file, certain tools such as [[https://exiftool.org/][Exiftool]] and [[https://www.alfresco.com/][Alfresco]] exists.
+The process of manually adding metadata to non-textual files can be tedious but it may be worth the price if we're trying to retrieve some things especially for note-taking.
+This also makes note-taking more dynamic with non-textual files and leverages more attachment to each linked note.

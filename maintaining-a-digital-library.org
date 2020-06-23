@@ -1,0 +1,40 @@
+#+TITLE: Maintaining a digital library
+#+ROAM_TAGS: pim
+
+
+Having your own digital library can be one of the most valuable thing for your life.
+It is flexible in purpose: you can use it as a personal knowledge base, digital novelties collection, and/or project repository.
+With all things personal, [[file:personal-information-management.org][expect it you should be familiar with a little bit of personal information management]] stuff.
+
+A digital library should have the following features:
+
+- Easy to maintain which is the top priority.
+- Catalog the files using open standardized tools and specifications if available.
+- Provide an easy and reliable search interface with rich metadata.
+
+Instituition libraries such as Internet Archive and ArXiv have are the go-to examples for a long sustaining digital library.
+Personal digital libraries are basically personal information management systems where your resources are stored: documents, notes, references, and media files.
+
+I have been thinking of creating a digital library for myself.
+These are the tools I've been using for my experiment:
+
+- Zotero as my reference management library.
+- Exiftool for annotating my files with metadata.
+- Recoll as the search interface.
+- Org-Mode with org-roam as my personal wiki/knowledge base and my go-to quick note-taking tool.
+
+There are a couple of minor things such as Buku as my bookmarks manager, lf as a file explorer, mpv for multimedia, and Firefox as my web browser.
+
+My digital library are fragmented with each component located in its own directory (e.g., Zotero data directory is in ~$HOME/Documents/references~, books and documents are at ~$HOME/Documents/books~, wiki at ~$HOME/writings/wiki~) but it is a non-problem for me and it is easy to solve if it's a problem.
+
+
+
+
+* Related resources
+
+- https://github.com/DSpace/DSpace
+- https://ieeexplore.ieee.org/Xplore/home.jsp
+- https://unpaywall.org/
+- https://www.loc.gov/catworkshop/courses/metadatastandards/pdf/MSTraineeManual.pdf
+
+For more digital library examples, see https://en.wikipedia.org/wiki/List_of_digital_library_projects.

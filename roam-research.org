@@ -1,0 +1,16 @@
+#+TITLE: Roam Research
+
+
+Sports the following features:
+
+- Backlinking of notes which are then used for creating a graph of related topics.
+- A quick capture system for mobile experience (though it's not complete).
+- A daily notes system, making this viable as a journal as well.
+
+
+
+
+* Related notes
+
+- [[file:note-taking.org][Note-taking]]
+- [[file:personal-information-management.org][Personal information management]]

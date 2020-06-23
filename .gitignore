@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+*.log
+tmp/
+
+# Org-mode export formats
+*.html
+*.pdf
+*.tex
+*.md

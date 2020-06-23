@@ -1,0 +1,40 @@
+#+TITLE: File encryption with GPG
+#+ROAM_TAGS: tools security
+
+
+GPG is mostly used for public-key cryptography, allowing you to publicly communicate with the recipient.
+Using GPG boils to generating a key-pair, managing them, and signing and receiving encrypted messages from others and/or to yourself for security purposes.
+
+
+
+
+* Basic usage
+
+A GPG key-pair is made up of two things: the public key and the private key.
+The public key can be shared... to the public while the private key should be guarded in secret.
+
+#+BEGIN_SRC shell  :results silent
+# List out the available keys.
+gpg --list-keys
+
+# Generate a new key-pair.
+gpg --full-gen-key
+#+END_SRC
+
+
+
+
+* Encrypting and decrypting files
+
+Encrypting and decrypting files are one of the main points of GPG.
+
+#+BEGIN_SRC shell  :results silent
+# This will encrypt a file and generate an obscured version of it at <FILE>.gpg.
+gpg --recipient <EMAIL> --encrypt <FILE>
+
+# Decrypting is almost the same process.
+gpg --recipient <EMAIL> --output <FILE> --decrypt <FILE>.gpg
+#+END_SRC
+
+You can make more secured versions of encrypted file especially when you intended it to send it to a particular recipient.
+For example, you can encrypt your file with your private key and the public key of your recipient and only both of you know how to receive the file.

@@ -1,0 +1,7 @@
+#+TITLE: Computational processes
+
+Just as a sorcerer needs spells, a programmer needs code to do its bidding.
+Simple processes such as designing models with computer-aided design programs and controlling a robot arm in a factory are possible through expressing in code.
+
+In order to study the idea of how code works, we need to study the idea of computational processes.
+Programming mainly need two things: *processes* which is a set of instructions and *data* which is the object being manipulated for various purposes.

@@ -1,0 +1,10 @@
+#+TITLE: Org-mode
+#+AUTHOR: Gabriel Arazas
+#+EMAIL: foo.dogsquared@gmail.com
+#+TAGS: tools writing
+#+LANGUAGE: en
+
+
+At its core, [[https://orgmode.org/][Org-mode]] is a [[file:personal-information-management.org][Personal information management]] tool that deals with your tasks and schedules.
+Nowadays, it sports a lightweight markup language and a framework that allows arbitrarily inserting output of code of various programming languages.
+With these features, Org-mode is known as one of the many tool for [[file:reproducible-research.org][Reproducible research]] which also serves as a solid tool for [[file:note-taking.org][Note-taking]] as well.
