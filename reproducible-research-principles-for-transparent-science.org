@@ -62,7 +62,7 @@ Examples include Markdown, Asciidoctor, Org-mode, and reStructuredText.
 
 ** Search tools and techniques
 
-I've created a dedicated note (see [[file:search-tools-and-techniques.org][Search tools and techniques]]) on this as derived from this course.
+I've created a dedicated note (see [[file:apply-search-tools-and-techniques-for-your-digital-library.org][Search tools and techniques]]) on this as derived from this course.
 
 With digital files comes digital tools (and some techniques) to help us in searching for our notes.
 These can vary from complex technologies to simple format-agnostic techniques that can make querying files with specific information to be a breeze.

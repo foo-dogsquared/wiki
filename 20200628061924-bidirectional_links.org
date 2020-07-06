@@ -1,0 +1,16 @@
+#+title: Bidirectional links
+
+
+Ever since [[file:roam-research.org][Roam Research]] became a popular option for [[file:note-taking.org][Note-taking]], there has been interest in one of its popular features: bidirectional linking.
+This feature alone allows for a different way of thinking about note-taking — notes are better to be associative instead of hierarchical just like how our brain works.
+It allows for other Roam features such as backlinking and a visual representation of the notes with a graph.
+
+Compared to monodirectional links like in the web, bidirectional links have inherent social awareness: the ability to look back to linked pages.
+With this feature, you can easily form a graph of pages which you can easily establish contextual relationships between them.
+This is a feature that I've often sought after especially for technical websites such as [[https://encyclopediaofmath.org/][Encyclopedia of Mathematics]].
+
+That said, bidirectional links are not a silver bullet.
+If this is implemented on the web today, it would cause a lot of problems — spamming, trollish linking, and the fact you have no control over what pages being linked to your page requiring heavier moderation.
+Hence, this is more suitable for certain situations such as personal wikis (see [[file:create-evergreen-notes-with-a-digital-garden.org][Create evergreen notes with a digital garden]]).
+Certain software such as Mediawiki, Dokuwiki, and Tiddlywiki offer this feature either as a built-in feature or an extension.
+[fn:: Well, most of them have it as an extension.]

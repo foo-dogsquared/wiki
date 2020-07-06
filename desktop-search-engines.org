@@ -1,20 +1,18 @@
-#+title: Desktop search engines
+#+title: Add a desktop search engine for your digital library
 
 
-With text files and a version control system in place, it is mostly complete.
-However, it's missing (or just lacking of) the retrievability of our notes.
-Fortunately, we can easily add that with a desktop search engine (which further highlights the modular aspect of our setup).
+Desktop search engines adds a crucial thing for [[file:maintaining-a-digital-library.org][Maintaining your own digital library]]: retrievability.
+With the ability to search and retrieve for information scattered throughout our files, we can then quickly connect and add information without much burden.
 
-As hinted from the module, an ideal desktop search engine can handle the following things:
+An ideal desktop search engine should have the following things:
 
 - Features both a graphics user interface (GUI) and a command-line interface (CLI).
-[[file:file-metadata.org][File metadata]]- Accepts not only plain-text files but other file formats such as images, videos, and audio.
-- Quickly searches through text and even metadata for binary files.
-- Integrates popular formats well.
+- Accepts not only plain-text files but other file formats such as images, videos, and audio.
+- Quickly searches through text and even [[file:file-metadata.org][File metadata]] for binary files.
 - Invites integration (and extension) with an API allowing for more control and features.
 - Highlights searching with a query language that is both simple and powerful.
 
-Among the recommended desktop search engines from the course, I found [[https://www.lesbonscomptes.com/recoll/][Recoll]] that fits the bill with the added bonus of being a cross-platform tool and easily configurable.
+With a cursory search, I found [[https://www.lesbonscomptes.com/recoll/][Recoll]] that fits the bill with the added bonus of being a cross-platform tool and easily configurable.
 
 A desktop search engine like Recoll and DocFetcher uses index-based searches which enables them to search quite fast.
 In order to achieve Google Search-level of search speed, you have to build an index based from the contents of the directory.

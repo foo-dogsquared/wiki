@@ -1,0 +1,15 @@
+#+title: When reading mathematical texts, write down the simplest possible example
+
+
+On practice, writing down the simplest possible examples allows you to get started working on the definitions.
+When you're done with the simplest possible example, you can then start with a more complicated example (relative to the simplest one) until you worked your way to a real mind-boggling example that really made you bang your head to a wall.
+This is one of the foundation to building mathematical intuition.
+
+That said, this habit can mold well into writing [[file:evergreen-notes.org][Evergreen notes]].
+Since you're dealing with the simplest possible examples, you can write easy-to-understand notes which can help you retain information even more.
+This also makes a good transition in writing more complex topics and more complex examples.
+
+On the non-practical side, it is said to be a cultural thing for mathematicians.
+It is an unwritten rule for a reader to immediately write down examples and not pass through the text until they have understood it.
+Providing examples is not an obligation from the author but they may do so for the sake of easier understanding.
+However, to make sure you are paying attention, it is a recommendation that you have to practice this habit.

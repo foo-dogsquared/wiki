@@ -1,8 +1,5 @@
 #+TITLE: Org-mode
-#+AUTHOR: Gabriel Arazas
-#+EMAIL: foo.dogsquared@gmail.com
 #+TAGS: tools writing
-#+LANGUAGE: en
 
 
 At its core, [[https://orgmode.org/][Org-mode]] is a [[file:personal-information-management.org][Personal information management]] tool that deals with your tasks and schedules.

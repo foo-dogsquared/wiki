@@ -1,4 +1,4 @@
-#+TITLE: Search tools and techniques
+#+TITLE: Apply search tools and techniques for your digital library
 #+ROAM_TAGS: pim
 
 
@@ -10,7 +10,7 @@ Your future self will thank you later.]
 In order to search effectively, you need to consider [[file:desktop-search-engines.org][Desktop search engines]] that can also search [[file:file-metadata.org][File metadata]].
 This is also great if you consider [[file:maintaining-a-digital-library.org][Maintaining a digital library]] for yourself.
 
-For text files, you can consider [[file:a-good-tagging-system-for-files.org][A good tagging system for files]] that also consider publication to the public (e.g., digital gardens, static site generators).
+For text files, you can consider [[file:a-good-tagging-system-for-files-for-reducing-information-overload.org][A good tagging system for files for reducing information overload]]  that also consider publication to the public (e.g., digital gardens, static site generators).
 
 Creating a search interface is one thing;
 having the ability for retrieving resources is a must especially if your collection is getting big.

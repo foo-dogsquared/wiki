@@ -1,0 +1,12 @@
+#+title: Information literacy
+
+
+Information literacy is defined as the ability to search information, sort the results, verify for legitimacy, and share the information effectively.
+It is one of the most important universal skills as internet became popular as a method of distributing information causing to often deal with the torrential amount of information.
+
+There are many ways to improve our information literacy including usage of various effective online searching, writing [[file:20200625131209-fleeting_notes.org][Fleeting notes]] for a quick capture system, and finally evaluating your search results with [[file:evergreen-notes.org][Evergreen notes]].
+For an increased output, you can [[file:maintaining-a-digital-library.org][Maintain your own digital library]] and [[file:apply-search-tools-and-techniques-for-your-digital-library.org][Apply search tools and techniques for your digital library]] where you can store your results and freely retrieve them whenever you wish.
+
+Having a sharp information literacy does not only mainly seen in technical fields like in research and academia (e.g., literature reviews, peer reviews) but also on everyday life as well.
+In fact, all of us practice it in some way.
+We use information literacy skills when we research for the laptop that brings the best value to our limited budget, verifying if the online seller is legitimate, or sharing certain information on our social media.

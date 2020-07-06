@@ -1,0 +1,28 @@
+#+title: Evergreen notes
+
+
+My concept of evergreen notes is mainly inspired from [[https://notes.andymatuschak.org/z4SDCZQeRo4xFEQ8H4qrSqd68ucpgE6LU155C][Andy Matuschak's version]] in a way that focuses writing evergreen notes as a way of developing your knowledge.
+As said from his note, an evergreen note focuses on evolving and being dynamic.
+It should be taken with you as you develop more perspectives and more insight between a graph of concepts.
+As such, with evergreen notes, you'll be doing more editing than creating as the web of notes widens.
+
+An evergreen note should have the following principles:
+
+- [[https://notes.andymatuschak.org/z4Rrmh17vMBbauEGnFPTZSK3UmdsGExLRfZz1][Evergreen notes should be atomic.]]
+- [[https://notes.andymatuschak.org/z6bci25mVUBNFdVWSrQNKr6u7AZ1jFzfTVbMF][Evergreen notes should be concept-oriented.]]
+- [[https://notes.andymatuschak.org/z2HUE4ABbQjUNjrNemvkTCsLa1LPDRuwh1tXC][Evergreen notes should be densely linked.]]
+- [[https://notes.andymatuschak.org/z29hLZHiVt7W2uss2uMpSZquAX5T6vaeSF6Cy][Evergreen notes should form an associative ontology rather than an hierarchical taxonomy.]]
+
+With that said, writing an evergreen note has no absolute rule.
+Furthermore, you shouldn't focus too much on how to write effectively since [[https://notes.andymatuschak.org/z8V2q398qu89vdJ73N2BEYCgevMqux3yxQUAC][most note-taking practices are generally ineffective]].
+Focusing on it is a distraction to the very objective of creating evergreen notes: [[https://notes.andymatuschak.org/z6cFzJWgj9vZpnrQsjrZ8yCNREzCTgyFeVZTb][developing insights]].
+
+To start writing an evergreen note, you could start with your [[file:20200625131209-fleeting_notes.org][Fleeting notes]] and outline the main ideas.
+An evergreen note does not have to be finished within one sitting.
+In fact, it is preferred to build it incrementally, editing the note as you go developing insights.
+(It is previously mentioned that evergreen notes should be taken with you, after all.)
+
+
+
+
+* References

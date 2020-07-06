@@ -1,16 +1,20 @@
 #+TITLE: Roam Research
 
 
-Sports the following features:
+Roam Research is a newly developing tool created by Conor White-Sullivan that focuses on creating a graph of notes instead of the traditional hierarchical system of most note-taking systems.
+It is largely inspired from the Zettelkasten method with the emphasis for bidirectional linking.
+
+It sports the following features:
 
 - Backlinking of notes which are then used for creating a graph of related topics.
 - A quick capture system for mobile experience (though it's not complete).
 - A daily notes system, making this viable as a journal as well.
 
+As such, Roam is a solid [[file:note-taking.org][Note-taking]] system that easily integrates as a [[file:personal-information-management.org][Personal information management]] system.
+With the Zettelkasten-inspired system, you can use it to easily [[file:create-evergreen-notes-with-a-digital-garden.org][Create evergreen notes with a digital garden]].
+[fn:: Well, it is a glorified wiki with the focus for backlinks and knowledge graph.]
 
+Roam is gaining popularity and more are considering to use it.
+However, it is closed source and thankfully open source alternatives like [[https://github.com/jethrokuan/org-roam][Org-roam]], [[https://github.com/andjar/dokuroam/][Dokuroam]], and [[https://github.com/athensresearch/athens][Athens]] started to fill our Roam-voided hearts.
 
-
-* Related notes
-
-- [[file:note-taking.org][Note-taking]]
-- [[file:personal-information-management.org][Personal information management]]
+For seeing how Roam works, you can see the following videos by [[https://www.youtube.com/watch?v=RvWic15iXjk][Nat Eliason on using Roam to quickly outline an article]] and [[https://www.youtube.com/watch?v=vxOffM_tVHI][Thomas Frank covering the feature set of Roam]].

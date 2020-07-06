@@ -1,0 +1,390 @@
+#+title: Structure and interpretation of computer programs
+#+PROPERTY: header-args    :exports both
+#+ROAM_TAGS: @fleeting
+
+
+This is just my personal notes on [[http://mitpress.mit.edu/sicp][Structure and interpretation of computer programs]].
+I also studied with the [[https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=titleSorter][Brian Harvey's SICP lectures]] because I am a scrub. ;p
+
+Before you can use this document, you need to do some prerequisite installation of [[https://racket-lang.org/][Racket]] and [[https://docs.racket-lang.org/sicp-manual/][SICP package]].
+
+
+
+
+* Elements of programming
+
+Programming often requires the following:
+
+- Simple expressions with atomic value.
+- A way to combine procedures into complex expressions.
+- A way to define procedures for abstractions.
+
+In order to do programming, we must have a programming language.
+A programming language often requires the following to have an effective way of expressing code:
+
+- Expressions which varies from primitive expressions (e.g., ~42~, ~1.683~, ~53819492184~) to compound expressions (e.g., ~(+ 53 20)~, ~(- 464 254)~).
+- An environment of objects which you can refer by name either with values (e.g., ~(define x 10)~, ~(define pi 3.14)~, ~(define e 2.71828)~) or procedures (e.g., ~(define (square x) (* x x))~, ~(define (my-formula height weight length) (* 23 (/ height weight) (+ 3500 length)))~).
+- An evaluation model for expressions since certain procedures can have different output from the order of operations.
+
+A programming language lets us abstract procedures as a black box.
+Here's an example of implementing the square root given a number.
+
+#+BEGIN_SRC racket  :lang sicp
+(define (square x) (* x x))
+(define (improve guess x)
+  (/ (+ guess (/ x guess)) 2))
+
+(define (good-enough? guess x)
+  (< (abs (- (square guess) x)) 0.001))
+
+(define (sqrt-iter guess x)
+  (if (good-enough? guess x)
+      guess
+      (sqrt-iter (improve guess x) x)))
+
+(define (sqrt x)
+  (sqrt-iter 1.0 x))
+
+(sqrt 4)
+(sqrt 100)
+(sqrt 45.65)
+#+END_SRC
+
+#+RESULTS:
+: 2.0000000929222947
+: 10.000000000139897
+: 6.756478442187127
+
+In order to do the square root extraction in our implementation, we define multiple procedures with each solving a part of the procedure: one procedure for indicating whether the guess is good enough, one for creating an improved guess for the next iteration, and one for actually doing the square root extraction.
+
+In general cases, we don't implement things as one thing as it will result in a messy state of code.
+Instead, we modularize those functions.
+We classify these procedures as a *procedural abstraction*.
+
+
+
+
+* Higher-order functions
+
+Functions and data are often separated similarly to verbs and subjects.
+We tend to think of them as different things relying on each other to do things: functions need data to manipulate while data are raw information to be arranged by a function.
+However, the reality is that there is a blurry line to how distinct both of them are.
+Functions can be treated similarly to data and vice versa.
+
+The lesson of higher-order functions proves this.
+It is one of the foundations of functional programming.
+In order to learn about it, you need to know the key: *generalizing patterns*.
+
+For example, say we have different functions for knowing the area of a shape.
+
+#+BEGIN_SRC racket  :lang sicp
+(define pi 3.14)
+
+(define (square-area r) (* r r))
+(define (circle-area r) (* pi r r))
+(define (hexagon-area r) (* (sqrt 3) 1.5 r r))
+#+END_SRC
+
+This could pass as a decent code if each area function is distinct from each other.
+However, all of the given area functions involves squaring the given parameter (~r~).
+We can separate that step in a function like the following.
+
+#+BEGIN_SRC racket  :lang sicp
+(define pi 3.14)
+(define (area shape r) (* shape r r))
+
+(define square 1)
+(define circle pi)
+(define hexagon (* (sqrt 3) 1.5))
+#+END_SRC
+
+
+
+
+* Exercise solutions
+
+
+** Exercise 1.2
+
+#+BEGIN_SRC racket  :lang sicp  :results silent
+(/ (+ 5 4
+    (- 2
+        (- 3
+          (+ 6
+              (/ 1 3)))))
+  (* 3
+    (- 6 2)
+    (- 2 7)))
+#+END_SRC
+
+
+** Exercise 1.3
+
+#+BEGIN_SRC racket  :lang sicp  :results silent
+(define (square x) (* x x))
+(define (sum-of-squares x y z)
+  (define sum (+ (square x) (square y) (square z)))
+  (- sum (square (min x y z))))
+#+END_SRC
+
+
+** Exercise 1.5
+
+If the interpreter evaluates with applicative-order, it will never evaluate the if condition since ~(p)~ is now endlessly being evaluated.
+(Applicative-order evaulates each argument before passing on the function.)
+Meanwhile, if it's evaluated at normal order, it would simply expand then start to evaluate them in order.
+It would go evaluate the ~if~ condition and proceed to return 0 (since it returns true).
+
+
+** Exercise 1.6
+
+#+begin_quote
+Alyssa P. Hacker doesn't see why if needs to be provided as a special form.
+"Why can't I just define it as an ordinary procedure in terms of cond?" she asks.
+Alyssa's friend Eva Lu Ator claims this can indeed be done, and she defines a new version of if:
+
+#+BEGIN_EXAMPLE
+(define (new-if predicate then-clause else-clause)
+  (cond (predicate then-clause)
+        (else else-clause)))
+#+END_EXAMPLE
+
+Eva demonstrates the program for Alyssa:
+
+#+BEGIN_EXAMPLE
+(new-if (= 2 3) 0 5)
+5
+
+(new-if (= 1 1) 0 5)
+0
+#+END_EXAMPLE
+
+Delighted, Alyssa uses new-if to rewrite the square-root program:
+
+#+BEGIN_EXAMPLE
+(define (sqrt-iter guess x)
+  (new-if (good-enough? guess x)
+          guess
+          (sqrt-iter (improve guess x)
+                     x)))
+#+END_EXAMPLE
+
+What happens when Alyssa attempts to use this to compute square roots? Explain.
+#+end_quote
+
+The reason why ~if~ needs a special form is because of applicative-order evaluation.
+Scheme (or rather Racket with the SICP package) interprets with applicative-order evaluation which it means it has to evaluate all of the arguments first before proceeding to evaluate the procedure.
+As ~new-if~ is a procedure that we defined, it would cause an infinite loop of Racket trying to evaluate ~sqrt-iter~ inside of our ~new-if~ procedure.
+
+
+** Exercise 1.7
+
+#+begin_quote
+The ~good-enough?~ test used in computing square roots will not be very effective for finding the square roots of very small numbers.
+Also, in real computers, arithmetic operations are almost always performed with limited precision. This makes our test inadequate for very large numbers.
+Explain these statements, with examples showing how the test fails for small and large numbers.
+An alternative strategy for implementing ~good-enough?~ is to watch how ~guess~ changes from one iteration to the next and to stop when the change is a very small fraction of the guess.
+Design a square-root procedure that uses this kind of end test.
+Does this work better for small and large numbers?
+#+end_quote
+
+For Exercise 1.7, I'm afraid I cannot easily answer it since the results from the example implementation is already accurate due to the interpreter.
+
+For this exercise, let's pretend the interpreter is not great.
+For example, ~(sqrt 0.0001)~ results in ~.03230844833048122~ (should be ~0.01~).
+[fn:: You can test how it really goes with the MIT Scheme interpreter.]
+
+The reason varies from a combination of interpreter, hardware configurations, and implementation of arithmetics.
+This is especially true with floating points arithmetics.
+
+In implementing our improved square root implementation from the question, we start with editing the ~improve~ function.
+
+#+BEGIN_SRC racket  :lang sicp
+(define (square x) (* x x))
+(define (improve guess x)
+  (/ (+ guess (/ x guess)) 2))
+
+(define (good-enough? guess old-guess tolerance)
+  (<= (abs (- guess old-guess)) tolerance))
+
+(define (sqrt-iter guess old-guess x)
+  (if (good-enough? guess old-guess 0.0000001)
+      guess
+      (sqrt-iter (improve guess x) guess x)))
+
+(define (sqrt x)
+  (sqrt-iter 1.0 0.0 x))
+
+(sqrt 4)
+(sqrt 1)
+(sqrt 0.0001)
+(sqrt 0.00001)
+(sqrt 123456789000000)
+#+END_SRC
+
+#+RESULTS:
+: 2.000000000000002
+: 1.0
+: 0.01
+: 0.0031622776602038957
+: 11111111.060555555
+
+I've modified the ~good-enough?~ function by making the tolerance as an argument.
+Tested on the MIT Scheme v10.1.10, the results are more accurate closer to modern systems like Julia.
+Bigger numbers are also calculated quicker than the previous implementation (for some reason that I don't know).
+
+
+** Exercise 1.8
+
+#+begin_quote
+Newton's method for cube roots is based on the fact that if y is an approximation to the cube root of x, then a better approximation is given by the value
+
+
+\begin{equation*}
+    \frac{x / y^2 + 2y}{3}
+\end{equation*}
+
+Use this formula to implement a cube-root procedure analogous to the square-root procedure.
+(In section 1.3.4 we will see how to implement Newton's method in general as an abstraction of these square-root and cube-root procedures.)
+#+end_quote
+
+#+BEGIN_SRC racket  :lang sicp
+(define (square x) (* x x))
+(define (improve guess x)
+  (/ (+ (- x (square guess)) (* guess 2)) 3))
+
+(define (good-enough? guess x)
+  (< (abs (- (square guess) x)) 0.001))
+
+(define (cbrt-iter guess x)
+  (if (good-enough? guess x)
+      guess
+      (cbrt-iter (improve guess x) x)))
+
+(define (cbrt x)
+  (cbrt-iter 1.0 x))
+
+(cbrt 9)
+#+END_SRC
+
+#+RESULTS:
+: 3.000163135454436
+
+
+** Exercise 1.9
+
+#+begin_quote
+Each of the following two procedures defines a method for adding two positive integers in terms of the procedures ~inc~, which increments its argument by 1, and ~dec~, which decrements its argument by 1.
+
+#+BEGIN_EXAMPLE
+(define (+ a b)
+  (if (= a 0)
+      b
+      (inc (+ (dec a) b))))
+
+(define (+ a b)
+  (if (= a 0)
+      b
+      (+ (dec a) (inc b))))
+#+END_EXAMPLE
+
+Using the substitution model, illustrate the process generated by each procedure in evaluating (+ 4 5).
+Are these processes iterative or recursive?
+#+end_quote
+
+For the first definition, the resulting evaluation would have to look something like the following:
+
+#+BEGIN_EXAMPLE
+(+ 4 5)
+(inc (+ 3 5))
+(inc (inc (+ 2 5)))
+(inc (inc (inc (+ 1 5))))
+(inc (inc (inc (inc (+ 0 5)))))
+(inc (inc (inc (inc 5))))
+(inc (inc (inc 6)))
+(inc (inc 7))
+(inc 8)
+9
+#+END_EXAMPLE
+
+Based from the visualization, it seems it is a recursive process.
+
+As for the second definition, the resulting evaluation would look like the following:
+
+#+BEGIN_EXAMPLE
+(+ 4 5)
+(+ 3 6)
+(+ 2 7)
+(+ 1 8)
+(+ 0 9)
+9
+#+END_EXAMPLE
+
+As each iteration does not result in embedding procedures in one big procedure, I think it is considered as an iterative process.
+
+
+** Exercise 1.10
+
+#+begin_quote
+The following procedure computes a mathematical function called Ackermann's function.
+
+#+BEGIN_EXAMPLE
+(define (A x y)
+  (cond ((= y 0) 0)
+        ((= x 0) (* 2 y))
+        ((= y 1) 2)
+        (else (A (- x 1)
+                 (A x (- y 1))))))
+#+END_EXAMPLE
+
+What are the values of the following expressions?
+
+#+BEGIN_EXAMPLE
+(A 1 10)
+
+(A 2 4)
+
+(A 3 3)
+#+END_EXAMPLE
+
+Consider the following procedures, where A is the procedure defined above:
+
+#+BEGIN_EXAMPLE
+(define (f n) (A 0 n))
+
+(define (g n) (A 1 n))
+
+(define (h n) (A 2 n))
+
+(define (k n) (* 5 n n))
+#+END_EXAMPLE
+
+Give concise mathematical definitions for the functions computed by the procedures ~f~, ~g~, and ~h~ for positive integer values of $n$.
+For example, ~(k n)~ computes $5n^2$.
+#+end_quote
+
+For the sake of completeness, here is the function in question along with the given example usage (and its results in the following block):
+
+#+BEGIN_SRC racket  :lang sicp
+(define (A x y)
+  (cond ((= y 0) 0)
+        ((= x 0) (* 2 y))
+        ((= y 1) 2)
+        (else (A (- x 1)
+                 (A x (- y 1))))))
+
+(A 1 10)
+(A 2 4)
+(A 3 3)
+#+END_SRC
+
+#+RESULTS:
+: 1024
+: 65536
+: 65536
+
+As for notating ~f~, ~g~, and ~h~ into mathematical definitions:
+
+- ~f~ is $2n$.
+- ~g~ is $2^n$.
+- ~h~ is $2^{n}^{2}$.
