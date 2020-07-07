@@ -5,3 +5,4 @@ Simple processes such as designing models with computer-aided design programs an
 
 In order to study the idea of how code works, we need to study the idea of computational processes.
 Programming mainly need two things: *processes* which is a set of instructions and *data* which is the object being manipulated for various purposes.
+However, as one may dig into the rabbithole, they find that the hard line of separation between processes and data is a myth and unlocks more possibilities to solve problems.

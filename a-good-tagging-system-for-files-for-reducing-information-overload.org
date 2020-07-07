@@ -1,8 +1,5 @@
 #+TITLE: A good tagging system for files for reducing information overload
-#+AUTHOR: Gabriel Arazas
-#+EMAIL: foo.dogsquared@gmail.com
 #+TAGS: writing note-taking
-#+LANGUAGE: en
 #+OPTIONS: toc:t
 
 

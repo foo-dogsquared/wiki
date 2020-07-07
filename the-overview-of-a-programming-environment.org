@@ -2,7 +2,7 @@
 #+TAGS: compsci
 
 
-The study of [[file:computational-processes.org][computational processes]] start with the study of a programming environment.
+The study of [[file:computational-processes.org][Computational processes]] start with the study of a programming environment.
 The programming environment is mostly a given in programming but let's inspect and state some things (and some are obvious) about it.
 
 
@@ -13,8 +13,8 @@ The programming environment is mostly a given in programming but let's inspect a
 A programming language enables you to make the following:
 
 - Expressions ranging from a primitive value to a complex type.
-- A way to combine simple things into complex ones.
-- A way to abstract.
+- A way to combine simple expressions into complex ones.
+- A way to abstract procedures into higher-level processes.
 
 
 

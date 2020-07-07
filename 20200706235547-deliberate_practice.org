@@ -1,0 +1,22 @@
+#+title: Deliberate practice
+
+
+Unlike regular practice that involves mindless repetitions, deliberate practice involves purposeful sessions.
+Each session aims to improve performance and increase the skill ceiling of the practitioner.
+
+To put it simply, deliberate practice involves getting out of comfort zone and enforces discipline.
+For example, trying yourself to solve some hard mathematical problems or competitive programming for the first time with a mentor.
+(You can see [[https://www.nateliason.com/blog/deliberate-practice-examples][some more examples on getting started with it]].)
+
+Keep in mind, deliberate practice has one very important component: feedback.
+Let's try with an example where we have two tennis players, James and Isaac, improving their repertoire.
+Isaac is simply playing at the tennis court, leisurely picking up tennis balls, and serving at his own pace.
+Meanwhile, James, has a friend that picks up the missed balls and records his moves from the number of consecutive hits on one session to the ratio of missed serves over the total number of serves.
+Assuming both players are equally skilled at tennis, who could progress at a faster pace?
+
+Deliberate practice usually involves with a mentor/teacher who will give you the most critical feedback and create small goals for you to start.
+If you can't find one, the best replacement are group chats or a community open for feedback.
+The main point of finding a source of feedback is getting other perspectives that you may not see it yourself.
+
+You can also [[file:20200706034752-refer_to_advanced_resources_when_skill_building_for_a_solid_short_term_goal.org][Refer to advanced resources when skill-building for a solid short-term goal]].
+With it, identify the top performers in the field and try to make a conclusion on how do they get so far.
