@@ -1,2 +1,5 @@
 #+TITLE: Note-taking
-#+TAGS: note-taking
+
+
+The practice of note-taking is universal — it is everybody's concern how to write their findings efficiently with the use of a [[file:personal-information-management.org][Personal information management]] system.
+Note-taking does not only involve the act of writing but also the act of retrieval from finding contextual relationships from two notes, separating notes into digestible chunks, and searching notes effectively.

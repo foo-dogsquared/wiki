@@ -1,1 +1,5 @@
 #+TITLE: Personal information management
+
+
+Personal information management is self-explanatory as it is.
+It is the act of managing your information from emails, contacts, calendar, notes, and so much more.

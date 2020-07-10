@@ -3,6 +3,7 @@
 
 Unlike regular practice that involves mindless repetitions, deliberate practice involves purposeful sessions.
 Each session aims to improve performance and increase the skill ceiling of the practitioner.
+That is each session to be effective, [[file:20200708025427-when_learning_a_new_skill_begin_with_a_specific_end_goal_to_create_a_solid_starting_point.org][When learning a new skill, begin with a specific end-goal to create a solid starting point]].
 
 To put it simply, deliberate practice involves getting out of comfort zone and enforces discipline.
 For example, trying yourself to solve some hard mathematical problems or competitive programming for the first time with a mentor.
