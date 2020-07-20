@@ -17,7 +17,7 @@ Programming often requires the following:
 
 - Simple expressions with atomic value.
 - A way to combine procedures into complex expressions.
-- A way to define procedures for abstractions.
+- A way to define procedures for abstractions of higher-level functions.
 
 In order to do programming, we must have a programming language.
 A programming language often requires the following to have an effective way of expressing code:

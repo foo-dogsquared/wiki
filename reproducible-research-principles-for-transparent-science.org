@@ -1,4 +1,4 @@
-#+TITLE: Reproducible research: principles for transparent science
+#+TITLE: Reproducible research: methodological principles for transparent science
 #+AUTHOR: Gabriel Arazas
 #+EMAIL: foo.dogsquared@gmail.com
 #+PROPERTY: header-args  :exports both
@@ -13,7 +13,7 @@
 I'm not a researcher but I've learned so many things from this course that are applicable to general workflows: organizing your digital files for easy retrieval, creating reproducible notes, and setting out to create reproducible studies with open formats.
 In my desktop workflow, I've managed to create a generic desktop search for my projects which also serves as an format-agnostic option for personal braindump/wiki which I'll taking notes of it somewhere.
 
-This is the notes for [[https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/info][Reproducible research: prinicples for transparent science]], an open course on how to create [[file:reproducible-research.org][Reproducible research]] and notes with various tools.
+This is the notes for [[https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/info][Reproducible research: methodological prinicples for transparent science]], an open course on how to create [[file:reproducible-research.org][Reproducible research]] and notes with various tools.
 The course itself is divided into three paths for [[https://jupyter.org][Jupyter Notebooks]], R, and Org-Mode.
 There is also a [[https://gitlab.inria.fr/learninglab/mooc-rr/mooc-rr-ressources][dedicated Git repo with additional resources]] (most of them are in French but some come with English translations), be sure to check it out.
 
@@ -130,7 +130,7 @@ As much as text formats are an attractive option, there are complications assoic
 Particularly, data are often big and text generally consume more memory since text has to be converted into binary format to be usable in our software.
 If we want to take less, we can consider our data to be in binary in the first place.
 
-Binary formats are good for performance but there's a factor to consider it which is the *endianness*.
+Binary formats are good for performance but there's a factor to consider it which is the [[file:20200710233027-endianness.org][Endianness]].
 They can be read differently depending on the computer architecture so it is best practice to announce the endianness at the start.
 
 Text formats, however, has the upper hand of easily adding *metadata* to our data which is a must for reproducible research.
