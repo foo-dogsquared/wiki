@@ -1,0 +1,7 @@
+#+TITLE: Index
+
+Hello!
+This is my public knowledge graph publicly available for the public.
+It is mostly intended for easy access for my notes in case I'm not in my computer along with sharing my findings with the rest of the world (and hopefully getting feedback on it).
+
+If you want to view my notes in its raw form, you can look at the [[http://github.com/foo-dogsquared/wiki][Git repo]].

@@ -1,0 +1,8 @@
+#+title: GNU Guix
+
+
+[[https://guix.gnu.org/][GNU Guix]] is a package manager that follows the footsteps of Nix in furthering [[file:2020-09-19-08-31-48.org][Functional package management]].
+
+- [[https://guix.gnu.org/cookbook/][GNU Guix cookbook]]
+- [[http://www.gnu.org/software/guix/blog/2018/a-packaging-tutorial-for-guix/][GNU Guix packaging tutorial]]
+- [[https://github.com/pmeiyu/guix-config][This GuixSD config by pmeiyu@github.com]]

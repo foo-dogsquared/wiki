@@ -1,0 +1,27 @@
+#+title: Functional package management
+
+
+Functional package management (FPM) is the next step forward [[https://edolstra.github.io/pubs/nixos-icfp2008-final.pdf][pioneered by Eelco Dolstra]] with [[https://nixos.org/][NixOS]] as the living implementation.
+[fn:: Eventually, it became the inspiration for other projects that focuses on reproducibility and security such as [[https://guix.gnu.org/][GNU Guix]] and [[https://silverblue.fedoraproject.org/][Fedora Silverblue]].]
+
+The conceptual overview of it is similar to [[file:2020-09-04-19-57-06.org][Functional programming]] with how it views with data and functions (in this case, packages and build processes).
+
+It views that packages are a unique result from combining different things: dependencies, build processes, versions, and more.
+If a dependency has updated its patch version or a build instruction has revised with one line of change, it will result in a "new" package as the output even if the package isn't any different.
+
+Coming from a functional approach, it also features statelessness and immutability, making it a reliable toolkit for [[https://reproducible-builds.org/][reproducible builds]] (thus gaining a reach for [[file:reproducible-research.org][Reproducible research]]).
+
+The problems that FPM attempts to solve come from the critique of the traditional package management which is still dominant as of today (2020-08-31).
+Here are some of the problems on a traditional Linux-based system:
+
+- The statefulness of the entire system leads to similar situations on Windows' dependency hell problem.
+- Multiple versions of packages are hard to place side-by-side which is used by developers targetting stable versions while experimenting with the latest versions.
+- Destructive ongoing updates which consists of replacing the current version with the updated version while the update is going.
+- Traceability is almost non-existent with all of the statefulness of the system.
+
+The functional approach with the unique output and immutable variables addresses the listed problems in some way.
+
+- A package is built from an input resulting in a package on a unique immutable location, eliminating the statefulness in the process.
+- Since each revision results in a new location, the same package with different versions can be easily placed side-by-side.
+- With the way how packages built, the old system can be kept giving the possibility for the user to rollback to those previous versions.
+- The functional approach creates a guaranteed output, making it predictable (and traceable).

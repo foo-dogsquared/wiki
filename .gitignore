@@ -8,3 +8,6 @@ tmp/
 *.pdf
 *.tex
 *.md
+
+# Neuron exports
+.neuron

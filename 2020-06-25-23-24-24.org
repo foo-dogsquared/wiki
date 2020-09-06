@@ -85,6 +85,8 @@ For example, say we have different functions for knowing the area of a shape.
 (define (hexagon-area r) (* (sqrt 3) 1.5 r r))
 #+END_SRC
 
+#+RESULTS:
+
 This could pass as a decent code if each area function is distinct from each other.
 However, all of the given area functions involves squaring the given parameter (~r~).
 We can separate that step in a function like the following.
@@ -97,6 +99,8 @@ We can separate that step in a function like the following.
 (define circle pi)
 (define hexagon (* (sqrt 3) 1.5))
 #+END_SRC
+
+#+RESULTS:
 
 
 
@@ -387,4 +391,187 @@ As for notating ~f~, ~g~, and ~h~ into mathematical definitions:
 
 - ~f~ is $2n$.
 - ~g~ is $2^n$.
-- ~h~ is $2^{n}^{2}$.
+- ~h~ is $2^n^2$.
+
+
+** Exercise 1.30
+
+#+begin_quote
+The ~sum~ procedure above generates a linear recursion.
+The procedure can be rewritten so that the sum is performed iteratively.
+Show how to do this by filling in the missing expressions in the following definition:
+#+end_quote
+
+#+BEGIN_SRC racket  :lang sicp
+(define (sum term a next b)
+  (define (iter a result)
+    (if (> a b)
+        result
+        (iter (next a) (+ result a))))
+  (iter a 0))
+#+END_SRC
+
+
+** Exercise 1.31a
+
+#+begin_quote
+The ~sum~ procedure is only the simplest of a vast number of similar abstractions that can be captured as higher-order procedures.
+Write an analogous procedure called ~product~ that returns the product of the values of a function at points over a given range.
+Show how to define ~factorial~ in terms of ~product~.
+Also use ~product~ to compute approximations to \pi using the formula.
+
+\begin{equation*}
+\frac{\pi}{4} = \frac{2 \cdot 4 \cdot 4 \cdot 6 \cdot 6 \cdot 8 \cdots}{3 \cdot 3 \cdot 5 \cdot 5 \cdot 7 \cdot 7 \cdots}
+\end{equation*}
+#+end_quote
+
+#+BEGIN_SRC racket  :lang sicp
+(define (product term a next b)
+  (if (> a b)
+      term
+      (product (* (next a) term) (+ a 1) next b)))
+
+(define (factorial term)
+  (product 1  1 (lambda (a) a) term))
+
+(define (wallis_prod term)
+  (* 4 (product 1 1
+                (lambda (a) (*
+                             (/ (* 2 a) (+ (* 2 a) 1))
+                             (/ (+ (* 2 a) 2) (+ (* 2 a) 1))))
+                term)))
+
+(factorial 1) ; should return 1
+(factorial 5) ; should return 120
+(factorial 10) ; should return 3628800
+(factorial 20) ; should return 20!
+
+; With larger values should return closer to the value of pi.
+(wallis_prod 1)
+(wallis_prod 5)
+(wallis_prod 10)
+(wallis_prod 20)
+#+END_SRC
+
+#+RESULTS:
+: 1
+: 120
+: 3628800
+: 2432902008176640000
+: 32/9
+: 524288/160083
+: 274877906944/85530896451
+: 302231454903657293676544/95064880114531295493525
+
+Notwithstanding related to solving the entire problem, I'll include note on how I was able to create a procedure for the Pi value computation since it gave me the hardest time.
+In order to start creating a procedure, I've simply observed the given formula with the induction that it can be separated into pairs like the following.
+(I also simply didn't observe that each pair is also an iteration of a function.)
+
+\begin{equation*}
+\frac{\pi}{4} = \left(\frac{2}{3} \cdot \frac{4}{3} \right) \cdot \left(\frac{4}{5} \cdot \frac{6}{5} \right) \cdot \left(\frac{6}{7} \cdot \frac{8}{7} \right)
+\end{equation*}
+
+We can then observed that it has a generalized pattern.
+Each iteration, in isolation, can be summarized as such.
+
+\begin{equation*}
+\left(\frac{2n}{2n+1} \cdot \frac{2n+2}{2n+1}\right)
+\end{equation*}
+
+With simple algebra, you can get the approximation of Pi by simply multiplying the equation with $4$.
+Here is the finalized equation to my solution.
+
+\begin{equation*}
+f(j) \approx \pi \approx 4 \cdot \prod_{n=1}^j \left(\frac{2n}{2n+1} \cdot \frac{2n+2}{2n+1}\right)
+\end{equation*}
+
+With larger values, the result would be closer to the value of \pi.
+
+
+** Exercise 1.31b
+
+#+begin_quote
+If your ~product~ procedure generates a recursive process, write one that generates an iterative process.
+If it generates an iterative process, write one that generates a recursive process.
+#+end_quote
+
+Based from my answer in Exercise 1.31a, we can simply see whether we have created an iterative or recursive process simply with the ~trace~ function.
+
+#+BEGIN_SRC racket  :lang racket
+(require racket/trace)
+(define (product total fn a b)
+  (if (> a b)
+      total
+      (product (* total (fn a)) fn (+ a 1) b)))
+
+(define (factorial term)
+  (product 1 (lambda (a) a) 1 term))
+
+(trace product)
+(factorial 5)
+#+END_SRC
+
+#+RESULTS:
+: >(product 1 #<procedure:...v3/ob-PoMhn9.rkt:10:13> 1 5)
+: >(product 1 #<procedure:...v3/ob-PoMhn9.rkt:10:13> 2 5)
+: >(product 2 #<procedure:...v3/ob-PoMhn9.rkt:10:13> 3 5)
+: >(product 6 #<procedure:...v3/ob-PoMhn9.rkt:10:13> 4 5)
+: >(product 24 #<procedure:...v3/ob-PoMhn9.rkt:10:13> 5 5)
+: >(product 120 #<procedure:...v3/ob-PoMhn9.rkt:10:13> 6 5)
+: <120
+: 120
+
+With our implementation, we can see it is an iterative process.
+The following code block is its recursive equivalent along with the stack trace for comprehension.
+
+#+BEGIN_SRC racket  :lang racket
+(require racket/trace)
+(define (product total fn a b)
+  (if (> a b)
+      1
+      (* (fn a) (product total fn (+ a 1) b))))
+
+(define (factorial term)
+  (product 1 (lambda (a) a) 1 term))
+
+(trace product)
+(factorial 5)
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+>(product 1 #<procedure:...v3/ob-lY382a.rkt:10:13> 1 5)
+> (product 1 #<procedure:...v3/ob-lY382a.rkt:10:13> 2 5)
+> >(product 1 #<procedure:...v3/ob-lY382a.rkt:10:13> 3 5)
+> > (product 1 #<procedure:...v3/ob-lY382a.rkt:10:13> 4 5)
+> > >(product 1 #<procedure:...v3/ob-lY382a.rkt:10:13> 5 5)
+> > > (product 1 #<procedure:...v3/ob-lY382a.rkt:10:13> 6 5)
+< < < 1
+< < <5
+< < 20
+< <60
+< 120
+<120
+120
+#+end_example
+
+
+** Exercise 1.32a
+
+#+begin_quote
+Show that ~sum~ and ~product~ (exercise 1.31) are both special cases of a still more general notion called ~accumulate~ that combines a collection of terms, using some general accumulation function:
+
+#+BEGIN_EXAMPLE
+(accumulate combiner null-value term a next b)
+#+END_EXAMPLE
+
+~accumulate~ takes as arguments the same term and range specifications as sum and product, together with a combiner procedure (of two arguments) that specifies how the current term is to be combined with the accumulation of the preceding terms and a null-value that specifies what base value to use when the terms run out.
+Write ~accumulate~ and show how ~sum~ and ~product~ can both be defined as simple calls to ~accumulate~.
+#+end_quote
+
+#+BEGIN_SRC racket  :lang sicp
+(define (accumulate combiner null-value term a next b)
+  (if (> a b)
+      term
+      (accumulate combiner null-value (combiner (next a) term) (next a) next b)))
+#+END_SRC

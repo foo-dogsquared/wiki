@@ -1,0 +1,5 @@
+#+title: Linux drivers
+
+- [[https://everything-is-sheep.herokuapp.com/posts/on-developing-a-linux-driver=-][An overview from a student without prior experience]]
+- [[https://unix.stackexchange.com/questions/507687/graphic-tablet-veikk-pressure-sensitivity-on-linux][Creating a driver for a graphics tablet]] on Unix StackExchange
+- [[https://lwn.net/Kernel/LDD3/][The de-facto reference on creating Linux drivers]]

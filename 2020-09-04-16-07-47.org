@@ -1,0 +1,15 @@
+#+title: Nix package manager
+
+
+[[https://nixos.org/][Nix]] is a package manager that pioneered [[file:2020-09-19-08-31-48.org][Functional package management]] which addresses the criticisms of traditional Unix systems while making it as a specialized tool for [[file:reproducible-research.org][Reproducible research]].
+Holistically, Nix is made up of at least four components: the store, the language, the derivations, and the sandbox.
+
+- The store is a immutable centralized location where all of the outputs are placed.
+- The derivations are essentially build instructions.
+- The language (also called as Nix but we'll refer to it as Nixlang) is a domain-specific language for creating derivations.
+- The build process can be locked in a sandbox, improving the reproducibility of a setup and lowering the attack surface for a malicious package.
+
+Furthermore, it also offers one of the must-haves as a power user (in my opinion) which is declarative configuration.
+You can write the whole system configuration in a plain-text file giving you all of the little knobs and switches of the system.
+Even then, it also applies some abstraction if you don't want the full control which is an attractive option if you're looking for a quick setup.
+Finally, they are suitable to be used under a version control system like Git and Subversion giving more room for experimentation [fn:: As if the rollback feature for NixOS wasn't enough.] and control.
