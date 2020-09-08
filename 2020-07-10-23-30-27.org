@@ -1,7 +1,14 @@
-#+title: Endianness
+#+TITLE: Endianness
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-07-10 23:30:27+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:23:55+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
 
 
-- Tags :: [[file:computational-processes.org][Computational processes]]
+- Tags :: [[file:2020-06-03-15-21-42.org][Computational processes]]
 
 Endianness refers to how bits are read and this depends on the underlying hardware architecture.
 [fn:: You can enforce endianness in software but oftentimes, it is not a good idea.]

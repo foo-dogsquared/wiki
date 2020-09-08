@@ -1,10 +1,12 @@
 #+TITLE: Reproducible research: methodological principles for transparent science
-#+AUTHOR: Gabriel Arazas
-#+EMAIL: foo.dogsquared@gmail.com
-#+PROPERTY: header-args  :exports both
-#+TAGS: moocs writing
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-04-12 10:24:25+08:00"
+#+DATE_MODIFIED: "2020-09-09 04:57:37+08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+#+TAGS: moocs writing
 
 
 - Source :: https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/info
@@ -13,7 +15,7 @@
 I'm not a researcher but I've learned so many things from this course that are applicable to general workflows: organizing your digital files for easy retrieval, creating reproducible notes, and setting out to create reproducible studies with open formats.
 In my desktop workflow, I've managed to create a generic desktop search for my projects which also serves as an format-agnostic option for personal braindump/wiki which I'll taking notes of it somewhere.
 
-This is the notes for [[https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/info][Reproducible research: methodological prinicples for transparent science]], an open course on how to create [[file:reproducible-research.org][Reproducible research]] and notes with various tools.
+This is the notes for [[https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/info][Reproducible research: methodological prinicples for transparent science]], an open course on how to create [[file:2020-04-12-11-20-53.org][Reproducible research]] and notes with various tools.
 The course itself is divided into three paths for [[https://jupyter.org][Jupyter Notebooks]], R, and Org-Mode.
 There is also a [[https://gitlab.inria.fr/learninglab/mooc-rr/mooc-rr-ressources][dedicated Git repo with additional resources]] (most of them are in French but some come with English translations), be sure to check it out.
 
@@ -62,7 +64,7 @@ Examples include Markdown, Asciidoctor, Org-mode, and reStructuredText.
 
 ** Search tools and techniques
 
-I've created a dedicated note (see [[file:apply-search-tools-and-techniques-for-your-digital-library.org][Search tools and techniques]]) on this as derived from this course.
+I've created a dedicated note (see [[file:2020-06-27-16-21-47.org][Search tools and techniques]]) on this as derived from this course.
 
 With digital files comes digital tools (and some techniques) to help us in searching for our notes.
 These can vary from complex technologies to simple format-agnostic techniques that can make querying files with specific information to be a breeze.

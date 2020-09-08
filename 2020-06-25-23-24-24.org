@@ -1,5 +1,11 @@
-#+title: Structure and interpretation of computer programs
-#+PROPERTY: header-args    :exports both
+#+TITLE: Structure and interpretation of computer programs
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-06-02 12:41:43+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:07:10+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
 #+ROAM_TAGS: @fleeting
 
 

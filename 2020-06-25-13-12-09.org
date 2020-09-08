@@ -1,11 +1,18 @@
-#+title: Fleeting notes
+#+TITLE: Fleeting notes
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-06-25 13:12:09+08:00"
+#+DATE_MODIFIED: "2020-09-09 04:58:41+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
 
 
 Fleeting notes are a valuable scratchpad for our messy thoughts — it's natural to have a messy input since they are catered only to yourself.
-It is the opposite of [[file:evergreen-notes.org][Evergreen notes]] in a way that can represent your experimental side.
+It is the opposite of [[file:2020-05-07-21-53-21.org][Evergreen notes]] in a way that can represent your experimental side.
 
-With messy thoughts and inputs, you should [[file:20200625123723-write_fleeting_notes_to_free_your_mind_of_recalling.org][Create a writing inbox to store your thoughts]] all in one place.
-You could search through them with various search techniques to quickly retrieve them (see [[file:apply-search-tools-and-techniques-for-your-digital-library.org][Apply search tools and techniques for your digital library]]).
+With messy thoughts and inputs, you should [[file:2020-06-25-12-37-23.org][Create a writing inbox to store your thoughts]] all in one place.
+You could search through them with various search techniques to quickly retrieve them (see [[file:2020-06-27-16-21-47.org][Apply search tools and techniques for your digital library]]).
 In this note-taking system, you can make fleeting notes as your "messy" notebook containing wild ideas and with evergreen notes as your "neat" notebook containing solidified ideas.
 
 Ideally, all of your notes should be evergreen but there are times where a note is [[https://notes.andymatuschak.org/z2ZAGQBHuJ2u9WrtAQHAEHcCZTtqpsGkAsrD1][more suitable to be transient]] (e.g., course notes, book summaries) and that's OK.

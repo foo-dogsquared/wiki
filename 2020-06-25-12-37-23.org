@@ -1,14 +1,21 @@
-#+title: Create a writing inbox to store your thoughts
+#+TITLE: Create a writing inbox to store your thoughts
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-06-25 12:37:23+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:16:33+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
 
 
-One of the best practices for [[file:note-taking.org][Note-taking]] is writing [[file:20200625131209-fleeting_notes.org][Fleeting notes]] which are used to store essential information so that your brain doesn't have to.
+One of the best practices for [[file:2020-04-15-14-35-55.org][Note-taking]] is writing [[file:2020-06-25-13-12-09.org][Fleeting notes]] which are used to store essential information so that your brain doesn't have to.
 Our brain is not good for storing ideas, only creating and jumping between them.
 
 Since fleeting notes are only made for quickly capturing thoughts, its input is often messy.
 The very least we can do to consistently retrieve our messy thoughts is to put it in a place: a writing inbox where we store all of our fleeting notes.
 
 We can then revisit our inbox for recalling.
-In my case, I use the inbox for task management and writing [[file:evergreen-notes.org][Evergreen notes]].
+In my case, I use the inbox for task management and writing [[file:2020-05-07-21-53-21.org][Evergreen notes]].
 
 Like our emails, our writing inbox should be cleaned up each time we visit our inbox.
 Feel free to remove entries that are not in need and replace them with new ones.

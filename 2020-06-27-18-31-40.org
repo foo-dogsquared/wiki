@@ -1,11 +1,18 @@
-#+title: When reading mathematical texts, write down the simplest possible example
+#+TITLE: When reading mathematical texts, write down the simplest possible example
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-06-27 18:31:40+08:00"
+#+DATE_MODIFIED: "2020-09-09 04:58:42+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
 
 
 On practice, writing down the simplest possible examples allows you to get started working on the definitions.
 When you're done with the simplest possible example, you can then start with a more complicated example (relative to the simplest one) until you worked your way to a real mind-boggling example that really made you bang your head to a wall.
 This is one of the foundation to building mathematical intuition.
 
-That said, this habit can mold well into writing [[file:evergreen-notes.org][Evergreen notes]].
+That said, this habit can mold well into writing [[file:2020-05-07-21-53-21.org][Evergreen notes]].
 Since you're dealing with the simplest possible examples, you can write easy-to-understand notes which can help you retain information even more.
 This also makes a good transition in writing more complex topics and more complex examples.
 

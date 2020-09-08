@@ -1,8 +1,15 @@
 #+TITLE: The overview of a programming environment
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-06-09 06:21:37+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:18:47+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
 #+TAGS: compsci
 
 
-The study of [[file:computational-processes.org][Computational processes]] start with the study of a programming environment.
+The study of [[file:2020-06-03-15-21-42.org][Computational processes]] start with the study of a programming environment.
 The programming environment is mostly a given in programming but let's inspect and state some things (and some are obvious) about it.
 
 

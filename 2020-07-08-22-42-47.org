@@ -1,4 +1,11 @@
-#+title: When learning a new skill, begin with a specific end-goal to create a solid starting point
+#+TITLE: When learning a new skill, begin with a specific end-goal to create a solid starting point
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-07-08 22:42:47+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:23:10+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
 
 
 This top-bottom learning approach (i.e., specific to general topics) is often used by self-learners.
@@ -8,7 +15,7 @@ Most of the time, the process of skill acquisition happens similarly to the foll
 (As obvious as it seems, simply laying it out can add some perspectives [at least to me].)
 
 - Document your specific example (e.g., a website, a drawing, a 3D scene).
-  You can [[file:20200706034752-refer_to_advanced_resources_when_skill_building_for_a_solid_short_term_goal.org][Refer to advanced resources when skill-building for a solid short-term goal]] to clear your specific example similar to a final proof-reading before you submit your paper.
+  You can [[file:2020-07-06-03-47-52.org][Refer to advanced resources when skill-building for a solid short-term goal]] to clear your specific example similar to a final proof-reading before you submit your paper.
 - Then, try to learn the specific example.
 - For every unknown part of the example, try to understand the underlying concepts.
   If the underlying concept is not yet understood, then dig deeper into understanding the underlying concept of that underlying concept ad infinitum.
@@ -17,7 +24,7 @@ Most of the time, the process of skill acquisition happens similarly to the foll
 
 The general idea is having a specific example aids you in creating an outline of the related general concepts which in turn aids you into learning what you want to learn.
 You can easily see what gaps of knowledge should you fill to fully understand a specific concept whether it is simple, technical, or complex.
-I recommend to record the outline in a plain-text [[file:note-taking.org][Note-taking]] tool like [[file:org-mode.org][Org-mode]], Asciidoctor, or Markdown.
+I recommend to record the outline in a plain-text [[file:2020-04-15-14-35-55.org][Note-taking]] tool like [[file:2020-04-20-16-51-40.org][Org-mode]], Asciidoctor, or Markdown.
 
 Not every attempts of skill acquisition is suitable with this workflow with some skills need more experiments than others.
 The above workflow is more suitable to acquire advanced skills than entry-level skills where aiming for a perfect first try is (obviously) not an attractive goal.

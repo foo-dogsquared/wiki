@@ -1,7 +1,14 @@
-#+title: Nix package manager
+#+TITLE: Nix package manager
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-09-04 16:07:47+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:25:03+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
 
 
-[[https://nixos.org/][Nix]] is a package manager that pioneered [[file:2020-09-19-08-31-48.org][Functional package management]] which addresses the criticisms of traditional Unix systems while making it as a specialized tool for [[file:reproducible-research.org][Reproducible research]].
+[[https://nixos.org/][Nix]] is a package manager that pioneered [[file:2020-09-19-08-31-48.org][Functional package management]] which addresses the criticisms of traditional Unix systems while making it as a specialized tool for [[file:2020-04-12-11-20-53.org][Reproducible research]].
 Holistically, Nix is made up of at least four components: the store, the language, the derivations, and the sandbox.
 
 - The store is a immutable centralized location where all of the outputs are placed.

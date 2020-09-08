@@ -1,2 +1,0 @@
-#+TITLE: Precalculus review
-#+ROAM_TAGS: mathematics calculus

@@ -1,4 +1,11 @@
-#+title: Evergreen notes
+#+TITLE: Evergreen notes
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-05-07 21:53:21+08:00"
+#+DATE_MODIFIED: "2020-09-09 04:58:24+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
 
 
 My concept of evergreen notes is mainly inspired from [[https://notes.andymatuschak.org/z4SDCZQeRo4xFEQ8H4qrSqd68ucpgE6LU155C][Andy Matuschak's version]] in a way that focuses writing evergreen notes as a way of developing your knowledge.

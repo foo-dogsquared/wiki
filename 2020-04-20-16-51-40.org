@@ -1,0 +1,14 @@
+#+TITLE: Org-mode
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-04-20 16:51:40+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:17:29+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+#+TAGS: tools writing
+
+
+At its core, [[https://orgmode.org/][Org-mode]] is a [[file:2020-04-23-23-21-47.org][Personal information management]] tool that deals with your tasks and schedules.
+Nowadays, it sports a lightweight markup language and a framework that allows arbitrarily inserting output of code of various programming languages.
+With these features, Org-mode is known as one of the many tool for [[file:2020-04-12-11-20-53.org][Reproducible research]] which also serves as a solid tool for [[file:2020-04-15-14-35-55.org][Note-taking]] as well.

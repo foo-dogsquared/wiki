@@ -1,15 +1,21 @@
 #+TITLE: A good tagging system for files for reducing information overload
-#+TAGS: writing note-taking
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-06-24 14:33:42+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:16:34+08:00"
+#+LANGUAGE: en
 #+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+#+TAGS: writing note-taking
 
 
 Nowadays, topics are starting to be viewed toward heterogeneity — they are a system of intra-related concepts.
 In my ideal system, topics that seems unrelated can easily link to one another and easily retrieve them whenever I want.
-This should be taken into consideration when we do [[file:note-taking.org][Note-taking]].
+This should be taken into consideration when we do [[file:2020-04-15-14-35-55.org][Note-taking]].
 
 Moreover, non-textual files such as images and videos should be included within the retrieval.
 This is ideal especially if you want to create your personal library of various stuff from books, images, videos, etc.
-This will also make [[file:maintaining-a-digital-library.org][Maintaining a digital library]] way easier as it is one of the top priority to make your library easy to navigate and refer to certain resources (like real-life libraries).
+This will also make [[file:2020-04-14-18-28-55.org][Maintaining a digital library]] way easier as it is one of the top priority to make your library easy to navigate and refer to certain resources (like real-life libraries).
 
 A good tagging system should reduce information overload when we're searching for something.
 

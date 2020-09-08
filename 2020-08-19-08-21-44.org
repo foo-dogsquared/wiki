@@ -1,4 +1,11 @@
-#+title: GNU Guix
+#+TITLE: GNU Guix
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-08-19 08:21:44+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:24:30+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
 
 
 [[https://guix.gnu.org/][GNU Guix]] is a package manager that follows the footsteps of Nix in furthering [[file:2020-09-19-08-31-48.org][Functional package management]].

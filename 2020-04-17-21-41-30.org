@@ -1,10 +1,16 @@
 #+TITLE: Org-mode: Babel
-#+ROAM_TAGS: reproducible-research
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-04-17 21:41:30+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:13:08+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
 #+PROPERTIES: header-args :session  :exports both
+#+ROAM_TAGS: reproducible-research
 
 
-Org-babel is the framework that enables [[file:org-mode.org][Org-mode]] to insert output of the code from programming languages.
-It is also the one thing that makes Org-mode to be used as a tool for [[file:reproducible-research.org][Reproducible research]].
+Org-babel is the framework that enables [[file:2020-04-20-16-51-40.org][Org-mode]] to insert output of the code from programming languages.
+It is also the one thing that makes Org-mode to be used as a tool for [[file:2020-04-12-11-20-53.org][Reproducible research]].
 As of 2020-06-08, [[https://orgmode.org/worg/org-contrib/babel/languages.html][Babel supports more than 50 languages]] with the possibility of adding of other languages that are not supported yet.
 
 

@@ -1,4 +1,11 @@
-#+title: Functional package management
+#+TITLE: Functional package management
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-09-19 08:31:48+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:26:32+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
 
 
 Functional package management (FPM) is the next step forward [[https://edolstra.github.io/pubs/nixos-icfp2008-final.pdf][pioneered by Eelco Dolstra]] with [[https://nixos.org/][NixOS]] as the living implementation.
@@ -9,7 +16,7 @@ The conceptual overview of it is similar to [[file:2020-09-04-19-57-06.org][Func
 It views that packages are a unique result from combining different things: dependencies, build processes, versions, and more.
 If a dependency has updated its patch version or a build instruction has revised with one line of change, it will result in a "new" package as the output even if the package isn't any different.
 
-Coming from a functional approach, it also features statelessness and immutability, making it a reliable toolkit for [[https://reproducible-builds.org/][reproducible builds]] (thus gaining a reach for [[file:reproducible-research.org][Reproducible research]]).
+Coming from a functional approach, it also features statelessness and immutability, making it a reliable toolkit for [[https://reproducible-builds.org/][reproducible builds]] (thus gaining a reach for [[file:2020-04-12-11-20-53.org][Reproducible research]]).
 
 The problems that FPM attempts to solve come from the critique of the traditional package management which is still dominant as of today (2020-08-31).
 Here are some of the problems on a traditional Linux-based system:

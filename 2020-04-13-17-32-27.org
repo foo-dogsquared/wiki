@@ -1,8 +1,15 @@
 #+TITLE: File metadata
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-04-13 17:32:27+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:17:29+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
 
 
-File metadata is one of the most subtle requirements in [[file:personal-information-management.org][Personal information management]] (or at least, that's what I think).
-With the right tools such as desktop search engines (see [[file:desktop-search-engines.org][Add a desktop search engine for your digital library]]), you can quickly retrieve information as well as preserve some of its related information.
+File metadata is one of the most subtle requirements in [[file:2020-04-23-23-21-47.org][Personal information management]] (or at least, that's what I think).
+With the right tools such as desktop search engines (see [[file:2020-04-15-20-41-51.org][Add a desktop search engine for your digital library]]), you can quickly retrieve information as well as preserve some of its related information.
 [[https://en.wikipedia.org/wiki/Metadata][Each type of files have different ways of embedding metadata.]]
 
 - Image files such as JPEG or PNG, metadata are embedded in [[https://wikipedia.org/wiki/Exchangeable_image_file_format][Exchangeable image file format]] (EXIF) and you can modify it with various tools such as [[http://owl.phy.queensu.ca/~phil/exiftool/][ExifTool]].
@@ -13,7 +20,7 @@ However, modern standards such as [[https://fr.wikipedia.org/wiki/Extensible_Met
 Certain search engines such as Recoll and Tracker currently support searching metadata with XMP.
 
 To modify the metadata of a file, certain tools such as [[https://exiftool.org/][Exiftool]] and [[https://www.alfresco.com/][Alfresco]] exists.
-The process of manually adding metadata to non-textual files can be tedious but it may be worth the price if we're trying to retrieve some things especially for note-taking or [[file:maintaining-a-digital-library.org][Maintain your own digital library]].
+The process of manually adding metadata to non-textual files can be tedious but it may be worth the price if we're trying to retrieve some things especially for note-taking or [[file:2020-04-14-18-28-55.org][Maintain your own digital library]].
 This also makes note-taking more dynamic with non-textual files and leverages more attachment to each linked note.
 
 Beware about caring too much on metadata to the point of our metadata takes more space than the data themsevles.

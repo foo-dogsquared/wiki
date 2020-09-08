@@ -1,4 +1,12 @@
-#+title: Linux drivers
+#+TITLE: Linux drivers
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-09-09 05:27:17+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:27:35+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+
 
 - [[https://everything-is-sheep.herokuapp.com/posts/on-developing-a-linux-driver=-][An overview from a student without prior experience]]
 - [[https://unix.stackexchange.com/questions/507687/graphic-tablet-veikk-pressure-sensitivity-on-linux][Creating a driver for a graphics tablet]] on Unix StackExchange

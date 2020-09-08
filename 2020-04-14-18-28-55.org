@@ -1,4 +1,11 @@
 #+TITLE: Maintain your own digital library
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-04-14 18:28:55+08:00"
+#+DATE_MODIFIED: "2020-09-09 05:09:20+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
 
 
 Having your own digital library can be one of the most valuable thing for your life.
@@ -6,7 +13,7 @@ It is flexible in purpose: you can use it as a personal knowledge base, digital 
 
 A digital library should have the following features:
 
-- Easy to maintain (e.g., modifying [[file:file-metadata.org][File metadata]], adding more digital objects) which is the top priority.
+- Easy to maintain (e.g., modifying [[file:2020-04-13-17-32-27.org][File metadata]], adding more digital objects) which is the top priority.
 - Catalog the files using open standardized tools and specifications if available.
 - Provide an easy and reliable search interface with rich metadata.
 
