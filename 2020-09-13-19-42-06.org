@@ -1,0 +1,33 @@
+#+TITLE: Software packaging
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-09-13 19:42:06+08:00"
+#+DATE_MODIFIED: "2020-09-14 00:15:26+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+
+
+I've been dabbling with software packaging for a few days (as of 2020-09-13) and all I can say that it is a rewarding experience having to know different tools (e.g., build systems, version control systems).
+It even made me comfortable in exploring the source code of several projects unlike before.
+
+One of the most boring yet vital parts of maintaining a distribution (e.g., [[http://www.debian.org/][Debian]], [[http://archlinux.org/][Arch Linux]], [[https://www.freebsd.org/][FreeBSD]], [[https://www.microsoft.com/software-download/windows10][Windows 10]]) is software packaging.
+It allows for a more convenient software management process for the users and make the operating system more usable with more software readily available.
+As a consequence, derived distros can take advantage of the already existing package ecosystem of its parent distro (Ubuntu with Debian's package list, for instance).
+
+What makes Linux more comfortable to work with is how most of its distribution integrates package management within its users.
+[fn:: Windows is starting to catch up with its [[https://github.com/microsoft/winget-cli/][official package manager]] (along with others such as [[https://scoop.sh/][Scoop]] and [[https://chocolatey.org/][Chocolatey]]) but it happened decades after Linux have it already.
+Better late than never, I guess.]
+To install a package, you just need a package manager which is installed on most Linux-based systems (e.g., ~apt install $PKG~, ~pacman -S $PKG~, ~nix-env -i $PKG~, ~guix package -i $PKG~).
+
+Several of the problems I've encountered while practicing packaging (aside from unfamiliarity, of course) is of the following:
+
+- How distinct each project could be in case they don't follow the standard.
+  Not really a problem as most of them has documentation available for it.
+
+- Some of them are built with assumptions or a preset environment which may need patching.
+
+- Sparse documentation for building the software.
+  Some of them are particularly intuitive but in case it is lacking, you're on your own (unless they're open for discussions and pull requests).
+
+The process of software packaging might vary but in my case, it is pretty straightforward with [[file:2020-09-04-16-07-47.org][Nix package manager]] (though not-so-great with its [[https://nixos.org/learn.html][documentation]]) and even more so with [[file:2020-08-19-08-21-44.org][GNU Guix]] with its [[https://guix.gnu.org/help][open communication and well-made documentation]].

@@ -1,0 +1,15 @@
+#+TITLE: Human-friendly colorspaces
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-09-11 04:08:34+08:00"
+#+DATE_MODIFIED: "2020-09-11 04:15:06+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+
+
+- Tags :: [[file:2020-09-11-04-11-59.org][Computer graphics]]
+
+- [[https://www.hsluv.org/][HSLuv]]
+- [[https://www.kuon.ch/post/2020-03-08-hsluv/][This introductory article is a great resource on HSLuv]]
+- Human-friendly color scheme generation implementation based on [[https://terminal.sexy/][terminal.sexy]].

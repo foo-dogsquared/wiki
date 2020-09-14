@@ -1,0 +1,12 @@
+#+TITLE: Linked data
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-09-14 05:54:45+08:00"
+#+DATE_MODIFIED: "2020-09-14 05:55:52+08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+
+
+- [[http://lab.cccb.org/en/wikidata-the-new-rosetta-stone/][Wikidata is the new Rosetta Stone]]
+- [[https://github.com/Chocobozzz/PeerTube/issues/352][This discussion over at PeerTube]]
