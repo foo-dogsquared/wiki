@@ -1,8 +1,8 @@
-#+TITLE: Human-friendly colorspaces
+#+TITLE: Human-friendly color spaces
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-09-11 04:08:34+08:00"
-#+DATE_MODIFIED: "2020-09-11 04:15:06+08:00"
+#+DATE: "2020-09-11 04:08:34 +08:00"
+#+DATE_MODIFIED: "2020-09-19 19:06:18 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both
@@ -10,6 +10,10 @@
 
 - Tags :: [[file:2020-09-11-04-11-59.org][Computer graphics]]
 
-- [[https://www.hsluv.org/][HSLuv]]
-- [[https://www.kuon.ch/post/2020-03-08-hsluv/][This introductory article is a great resource on HSLuv]]
-- Human-friendly color scheme generation implementation based on [[https://terminal.sexy/][terminal.sexy]].
+As it turns out (from my perspective), different colorspaces have different purposes.
+
+- Screens usually use sRGB for consistency despite technology is advancing enough to create more capabilities for display.
+- Certain camera may use [[https://en.wikipedia.org/wiki/ProPhoto_RGB_color_space][ProPhoto RGB]] which consists beyond the human color space allowing for more vibrant photos.
+- Certain applications such as those from Adobe or anything that deals with photos and design make use of the [[https://en.wikipedia.org/wiki/Adobe_RGB_color_space][Adobe RGB]] or the [[https://en.wikipedia.org/wiki/Wide-gamut_RGB_color_space][wide-gamut RGB]].
+
+- [[https://www.boronine.com/2012/03/26/Color-Spaces-for-Human-Beings/][This introductory article how colorspaces work]]

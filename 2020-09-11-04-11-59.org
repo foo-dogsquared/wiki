@@ -1,8 +1,8 @@
 #+TITLE: Computer graphics
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-09-11 04:11:59+08:00"
-#+DATE_MODIFIED: "2020-09-11 04:13:31+08:00"
+#+DATE: "2020-09-11 04:11:59 +08:00"
+#+DATE_MODIFIED: "2020-09-11 04:13:31 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both

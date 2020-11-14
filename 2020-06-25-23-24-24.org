@@ -1,8 +1,8 @@
 #+TITLE: Structure and interpretation of computer programs
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-06-02 12:41:43+08:00"
-#+DATE_MODIFIED: "2020-09-09 05:07:10+08:00"
+#+DATE: "2020-06-02 12:41:43 +08:00"
+#+DATE_MODIFIED: "2020-09-12 01:21:36 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both
@@ -107,6 +107,14 @@ We can separate that step in a function like the following.
 #+END_SRC
 
 #+RESULTS:
+
+
+
+
+* Data abstractions
+
+The idea behind data abstractions is to make procedures in a way that doesn't make assumptions to our data.
+To make this possible, we have to separate the implementation of our data and the procedures that make use of that data.
 
 
 

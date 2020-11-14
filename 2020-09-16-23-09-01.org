@@ -1,0 +1,50 @@
+#+TITLE: Use timestamps for effectively future-proofing your stuff
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-09-16 23:09:01 +08:00"
+#+DATE_MODIFIED: "2020-09-17 03:11:19 +08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+
+
+One of the simplest ways to future-proof your documents with [[file:2020-04-13-17-32-27.org][File metadata]] is to create a timestamp.
+Specifically, two timestamps: one when it's created and one when it was last modified which will be continuously updated each time we modify the file.
+This lets you quickly evaluate whether the information is up-to-date.
+It also lets you [[file:2020-04-14-18-28-55.org][Maintain your own digital library]] with relative ease if your focus is on up-to-date information.
+
+In order to make updating the modification timestamp worth not to make it a chore, it is best to automate that task.
+[fn:: Besides, it is only a chore for the first time versus $x$ amount of times.]
+
+Different files may be applied differently as long as we can create a unified interface to search through them all.
+(See [[file:2020-04-13-17-32-27.org][File metadata]] for more information about it.)
+
+Here's a special example with [[file:2020-04-20-16-51-40.org][Org-mode]] documents:
+
+#+BEGIN_SRC org  :exports none
+\#+DATE: "2020-09-16 23:53:00 +08:00"
+\#+DATE_MODIFIED: "2020-09-17 10:33:42 +08:00"
+#+END_SRC
+
+Thankfully, Emacs has a [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Time-Stamps.html][time stamp]] feature that abstracts that for us.
+We can then attach the timestamp update with a [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Hooks.html#Hooks][hook]] that will occur before saving the file and voila!
+Automated timestamp for our text documents.
+
+Here's my (Doom Emacs) specific config as of 2020-09-17 for future references:
+
+#+BEGIN_SRC elisp
+(after org!
+  (setq
+    ; Set a custom time-stamp pattern.
+    ; Even though, it's not recommended, most of the time,
+    time-stamp-start "DATE_MODIFIED:[ 	]+\\\\?[\"<]+"))
+
+; Modify the time-stamp with each save.
+(setq time-stamp-format "%Y-%02m-%02d %02H:%02M:%02S%:z")
+(add-hook 'before-save-hook 'time-stamp)
+#+END_SRC
+
+This should be easily replicated to other editors.
+All you need from a text editor is the hooks and a search-and-replace feature [fn:: Maybe an option limiting the lines to be searched to prevent large search sessions as well.].
+
+For binary files, we can set the timestamp with a metadata writer then use a filesystem watcher and configure it to execute every time the file changes.

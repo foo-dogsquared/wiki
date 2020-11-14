@@ -1,0 +1,12 @@
+#+TITLE: Web annotations
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-10-30 00:49:22 +08:00"
+#+DATE_MODIFIED: "2020-10-30 01:04:35 +08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+
+
+- https://beepb00p.xyz/annotating.html
+- https://beepb00p.xyz/pkm-setup.html

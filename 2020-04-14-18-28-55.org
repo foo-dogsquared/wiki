@@ -1,11 +1,12 @@
 #+TITLE: Maintain your own digital library
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-04-14 18:28:55+08:00"
-#+DATE_MODIFIED: "2020-09-09 05:09:20+08:00"
+#+DATE: "2020-04-14 18:28:55 +08:00"
+#+DATE_MODIFIED: "2020-09-14 23:28:48 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both
+#+TAGS: pim
 
 
 Having your own digital library can be one of the most valuable thing for your life.

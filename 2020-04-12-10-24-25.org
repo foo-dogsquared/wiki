@@ -1,15 +1,15 @@
 #+TITLE: Reproducible research: methodological principles for transparent science
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-04-12 10:24:25+08:00"
-#+DATE_MODIFIED: "2020-09-09 04:57:37+08:00"
+#+DATE: "2020-04-12 10:24:25 +08:00"
+#+DATE_MODIFIED: "2020-10-06 14:55:12 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both
 #+TAGS: moocs writing
 
 
-- Source :: https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/info
+- Source :: https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/about
 
 
 I'm not a researcher but I've learned so many things from this course that are applicable to general workflows: organizing your digital files for easy retrieval, creating reproducible notes, and setting out to create reproducible studies with open formats.

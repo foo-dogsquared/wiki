@@ -1,14 +1,36 @@
 #+TITLE: GNU Guix
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-08-19 08:21:44+08:00"
-#+DATE_MODIFIED: "2020-09-09 05:24:30+08:00"
+#+DATE: "2020-08-19 08:21:44 +08:00"
+#+DATE_MODIFIED: "2020-09-13 12:38:17 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both
 
 
-[[https://guix.gnu.org/][GNU Guix]] is a package manager that follows the footsteps of Nix in furthering [[file:2020-09-19-08-31-48.org][Functional package management]].
+[[https://guix.gnu.org/][GNU Guix]] is a package manager that follows the footsteps of [[file:2020-09-04-16-07-47.org][Nix package manager]] in furthering [[file:2020-09-19-08-31-48.org][Functional package management]].
+As such, it addresses the concerns and the previous mistakes that the Nix community made while developing the software.
+
+Similar to Nix, the team behind the package manager has created a system around it called *GuixSD*.
+With the [[https://guix.gnu.org/manual/en/html_node/][diverse functions of Guix]] as a general-purpose package manager, it can be considered as [[https://ambrevar.xyz/guix-advance/][one of the most advanced distros ever made]] (at least as of 2020-09-13).
+[fn:: With the added bonus of being created behind one of the figureheads that stands for software freedom, this is greater than one could expect when it comes to fully free Linux distros.]
+
+One of the biggest (and most obvious) change is the usage of a general purpose language called [[https://www.gnu.org/software/guile/][GNU Guile]] instead of handrolling a custom language (e.g., [[https://nixos.org/manual/nix/stable/][Nix]]).
+This takes advantage of the already existing ecosystem (e.g., linter, analyzer, editor integrations) of Guile on top of the package manager.
+Being a general purpose also means a lot of possible ways to do one thing (and also shoot your foot) and with the extensibility of Guile (e.g., embedded languages, syntax), it furthers the idea of integrations of different ideas in one language.
+
+Another one of the differences between Guix and Nix is the focus.
+The community of Guix is more focused to the following fields:
+
+- [[https://reproducible-builds.org/][Reproducibility]] which already exists with the how functional package management works but with improvements such as [[https://guix.gnu.org/manual/en/html_node/Substitutes.html#Substitutes][substitutes]], [[https://guix.gnu.org/blog/2020/grafts-continued/][grafts]], and integration with other projects such as [[https://www.gnu.org/software/guix/blog/2019/connecting-reproducible-deployment-to-a-long-term-source-code-archive/][Software Heritage]] and [[https://guix.gnu.org/manual/en/html_node/Security-Updates.html][Common Vulnerabilities and Exposures (CVE)]].
+- [[http://bootstrappable.org/][Bootstrappable builds]] which [[https://guix.gnu.org/manual/en/html_node/Bootstrapping.html#Bootstrapping][includes various functions]] to setup your distribution from scratch.
+- [[https://hpc.guix.info/][High-performance computing]] for enabling scientific workflows with [[file:2020-04-12-11-20-53.org][Reproducible research]].
+- Empowering individual users which is emphasized further with the ability to [[https://hpc.guix.info/blog/2017/10/using-guix-without-being-root/][installing packages without root privileges]], [[https://guix.gnu.org/manual/en/html_node/Invoking-guix-environment.html#Invoking-guix-environment][creating development environments]] similar to Python's virtualenv, and [[https://www.gnu.org/software/guix/manual/en/html_node/Channels.html][using channels]].
+
+
+
+
+* Resources
 
 - [[https://guix.gnu.org/cookbook/][GNU Guix cookbook]]
 - [[http://www.gnu.org/software/guix/blog/2018/a-packaging-tutorial-for-guix/][GNU Guix packaging tutorial]]

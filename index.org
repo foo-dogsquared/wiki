@@ -1,4 +1,12 @@
 #+TITLE: Index
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-09-07 05:49:06 +08:00"
+#+DATE_MODIFIED: "2020-09-09 05:49:21 +08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+
 
 Hello!
 This is my public knowledge graph publicly available for the public.

@@ -1,8 +1,8 @@
 #+TITLE: Endianness
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-07-10 23:30:27+08:00"
-#+DATE_MODIFIED: "2020-09-09 05:23:55+08:00"
+#+DATE: "2020-07-10 23:30:27 +08:00"
+#+DATE_MODIFIED: "2020-09-09 05:23:55 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both

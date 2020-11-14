@@ -1,8 +1,8 @@
 #+TITLE: Create a writing inbox to store your thoughts
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-06-25 12:37:23+08:00"
-#+DATE_MODIFIED: "2020-09-09 05:16:33+08:00"
+#+DATE: "2020-06-25 12:37:23 +08:00"
+#+DATE_MODIFIED: "2020-09-09 05:16:33 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both

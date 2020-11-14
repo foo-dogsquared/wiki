@@ -1,8 +1,8 @@
 #+TITLE: Apply search tools and techniques for your digital library
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-06-27 16:21:47+08:00"
-#+DATE_MODIFIED: "2020-09-09 05:09:41+08:00"
+#+DATE: "2020-06-27 16:21:47 +08:00"
+#+DATE_MODIFIED: "2020-09-09 05:09:41 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+ROAM_TAGS: pim

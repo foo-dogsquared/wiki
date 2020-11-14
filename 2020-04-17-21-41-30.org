@@ -1,8 +1,8 @@
 #+TITLE: Org-mode: Babel
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-04-17 21:41:30+08:00"
-#+DATE_MODIFIED: "2020-09-09 05:13:08+08:00"
+#+DATE: "2020-04-17 21:41:30 +08:00"
+#+DATE_MODIFIED: "2020-09-19 17:53:44 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTIES: header-args :session  :exports both
@@ -53,7 +53,6 @@ splot x**2+y**2, x**2-y**2
 #+END_SRC
 
 #+RESULTS:
-[[file:wooosh.png]]
 
 With Org-babel, you can share either the output, the code used to generate the output, or both.
 This is commonly set with the ~:exports~ header argument.

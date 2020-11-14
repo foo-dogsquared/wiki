@@ -1,0 +1,38 @@
+#+TITLE: GNU Guix packaging
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-09-14 22:25:10 +08:00"
+#+DATE_MODIFIED: "2020-09-14 23:53:35 +08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+
+
+Practicing [[file:2020-09-13-19-42-06.org][Software packaging]] in [[file:2020-08-19-08-21-44.org][GNU Guix]] is pretty straightforward with several tools that the package manager provides.
+With things like importers, build systems, and light abstractions, it can spark joy packaging with Guix.
+
+
+
+
+* Getting started
+
+The following instructions assumes you have Guix installed.
+
+To start hacking into Guix packages, clone the Git repo of the Guix packages (i.e., <GUIX_GIT_REPO>).
+Once you have the Git repo ready, you may want to develop in an isolated environment.
+This is a perfect use case for Guix with ~guix environment~ command.
+
+The following is an example of an environment created with the Guix package manager:
+
+#+BEGIN_SRC shell
+guix environment --pure guix --ad-hoc coreutils ripgrep neovim emacs
+#+END_SRC
+
+This creates a =virtualenv=-like environment with the packages listed with ~--ad-hoc~ (e.g., GNU Coreutils, Neovim, Emacs).
+
+To start making changes, you need to create a branch first to avoid conflicts in the master branch (e.g., ~git checkout -b $BRANCH~).
+
+The project structure brings all of the things together: Guix package manager implementation, package definitions, and documentation.
+The packages are located in =gnu/packages= conveniently due to how Guile modules work.
+(If you're not familiar with GNU Guile, the rule of thumb is that one module per file and the module name must match the location it's in (e.g., ~gnu packages rust-apps~ is in =gnu/packages/rust-apps.scm=).
+Furthermore, all items inside of a module are private by default unless declared to be public.)

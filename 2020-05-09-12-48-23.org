@@ -1,8 +1,8 @@
 #+TITLE: Roam Research
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-05-09 12:48:23+08:00"
-#+DATE_MODIFIED: "2020-09-09 05:17:30+08:00"
+#+DATE: "2020-05-09 12:48:23 +08:00"
+#+DATE_MODIFIED: "2020-09-09 05:17:30 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both

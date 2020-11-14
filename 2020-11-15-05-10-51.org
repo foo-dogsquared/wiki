@@ -1,0 +1,32 @@
+#+TITLE: Accounting basics
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "%![Error: (void-function user-mail-address)]"
+#+DATE: "2020-11-15 05:10:51 +08:00"
+#+DATE_MODIFIED: "2020-11-15 05:11:23 +08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+
+
+Accounting is knowing how much we have.
+Bookkeeping is the practice of tracking and classifying various financial moves.
+
+Bookkeeping can make financial management less stressful (and some might say, enjoyable).
+You can easily know what you have: disposable income, loans, credits, etc.
+On the other hand, it is also legally required for business to keep track of it.
+
+In accounting, the basic unit of operations are *transactions*.
+Transactions are seen everywhere — you've done a transaction when you've bought your laptop, ordered some food, delivered a package, etc.
+
+To make a transaction, an *account* is used as a marker or label for the two sides.
+For example, a transaction for buying a laptop with cash is made of two accounts for the cash and the laptop.
+
+In personal financing, there are said five common accounts:
+
+- Assets which are composed of your bank account, wallet, real estate, and investments.
+- Liabilities which is something you owe (e.g., mortgages, loans).
+- Income, another term for revenue, is your paychecks, received gifts, and interests.
+- Expenses including groceries and bills, given gifts, and donations.
+- Equity is everything else.
+
+Each transaction is made up of two components usually referred as *debit* and *credits*.

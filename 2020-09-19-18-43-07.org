@@ -1,0 +1,139 @@
+#+TITLE: Generating human-friendly color schemes
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-09-19 18:43:07 +08:00"
+#+DATE_MODIFIED: "2020-09-29 06:08:42 +08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+
+
+Though we already have [[file:2020-09-11-04-08-34.org][Human-friendly colorspaces]], it doesn't mean that we can simply generate human-friendly color schemes.
+Certain colors can be perceived as too bright or too dark and having them grouped in a color palette will look out-of-place and/or horrible.
+
+Color spaces such as [[https://www.hsluv.org/][HSLuv]] and [[https://en.wikipedia.org/wiki/CIELUV][CIELUV]] respects perceptual uniformity which approximates how human vision see things.
+We can simply generate colors with the aforementioned color spaces.
+Here's an example of a [[http://chriskempson.com/projects/base16/][Base16]] color scheme generation from [[https://terminal.sexy/][terminal.sexy]] ported to Rust.
+
+#+BEGIN_SRC rust
+use std::error::Error;
+use std::collections::HashMap;
+use std::env;
+
+use hsluv;
+use rand_chacha::ChaCha8Rng;
+use rand::{Rng, SeedableRng};
+
+#[macro_use]
+use serde::{Deserialize, Serialize};
+
+
+// Based from the implemention at terminal.sexy repo
+// at https://github.com/stayradiated/terminal.sexy/blob/2e2c9bec994723a657cce8bf708d83879a50c0ce/lib/stores/random.js
+// which in turn based from the demo example at https://www.hsluv.org/syntax/.
+type Colors = HashMap<String, String>;
+
+#[derive(Serialize, Deserialize, Debug)]
+struct SpecialColors {
+  background: String,
+  foreground: String,
+  cursor: String,
+}
+
+impl SpecialColors {
+  pub fn new() -> Self {
+    Self {
+      background: String::from("#000000"),
+      foreground: String::from("#000000"),
+      cursor: String::from("#000000")
+    }
+  }
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+struct PywalObject {
+  #[serde(default)]
+  alpha: u8,
+
+  special: SpecialColors,
+
+  colors: Colors,
+
+  wallpaper: Option<String>,
+}
+
+impl PywalObject {
+  pub fn new() -> Self {
+    Self {
+      alpha: 255,
+      special: SpecialColors::new(),
+      colors: Colors::new(),
+      wallpaper: None
+    }
+  }
+}
+
+/// The command-line interface simply needs a seed to be parsed as an unsigned 64-bit integer (`u64`).
+fn main() -> Result<(), Box<dyn Error>> {
+  let args: Vec<String> = env::args().collect();
+  let mut result = PywalObject::new();
+
+  let mut rng = match args.get(1) {
+    Some(arg) => ChaCha8Rng::seed_from_u64(arg.parse::<u64>()?),
+    None => ChaCha8Rng::from_entropy()
+  };
+
+  // 6 hues to pick from
+  let base_hue: f64 = rng.gen_range(0.0, 360.0);
+  let hues: Vec<f64> = ([0.0, 60.0, 120.0, 180.0, 240.0, 300.0])
+        .iter()
+        .map(|offset| (base_hue + offset) % 360.0)
+        .collect();
+
+  //  8 shades of low-saturated color
+  let base_saturation: f64 = rng.gen_range(8.0, 40.0);
+  let base_lightness: f64 = rng.gen_range(0.0, 10.0);
+  let range_lightness: f64 = 90.0 - base_lightness;
+
+  result.special.background = hsluv::hsluv_to_hex(
+    (hues[0],
+    base_saturation,
+    base_lightness / 2.0)
+  );
+
+  result.special.foreground = hsluv::hsluv_to_hex(
+    (hues[0],
+    base_saturation,
+    range_lightness)
+  );
+
+  result.special.cursor = result.special.foreground.clone();
+
+  // Setting the colors according to the Base16 spec at http://chriskempson.com/projects/base16.
+  for i in 0..7 {
+    result.colors.insert(format!("color{}", i), hsluv::hsluv_to_hex(
+      (hues[0], base_saturation, base_lightness + (range_lightness * ((i as f64)/7.0).powf(1.5)))
+    ));
+  }
+
+  // 8 random shades
+  let min_saturation: f64 = rng.gen_range(30.0, 70.0);
+  let max_saturation: f64 = min_saturation + 30.0;
+  let min_lightness: f64 = rng.gen_range(50.0, 70.0);
+  let max_lightness: f64 = min_lightness + 20.0;
+
+  for j in 8..16 {
+    result.colors.insert(format!("color{}", j), hsluv::hsluv_to_hex(
+      (hues[rng.gen_range(0, hues.len() - 1)], rng.gen_range(min_saturation, max_saturation), rng.gen_range(min_lightness, max_lightness))
+    ));
+  }
+
+  println!("{:?}", result);
+  Ok(())
+}
+#+END_SRC
+
+- [[https://www.hsluv.org/][HSLuv]]
+- [[https://www.kuon.ch/post/2020-03-08-hsluv/][This introductory article is a great resource on HSLuv]]
+- [[https://www.boronine.com/2012/03/26/Color-Spaces-for-Human-Beings/][Color spaces for human beings]]
+- Human-friendly color scheme generation implementation based on [[https://terminal.sexy/][terminal.sexy]].

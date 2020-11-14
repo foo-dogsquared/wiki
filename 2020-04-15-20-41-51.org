@@ -1,8 +1,8 @@
 #+TITLE: Add a desktop search engine for your digital library
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-04-15 20:41:51+08:00"
-#+DATE_MODIFIED: "2020-09-09 05:09:41+08:00"
+#+DATE: "2020-04-15 20:41:51 +08:00"
+#+DATE_MODIFIED: "2020-09-09 05:09:41 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both

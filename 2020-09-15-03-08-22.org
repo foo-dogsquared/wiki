@@ -1,0 +1,13 @@
+#+TITLE: Create package definitions for missing dependencies first before the package itself
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-09-15 03:08:22 +08:00"
+#+DATE_MODIFIED: "2020-09-15 03:18:37 +08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+
+
+Certain ecosystems like in [[file:2020-09-04-16-07-47.org][Nix package manager]] with [[https://github.com/NixOS/nixpkgs][nixpkgs]] or [[file:2020-08-19-08-21-44.org][GNU Guix]] within their own packages follow a standard (officially) [fn:: If not, you can freely ~make build~ all you want.] about making sure all dependencies are present first before building the package.
+Smaller libraries often go through this and so, you need to package the dependencies first.
+It also helps with creating a global definition for other packages that requires those small libraries.

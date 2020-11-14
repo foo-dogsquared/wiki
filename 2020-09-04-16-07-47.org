@@ -1,8 +1,8 @@
 #+TITLE: Nix package manager
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-09-04 16:07:47+08:00"
-#+DATE_MODIFIED: "2020-09-09 05:25:03+08:00"
+#+DATE: "2020-09-04 16:07:47 +08:00"
+#+DATE_MODIFIED: "2020-09-09 05:25:03 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both

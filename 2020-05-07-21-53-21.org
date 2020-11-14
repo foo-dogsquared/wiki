@@ -1,11 +1,12 @@
 #+TITLE: Evergreen notes
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-05-07 21:53:21+08:00"
-#+DATE_MODIFIED: "2020-09-09 04:58:24+08:00"
+#+DATE: "2020-05-07 21:53:21 +08:00"
+#+DATE_MODIFIED: "2020-09-14 23:28:18 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both
+#+TAGS: pim writing
 
 
 My concept of evergreen notes is mainly inspired from [[https://notes.andymatuschak.org/z4SDCZQeRo4xFEQ8H4qrSqd68ucpgE6LU155C][Andy Matuschak's version]] in a way that focuses writing evergreen notes as a way of developing your knowledge.
@@ -24,7 +25,7 @@ With that said, writing an evergreen note has no absolute rule.
 Furthermore, you shouldn't focus too much on how to write effectively since [[https://notes.andymatuschak.org/z8V2q398qu89vdJ73N2BEYCgevMqux3yxQUAC][most note-taking practices are generally ineffective]].
 Focusing on it is a distraction to the very objective of creating evergreen notes: [[https://notes.andymatuschak.org/z6cFzJWgj9vZpnrQsjrZ8yCNREzCTgyFeVZTb][developing insights]].
 
-To start writing an evergreen note, you could start with your [[file:20200625131209-fleeting_notes.org][Fleeting notes]] and outline the main ideas.
+To start writing an evergreen note, you could start with your [[file:2020-06-25-13-12-09.org][Fleeting notes]] and outline the main ideas.
 An evergreen note does not have to be finished within one sitting.
 In fact, it is preferred to build it incrementally, editing the note as you go developing insights.
 (It is previously mentioned that evergreen notes should be taken with you, after all.)

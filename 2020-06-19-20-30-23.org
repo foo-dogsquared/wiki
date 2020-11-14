@@ -1,8 +1,8 @@
 #+TITLE: Writing clean code
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-06-19 20:30:23+08:00"
-#+DATE_MODIFIED: "2020-09-09 05:19:39+08:00"
+#+DATE: "2020-06-19 20:30:23 +08:00"
+#+DATE_MODIFIED: "2020-09-09 05:19:39 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both
