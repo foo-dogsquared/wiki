@@ -2,14 +2,14 @@
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
 #+DATE: "2020-07-08 22:42:47 +08:00"
-#+DATE_MODIFIED: "2020-09-09 05:23:10 +08:00"
+#+DATE_MODIFIED: "2020-12-05 21:43:46 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both
 
 
 This top-bottom learning approach (i.e., specific to general topics) is often used by self-learners.
-It usually involves something like wanting to create a 2.5D fighting game rivalling [[https://en.wikipedia.org/wiki/Arc_System_Works][Arc System Works]], a gorgeous anime-inspired illustration, a flashy short animation, or a cool-looking demoscene.
+It usually involves something like wanting to create a 2.5D fighting game rivalling [[https://en.wikipedia.org/wiki/Arc_System_Works][Arc System Works]], a gorgeous anime-inspired illustration, [[https://www.youtube.com/watch?v=TF9I1GxNdJQ][a flashy short animation]], or [[https://www.youtube.com/watch?v=ZwR0zFe57Y4][a cool-looking demoscene]].
 
 Most of the time, the process of skill acquisition happens similarly to the following workflow with varying effectiveness.
 (As obvious as it seems, simply laying it out can add some perspectives [at least to me].)
@@ -21,6 +21,9 @@ Most of the time, the process of skill acquisition happens similarly to the foll
   If the underlying concept is not yet understood, then dig deeper into understanding the underlying concept of that underlying concept ad infinitum.
 - With the tree of to-be-understood underlying concepts, take a peek between each underlying concepts  of various depths until you can easily see the connections between them.
 - Work your way up the knowledge tree you've just created until you can reproduce/create the example with your newfound hierarchical knowledge.
+
+The gist of the above list is to create your roadmap.
+That way, it doesn't lead you into aimlessly learning stuff and get you efficient in upping your skill level.
 
 The general idea is having a specific example aids you in creating an outline of the related general concepts which in turn aids you into learning what you want to learn.
 You can easily see what gaps of knowledge should you fill to fully understand a specific concept whether it is simple, technical, or complex.

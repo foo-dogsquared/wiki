@@ -1,0 +1,14 @@
+#+TITLE: When beginning with 3D modelling, start with low-poly style
+#+AUTHOR: "Gabriel Arazas"
+#+EMAIL: "foo.dogsquared@gmail.com"
+#+DATE: "2020-12-05 19:37:40 +08:00"
+#+DATE_MODIFIED: "2020-12-05 21:38:07 +08:00"
+#+LANGUAGE: en
+#+OPTIONS: toc:t
+#+PROPERTY: header-args  :exports both
+
+
+When you start with 3D modelling, you can start with low-poly style since it has the least amount of detail required thus get you efficient.
+The skills to create 3D illustrations are mostly the same with drawing: observation, spatial reasoning, compositions, and a sense of detail.
+
+Once you're familiar with the low-poly style, you can then add more details to move into a realistic style or exaggerate them to create a stylized version of the model.

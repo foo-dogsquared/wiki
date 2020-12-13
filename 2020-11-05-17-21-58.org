@@ -2,7 +2,7 @@
 #+AUTHOR: "Gabriel Arazas"
 #+EMAIL: "foo.dogsquared@gmail.com"
 #+DATE: "2020-11-05 17:21:58 +08:00"
-#+DATE_MODIFIED: "2020-11-14 20:42:31 +08:00"
+#+DATE_MODIFIED: "2020-11-19 19:32:26 +08:00"
 #+LANGUAGE: en
 #+OPTIONS: toc:t
 #+PROPERTY: header-args  :exports both
@@ -23,7 +23,7 @@ Here's the procedure for the color sections.
 - For ~base00~, invert the lightness of the color by $\pm20$ (e.g., $20$ if it's dark, $80$ if it's bright).
 - For ~base01~ to ~base07~, add the lightness by $\pm5$ to $\pm10$.
   You can make additional tweaks for all of the parameters (e.g., hue, saturation, lightness) of the color.
-- On ~base08~ to ~base0F~, you can make a uniquely randomized color palette as long as it contains at least 3 colors.
+- On ~base08~ to ~base0F~, you can make a uniquely randomized color palette as long as it is recognizable (ideally with at least 3 colors).
 
 What if we want to make changes to the generation process?
 One way to do it is to separate the hardcoded process into a configuration.
