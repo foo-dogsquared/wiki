@@ -1,11 +1,11 @@
-#+TITLE: Bidirectional links
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-06-28 06:19:24 +08:00"
-#+DATE_MODIFIED: "2020-09-09 05:16:33 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Bidirectional links
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-06-28 06:19:24 +08:00"
+#+date_modified: "2020-09-09 05:16:33 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 Ever since [[file:2020-05-09-12-48-23.org][Roam Research]] became a popular option for [[file:2020-04-15-14-35-55.org][Note-taking]], there has been interest in one of its popular features: bidirectional linking.

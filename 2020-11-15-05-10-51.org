@@ -1,11 +1,11 @@
-#+TITLE: Accounting basics
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "%![Error: (void-function user-mail-address)]"
-#+DATE: "2020-11-15 05:10:51 +08:00"
-#+DATE_MODIFIED: "2020-11-15 05:11:23 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Accounting basics
+#+author: "Gabriel Arazas"
+#+email: "%![Error: (void-function user-mail-address)]"
+#+date: "2020-11-15 05:10:51 +08:00"
+#+date_modified: "2020-11-15 05:11:23 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 Accounting is knowing how much we have.

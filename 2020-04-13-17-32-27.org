@@ -1,11 +1,11 @@
-#+TITLE: File metadata
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-04-13 17:32:27 +08:00"
-#+DATE_MODIFIED: "2020-09-09 05:17:29 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: File metadata
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-04-13 17:32:27 +08:00"
+#+date_modified: "2020-09-09 05:17:29 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 File metadata is one of the most subtle requirements in [[file:2020-04-23-23-21-47.org][Personal information management]] (or at least, that's what I think).

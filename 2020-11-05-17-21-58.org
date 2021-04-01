@@ -1,11 +1,11 @@
-#+TITLE: Generate a color scheme based from a single color
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-11-05 17:21:58 +08:00"
-#+DATE_MODIFIED: "2020-11-19 19:32:26 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Generate a color scheme based from a single color
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-11-05 17:21:58 +08:00"
+#+date_modified: "2020-11-19 19:32:26 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 [[file:2020-09-19-18-43-07.org][Generating human-friendly color schemes]] has always been a disaster (for me) to figure out especially with no cursory knowledge whatsoever on color theory.

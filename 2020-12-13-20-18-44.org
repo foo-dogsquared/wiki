@@ -1,11 +1,11 @@
-#+TITLE: Graphic design
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-12-13 20:18:44 +08:00"
-#+DATE_MODIFIED: "2020-12-13 20:26:04 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Graphic design
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-12-13 20:18:44 +08:00"
+#+date_modified: "2020-12-13 20:26:04 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 You see graphic design being used everywhere including in websites, movie posters, books (covers and everything), chocolate boxes, and glass cases.

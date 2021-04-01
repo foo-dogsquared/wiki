@@ -1,11 +1,11 @@
-#+TITLE: GNU Guix packaging
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-09-14 22:25:10 +08:00"
-#+DATE_MODIFIED: "2020-09-14 23:53:35 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: GNU Guix packaging
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-09-14 22:25:10 +08:00"
+#+date_modified: "2020-09-14 23:53:35 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 Practicing [[file:2020-09-13-19-42-06.org][Software packaging]] in [[file:2020-08-19-08-21-44.org][GNU Guix]] is pretty straightforward with several tools that the package manager provides.
@@ -24,9 +24,9 @@ This is a perfect use case for Guix with ~guix environment~ command.
 
 The following is an example of an environment created with the Guix package manager:
 
-#+BEGIN_SRC shell
+#+begin_src shell
 guix environment --pure guix --ad-hoc coreutils ripgrep neovim emacs
-#+END_SRC
+#+end_src
 
 This creates a =virtualenv=-like environment with the packages listed with ~--ad-hoc~ (e.g., GNU Coreutils, Neovim, Emacs).
 

@@ -1,11 +1,11 @@
-#+TITLE: Endianness
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-07-10 23:30:27 +08:00"
-#+DATE_MODIFIED: "2020-09-09 05:23:55 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Endianness
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-07-10 23:30:27 +08:00"
+#+date_modified: "2020-09-09 05:23:55 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 - Tags :: [[file:2020-06-03-15-21-42.org][Computational processes]]

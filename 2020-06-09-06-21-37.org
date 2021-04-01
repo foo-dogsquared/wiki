@@ -1,12 +1,12 @@
-#+TITLE: The overview of a programming environment
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-06-09 06:21:37 +08:00"
-#+DATE_MODIFIED: "2020-09-09 05:18:47 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
-#+TAGS: compsci
+#+title: The overview of a programming environment
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-06-09 06:21:37 +08:00"
+#+date_modified: "2020-09-09 05:18:47 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
+#+tags: compsci
 
 
 The study of [[file:2020-06-03-15-21-42.org][Computational processes]] start with the study of a programming environment.
@@ -55,12 +55,12 @@ For this, a way to conditionally evaluate a value is a must for a programming la
 
 Here's an example function of getting the absolute value of a number.
 
-#+BEGIN_SRC scheme  :results silent
+#+begin_src scheme  :results silent
 (define (abs x)
   (cond
    ((< x 0) (- x))
    (else x)))
-#+END_SRC
+#+end_src
 
 
 

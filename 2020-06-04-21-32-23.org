@@ -1,11 +1,11 @@
-#+TITLE: Create evergreen notes with a digital garden
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-06-04 21:32:23 +08:00"
-#+DATE_MODIFIED: "2020-09-09 05:16:33 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Create evergreen notes with a digital garden
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-06-04 21:32:23 +08:00"
+#+date_modified: "2020-09-09 05:16:33 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 A [[https://github.com/MaggieAppleton/digital-gardeners][digital garden]] is a your space for creating carefully crafted notes (see [[file:2020-05-07-21-53-21.org][Evergreen notes]]).

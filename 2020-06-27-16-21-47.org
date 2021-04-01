@@ -1,11 +1,11 @@
-#+TITLE: Apply search tools and techniques for your digital library
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-06-27 16:21:47 +08:00"
-#+DATE_MODIFIED: "2020-09-09 05:09:41 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+ROAM_TAGS: pim
+#+title: Apply search tools and techniques for your digital library
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-06-27 16:21:47 +08:00"
+#+date_modified: "2020-09-09 05:09:41 +08:00"
+#+language: en
+#+options: toc:t
+#+roam_tags: pim
 
 
 With digital files comes digital tools (and some techniques) to help us in searching for our notes.

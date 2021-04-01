@@ -1,11 +1,11 @@
-#+TITLE: Linux drivers
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-09-09 05:27:17 +08:00"
-#+DATE_MODIFIED: "2020-09-18 03:06:06 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Linux drivers
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-09-09 05:27:17 +08:00"
+#+date_modified: "2020-09-18 03:06:06 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 Linux drivers (also called as kernel modules) are software executed in the kernel.

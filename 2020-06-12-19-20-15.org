@@ -1,12 +1,12 @@
-#+TITLE: File encryption with GPG
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-06-12 19:20:15 +08:00"
-#+DATE_MODIFIED: "2020-09-09 05:10:41 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
-#+ROAM_TAGS: tools security
+#+title: File encryption with GPG
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-06-12 19:20:15 +08:00"
+#+date_modified: "2020-09-09 05:10:41 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
+#+roam_tags: tools security
 
 
 GPG is mostly used for public-key cryptography, allowing you to publicly communicate with the recipient.
@@ -20,13 +20,13 @@ Using GPG boils to generating a key-pair, managing them, and signing and receivi
 A GPG key-pair is made up of two things: the public key and the private key.
 The public key can be shared... to the public while the private key should be guarded in secret.
 
-#+BEGIN_SRC shell  :results silent
+#+begin_src shell  :results silent
 # List out the available keys.
 gpg --list-keys
 
 # Generate a new key-pair.
 gpg --full-gen-key
-#+END_SRC
+#+end_src
 
 
 
@@ -35,13 +35,13 @@ gpg --full-gen-key
 
 Encrypting and decrypting files are one of the main points of GPG.
 
-#+BEGIN_SRC shell  :results silent
+#+begin_src shell  :results silent
 # This will encrypt a file and generate an obscured version of it at <FILE>.gpg.
 gpg --recipient <EMAIL> --encrypt <FILE>
 
 # Decrypting is almost the same process.
 gpg --recipient <EMAIL> --output <FILE> --decrypt <FILE>.gpg
-#+END_SRC
+#+end_src
 
 You can make more secured versions of encrypted file especially when you intended it to send it to a particular recipient.
 For example, you can encrypt your file with your private key and the public key of your recipient and only both of you know how to receive the file.

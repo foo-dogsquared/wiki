@@ -1,11 +1,11 @@
-#+TITLE: Note-taking
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-04-15 14:35:55 +08:00"
-#+DATE_MODIFIED: "2020-09-09 05:17:29 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Note-taking
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-04-15 14:35:55 +08:00"
+#+date_modified: "2020-09-09 05:17:29 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 The practice of note-taking is universal — it is everybody's concern how to write their findings efficiently with the use of a [[file:2020-04-23-23-21-47.org][Personal information management]] system.

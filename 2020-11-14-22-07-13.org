@@ -1,11 +1,11 @@
-#+TITLE: Linguistics, style, and writing in the 21st century
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-11-14 22:07:13 +08:00"
-#+DATE_MODIFIED: "2020-11-15 03:17:44 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Linguistics, style, and writing in the 21st century
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-11-14 22:07:13 +08:00"
+#+date_modified: "2020-11-15 03:17:44 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 - talk :: [[https://youtu.be/OV5J6BfToSw][Linguistics, style, and writing in the 21st century]]
@@ -98,9 +98,9 @@ Passive voice offers a different way to order your thoughts.
 
 * The curse of knowledge
 
-#+BEGIN_QUOTE
+#+begin_quote
 Once you know something, it's hard to imagine from the perspective of a newcomer.
-#+END_QUOTE
+#+end_quote
 
 The curse of knowledge — also known as hindsight bias, egocentrism, and mindblindness — is the tendency of the writer to not consider the background of the reader.
 This often makes the writing filled with unexplained jargon, abbreviations, and references that the reader may not know.

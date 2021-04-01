@@ -1,11 +1,11 @@
-#+TITLE: Generating human-friendly color schemes
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-09-19 18:43:07 +08:00"
-#+DATE_MODIFIED: "2020-09-29 06:08:42 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Generating human-friendly color schemes
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-09-19 18:43:07 +08:00"
+#+date_modified: "2020-09-29 06:08:42 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 Though we already have [[file:2020-09-11-04-08-34.org][Human-friendly colorspaces]], it doesn't mean that we can simply generate human-friendly color schemes.
@@ -15,7 +15,7 @@ Color spaces such as [[https://www.hsluv.org/][HSLuv]] and [[https://en.wikipedi
 We can simply generate colors with the aforementioned color spaces.
 Here's an example of a [[http://chriskempson.com/projects/base16/][Base16]] color scheme generation from [[https://terminal.sexy/][terminal.sexy]] ported to Rust.
 
-#+BEGIN_SRC rust
+#+begin_src rust
 use std::error::Error;
 use std::collections::HashMap;
 use std::env;
@@ -131,7 +131,7 @@ fn main() -> Result<(), Box<dyn Error>> {
   println!("{:?}", result);
   Ok(())
 }
-#+END_SRC
+#+end_src
 
 - [[https://www.hsluv.org/][HSLuv]]
 - [[https://www.kuon.ch/post/2020-03-08-hsluv/][This introductory article is a great resource on HSLuv]]

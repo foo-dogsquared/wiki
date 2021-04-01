@@ -1,11 +1,11 @@
-#+TITLE: Reproducible builds
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-09-14 10:46:15 +08:00"
-#+DATE_MODIFIED: "2020-09-14 11:31:36 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Reproducible builds
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-09-14 10:46:15 +08:00"
+#+date_modified: "2020-09-14 11:31:36 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 - [[https://reproducible-builds.org/][Reproducible builds]]

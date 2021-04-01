@@ -1,12 +1,12 @@
-#+TITLE: Evergreen notes
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-05-07 21:53:21 +08:00"
-#+DATE_MODIFIED: "2020-09-14 23:28:18 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
-#+TAGS: pim writing
+#+title: Evergreen notes
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-05-07 21:53:21 +08:00"
+#+date_modified: "2020-09-14 23:28:18 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
+#+tags: pim writing
 
 
 My concept of evergreen notes is mainly inspired from [[https://notes.andymatuschak.org/z4SDCZQeRo4xFEQ8H4qrSqd68ucpgE6LU155C][Andy Matuschak's version]] in a way that focuses writing evergreen notes as a way of developing your knowledge.

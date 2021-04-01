@@ -1,11 +1,11 @@
-#+TITLE: Use timestamps for effectively future-proofing your stuff
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-09-16 23:09:01 +08:00"
-#+DATE_MODIFIED: "2020-09-17 03:11:19 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Use timestamps for effectively future-proofing your stuff
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-09-16 23:09:01 +08:00"
+#+date_modified: "2020-09-17 03:11:19 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 One of the simplest ways to future-proof your documents with [[file:2020-04-13-17-32-27.org][File metadata]] is to create a timestamp.
@@ -21,10 +21,10 @@ Different files may be applied differently as long as we can create a unified in
 
 Here's a special example with [[file:2020-04-20-16-51-40.org][Org-mode]] documents:
 
-#+BEGIN_SRC org  :exports none
+#+begin_src org  :exports none
 \#+DATE: "2020-09-16 23:53:00 +08:00"
 \#+DATE_MODIFIED: "2020-09-17 10:33:42 +08:00"
-#+END_SRC
+#+end_src
 
 Thankfully, Emacs has a [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Time-Stamps.html][time stamp]] feature that abstracts that for us.
 We can then attach the timestamp update with a [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Hooks.html#Hooks][hook]] that will occur before saving the file and voila!
@@ -32,7 +32,7 @@ Automated timestamp for our text documents.
 
 Here's my (Doom Emacs) specific config as of 2020-09-17 for future references:
 
-#+BEGIN_SRC elisp
+#+begin_src elisp
 (after org!
   (setq
     ; Set a custom time-stamp pattern.
@@ -42,7 +42,7 @@ Here's my (Doom Emacs) specific config as of 2020-09-17 for future references:
 ; Modify the time-stamp with each save.
 (setq time-stamp-format "%Y-%02m-%02d %02H:%02M:%02S%:z")
 (add-hook 'before-save-hook 'time-stamp)
-#+END_SRC
+#+end_src
 
 This should be easily replicated to other editors.
 All you need from a text editor is the hooks and a search-and-replace feature [fn:: Maybe an option limiting the lines to be searched to prevent large search sessions as well.].

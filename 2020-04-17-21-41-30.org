@@ -1,12 +1,12 @@
-#+TITLE: Org-mode: Babel
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-04-17 21:41:30 +08:00"
-#+DATE_MODIFIED: "2020-09-19 17:53:44 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTIES: header-args :session  :exports both
-#+ROAM_TAGS: reproducible-research
+#+title: Org-mode: Babel
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-04-17 21:41:30 +08:00"
+#+date_modified: "2020-09-19 17:53:44 +08:00"
+#+language: en
+#+options: toc:t
+#+properties: header-args :session  :exports both
+#+roam_tags: reproducible-research
 
 
 Org-babel is the framework that enables [[file:2020-04-20-16-51-40.org][Org-mode]] to insert output of the code from programming languages.
@@ -20,11 +20,11 @@ As of 2020-06-08, [[https://orgmode.org/worg/org-contrib/babel/languages.html][B
 
 Here's an example of a code block executed with the shell.
 
-#+BEGIN_SRC sh
+#+begin_src sh
 echo "HELLO WORLD"
-#+END_SRC
+#+end_src
 
-#+RESULTS:
+#+results:
 : HELLO WORLD
 
 To execute the code block, simply run ~org-babel-execute-src-block~ (by default, this is mapped in ~<C-c> <C-c>~).
@@ -35,24 +35,24 @@ Each of the supported language may also have an exclusive option with each langu
 For example, with Python 3, you can pretty print it in accordance to Org-mode display.
 An array will create a table, for instance with ~:results value~ [[https://orgmode.org/manual/Using-Header-Arguments.html#Using-Header-Arguments][header argument]].
 
-#+BEGIN_SRC python  :results value
+#+begin_src python  :results value
 [["Item", "Value"], ["Baseball bat", 123], ["Baseball glove", 25], ["Printed shirt", 42]]
-#+END_SRC
+#+end_src
 
-#+RESULTS:
+#+results:
 : None
 
 You can also export graphics with tools such as [[http://gnuplot.info/][Gnuplot]], [[https://www.gnu.org/software/octave/][GNU Octave]], [[https://www.r-project.org/][R]], and even [[https://www.latex-project.org/][LaTeX]].
 With it, you can export the graphics into a file (commonly with ~:file <PATH>~).
 
-#+BEGIN_SRC gnuplot  :exports both  :file wooosh.png
+#+begin_src gnuplot  :exports both  :file wooosh.png
 unset arrow
 unset label
 set grid
 splot x**2+y**2, x**2-y**2
-#+END_SRC
+#+end_src
 
-#+RESULTS:
+#+results:
 
 With Org-babel, you can share either the output, the code used to generate the output, or both.
 This is commonly set with the ~:exports~ header argument.
@@ -60,13 +60,13 @@ This is commonly set with the ~:exports~ header argument.
 
 Here's an example where I decided to show only the output with ~:exports results~.
 
-#+BEGIN_SRC gnuplot  :exports results  :file threeeeeeD.png
+#+begin_src gnuplot  :exports results  :file threeeeeeD.png
 set title "3D gnuplot demo"
 unset grid
 splot x*y with points
-#+END_SRC
+#+end_src
 
-#+RESULTS:
+#+results:
 [[file:threeeeeeD.png]]
 
 
@@ -80,23 +80,23 @@ However, you can connect source code blocks (with the supported languages) in th
 Let's start with a simple example where we want to demonstrate some Python shenanigans.
 Here's one Python code block.
 
-#+BEGIN_SRC python  :results output  :session python-example
+#+begin_src python  :results output  :session python-example
 x = 35
 print(x)
-#+END_SRC
+#+end_src
 
-#+RESULTS:
+#+results:
 : 35
 
 Then here's another code block in the same session.
 
-#+BEGIN_SRC python  :results output  :session python-example
+#+begin_src python  :results output  :session python-example
 for i in range(5):
   x += 5
   print(x)
-#+END_SRC
+#+end_src
 
-#+RESULTS:
+#+results:
 : 40
 : 45
 : 50
@@ -113,19 +113,19 @@ To correct this, simply execute ~org-babel-execute-buffer~.
 
 You can also pass Org-mode variables (from ~#+NAME: <VAR>~) [fn:: Technically called an internal link (https://orgmode.org/org.html#Internal-Links).] into the source code blocks with the ~:var <NAMEC>=<DATA>~ (though, this may vary among Babel runtimes).
 
-#+NAME: example_string
+#+name: example_string
 This is the string.
 
-#+BEGIN_SRC python  :var example=example_string  :results value
+#+begin_src python  :var example=example_string  :results value
 example
-#+END_SRC
+#+end_src
 
-#+RESULTS:
+#+results:
 : None
 
 This is the source code from the document, for reference.
 
-#+BEGIN_SRC org  :exports code  :results silent
+#+begin_src org  :exports code  :results silent
 ,#+NAME: example_string
 This is the string.
 
@@ -135,24 +135,24 @@ example
 
 ,#+RESULTS:
 ,: This is the string.
-#+END_SRC
+#+end_src
 
 Org-mode variables does capture an element as its input.
 This has a lot of implications of passing data between different sessions and even different languages.
 
 For example, we could still capture the ~x~ variable from the previous Python code blocks.
 
-#+NAME: var_from_other_lang
-#+BEGIN_SRC python  :results silent  :session python-example  :exports value
+#+name: var_from_other_lang
+#+begin_src python  :results silent  :session python-example  :exports value
 x # Which should be 60 at this point.
-#+END_SRC
+#+end_src
 
 Then, pass it to some other Org-mode blocks with the variable.
 (Since the captured variable are always going to be a string, we have to convert it into the appropriate type.)
 
-#+BEGIN_SRC R  :results output  :var python_var=var_from_other_lang
+#+begin_src R  :results output  :var python_var=var_from_other_lang
 as.numeric(python_var) + 2
-#+END_SRC
+#+end_src
 
-#+RESULTS:
+#+results:
 : [1] 62

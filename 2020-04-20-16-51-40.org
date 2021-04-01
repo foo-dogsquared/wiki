@@ -1,12 +1,12 @@
-#+TITLE: Org-mode
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-04-20 16:51:40 +08:00"
-#+DATE_MODIFIED: "2020-09-09 05:17:29 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
-#+TAGS: tools writing
+#+title: Org-mode
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-04-20 16:51:40 +08:00"
+#+date_modified: "2020-09-09 05:17:29 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
+#+tags: tools writing
 
 
 At its core, [[https://orgmode.org/][Org-mode]] is a [[file:2020-04-23-23-21-47.org][Personal information management]] tool that deals with your tasks and schedules.

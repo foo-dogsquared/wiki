@@ -1,11 +1,11 @@
-#+TITLE: Roam Research
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-05-09 12:48:23 +08:00"
-#+DATE_MODIFIED: "2020-09-09 05:17:30 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Roam Research
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-05-09 12:48:23 +08:00"
+#+date_modified: "2021-03-28 18:22:40 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 Roam Research is a newly developing tool created by Conor White-Sullivan that focuses on creating a graph of notes instead of the traditional hierarchical system of most note-taking systems.
@@ -22,6 +22,6 @@ With the Zettelkasten-inspired system, you can use it to easily [[file:2020-06-0
 [fn:: Well, it is a glorified wiki with the focus for backlinks and knowledge graph.]
 
 Roam is gaining popularity and more are considering to use it.
-However, it is closed source and thankfully open source alternatives like [[https://github.com/jethrokuan/org-roam][Org-roam]], [[https://github.com/andjar/dokuroam/][Dokuroam]], and [[https://github.com/athensresearch/athens][Athens]] started to fill our Roam-voided hearts.
+However, it is closed source and (thankfully) open source alternatives like [[https://github.com/jethrokuan/org-roam][Org-roam]], [[https://github.com/andjar/dokuroam/][Dokuroam]], and [[https://github.com/athensresearch/athens][Athens]] started to fill our Roam-voided hearts.
 
 For seeing how Roam works, you can see the following videos by [[https://www.youtube.com/watch?v=RvWic15iXjk][Nat Eliason on using Roam to quickly outline an article]] and [[https://www.youtube.com/watch?v=vxOffM_tVHI][Thomas Frank covering the feature set of Roam]].

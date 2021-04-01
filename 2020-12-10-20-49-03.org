@@ -1,11 +1,11 @@
-#+TITLE: Make personal backups effectively with the 3-2-1 rule
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-12-10 20:49:03 +08:00"
-#+DATE_MODIFIED: "2020-12-11 00:48:19 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Make personal backups effectively with the 3-2-1 rule
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-12-10 20:49:03 +08:00"
+#+date_modified: "2020-12-11 00:48:19 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 If you want to start good backup practices, the 3-2-1 rule is a good starting point.

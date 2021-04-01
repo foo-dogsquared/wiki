@@ -1,11 +1,11 @@
-#+TITLE: Personal information management
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-04-23 23:21:47 +08:00"
-#+DATE_MODIFIED: "2020-09-09 05:17:10 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Personal information management
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-04-23 23:21:47 +08:00"
+#+date_modified: "2020-09-09 05:17:10 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 Personal information management is self-explanatory as it is.

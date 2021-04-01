@@ -1,11 +1,11 @@
-#+TITLE: Linked data
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-09-14 05:54:45 +08:00"
-#+DATE_MODIFIED: "2020-09-14 05:55:52 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Linked data
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-09-14 05:54:45 +08:00"
+#+date_modified: "2020-09-14 05:55:52 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 - [[http://lab.cccb.org/en/wikidata-the-new-rosetta-stone/][Wikidata is the new Rosetta Stone]]

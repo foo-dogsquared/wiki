@@ -1,11 +1,11 @@
-#+TITLE: Fleeting notes
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-06-25 13:12:09 +08:00"
-#+DATE_MODIFIED: "2020-09-09 04:58:41 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Fleeting notes
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-06-25 13:12:09 +08:00"
+#+date_modified: "2020-09-09 04:58:41 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 Fleeting notes are a valuable scratchpad for our messy thoughts — it's natural to have a messy input since they are catered only to yourself.

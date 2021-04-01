@@ -1,11 +1,11 @@
-#+TITLE: Refer to advanced resources when skill-building for a solid short-term goal
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-07-06 03:47:52 +08:00"
-#+DATE_MODIFIED: "2020-09-09 05:09:40 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
+#+title: Refer to advanced resources when skill-building for a solid short-term goal
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-07-06 03:47:52 +08:00"
+#+date_modified: "2020-09-09 05:09:40 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
 
 
 When starting out to build a skill like programming, 3D modelling, digital art, or cooking, you can look first for expert-created resources.

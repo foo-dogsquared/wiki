@@ -1,15 +1,13 @@
-#+TITLE: Reproducible research: methodological principles for transparent science
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
-#+DATE: "2020-04-12 10:24:25 +08:00"
-#+DATE_MODIFIED: "2020-10-06 14:55:12 +08:00"
-#+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
-#+TAGS: moocs writing
-
-
-- Source :: https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/about
+#+title: Reproducible research: methodological principles for transparent science
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-04-12 10:24:25 +08:00"
+#+date_modified: "2021-03-31 19:21:10 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
+#+roam_tags: moocs writing @fleeting
+#+source :: https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/about
 
 
 I'm not a researcher but I've learned so many things from this course that are applicable to general workflows: organizing your digital files for easy retrieval, creating reproducible notes, and setting out to create reproducible studies with open formats.
@@ -34,18 +32,20 @@ Anything to make it explicit as possible for other researchers who may want to t
 
 ** Brief history of notes (from a Western point of view)
 
-Clay tablets are the first recorded form of note-taking.
+In a quick bullet form:
+
+- Clay tablets are the first recorded form of note-taking.
 Then, wax tablets and scrolls superceded the clay tablets.
 
-And then, codices (or books) existed and replaced the scrolls as a common option.
+- And then, codices (or books) existed and replaced the scrolls as a common option.
 Along the fact that codices solve the common inconveniences from using a scroll (e.g., text navigation is difficult, no hard breaks for the text).
 Furthermore, it enabled notes with navigational features such as adding table of contents, an index, and paragraph indications (such as rubrics).
 
-Eusebius, a historian, created a document referred as the "Eusebian Canons" demonstrating the first use of cross-references.
+- Eusebius, a historian, created a document referred as the "Eusebian Canons" demonstrating the first use of cross-references.
 
-As the use of paper note-taking took off, more methods of note-taking has arised such as index notes, logbooks, and post-it notes each with their pros and cons.
+- As the use of paper note-taking took off, more methods of note-taking has arised such as index notes, logbooks, and post-it notes each with their pros and cons.
 
-However, devices such as computers and digital tablets are becoming a viable option with the use of the right technology.
+- However, devices such as computers and digital tablets are becoming a viable option with the use of the right technology.
 
 
 ** Plain-text formatting languages
@@ -53,8 +53,8 @@ However, devices such as computers and digital tablets are becoming a viable opt
 Word processors such as Microsoft Word, Google Docs, and LibreOffice Writer enables you to create documents but it can only be opened by them.
 
 Plain-text files avert this problem that it can be opened by any text editors.
-However, they lack the markup formatting (e.g., inserting text in boldface and italics, attaching files, inserting images and tables) that documents produced by word processed possess.
-This is where markup languages such as HTML come into play giving us the ability to format our text.
+However, they lack the markup formatting (e.g., inserting text in boldface and italics, attaching files, inserting images and tables) that the formatted documents possess.
+This is where markup languages such as HTML, Markdown, and PhpBB come into play giving us the ability to format our text.
 However, certain markup languages like the aforementioned HTML can be hard-to-read.
 
 Thus, a new subclass of markup languages are born, lightweight markup languages.
@@ -67,7 +67,7 @@ Examples include Markdown, Asciidoctor, Org-mode, and reStructuredText.
 I've created a dedicated note (see [[file:2020-06-27-16-21-47.org][Search tools and techniques]]) on this as derived from this course.
 
 With digital files comes digital tools (and some techniques) to help us in searching for our notes.
-These can vary from complex technologies to simple format-agnostic techniques that can make querying files with specific information to be a breeze.
+These can vary from complex technologies to simple format-agnostic techniques that can make narrow searching an easy task.
 
 - Desktop search engines such as DocFetcher and Recoll are one of your most powerful options.
   It can search through text and metadata quite fast.
@@ -98,8 +98,6 @@ More factors include:
 
 - Lack of technical documentation which is against the rigorous and methodical nature of science.
 
-In this course, it introduced three platforms for reproducible research: Jupyter Notebooks, R, and Org-mode.
-
 
 
 
@@ -108,7 +106,7 @@ In this course, it introduced three platforms for reproducible research: Jupyter
 - With reproducible documents come replicable analysis.
   Obviously, the concept of research reproducibility is not valid until others can replicate the research.
 
-- Acquired data from other sources shouldn't be edited "manually" (e.g., text editor) and everything regarding it would have to be modified with code.
+- Acquired data from other sources shouldn't be edited "manually" (e.g., text editor, database editor) and everything regarding it would have to be modified with code.
   This is especially important if you've spotted a missing chunk of the data.
 
 - That said, missing and/or dubious data are normal due to lack of data collection or an error in data processing.
@@ -119,26 +117,26 @@ In this course, it introduced three platforms for reproducible research: Jupyter
 
 * Real-life reproducible research
 
-With the creating reproducible documents and doing replicable analysis, the rudimentary toolset needed for reproducible research is complete.
-However, as always with real-life situations, there are factors that always intervene from the plan.
+With reproducible documents and replicable analysis, the rudimentary toolset needed for reproducible research is complete.
+However, as always in the real world, there are challenges ahead.
 
 
 ** Data hell
 
-The first problem when encountering gathering of data is more often they are not of similar origins and nature.
-Furthermore, they are not often heterogenous data meaning we cannot easily establish the relationship among them.
+First, gathering data is often not of similar origins and nature.
+Furthermore, the data is often not heterogenous which means we cannot easily establish the relationship among them.
 
-As much as text formats are an attractive option, there are complications assoicated with it.
-Particularly, data are often big and text generally consume more memory since text has to be converted into binary format to be usable in our software.
+As much as text formats are an attractive option, there are some tradeoffs you need to keep in mind.
+Data are often big and text generally consume more memory since text has to be converted into binary format.
 If we want to take less, we can consider our data to be in binary in the first place.
 
-Binary formats are good for performance but there's a factor to consider it which is the [[file:20200710233027-endianness.org][Endianness]].
-They can be read differently depending on the computer architecture so it is best practice to announce the endianness at the start.
+Binary formats are good for performance but there's a factor to consider it which is the [[file:2020-07-10-23-30-27.org][Endianness]].
+They can be read differently depending on the computer architecture so it is best practice to announce the endianness in your paper.
 
 Text formats, however, has the upper hand of easily adding *metadata* to our data which is a must for reproducible research.
-To get around this solution, we could look into established binary data formats that easily lets us add it.
+To get around this solution, we could look into established binary data formats that attempts to tackle this problem.
 It also has the advantage of using standardized tools that other researchers also use.
-Certain established binary formats suc as [[http://fits.gsfc.nasa.gov/][Flexible image transport system (FITS)]] and [[https://www.hdfgroup.org/][Hierarchical data format (HDF)]] solve those problems.
+Examples include [[http://fits.gsfc.nasa.gov/][Flexible image transport system (FITS)]] and [[https://www.hdfgroup.org/][Hierarchical data format (HDF)]].
 
 Data can be archived offline but it is hard to share and distribute the sources and the results to other researchers.
 One can host the data themselves but the discoverability suffers which is not really in the spirit of research.
@@ -151,14 +149,20 @@ Software can get complex at a fast rate when we try to scale up our data.
 This is also added with the factor that software does not stand in the test of time, surprisingly.
 
 With our data and code becoming complex, the resources needed to calculate all of it is increasing as well.
-Not to mention the longer notes which can make navigation a bit of a pain.
+Not to mention the longer (reproducible) notes which can make navigation a bit of a pain.
 
-Creating a well-structured document can help our readers for this but it does not avoid the problem when the document is becoming too long for an overview.
+Creating a well-structured document can help our readers but it does not avoid the problem when the document is becoming too long for an overview.
 Certain notebooks like Org-mode enables folding of the document and only unfolding the sections that we want to see.
-Having a long reproducible document can also have a performance problem.
-Certain notebooks like Jupyter offer the option of delegating the calcuations to a supercomputer.
 
-A recommended solution is introducing a *workflow engine* that takes a *workflow* as input.
+Having a long reproducible document can also have a performance problem.
+Certain options are trying to get around this:
+
+- Jupyter offer the option of delegating the calcuations to a supercomputer.
+
+- As of 2021-03-31, the Emacs community is trying to bring the editor into native code which in turn improves the situation for Org-Mode.
+[fn:: Even though Org-Mode can be separated outside of Emacs, one cannot deny it is one of the major parts of Emacs at this point.]
+
+Another solution is introducing a *workflow engine* that takes a *workflow* as input.
 A workflow is a language describes each step of the study into a digestible graph.
 It lets you process data in different programming languages and execute them in a linear way to prevent side effects.
 The process of creating reproducible documents can get complex therefore create a complex workflow but it has the added property of reusability for certain sections which then can be used by others.
@@ -171,14 +175,14 @@ The professors recommend to think through the process before using a tool.
 It is not bad to start with the notebooks first and as the study becomes increasingly complex, you can try to migrate to using a workflow.
 
 The problems of software doesn't end there, however.
-For instance, under the popular software and libraries like R, [[https://www.scipy.org/][SciPy]], and [[https://matplotlib.org/][Matplotlib]] are full of abstractions which can mean they use a lot packages.
+For instance, under the popular software and libraries like R, [[https://www.scipy.org/][SciPy]], and [[https://matplotlib.org/][Matplotlib]] are full of abstractions which can mean they use a lot of packages.
 Most of the software should be able to let you know about the versions (and even the complete environment like the following R code block, for example).
 
-#+BEGIN_SRC R  :results output  :exports both
+#+begin_src R  :results output  :exports both
 R.version
-#+END_SRC
+#+end_src
 
-#+RESULTS:
+#+results:
 #+begin_example
                _
 platform       x86_64-pc-linux-gnu
@@ -200,13 +204,13 @@ nickname       See Things Now
 Even then, specifying versions explicitly can only do so little since most of these libraries depend on another (SciPy, for example depends on C).
 It could still "break" if your machine or the library has been updated which may or may not contain breaking changes.
 
-To get around this, we have to capture the environment that our code run.
+To get around this, we have to capture the environment of our code.
 There are tools that specialize in this function.
 
-- Self-contained bundling tools like [[https://github.com/VIDA-NYU/reprozip][ReproZip]] exists, allowing to easily freeze the environment and share it with your colleagues.
+- Self-contained bundling tools like [[https://github.com/VIDA-NYU/reprozip][ReproZip]] freezes the environment and share it with your colleagues.
   However, if there is an issue in your code or document, you may have to rebuild the bundle.
 
-- A more complete solution is a virtual machine (e.g., [[https://www.virtualbox.org/][VirtualBox]], [[https://www.qemu.org/][QEMU]]) but it can be heavy in resources where certain factors are not important and included in the image like the operating system or the hardware used.
+- A more complete solution is a virtual machine (e.g., [[https://www.virtualbox.org/][VirtualBox]], [[https://www.qemu.org/][QEMU]]) but it can be heavy in resources where certain factors are not important like the operating system or the hardware.
 
 - Lighter alternatives to virtual machines like containers such as [[https://www.docker.com/][Docker]] or [[https://singularity.lbl.gov/][Singularity]] are more suitable for software environments.
   They also offer mostly the same security as virtual machines in that the environment is isolated from the host meaning no system libraries or programs will be used;
@@ -215,13 +219,13 @@ There are tools that specialize in this function.
 - Certain package managers like [[https://nixos.org/][Nix]] and [[https://guix.gnu.org/][GNU Guix]] specialize in retrieving reproducible environments.
 
 As mentioned before, software are fragile: they can easily evolve and break.
-This is especially true for fast-moving software and libraries like Python 3 and even Org-mode by the fact that it is majorly changed 9 times.
+This is especially true for fast-moving software and libraries like Python 3 and even Org-mode by the fact that it goes through major changes 9 times.
 These breaking changes can interrupt the workflow which is why it is important to look out for changes.
 Another solution is to force some rulings such as coding exclusively in C or only use certain libraries and reimplement anything else.
 Capturing the environments used for calculations is a matter of compromise and stability.
 
 Software can also be fragile that it can be easily deleted.
-Just like how data has dedicated archives, certain platforms have dedicated missions to preserve software like [[https://www.softwareheritage.org/][Software Heritage]], [[https://hal.archives-ouvertes.fr][Hyper Articles en Ligne]], and [[https://archive.org/][Internet Archive]].
+Just like how data has dedicated archives, certain platforms have dedicated to preserve software like [[https://www.softwareheritage.org/][Software Heritage]], [[https://hal.archives-ouvertes.fr][Hyper Articles en Ligne]], and [[https://archive.org/][Internet Archive]].
 
 
 ** Numeric hell
@@ -229,11 +233,11 @@ Just like how data has dedicated archives, certain platforms have dedicated miss
 In today's world where computers aids in research such as calculations, there are hidden factors looming in.
 For example, representing floating points is particularly difficult and has resulted in certain quirks like the following code in Python.
 
-#+BEGIN_SRC python  :results output
+#+begin_src python  :results output
 print(0.1 + 0.2)
-#+END_SRC
+#+end_src
 
-#+RESULTS:
+#+results:
 : 0.30000000000000004
 
 Not to mention, compilers can also affect the results by optimizing the code and may result in changing the order of the computations which is not a good thing for reproducible researches.
@@ -251,15 +255,15 @@ The seed is then computated to get the first state, then the output of the first
 To make our research reproducible, we have to hardcode the seed or at least refer to it somewhere.
 Here's an example of generating random numbers in Python with a fixed input.
 
-#+BEGIN_SRC python  :results output
+#+begin_src python  :results output
 import random
 
 random.seed(24)
 for i in range(5):
     print(random.random())
-#+END_SRC
+#+end_src
 
-#+RESULTS:
+#+results:
 : 0.7123429878269185
 : 0.8397997363118733
 : 0.18259188695451745
@@ -268,19 +272,19 @@ for i in range(5):
 
 If the same seed is used for pseudo-random number generating, we can then verify it.
 
-#+BEGIN_SRC python  :results silent  :exports code
+#+begin_src python  :results silent  :exports code
 import random
 
 random.seed(24)
 assert random.random() == 0.7123429878269185
 assert random.random() == 0.8397997363118733
 assert random.random() == 0.18259188695451745
-#+END_SRC
+#+end_src
 
 
 
 
-#+LaTeX: \appendix
+#+latex: \appendix
 * Additional readings
 
  - [[https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/info][The course link]] :: It is a great open course with great instructors, examples, and exercises to make the lessons stick with you.
