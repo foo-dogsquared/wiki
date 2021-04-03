@@ -2,11 +2,11 @@
 #+author: "Gabriel Arazas"
 #+email: "foo.dogsquared@gmail.com"
 #+date: "2020-06-24 14:33:42 +08:00"
-#+date_modified: "2020-09-14 23:28:35 +08:00"
+#+date_modified: "2021-04-03 22:52:09 +08:00"
 #+language: en
 #+options: toc:t
 #+property: header-args  :exports both
-#+tags: pim
+#+roam_tags: personal.info-management
 
 
 Nowadays, topics are starting to be viewed toward heterogeneity — they are a system of intra-related concepts.
@@ -33,20 +33,21 @@ Stealing from [[https://www.youtube.com/watch?v=rckSVmYCH90][this talk]], the be
 - Limiting the vocabulary into a set number.
   The author recommends to limit it to 100 but lesser is better.
 - Tags should always be in plural.
-- Keep tags general (e.g., ~sports~ instead of ~bowling~, ~basketball~, or ~volleyball~).
+- Keep tags general (e.g., =sports= instead of =bowling=, =basketball=, or =volleyball=).
 - No tags should be derived from file extensions (e.g., photographs, books, documents).
 
 In my case, this is not enough since I want tags for specific things.
 I've come across [[https://docs.tildes.net/instructions/hierarchical-tags][how a certain website tags its topics]] which also happens to fit my use case so I decided to add one more rule.
 
-- Any topic-specific should be appended as a subtag (e.g., ~sports.bowling~, ~sports.basketball~, ~sports.volleyball~).
+- Any topic-specific should be appended as a subtag (e.g., =sports.bowling=, =sports.basketball=, =sports.volleyball=).
   If a subtag are established enough, then you may classify it as a general tag.
 
 Since the above rule is not always applicable for easy retrieval (e.g., publishing as a website in Hugo), the resulting improvised system instead encourages the hierarchical tag to be the whole list itself.
-For example, ~sports.bowling~ should now be composed of two tags, ~sports~ and ~bowling~, in that order and nothing else.
+For example, =sports.bowling= should now be composed of two tags, =sports= and =bowling=, in that order and nothing else.
 
 This type of tagging does have its problem with searching which can render this system useless.
 For this, a rule of thumb when it comes to searching is that always search with the general tag first before looking into its subtags.
+Or you could prepend the general tags with a certain character for identification (e.g., =~sports=, =~software=).
 
 
 
@@ -59,8 +60,8 @@ For text files, most of the lightweight markup languages offer a way to define v
 Taking advantage of comments and/or variables, if applicable, we could create explicit tags/labels.
 
 To create our specific labels, we could format tags in certain ways.
-For example, you could format in ~;;<NAME>;;~ (e.g., ~;;programming;;~, ~;;physics;;~).
-This is mostly the same as creating tags in [[https://orgmode.org/manual/Setting-Tags.html][Org-mode with ~+#TAGS~]] or in [[https://gohugo.io/content-management/taxonomies#readout][Hugo SSG with the taxonomy system]].
+For example, you could format in =;;<NAME>;;= (e.g., =;;programming;;=, =;;physics;;=).
+This is mostly the same as creating tags in [[https://orgmode.org/manual/Setting-Tags.html][Org-mode with =+#TAGS=]] or in [[https://gohugo.io/content-management/taxonomies#readout][Hugo SSG with the taxonomy system]].
 
 We can then search through it with tools like [[https://github.com/BurntSushi/ripgrep][ripgrep]] to more sophiscated solutions such as [[https://www.lesbonscomptes.com/recoll/][Recoll]] where it can not only search text files fast but also metadata within certain media files such as audio (e.g., MP3, OGG), documents (e.g., PDF), and images (e.g., PNG, JPG, WebP).
 
