@@ -2,11 +2,11 @@
 #+author: "Gabriel Arazas"
 #+email: "foo.dogsquared@gmail.com"
 #+date: "2020-06-02 12:41:43 +08:00"
-#+date_modified: "2020-09-12 01:21:36 +08:00"
+#+date_modified: "2021-04-05 16:09:08 +08:00"
 #+language: en
 #+options: toc:t
 #+property: header-args  :exports both
-#+roam_tags: @fleeting
+#+tags: @fleeting courses compsci
 
 
 This is just my personal notes on [[http://mitpress.mit.edu/sicp][Structure and interpretation of computer programs]].

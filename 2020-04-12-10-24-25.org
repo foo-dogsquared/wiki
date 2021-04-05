@@ -2,12 +2,12 @@
 #+author: "Gabriel Arazas"
 #+email: "foo.dogsquared@gmail.com"
 #+date: "2020-04-12 10:24:25 +08:00"
-#+date_modified: "2021-04-03 22:51:59 +08:00"
+#+date_modified: "2021-04-05 18:20:22 +08:00"
 #+language: en
 #+options: toc:t
 #+property: header-args  :exports both
-#+roam_tags: @fleeting courses
 #+source :: https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/about
+#+tags: @fleeting courses research.reproducibility
 
 
 I'm not a researcher but I've learned so many things from this course that are applicable to general workflows: organizing your digital files for easy retrieval, creating reproducible notes, and setting out to create reproducible studies with open formats.

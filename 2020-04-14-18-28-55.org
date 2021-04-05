@@ -2,11 +2,11 @@
 #+author: "Gabriel Arazas"
 #+email: "foo.dogsquared@gmail.com"
 #+date: "2020-04-14 18:28:55 +08:00"
-#+date_modified: "2021-04-03 22:52:32 +08:00"
+#+date_modified: "2021-04-05 15:37:41 +08:00"
 #+language: en
 #+options: toc:t
 #+property: header-args  :exports both
-#+roam_tags: personal.info-management
+#+tags: personal-info-management
 
 
 Having your own digital library can be one of the most valuable thing for your life.

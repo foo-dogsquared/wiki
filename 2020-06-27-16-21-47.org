@@ -2,10 +2,10 @@
 #+author: "Gabriel Arazas"
 #+email: "foo.dogsquared@gmail.com"
 #+date: "2020-06-27 16:21:47 +08:00"
-#+date_modified: "2020-09-09 05:09:41 +08:00"
+#+date_modified: "2021-04-05 15:39:17 +08:00"
 #+language: en
 #+options: toc:t
-#+roam_tags: pim
+#+tags: personal-info-management
 
 
 With digital files comes digital tools (and some techniques) to help us in searching for our notes.

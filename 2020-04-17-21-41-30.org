@@ -2,11 +2,11 @@
 #+author: "Gabriel Arazas"
 #+email: "foo.dogsquared@gmail.com"
 #+date: "2020-04-17 21:41:30 +08:00"
-#+date_modified: "2020-09-19 17:53:44 +08:00"
+#+date_modified: "2021-04-05 15:39:53 +08:00"
 #+language: en
 #+options: toc:t
 #+properties: header-args :session  :exports both
-#+roam_tags: reproducible-research
+#+tags: research.reproducibility
 
 
 Org-babel is the framework that enables [[file:2020-04-20-16-51-40.org][Org-mode]] to insert output of the code from programming languages.
