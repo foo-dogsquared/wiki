@@ -1,0 +1,146 @@
+= foo-dogsquared's wiki
+:toc: true
+
+:art-file-prefix: fds-illustration
+
+
+Keep taking notes and stop worrying about file organization!
+
+Muh wiki.
+This documents the "infrastructure" of my notes because I like documenting.
+It primarily uses the link:https://zk.zettel.page/[Zettelkasten note-taking method] which means all of my notes are scattered in just one location.
+Fun.
+
+NOTE: On another note, this supercedes my link:https://github.com/foo-dogsquared/personal-notes[personal notes].
+I'm not going to import them because I want to start on a clean slate.
+
+
+
+
+== Getting started
+
+Interested in copying my setup?
+Here's my IKEA-esque manual for you.
+
+
+=== Prerequisites
+
+It needs the following list of software.
+All of them are required unless noted otherwise.
+
+* link:https://www.gnu.org/software/emacs/[GNU Emacs] because link:https://orgmode.org/[org-mode].
+
+** Uses link:https://github.com/hlissner/doom-emacs/[Doom Emacs] as the preferred Emacs distro with the `org` module enabled.
+This is optional and you can use your own Emacs config.
+
+** link:https://github.com/org-roam/org-roam[org-roam], the star of the show, is installed.
+
+* link:https://nixos.org/[Nix package manager] because link:https://orgmode.org/manual/Working-with-Source-Code.html[org-babel].
+You can fully replicate the environment without Nix by looking at the dependencies at link:./shell.nix[`./shell.nix`] and install them with your package manager (or anything else, you do you) but I recommend to do so because I say so.
+
+* link:https://direnv.net/i[direnv] (optional, by the way) because automatic shell environment.
+footnote:[You can enable the direnv module from the Doom Emacs config.]
+
+
+=== Setting up
+
+Now with the pieces complete and assuming you've already have my wiki in your folder, fire up Emacs, open the wiki folder, and do your thing.
+
+If you have direnv installed, you can also enable automatic shell environments.
+How?
+Just add `.envrc`!
+
+[source, shell]
+----
+echo "use nix" > .envrc && direnv allow
+----
+
+
+
+
+
+== Conventions
+
+* Uses timestamp (at localtime) as the filename, it is unique enough (for personal purposes) and doesn't need to change.
+footnote:[If you use the title as the basis, that'll depend if you have tolerance for the misaligning relation between the filename and the title.]
+The format for the filename is equivalent to `$(date +%F-%H-%M-%S).org`.
+
+* Uses link:https://orgmode.org/guide/Tags.html[plain org-mode tags] for consistency.
+It also happens to be the only supported tag format starting from link:https://org-roam.discourse.group/t/org-roam-major-redesign/1198[org-roam v2] so hoorah for me. :)
+
+* A list of references are stored at link:./references.bib[`./references.bib`] for link:https://github.com/jkitchin/org-ref[org-ref-styled workflows].
+It is managed with link:https://www.zotero.org/[Zotero] with the link:https://github.com/retorquere/zotero-better-bibtex[better-bibtex Zotero extension] but you can replace however you manage and generate the Bibtex file.
+
+* A creation datetime and a modification datetime is a cruicial part of my notes.
+It lets me know how up-to-date my notes are without relying on the filesystem metadata because I copy them carelessly, not to mention how various tools deal with them differently.
+The modification datetime is handled with link:https://www.gnu.org/software/emacs/manual/html_node/emacs/Time-Stamps.html[timestamps] automatically.
+Here's an example Doom Emacs configuration for that:
++
+[source, elisp]
+----
+(after! org
+  (setq
+   time-stamp-start "date_modified:[ 	]+\\\\?[\"<]+"
+   time-stamp-format "%Y-%02m-%02d %02H:%02M:%02S %:z"))
+
+; Automate updating timestamps on save.
+(add-hook 'before-save-hook 'time-stamp)
+----
++
+Just see my link:https://github.com/foo-dogsquared/dotfiles/tree/4e8f036b73a71d02f5909f4f28898a79c2311147/emacs[Doom Emacs config] in my dotfiles.
+
+* The related assets are stored in the link:./assets/[`./assets/`].
+The asset folder names should be the same as the filename of the org-mode document — e.g., `2021-04-06-15-04-11.org` should have an asset folder in `./assets/2021-04-06-15-04-11/`.
+
+** I sometimes draw a visual aid just to strengthen my learning as well as an excuse to use my graphics tablet and I want to store them in a reasonable location without dumping it like in a landfill.
+Unfortunately, this means having to scour the assets folder like a clueless babboon holding a hammer because all of it is named after a timestamp but I can deal with it.
+
+** link:https://orgmode.org/worg/org-contrib/babel/intro.html[org-mode can also generate files including text and graphics].
+I'm lazy and I fear conflicting asset filenames so I'll just put them in separate folders instead alongside opening a can of worms.
+footnote:[This includes trying to name an asset that doesn't exist already to not overwrite the file that one note needed. It's also a lot more subtle when trying to build it altogether or if the notes get any bigger.]
+
+** For my hand-drawn visual aids, I usually name with a prefix (e.g., `{art-file-prefix}-${WHAT_THE_GRAPHICS_IS_ABOUT}.webp`).
+As a side effect, this mitigates against overwriting of generated assets from org-mode if I remember to not name it `{art-file-prefix}-*`.
+
+
+
+
+== Future tasks
+
+This also means expect the following changes if you're watching this repo for some reason.
+Keep in mind all of the details are still under consideration.
+
+* Create a static site for my wiki.
+org-roam doesn't have a built-in export option yet but there are solutions.
+For now, I'm not worrying to much on this one.
+
+** I could make a custom publication script.
+I did create a publication script back then for a small org-mode-based for testing purposes but it is messy and life happened so I wasn't able to get back on it immediately.
+Here's a link:https://git.sr.ht/~brettgilio/website/[very good example of a org-mode-and-Emacs-powered site] complete with features and without JavaScript!
+footnote:[link:https://brettgilio.com/[Brett Gilio] is kind enough to answer my noob org-mode related questions back then so big thanks to him for the guidance. :)]
+
+** Convert the org documents to commonly-supported text formats like Markdown and use static site generators.
+Most of them supports Markdown and there is an "export to Markdown" option for org-mode.
+I could whip up an Elisp script and export it by batch then move them over to an SSG setup like Hugo.
+This is also how link:https://github.com/jethrokuan/braindump[Jethro Kuan's org-roam notes] are setup.
+
+* Migrate the notes for link:https://org-roam.discourse.group/t/org-roam-major-redesign/1198[org-roam v2].
+Though I consider v1 to be feature-complete, I do like v2's reimagining of the plugin with the node (instead of files) as the new atomic unit.
+It is closer to its original inspiration (Roam Research).
+It also brings a few simplified options along the way such as choosing to only support `tags` property.
+Aaaand the primary maintainer said more performance so yay for me.
+
+** Expect to change the links since it doesn't accept file links anymore.
+
+** Expect to generate IDs for each node/file.
+The community is ready to help for it since my Elisp-fu sucks.
+
+* Try out link:https://github.com/srid/neuron/[Neuron].
+I've used it on and off and even tried to support both org-roam and Neuron because I like the static site generated and also because org-roam doesn't have a killer HTML exporter yet (in my opinion).
+It is simple and nice but I can deviate from that with link:https://orgmode.org/manual/Publishing.html[org-publish] or any supported static site generators like link:https://gohugo.io/[Hugo].
+Once link:https://github.com/srid/neuron/issues/557[org-mode is reimplemented in Neuron v2], it's a 100% addition to my workflow.
+
+* Add/replace Nix with link:https://guix.gnu.org/[Guix].
+Maybe add a file intended for setting up a Guix environment.
+I like both Nix and Guix, all right.
+
