@@ -2,13 +2,14 @@
 #+author: "Gabriel Arazas"
 #+email: "foo.dogsquared@gmail.com"
 #+date: "2020-11-14 22:07:13 +08:00"
-#+date_modified: "2020-11-15 03:17:44 +08:00"
+#+date_modified: "2021-04-07 16:34:17 +08:00"
 #+language: en
 #+options: toc:t
 #+property: header-args  :exports both
+#+tags: media.talk writing
 
 
-- talk :: [[https://youtu.be/OV5J6BfToSw][Linguistics, style, and writing in the 21st century]]
+- source :: [[https://youtu.be/OV5J6BfToSw][Linguistics, style, and writing in the 21st century]]
 - author :: Steven Pinker
 
 # TODO: Give examples to several of the sections here.
@@ -34,7 +35,7 @@ Others have concluded it might be due to writing being an unnatural act like bak
 Since writing is an unnatural act, we can make use of science to investigate what makes good writing.
 One of the starting points of good writing is a good model of communication.
 
-One of the more popular model is the *classic style*.
+One of the more popular model is the [[file:2021-04-07-15-09-24.org][Classic prose]].
 
 - View the writing as the window of the world.
 - Reader and writer as equals.
@@ -48,7 +49,7 @@ One of the more popular model is the *classic style*.
 
 Because it gives reader credit, it implies coordination between the reader and the writer.
 Just like how you would intepret in a conversation, hearing "The students in this school are getting dumber." equates to the most students seem to be getting dumber.
-It knows that the reader can read between the lines since they most likely read to know how the writer did about the subject.
+It knows that the reader can read between the lines since they read to know how the writer will do about the subject.
 
 Classic prose should serve the following goals:
 

@@ -1,0 +1,36 @@
+#+title: Classic prose
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2021-04-07 15:09:24 +08:00"
+#+date_modified: "2021-04-07 16:33:04 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
+#+tags: writing
+
+
+Classic prose is a model of communication with the philosophy of using prose as a window onto the writer's world.
+
+In order to make this model effective, the writer has to keep the guidelines in mind:
+
+- The reader and writer are equals.
+- Only shows the objective reality.
+- Conversational.
+- Focus on the subject, not the process of studying it.
+
+This model of communication encourages a reader-centric focus on writing without looking down on them.
+For example, with the saying "The people of America are getting fatter.", we both know means that the average of the population of America are getting fatter, not every single one of them.
+Just like in a casual conversation, the reader has a rough idea of what they're reading.
+They are reading to see what the writer has to do something about the subject.
+
+The guideline of keeping it as objective as possible makes
+
+Consequently, this reduces the fluff that you often see in academic writings or legal documents such as:
+
+- Apologizing (e.g., "...as the theory of multiverses is not yet proven as of the time of this writing, more research is required on how we define superheroes").
+- Philosophical non-sequiturs (e.g., "In order to create a deviled egg, first we need to ask is cooking.").
+- Hedging (e.g., probably, somewhat, all I know is, I'm not an expert but).
+- Metaconcepts (e.g., perspective, approaches).
+- Clichés (e.g., walk in a park, knock peoples' socks off).
+- Thingification of verbs and adjectives (e.g., "make an appearance" instead of "appear", "bringing doom" instead of "destroy").
+- Scare quotes (e.g., "so-called", "in-the-know").
