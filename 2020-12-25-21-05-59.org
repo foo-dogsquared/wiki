@@ -1,0 +1,16 @@
+#+title: When creating a line, be confident and sure
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2020-12-25 21:05:59 +08:00"
+#+date_modified: "2021-01-04 11:05:19 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
+
+
+When [[file:2020-12-26-13-30-39.org][illustrating]] an accurate line, leave out the saying "slowly but surely" and put "quickly but surely" instead.
+To make an accurate line reliably, we just need more confidence in what we're doing.
+That's because when we drawing slowly, we tend to put more time thinking about how to create the line instead of controlling our arm.
+Our brain also tends to course-correct while on the way resulting in an inconsistent line.
+
+For a more memorable reminder, [[https://drawabox.com/comic/1][here's a comic about it]].

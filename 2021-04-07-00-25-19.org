@@ -1,0 +1,44 @@
+#+title: Doing with images makes symbols: Communicating with computers
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2021-04-07 00:25:19 +08:00"
+#+date_modified: "2021-04-07 14:30:54 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
+#+tags: media.talk graphics.user-interface computer.history
+#+source: https://youtu.be/6ZdxiQoOBgs
+
+
+Graphical user interfaces (GUI) brings the possibilities of easier collaboration and accessibility for the many.
+
+- [[https://en.wikipedia.org/wiki/Sketchpad][Sketchpad]] is the first documented program to use a graphical user interface and pioneered the way for computer-aided design.
+
+- Since GUI makes use of the whole screen, the mouse was used as interacting with the program.
+  It was however inaccurate for its usage requiring the user to switch back and forth so some devices such as the five-finger keyboard were invented to work around this problem.
+
+- Inspired from Sketchpad, Alan Kay worked on a programming language called Smalltalk that focuses on the visual department for computing.
+
+- Furthermore, he believed by focusing on a more specific audience like children will help getting a far more intuitive interface for using a computer.
+
+- The psychology behind user interface where based by the learning methods and its enemies (e.g., distraction).
+
+- In order to combat against distraction, you should distract the user with a lighter alternative.
+  See Timothy Gallwey on how he claims teaching tennis can be done in an afternoon for above point
+
+- Humans are thought to have a dominant mindset at different stages of their life.
+  At the age of 5 and below, they have the tendency to do something.
+  Not minding the consequences of their future actions.
+  By 6 to 11, they tend to be visual where observations are their main tools for learning.
+  Then, at the teenage phase enter the "facts and logic" phase where they usually makes use of symbols.
+
+- An experiment done by Kay's team is to gather 3 people at different stages (5 y/o, 10 y/0, and 15 y/o) and asked them to create a Turtle program that makes a circle.
+  The natural tendency is to believe the older, the better it does the task but the results are actually the opposite.
+  The 5 y/o having the simplest (and most clever) by simply doing how to create a circle.
+  Meanwhile, the 10 y/o observed the circle could be created with a compass and based their program around how to create a circle with a compass.
+  The 15 y/o wasn't able to create one focusing on the mathematical formula to create a circle.
+
+- The takeaway on this experiment is how to make use of these different mindset to create an effective environment.
+  (Which interestingly could be applied on effective learning.)
+
+- Motto: doing with images make symbols

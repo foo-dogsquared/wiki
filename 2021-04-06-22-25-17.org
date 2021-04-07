@@ -1,0 +1,28 @@
+#+title: Learn more with referencing with a bit of remembering
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2021-04-06 22:25:17 +08:00"
+#+date_modified: "2021-04-07 11:58:29 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
+#+tags: personal-info-management
+
+
+[[file:2020-07-01-23-19-07.org][Information literacy]] is not only for researching but it can be useful for programming.
+The gist of it is knowing the basics of a concept and its relations to others, enabling you to come up with a more effective search query.
+If nothing else, you could take advantage of the help system insisted by the tool.
+
+On a Unix-based environment, for example, has the manual pages with ~man~ and you can search through ~apropos~.
+This is especially needed if you're using BSD-based operating systems such as FreeBSD and OpenBSD.
+GNU also added [[https://www.gnu.org/software/texinfo/][Texinfo]] and the community also created their own solutions such as [[https://github.com/tldr-pages/tldr][tldr pages]] (as well as an offline clients such as ~tealdeer~).
+
+[[roam:Emacs][Emacs]], specifically Doom Emacs, has a great built-in help system.
+[fn:: It's a necessity after all by how massive of a software this is.]
+For example, the ~help-for-help~ is a function that gives you a metahelp interface to a plethora of options such as searching through pattern, logging the last keybindings, display the documentation from a keybinding, describe a language environment, and so on.
+Another helpful function ~apropos~, like its similarly named inspiration, searches through the entire symbol list of Emacs (e.g., variable, function) through a pattern.
+You also have a describe function for keys (~describe-key~), functions (~describe-function~), and packages (~describe-package~).
+
+This doesn't mean that you should avert remembering, that would be silly as a little remembering is still required.
+You're still trying to understand a concept, after all.
+If the system has a way of referencing something (other than the internet), use it to your advantage as it may have something valuable.

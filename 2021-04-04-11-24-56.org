@@ -1,0 +1,165 @@
+#+title: Learning how to learn
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2021-04-04 11:24:56 +08:00"
+#+date_modified: "2021-04-07 17:33:35 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
+#+source: https://www.coursera.org/learn/learning-how-to-learn
+#+tags: @fleeting courses personal-info-management
+
+
+This course is one of the more popular metalearning courses especially on those who look for more ways to be more productive such as students.
+I studied with this course for the exact title: learn the mechanics of learning and how to apply it for me to learn more effectively.
+
+Not all of the details are listed here, just what I think I need for review.
+
+
+
+
+* How the brain works
+
+In order to understand the inner mechanics of metalearning, we have to familiarize with the brain (at least a little).
+The brain, while physically small, relates to a lot of things: our thought processes, motivations, emotions, tendencies, and memory.
+Thus, it is one of the more expensive organ in our body requiring more oxygen relative to its mass.
+
+Inside our brain houses a lot of smaller things called *neurons* where they store information.
+Each neuron may then form connections to other neurons called *synapses* where they form neural pattern representing a web of thoughts.
+
+There has been a staying belief from studies that the brain is in development from birth up to 25 years of age.
+After the maturation is complete, no further developments will occur and slowly degrade with the neurons will slowly decrease in number with age.
+With recent developments in brain imaging technology, it is shown that neurons can still develop in the adult stage.
+Furthermore, it form new synapses with only changes in activity including resting.
+
+
+
+
+* Focused and diffused mode
+
+The brain goes into two modes: *focused* and *diffused*.
+
+- Focused mode is when we actively remember familiar information.
+  It usually occurs when we're actively doing a task like cooking a meal, solving a math problem, writing your notes, programming software, composing music, etc.
+
+- Diffused mode is when there is state of clarity in the mind.
+  This is when we relax: taking a break, walking in the trails, doing a power nap, sleeping for hours, hanging out with friends, etc.
+
+In other words, our brain is working 24/7.
+Similar to ourselves, the brain has a routine to follow not only to make our body function as-is day-to-day but also improve ourselves in terms of habits and skills when we put the effort.
+Nonetheless, both of these modes can be used to our advantage to familiarize with new information, see the bigger picture, and learn a new skill.
+
+
+
+
+* Procrastination
+
+Procastination is a problem all of us faces.
+When we procastinate, the things we avert are associated with pain thus we turn our attention away from them.
+To mitigate against this:
+
+- Just start working.
+  The discomfort of facing it goes away after a while.
+- Use the Pomodoro technique to create interleaving segments of focus and relaxation.
+
+
+
+
+* Memory and sleep
+
+The brain is mostly compared to a muscle in a way that you have to do work for development.
+The analogy couldn't be more apt as the development of a neural formation is dictated by how much work you put.
+A neural formation is stronger if you use it more often while it decays if you neglect for some time.
+This is the basis of memory.
+
+The memory can be separated into two parts:
+
+- The *working memory* contains information that are required immediately.
+  It is like the working desk where you place all of the required materials and tools to do your current task.
+
+- The *long-term memory* contains all of the information that you've stored and it is where your working memory gets its on-hand information from.
+  It's like the storages of all of the materials and tools you may need in the future.
+
+The following practices are recommended to strengthen your memory:
+
+- Spaced repetition.
+  That is, repeating what you've practice over a period of time whether by days, weeks, or even months.
+  Similar to the previous point, cramming and repeating over a few times in one evening will dissipate the neural formation faster.
+
+- Another way of hardening the memory is through sleep.
+  As counterintuitive as it is, sleep does have its function that helps with the brain such as preventing sleep-related disorders such as insomnia, removing toxins that accumulate while you're awake, and strengthening relevant neural structures while erasing less important ones.
+
+
+
+
+* Takeaways from "Interview with Dr. Terrence Sejnowski"
+
+- Learn headfirst in a new topic by getting involved with peers and experts who are already invested in similar topics.
+
+- Active engagement > passive listening.
+
+- A method to capture your ideas before it evaporates — e.g., a portable pen and notebook, org-capture, the PARA system.
+
+- While multitasking is possible, it's not efficient.
+  However, being unable to multitask can make day-to-day basis difficult.
+  The more important skill is efficient context switching — i.e., being able to return to the original task after being interrupted mid-task and continue smoothly.
+
+- Being in a more reflective mode creates the best work.
+
+- Being in an enriched environment with creative people makes generating and processing ideas easier.
+  If being in enriched environment is not possible, exercise can be a good substitute.
+  The point is making a creative workspace for those ideas to roam and bounce off other ideas either with other people or idle time.
+
+- Passion and persistence > smarts.
+
+- Being able to see things at a different perspective.
+
+
+
+
+* Takeaways from "Interview with Dr. Robert Bilder on creativity and problem solving"
+
+- The criteria of creativity mostly applies to what is unique to you.
+  It doesn't mean that others solve it that you're not creative as long as you've solved it yourself.
+
+- A level of discomfort is always involved when trying to learn something new.
+  As they say, "no pain, no gain."
+
+- Personalities can relate to the creative achievement of a person.
+  It boils down to mainly five traits: openness, conscientiousness, extraversion, agreeableness, and neuroticism.
+  A more open person to new experiences can be more creative achiever.
+  Counterintuitively, a less agreeable or more disagreeable can find more creative success since they are the type to challenge the status quo.
+
+- Creativity walks a fine line of being novel and valuable to other people.
+  You can create pieces that are too strange but you may find less people finding it valuable.
+  It can impose a [[file:2020-07-06-23-55-47.org][Deliberate practice]] of trying to find balance.
+
+- While our subconscious can be more right, it doesn't mean that it is never wrong.
+  Examples include people feeling more creative while under the influence of LSD but after the session they find the product is not as close as they visioned.
+
+
+
+
+* Chunking
+
+Your working memory is said to have four chunks at a time.
+For more efficiency, your brain can link various neural structures to represent an information.
+An example is numbers and operations such as \(5 * 4 = 20\), \(1 + 1 = 2\), and \(5 - 29 = -24\).
+You know what numbers are, what do the symbols mean, and if you read the equations, you already have the answer just after you read it.
+Another example is reading the word 'electronics' may invoke an image of the common appliances and gadgets you have in home such as your smartphone, fridge, and laptop even though they are different objects.
+This is the gist of chunking.
+
+Chunking is the process of simplifying groups of information (or neural structure) as you learn and use more of them.
+
+
+
+
+* Habits
+
+The brain is responsive to various stimulus with a variety of effects of various levels.
+Examples include changing temperature, surrounding sounds, reaching smell, and the location.
+Our brain might associate certain rooms to be predominantly relaxing so we tend to relax and get lazy such as your own room and hangout places.
+Other environments such as your workplace, gyms, and schools may be associated with active work so we tend to get moving.
+
+# TODO:
+Explain 'Action, Response, and Intervene'

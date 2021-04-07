@@ -1,0 +1,17 @@
+#+title: Create examples of ranking complexity when documenting your project serving as a quick glance
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2021-02-28 14:52:58 +08:00"
+#+date_modified: "2021-04-07 16:17:57 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
+
+
+Some projects such as user applications should include examples of usage varying of the complexity from a simple "Hello world"-esque example to a real-life example that the developer uses.
+This gives a quick introduction to the tool as well as subtly giving hints about what you can do with the program.
+Examples include the manual pages from [[https://www.freebsd.org/][the FreeBSD project]] where each tool is given a dedicated section for example usage.
+Another that stuck out to me is the README of [[https://github.com/naelstrof/maim/tree/b1b28fcb0c3a44e699fd879189316440b7edff22][maim]], a screenshot capture tool, where one of the examples demonstrate that you can pipe binary output which leads to useful things such as [[https://github.com/naelstrof/maim/tree/b1b28fcb0c3a44e699fd879189316440b7edff22][OCR selection]] or a colorpicker.
+
+This is not only useful for software documentation, it is also useful for technical writings especially applied with [[file:2021-04-07-15-09-24.org][Classic prose]].
+This makes it easier to skim (see [[file:2021-04-05-12-43-36.org][Speedreading is all about skimming well]]) and review it as a future reference (see [[file:2021-04-06-22-25-17.org][Learn more with referencing with a bit of remembering]]).
