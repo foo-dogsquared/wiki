@@ -2,7 +2,7 @@
 #+author: "Gabriel Arazas"
 #+email: "foo.dogsquared@gmail.com"
 #+date: "2020-04-17 21:41:30 +08:00"
-#+date_modified: "2021-04-05 15:39:53 +08:00"
+#+date_modified: "2021-04-15 21:07:18 +08:00"
 #+language: en
 #+options: toc:t
 #+properties: header-args :session  :exports both
@@ -45,7 +45,7 @@ An array will create a table, for instance with ~:results value~ [[https://orgmo
 You can also export graphics with tools such as [[http://gnuplot.info/][Gnuplot]], [[https://www.gnu.org/software/octave/][GNU Octave]], [[https://www.r-project.org/][R]], and even [[https://www.latex-project.org/][LaTeX]].
 With it, you can export the graphics into a file (commonly with ~:file <PATH>~).
 
-#+begin_src gnuplot  :exports both  :file wooosh.png
+#+begin_src gnuplot  :exports both  :file assets/2020-04-17-21-41-30/gnuplot-demo.png
 unset arrow
 unset label
 set grid
@@ -53,6 +53,7 @@ splot x**2+y**2, x**2-y**2
 #+end_src
 
 #+results:
+[[file:assets/2020-04-17-21-41-30/gnuplot-demo.png]]
 
 With Org-babel, you can share either the output, the code used to generate the output, or both.
 This is commonly set with the ~:exports~ header argument.
@@ -60,14 +61,14 @@ This is commonly set with the ~:exports~ header argument.
 
 Here's an example where I decided to show only the output with ~:exports results~.
 
-#+begin_src gnuplot  :exports results  :file threeeeeeD.png
+#+begin_src gnuplot  :exports results  :file assets/2020-04-17-21-41-30/gnuplot-3d-demo.png
 set title "3D gnuplot demo"
 unset grid
 splot x*y with points
 #+end_src
 
 #+results:
-[[file:threeeeeeD.png]]
+[[file:assets/2020-04-17-21-41-30/gnuplot-3d-demo.png]]
 
 
 
