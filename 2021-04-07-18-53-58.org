@@ -1,0 +1,19 @@
+#+title: Future-proofing your notes is only worth if the future is relevant
+#+author: "Gabriel Arazas"
+#+email: "foo.dogsquared@gmail.com"
+#+date: "2021-04-07 18:53:58 +08:00"
+#+date_modified: "2021-04-07 19:52:57 +08:00"
+#+language: en
+#+options: toc:t
+#+property: header-args  :exports both
+
+
+At some point, your notes will be a gigantic mess.
+Even if you [[file:2020-04-15-20-41-51.org][Add a desktop search engine for your digital library]] and know the structure, it's not always worth with the overwhelming pile that will accumulate further since you always navigate certain notes through a fixed path.
+Similar to certain software projects like Xorg, Rust language, magit, and org-roam, there will be a point where you have to redesign them.
+[fn:: Xorg has Wayland as the successor, the Rust community can revise the language freely through editions, magit did have a crownfunding campaign to pay the developer to rewrite it for a year, and org-roam is recently through a major redesign.]
+You have to assign a garbage day at some point.
+
+Future-proofing your notes creates pressure on managing your note-taking seriously and efficiently.
+You don't want to take notes haphazardly and the overall notes structure will stay the same throughout a year.
+They should eventually evolve into [[file:2020-05-07-21-53-21.org][Evergreen notes]], branching out of the original notes structure and making a better graph for navigation.
