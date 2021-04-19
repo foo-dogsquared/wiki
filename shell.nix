@@ -4,6 +4,8 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     gnumake
     gnuplot
+    graphviz
+    lilypond
     octaveFull
     python3
     racket
