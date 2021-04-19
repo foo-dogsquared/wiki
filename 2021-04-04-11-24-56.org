@@ -2,7 +2,7 @@
 #+author: "Gabriel Arazas"
 #+email: "foo.dogsquared@gmail.com"
 #+date: "2021-04-04 11:24:56 +08:00"
-#+date_modified: "2021-04-07 17:33:35 +08:00"
+#+date_modified: "2021-04-19 14:42:32 +08:00"
 #+language: en
 #+options: toc:t
 #+property: header-args  :exports both
@@ -44,6 +44,7 @@ The brain goes into two modes: *focused* and *diffused*.
 
 - Diffused mode is when there is state of clarity in the mind.
   This is when we relax: taking a break, walking in the trails, doing a power nap, sleeping for hours, hanging out with friends, etc.
+  Usually, it comes in the form of random thoughts or Eureka moments passing through our brain.
 
 In other words, our brain is working 24/7.
 Similar to ourselves, the brain has a routine to follow not only to make our body function as-is day-to-day but also improve ourselves in terms of habits and skills when we put the effort.
@@ -60,6 +61,7 @@ To mitigate against this:
 
 - Just start working.
   The discomfort of facing it goes away after a while.
+
 - Use the Pomodoro technique to create interleaving segments of focus and relaxation.
 
 
@@ -67,9 +69,7 @@ To mitigate against this:
 
 * Memory and sleep
 
-The brain is mostly compared to a muscle in a way that you have to do work for development.
-The analogy couldn't be more apt as the development of a neural formation is dictated by how much work you put.
-A neural formation is stronger if you use it more often while it decays if you neglect for some time.
+Similar to working out to build up muscles, a neural formation is stronger if you use it more often while it decays if you neglect for some time.
 This is the basis of memory.
 
 The memory can be separated into two parts:
@@ -82,12 +82,12 @@ The memory can be separated into two parts:
 
 The following practices are recommended to strengthen your memory:
 
-- Spaced repetition.
+- Use [[file:2021-04-07-18-19-11.org][Spaced repetition]].
   That is, repeating what you've practice over a period of time whether by days, weeks, or even months.
   Similar to the previous point, cramming and repeating over a few times in one evening will dissipate the neural formation faster.
 
-- Another way of hardening the memory is through sleep.
-  As counterintuitive as it is, sleep does have its function that helps with the brain such as preventing sleep-related disorders such as insomnia, removing toxins that accumulate while you're awake, and strengthening relevant neural structures while erasing less important ones.
+- Just sleep.
+  As counterintuitive as it is, sleep does have its function that helps with the brain such as preventing sleep-related disorders (e.g., insomnia), removing toxins that accumulate while you're awake, and strengthening relevant neural structures while erasing less important ones.
 
 
 
@@ -150,6 +150,94 @@ Another example is reading the word 'electronics' may invoke an image of the com
 This is the gist of chunking.
 
 Chunking is the process of simplifying groups of information (or neural structure) as you learn and use more of them.
+Neuroscientifically speaking, a chunk is a group of neurons that learnt to sing in tune as you react to something.
+When a certain word is heard, it may invoke an imagery.
+That process comes from your neurons storing bits on information combining into the resulting imagery.
+
+A new chunk can form from the diffused mode of thinking where random bits on information are gathered while in this mode.
+The chunk may grow bigger as you use more of them or decay as you use less.
+The bigger the chunk is, the more information is condensed and this is when we start to form expertise over various skills.
+
+Having a group of chunks can be helpful in learning new ideas as you'll find relations between different fields/skills/ideas.
+This transfer of ideas will come in handy once you explore more.
+If you're a mathematician, for example, you'll find similarities on computer programming with the concepts of variables, looping, functions, conditionals, and so forth.
+It can even work vice-versa.
+
+
+** Forming new chunks
+
+To form new chunks, one of the guidelines is to focus, understand, and practice.
+
+- Focus your undivided attention into learning.
+  If you're having trouble with it, see [[Procrastination]].
+
+- Understand the basic idea of the concept.
+  For related information, see [[Memory and Sleep]].
+
+- Practice to strengthen the chunk and know the big picture.
+  Learning can go bottom-up — knowing the details of a specific problem — and top-down learning — gaining a 30,000 foot view of what you're learning and where it fits in.
+
+One of the more useful tips on forming new chunks is to learn the key ideas.
+While learning, you can then fill in the details yourself.
+For specific practices, you can gain an overview of what you're trying to learn by skimming the text or a chapter, heading into an example exercise, and watching others how it is done (see [[file:2020-07-06-03-47-52.org][Refer to advanced resources when skill-building for a solid short-term goal]]).
+Simply understanding and seeing does not make an expert.
+One of the pitfalls when learning through examples is only focusing on how to solve the specific problem and not why it is necessary.
+Examples like those should be treated like a road map, giving you directions on reaching a conclusion.
+With a roadmap, you can also find other ways how to reach the same conclusions.
+
+To check whether you have gained a chunk, one of the indicators is doing it yourself.
+Recalling is one of the best way to learn a new concept in-depth compared to other practices such as concept mapping.
+The value of recalling is creating mini-tests while on the process of retrieving key information.
+It turns out when we retrieve information, we're also learning in some form.
+Recalling and mini-testing only strengthen the process further.
+
+A new chunk can also form when you're under stress impeding your understanding or when you're in diffused mode.
+That said, having a chunk does not often mean useful.
+A chunk is useless if it's isolated among the rest for some time or if it's not made to connect with other chunks.
+Furthermore, due to the semi-random way of thinking when diffused, it should be verified with a focused way of thinking.
+
+
+
+
+* Illusions of competence
+
+Illusions of competence is one of the pitfalls when trying to learn.
+One of lesser forms of it is practicing what is proved to be ineffective — while plausible to learn with those, can entrap the learner into thinking they're making progress.
+
+One of the reasons of illusion of competence is the presence of the material itself.
+Once seen by the student, they tend to think they have absorbed the material.
+
+Highlighting, rereading, concept mapping = not effective than what you thought
+
+- Highlighting can be done to a minimum, the key idea should be the focus of the highlight.
+- Rereading can be effective if done in spaced repetition and if recalling was applied.
+- Concept mapping can be effective but only if the basic chunk was formed.
+
+Another example of it is learning with solutions — while helpful into learning the big picture, it can also fool students thinking the problem is easier than they thought.
+The shown solution is given and solved by others so it is easy to think that we have solved the problem as well.
+
+One of the key takeaways from this is doing the problem solving ourselves is the one of the most important step in mastering a subject.
+
+
+
+
+* Motivations
+
+Your brain is composed of neuromodulators and chemicals that affects your learning.
+
+- Acetylcholine affects your focused attention.
+  It can affect your long-term memory and neuroplasticity.
+
+- Dopamine affects your ability to predict better rewards for the uncertain future.
+  This involves doing things that are not immediately rewarding but predicts it will bear a better reward in the future.
+  Lack of dopamine means lack of motivation.
+  While drugs exist in controlling the dopamine levels, it can be dangerous by craving for more and becoming dependent on it.
+
+- Seratonin affects risk-taking behavior.
+  Lower seratonin levels means more of behaving more of a risk-taker.
+
+Emotions and cognition are related to one another and no less important to learning.
+If you want to be an effective learner, you have to be happy or in the mood.
 
 
 
