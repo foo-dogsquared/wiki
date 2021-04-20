@@ -5,7 +5,6 @@
 #+date_modified: "2021-04-07 16:17:57 +08:00"
 #+language: en
 #+options: toc:t
-#+property: header-args  :exports both
 
 
 Some projects such as user applications should include examples of usage varying of the complexity from a simple "Hello world"-esque example to a real-life example that the developer uses.

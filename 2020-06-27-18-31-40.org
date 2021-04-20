@@ -5,7 +5,6 @@
 #+date_modified: "2020-09-09 04:58:42 +08:00"
 #+language: en
 #+options: toc:t
-#+property: header-args  :exports both
 
 
 On practice, writing down the simplest possible examples allows you to get started working on the definitions.

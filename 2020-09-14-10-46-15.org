@@ -5,7 +5,6 @@
 #+date_modified: "2020-09-14 11:31:36 +08:00"
 #+language: en
 #+options: toc:t
-#+property: header-args  :exports both
 
 
 - [[https://reproducible-builds.org/][Reproducible builds]]

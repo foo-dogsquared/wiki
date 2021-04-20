@@ -5,7 +5,6 @@
 #+date_modified: "2020-09-17 03:11:19 +08:00"
 #+language: en
 #+options: toc:t
-#+property: header-args  :exports both
 
 
 One of the simplest ways to future-proof your documents with [[file:2020-04-13-17-32-27.org][File metadata]] is to create a timestamp.

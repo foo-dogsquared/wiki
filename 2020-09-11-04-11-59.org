@@ -5,7 +5,6 @@
 #+date_modified: "2020-09-11 04:13:31 +08:00"
 #+language: en
 #+options: toc:t
-#+property: header-args  :exports both
 
 
 Computing graphics is consists of (at least in my study):

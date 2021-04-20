@@ -5,7 +5,6 @@
 #+date_modified: "2021-04-05 21:22:54 +08:00"
 #+language: en
 #+options: toc:t
-#+property: header-args  :exports both
 #+source :: https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/about
 #+tags: @fleeting courses research.reproducibility
 

@@ -5,7 +5,6 @@
 #+date_modified: "2020-09-09 05:16:33 +08:00"
 #+language: en
 #+options: toc:t
-#+property: header-args  :exports both
 
 
 One of the best practices for [[file:2020-04-15-14-35-55.org][Note-taking]] is writing [[file:2020-06-25-13-12-09.org][Fleeting notes]] which are used to store essential information so that your brain doesn't have to.

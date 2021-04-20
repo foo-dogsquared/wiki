@@ -5,7 +5,6 @@
 #+date_modified: "2020-09-09 05:26:32 +08:00"
 #+language: en
 #+options: toc:t
-#+property: header-args  :exports both
 
 
 Functional package management (FPM) is the next step forward [[https://edolstra.github.io/pubs/nixos-icfp2008-final.pdf][pioneered by Eelco Dolstra]] with [[https://nixos.org/][NixOS]] as the living implementation.

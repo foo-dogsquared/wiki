@@ -5,7 +5,6 @@
 #+date_modified: "2020-09-29 06:08:42 +08:00"
 #+language: en
 #+options: toc:t
-#+property: header-args  :exports both
 
 
 Though we already have [[file:2020-09-11-04-08-34.org][Human-friendly colorspaces]], it doesn't mean that we can simply generate human-friendly color schemes.

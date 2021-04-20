@@ -5,7 +5,6 @@
 #+date_modified: "2021-04-07 14:30:54 +08:00"
 #+language: en
 #+options: toc:t
-#+property: header-args  :exports both
 #+tags: media.talk graphics.user-interface computer.history
 #+source: https://youtu.be/6ZdxiQoOBgs
 

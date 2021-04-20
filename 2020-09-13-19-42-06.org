@@ -5,7 +5,6 @@
 #+date_modified: "2020-09-14 00:15:26 +08:00"
 #+language: en
 #+options: toc:t
-#+property: header-args  :exports both
 
 
 I've been dabbling with software packaging for a few days (as of 2020-09-13) and all I can say that it is a rewarding experience having to know different tools (e.g., build systems, version control systems).
