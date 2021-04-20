@@ -4,7 +4,6 @@
 #+date: "2020-06-27 18:31:40 +08:00"
 #+date_modified: "2020-09-09 04:58:42 +08:00"
 #+language: en
-#+options: toc:t
 
 
 On practice, writing down the simplest possible examples allows you to get started working on the definitions.

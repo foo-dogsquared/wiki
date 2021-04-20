@@ -4,7 +4,6 @@
 #+date: "2020-08-19 08:21:44 +08:00"
 #+date_modified: "2021-03-28 18:24:02 +08:00"
 #+language: en
-#+options: toc:t
 
 
 [[https://guix.gnu.org/][GNU Guix]] is a package manager that follows the footsteps of [[file:2020-09-04-16-07-47.org][Nix package manager]] in furthering [[file:2020-09-19-08-31-48.org][Functional package management]].

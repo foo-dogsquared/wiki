@@ -4,7 +4,6 @@
 #+date: "2020-04-17 21:41:30 +08:00"
 #+date_modified: "2021-04-15 21:07:18 +08:00"
 #+language: en
-#+options: toc:t
 #+properties: header-args :session  :exports both
 #+tags: research.reproducibility
 

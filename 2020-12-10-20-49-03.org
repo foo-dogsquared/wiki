@@ -4,7 +4,6 @@
 #+date: "2020-12-10 20:49:03 +08:00"
 #+date_modified: "2020-12-11 00:48:19 +08:00"
 #+language: en
-#+options: toc:t
 
 
 If you want to start good backup practices, the 3-2-1 rule is a good starting point.

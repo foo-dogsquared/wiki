@@ -4,7 +4,6 @@
 #+date: "2021-04-06 22:25:17 +08:00"
 #+date_modified: "2021-04-07 11:58:29 +08:00"
 #+language: en
-#+options: toc:t
 #+tags: personal-info-management
 
 

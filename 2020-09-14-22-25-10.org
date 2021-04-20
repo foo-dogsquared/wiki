@@ -4,7 +4,6 @@
 #+date: "2020-09-14 22:25:10 +08:00"
 #+date_modified: "2020-09-14 23:53:35 +08:00"
 #+language: en
-#+options: toc:t
 
 
 Practicing [[file:2020-09-13-19-42-06.org][Software packaging]] in [[file:2020-08-19-08-21-44.org][GNU Guix]] is pretty straightforward with several tools that the package manager provides.

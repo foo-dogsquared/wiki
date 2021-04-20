@@ -4,7 +4,6 @@
 #+date: "2020-07-06 03:47:52 +08:00"
 #+date_modified: "2020-09-09 05:09:40 +08:00"
 #+language: en
-#+options: toc:t
 
 
 When starting out to build a skill like programming, 3D modelling, digital art, or cooking, you can look first for expert-created resources.

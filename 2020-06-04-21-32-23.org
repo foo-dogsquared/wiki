@@ -4,7 +4,6 @@
 #+date: "2020-06-04 21:32:23 +08:00"
 #+date_modified: "2020-09-09 05:16:33 +08:00"
 #+language: en
-#+options: toc:t
 
 
 A [[https://github.com/MaggieAppleton/digital-gardeners][digital garden]] is a your space for creating carefully crafted notes (see [[file:2020-05-07-21-53-21.org][Evergreen notes]]).

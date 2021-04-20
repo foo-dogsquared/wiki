@@ -4,7 +4,6 @@
 #+date: "2020-04-15 20:41:51 +08:00"
 #+date_modified: "2020-09-09 05:09:41 +08:00"
 #+language: en
-#+options: toc:t
 
 
 Desktop search engines adds a crucial thing for [[file:2020-04-14-18-28-55.org][Maintaining your own digital library]]: retrievability.

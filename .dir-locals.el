@@ -6,4 +6,5 @@
                                            (:noweb . "no")
                                            (:hlines . "no")
                                            (:tangle . "no")))
-         (org-babel-results-keyword . "results"))))
+         (org-babel-results-keyword . "results")
+         (org-export-with-toc . t))))

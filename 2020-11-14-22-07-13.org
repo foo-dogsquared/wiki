@@ -4,7 +4,6 @@
 #+date: "2020-11-14 22:07:13 +08:00"
 #+date_modified: "2021-04-07 16:34:17 +08:00"
 #+language: en
-#+options: toc:t
 #+tags: media.talk writing
 
 

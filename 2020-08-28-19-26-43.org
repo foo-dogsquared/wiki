@@ -4,7 +4,6 @@
 #+date: "2020-09-09 05:27:17 +08:00"
 #+date_modified: "2020-09-18 03:06:06 +08:00"
 #+language: en
-#+options: toc:t
 
 
 Linux drivers (also called as kernel modules) are software executed in the kernel.

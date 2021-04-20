@@ -4,7 +4,6 @@
 #+date: "2020-04-13 17:32:27 +08:00"
 #+date_modified: "2020-09-09 05:17:29 +08:00"
 #+language: en
-#+options: toc:t
 
 
 File metadata is one of the most subtle requirements in [[file:2020-04-23-23-21-47.org][Personal information management]] (or at least, that's what I think).

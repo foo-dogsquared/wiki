@@ -4,7 +4,6 @@
 #+date: "2020-06-02 12:41:43 +08:00"
 #+date_modified: "2021-04-05 16:09:08 +08:00"
 #+language: en
-#+options: toc:t
 #+tags: @fleeting courses compsci
 
 
