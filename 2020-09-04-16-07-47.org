@@ -1,6 +1,4 @@
 #+title: Nix package manager
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-09-04 16:07:47 +08:00"
 #+date_modified: "2020-09-09 05:25:03 +08:00"
 #+language: en

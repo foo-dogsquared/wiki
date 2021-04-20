@@ -1,6 +1,4 @@
 #+title: GNU Guix packaging
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-09-14 22:25:10 +08:00"
 #+date_modified: "2020-09-14 23:53:35 +08:00"
 #+language: en

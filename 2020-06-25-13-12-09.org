@@ -1,6 +1,4 @@
 #+title: Fleeting notes
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-06-25 13:12:09 +08:00"
 #+date_modified: "2020-09-09 04:58:41 +08:00"
 #+language: en

@@ -1,6 +1,4 @@
 #+title: Endianness
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-07-10 23:30:27 +08:00"
 #+date_modified: "2020-09-09 05:23:55 +08:00"
 #+language: en

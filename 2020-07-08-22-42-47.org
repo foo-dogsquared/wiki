@@ -1,6 +1,4 @@
 #+title: When learning a new skill, begin with a specific end-goal to create a solid starting point
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-07-08 22:42:47 +08:00"
 #+date_modified: "2020-12-05 21:43:46 +08:00"
 #+language: en

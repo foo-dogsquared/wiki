@@ -1,6 +1,4 @@
 #+title: Text Encoding Initiative
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-04-12 13:07:20 +08:00"
 #+date_modified: "2020-09-09 05:16:32 +08:00"
 #+language: en

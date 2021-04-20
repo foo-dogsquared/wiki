@@ -1,6 +1,4 @@
 #+title: Generate a color scheme based from a single color
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-11-05 17:21:58 +08:00"
 #+date_modified: "2020-11-19 19:32:26 +08:00"
 #+language: en

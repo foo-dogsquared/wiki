@@ -1,6 +1,4 @@
 #+title: Accounting basics
-#+author: "Gabriel Arazas"
-#+email: "%![Error: (void-function user-mail-address)]"
 #+date: "2020-11-15 05:10:51 +08:00"
 #+date_modified: "2020-11-15 05:11:23 +08:00"
 #+language: en

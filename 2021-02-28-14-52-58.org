@@ -1,6 +1,4 @@
 #+title: Create examples of ranking complexity when documenting your project serving as a quick glance
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2021-02-28 14:52:58 +08:00"
 #+date_modified: "2021-04-07 16:17:57 +08:00"
 #+language: en

@@ -1,6 +1,4 @@
 #+title: Illustration
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-12-26 13:30:39 +08:00"
 #+date_modified: "2020-12-26 14:22:50 +08:00"
 #+language: en

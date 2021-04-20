@@ -1,6 +1,4 @@
 #+title: Refer to advanced resources when skill-building for a solid short-term goal
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-07-06 03:47:52 +08:00"
 #+date_modified: "2020-09-09 05:09:40 +08:00"
 #+language: en

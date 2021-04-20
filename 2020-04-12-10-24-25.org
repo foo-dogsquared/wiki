@@ -1,6 +1,4 @@
 #+title: Reproducible research: methodological principles for transparent science
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-04-12 10:24:25 +08:00"
 #+date_modified: "2021-04-05 21:22:54 +08:00"
 #+language: en

@@ -1,6 +1,4 @@
 #+title: Functional package management
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-09-19 08:31:48 +08:00"
 #+date_modified: "2020-09-09 05:26:32 +08:00"
 #+language: en

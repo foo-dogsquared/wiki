@@ -1,6 +1,4 @@
 #+title: Use timestamps for effectively future-proofing your stuff
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-09-16 23:09:01 +08:00"
 #+date_modified: "2020-09-17 03:11:19 +08:00"
 #+language: en

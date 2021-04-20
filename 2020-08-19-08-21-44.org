@@ -1,6 +1,4 @@
 #+title: Guix package manager
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-08-19 08:21:44 +08:00"
 #+date_modified: "2021-03-28 18:24:02 +08:00"
 #+language: en

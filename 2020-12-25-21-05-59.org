@@ -1,6 +1,4 @@
 #+title: When creating a line, be confident and sure
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-12-25 21:05:59 +08:00"
 #+date_modified: "2021-01-04 11:05:19 +08:00"
 #+language: en

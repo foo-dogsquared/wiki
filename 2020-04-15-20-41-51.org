@@ -1,6 +1,4 @@
 #+title: Add a desktop search engine for your digital library
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-04-15 20:41:51 +08:00"
 #+date_modified: "2020-09-09 05:09:41 +08:00"
 #+language: en

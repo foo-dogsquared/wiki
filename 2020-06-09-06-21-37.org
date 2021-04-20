@@ -1,6 +1,4 @@
 #+title: The overview of a programming environment
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-06-09 06:21:37 +08:00"
 #+date_modified: "2020-09-09 05:18:47 +08:00"
 #+language: en

@@ -1,6 +1,4 @@
 #+title: Note-taking
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-04-15 14:35:55 +08:00"
 #+date_modified: "2020-09-09 05:17:29 +08:00"
 #+language: en

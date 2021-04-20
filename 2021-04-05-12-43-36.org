@@ -1,6 +1,4 @@
 #+title: Speedreading is all about skimming well
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2021-04-05 12:43:36 +08:00"
 #+date_modified: "2021-04-05 15:37:00 +08:00"
 #+language: en

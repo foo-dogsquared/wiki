@@ -1,6 +1,4 @@
 #+title: Functional programming
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-09-04 19:57:06 +08:00"
 #+date_modified: "2020-09-09 05:25:37 +08:00"
 #+language: en

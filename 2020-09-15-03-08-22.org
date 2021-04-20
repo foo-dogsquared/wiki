@@ -1,6 +1,4 @@
 #+title: Create package definitions for missing dependencies first before the package itself
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-09-15 03:08:22 +08:00"
 #+date_modified: "2020-09-15 03:18:37 +08:00"
 #+language: en

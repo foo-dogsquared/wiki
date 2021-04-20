@@ -1,6 +1,4 @@
 #+title: Software packaging
-#+author: "Gabriel Arazas"
-#+email: "foo.dogsquared@gmail.com"
 #+date: "2020-09-13 19:42:06 +08:00"
 #+date_modified: "2020-09-14 00:15:26 +08:00"
 #+language: en
