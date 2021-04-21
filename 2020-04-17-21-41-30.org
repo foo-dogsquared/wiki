@@ -1,13 +1,13 @@
-#+title: Org-mode: Babel
+#+title: Org mode: Babel
 #+date: "2020-04-17 21:41:30 +08:00"
-#+date_modified: "2021-04-15 21:07:18 +08:00"
+#+date_modified: "2021-04-21 17:43:52 +08:00"
 #+language: en
 #+properties: header-args :session  :exports both
 #+tags: research.reproducibility
 
 
-Org-babel is the framework that enables [[file:2020-04-20-16-51-40.org][Org-mode]] to insert output of the code from programming languages.
-It is also the one thing that makes Org-mode to be used as a tool for [[file:2020-04-12-11-20-53.org][Reproducible research]].
+Org-babel is the framework that enables [[file:2020-04-20-16-51-40.org][Org mode]] to insert output of the code from programming languages.
+It is also the one thing that makes Org mode to be used as a tool for [[file:2020-04-12-11-20-53.org][Reproducible research]].
 As of 2020-06-08, [[https://orgmode.org/worg/org-contrib/babel/languages.html][Babel supports more than 50 languages]] with the possibility of adding of other languages that are not supported yet.
 
 
@@ -29,7 +29,7 @@ The results will be printed into a result block.
 
 Each of the supported language may also have an exclusive option with each language suitable for certain processes.
 
-For example, with Python 3, you can pretty print it in accordance to Org-mode display.
+For example, with Python 3, you can pretty print it in accordance to Org mode display.
 An array will create a table, for instance with ~:results value~ [[https://orgmode.org/manual/Using-Header-Arguments.html#Using-Header-Arguments][header argument]].
 
 #+begin_src python  :results value
@@ -109,7 +109,7 @@ To correct this, simply execute ~org-babel-execute-buffer~.
 
 * Integrating between different programming languages
 
-You can also pass Org-mode variables (from ~#+NAME: <VAR>~) [fn:: Technically called an internal link (https://orgmode.org/org.html#Internal-Links).] into the source code blocks with the ~:var <NAMEC>=<DATA>~ (though, this may vary among Babel runtimes).
+You can also pass Org mode variables (from ~#+NAME: <VAR>~) [fn:: Technically called an internal link (https://orgmode.org/org.html#Internal-Links).] into the source code blocks with the ~:var <NAMEC>=<DATA>~ (though, this may vary among Babel runtimes).
 
 #+name: example_string
 This is the string.
@@ -135,7 +135,7 @@ example
 ,: This is the string.
 #+end_src
 
-Org-mode variables does capture an element as its input.
+Org mode variables does capture an element as its input.
 This has a lot of implications of passing data between different sessions and even different languages.
 
 For example, we could still capture the ~x~ variable from the previous Python code blocks.
@@ -145,7 +145,7 @@ For example, we could still capture the ~x~ variable from the previous Python co
 x # Which should be 60 at this point.
 #+end_src
 
-Then, pass it to some other Org-mode blocks with the variable.
+Then, pass it to some other Org mode blocks with the variable.
 (Since the captured variable are always going to be a string, we have to convert it into the appropriate type.)
 
 #+begin_src R  :results output  :var python_var=var_from_other_lang

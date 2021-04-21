@@ -1,0 +1,44 @@
+#+title: Using the built-in help system of Emacs
+#+date: "2021-04-21 16:26:50 +08:00"
+#+date_modified: "2021-04-21 18:01:56 +08:00"
+#+language: en
+
+
+[[roam:Emacs][GNU Emacs]], being a flexible program with a supremely overwhelming number of options to choose from (arguably), has a comprehensive help system.
+[fn:: It's a necessity after all by how massive of a software this is.]
+
+
+
+
+* General help system
+
+- ~help-for-help~ is a function that gives you a metahelp interface to a number of options such as searching through pattern, logging the last keybindings, display the documentation from a keybinding, describe a language environment, and so on.
+  Most, if not all, of the options presented can be accessed in another way.
+
+- ~apropos~, like its similarly named Unix program, searches through the entire symbol list of Emacs (e.g., variable, function) through a pattern.
+
+- The series of functions from ~describe-*~ has multiple options for various specific things.
+  Among the list of describe functions, I recommend to start with ~describe-key~, ~describe-function~, ~describe-variable~, ~describe-package~, ~describe-mode~, and ~describe-variable~.
+
+- Most of the objects (e.g., functions, variables, hooks) in Emacs also require a docstring so you'll have more relevant information at hand.
+
+
+
+
+* evil-mode
+
+evil-mode, being inspired from Vim keybindings, adds further into more ways for an instant access to documentation.
+
+- ~evil-lookup~, similar to Vim's lookup key (~:help K~), searches through documentation of the language written on.
+
+- ~evil-goto-definition~ can sometimes go into the original file where the keyword was defined.
+  It is only useful when the keyword is defined in the project or at least located on the project root.
+
+
+
+
+* Doom Emacs-specific
+
+- ~doom/help~ for Doom-specific documentations.
+- ~doom/help-faq~ jumps ahead into the FAQ file with a convenient interface.
+- ~doom/help-modules~ prompts you to search the documentation for Doom modules.

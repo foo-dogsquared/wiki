@@ -1,10 +1,14 @@
-#+title: Org-mode
+#+title: Org mode
 #+date: "2020-04-20 16:51:40 +08:00"
-#+date_modified: "2020-09-09 05:17:29 +08:00"
+#+date_modified: "2021-04-21 18:06:28 +08:00"
 #+language: en
 #+tags: tools writing
 
 
-At its core, [[https://orgmode.org/][Org-mode]] is a [[file:2020-04-23-23-21-47.org][Personal information management]] tool that deals with your tasks and schedules.
+At its core, [[https://orgmode.org/][Org mode]] is a [[file:2020-04-23-23-21-47.org][Personal information management]] tool that deals with your tasks and schedules.
 Nowadays, it sports a lightweight markup language and a framework that allows arbitrarily inserting output of code of various programming languages.
-With these features, Org-mode is known as one of the many tool for [[file:2020-04-12-11-20-53.org][Reproducible research]] which also serves as a solid tool for [[file:2020-04-15-14-35-55.org][Note-taking]] as well.
+With these features, Org-mode is known as one of the many tools for [[file:2020-04-12-11-20-53.org][Reproducible research]] which also serves as a solid tool for [[file:2020-04-15-14-35-55.org][Note-taking]] as well.
+
+Unfortunately, a lot of the famous powers of the format is tied with [[roam:GNU Emacs][roam:GNU Emacs]].
+While there is an ecosystem flourishing outside of the text editor (e.g., [[https://github.com/niklasfasching/go-org][go-org]], [[https://github.com/orgapp/orgajs][orgajs]], [[https://pandoc.org/org.html][Org mode support in Pandoc]]), the plugins inside of Emacs simply cannot be ignored.
+Among other Org mode plugins inside of the Emacs ecosystem, we have [[link][org-roam]], [[https://github.com/jkitchin/org-ref][org-ref]], [[https://github.com/weirdNox/org-noter][org-noter]], [[https://orgmode.org/worg/exporters/index.html][a number of exporters]], and [[https://orgmode.org/worg/org-contrib/babel/languages/index.html][org-babel language plugins]] (see [[file:2020-04-17-21-41-30.org][Org mode: Babel]]) that extends to more workflows.
