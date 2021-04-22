@@ -1,6 +1,6 @@
 #+title: Classic prose
 #+date: "2021-04-07 15:09:24 +08:00"
-#+date_modified: "2021-04-07 16:33:04 +08:00"
+#+date_modified: "2021-04-22 15:02:06 +08:00"
 #+language: en
 #+tags: writing
 
@@ -19,14 +19,9 @@ For example, with the saying "The people of America are getting fatter.", we bot
 Just like in a casual conversation, the reader has a rough idea of what they're reading.
 They are reading to see what the writer has to do something about the subject.
 
-The guideline of keeping it as objective as possible makes
+The guideline of keeping it as objective as possible also encourages being concise.
+You can [[file:2021-02-28-14-52-58.org][Create examples of ranking complexity when documenting your project serving as a abstract]].
+It is written on equal footing with the reader, after all.
+Thus, any writing suited to impress is a pointless addition (and can rub the wrong way for the reader).
 
-Consequently, this reduces the fluff that you often see in academic writings or legal documents such as:
-
-- Apologizing (e.g., "...as the theory of multiverses is not yet proven as of the time of this writing, more research is required on how we define superheroes").
-- Philosophical non-sequiturs (e.g., "In order to create a deviled egg, first we need to ask is cooking.").
-- Hedging (e.g., probably, somewhat, all I know is, I'm not an expert but).
-- Metaconcepts (e.g., perspective, approaches).
-- Clichés (e.g., walk in a park, knock peoples' socks off).
-- Thingification of verbs and adjectives (e.g., "make an appearance" instead of "appear", "bringing doom" instead of "destroy").
-- Scare quotes (e.g., "so-called", "in-the-know").
+Consequently, this [[file:2021-04-22-15-00-34.org][Reduce writing fluff]] that you often see in academic and legal writings.
