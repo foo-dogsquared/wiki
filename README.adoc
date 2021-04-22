@@ -7,12 +7,19 @@
 Keep taking notes and stop worrying about file organization!
 
 Muh wiki.
-This documents the "infrastructure" of my notes because I like documenting.
+This documents the "infrastructure" of my notes because I like documenting and I always forget things.
 It primarily uses the link:https://zk.zettel.page/[Zettelkasten note-taking method] which means all of my notes are scattered in just one location.
 Fun.
 
-NOTE: On another note, this supercedes my link:https://github.com/foo-dogsquared/personal-notes[personal notes].
+[NOTE]
+====
+On another note, this supersedes my link:https://github.com/foo-dogsquared/personal-notes[personal notes].
 I'm not going to import them because I want to start on a clean slate.
+
+Also, not everything on this Git repo is here (at least yet).
+Some of them are private files and so I want them to not appear anywhere else.
+Fortunately for me, most of the private files are connected with each other (a separate org-roam instance would be better in this case).
+====
 
 
 
@@ -45,21 +52,26 @@ footnote:[You can enable the direnv module from the Doom Emacs config.]
 === Setting up
 
 Now with the pieces complete and assuming you've already have my wiki in your folder, fire up Emacs, open the wiki folder, and do your thing.
+This project has a link:./.dir-locals.el[local Emacs config] (see link:https://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html[related section]).
+If you've set `enable-local-variables` to `:safe` or any value that makes Emacs to ignore them, you may want to configure related variables in a way either conditionally or simply replacing them.
 
-If you have direnv installed, you can also enable automatic shell environments.
-How?
-Just add `.envrc`!
+If you have direnv installed, you can also enable automatic shell environments by allowing `.entry` to set it up for you.
+Just run `direnv allow`!
 
-[source, shell]
-----
-echo "use nix" > .envrc && direnv allow
-----
-
+If you have link:https://github.com/target/lorri[lorri] installed, you're better to go with the faster startup for the environment.
 
 
 
 
 == Conventions
+
+* When create a link between notes, more specific notes should link general notes.
+This makes it easier to navigate a graph of back links.
++
+IMPORTANT: This is a muddy subject leaning more into explicitly linking a subject without care.
+Besides, those are what backlinks are for.
+It's not an absolute rule to follow so don't worry about this, it's just a guideline at best.
+Otherwise, you'll go through analysis paralysis.
 
 * Uses timestamp (at localtime) as the filename, it is unique enough (for personal purposes) and doesn't need to change.
 footnote:[If you use the title as the basis, that'll depend if you have tolerance for the misaligning relation between the filename and the title.]
@@ -118,16 +130,22 @@ For now, I'm not worrying to much on this one.
 I did create a publication script back then for a small org-mode-based for testing purposes but it is messy and life happened so I wasn't able to get back on it immediately.
 Here's a link:https://git.sr.ht/~brettgilio/website/[very good example of a org-mode-and-Emacs-powered site] complete with features and without JavaScript!
 footnote:[link:https://brettgilio.com/[Brett Gilio] is kind enough to answer my noob org-mode related questions back then so big thanks to him for the guidance. :)]
+The advantage is complete control and the disadvantage is starting from scratch.
+Still, you can start from already existing solutions.
 
 ** Convert the org documents to commonly-supported text formats like Markdown and use static site generators.
 Most of them supports Markdown and there is an "export to Markdown" option for org-mode.
 I could whip up an Elisp script and export it by batch then move them over to an SSG setup like Hugo.
 This is also how link:https://github.com/jethrokuan/braindump[Jethro Kuan's org-roam notes] are setup.
 
+** Use a parser outside of Emacs.
+link:https://github.com/rasendubi/uniorg/tree/master/examples/org-braindump[uniorg] has a good example with Next.js as the site generator.
+It requires an external JavaScript-based setup but it can also be an advantage.
+
 * Migrate the notes for link:https://org-roam.discourse.group/t/org-roam-major-redesign/1198[org-roam v2].
 Though I consider v1 to be feature-complete, I do like v2's reimagining of the plugin with the node (instead of files) as the new atomic unit.
 It is closer to its original inspiration (Roam Research).
-It also brings a few simplified options along the way such as choosing to only support `tags` property.
+It also brings a few simplified options along the way such as choosing to only support `tags` property as well as replacing IDs for linking instead of file links.
 Aaaand the primary maintainer said more performance so yay for me.
 
 ** Expect to change the links since it doesn't accept file links anymore.

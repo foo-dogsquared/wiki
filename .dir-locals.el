@@ -1,10 +1,9 @@
 ((org-mode .
         ((org-babel-default-header-args . ((:session . "none")
-                                           (:results . "output")
+                                           (:results . "replace output")
                                            (:exports . "both")
-                                           (:cache . "yes")
-                                           (:noweb . "no")
-                                           (:hlines . "no")
+                                           (:cache . "no")
+                                           (:noweb . "yes")
                                            (:tangle . "no")))
          (org-babel-results-keyword . "results")
          (org-export-with-toc . t))))
