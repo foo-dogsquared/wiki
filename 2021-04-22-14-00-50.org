@@ -1,0 +1,20 @@
+#+title: Zettelkasten
+#+date: "2021-04-22 14:00:50 +08:00"
+#+date_modified: "2021-04-24 01:07:30 +08:00"
+#+language: en
+
+
+Zettelkasten is a [[file:2020-04-15-14-35-55.org][Note-taking]] method popularized by Niklas Luhmann known for his prolific writings from 400 academic articles to 70 books in a lifetime.
+The main idea of this system is creating a global cloud of atomic notes and linking each notes.
+This system (manifested as a shelf of 60,000 notes) was credited as his writing partner.
+
+To make it more efficient, the workflow further describes the idea of creating good future-proof notes (see [[file:2021-04-07-18-53-58.org][Future-proofing your notes is only worth if the future is relevant]]).
+Most writings about this seem to agree to the following ideas.
+
+- A method to capture notes on-the-fly.
+  This encourages to capture as many ideas as possible.
+
+- A hierarchy to describe the notes.
+  This enforces easier organization and classifying your notes.
+
+- The gradual improvement of the captured notes into [[file:2020-05-07-21-53-21.org][Evergreen notes]].

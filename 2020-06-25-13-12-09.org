@@ -1,20 +1,11 @@
 #+title: Fleeting notes
 #+date: "2020-06-25 13:12:09 +08:00"
-#+date_modified: "2020-09-09 04:58:41 +08:00"
+#+date_modified: "2021-04-24 01:40:53 +08:00"
 #+language: en
 
 
 Fleeting notes are a valuable scratchpad for our messy thoughts — it's natural to have a messy input since they are catered only to yourself.
-It is the opposite of [[file:2020-05-07-21-53-21.org][Evergreen notes]] in a way that can represent your experimental side.
 
 With messy thoughts and inputs, you should [[file:2020-06-25-12-37-23.org][Create a writing inbox to store your thoughts]] all in one place.
 You could search through them with various search techniques to quickly retrieve them (see [[file:2020-06-27-16-21-47.org][Apply search tools and techniques for your digital library]]).
-In this note-taking system, you can make fleeting notes as your "messy" notebook containing wild ideas and with evergreen notes as your "neat" notebook containing solidified ideas.
-
-Ideally, all of your notes should be evergreen but there are times where a note is [[https://notes.andymatuschak.org/z2ZAGQBHuJ2u9WrtAQHAEHcCZTtqpsGkAsrD1][more suitable to be transient]] (e.g., course notes, book summaries) and that's OK.
-There are a lot of ways you could use your fleeting notes.
-
-- Fleeting notes are solid foundations for your evergreen notes, essentially serving as a draft.
-- Fleeting notes can be used as a refresher on things you've done, tracing the steps and remembering the lessons as you go.
-- Since fleeting notes usually are disconnected, you could attach a randomizing system ala-[[https://apps.ankiweb.net/][Anki]].
-  Though, of course, use the tools that you're comfortable with.
+Then, select certain fleeting notes and improve upon them eventually creating [[file:2020-05-07-21-53-21.org][Evergreen notes]].
