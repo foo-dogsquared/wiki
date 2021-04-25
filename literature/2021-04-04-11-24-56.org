@@ -1,9 +1,9 @@
 #+title: Learning how to learn
 #+date: "2021-04-04 11:24:56 +08:00"
-#+date_modified: "2021-04-19 14:42:32 +08:00"
+#+date_modified: "2021-04-25 16:35:48 +08:00"
 #+language: en
 #+source: https://www.coursera.org/learn/learning-how-to-learn
-#+tags: @fleeting courses personal-info-management
+#+tags: courses personal-info-management
 
 
 This course is one of the more popular metalearning courses especially on those who look for more ways to be more productive such as students.
@@ -29,9 +29,7 @@ With recent developments in brain imaging technology, it is shown that neurons c
 Furthermore, it form new synapses with only changes in activity including resting.
 
 
-
-
-* Focused and diffused mode
+** Focused and diffused mode
 
 The brain goes into two modes: *focused* and *diffused*.
 
@@ -47,23 +45,7 @@ Similar to ourselves, the brain has a routine to follow not only to make our bod
 Nonetheless, both of these modes can be used to our advantage to familiarize with new information, see the bigger picture, and learn a new skill.
 
 
-
-
-* Procrastination
-
-Procastination is a problem all of us faces.
-When we procastinate, the things we avert are associated with pain thus we turn our attention away from them.
-To mitigate against this:
-
-- Just start working.
-  The discomfort of facing it goes away after a while.
-
-- Use the Pomodoro technique to create interleaving segments of focus and relaxation.
-
-
-
-
-* Memory and sleep
+** Memory and sleep
 
 Similar to working out to build up muscles, a neural formation is stronger if you use it more often while it decays if you neglect for some time.
 This is the basis of memory.
@@ -78,12 +60,37 @@ The memory can be separated into two parts:
 
 The following practices are recommended to strengthen your memory:
 
-- Use [[file:2021-04-07-18-19-11.org][Spaced repetition]].
+- Use [[file:~/writings/wiki/2021-04-07-18-19-11.org][Spaced repetition]].
   That is, repeating what you've practice over a period of time whether by days, weeks, or even months.
   Similar to the previous point, cramming and repeating over a few times in one evening will dissipate the neural formation faster.
 
 - Just sleep.
   As counterintuitive as it is, sleep does have its function that helps with the brain such as preventing sleep-related disorders (e.g., insomnia), removing toxins that accumulate while you're awake, and strengthening relevant neural structures while erasing less important ones.
+
+
+** Chunking
+
+Your working memory is said to have four chunks at a time.
+For more efficiency, your brain can link various neural structures to represent an information.
+An example is numbers and operations such as \(5 * 4 = 20\), \(1 + 1 = 2\), and \(5 - 29 = -24\).
+You know what numbers are, what do the symbols mean, and if you read the equations, you already have the answer just after you read it.
+Another example is reading the word 'electronics' may invoke an image of the common appliances and gadgets you have in home such as your smartphone, fridge, and laptop even though they are different objects.
+This is the gist of chunking.
+
+Chunking is the process of simplifying groups of information (or neural structure) as you learn and use more of them.
+Neuroscientifically speaking, a chunk is a group of neurons that learnt to sing in tune as you react to something.
+When a certain word is heard, it may invoke an imagery.
+That process comes from your neurons storing bits on information combining into the resulting imagery.
+
+A new chunk can form from the diffused mode of thinking where random bits on information are gathered while in this mode.
+The chunk may grow bigger as you use more of them or decay as you use less.
+The bigger the chunk is, the more information is condensed and this is when we start to form expertise over various skills.
+For more information, see [[Practices in forming new chunks]].
+
+Having a group of chunks can be helpful in learning new ideas as you'll find relations between different fields/skills/ideas.
+This transfer of ideas will come in handy once you explore more.
+If you're a mathematician, for example, you'll find similarities on computer programming with the concepts of variables, looping, functions, conditionals, and so forth.
+It can even work vice-versa.
 
 
 
@@ -128,7 +135,7 @@ The following practices are recommended to strengthen your memory:
 
 - Creativity walks a fine line of being novel and valuable to other people.
   You can create pieces that are too strange but you may find less people finding it valuable.
-  It can impose a [[file:2020-07-06-23-55-47.org][Deliberate practice]] of trying to find balance.
+  It can impose a [[file:../2020-07-06-23-55-47.org][Deliberate practice]] of trying to find balance.
 
 - While our subconscious can be more right, it doesn't mean that it is never wrong.
   Examples include people feeling more creative while under the influence of LSD but after the session they find the product is not as close as they visioned.
@@ -136,31 +143,7 @@ The following practices are recommended to strengthen your memory:
 
 
 
-* Chunking
-
-Your working memory is said to have four chunks at a time.
-For more efficiency, your brain can link various neural structures to represent an information.
-An example is numbers and operations such as \(5 * 4 = 20\), \(1 + 1 = 2\), and \(5 - 29 = -24\).
-You know what numbers are, what do the symbols mean, and if you read the equations, you already have the answer just after you read it.
-Another example is reading the word 'electronics' may invoke an image of the common appliances and gadgets you have in home such as your smartphone, fridge, and laptop even though they are different objects.
-This is the gist of chunking.
-
-Chunking is the process of simplifying groups of information (or neural structure) as you learn and use more of them.
-Neuroscientifically speaking, a chunk is a group of neurons that learnt to sing in tune as you react to something.
-When a certain word is heard, it may invoke an imagery.
-That process comes from your neurons storing bits on information combining into the resulting imagery.
-
-A new chunk can form from the diffused mode of thinking where random bits on information are gathered while in this mode.
-The chunk may grow bigger as you use more of them or decay as you use less.
-The bigger the chunk is, the more information is condensed and this is when we start to form expertise over various skills.
-
-Having a group of chunks can be helpful in learning new ideas as you'll find relations between different fields/skills/ideas.
-This transfer of ideas will come in handy once you explore more.
-If you're a mathematician, for example, you'll find similarities on computer programming with the concepts of variables, looping, functions, conditionals, and so forth.
-It can even work vice-versa.
-
-
-** Forming new chunks
+* Practices in forming new chunks
 
 To form new chunks, one of the guidelines is to focus, understand, and practice.
 
@@ -168,24 +151,26 @@ To form new chunks, one of the guidelines is to focus, understand, and practice.
   If you're having trouble with it, see [[Procrastination]].
 
 - Understand the basic idea of the concept.
-  For related information, see [[Memory and Sleep]].
+  For related information, see [[Memory and sleep]].
 
 - Practice to strengthen the chunk and know the big picture.
   Learning can go bottom-up — knowing the details of a specific problem — and top-down learning — gaining a 30,000 foot view of what you're learning and where it fits in.
 
-One of the more useful tips on forming new chunks is to learn the key ideas.
-While learning, you can then fill in the details yourself.
-For specific practices, you can gain an overview of what you're trying to learn by skimming the text or a chapter, heading into an example exercise, and watching others how it is done (see [[file:2020-07-06-03-47-52.org][Refer to advanced resources when skill-building for a solid short-term goal]]).
-Simply understanding and seeing does not make an expert.
-One of the pitfalls when learning through examples is only focusing on how to solve the specific problem and not why it is necessary.
-Examples like those should be treated like a road map, giving you directions on reaching a conclusion.
-With a roadmap, you can also find other ways how to reach the same conclusions.
+For specific details, you can do the following practices for hammering down the lesson.
 
-To check whether you have gained a chunk, one of the indicators is doing it yourself.
-Recalling is one of the best way to learn a new concept in-depth compared to other practices such as concept mapping.
-The value of recalling is creating mini-tests while on the process of retrieving key information.
-It turns out when we retrieve information, we're also learning in some form.
-Recalling and mini-testing only strengthen the process further.
+- Learn the key ideas.
+  You can skim the chapter you're supposed to study, minding all of the key words and concepts, then fill the details yourself.
+  For a related example of the practice, see [[file:../2020-07-06-03-47-52.org][Refer to advanced resources when skill-building for a solid short-term goal]].
+
+- Focus on the examples and exercises given.
+  Though, do focus on the bigger picture with the example (e.g., why this solution is valid, why this step is necessary) and not only how to reach that conclusion.
+  In other words, treat examples/exercises as a road map that when mastered can lead you to reach the same conclusion with a different perspective/solution.
+
+- Testing it yourself is one of the most effective indicator if you've mastered the lesson.
+  Simply recalling can be more effective than rereading.
+
+- Keep in mind about "Law of Serendipity": Lady Luck prefers the one who tries.
+  For a start, you can do something small and another until you're surprised at the results.
 
 A new chunk can also form when you're under stress impeding your understanding or when you're in diffused mode.
 That said, having a chunk does not often mean useful.
@@ -193,9 +178,30 @@ A chunk is useless if it's isolated among the rest for some time or if it's not 
 Furthermore, due to the semi-random way of thinking when diffused, it should be verified with a focused way of thinking.
 
 
+** Interleaving
+
+Interleaving, in general, refers to jumping between different context.
+This could be applied in different ways.
+
+- Learning more difficult concepts on the other while recalling previously learnt concepts.
+- Skipping between different chapters and problem sets.
+- Studying two wildly different subjects.
+
+This is helpful in gaining new perspectives and preventing being stuck to one idea (see [[Einstellung]]) or being overspecialized.
+While practice and repetition is important, this is where you'll be able to independently think and creating innovative ideas.
 
 
-* Illusions of competence
+** Regarding mistakes
+
+Mistakes are a helpful indicator of how much you've mastered the subject.
+They are also helpful at pointing out flaws from what you've learnt.
+It's better to think mistakes as a tool in preventing illusions of competence (see [[Pitfalls and illusions of competence]]).
+
+
+
+
+
+* Pitfalls and illusions of competence
 
 Illusions of competence is one of the pitfalls when trying to learn.
 One of lesser forms of it is practicing what is proved to be ineffective — while plausible to learn with those, can entrap the learner into thinking they're making progress.
@@ -203,16 +209,63 @@ One of lesser forms of it is practicing what is proved to be ineffective — whi
 One of the reasons of illusion of competence is the presence of the material itself.
 Once seen by the student, they tend to think they have absorbed the material.
 
-Highlighting, rereading, concept mapping = not effective than what you thought
+
+** Examples of common practices
+
+Highlighting, rereading, concept mapping = not effective than what you thought.
 
 - Highlighting can be done to a minimum, the key idea should be the focus of the highlight.
 - Rereading can be effective if done in spaced repetition and if recalling was applied.
 - Concept mapping can be effective but only if the basic chunk was formed.
 
+
+** Procrastination
+
+Procastination is a problem all of us faces.
+When we procastinate, the things we avert are associated with pain thus we turn our attention away from them.
+To mitigate against this:
+
+- Just start working.
+  The discomfort of facing it goes away after a while.
+
+- Use the Pomodoro technique to create interleaving segments of focus and relaxation.
+
+
+** Trying to solve head-first
+
+One of the common mistakes of students is doing homeworks ahead without looking for the solution applying the sink-or-swim approach.
+While useful in training your intuition, it is not progress as you'll enforce bad habits when established solutions are more helpful.
+Looking over solutions is a helpful learning skill.
+Although there are also pitfalls for that (see [[Learning with solutions]]).
+
+
+** Overlearning
+
+Once you have understood the lesson, you may continually study away in one concept.
+This is a dangerous practice as you're wasting valuable time that could've spent on learning and practicing new concepts.
+
+Once you understood the key idea of a concept, you should move on to the next (preferably more difficult) concept (see [[file:../2020-07-06-23-55-47.org][Deliberate practice]]).
+Interleaving self-testing and study (see [[Practices in forming new chunks]]) is more than enough for your learning.
+
+
+** Learning with solutions
+
 Another example of it is learning with solutions — while helpful into learning the big picture, it can also fool students thinking the problem is easier than they thought.
 The shown solution is given and solved by others so it is easy to think that we have solved the problem as well.
 
 One of the key takeaways from this is doing the problem solving ourselves is the one of the most important step in mastering a subject.
+
+
+** Einstellung
+
+When learning a field for your career, it doesn't end with learning and mastering the concepts that you're supposed to know.
+As changes occur over time so does the required knowledge for that career with technology-related fields as one of the popular examples.
+
+Once you've mastered something, you're now vulnerable of being entrenched of an idea preventing you from accepting newer ideas.
+The saying "Science progresses one funeral at a time." relates to the fact that most breakthroughs are done by young people and those who are not originally trained in that discipline.
+This concept is known as einstellung.
+
+To be less vulnerable to this mindset, you have to practice interleaving and unlearning.
 
 
 

@@ -1,21 +1,19 @@
 #+title: Linguistics, style, and writing in the 21st century
 #+date: "2020-11-14 22:07:13 +08:00"
-#+date_modified: "2021-04-07 16:34:17 +08:00"
+#+date_modified: "2021-04-25 16:40:05 +08:00"
 #+language: en
 #+tags: media.talk writing
-
-
-- source :: [[https://youtu.be/OV5J6BfToSw][Linguistics, style, and writing in the 21st century]]
-- author :: Steven Pinker
+#+source: https://youtu.be/OV5J6BfToSw
+#+author: Steven Pinker
 
 # TODO: Give examples to several of the sections here.
 #       It would be ironic if I didn't now, yes?
 
-\begin{abstract}
+#+begin_abstract
 This talk focuses on the problem of postmodernistic writings and how to avoid them.
 It discusses the how this plague has started and proposes to look into writing from a more scientific perspective.
 This note attempts to condense the 50-minute talk into several paragraphs.
-\end{abstract}
+#+end_abstract
 
 Bad writing exists is a fact of life especially in bureaucrats, academics, corporates, and legal faculties.
 Good people can write bad prose probably due to deliberate decisions, pseudo-intellectuals, and language (and stylistic) changes.
@@ -31,7 +29,7 @@ Others have concluded it might be due to writing being an unnatural act like bak
 Since writing is an unnatural act, we can make use of science to investigate what makes good writing.
 One of the starting points of good writing is a good model of communication.
 
-One of the more popular model is the [[file:2021-04-07-15-09-24.org][Classic prose]].
+One of the more popular model is the [[file:../2021-04-07-15-09-24.org][Classic prose]].
 
 - View the writing as the window of the world.
 - Reader and writer as equals.
