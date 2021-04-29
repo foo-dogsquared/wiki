@@ -53,7 +53,7 @@ footnote:[You can enable the direnv module from the Doom Emacs config.]
 
 Now with the pieces complete and assuming you've already have my wiki in your folder, fire up Emacs, open the wiki folder, and do your thing.
 This project has a link:./.dir-locals.el[local Emacs config] (see link:https://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html[related section]).
-If you've set `enable-local-variables` to `:safe` or any value that makes Emacs to ignore them, you may want to configure related variables in a way either conditionally or simply replacing them.
+If you've set `enable-local-variables` to `:safe` or any value that makes Emacs to ignore them, you may want to configure related variables for it to work.
 
 If you have direnv installed, you can also enable automatic shell environments by allowing `.entry` to set it up for you.
 Just run `direnv allow`!
@@ -65,13 +65,15 @@ If you have link:https://github.com/target/lorri[lorri] installed, you're better
 
 == Conventions
 
-* When create a link between notes, more specific notes should link general notes.
-This makes it easier to navigate a graph of back links.
-+
-IMPORTANT: This is a muddy subject leaning more into explicitly linking a subject without care.
-Besides, those are what backlinks are for.
-It's not an absolute rule to follow so don't worry about this, it's just a guideline at best.
-Otherwise, you'll go through analysis paralysis.
+* There are certain times to use custom link:https://orgmode.org/manual/Blocks.html[Org mode blocks] inspired from Asciidoctor.
+
+** Abstract — e.g., `#+begin_abstract`.
+** Appendix — e.g., `#+begin_appendix`.
+** link:https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions/[Admonition blocks] — e.g., `#+begin_important`, `#+begin_tip`, `#+begin_warning`.
+
+* Mainly uses https://zk.zettel.page/types-of-notes[the convention of note categories found in zk.zettel.page].
+That said, not all notes are going to be self-contained.
+footnote:[Also, not all notes have the same structure so that makes it complicated.]
 
 * Uses timestamp (at localtime) as the filename, it is unique enough (for personal purposes) and doesn't need to change.
 footnote:[If you use the title as the basis, that'll depend if you have tolerance for the misaligning relation between the filename and the title.]
