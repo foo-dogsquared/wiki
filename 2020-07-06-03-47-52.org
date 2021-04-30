@@ -1,6 +1,6 @@
 #+title: Refer to advanced resources when skill-building for a solid short-term goal
 #+date: "2020-07-06 03:47:52 +08:00"
-#+date_modified: "2020-09-09 05:09:40 +08:00"
+#+date_modified: "2021-04-30 14:23:28 +08:00"
 #+language: en
 
 
@@ -14,3 +14,6 @@ Other side effects include creating deliberate practice sessions and taking the 
 
 Of course, this does not entirely replace looking out for beginner-friendly resources and communities as an entryway (see [[file:2020-07-01-23-19-07.org][Information literacy]]).
 On the other hand, this prevents you from quickly entering tutorial purgatory where you'll be stuck for an indefinite amount of time.
+
+Also this could lead into actively consuming just the resources without the practice.
+[[file:2021-04-30-14-12-52.org][Create roadmaps to stay on track]].

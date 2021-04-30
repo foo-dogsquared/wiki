@@ -1,0 +1,13 @@
+#+title: Create roadmaps to stay on track
+#+date: "2021-04-30 14:12:52 +08:00"
+#+date_modified: "2021-04-30 14:22:18 +08:00"
+#+language: en
+
+
+The internet is a place full of information.
+In fact, too full.
+
+You could consume endless information from one resource to another and create stagnation because you're adapting too many ideas at a time.
+[fn:: On the other hand, this sounds like the Collector's Fallacy.]
+Having a roadmap helps you to stay on track whether you're studying for a job, creating a new project, or learning a new hobby.
+This roadmap could be just a simple to-do list, an elaborate plan, or a one-line description of the output you expect [fn:: This is still a terrible example but it should eventually evolve into details.].

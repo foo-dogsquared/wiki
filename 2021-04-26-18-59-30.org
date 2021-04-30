@@ -1,0 +1,20 @@
+#+title: When note-taking, don't satisfy your ego
+#+date: "2021-04-26 18:59:30 +08:00"
+#+date_modified: "2021-04-26 19:00:33 +08:00"
+#+language: en
+
+
+Found some inconsistent titles?
+Improper metadata?
+Incorrect datetime format?
+Just correct them as you stumble upon them.
+
+A similar dilemma I have yesterday is trying to format the metadata my Org mode files and sorting them alphabetically.
+I've written a script and as I'm not experienced in text processing, I spent most of my time reading up documentation on the tools.
+I did learned something with the tools but I've realized it's a big waste of time especially if my notes have grown.
+If I found another hip and new note-taking method and it doesn't conform to the new ideal notes in my mind, then I should relax and try it out.
+If it's good and I integrated it, I'll simply link it to my old notes.
+
+My personal notes, no matter how poorly written or unmaintained, are still valuable.
+So if you have tendencies like this, just relax and correct them. :)
+Trashing notes should be taken as a last resort if you're sure it is not relevant to you in the present and in the near future (see [[file:2021-04-07-18-53-58.org][Future-proofing your notes is only worth if the future is relevant]]).

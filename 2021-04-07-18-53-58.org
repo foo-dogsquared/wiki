@@ -1,6 +1,6 @@
 #+title: Future-proofing your notes is only worth if the future is relevant
 #+date: "2021-04-07 18:53:58 +08:00"
-#+date_modified: "2021-04-07 19:52:57 +08:00"
+#+date_modified: "2021-04-24 18:47:36 +08:00"
 #+language: en
 
 
@@ -13,3 +13,5 @@ You have to assign a garbage day at some point.
 Future-proofing your notes creates pressure on managing your note-taking seriously and efficiently.
 You don't want to take notes haphazardly and the overall notes structure will stay the same throughout a year.
 They should eventually evolve into [[file:2020-05-07-21-53-21.org][Evergreen notes]], branching out of the original notes structure and making a better graph for navigation.
+
+An alternative to trashing your notes could be creating a dedicated folder (see [[file:2020-06-25-12-37-23.org][Create a writing inbox to store your thoughts]]).
