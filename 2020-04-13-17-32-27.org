@@ -1,23 +1,21 @@
 #+title: File metadata
 #+date: "2020-04-13 17:32:27 +08:00"
-#+date_modified: "2020-09-09 05:17:29 +08:00"
+#+date_modified: "2021-05-02 02:11:01 +08:00"
 #+language: en
 
 
-File metadata is one of the most subtle requirements in [[file:2020-04-23-23-21-47.org][Personal information management]] (or at least, that's what I think).
-With the right tools such as desktop search engines (see [[file:2020-04-15-20-41-51.org][Add a desktop search engine for your digital library]]), you can quickly retrieve information as well as preserve some of its related information.
-[[https://en.wikipedia.org/wiki/Metadata][Each type of files have different ways of embedding metadata.]]
+File metadata is one of the most subtle requirements in [[file:2020-04-23-23-21-47.org][Personal information management]].
+It embeds data without relying too much on filesystem such as the file name, creation date, and modification date.
 
-- Image files such as JPEG or PNG, metadata are embedded in [[https://wikipedia.org/wiki/Exchangeable_image_file_format][Exchangeable image file format]] (EXIF) and you can modify it with various tools such as [[http://owl.phy.queensu.ca/~phil/exiftool/][ExifTool]].
-- MP3 files have the [[https://en.wikipedia.org/wiki/ID3][ID3]] as the de-facto standard for embedding contextual information such as the artist, album, genre, comments, and others. [fn:: Though the standard is designed with MP3 in mind, it can be freely included in other formats such as MP4 or WAV files.]
-- HTML documents contain the [[https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML][~<head>~]] element to store the metadata.
+Each type of files have different ways of embedding metadata:
 
-However, modern standards such as [[https://fr.wikipedia.org/wiki/Extensible_Metadata_Platform][Extensible metadata platform]] (XMP) targets unison of creating metadata among media files: images (e.g., MP3, OGG), videos (e.g., MP4, MKV), documents (e.g., PDF).
-Certain search engines such as Recoll and Tracker currently support searching metadata with XMP.
+- Image files such as JPEG or PNG, metadata are embedded in Exchangeable image file format (EXIF).
+- MP3 files have the ID3 as the de-facto standard for embedding contextual information such as the artist, album, genre, comments, and others.
+- Vorbis comments is a universal format commonly found on OGG.
+- HTML documents contain the ~<head>~ element to store the metadata.
+- Org mode documents allow file-level properties that are functionally equivalent to embedded metadata.
 
-To modify the metadata of a file, certain tools such as [[https://exiftool.org/][Exiftool]] and [[https://www.alfresco.com/][Alfresco]] exists.
-The process of manually adding metadata to non-textual files can be tedious but it may be worth the price if we're trying to retrieve some things especially for note-taking or [[file:2020-04-14-18-28-55.org][Maintain your own digital library]].
-This also makes note-taking more dynamic with non-textual files and leverages more attachment to each linked note.
+There are also universal formats such as Extensible metadata platform (XMP) or Meta Information Encapsulation (MIE) available either as embedded or a separate file.
 
 Beware about caring too much on metadata to the point of our metadata takes more space than the data themsevles.
 Cautionary tales such as [[https://en.wikipedia.org/wiki/MS_Fnd_in_a_Lbry][MS Fnd in a Lbry]] have been written about it.

@@ -1,6 +1,6 @@
 #+title: Add a desktop search engine for your digital library
 #+date: "2020-04-15 20:41:51 +08:00"
-#+date_modified: "2020-09-09 05:09:41 +08:00"
+#+date_modified: "2021-05-02 02:18:00 +08:00"
 #+language: en
 
 
@@ -15,9 +15,4 @@ An ideal desktop search engine should have the following things:
 - Invites integration (and extension) with an API allowing for more control and features.
 - Highlights searching with a query language that is both simple and powerful.
 
-With a cursory search, I found [[https://www.lesbonscomptes.com/recoll/][Recoll]] that fits the bill with the added bonus of being a cross-platform tool and easily configurable.
-
-A desktop search engine like Recoll and DocFetcher uses index-based searches which enables them to search quite fast.
-In order to achieve Google Search-level of search speed, you have to build an index based from the contents of the directory.
-Most desktop search engines index the entire disk by default (and it is not recommended) but they should let you configure what directories to include (both Recoll and DocFetcher do).
-Indices should also be continually updated as your filesystem changes.
+With a cursory search, I found [[roam:Recoll][Recoll]] that fits the bill with the added bonus of being a cross-platform tool and easily configurable.

@@ -1,13 +1,13 @@
 #+title: Refer to advanced resources when skill-building for a solid short-term goal
 #+date: "2020-07-06 03:47:52 +08:00"
-#+date_modified: "2021-04-30 14:23:28 +08:00"
+#+date_modified: "2021-05-02 00:05:44 +08:00"
 #+language: en
 
 
 When starting out to build a skill like programming, 3D modelling, digital art, or cooking, you can look first for expert-created resources.
 For example, when starting out to 3D model, you can look for speedsculpting videos or a competition that involves many talented people in the industry.
 In programming, you could look for devlogs, highly advanced competitions, or a live coding session.
-You can then store the expert resources in your digital library (see [[file:2020-04-14-18-28-55.org][Maintain your own digital library]]) for future references.
+You can then store the expert resources and [[file:2020-04-14-18-28-55.org][Maintain your own digital library]] for future references.
 
 The purpose of this is twofold: to serve as a solid short-term goal (as indicated by the title) and to create inspirations for your future projects.
 Other side effects include creating deliberate practice sessions and taking the stakes off to a higher start.
