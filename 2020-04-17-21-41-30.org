@@ -1,6 +1,6 @@
 #+title: Org mode: Babel
 #+date: "2020-04-17 21:41:30 +08:00"
-#+date_modified: "2021-04-22 12:30:38 +08:00"
+#+date_modified: "2021-05-04 01:02:15 +08:00"
 #+language: en
 #+tags: research.reproducibility
 
@@ -34,8 +34,9 @@ The default mode is in functional mode but you can change it by setting ~:result
 * Functional mode values and passing them around
 
 With functional mode, the value return will appear as an appropriate element in the Org mode buffer.
-Scalar values will appear as a string and vector values will appear as tables.
 The following examples are in [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html][Python]].
+
+Scalar values appear as strings...
 
 #+begin_src python  :results value
 return "The quick brown fox jumps over the lazy dog."
@@ -43,6 +44,8 @@ return "The quick brown fox jumps over the lazy dog."
 
 #+results:
 : The quick brown fox jumps over the lazy dog.
+
+...and vector values print as tables.
 
 #+name: data
 #+begin_src python  :results value
