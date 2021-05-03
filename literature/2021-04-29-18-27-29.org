@@ -1,0 +1,35 @@
+#+title: Fundamentals of music theory
+#+date: "2021-04-29 18:27:29 +08:00"
+#+date_modified: "2021-04-29 21:33:22 +08:00"
+#+language: en
+#+source: https://www.coursera.org/learn/edinburgh-music-theory/
+
+
+The course took notes from the Edinburgh's course for musical theory.
+Keep in mind this course mainly deals with western musical concepts and notations.
+
+
+
+
+* Week 1
+
+- Certain sounds have a quality that makes them singable called pitch.
+  With pitch, we now have the ability to identify whether a noise sounds high or low.
+
+- In the earlier centuries, musicians have to find a way to reproduce their recordings.
+  Similar to how words and ideas can be recorded with writing, music has been recorded in paper.
+  The earlier notation uses simpler concept but as time progresses the notation does improve to be the modern musical notation that musicians around the world use today.
+
+- To easily identify the pieces of music, the notes have names.
+  Some identify them with the doremi syllables (e.g., do, re, mi, fa, so, la, ti), some name them after the letters (e.g., A, B, C, D, E, F, G), and some even with [[wikipedia:Numbered musical notation][numbers]].
+
+  + In this course, we're using letter names and it often starts with C similarly to the piano.
+
+- A set of notes called an octave is formed with the names.
+  Despite the name, it is built with 7 note names (e.g., A, B, C, D, E, F, G, and then back to A).
+
+# TODO: Create 12 note visualization with the piano.
+- An octave, despite the number, really has 12 pitch classes.
+  The full 12 pitch classes is easily visualized with a piano.
+  Between each of the 12 pitch classes, the distance is a semitone which intuitively means half-note.
+  When the distance of each note is 2 semitone, it is considered as a tone.

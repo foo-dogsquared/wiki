@@ -1,10 +1,11 @@
 #+title: Linguistics, style, and writing in the 21st century
 #+date: "2020-11-14 22:07:13 +08:00"
-#+date_modified: "2021-04-25 16:40:05 +08:00"
+#+date_modified: "2021-04-26 19:16:55 +08:00"
 #+language: en
 #+tags: media.talk writing
 #+source: https://youtu.be/OV5J6BfToSw
 #+author: Steven Pinker
+
 
 # TODO: Give examples to several of the sections here.
 #       It would be ironic if I didn't now, yes?

@@ -1,6 +1,6 @@
 #+title: Learning how to learn
 #+date: "2021-04-04 11:24:56 +08:00"
-#+date_modified: "2021-04-25 16:35:48 +08:00"
+#+date_modified: "2021-05-02 23:04:21 +08:00"
 #+language: en
 #+source: https://www.coursera.org/learn/learning-how-to-learn
 #+tags: courses personal-info-management
@@ -20,23 +20,22 @@ In order to understand the inner mechanics of metalearning, we have to familiari
 The brain, while physically small, relates to a lot of things: our thought processes, motivations, emotions, tendencies, and memory.
 Thus, it is one of the more expensive organ in our body requiring more oxygen relative to its mass.
 
-Inside our brain houses a lot of smaller things called *neurons* where they store information.
-Each neuron may then form connections to other neurons called *synapses* where they form neural pattern representing a web of thoughts.
+Inside our brain houses a lot of smaller things called *neurons where they store information*.
+Each neuron may then form connections to other neurons called *synapses where they form neural pattern representing a web of thoughts*.
 
 There has been a staying belief from studies that the brain is in development from birth up to 25 years of age.
-After the maturation is complete, no further developments will occur and slowly degrade with the neurons will slowly decrease in number with age.
 With recent developments in brain imaging technology, it is shown that neurons can still develop in the adult stage.
-Furthermore, it form new synapses with only changes in activity including resting.
+Furthermore, it form new synapses with changes in activity including resting.
 
 
 ** Focused and diffused mode
 
-The brain goes into two modes: *focused* and *diffused*.
+The brain goes into two modes: focused and diffused.
 
-- Focused mode is when we actively remember familiar information.
+- *Focused mode is when we actively remember familiar information.*
   It usually occurs when we're actively doing a task like cooking a meal, solving a math problem, writing your notes, programming software, composing music, etc.
 
-- Diffused mode is when there is state of clarity in the mind.
+- *Diffused mode is when there is state of clarity in the mind.*
   This is when we relax: taking a break, walking in the trails, doing a power nap, sleeping for hours, hanging out with friends, etc.
   Usually, it comes in the form of random thoughts or Eureka moments passing through our brain.
 
@@ -52,11 +51,11 @@ This is the basis of memory.
 
 The memory can be separated into two parts:
 
-- The *working memory* contains information that are required immediately.
+- The *working memory contains information that are required immediately*.
   It is like the working desk where you place all of the required materials and tools to do your current task.
 
-- The *long-term memory* contains all of the information that you've stored and it is where your working memory gets its on-hand information from.
-  It's like the storages of all of the materials and tools you may need in the future.
+- The *long-term memory contains all of the information that you've stored* and it is where your working memory gets its on-hand information from.
+  Continuing on the working desk analogy, it's like the storages of all of the materials and tools you may need in the future.
 
 The following practices are recommended to strengthen your memory:
 
@@ -85,60 +84,12 @@ That process comes from your neurons storing bits on information combining into 
 A new chunk can form from the diffused mode of thinking where random bits on information are gathered while in this mode.
 The chunk may grow bigger as you use more of them or decay as you use less.
 The bigger the chunk is, the more information is condensed and this is when we start to form expertise over various skills.
-For more information, see [[Practices in forming new chunks]].
+There are specific practices for forming a chunk and for that, see [[Practices in forming new chunks]].
 
 Having a group of chunks can be helpful in learning new ideas as you'll find relations between different fields/skills/ideas.
 This transfer of ideas will come in handy once you explore more.
 If you're a mathematician, for example, you'll find similarities on computer programming with the concepts of variables, looping, functions, conditionals, and so forth.
 It can even work vice-versa.
-
-
-
-
-* Takeaways from "Interview with Dr. Terrence Sejnowski"
-
-- Learn headfirst in a new topic by getting involved with peers and experts who are already invested in similar topics.
-
-- Active engagement > passive listening.
-
-- A method to capture your ideas before it evaporates — e.g., a portable pen and notebook, org-capture, the PARA system.
-
-- While multitasking is possible, it's not efficient.
-  However, being unable to multitask can make day-to-day basis difficult.
-  The more important skill is efficient context switching — i.e., being able to return to the original task after being interrupted mid-task and continue smoothly.
-
-- Being in a more reflective mode creates the best work.
-
-- Being in an enriched environment with creative people makes generating and processing ideas easier.
-  If being in enriched environment is not possible, exercise can be a good substitute.
-  The point is making a creative workspace for those ideas to roam and bounce off other ideas either with other people or idle time.
-
-- Passion and persistence > smarts.
-
-- Being able to see things at a different perspective.
-
-
-
-
-* Takeaways from "Interview with Dr. Robert Bilder on creativity and problem solving"
-
-- The criteria of creativity mostly applies to what is unique to you.
-  It doesn't mean that others solve it that you're not creative as long as you've solved it yourself.
-
-- A level of discomfort is always involved when trying to learn something new.
-  As they say, "no pain, no gain."
-
-- Personalities can relate to the creative achievement of a person.
-  It boils down to mainly five traits: openness, conscientiousness, extraversion, agreeableness, and neuroticism.
-  A more open person to new experiences can be more creative achiever.
-  Counterintuitively, a less agreeable or more disagreeable can find more creative success since they are the type to challenge the status quo.
-
-- Creativity walks a fine line of being novel and valuable to other people.
-  You can create pieces that are too strange but you may find less people finding it valuable.
-  It can impose a [[file:../2020-07-06-23-55-47.org][Deliberate practice]] of trying to find balance.
-
-- While our subconscious can be more right, it doesn't mean that it is never wrong.
-  Examples include people feeling more creative while under the influence of LSD but after the session they find the product is not as close as they visioned.
 
 
 
@@ -206,8 +157,12 @@ It's better to think mistakes as a tool in preventing illusions of competence (s
 Illusions of competence is one of the pitfalls when trying to learn.
 One of lesser forms of it is practicing what is proved to be ineffective — while plausible to learn with those, can entrap the learner into thinking they're making progress.
 
+
+** Presence of the material
+
 One of the reasons of illusion of competence is the presence of the material itself.
 Once seen by the student, they tend to think they have absorbed the material.
+To combat against this, simply closing the material (see [[Practices in forming new chunks]]) and testing yourself is an effective option.
 
 
 ** Examples of common practices
@@ -221,8 +176,10 @@ Highlighting, rereading, concept mapping = not effective than what you thought.
 
 ** Procrastination
 
-Procastination is a problem all of us faces.
+Procrastination is a habitual problem (see [[Habits]]) that all of us face.
 When we procastinate, the things we avert are associated with pain thus we turn our attention away from them.
+It's a negative habit that it rewards you for doing nothing thus it can be compared to addiction.
+
 To mitigate against this:
 
 - Just start working.
@@ -261,7 +218,7 @@ One of the key takeaways from this is doing the problem solving ourselves is the
 When learning a field for your career, it doesn't end with learning and mastering the concepts that you're supposed to know.
 As changes occur over time so does the required knowledge for that career with technology-related fields as one of the popular examples.
 
-Once you've mastered something, you're now vulnerable of being entrenched of an idea preventing you from accepting newer ideas.
+Once you've mastered something, you're now vulnerable of *being entrenched of an idea preventing you from accepting newer ideas*.
 The saying "Science progresses one funeral at a time." relates to the fact that most breakthroughs are done by young people and those who are not originally trained in that discipline.
 This concept is known as einstellung.
 
@@ -293,10 +250,79 @@ If you want to be an effective learner, you have to be happy or in the mood.
 
 * Habits
 
-The brain is responsive to various stimulus with a variety of effects of various levels.
-Examples include changing temperature, surrounding sounds, reaching smell, and the location.
-Our brain might associate certain rooms to be predominantly relaxing so we tend to relax and get lazy such as your own room and hangout places.
-Other environments such as your workplace, gyms, and schools may be associated with active work so we tend to get moving.
+Our brain has a preference for routines or habits.
+These routines *start from small doses with each repeat becoming larger* to the point it can affect your life for better or worse.
+It is very similar to addiction.
+
+Habits are great energy-savers as they free up our mental space to put it somewhere else.
+When we mindless do a task, it is our habits in motion.
+
+This is how procrastination (see [[Procrastination]]) also forms.
+To combat against this, we need to know the internals of habits.
+
+A habit can be sliced into several parts:
+
+- The cue which is the starter of the habit.
+  This could be something simple as seeing your todo list or your looking at the clock.
+
+- The cues are harmless but the routine, our response, is a matter of benefits or harm.
+  When we see the todo list, we either be afraid or motivated to empty it.
+  When we see the clock, the typical response will either by inaction or action to sleep.
+
+- The reward which can enforce a habit to grow into something larger.
+  This could be something like the feeling of satisfaction of doing your todo list and rewarding yourself by relaxing at the end of the day.
+  Or in the case when we see the clock, we either get rewarded by worsening our sleep cycle but more awake time or improving our sleep cycle thus reducing the chance of encountering sleep disorders.
+
+For the habit to improve, worsen, or even entirely replaced, we need to change our belief.
+Habits are enforced by belief.
 
 # TODO:
 Explain 'Action, Response, and Intervene'
+
+
+
+
+* Takeaways from "Interview with Dr. Terrence Sejnowski"
+
+- Learn headfirst in a new topic by getting involved with peers and experts who are already invested in similar topics.
+
+- Active engagement > passive listening.
+
+- A method to capture your ideas before it evaporates — e.g., a portable pen and notebook, org-capture, the PARA system.
+
+- While multitasking is possible, it's not efficient.
+  However, being unable to multitask can make day-to-day basis difficult.
+  The more important skill is efficient context switching — i.e., being able to return to the original task after being interrupted mid-task and continue smoothly.
+
+- Being in a more reflective mode creates the best work.
+
+- Being in an enriched environment with creative people makes generating and processing ideas easier.
+  If being in enriched environment is not possible, exercise can be a good substitute.
+  The point is making a creative workspace for those ideas to roam and bounce off other ideas either with other people or idle time.
+
+- Passion and persistence > smarts.
+
+- Being able to see things at a different perspective.
+
+
+
+
+* Takeaways from "Interview with Dr. Robert Bilder on creativity and problem solving"
+
+- The criteria of creativity mostly applies to what is unique to you.
+  It doesn't mean that others solve it that you're not creative as long as you've solved it yourself.
+
+- A level of discomfort is always involved when trying to learn something new.
+  As they say, "no pain, no gain."
+
+- Personalities can relate to the creative achievement of a person.
+  It boils down to mainly five traits: openness, conscientiousness, extraversion, agreeableness, and neuroticism.
+  A more open person to new experiences can be more creative achiever.
+  Counterintuitively, a less agreeable or more disagreeable can find more creative success since they are the type to challenge the status quo.
+
+- Creativity walks a fine line of being novel and valuable to other people.
+  You can create pieces that are too strange but you may find less people finding it valuable.
+  It can impose a [[file:../2020-07-06-23-55-47.org][Deliberate practice]] of trying to find balance.
+
+- While our subconscious can be more right, it doesn't mean that it is never wrong.
+  Examples include people feeling more creative while under the influence of LSD but after the session they find the product is not as close as they visioned.
