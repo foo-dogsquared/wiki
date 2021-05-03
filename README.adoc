@@ -69,11 +69,29 @@ If you have link:https://github.com/target/lorri[lorri] installed, you're better
 
 ** Abstract — e.g., `#+begin_abstract`.
 ** Appendix — e.g., `#+begin_appendix`.
-** link:https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions/[Admonition blocks] — e.g., `#+begin_important`, `#+begin_tip`, `#+begin_warning`.
+** link:https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions/[Admonition blocks] — e.g., `\#+begin_important`, `#+begin_tip`, `#+begin_warning`.
 
 * Mainly uses https://zk.zettel.page/types-of-notes[the convention of note categories found in zk.zettel.page].
 That said, not all notes are going to be self-contained.
 footnote:[Also, not all notes have the same structure so that makes it complicated.]
+
+** Fleeting notes are in link:./daily/[`./daily/`].
+The fleeting notes are ignored since they're meant to processed on the daily so having them in the worktree will make a messy history.
+
+** Literature notes are in link:./literature/[`./literature/`].
+The literature notes may be a combination of Org roam notes and other notes from previous set of notes.
+Practically, this is your 2D system of notes — the hierarchical notebook.
+
+** The permanent and index notes are in the root folder.
+
+** Additional types of notes can be put in a separate folder (e.g., cards, microposts).
+There is not set hierarchy but be sure to create a new type only if the change is major.
+
+* The above structure makes it easier for retrieval.
+If you want to search all of the fleeting notes, just search in `daily/`, etc.
+
+** For searching tools, prefer desktop search tools such as link:https://www.lesbonscomptes.com/recoll/[Recoll] or link:https://sourceforge.net/projects/docfetcher/[DocFetcher].
+** Quick search tools such as grep or link:https://github.com/BurntSushi/ripgrep[ripgrep] are also nice.
 
 * Uses timestamp (at localtime) as the filename, it is unique enough (for personal purposes) and doesn't need to change.
 footnote:[If you use the title as the basis, that'll depend if you have tolerance for the misaligning relation between the filename and the title.]
