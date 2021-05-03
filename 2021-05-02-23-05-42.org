@@ -1,0 +1,13 @@
+#+title: The basics of memory
+#+date: "2021-05-02 23:05:42 +08:00"
+#+date_modified: "2021-05-02 23:16:21 +08:00"
+#+language: en
+
+
+As for this note, we'll talk about the basics of memory neuroscientifically.
+
+The memory can be compared to the muscles as it strengthens the more you use and decays the more you neglect.
+In order for this to work, however, you need to set some time for the neural structure to harden first.
+
+- Know the basics of your brain
+- Neuron formation

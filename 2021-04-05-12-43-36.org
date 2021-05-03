@@ -1,9 +1,16 @@
 #+title: Speedreading is all about skimming well
 #+date: "2021-04-05 12:43:36 +08:00"
-#+date_modified: "2021-04-05 15:37:00 +08:00"
+#+date_modified: "2021-05-02 18:59:25 +08:00"
 #+language: en
 #+tags: personal-info-management
 
 
 While [[file:2021-04-05-12-51-56.org][Speedreading]] has surrounding skepticism for productivity researchers, it can be repurposed as a skimming technique.
 The fast reading speed but lower comprehension fits the description of what skimming is all about.
+Thus, the following uses make speedreading a fitting tool.
+
+- A picture and keyword walk of a chapter in a textbook.
+  Very useful for advanced reading.
+
+- Extracting ideas in a rereading.
+  A beneficial tool for filling details once you already know the main idea.

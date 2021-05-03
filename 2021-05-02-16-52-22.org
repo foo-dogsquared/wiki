@@ -1,0 +1,23 @@
+#+title: Adapt out of self-interest
+#+date: "2021-05-02 16:52:22 +08:00"
+#+date_modified: "2021-05-02 17:04:24 +08:00"
+#+language: en
+
+
+In the age of internet containing lots of information, there can be only few that we can apply.
+This is relevant in the various fields I watch such as programming, web development, and even learning: another programming language has arrived, a new web framework of the week, and a hip note-taking system is making its way for their spotlight.
+It would be hypocritical to say I didn't take part of this.
+
+If [[file:2020-05-09-12-48-23.org][Roam Research]] hasn't took off, I wouldn't find out about org-roam and write this note in a [[file:2021-04-22-14-00-50.org][Zettelkasten]].
+But the fact of the matter is this method makes a lot of sense to me as an extension of my already existing hierarchical notebook.
+Instead of following arbitrary tips, evaluate if it's worth to you.
+You are more adaptable than you think.
+Every modern concept is basically standing on an established topic including programming languages, web frameworks, and learning methods.
+
+When I first heard and use Roam Research (with org-roam), I used it exactly as it demonstrated and featured on various videos.
+Over time, it makes more sense to me as an extension of my hierarchical notebook that can also be an independent network of notes.
+The Zettelkasten is where the ideas and content from my hierarchical notebook end up as an atomic unit of knowledge.
+It lets me take notes as normal and eventually improve upon them with the Zettelkasten.
+
+Another example is [[https://zettelkasten.de/posts/use-case-investing-zettelkasten-method/][somebody has used Zettelkasten method in investing by using structure notes]].
+It isn't stated by a Zettelkasten guide anywhere to use it like that but it did worked out for them.

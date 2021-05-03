@@ -1,6 +1,6 @@
-#+title: Create examples of ranking complexity when documenting your project serving as an abstract
+#+title: Create examples of ranking complexity when documenting your project
 #+date: "2021-02-28 14:52:58 +08:00"
-#+date_modified: "2021-04-22 14:57:12 +08:00"
+#+date_modified: "2021-05-02 18:51:00 +08:00"
 #+language: en
 
 
@@ -10,4 +10,4 @@ Examples include the manual pages from [[https://www.freebsd.org/][the FreeBSD p
 Another that stuck out to me is the README of [[https://github.com/naelstrof/maim/tree/b1b28fcb0c3a44e699fd879189316440b7edff22][maim]], a screenshot capture tool, where one of the examples demonstrate that you can pipe binary output which leads to useful things such as [[https://github.com/naelstrof/maim/tree/b1b28fcb0c3a44e699fd879189316440b7edff22][OCR selection]] or a colorpicker.
 
 This is not only useful for software documentation, it is also useful for technical writings.
-This makes it easier to skim (see [[file:2021-04-05-12-43-36.org][Speedreading is all about skimming well]]) and review it as a future reference (see [[file:2021-04-06-22-25-17.org][Learn more with referencing with a bit of remembering]]).
+This makes it easier to skim (see [[file:2021-04-05-12-43-36.org][Speedreading is all about skimming well]]) and to [[file:2021-04-06-22-25-17.org][Learn more with referencing with a bit of remembering]].

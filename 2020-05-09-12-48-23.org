@@ -1,23 +1,20 @@
 #+title: Roam Research
 #+date: "2020-05-09 12:48:23 +08:00"
-#+date_modified: "2021-03-28 18:22:40 +08:00"
+#+date_modified: "2021-05-02 16:50:23 +08:00"
 #+language: en
+#+source: https://roamresearch.com/
 
 
 Roam Research is a newly developing tool created by Conor White-Sullivan that focuses on creating a graph of notes instead of the traditional hierarchical system of most note-taking systems.
-It is largely inspired from the Zettelkasten method with the emphasis for bidirectional linking.
-
-It sports the following features:
+It is largely inspired from the Zettelkasten method with the emphasis for bidirectional linking among the following list of features.
 
 - Backlinking of notes which are then used for creating a graph of related topics.
 - A quick capture system for mobile experience (though it's not complete).
 - A daily notes system, making this viable as a journal as well.
 
-As such, Roam is a solid [[file:2020-04-15-14-35-55.org][Note-taking]] system that easily integrates as a [[file:2020-04-23-23-21-47.org][Personal information management]] system.
+As such, Roam is a solid note-taking system that easily integrates as a personal information management system.
 With the Zettelkasten-inspired system, you can use it to easily [[file:2020-06-04-21-32-23.org][Create evergreen notes with a digital garden]].
 [fn:: Well, it is a glorified wiki with the focus for backlinks and knowledge graph.]
 
 Roam is gaining popularity and more are considering to use it.
 However, it is closed source and (thankfully) open source alternatives like [[https://github.com/jethrokuan/org-roam][Org-roam]], [[https://github.com/andjar/dokuroam/][Dokuroam]], and [[https://github.com/athensresearch/athens][Athens]] started to fill our Roam-voided hearts.
-
-For seeing how Roam works, you can see the following videos by [[https://www.youtube.com/watch?v=RvWic15iXjk][Nat Eliason on using Roam to quickly outline an article]] and [[https://www.youtube.com/watch?v=vxOffM_tVHI][Thomas Frank covering the feature set of Roam]].
