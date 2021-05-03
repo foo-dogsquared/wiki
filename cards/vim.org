@@ -1,0 +1,79 @@
+#+title: Anki: Vim
+#+date: "2021-05-01 17:52:58 +08:00"
+#+date_modified: "2021-05-04 01:02:26 +08:00"
+#+language: en
+#+property: anki_deck Vim
+
+* Jump to previous jump point
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1619862911606
+:END:
+** Front
+How to get back in previous jump point?
+** Back
+=Ctrl + O=
+
+Remember it as getting *out* of the current jump point and back to the previous one.
+
+* Enter jump point
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1619866523112
+:END:
+** Front
+How to jump into a keyword?
+** Back
+- =Ctrl + ]= will enter into the definition block of a keyword.
+- =K= also has the same effect.
+
+* Go to file path
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1619866578855
+:END:
+** Front
+How to go to the file path at point?
+** Back
+=gf= as in *goto file*.
+
+* Set as a pager
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1619873854130
+:END:
+** Front
+How to set Vim as a manpager?
+** Back
+~MANPAGER="nvim +Man!"~
+
+~+Man!~ is a command invocation (as if entering ~:Man~ inside Vim).
+It can also be written as ~-c Man!~.
+
+The ~:Man!~ command displays the current buffer as a manual page.
+
+* Show outline/table of content
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1619873854327
+:END:
+** Front
+How to show the table of contents of a document?
+** Back
+=gO=, although the results are filetype-specific (and some don't have any).
+Helpful examples include for manual pages and help pages (from =:help=).
+
+* Detect files through filetypes
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1619937647469
+:END:
+** Front
+How does Vim detect the files?
+** Back
+Vim guesses the file by assigning *filetypes*, mainly through the file name and reading the file content.
+A filetype is how Vim knows what plugins to apply to the current buffer.
+
+Vim has a few built-in filetypes such as shell, manual pages, Markdown, Asciidoc, xmodmap, patch files, and JSON among others (that are in =$VIMRUNTIME/filetype.vim=).
+
+For more information, run ~:help filetype~ inside Vim.

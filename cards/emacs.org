@@ -1,0 +1,73 @@
+#+title: Anki: Emacs
+#+date: "2021-05-02 19:18:32 +08:00"
+#+date_modified: "2021-05-04 01:02:26 +08:00"
+#+language: en
+#+property: anki_deck Emacs
+
+* The overview of buffers
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620039512243
+:END:
+** Front
+What is a buffer?
+** Back
+A buffer is anything that Emacs displays.
+It usually display file contents among other examples with ~butterfly~, ~doctor~, or the starting buffer when you first open Emacs.
+
+While buffers usually have an associated file path, a buffer doesn't need one.
+This is one of the concepts that is applied to other text editors (Vim, Atom, Visual Studio Code).
+
+* The basics of modes
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620039513634
+:END:
+** Front
+What is a mode?
+** Back
+A mode is set of behavior quite similar to Vim modes.
+
+Emacs further divides modes into two.
+
+*Major modes are Emacs' way of supporting programming languages and file formats.*
+Programming language support usually comes in major mode — e.g., ~R-mode~ for R files, ~python-mode~ for Python scripts, ~org-mode~ for Org mode documents.
+Think of them as an equivalent to Vim's filetype.
+Only one major mode can be activated in one buffer at a time and all buffers have a major mode.
+
+*Minor modes usually contain little behavioral changes that improve the editing experience.*
+When enabled, some of them are global modes — affecting every buffer in your session.
+Others are only buffer-local — affecting only the buffer when you activated the mode.
+Unlike major modes, multiple minor modes can be enabled at any given time.
+
+* Eagle's eye view of a window
+:PROPERTIES:
+:ANKI_DECK: Emacs
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620039514055
+:END:
+** Front
+What is a window?
+** Back
+A window is where the buffers are being displayed.
+One window can display all buffers but only one at a time.
+To display two buffers at a single time, just add another window.
+
+All windows display the same buffer;
+if the buffer is modified in one of the window, it will show the changes in all windows.
+
+* Point and marker
+:PROPERTIES:
+  :ANKI_NOTE_TYPE: Styled cards
+  :ANKI_NOTE_ID: 1620040989788
+  :END:
+** Front
+   What is a point and a marker?
+** Back
+   A point is the current location of the cursor in the buffer.
+   You can get the point with ~point~ function.
+   Often helpful for interacting with buffers.
+
+   A marker is another point in the buffer.
+   It is usually found when interacting with regions when asked for the two points (i.e., the beginning and the ending position).
+   Furthermore, a marker can be used to save locations and jump back to that marker when asked.

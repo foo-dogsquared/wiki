@@ -1,0 +1,40 @@
+#+title: Anki: Linux
+#+date: "2021-05-01 20:20:25 +08:00"
+#+date_modified: "2021-05-04 01:02:26 +08:00"
+#+language: en
+#+property: anki_deck Linux
+
+* Finding devices
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1619878728534
+:END:
+** Front
+How to list devices information?
+(I mean all sorts of devices.)
+** Back
+- ~lspci~ is the most acceptable answer since it comprehensive lists all of the devices.
+- ~lsusb~ list USB-connected devices.
+- ~lsblk~ list the block devices which usually includes storage drives and such.
+
+* ~$PATH~ environment
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1619878774321
+:END:
+** Front
+How does a shell find the binaries?
+** Back
+Most shell searches through the ~$PATH~ variable, a colon-delimited list of paths containing the binaries.
+
+* Testing systemd timestamps
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1619878774617
+:END:
+** Front
+How to test out systemd timestamps?
+** Back
+~systemd-analyze {calendar,timestamp,timespan}~
+
+To know how the format (i.e., calendar, timestamp, and timespan) looks like, you can refer to ~man systemd.time.5~.
