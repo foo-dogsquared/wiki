@@ -1,12 +1,15 @@
+:PROPERTIES:
+:ID:       3a57fe56-9e6d-41e4-a76f-5ffdeb5840a2
+:END:
 #+title: Org mode timestamps
 #+date: "2020-04-21 19:44:15 +08:00"
-#+date_modified: "2021-04-21 19:13:59 +08:00"
+#+date_modified: "2021-05-04 20:52:15 +08:00"
 #+language: en
 #+property: header-args:org  :results silent
 #+tags: personal-info-management
 
 
-As previously stated, [[file:2020-04-20-16-51-40.org][Org mode]] is first created as an outliner enabling you to manage tasks.
+As previously stated, [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]] is first created as an outliner enabling you to manage tasks.
 Here's some of the features you might be interested when using it as such.
 
 

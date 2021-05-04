@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       4259636e-e0e8-49e4-8210-758ec59728a3
+:END:
 #+title: Zettelkasten
 #+date: "2021-04-22 14:00:50 +08:00"
-#+date_modified: "2021-05-03 18:51:16 +08:00"
+#+date_modified: "2021-05-04 20:52:07 +08:00"
 #+language: en
 
 
@@ -10,7 +13,7 @@ This system, manifested as a shelf of 60,000 notes, was credited as his writing 
 The main idea of this system is creating a global cloud of atomic notes without any hierarchy or separation.
 This non-linear system encourages freely linking between each ideas making it easier for gaining new ideas similar to neurons in your brain.
 
-To make it more efficient, the workflow further describes the idea of creating good future-proof notes (see [[file:2021-04-07-18-53-58.org][Future-proofing your notes is only worth if the future is relevant]]).
+To make it more efficient, the workflow further describes the idea of creating good future-proof notes (see [[id:3994e8d7-8d77-4f52-9650-330369e82143][Future-proofing your notes is only worth if the future is relevant]]).
 Most writings about this seem to agree to the following ideas.
 
 - A method to capture notes on-the-fly.
@@ -19,4 +22,4 @@ Most writings about this seem to agree to the following ideas.
 - The lack of hierarchy to describe the notes.
   This enforces easier organization and classifying your notes.
 
-- The gradual improvement of the captured notes into [[file:2020-05-07-21-53-21.org][Evergreen notes]].
+- The gradual improvement of the captured notes into [[id:431532c3-6506-4565-b193-dbfb60eac7d6][Evergreen notes]].

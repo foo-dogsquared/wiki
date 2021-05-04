@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       b3049366-b5ce-4caa-881f-e76663df2e12
+:END:
 #+title: Anki: Linux
 #+date: "2021-05-01 20:20:25 +08:00"
-#+date_modified: "2021-05-04 01:02:26 +08:00"
+#+date_modified: "2021-05-04 20:51:29 +08:00"
 #+language: en
 #+property: anki_deck Linux
 

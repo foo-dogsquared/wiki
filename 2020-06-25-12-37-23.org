@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf
+:END:
 #+title: Create a writing inbox to store your thoughts
 #+date: "2020-06-25 12:37:23 +08:00"
-#+date_modified: "2021-04-24 01:44:46 +08:00"
+#+date_modified: "2021-05-04 20:51:19 +08:00"
 #+language: en
 
 

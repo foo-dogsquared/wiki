@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       66337935-420c-40e6-81a6-f74ab0965ed5
+:END:
 #+title: Maintain your own digital library
 #+date: "2020-04-14 18:28:55 +08:00"
-#+date_modified: "2021-04-05 15:37:41 +08:00"
+#+date_modified: "2021-05-04 20:52:08 +08:00"
 #+language: en
 #+tags: personal-info-management
 
@@ -10,7 +13,7 @@ It is flexible in purpose: you can use it as a personal knowledge base, digital 
 
 A digital library should have the following features:
 
-- Easy to maintain (e.g., modifying [[file:2020-04-13-17-32-27.org][File metadata]], adding more digital objects) which is the top priority.
+- Easy to maintain (e.g., modifying [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]], adding more digital objects) which is the top priority.
 - Catalog the files using open standardized tools and specifications if available.
 - Provide an easy and reliable search interface with rich metadata.
 

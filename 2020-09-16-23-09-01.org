@@ -1,13 +1,16 @@
+:PROPERTIES:
+:ID:       7827b564-59ed-4604-ac2b-630c60c0a4ab
+:END:
 #+title: Use timestamps for effectively future-proofing your stuff
 #+date: "2020-09-16 23:09:01 +08:00"
-#+date_modified: "2021-05-02 02:15:26 +08:00"
+#+date_modified: "2021-05-04 20:52:09 +08:00"
 #+language: en
 
 
-One of the simplest ways to future-proof your documents with [[file:2020-04-13-17-32-27.org][File metadata]] is to create a timestamp.
+One of the simplest ways to future-proof your documents with [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]] is to create a timestamp.
 Specifically, two timestamps: one when it's created and one when it was last modified which will be continuously updated each time we modify the file.
 This lets you quickly evaluate whether the information is up-to-date without relying on the filesystem.
-It also lets you [[file:2020-04-14-18-28-55.org][Maintain your own digital library]] with relative ease if your focus is on up-to-date information.
+It also lets you [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintain your own digital library]] with relative ease if your focus is on up-to-date information.
 
 In order to make updating the modification timestamp not tedious, it is best to automate that task.
 Different files may be applied differently as long as we can create a unified interface to search through them all.

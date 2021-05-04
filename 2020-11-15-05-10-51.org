@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       41e9303c-0560-4fc9-a377-b0d78a1f368c
+:END:
 #+title: Accounting basics
 #+date: "2020-11-15 05:10:51 +08:00"
-#+date_modified: "2020-11-15 05:11:23 +08:00"
+#+date_modified: "2021-05-04 20:51:33 +08:00"
 #+language: en
 
 

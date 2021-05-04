@@ -40,7 +40,7 @@ All of them are required unless noted otherwise.
 ** Uses link:https://github.com/hlissner/doom-emacs/[Doom Emacs] as the preferred Emacs distro with the `org` module enabled.
 This is optional and you can use your own Emacs config.
 
-** link:https://github.com/org-roam/org-roam[org-roam], the star of the show, is installed.
+** link:https://github.com/org-roam/org-roam[org-roam] v2, the star of the show, is installed.
 
 * link:https://nixos.org/[Nix package manager] because link:https://orgmode.org/manual/Working-with-Source-Code.html[org-babel].
 You can fully replicate the environment without Nix by looking at the dependencies at link:./shell.nix[`./shell.nix`] and install them with your package manager (or anything else, you do you) but I recommend to do so because I say so.
@@ -50,6 +50,11 @@ footnote:[You can enable the direnv module from the Doom Emacs config.]
 
 
 === Setting up
+
+This wiki uses org-roam v2 as the main note-taking system.
+As of 2021-05-04, it is yet to reach v2 but it is underway with its link:https://github.com/org-roam/org-roam/releases/tag/2.0.0a1[first alpha release].
+The notes should've been adapted for v2 by now.
+Though, you have to configure it in line with the major redesign.
 
 Now with the pieces complete and assuming you've already have my wiki in your folder, fire up Emacs, open the wiki folder, and do your thing.
 This project has a link:./.dir-locals.el[local Emacs config] (see link:https://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html[related section]).
@@ -97,6 +102,10 @@ If you want to search all of the fleeting notes, just search in `daily/`, etc.
 footnote:[If you use the title as the basis, that'll depend if you have tolerance for the misaligning relation between the filename and the title.]
 The format for the filename is equivalent to `$(date +%F-%H-%M-%S).org`.
 
+* Since org-roam v2, an ID is now required to be recognized by the software.
+File-level notes should have a top-level property drawer with an ID set while certain entries have local property drawers.
+That said, be selective when to assigning IDs for the local headlines.
+
 * Uses link:https://orgmode.org/guide/Tags.html[plain org-mode tags] for consistency.
 It also happens to be the only supported tag format starting from link:https://org-roam.discourse.group/t/org-roam-major-redesign/1198[org-roam v2] so hoorah for me. :)
 
@@ -134,6 +143,8 @@ footnote:[This includes trying to name an asset that doesn't exist already to no
 ** For my hand-drawn visual aids, I usually name with a prefix (e.g., `{art-file-prefix}-${WHAT_THE_GRAPHICS_IS_ABOUT}.webp`).
 As a side effect, this mitigates against overwriting of generated assets from org-mode if I remember to not name it `{art-file-prefix}-*`.
 
+** If you enable local variables (recommended to query it) and are OK with prompts every time you open up a note, then this should be no problem for you.
+
 
 
 
@@ -161,17 +172,6 @@ This is also how link:https://github.com/jethrokuan/braindump[Jethro Kuan's org-
 ** Use a parser outside of Emacs.
 link:https://github.com/rasendubi/uniorg/tree/master/examples/org-braindump[uniorg] has a good example with Next.js as the site generator.
 It requires an external JavaScript-based setup but it can also be an advantage.
-
-* Migrate the notes for link:https://org-roam.discourse.group/t/org-roam-major-redesign/1198[org-roam v2].
-Though I consider v1 to be feature-complete, I do like v2's reimagining of the plugin with the node (instead of files) as the new atomic unit.
-It is closer to its original inspiration (Roam Research).
-It also brings a few simplified options along the way such as choosing to only support `tags` property as well as replacing IDs for linking instead of file links.
-Aaaand the primary maintainer said more performance so yay for me.
-
-** Expect to change the links since it doesn't accept file links anymore.
-
-** Expect to generate IDs for each node/file.
-The community is ready to help for it since my Elisp-fu sucks.
 
 * Try out link:https://github.com/srid/neuron/[Neuron].
 I've used it on and off and even tried to support both org-roam and Neuron because I like the static site generated and also because org-roam doesn't have a killer HTML exporter yet (in my opinion).

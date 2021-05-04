@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       785c4cc7-4a18-4546-a876-2f2c7dd8d19e
+:END:
 #+title: Reduce writing fluff
 #+date: "2021-04-22 15:00:34 +08:00"
-#+date_modified: "2021-04-22 15:08:51 +08:00"
+#+date_modified: "2021-05-04 20:51:24 +08:00"
 #+language: en
 
 

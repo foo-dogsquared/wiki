@@ -1,10 +1,13 @@
+:PROPERTIES:
+:ID:       f4f55047-aaeb-47cc-a3c2-d0f74223c5d0
+:END:
 #+title: Human-friendly color spaces
 #+date: "2020-09-11 04:08:34 +08:00"
-#+date_modified: "2020-09-19 19:06:18 +08:00"
+#+date_modified: "2021-05-04 20:52:16 +08:00"
 #+language: en
 
 
-- Tags :: [[file:2020-09-11-04-11-59.org][Computer graphics]]
+- Tags :: [[id:4f6ec65b-4a05-4448-83f1-2f8f61781fe7][Computer graphics]]
 
 As it turns out (from my perspective), different colorspaces have different purposes.
 

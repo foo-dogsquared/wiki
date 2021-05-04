@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       c6cd9441-104f-447f-9d2c-9aaead388c22
+:END:
 #+title: When note-taking, don't satisfy your ego
 #+date: "2021-04-26 18:59:30 +08:00"
-#+date_modified: "2021-04-30 14:37:23 +08:00"
+#+date_modified: "2021-05-04 20:52:10 +08:00"
 #+language: en
 
 
@@ -24,4 +27,4 @@ If it's good and I integrated it, I'll simply link it to my old notes.
 
 My personal notes, no matter how poorly written or unmaintained, are still valuable.
 So if you have tendencies like this, just relax and correct them. :)
-Trashing notes should be taken as a last resort if you're sure it is not relevant to you in the present and in the near future (see [[file:2021-04-07-18-53-58.org][Future-proofing your notes is only worth if the future is relevant]]).
+Trashing notes should be taken as a last resort if you're sure it is not relevant to you in the present and in the near future (see [[id:3994e8d7-8d77-4f52-9650-330369e82143][Future-proofing your notes is only worth if the future is relevant]]).

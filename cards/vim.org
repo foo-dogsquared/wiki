@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       9d549240-e7bb-4f6e-95bc-ea131a6a34e7
+:END:
 #+title: Anki: Vim
 #+date: "2021-05-01 17:52:58 +08:00"
-#+date_modified: "2021-05-04 01:02:26 +08:00"
+#+date_modified: "2021-05-04 20:51:30 +08:00"
 #+language: en
 #+property: anki_deck Vim
 

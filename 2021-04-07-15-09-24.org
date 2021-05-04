@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       79357d56-74bf-4854-820c-c0ad849f2468
+:END:
 #+title: Classic prose
 #+date: "2021-04-07 15:09:24 +08:00"
-#+date_modified: "2021-05-02 18:51:24 +08:00"
+#+date_modified: "2021-05-04 20:52:14 +08:00"
 #+language: en
 #+tags: writing
 
@@ -20,8 +23,8 @@ Just like in a casual conversation, the reader has a rough idea of what they're 
 They are reading to see what the writer has to do something about the subject.
 
 The guideline of keeping it as objective as possible also encourages being concise.
-You can [[file:2021-02-28-14-52-58.org][Create examples of ranking complexity when documenting your project]] serving as an abstract.
+You can [[id:b0aee2c6-f759-4b7a-829f-79781926091e][Create examples of ranking complexity when documenting your project]] serving as an abstract.
 It is written on equal footing with the reader, after all.
 Thus, any writing suited to impress is a pointless addition (and can rub the wrong way for the reader).
 
-Consequently, this [[file:2021-04-22-15-00-34.org][Reduce writing fluff]] that you often see in academic and legal writings.
+Consequently, this [[id:785c4cc7-4a18-4546-a876-2f2c7dd8d19e][Reduce writing fluff]] that you often see in academic and legal writings.

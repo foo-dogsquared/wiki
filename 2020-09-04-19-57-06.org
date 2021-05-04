@@ -1,4 +1,7 @@
+:PROPERTIES:
+:ID:       7e1e2bcc-6f70-4624-a049-b42f9db5e28b
+:END:
 #+title: Functional programming
 #+date: "2020-09-04 19:57:06 +08:00"
-#+date_modified: "2020-09-09 05:25:37 +08:00"
+#+date_modified: "2021-05-04 20:51:20 +08:00"
 #+language: en

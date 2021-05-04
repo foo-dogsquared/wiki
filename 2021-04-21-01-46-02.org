@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       0dfbaf7f-270a-4880-91ad-0802e213daa5
+:END:
 #+title: Guix package contribution workflow
 #+date: "2021-04-21 01:46:02 +08:00"
-#+date_modified: "2021-04-22 16:26:36 +08:00"
+#+date_modified: "2021-05-04 20:51:25 +08:00"
 #+language: en
 
 

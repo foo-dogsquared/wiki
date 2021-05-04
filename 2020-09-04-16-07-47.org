@@ -1,10 +1,13 @@
+:PROPERTIES:
+:ID:       3b3fdcbf-eb40-4c89-81f3-9d937a0be53c
+:END:
 #+title: Nix package manager
 #+date: "2020-09-04 16:07:47 +08:00"
-#+date_modified: "2021-04-24 01:46:41 +08:00"
+#+date_modified: "2021-05-04 20:52:09 +08:00"
 #+language: en
 
 
-[[https://nixos.org/][Nix]] is a package manager that pioneered [[file:2020-09-19-08-31-48.org][Functional package management]] which addresses the criticisms of traditional Unix systems while making it as a specialized tool for [[file:2020-04-12-11-20-53.org][Reproducible research]].
+[[https://nixos.org/][Nix]] is a package manager that pioneered [[id:bfed6daf-4c2b-4426-bab9-2804caa5e079][Functional package management]] which addresses the criticisms of traditional Unix systems while making it as a specialized tool for [[id:6eeb7a24-b662-46d6-9ece-00a5028ff4d8][Reproducible research]].
 Holistically, Nix is made up of at least four components: the store, the language, the derivations, and the sandbox.
 
 - The store is a immutable centralized location where all of the outputs are placed.

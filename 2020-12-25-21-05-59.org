@@ -1,10 +1,13 @@
+:PROPERTIES:
+:ID:       6feb75e8-6a75-4bdb-8eb0-7c0ec236b894
+:END:
 #+title: When creating a line, be confident and sure
 #+date: "2020-12-25 21:05:59 +08:00"
-#+date_modified: "2021-01-04 11:05:19 +08:00"
+#+date_modified: "2021-05-04 20:52:11 +08:00"
 #+language: en
 
 
-When [[file:2020-12-26-13-30-39.org][illustrating]] an accurate line, leave out the saying "slowly but surely" and put "quickly but surely" instead.
+When [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][illustrating]] an accurate line, leave out the saying "slowly but surely" and put "quickly but surely" instead.
 To make an accurate line reliably, we just need more confidence in what we're doing.
 That's because when we drawing slowly, we tend to put more time thinking about how to create the line instead of controlling our arm.
 Our brain also tends to course-correct while on the way resulting in an inconsistent line.

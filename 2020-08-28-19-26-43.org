@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       a7d9897e-fbaa-4ab1-a26d-4a86d2621df8
+:END:
 #+title: Linux drivers
 #+date: "2020-09-09 05:27:17 +08:00"
-#+date_modified: "2020-09-18 03:06:06 +08:00"
+#+date_modified: "2021-05-04 20:51:26 +08:00"
 #+language: en
 
 

@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       9495d266-c8ec-486d-9a05-a413910f9d10
+:END:
 #+title: Text Encoding Initiative
 #+date: "2020-04-12 13:07:20 +08:00"
-#+date_modified: "2020-09-09 05:16:32 +08:00"
+#+date_modified: "2021-05-04 20:52:07 +08:00"
 #+language: en
 
 
@@ -21,5 +24,5 @@ It can also export into various formats through [[https://github.com/TEIC/Styles
 
 * Relevant notes
 
-- [[file:2020-04-15-14-35-55.org][Note-taking]]
-- [[file:2020-04-12-11-20-53.org][Reproducible research]]
+- [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]]
+- [[id:6eeb7a24-b662-46d6-9ece-00a5028ff4d8][Reproducible research]]

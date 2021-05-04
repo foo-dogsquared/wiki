@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       63f1aae8-75f9-4282-91f4-9a0289ad2bf3
+:END:
 #+title: Linguistics, style, and writing in the 21st century
 #+date: "2020-11-14 22:07:13 +08:00"
-#+date_modified: "2021-04-26 19:16:55 +08:00"
+#+date_modified: "2021-05-04 20:52:14 +08:00"
 #+language: en
 #+tags: media.talk writing
 #+source: https://youtu.be/OV5J6BfToSw
@@ -30,7 +33,7 @@ Others have concluded it might be due to writing being an unnatural act like bak
 Since writing is an unnatural act, we can make use of science to investigate what makes good writing.
 One of the starting points of good writing is a good model of communication.
 
-One of the more popular model is the [[file:../2021-04-07-15-09-24.org][Classic prose]].
+One of the more popular model is the [[id:79357d56-74bf-4854-820c-c0ad849f2468][Classic prose]].
 
 - View the writing as the window of the world.
 - Reader and writer as equals.

@@ -1,4 +1,7 @@
+:PROPERTIES:
+:ID:       063dfd73-dbf5-437b-b6f1-d7aeca196f31
+:END:
 #+title: Spaced repetition
 #+date: "2021-04-07 18:19:11 +08:00"
-#+date_modified: "2021-04-07 18:19:21 +08:00"
+#+date_modified: "2021-05-04 20:51:18 +08:00"
 #+language: en

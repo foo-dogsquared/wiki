@@ -1,19 +1,22 @@
+:PROPERTIES:
+:ID:       0dbfee88-cdce-48d1-9a10-23fc12d9bcd5
+:END:
 #+title: Refer to advanced resources when skill-building for a solid short-term goal
 #+date: "2020-07-06 03:47:52 +08:00"
-#+date_modified: "2021-05-02 00:05:44 +08:00"
+#+date_modified: "2021-05-04 20:52:10 +08:00"
 #+language: en
 
 
 When starting out to build a skill like programming, 3D modelling, digital art, or cooking, you can look first for expert-created resources.
 For example, when starting out to 3D model, you can look for speedsculpting videos or a competition that involves many talented people in the industry.
 In programming, you could look for devlogs, highly advanced competitions, or a live coding session.
-You can then store the expert resources and [[file:2020-04-14-18-28-55.org][Maintain your own digital library]] for future references.
+You can then store the expert resources and [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintain your own digital library]] for future references.
 
 The purpose of this is twofold: to serve as a solid short-term goal (as indicated by the title) and to create inspirations for your future projects.
 Other side effects include creating deliberate practice sessions and taking the stakes off to a higher start.
 
-Of course, this does not entirely replace looking out for beginner-friendly resources and communities as an entryway (see [[file:2020-07-01-23-19-07.org][Information literacy]]).
+Of course, this does not entirely replace looking out for beginner-friendly resources and communities as an entryway (see [[id:f0d0198c-b523-4d71-a13c-0c578dfac3ef][Information literacy]]).
 On the other hand, this prevents you from quickly entering tutorial purgatory where you'll be stuck for an indefinite amount of time.
 
 Also this could lead into actively consuming just the resources without the practice.
-[[file:2021-04-30-14-12-52.org][Create roadmaps to stay on track]].
+[[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]].

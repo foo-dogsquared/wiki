@@ -1,11 +1,14 @@
+:PROPERTIES:
+:ID:       7dda635c-392c-4439-b5d7-c350fa4ed07f
+:END:
 #+title: The overview of a programming environment
 #+date: "2020-06-09 06:21:37 +08:00"
-#+date_modified: "2020-09-09 05:18:47 +08:00"
+#+date_modified: "2021-05-04 20:52:15 +08:00"
 #+language: en
 #+tags: compsci
 
 
-The study of [[file:2020-06-03-15-21-42.org][Computational processes]] start with the study of a programming environment.
+The study of [[id:af4a2867-dfa6-4241-950d-2fdb9cf3016c][Computational processes]] start with the study of a programming environment.
 The programming environment is mostly a given in programming but let's inspect and state some things (and some are obvious) about it.
 
 

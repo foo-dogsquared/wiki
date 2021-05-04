@@ -1,10 +1,13 @@
+:PROPERTIES:
+:ID:       f5bd284c-04aa-453b-a7d7-32655776308d
+:END:
 #+title: Generate a color scheme based from a single color
 #+date: "2020-11-05 17:21:58 +08:00"
-#+date_modified: "2020-11-19 19:32:26 +08:00"
+#+date_modified: "2021-05-04 20:52:06 +08:00"
 #+language: en
 
 
-[[file:2020-09-19-18-43-07.org][Generating human-friendly color schemes]] has always been a disaster (for me) to figure out especially with no cursory knowledge whatsoever on color theory.
+[[id:9d247d19-368e-44ea-893e-af3403c2682f][Generating human-friendly color schemes]] has always been a disaster (for me) to figure out especially with no cursory knowledge whatsoever on color theory.
 So I've been thinking how to do such thing with the result that doesn't make gouge my eyes out.
 
 Thus, for the solution, we'll include some opinionated things.

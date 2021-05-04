@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       25fb4ebf-2cc4-40fe-93ad-37a79aedfb41
+:END:
 #+title: The basics of memory
 #+date: "2021-05-02 23:05:42 +08:00"
-#+date_modified: "2021-05-02 23:16:21 +08:00"
+#+date_modified: "2021-05-04 20:51:20 +08:00"
 #+language: en
 
 

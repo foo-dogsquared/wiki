@@ -1,7 +1,10 @@
+:PROPERTIES:
+:ID:       0a8229f2-072d-4df4-878e-6ef858cf13e0
+:END:
 #+title: Packaging Rust crates in GNU Guix
 #+author: Efraim Flashner
 #+date: "2021-04-26 02:20:34 +08:00"
-#+date_modified: "2021-04-26 15:06:09 +08:00"
+#+date_modified: "2021-05-04 20:51:31 +08:00"
 #+language: en
 #+source: https://av.tib.eu/media/47417
 

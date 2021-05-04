@@ -1,17 +1,20 @@
+:PROPERTIES:
+:ID:       ea263f6f-fa8e-4e6d-a585-d30d493d1e3c
+:END:
 #+title: Add a desktop search engine for your digital library
 #+date: "2020-04-15 20:41:51 +08:00"
-#+date_modified: "2021-05-02 02:18:00 +08:00"
+#+date_modified: "2021-05-04 20:52:09 +08:00"
 #+language: en
 
 
-Desktop search engines adds a crucial thing for [[file:2020-04-14-18-28-55.org][Maintaining your own digital library]]: retrievability.
+Desktop search engines adds a crucial thing for [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintaining your own digital library]]: retrievability.
 With the ability to search and retrieve for information scattered throughout our files, we can then quickly connect and add information without much burden.
 
 An ideal desktop search engine should have the following things:
 
 - Features both a graphics user interface (GUI) and a command-line interface (CLI).
 - Accepts not only plain-text files but other file formats such as images, videos, and audio.
-- Quickly searches through text and even [[file:2020-04-13-17-32-27.org][File metadata]] for binary files.
+- Quickly searches through text and even [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]] for binary files.
 - Invites integration (and extension) with an API allowing for more control and features.
 - Highlights searching with a query language that is both simple and powerful.
 

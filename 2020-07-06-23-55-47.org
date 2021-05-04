@@ -1,12 +1,15 @@
+:PROPERTIES:
+:ID:       9b669fd4-e04e-43dd-a61e-81dea5ec0764
+:END:
 #+title: Deliberate practice
 #+date: "2020-07-06 23:55:47 +08:00"
-#+date_modified: "2020-09-09 05:22:41 +08:00"
+#+date_modified: "2021-05-04 20:52:10 +08:00"
 #+language: en
 
 
 Unlike regular practice that involves mindless repetitions, deliberate practice involves purposeful sessions.
 Each session aims to improve performance and increase the skill ceiling of the practitioner.
-That is each session to be effective, [[file:2020-07-08-22-42-47.org][When learning a new skill, begin with a specific end-goal to create a solid starting point]].
+That is each session to be effective, [[id:1a6187c9-6c79-4378-bf8d-935c8a3d9167][When learning a new skill, begin with a specific end-goal to create a solid starting point]].
 
 To put it simply, deliberate practice involves getting out of comfort zone and enforces discipline.
 For example, trying yourself to solve some hard mathematical problems or competitive programming for the first time with a mentor.
@@ -22,5 +25,5 @@ Deliberate practice usually involves with a mentor/teacher who will give you the
 If you can't find one, the best replacement are group chats or a community open for feedback.
 The main point of finding a source of feedback is getting other perspectives that you may not see it yourself.
 
-You can also [[file:2020-07-06-03-47-52.org][Refer to advanced resources when skill-building for a solid short-term goal]].
+You can also [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]].
 With it, identify the top performers in the field and try to make a conclusion on how do they get so far.

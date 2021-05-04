@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       f0d0198c-b523-4d71-a13c-0c578dfac3ef
+:END:
 #+title: Information literacy
 #+date: "2020-07-01 23:19:07 +08:00"
-#+date_modified: "2021-04-06 23:11:42 +08:00"
+#+date_modified: "2021-05-04 20:52:10 +08:00"
 #+language: en
 #+tags: personal-info-management
 
@@ -8,8 +11,8 @@
 Information literacy is defined as the ability to search information, sort the results, verify for legitimacy, and share the information effectively.
 It is one of the most important universal skills as internet became popular as a method of distributing information causing to often deal with the torrential amount of information.
 
-There are many ways to improve our information literacy including usage of various effective online searching, writing [[file:2020-06-25-13-12-09.org][Fleeting notes]] for a quick capture system, and finally evaluating your search results with [[file:2020-05-07-21-53-21.org][Evergreen notes]].
-For an increased output, you can [[file:2020-04-14-18-28-55.org][Maintain your own digital library]] and [[file:2020-06-27-16-21-47.org][Apply search tools and techniques for your digital library]] where you can store your results and freely retrieve them whenever you wish.
+There are many ways to improve our information literacy including usage of various effective online searching, writing [[id:3d1c0313-fa3d-4b18-b435-51d3837e3e2c][Fleeting notes]] for a quick capture system, and finally evaluating your search results with [[id:431532c3-6506-4565-b193-dbfb60eac7d6][Evergreen notes]].
+For an increased output, you can [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintain your own digital library]] and [[id:799c5a72-2e8f-48a3-a22d-6657b9d1c05d][Apply search tools and techniques for your digital library]] where you can store your results and freely retrieve them whenever you wish.
 
 Having a sharp information literacy does not only mainly seen in technical fields like in research and academia (e.g., literature reviews, peer reviews) but also on everyday life as well.
 In fact, all of us practice it in some way.

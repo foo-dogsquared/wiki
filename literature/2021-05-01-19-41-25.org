@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       81d1ac42-5c72-4785-8195-e4f1e3598be5
+:END:
 #+title: An introduction to OpenBSD
 #+date: "2021-05-01 19:41:25 +08:00"
-#+date_modified: "2021-05-01 20:14:07 +08:00"
+#+date_modified: "2021-05-04 20:51:30 +08:00"
 #+language: en
 #+source: https://youtu.be/EkDVKthufAM
 

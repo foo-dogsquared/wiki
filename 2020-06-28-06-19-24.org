@@ -1,10 +1,13 @@
+:PROPERTIES:
+:ID:       583852e4-e56f-469b-89bc-9e5a832c9f04
+:END:
 #+title: Bidirectional links
 #+date: "2020-06-28 06:19:24 +08:00"
-#+date_modified: "2020-09-09 05:16:33 +08:00"
+#+date_modified: "2021-05-04 20:52:11 +08:00"
 #+language: en
 
 
-Ever since [[file:2020-05-09-12-48-23.org][Roam Research]] became a popular option for [[file:2020-04-15-14-35-55.org][Note-taking]], there has been interest in one of its popular features: bidirectional linking.
+Ever since [[id:24b5e144-dda4-482c-9684-958a00d6c986][Roam Research]] became a popular option for [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]], there has been interest in one of its popular features: bidirectional linking.
 This feature alone allows for a different way of thinking about note-taking — notes are better to be associative instead of hierarchical just like how our brain works.
 It allows for other Roam features such as backlinking and a visual representation of the notes with a graph.
 
@@ -14,6 +17,6 @@ This is a feature that I've often sought after especially for technical websites
 
 That said, bidirectional links are not a silver bullet.
 If this is implemented on the web today, it would cause a lot of problems — spamming, trollish linking, and the fact you have no control over what pages being linked to your page requiring heavier moderation.
-Hence, this is more suitable for certain situations such as personal wikis (see [[file:2020-06-04-21-32-23.org][Create evergreen notes with a digital garden]]).
+Hence, this is more suitable for certain situations such as personal wikis (see [[id:29ecbd86-ad97-4882-aa3f-56b5b90025d5][Create evergreen notes with a digital garden]]).
 Certain software such as Mediawiki, Dokuwiki, and Tiddlywiki offer this feature either as a built-in feature or an extension.
 [fn:: Well, most of them have it as an extension.]

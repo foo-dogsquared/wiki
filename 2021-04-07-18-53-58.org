@@ -1,17 +1,20 @@
+:PROPERTIES:
+:ID:       3994e8d7-8d77-4f52-9650-330369e82143
+:END:
 #+title: Future-proofing your notes is only worth if the future is relevant
 #+date: "2021-04-07 18:53:58 +08:00"
-#+date_modified: "2021-05-02 16:36:05 +08:00"
+#+date_modified: "2021-05-04 20:52:09 +08:00"
 #+language: en
 
 
 At some point, your notes will be a gigantic mess.
-Even if you [[file:2020-04-15-20-41-51.org][Add a desktop search engine for your digital library]] and know the structure, it's not always worth with the overwhelming pile that will accumulate further since you always navigate certain notes through a fixed path.
+Even if you [[id:ea263f6f-fa8e-4e6d-a585-d30d493d1e3c][Add a desktop search engine for your digital library]] and know the structure, it's not always worth with the overwhelming pile that will accumulate further since you always navigate certain notes through a fixed path.
 Similar to certain software projects like Xorg, Rust language, magit, and org-roam, there will be a point where you have to redesign them.
 [fn:: Xorg has Wayland as the successor, the Rust community can revise the language freely through editions, magit did have a crownfunding campaign to pay the developer to rewrite it for a year, and org-roam is recently through a major redesign.]
 You have to assign a garbage day at some point.
 
 Future-proofing your notes creates pressure on managing your note-taking seriously and efficiently.
 You don't want to take notes haphazardly and the overall notes structure will stay the same throughout a year.
-They should eventually evolve into [[file:2020-05-07-21-53-21.org][Evergreen notes]], branching out of the original notes structure and making a better graph for navigation.
+They should eventually evolve into [[id:431532c3-6506-4565-b193-dbfb60eac7d6][Evergreen notes]], branching out of the original notes structure and making a better graph for navigation.
 
-An alternative to trashing your notes is to [[file:2020-06-25-12-37-23.org][Create a writing inbox to store your thoughts]].
+An alternative to trashing your notes is to [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create a writing inbox to store your thoughts]].

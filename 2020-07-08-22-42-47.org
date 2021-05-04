@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       1a6187c9-6c79-4378-bf8d-935c8a3d9167
+:END:
 #+title: When learning a new skill, begin with a specific end-goal to create a solid starting point
 #+date: "2020-07-08 22:42:47 +08:00"
-#+date_modified: "2021-04-24 01:18:56 +08:00"
+#+date_modified: "2021-05-04 20:52:06 +08:00"
 #+language: en
 
 
@@ -10,7 +13,7 @@ It usually involves something like wanting to create a 2.5D fighting game rivall
 Most of the time, the process of skill acquisition happens to the following workflow with some effectiveness.
 
 - Document your specific example (e.g., a website, a drawing, a 3D scene).
-  You can [[file:2020-07-06-03-47-52.org][Refer to advanced resources when skill-building for a solid short-term goal]] to clear your specific example similar to a final proof-reading before you submit your paper.
+  You can [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]] to clear your specific example similar to a final proof-reading before you submit your paper.
 
 - Then, try to learn the specific example.
 

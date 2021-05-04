@@ -1,10 +1,13 @@
+:PROPERTIES:
+:ID:       0dff95e9-3bb0-41dc-9007-fc5e9c685728
+:END:
 #+title: Endianness
 #+date: "2020-07-10 23:30:27 +08:00"
-#+date_modified: "2020-09-09 05:23:55 +08:00"
+#+date_modified: "2021-05-04 20:52:06 +08:00"
 #+language: en
 
 
-- Tags :: [[file:2020-06-03-15-21-42.org][Computational processes]]
+- Tags :: [[id:af4a2867-dfa6-4241-950d-2fdb9cf3016c][Computational processes]]
 
 Endianness refers to how bits are read and this depends on the underlying hardware architecture.
 [fn:: You can enforce endianness in software but oftentimes, it is not a good idea.]

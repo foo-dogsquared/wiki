@@ -1,12 +1,15 @@
+:PROPERTIES:
+:ID:       8d2c7fb0-d57f-4cb1-a873-0428b98a6e0a
+:END:
 #+title: Make personal backups effectively with the 3-2-1 rule
 #+date: "2020-12-10 20:49:03 +08:00"
-#+date_modified: "2020-12-11 00:48:19 +08:00"
+#+date_modified: "2021-05-04 20:52:09 +08:00"
 #+language: en
 
 
 If you want to start good backup practices, the 3-2-1 rule is a good starting point.
 The 3-2-1 rule states that your backup should have 3 copies of your data stored in 2 media (e.g., internal hard drive, external storage) with at least 1 of them stored offsite of your computer (e.g., remote location, cloud service).
-This is especially important for your personal data such as your digital library (see [[file:2020-04-14-18-28-55.org][Maintain your own digital library]]) for example.
+This is especially important for your personal data such as your digital library (see [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintain your own digital library]]) for example.
 
 Making at least three copies of your data is a good way of mitigating against certain things like hardware failure, data corruption, and theft.
 

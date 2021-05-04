@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       344c3309-bfe2-4719-b05b-be7a987d127e
+:END:
 #+title: Doing with images makes symbols: Communicating with computers
 #+date: "2021-04-07 00:25:19 +08:00"
-#+date_modified: "2021-04-07 14:30:54 +08:00"
+#+date_modified: "2021-05-04 20:51:32 +08:00"
 #+language: en
 #+tags: media.talk graphics.user-interface computer.history
 #+source: https://youtu.be/6ZdxiQoOBgs

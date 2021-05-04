@@ -1,10 +1,13 @@
+:PROPERTIES:
+:ID:       be917383-84c4-4bf5-9ca0-b04bfb778f4f
+:END:
 #+title: Guix package manager
 #+date: "2020-08-19 08:21:44 +08:00"
-#+date_modified: "2021-04-24 01:17:31 +08:00"
+#+date_modified: "2021-05-04 20:52:08 +08:00"
 #+language: en
 
 
-[[https://guix.gnu.org/][GNU Guix]] is a derivation of [[file:2020-09-04-16-07-47.org][Nix package manager]] in furthering [[file:2020-09-19-08-31-48.org][Functional package management]].
+[[https://guix.gnu.org/][GNU Guix]] is a derivation of [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]] in furthering [[id:bfed6daf-4c2b-4426-bab9-2804caa5e079][Functional package management]].
 As such, it addresses the concerns and the previous mistakes that the Nix community made while developing the software.
 
 - Addresses storage issues commonly tied with reproducibility such as [[https://guix.gnu.org/manual/en/html_node/Substitutes.html#Substitutes][substitutes]] and [[https://guix.gnu.org/blog/2020/grafts-continued/][grafts]].

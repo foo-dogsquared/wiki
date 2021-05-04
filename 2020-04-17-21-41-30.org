@@ -1,11 +1,14 @@
+:PROPERTIES:
+:ID:       5569a49f-c387-4da2-8f68-d8452e35ee5b
+:END:
 #+title: Org mode: Babel
 #+date: "2020-04-17 21:41:30 +08:00"
-#+date_modified: "2021-05-04 01:02:15 +08:00"
+#+date_modified: "2021-05-04 20:52:07 +08:00"
 #+language: en
 #+tags: research.reproducibility
 
 
-Babel is the framework that enables [[file:2020-04-20-16-51-40.org][Org mode]] to be a [[file:2020-04-12-11-20-53.org][Reproducible research]] tool.
+Babel is the framework that enables [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]] to be a [[id:6eeb7a24-b662-46d6-9ece-00a5028ff4d8][Reproducible research]] tool.
 It is what makes Org mode [[https://orgmode.org/manual/Working-with-Source-Code.html][works with source code blocks]].
 As of 2021-04-22, [[https://orgmode.org/worg/org-contrib/babel/languages/index.html][Babel supports more than 50 languages]] with the ability to support unsupported languages.
 Though, it does have its quirks with different languages.

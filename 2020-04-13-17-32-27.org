@@ -1,10 +1,13 @@
+:PROPERTIES:
+:ID:       ccb3bc14-a801-4ed0-b066-50b1bcd853aa
+:END:
 #+title: File metadata
 #+date: "2020-04-13 17:32:27 +08:00"
-#+date_modified: "2021-05-02 02:11:01 +08:00"
+#+date_modified: "2021-05-04 20:52:15 +08:00"
 #+language: en
 
 
-File metadata is one of the most subtle requirements in [[file:2020-04-23-23-21-47.org][Personal information management]].
+File metadata is one of the most subtle requirements in [[id:88f2256a-3359-4d10-92a3-9273cabce414][Personal information management]].
 It embeds data without relying too much on filesystem such as the file name, creation date, and modification date.
 
 Each type of files have different ways of embedding metadata:

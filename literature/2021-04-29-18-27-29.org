@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       c6dddd6e-4f51-48db-a2ce-56ec41b7506e
+:END:
 #+title: Fundamentals of music theory
 #+date: "2021-04-29 18:27:29 +08:00"
-#+date_modified: "2021-04-29 21:33:22 +08:00"
+#+date_modified: "2021-05-04 20:51:30 +08:00"
 #+language: en
 #+source: https://www.coursera.org/learn/edinburgh-music-theory/
 

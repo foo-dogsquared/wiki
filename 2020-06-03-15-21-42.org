@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       af4a2867-dfa6-4241-950d-2fdb9cf3016c
+:END:
 #+title: Computational processes
 #+date: "2020-06-03 15:21:42 +08:00"
-#+date_modified: "2020-09-09 05:07:51 +08:00"
+#+date_modified: "2021-05-04 20:51:32 +08:00"
 #+language: en
 
 
