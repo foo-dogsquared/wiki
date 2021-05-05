@@ -3,5 +3,13 @@
 :END:
 #+title: Spaced repetition
 #+date: "2021-04-07 18:19:11 +08:00"
-#+date_modified: "2021-05-04 20:51:18 +08:00"
+#+date_modified: "2021-05-05 19:34:34 +08:00"
 #+language: en
+
+
+- spacing out testing over a period of time
+- [[roam:Start small and improve later]]
+- tools: Anki, org-drill
+- good for recalling and memorizing information
+- to fully absorb the information, you have to set some time for your brain
+- similar to how reading is not instantaneous, learning is not instantaneous or can be done overnight

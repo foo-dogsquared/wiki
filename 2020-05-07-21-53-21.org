@@ -3,7 +3,7 @@
 :END:
 #+title: Evergreen notes
 #+date: "2020-05-07 21:53:21 +08:00"
-#+date_modified: "2021-05-04 20:52:15 +08:00"
+#+date_modified: "2021-05-05 17:06:24 +08:00"
 #+language: en
 #+tags: pim writing
 
@@ -18,4 +18,3 @@ With this in mind, evergreen notes should have the following properties:
 To start writing an evergreen note, you could start with your [[id:3d1c0313-fa3d-4b18-b435-51d3837e3e2c][Fleeting notes]] and outline the main ideas.
 An evergreen note does not have to be finished within one sitting.
 In fact, it is preferred to build it incrementally, editing the note as you go developing insights.
-(It is previously mentioned that evergreen notes should be taken with you, after all.)

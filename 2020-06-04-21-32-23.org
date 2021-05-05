@@ -3,13 +3,15 @@
 :END:
 #+title: Create evergreen notes with a digital garden
 #+date: "2020-06-04 21:32:23 +08:00"
-#+date_modified: "2021-05-04 20:52:07 +08:00"
+#+date_modified: "2021-05-06 00:53:47 +08:00"
 #+language: en
 
 
-A [[https://github.com/MaggieAppleton/digital-gardeners][digital garden]] is a your space for creating carefully crafted notes (see [[id:431532c3-6506-4565-b193-dbfb60eac7d6][Evergreen notes]]).
+A digital garden is a your space for creating carefully crafted [[id:431532c3-6506-4565-b193-dbfb60eac7d6][Evergreen notes]].
 Unlike a traditional blog where it concerns the final output, a digital garden cares more on the process of creating notes even if it's incomplete.
-Your notes will start as a seedling, then grow as you develop more insight, and turn into a fully-developed [[https://notes.andymatuschak.org/Evergreen_notes][evergreen note]].
+Creating one encourages to [[roam:Start small and improve later]] when it comes to your notes.
+Your notes will start as a seedling, then grow as you develop more insight, and turn into a fully-developed evergreen note.
+
 Examples of a digital garden includes [[https://notes.andymatuschak.org/][Andy Matuschak's]], [[https://maggieappleton.com/garden][Maggie Appleton's]], and [[https://www.mentalnodes.com/][Anne-Laure De Cunff's]].
 [fn:: In other words, a digital garden is a properly developed wiki.]
 
@@ -18,14 +20,5 @@ There are many ways on creating a digital garden but here's my ideal type of a d
 - Features [[id:583852e4-e56f-469b-89bc-9e5a832c9f04][Bidirectional links]] between notes as well as listing referenced notes at the bottom.
 - Focuses on creating a graph of evergreen notes that can easily interrelate to one another.
 - Composes of different notes of different maturity level: either an incomplete seedling of a note, a partially complete note, or a fully-developed evergreen note.
-- Sports a [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]] workflow along with an easy-to-publish workflow (e.g., web, a set of PDF documents).
+- Sports a note-taking workflow along with a publication workflow (e.g., web, PDf documents).
 - Easily creates evergreen notes for technical concepts so that I can easily linked concepts common to resources (e.g., books, courses, documents).
-
-The idea of a digital garden is mainly inspired from [[id:24b5e144-dda4-482c-9684-958a00d6c986][Roam Research]] along with the focus for bidirectional linking and evergreen notes.
-
-There are many ways to start creating one but here's my take on it.
-An entry to the digital garden is created first as a fleeting note (or transient note) to be stored in your writing inbox.
-The writing inbox should not interrupt your work meaning a quick capture system should suffice (see [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create a writing inbox to store your thoughts]]).
-[fn:: Examples of tool that lets you quickly capture your thoughts include [[https://orgmode.org/manual/Capture.html][Org-capture]] or [[https://github.com/rolandshoemaker/theca][Theca]].]
-When you go back to your inbox to empty it, you can then start to create an evergreen note with it.
-If the concept of the fleeting note is not interesting enough to warrant a permanent note, feel free to archive or delete it.

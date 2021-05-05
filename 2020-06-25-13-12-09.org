@@ -3,12 +3,17 @@
 :END:
 #+title: Fleeting notes
 #+date: "2020-06-25 13:12:09 +08:00"
-#+date_modified: "2021-05-04 20:52:09 +08:00"
+#+date_modified: "2021-05-05 19:16:52 +08:00"
 #+language: en
 
 
 Fleeting notes are a valuable scratchpad for our messy thoughts — it's natural to have a messy input since they are catered only to yourself.
 
-With messy thoughts and inputs, you should [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create a writing inbox to store your thoughts]] all in one place.
-You could search through them with various search techniques to quickly retrieve them (see [[id:799c5a72-2e8f-48a3-a22d-6657b9d1c05d][Apply search tools and techniques for your digital library]]).
-Then, select certain fleeting notes and improve upon them eventually creating [[id:431532c3-6506-4565-b193-dbfb60eac7d6][Evergreen notes]].
+With the messy nature of the notes, it can be difficult to work and start with them.
+Like all things of the past, fleeting notes can be a tool for creating more complete [[roam:Evergreen notes]].
+The workflow should make it easier retreiving them, making it easier to start writing.
+Here's how I make things happen with them.
+
+- With messy thoughts and inputs, you should [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create a writing inbox to store your thoughts]] all in one place.
+- You could [[id:799c5a72-2e8f-48a3-a22d-6657b9d1c05d][Apply search tools and techniques for your digital library]] to make things easier.
+- Then, select certain fleeting notes and improve upon them eventually creating evergreen notes — [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]].

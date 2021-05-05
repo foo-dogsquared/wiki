@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       fdf9e3eb-02c5-47a6-b586-e71a5c92d01a
+:END:
+#+title: Look for live sessions as another form of examples
+#+date: "2021-05-05 19:43:14 +08:00"
+#+date_modified: "2021-05-05 19:51:53 +08:00"
+#+language: en
+
+
+There is something powerful in seeing others doing the task as you are now seeing the process in action.
+This is why seeing live sessions such as live studying, live coding, and speedpainting sessions are compelling to watch.
+A possible reason is our human tendency to follow by example.
+
+Watching live sessions in any form (whether from livestreams or pre-rendered videos) can be a good way to learn and gain perspectives because you are now viewing the raw footage of the task from its conception to its completion.
+Moreover, there are video forms which makes a glimpse of the processes such as behind-the-scenes footages and documentaries of various media (e.g., movies, video games, videos).

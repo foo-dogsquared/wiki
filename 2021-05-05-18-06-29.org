@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       05a39f96-fb1c-4d71-9be1-fc4c2e251e8f
+:END:
+#+title: Start small and improve later
+#+date: "2021-05-05 18:06:29 +08:00"
+#+date_modified: "2021-05-05 19:15:54 +08:00"
+#+language: en
+
+
+Currently, a lot of my notes makes one point clear: incremental improvement.
+This is applicable on lots of places.
+
+- In speedrunning, when starting to learn the mechanics of the game, you may want to finish a whole run no matter how bad it is to get the bigger picture.
+  This way, you'll know what techniques and tricks you find difficult and improve on it immediately.
+
+- In drawing, one often starts with a sketch with rough shapes and outlines.
+  The details may then change in the later phases of the sketch.
+  This can make immediate improvements especially when you found out the outcome does not fit with what you've visualized.
+
+- In learning a new skill, you start from the basic concepts.
+  This is to build a foundation for complex topics and flexibility you need to create a solution.
+
+- In writing, you often start with the outlines of the article or a story.
+  You then fill the details for the point or scenario you're writing.
+
+The point is to reach bigger advancements must come from somewhere even in the smallest amounts.
+There is always on opportunity to improve things.
