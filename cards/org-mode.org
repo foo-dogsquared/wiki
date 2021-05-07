@@ -1,0 +1,128 @@
+:PROPERTIES:
+:ID:       b804fe54-d7f4-4809-be9e-50779b4b9314
+:ANKI_DECK: Emacs
+:END:
+#+title: Anki: Org mode
+#+date: "2021-05-05 22:49:10 +08:00"
+#+date_modified: "2021-05-06 01:42:46 +08:00"
+#+language: en
+
+* org-babel
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620236488535
+:END:
+** Front
+What makes Org mode popular for reproducible research?
+** Back
+org-babel, the library that enables superpowers for Org mode source code blocks.
+
+Among the list of features, org-babel makes the following things easier for creating lab notebooks.
+
+- Execute the source code block and print results.
+- Create files from source code blocks, making it possible to create an entire computational report with a single Org mode document.
+- Metaprogramming with [[https://orgmode.org/manual/Noweb-Reference-Syntax.html][noweb-inspired system]] making dynamic content possible.
+- Individual control over source code blocks with sessions, export options, and variables.
+- Pass values between different source code blocks even in different programming languages.
+
+* org-babel modes
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620236489830
+:END:
+** Front
+How to make org-babel pass values between different source code blocks?
+** Back
+:PROPERTIES:
+:ID:       5c959c6a-04fb-4154-becc-86eeb15b20ad
+:END:
+First, configure org-babel to work in functional mode (i.e., ~:results value~) in a source code block.
+With functional mode, it will return values which will be handled by org-babel.
+
+#+begin_src org
+,#+name: num
+,#+begin_src python  :results value
+return 53
+,#+end_src
+#+end_src
+
+The value cannot be passed unless it has a name that others can reference yet so add a name property to the source code block (i.e., ~#+name: ${NAME}~).
+
+Now here's a different source code block written in a different language.
+To pass a value, you have to configure with ~:var ${VARNAME}=${NAME}~.
+
+#+begin_src org
+,#+begin_src ruby  :var num=num  :results output
+print(num)
+,#+end_src
+#+end_src
+
+* Creating files with Org mode
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620236490049
+:END:
+** Front
+How to create files with Org mode source code blocks?
+** Back
+The ~:tangle~ option enables extracting code blocks into files.
+Accepted values include =yes=, =no=, or a relative path to the Org document where the file will be written.
+
+* Dynamic content with Org mode
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620236491388
+:END:
+** Front
+Is creating dynamic content possible?
+If so, how?
+** Back
+Yes!
+
+With source code blocks and the [[https://orgmode.org/manual/Noweb-Reference-Syntax.html][noweb]] option enabled, you can make meta-programming in Org.
+You can declare a function by assigning a name on the code block (i.e., ~#+name: ${FUNC_NAME}~).
+
+Here's an example of a source code block with a default argument.
+
+#+begin_src org
+,#+name: greeting
+,#+header:  :var name="World"
+,#+begin_src sh
+echo "Hello ${name}"
+,#+end_src
+#+end_src
+
+You can then call the function in different ways:
+
+- For calling it inline, ~call_${FUNC_NAME}()~.
+- For creating a block, ~#+call: ${FUNC_NAME}()~.
+- For invoking inside a code block, ~<<${FUNC_NAME}()>>~, but you have to enable noweb (e.g., ~:noweb yes~).
+
+You can then pass header arguments by appending in square brackets (=[]=) before invoking it — e.g., ~call_greeting[:results replaces]()~, ~#+call: greeting[:results replace]()~, ~<<greeting[:results replace]()>>~.
+
+* Asciidoctor-styled callouts
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620236492755
+:END:
+** Front
+Are callouts possible?
+If so, how?
+** Back
+Surprisingly, yes!
+It is just hidden on the documentation.
+Specifically, on the [[https://orgmode.org/manual/Literal-Examples.html][Literal examples]] section of the Org mode manual.
+
+Here's an example to do it.
+
+#+begin_src org
+,#+begin_src python
+print("Hello world") # (ref:hello)
+print(2 + 5)         # (ref:num)
+,#+end_src
+
+In [[(hello)][line 1]], we have printed the traditional "Hello world" program.
+In [[(num)][the second line]], we've done a simple arithmetic and printed it into the console.
+#+end_src
+
+To create Asciidoctor-styled callouts, create a reference inside of the code block and refer to it (i.e., ~(${ref})~).

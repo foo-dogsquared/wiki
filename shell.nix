@@ -10,5 +10,6 @@ pkgs.mkShell {
     python3
     racket
     R
+    recoll
   ];
 }

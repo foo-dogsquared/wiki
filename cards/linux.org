@@ -3,7 +3,7 @@
 :END:
 #+title: Anki: Linux
 #+date: "2021-05-01 20:20:25 +08:00"
-#+date_modified: "2021-05-04 20:51:29 +08:00"
+#+date_modified: "2021-05-06 18:33:03 +08:00"
 #+language: en
 #+property: anki_deck Linux
 
@@ -41,3 +41,65 @@ How to test out systemd timestamps?
 ~systemd-analyze {calendar,timestamp,timespan}~
 
 To know how the format (i.e., calendar, timestamp, and timespan) looks like, you can refer to ~man systemd.time.5~.
+
+* Enabling desktop integration
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620296263978
+:END:
+** Front
+How to make desktop environments recognize the desktop files?
+** Back
+Most of the desktop environments and certain applications like Rofi refers to the ~XDG_DATA_DIRS~ environment variable, a list of colon-delimited paths similar to ~PATH~.
+
+This enables desktop integration with certain tools like [[https://nixos.org/][Nix]] and [[https://guix.gnu.org/][Guix]] package manager.
+Here's how to integrate installed Nix packages into the desktop.
+
+#+begin_src shell
+XDG_DATA_DIRS=$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}
+#+end_src
+
+* Flatpak permissions
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620296265390
+:END:
+** Front
+What permissions does user-installed Flatpak apps have by default?
+** Back
+By default, they have none.
+[[https://docs.flatpak.org/en/latest/sandbox-permissions.html][Among the default limitations]]:
+
+- They can only access their own runtime folder =$HOME/.var/app/${FLATPAK_APP_ID}=.
+- They cannot access the network.
+
+Some apps are installed with the request to allow the following permissions enabled (e.g., Zotero).
+
+If left with no permissions, you'll see in certain situations like a file browser dialog that the permissions is in effect.
+Below are some of the examples interacting with the permissions of an app.
+
+#+begin_src shell
+# Show the permissions of an app.
+flatpak permission-show ${FLATPAK_APP_ID}
+
+# Let the user-installed Flatpak app access the home directory.
+flatpak override --user --filesystem=home ${FLATPAK_APP_ID}
+#+end_src
+
+* The basics of Flatpak apps
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620296265848
+:END:
+** Front
+What is a Flatpak package?
+Does it have its own form of managing dependencies?
+** Back
+A Flatpak package can either be a runtime or a standalone app.
+
+Runtimes are the basic dependencies of an application.
+Only select packages available as a runtime (e.g., Qt, GTK).
+
+Flatpak has its set of runtimes composed of system libraries to be used with the applications.
+Thus, it stays out of its way with the operating system's libraries.
+The developer can also bundle its own set of libraries.

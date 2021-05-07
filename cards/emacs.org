@@ -3,7 +3,7 @@
 :END:
 #+title: Anki: Emacs
 #+date: "2021-05-02 19:18:32 +08:00"
-#+date_modified: "2021-05-04 20:51:29 +08:00"
+#+date_modified: "2021-05-06 21:57:59 +08:00"
 #+language: en
 #+property: anki_deck Emacs
 
@@ -74,3 +74,45 @@ if the buffer is modified in one of the window, it will show the changes in all 
    A marker is another point in the buffer.
    It is usually found when interacting with regions when asked for the two points (i.e., the beginning and the ending position).
    Furthermore, a marker can be used to save locations and jump back to that marker when asked.
+
+* Interacting with buffers in Elisp
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620309319576
+:END:
+** Front
+Give a rough example on how to do the following.
+
+- Create a temporary buffer containing the text "Hello world".
+- Name the buffer and open it as an Org mode document.
+- Get or create the ID for the document.
+** Back
+#+begin_src elisp  :exports code
+(with-temp-buffer
+  (insert "Hello world")
+  (org-mode))
+#+end_src
+
+* String comparison in Emacs Lisp
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620309321231
+:END:
+** Front
+How to compare two strings?
+** Back
+~(string= STR1 STR2)~
+
+#+begin_src elisp
+(print (string= "WHOA" "whoa"))
+(print (string= "WHOA" (upcase "whoa")))
+(print (string= "Hello world" "HeLL0 World"))
+#+end_src
+
+#+results:
+:
+: nil
+:
+: t
+:
+: nil

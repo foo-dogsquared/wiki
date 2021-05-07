@@ -2,13 +2,9 @@
 :ID:       e9fa93ca-b4fb-44b8-ad3c-d10107150697
 :END:
 #+TITLE: Index
-#+AUTHOR: "Gabriel Arazas"
-#+EMAIL: "foo.dogsquared@gmail.com"
 #+DATE: "2020-09-07 05:49:06 +08:00"
 #+DATE_MODIFIED: "2020-09-09 05:49:21 +08:00"
 #+LANGUAGE: en
-#+OPTIONS: toc:t
-#+PROPERTY: header-args  :exports both
 
 
 Hello!
@@ -16,3 +12,6 @@ This is my public knowledge graph publicly available for the public.
 It is mostly intended for easy access for my notes in case I'm not in my computer along with sharing my findings with the rest of the world (and hopefully getting feedback on it).
 
 If you want to view my notes in its raw form, you can look at the [[http://github.com/foo-dogsquared/wiki][Git repo]].
+There's no good index note yet so eeeeeeeeeeeeeehhhhhhhhhhhhhhhhhhhhh...
+
+As of 2021-05-07, my interest is in document [[roam:Personal information management]], [[roam:Illustration]], package management, and programming.

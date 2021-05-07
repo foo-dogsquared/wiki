@@ -24,6 +24,20 @@ Fortunately for me, most of the private files are connected with each other (a s
 
 
 
+== Why set up like this?
+
+We need to focus on why did I need to make the structure like this.
+For this question, I answer with the outcomes that I expect from the note-taking system I eventually settled with.
+
+- I want ideas to be searched and woven so easily with the rest.
+- I'm not an expert so I still need the "basic" way of taking structured notes, summarizing them until I gain a bigger picture of the things I'm curious about.
+- I want to easily integrate spaced repetition and randomness to encourage improvement on my notes.
+
+This project is the result of that with org-roam, Anki, and eventually more (preferably less) tools to stick around and gain ideas from.
+
+
+
+
 == Getting started
 
 Interested in copying my setup?
@@ -128,7 +142,7 @@ Here's an example Doom Emacs configuration for that:
 (add-hook 'before-save-hook 'time-stamp)
 ----
 +
-Just see my link:https://github.com/foo-dogsquared/dotfiles/tree/4e8f036b73a71d02f5909f4f28898a79c2311147/emacs[Doom Emacs config] in my dotfiles.
+Just see my link:https://github.com/foo-dogsquared/dotfiles/tree/75de71b4d0dfe79fe820204e365809cee11d7349/emacs[Doom Emacs config] in my dotfiles.
 
 * The related assets are stored in the link:./assets/[`./assets/`].
 The asset folder names should be the same as the filename of the org-mode document — e.g., `2021-04-06-15-04-11.org` should have an asset folder in `./assets/2021-04-06-15-04-11/`.
