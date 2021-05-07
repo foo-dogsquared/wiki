@@ -3,15 +3,17 @@
 :END:
 #+title: Start small and improve later
 #+date: "2021-05-05 18:06:29 +08:00"
-#+date_modified: "2021-05-05 19:15:54 +08:00"
+#+date_modified: "2021-05-07 22:41:32 +08:00"
 #+language: en
 
 
-Currently, a lot of my notes makes one point clear: incremental improvement.
-This is applicable on lots of places.
+This is a very simple advice applicable on lots of places.
 
 - In speedrunning, when starting to learn the mechanics of the game, you may want to finish a whole run no matter how bad it is to get the bigger picture.
   This way, you'll know what techniques and tricks you find difficult and improve on it immediately.
+
+- When learning to program, you can start with solving one coding problem until you're now comfortable to take two.
+  Then, with a couple of problems, you're now comfortable to take three and so on.
 
 - In drawing, one often starts with a sketch with rough shapes and outlines.
   The details may then change in the later phases of the sketch.
@@ -25,3 +27,6 @@ This is applicable on lots of places.
 
 The point is to reach bigger advancements must come from somewhere even in the smallest amounts.
 There is always on opportunity to improve things.
+
+Once you get comfortable with the task you're supposed to do, you're now getting bigger results.
+For an effective start, you can go to [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]] to gain a 30,000 foot view on the topic and eventually [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]].

@@ -3,7 +3,7 @@
 :END:
 #+title: Note-taking
 #+date: "2020-04-15 14:35:55 +08:00"
-#+date_modified: "2021-05-07 10:55:02 +08:00"
+#+date_modified: "2021-05-07 22:00:37 +08:00"
 #+language: en
 
 
@@ -11,7 +11,7 @@ The practice of note-taking is universal — it is everybody's concern how to wr
 Note-taking does not only involve the act of writing but also the act of retrieval from finding contextual relationships from two notes, separating notes into digestible chunks, and searching notes effectively.
 
 There are different ways of note-taking.
-Among the endless list of methods, popular methods include [[id:4259636e-e0e8-49e4-8210-758ec59728a3][Zettelkasten]], [[id:24b5e144-dda4-482c-9684-958a00d6c986][Roam Research]], Cornell method, or the traditional [[roam:Linear notes]].
+Among the endless list of methods, popular methods include [[id:4259636e-e0e8-49e4-8210-758ec59728a3][Zettelkasten]], [[id:24b5e144-dda4-482c-9684-958a00d6c986][Roam Research]], Cornell method, or the traditional [[id:d3fbdb1a-9629-45ef-9f08-32c6e49025bb][Linear notes]].
 
 When doing something like this, one could take notes how to make their notes interesting to read.
 One could start to [[id:d024516b-35ea-40ae-9433-ceacea695073][Write paragraphs like music]], create notes with [[id:79357d56-74bf-4854-820c-c0ad849f2468][Classic prose]], and [[id:b318dc2b-5fa1-48ff-9d33-6fbbdee46a2f][Write down the simplest possible example]].

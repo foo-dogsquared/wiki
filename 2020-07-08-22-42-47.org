@@ -3,14 +3,14 @@
 :END:
 #+title: When learning a new skill, begin with a specific end-goal to create a solid starting point
 #+date: "2020-07-08 22:42:47 +08:00"
-#+date_modified: "2021-05-04 20:52:06 +08:00"
+#+date_modified: "2021-05-07 22:35:55 +08:00"
 #+language: en
 
 
 This top-bottom learning approach (i.e., specific to general topics) is often used by self-learners.
 It usually involves something like wanting to create a 2.5D fighting game rivalling [[https://en.wikipedia.org/wiki/Arc_System_Works][Arc System Works]], a gorgeous anime-inspired illustration, [[https://www.youtube.com/watch?v=TF9I1GxNdJQ][a flashy short animation]], or [[https://www.youtube.com/watch?v=ZwR0zFe57Y4][a cool-looking demoscene]].
 
-Most of the time, the process of skill acquisition happens to the following workflow with some effectiveness.
+Most of the time, skill acquisition happens with the following workflow.
 
 - Document your specific example (e.g., a website, a drawing, a 3D scene).
   You can [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]] to clear your specific example similar to a final proof-reading before you submit your paper.
@@ -24,8 +24,9 @@ Most of the time, the process of skill acquisition happens to the following work
 
 - Work your way up the knowledge tree you've just created until you can reproduce/create the example with your newfound hierarchical knowledge.
 
-The gist of the above list is to create your roadmap.
-That way, it doesn't lead you into aimlessly learning stuff and get you efficient in upping your skill level.
+You still do some form of the above workflow subconsciously with the goal of being familiar to a specific topic.
+Eventually, you take the time to improve it further, making [[id:d885e93b-f919-4338-a6b9-3438538e18c0][Every copy of the techniques is personalized]].
+The gist of the above list is to [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]].
 
 Not every attempts of skill acquisition is suitable with this workflow with some skills need more experiments than others.
 The above workflow is more suitable to acquire advanced skills than entry-level skills where aiming for a perfect first try is (obviously) not an attractive goal.

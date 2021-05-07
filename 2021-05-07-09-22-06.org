@@ -3,7 +3,7 @@
 :END:
 #+title: Types of notes
 #+date: "2021-05-07 09:22:06 +08:00"
-#+date_modified: "2021-05-07 11:03:21 +08:00"
+#+date_modified: "2021-05-07 23:29:33 +08:00"
 #+language: en
 
 
@@ -39,3 +39,4 @@ This allows to freely make notes and extend in any direction.
 
 One of the notable features of non-linear notes is the freedom to link different topics.
 This is where non-linear notes like the ones found in [[id:4259636e-e0e8-49e4-8210-758ec59728a3][Zettelkasten]] or [[id:24b5e144-dda4-482c-9684-958a00d6c986][Roam Research]] tend to shine because of freedom from hierarchy.
+Oftentimes, they are made to be associative but not all of them (e.g., flashcards, concept maps).

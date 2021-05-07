@@ -1,9 +1,9 @@
 :PROPERTIES:
 :ID:       9a11ef31-b2a7-43a9-a7a9-48f191838c6e
 :END:
-#+title: Learn more with referencing with a bit of remembering
+#+title: Prefer referencing over remembering
 #+date: "2021-04-06 22:25:17 +08:00"
-#+date_modified: "2021-05-04 20:52:09 +08:00"
+#+date_modified: "2021-05-07 23:28:03 +08:00"
 #+language: en
 #+tags: personal-info-management
 
@@ -16,7 +16,7 @@ On a Unix-based environment, for example, has the manual pages with ~man~ and yo
 This is especially needed if you're using BSD-based operating systems such as FreeBSD and OpenBSD.
 GNU also added [[https://www.gnu.org/software/texinfo/][Texinfo]] and the community also created their own solutions such as [[https://github.com/tldr-pages/tldr][tldr pages]] (as well as an offline clients such as ~tealdeer~).
 
-[[roam:Emacs][Emacs]], specifically Doom Emacs, has a great built-in help system.
+[[roam:Emacs][GNU Emacs]], specifically Doom Emacs, has a great built-in help system (see [[id:0efb9c51-3a12-4e5a-9e9b-d48cf4bd53ce][Using the built-in help system of Emacs]]).
 [fn:: It's a necessity after all by how massive of a software this is.]
 For example, the ~help-for-help~ is a function that gives you a metahelp interface to a plethora of options such as searching through pattern, logging the last keybindings, display the documentation from a keybinding, describe a language environment, and so on.
 Another helpful function ~apropos~, like its similarly named inspiration, searches through the entire symbol list of Emacs (e.g., variable, function) through a pattern.

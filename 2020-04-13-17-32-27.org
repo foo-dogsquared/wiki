@@ -3,7 +3,7 @@
 :END:
 #+title: File metadata
 #+date: "2020-04-13 17:32:27 +08:00"
-#+date_modified: "2021-05-07 12:03:59 +08:00"
+#+date_modified: "2021-05-07 21:25:34 +08:00"
 #+language: en
 
 
@@ -16,7 +16,7 @@ Each type of files have different ways of embedding metadata:
 - MP3 files have the ID3 format.
 - Vorbis comments is a universal format commonly found on OGG.
 - HTML documents contain the ~<head>~ element to store the metadata.
-- [[roam:Org mode]] and Asciidoctor documents allow file-level properties that are functionally equivalent to embedded metadata.
+- [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]] and Asciidoctor documents allow file-level properties that are functionally equivalent to embedded metadata.
 - There are also universal formats such as Extensible metadata platform (XMP) or Meta Information Encapsulation (MIE) available either as embedded or a separate file.
 
 Tools exist for writing and reading data such as [[https://exiftool.org/][Exiftool]].

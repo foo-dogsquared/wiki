@@ -3,7 +3,7 @@
 :END:
 #+title: Deliberate practice
 #+date: "2020-07-06 23:55:47 +08:00"
-#+date_modified: "2021-05-04 20:52:10 +08:00"
+#+date_modified: "2021-05-07 22:42:48 +08:00"
 #+language: en
 
 
@@ -13,7 +13,6 @@ That is each session to be effective, [[id:1a6187c9-6c79-4378-bf8d-935c8a3d9167]
 
 To put it simply, deliberate practice involves getting out of comfort zone and enforces discipline.
 For example, trying yourself to solve some hard mathematical problems or competitive programming for the first time with a mentor.
-(You can see [[https://www.nateliason.com/blog/deliberate-practice-examples][some more examples on getting started with it]].)
 
 Keep in mind, deliberate practice has one very important component: feedback.
 Let's try with an example where we have two tennis players, James and Isaac, improving their repertoire.

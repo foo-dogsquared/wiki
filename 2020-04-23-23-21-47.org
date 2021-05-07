@@ -3,13 +3,13 @@
 :END:
 #+title: Personal information management
 #+date: "2020-04-23 23:21:47 +08:00"
-#+date_modified: "2021-05-07 11:50:54 +08:00"
+#+date_modified: "2021-05-07 22:00:38 +08:00"
 #+language: en
 
 
 Personal information management (PIM) is self-explanatory as it is.
 
-This also includes managing [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]], [[roam:Note-taking]], library management, and much more.
+This also includes managing [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]], [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]], library management, and much more.
 
 
 
