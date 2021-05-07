@@ -3,7 +3,7 @@
 :END:
 #+title: Maintain your own digital library
 #+date: "2020-04-14 18:28:55 +08:00"
-#+date_modified: "2021-05-04 20:52:08 +08:00"
+#+date_modified: "2021-05-07 11:48:51 +08:00"
 #+language: en
 #+tags: personal-info-management
 
@@ -19,6 +19,11 @@ A digital library should have the following features:
 
 Instituition libraries such as Internet Archive and ArXiv are the go-to examples for a long sustaining digital library.
 On the other hand, personal digital libraries are basically personal information management systems where your resources are stored: documents, notes, references, and media files.
+
+
+
+
+* How to create one?
 
 I have been thinking of creating a digital library for myself.
 These are the tools I've been using for my experiment:

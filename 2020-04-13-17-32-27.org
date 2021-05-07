@@ -3,24 +3,24 @@
 :END:
 #+title: File metadata
 #+date: "2020-04-13 17:32:27 +08:00"
-#+date_modified: "2021-05-04 20:52:15 +08:00"
+#+date_modified: "2021-05-07 12:03:59 +08:00"
 #+language: en
 
 
-File metadata is one of the most subtle requirements in [[id:88f2256a-3359-4d10-92a3-9273cabce414][Personal information management]].
+File metadata is one of the most subtle requirements in [[roam:Personal information management]].
 It embeds data without relying too much on filesystem such as the file name, creation date, and modification date.
 
 Each type of files have different ways of embedding metadata:
 
 - Image files such as JPEG or PNG, metadata are embedded in Exchangeable image file format (EXIF).
-- MP3 files have the ID3 as the de-facto standard for embedding contextual information such as the artist, album, genre, comments, and others.
+- MP3 files have the ID3 format.
 - Vorbis comments is a universal format commonly found on OGG.
 - HTML documents contain the ~<head>~ element to store the metadata.
-- Org mode documents allow file-level properties that are functionally equivalent to embedded metadata.
+- [[roam:Org mode]] and Asciidoctor documents allow file-level properties that are functionally equivalent to embedded metadata.
+- There are also universal formats such as Extensible metadata platform (XMP) or Meta Information Encapsulation (MIE) available either as embedded or a separate file.
 
-There are also universal formats such as Extensible metadata platform (XMP) or Meta Information Encapsulation (MIE) available either as embedded or a separate file.
-
-Beware about caring too much on metadata to the point of our metadata takes more space than the data themsevles.
-Cautionary tales such as [[https://en.wikipedia.org/wiki/MS_Fnd_in_a_Lbry][MS Fnd in a Lbry]] have been written about it.
-They are, after all, merely data on data;
-if the referred data does not exist in the first place, might as well as the metadata.
+Tools exist for writing and reading data such as [[https://exiftool.org/][Exiftool]].
+While file metadata are good and dandy, don't worry too much on them.
+Just start with the more important data such as the title, authors, and the date.
+It is preferred if you can edit the metadata manually so you can mark more relevant information.
+Having too much however might as well have no metadata due to information overload.

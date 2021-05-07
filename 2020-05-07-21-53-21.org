@@ -3,7 +3,7 @@
 :END:
 #+title: Evergreen notes
 #+date: "2020-05-07 21:53:21 +08:00"
-#+date_modified: "2021-05-05 17:06:24 +08:00"
+#+date_modified: "2021-05-07 11:51:21 +08:00"
 #+language: en
 #+tags: pim writing
 
@@ -15,6 +15,18 @@ With this in mind, evergreen notes should have the following properties:
 - It enables you to develop further insight.
 - As you develop more evergreen notes, more time is put on editing them rather than creating them.
 
-To start writing an evergreen note, you could start with your [[id:3d1c0313-fa3d-4b18-b435-51d3837e3e2c][Fleeting notes]] and outline the main ideas.
-An evergreen note does not have to be finished within one sitting.
-In fact, it is preferred to build it incrementally, editing the note as you go developing insights.
+Writing evergreen notes is a [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]] process to make your current notes a worthwhile read.
+
+
+
+* Getting started to write evergreen notes
+
+- [[roam:Start small and improve later]].
+  Most notes start as [[roam:Fleeting notes]] and later create evergreen notes as you get more insight on the topic.
+  [[roam:Create an inbox to store your thoughts]].
+
+- Make a habit out of writing.
+
+- Reflect on the common topics between the transient notes for each video, books, paper, etc.
+  As you write more notes on more resources, you'll begin to notice the overlapping concepts between each note.
+  The overlapping concepts are the best starting points.

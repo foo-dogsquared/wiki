@@ -3,7 +3,7 @@
 :END:
 #+title: Org mode: Babel
 #+date: "2020-04-17 21:41:30 +08:00"
-#+date_modified: "2021-05-04 20:52:07 +08:00"
+#+date_modified: "2021-05-06 00:13:13 +08:00"
 #+language: en
 #+tags: research.reproducibility
 
@@ -77,7 +77,7 @@ return o[0]
 
 
 
-* Functions
+* Creating dynamic content with meta-programming
 
 With [[https://orgmode.org/worg/org-contrib/babel/intro.html][Babel]], you can call named code blocks anywhere from blocks to inline.
 This creates a "function" with Babel using different languages.
@@ -114,10 +114,11 @@ Very helpful in reducing places you need to edit (not to mention less prone to e
 
 
 
-* Sessions
+* Executing code blocks in the same session
 
 Each of the source code block runs on an individual session.
 However, you can connect source code blocks in the same session with ~:session <SESSION NAME>~.
+This allows you to cut code blocks and add more detailed explanations for them.
 
 Let's start with a simple example where we want to demonstrate some Python shenanigans.
 Here's one Python code block.

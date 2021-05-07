@@ -1,9 +1,9 @@
 :PROPERTIES:
 :ID:       810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf
 :END:
-#+title: Create a writing inbox to store your thoughts
+#+title: Create an inbox to store your thoughts
 #+date: "2020-06-25 12:37:23 +08:00"
-#+date_modified: "2021-05-06 00:51:59 +08:00"
+#+date_modified: "2021-05-07 11:54:40 +08:00"
 #+language: en
 
 
@@ -16,4 +16,6 @@ For this, you want to make a dedicated repository.
 
 Like our emails, our writing inbox should be cleaned up each time we visit our inbox.
 Not all of them are going to be important so feel free to remove entries that are not in need.
+
 If you want to store an idea for an indefinite future (e.g., a project idea, future hobbies) that you cannot surely do now, you can then create a dedicated inbox.
+In practice, this is great as a starter point for [[roam:Fleeting notes]] or a reading list to [[roam:Maintain your own digital library]].

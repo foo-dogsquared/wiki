@@ -3,9 +3,24 @@
 :END:
 #+title: Personal information management
 #+date: "2020-04-23 23:21:47 +08:00"
-#+date_modified: "2021-05-04 20:51:33 +08:00"
+#+date_modified: "2021-05-07 11:50:54 +08:00"
 #+language: en
 
 
-Personal information management is self-explanatory as it is.
-It is the act of managing your information from emails, contacts, calendar, notes, and so much more.
+Personal information management (PIM) is self-explanatory as it is.
+
+This also includes managing [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]], [[roam:Note-taking]], library management, and much more.
+
+
+
+
+* Practicing information management
+
+While there's no correct way to practice PIM but to start:
+
+- [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintain your own digital library]] which can make managing personal belongings from your personal photos, academic libraries and references, and your anime collection all the more easier.
+
+- While not a good one, the 3-2-1 rule is a good starting point for practicing backups.
+  The rule is simple: 3 copies of your data stored in 2 media (e.g., internal hard drive, external storage) with at least 1 of them stored offsite of your computer (e.g., remote location, cloud service).
+
+- Start to manage [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]] but only for the most relevant resources.
