@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af
+:END:
+#+title: We are more associative than structured
+#+date: "2021-05-08 23:12:29 +08:00"
+#+date_modified: "2021-05-09 00:21:04 +08:00"
+#+language: en
+
+
+Knowing [[id:25fb4ebf-2cc4-40fe-93ad-37a79aedfb41][The basics of memory]], our neurons represent more like a web of thoughts.
+Innovation often comes from combining aspects from a network of ideas.
+Our brain is good at relating each topic with something else.
+
+This is subtly present in daily life mostly filled with comparisons.
+
+- Most conversations — e.g., "X is just Y but better", "Cuphead is the Dark Souls of run-and-gun", "Markdown is simplified HTML".
+- In marketing — e.g., "This is just Y but cheaper", often features comparison with other products, our tendency to equate price to quality.
+- In learning — e.g., "FANBOYS" to describe the English conjunction words, "Every good boy does fine" to describe the notes placed in the lines of the music sheet.
+
+When knowing a new topic, we strive to compare between the new and the familiar things.
+This tendency also stems to nostalgia.
+Whenever we walked into an old place, we associate the olden days with it.

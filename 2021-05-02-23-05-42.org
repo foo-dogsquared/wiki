@@ -3,10 +3,11 @@
 :END:
 #+title: The basics of memory
 #+date: "2021-05-02 23:05:42 +08:00"
-#+date_modified: "2021-05-04 20:51:20 +08:00"
+#+date_modified: "2021-05-09 00:13:03 +08:00"
 #+language: en
 
 
+# TODO: desperate to improve this note
 As for this note, we'll talk about the basics of memory neuroscientifically.
 
 The memory can be compared to the muscles as it strengthens the more you use and decays the more you neglect.

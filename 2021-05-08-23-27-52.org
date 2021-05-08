@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       cb995494-302f-4666-b56f-ea20a8adea10
+:END:
+#+title: Memory palace
+#+date: "2021-05-08 23:27:52 +08:00"
+#+date_modified: "2021-05-09 00:21:46 +08:00"
+#+language: en
+
+
+# TODO: visual aid of the basics of this technique
+A learning technique that uses familiar environments for better recalling.
+For example, you can use your house as a layout and putting new concepts in it such as the related memory for mathematical formulae (e.g., the formula for an area of a square [\(s^2\)] is remembered as 2 stuffed toys, area of an triangle [\(1/2 * bh\)] as a half-hobo).
+You can then write a crazy narrative with those things — e.g., outside of the house are 2 stuffed toys (area of square) and through the entrance is a half-dressed hobo.
+The core of this technique is learning through overlaying familiar topics with newer concepts.
+
+This is effective for memorizing since [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]] along with our tendency of chunking.

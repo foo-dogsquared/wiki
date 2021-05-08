@@ -3,7 +3,7 @@
 :END:
 #+title: Evergreen notes
 #+date: "2020-05-07 21:53:21 +08:00"
-#+date_modified: "2021-05-07 11:51:21 +08:00"
+#+date_modified: "2021-05-08 12:37:00 +08:00"
 #+language: en
 #+tags: pim writing
 
@@ -21,9 +21,9 @@ Writing evergreen notes is a [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-tak
 
 * Getting started to write evergreen notes
 
-- [[roam:Start small and improve later]].
-  Most notes start as [[roam:Fleeting notes]] and later create evergreen notes as you get more insight on the topic.
-  [[roam:Create an inbox to store your thoughts]].
+- [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]].
+  Most notes start as [[id:3d1c0313-fa3d-4b18-b435-51d3837e3e2c][Fleeting notes]] and later create evergreen notes as you get more insight on the topic.
+  [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create an inbox to store your thoughts]].
 
 - Make a habit out of writing.
 

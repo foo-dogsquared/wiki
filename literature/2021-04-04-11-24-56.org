@@ -3,7 +3,7 @@
 :END:
 #+title: Learning how to learn
 #+date: "2021-04-04 11:24:56 +08:00"
-#+date_modified: "2021-05-04 20:52:12 +08:00"
+#+date_modified: "2021-05-08 19:05:06 +08:00"
 #+language: en
 #+source: https://www.coursera.org/learn/learning-how-to-learn
 #+tags: courses personal-info-management
@@ -60,6 +60,12 @@ The memory can be separated into two parts:
 - The *long-term memory contains all of the information that you've stored* and it is where your working memory gets its on-hand information from.
   Continuing on the working desk analogy, it's like the storages of all of the materials and tools you may need in the future.
 
+*Our memory goes through the consolidation process* — that is, our memory is solidified and becames a part of the long-term memory.
+This is when we have familiarity with the topic, getting out from the beginner phase to being a semi-expert.
+It is also the reason why nostalgia occurs whenever we encounter certain things, go to locations we've visited, or watched movies in childhood.
+*When we revisit a memory, it goes through reconsolidation, strengthening that memory including imaginative situations and false memories.*
+The overarching process is the reason why [[Spaced repetition]] is effective.
+
 The following practices are recommended to strengthen your memory:
 
 - Use [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]].
@@ -72,12 +78,10 @@ The following practices are recommended to strengthen your memory:
 
 ** Chunking
 
-Your working memory is said to have four chunks at a time.
-For more efficiency, your brain can link various neural structures to represent an information.
-An example is numbers and operations such as \(5 * 4 = 20\), \(1 + 1 = 2\), and \(5 - 29 = -24\).
-You know what numbers are, what do the symbols mean, and if you read the equations, you already have the answer just after you read it.
-Another example is reading the word 'electronics' may invoke an image of the common appliances and gadgets you have in home such as your smartphone, fridge, and laptop even though they are different objects.
-This is the gist of chunking.
+The simple process of reading is actually complex from putting letters into words, then words into image, then images into a narrative, and so on.
+When we hear words, read sentences, solve problems, or listen music, we invoke reactions;
+it may invoke imagery, visualizations, a narrative, an association with another thing, etc.
+Those are the results of chunking.
 
 Chunking is the process of simplifying groups of information (or neural structure) as you learn and use more of them.
 Neuroscientifically speaking, a chunk is a group of neurons that learnt to sing in tune as you react to something.
@@ -150,6 +154,18 @@ While practice and repetition is important, this is where you'll be able to inde
 Mistakes are a helpful indicator of how much you've mastered the subject.
 They are also helpful at pointing out flaws from what you've learnt.
 It's better to think mistakes as a tool in preventing illusions of competence (see [[Pitfalls and illusions of competence]]).
+
+
+** Memory palace
+
+Taking advantage of our tendency to associate and to group things, we can create a technique to learn new things.
+The memory palace technique places the familiar things with the newer topics such as your house, your route to a store, or a collection of things we're familiar with.
+
+For example, you overlaid the [[https://dictionary.cambridge.org/grammar/british-grammar/conjunctions][conjunctions]] into an acronym: "FANBOYS" each letter standing for one of them — e.g., for, and, but, or, yet, so.
+There is a whole memory competition scene that famously use the technique by crafting a crazy narrative around it.
+
+What's interesting with this technique is it can be an exercise in creativity.
+Like most skills, the time to create more memorable narratives in shorter time can improve with more practice.
 
 
 
@@ -277,10 +293,32 @@ A habit can be sliced into several parts:
   Or in the case when we see the clock, we either get rewarded by worsening our sleep cycle but more awake time or improving our sleep cycle thus reducing the chance of encountering sleep disorders.
 
 For the habit to improve, worsen, or even entirely replaced, we need to change our belief.
-Habits are enforced by belief.
+Habits are enforced by the most important component: belief.
+Believing that your new system works can get you through overriding habits.
 
-# TODO:
-Explain 'Action, Response, and Intervene'
+
+** How to start gaining habits?
+
+Habits are one of the ways to improve without using much willpower as it is scarce.
+Nonetheless, there are ways how to start and override your habits.
+
+- Hang out with like-minded people and community.
+  This lets you remind of the things you stand out for in times of weakness.
+
+- Set in reward for a task.
+  The simplest form of starting one.
+  This step needs some form of self-reflection so you have to make some adjustments what you like and you try to avoid.
+  For example, you could set some candies, a hangout session, or a deadline time that you can then spend the rest for relaxation.
+
+- Eat your frogs in the morning — that is, do the most disliked task first thing when you wake up.
+  This makes procrastination less part of your day as you train yourself in actually doing the task.
+
+- Write your daily tasks the evening before.
+  This lets the burden of holding out the tasks in the back of your mind.
+  It also makes your brain clear on what problems it wants to solve while you're sleeping (see [[Memory and sleep]]).
+
+- Write your weekly key tasks once per week.
+  The tasks should be reasonable enough to accomplish.
 
 
 
