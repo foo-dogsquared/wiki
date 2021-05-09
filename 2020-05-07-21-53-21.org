@@ -3,7 +3,7 @@
 :END:
 #+title: Evergreen notes
 #+date: "2020-05-07 21:53:21 +08:00"
-#+date_modified: "2021-05-08 12:37:00 +08:00"
+#+date_modified: "2021-05-09 18:55:06 +08:00"
 #+language: en
 #+tags: pim writing
 
@@ -16,6 +16,7 @@ With this in mind, evergreen notes should have the following properties:
 - As you develop more evergreen notes, more time is put on editing them rather than creating them.
 
 Writing evergreen notes is a [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]] process to make your current notes a worthwhile read.
+
 
 
 

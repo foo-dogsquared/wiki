@@ -3,11 +3,11 @@
 :END:
 #+title: File metadata
 #+date: "2020-04-13 17:32:27 +08:00"
-#+date_modified: "2021-05-07 21:25:34 +08:00"
+#+date_modified: "2021-05-09 18:22:14 +08:00"
 #+language: en
 
 
-File metadata is one of the most subtle requirements in [[roam:Personal information management]].
+File metadata is one of the most subtle requirements in [[id:88f2256a-3359-4d10-92a3-9273cabce414][Personal information management]].
 It embeds data without relying too much on filesystem such as the file name, creation date, and modification date.
 
 Each type of files have different ways of embedding metadata:

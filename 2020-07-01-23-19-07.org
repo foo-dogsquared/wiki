@@ -3,16 +3,15 @@
 :END:
 #+title: Information literacy
 #+date: "2020-07-01 23:19:07 +08:00"
-#+date_modified: "2021-05-07 22:00:09 +08:00"
+#+date_modified: "2021-05-09 18:02:12 +08:00"
 #+language: en
 #+tags: personal-info-management
 
 
-Information literacy is defined as the ability to search information, sort the results, verify for legitimacy, and share the information effectively.
-It is one of the most important universal skills as internet became popular as a method of distributing information causing to often deal with the torrential amount of information.
+The ability to search information, sort the results, verify for legitimacy, and share the information effectively.
+A very useful skill nowadays with the torrential amount of information.
 
 There are many ways to improve our information literacy including usage of various effective online searching, capture relevant output, and finally evaluating your search results.
-In learning, this is a valuable skill to have especially in the information age.
 
 Having a sharp information literacy does not only mainly seen in technical fields like in research and academia (e.g., literature reviews, peer reviews) but also on everyday life as well.
 In fact, all of us practice it in some way.

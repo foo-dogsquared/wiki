@@ -3,7 +3,7 @@
 :END:
 #+title: Personal information management
 #+date: "2020-04-23 23:21:47 +08:00"
-#+date_modified: "2021-05-07 22:00:38 +08:00"
+#+date_modified: "2021-05-09 18:23:39 +08:00"
 #+language: en
 
 
@@ -24,3 +24,5 @@ While there's no correct way to practice PIM but to start:
   The rule is simple: 3 copies of your data stored in 2 media (e.g., internal hard drive, external storage) with at least 1 of them stored offsite of your computer (e.g., remote location, cloud service).
 
 - Start to manage [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]] but only for the most relevant resources.
+
+- Start to [[id:7827b564-59ed-4604-ac2b-630c60c0a4ab][Use timestamps as a future-proofing method]].

@@ -3,7 +3,7 @@
 :END:
 #+title: Future-proofing your notes is only worth if the future is relevant
 #+date: "2021-04-07 18:53:58 +08:00"
-#+date_modified: "2021-05-07 11:06:44 +08:00"
+#+date_modified: "2021-05-09 17:23:07 +08:00"
 #+language: en
 
 
@@ -18,3 +18,9 @@ You don't want to take notes haphazardly and the overall notes structure will st
 They should eventually evolve into [[id:431532c3-6506-4565-b193-dbfb60eac7d6][Evergreen notes]], branching out of the original notes structure and making a better graph for navigation.
 
 An alternative to trashing your notes is to [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create an inbox to store your thoughts]].
+
+However, focusing too much on future-proofing your notes will limit them because you're limited with the basics of a tool.
+You're not using the tool to its full potential and note-taking should make for better thinking.
+Also, it's not like those notes will last for centuries.
+A lot of the technology can be obselete in decades, constantly challenged with modern tools and findings.
+Plus, you always have time to migrate your notes.

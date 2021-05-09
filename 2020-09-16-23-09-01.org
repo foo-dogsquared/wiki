@@ -1,41 +1,22 @@
 :PROPERTIES:
 :ID:       7827b564-59ed-4604-ac2b-630c60c0a4ab
 :END:
-#+title: Use timestamps for effectively future-proofing your stuff
+#+title: Use timestamps as a future-proofing method
 #+date: "2020-09-16 23:09:01 +08:00"
-#+date_modified: "2021-05-04 20:52:09 +08:00"
+#+date_modified: "2021-05-09 18:22:54 +08:00"
 #+language: en
 
 
-One of the simplest ways to future-proof your documents with [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]] is to create a timestamp.
-Specifically, two timestamps: one when it's created and one when it was last modified which will be continuously updated each time we modify the file.
+Datetime is extremely informative by itself:
+
+- It is static compared to other data (e.g., title, IDs, language), not prone to change.
+- It quickly informs us if our stuff is outdated.
+- It lets us know of the related history.
+- It relates to other resources we refer to at the time.
+
+To make future references easier to make, we could create two timestamps: one for the creation date and one for the modification date.
+This adds another point for useful comparison.
+
+To start, we could interact with the [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]].
 This lets you quickly evaluate whether the information is up-to-date without relying on the filesystem.
 It also lets you [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintain your own digital library]] with relative ease if your focus is on up-to-date information.
-
-In order to make updating the modification timestamp not tedious, it is best to automate that task.
-Different files may be applied differently as long as we can create a unified interface to search through them all.
-
-Here's an example with Org mode documents:
-
-#+begin_src org  :exports none
-\#+DATE: "2020-09-16 23:53:00 +08:00"
-\#+DATE_MODIFIED: "2020-09-17 10:33:42 +08:00"
-#+end_src
-
-Emacs has a built-in time stamp feature that already took care of that task.
-We can then attach the timestamp update with a hook that will occur before saving the file and voila!
-Automated timestamp for our text documents. :D
-
-Here's my (Doom Emacs) specific config as of 2020-09-17 for future references:
-
-#+begin_src elisp
-(after org!
-  (setq
-    ; Set a custom time-stamp pattern.
-    ; Even though, it's not recommended, most of the time,
-    time-stamp-start "DATE_MODIFIED:[ 	]+\\\\?[\"<]+"))
-
-; Modify the time-stamp with each save.
-(setq time-stamp-format "%Y-%02m-%02d %02H:%02M:%02S%:z")
-(add-hook 'before-save-hook 'time-stamp)
-#+end_src

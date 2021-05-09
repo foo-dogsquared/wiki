@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       40b2e1d0-0376-475e-91ff-db9fe362990e
+:END:
+#+title: Make a style guide for consistency
+#+date: "2021-05-09 17:30:43 +08:00"
+#+date_modified: "2021-05-09 18:26:23 +08:00"
+#+language: en
+
+
+Style guides are one of the most common things you'll see when collaborating whether in software, writing, or even in music.
+These dictate what forms are acceptable and how to do such things.
+Having a foundation for what to do and not to do creates less overhead for you and your collaborators.
+[[id:9a11ef31-b2a7-43a9-a7a9-48f191838c6e][Prefer referencing over remembering]].
+
+Even for personal projects, these could come in handy especially if you have to handle it in the future.
+For example, you could keep in mind to [[id:b0aee2c6-f759-4b7a-829f-79781926091e][Create examples of ranking complexity when documenting your project]].
+
+Writing style guides doesn't have to involve a separate document complete with details and nuances.
+They can be just a section in your README, for example.
+If you do have a complete document, one of the ways to ease introducing it is to create a summarized version of it and link the document for more information.
+
+However, don't fall into obsession for minding every item not following the guidelines.
+Style guides are only meant for consistency first, not clarity.
+Obsessively applied writings could make less sense when read.

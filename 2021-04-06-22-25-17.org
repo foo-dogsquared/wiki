@@ -3,25 +3,28 @@
 :END:
 #+title: Prefer referencing over remembering
 #+date: "2021-04-06 22:25:17 +08:00"
-#+date_modified: "2021-05-07 23:28:03 +08:00"
+#+date_modified: "2021-05-09 18:08:32 +08:00"
 #+language: en
 #+tags: personal-info-management
 
 
-[[id:f0d0198c-b523-4d71-a13c-0c578dfac3ef][Information literacy]] is not only for researching but it can be useful for programming.
+It makes for less cognitive overhead.
+This is especially true in the age of internet where information is widely distributed.
+Even without the internet, however, it is still useful to find ways to refer to things.
+
+This doesn't mean that you should avert remembering, that would be silly as little remembering is still required.
+You're still trying to understand a concept, after all.
 The gist of it is knowing the basics of a concept and its relations to others, enabling you to come up with a more effective search query.
 If nothing else, you could take advantage of the help system insisted by the tool.
 
-On a Unix-based environment, for example, has the manual pages with ~man~ and you can search through ~apropos~.
-This is especially needed if you're using BSD-based operating systems such as FreeBSD and OpenBSD.
-GNU also added [[https://www.gnu.org/software/texinfo/][Texinfo]] and the community also created their own solutions such as [[https://github.com/tldr-pages/tldr][tldr pages]] (as well as an offline clients such as ~tealdeer~).
+Examples:
 
-[[roam:Emacs][GNU Emacs]], specifically Doom Emacs, has a great built-in help system (see [[id:0efb9c51-3a12-4e5a-9e9b-d48cf4bd53ce][Using the built-in help system of Emacs]]).
-[fn:: It's a necessity after all by how massive of a software this is.]
-For example, the ~help-for-help~ is a function that gives you a metahelp interface to a plethora of options such as searching through pattern, logging the last keybindings, display the documentation from a keybinding, describe a language environment, and so on.
-Another helpful function ~apropos~, like its similarly named inspiration, searches through the entire symbol list of Emacs (e.g., variable, function) through a pattern.
-You also have a describe function for keys (~describe-key~), functions (~describe-function~), and packages (~describe-package~).
+- On a Unix-based environment, for example, has the manual pages with ~man~ and you can search through ~apropos~.
+  This is especially needed if you're using BSD-based operating systems such as FreeBSD and OpenBSD.
 
-This doesn't mean that you should avert remembering, that would be silly as a little remembering is still required.
-You're still trying to understand a concept, after all.
-If the system has a way of referencing something (other than the internet), use it to your advantage as it may have something valuable.
+- [[https://www.gnu.org/software/texinfo/][Texinfo]] and [[https://github.com/tldr-pages/tldr][tldr pages]].
+
+- [[roam:Emacs][GNU Emacs]] has a great built-in help system.
+  (See [[id:0efb9c51-3a12-4e5a-9e9b-d48cf4bd53ce][Using the built-in help system of Emacs]] for more details.)
+
+If the system has a way of referencing something (other than the internet), use it to your advantage as you may find something valuable.
