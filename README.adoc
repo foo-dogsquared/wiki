@@ -1,7 +1,7 @@
 = foo-dogsquared's wiki
 :toc: true
 
-:art-file-prefix: fds-illustration
+:art-file-prefix: fds-visual
 
 
 Keep taking notes and stop worrying about file organization!
@@ -30,6 +30,7 @@ We need to focus on why did I need to make the structure like this.
 For this question, I answer with the outcomes that I expect from the note-taking system I eventually settled with.
 
 - I want ideas to be searched and woven so easily with the rest.
+- I want to accumulate my reading effectively.
 - I'm not an expert so I still need the "basic" way of taking structured notes, summarizing them until I gain a bigger picture of the things I'm curious about.
 - I want to easily integrate spaced repetition and randomness to encourage improvement on my notes.
 
@@ -70,6 +71,8 @@ As of 2021-05-04, it is yet to reach v2 but it is underway with its link:https:/
 The notes should've been adapted for v2 by now.
 Though, you have to configure it in line with the major redesign.
 
+If you want to fully reproduce the config, refer to my Doom Emacs configuration.
+
 Now with the pieces complete and assuming you've already have my wiki in your folder, fire up Emacs, open the wiki folder, and do your thing.
 This project has a link:./.dir-locals.el[local Emacs config] (see link:https://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html[related section]).
 If you've set `enable-local-variables` to `:safe` or any value that makes Emacs to ignore them, you may want to configure related variables for it to work.
@@ -104,7 +107,7 @@ Practically, this is your 2D system of notes — the hierarchical notebook.
 ** The permanent and index notes are in the root folder.
 
 ** Additional types of notes can be put in a separate folder (e.g., cards, microposts).
-There is not set hierarchy but be sure to create a new type only if the change is major.
+There is not set hierarchy but be sure to create a new type by purpose.
 
 * The above structure makes it easier for retrieval.
 If you want to search all of the fleeting notes, just search in `daily/`, etc.
@@ -191,6 +194,11 @@ It requires an external JavaScript-based setup but it can also be an advantage.
 I've used it on and off and even tried to support both org-roam and Neuron because I like the static site generated and also because org-roam doesn't have a killer HTML exporter yet (in my opinion).
 It is simple and nice but I can deviate from that with link:https://orgmode.org/manual/Publishing.html[org-publish] or any supported static site generators like link:https://gohugo.io/[Hugo].
 Once link:https://github.com/srid/neuron/issues/557[org-mode is reimplemented in Neuron v2], it's a 100% addition to my workflow.
+
+* Support graphing features.
+org-roam has link:https://github.com/org-roam/org-roam-server[org-roam-server] plugin but as of 2021-05-07, it doesn't v2.
+Not a necessity, necessarily, but it is a good visual way to quickly glance how my notes are doing in the bigger picture.
+Also, the ultimate procastination tool.
 
 * Add/replace Nix with link:https://guix.gnu.org/[Guix].
 Maybe add a file intended for setting up a Guix environment.

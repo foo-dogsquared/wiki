@@ -1,0 +1,48 @@
+#+title: ImageMagick
+#+date: "2021-05-09 19:55:50 +08:00"
+#+date_modified: "2021-05-09 20:55:15 +08:00"
+#+language: en
+
+
+The swiss army knife for picture manipulation in the command line.
+For future reference, this mainly use v7 which has Git-style interface (which is way better, IMO).
+
+
+
+* Subcommands
+
+- =convert= - resize images, convert between formats, apply filter effects
+- =identify= - print information on the image
+- =mogrify= - similar to =convert= except modifies the original file
+
+
+
+
+* Examples
+
+A comprehensive tool calls for a comprehensive introduction.
+
+
+** Resize an image by half
+
+#+begin_src shell
+magick resize $INPUT -resize 50% $OUTPUT
+#+end_src
+
+You can find out various geometry options from the [[https://imagemagick.org/script/command-line-processing.php#geometry][documentation]].
+
+
+** Print the information
+
+#+begin_src shell
+magick identify $INPUT
+#+end_src
+
+
+** Use ImageMagick as a color picker
+
+You can use any tool that can pipe an image to other tools.
+
+#+begin_src shell
+maim --select --shader crosshair --tolerance 0 --hidecursor | magick convert - -resize 1x1\! -format '%[hex:p{0,0}]' info:-
+#+end_src

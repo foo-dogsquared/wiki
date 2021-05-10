@@ -4,7 +4,7 @@
 :END:
 #+title: Anki: Org mode
 #+date: "2021-05-05 22:49:10 +08:00"
-#+date_modified: "2021-05-06 01:42:46 +08:00"
+#+date_modified: "2021-05-10 08:39:52 +08:00"
 #+language: en
 
 * org-babel
@@ -126,3 +126,62 @@ In [[(num)][the second line]], we've done a simple arithmetic and printed it int
 #+end_src
 
 To create Asciidoctor-styled callouts, create a reference inside of the code block and refer to it (i.e., ~(${ref})~).
+
+* Timestamps and durations
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620386886707
+:END:
+** Front
+How to denote timestamps and durations in Org mode?
+** Back
+#+begin_src org
+# A timestamp looks like this.
+<2021-05-07 Fri>
+
+# To make a duration, just put two dashes between two timestamps.
+<2021-05-07 Fri>--<2021-05-08 Sat>
+#+end_src
+
+To make creating timestamps easier, execute ~org-time-stamp~ (or whatever keybinding you've set).
+
+* Deadlines and schedules
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620607177893
+:END:
+** Front
+How to make deadlines and schedules?
+** Back
+Just prepend the keywords =DEADLINE= and =SCHEDULED=, respectively.
+
+#+begin_src org
+DEADLINE: <2021-06-30 Wed>
+SCHEDULED: <2021-06-29 Tue>
+#+end_src
+
+* File navigation
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620607179217
+:END:
+** Front
+Give some ways how to navigate Org mode documents quickly.
+** Back
+- I don't need to explain what ~org-babel-next-src-block~ and ~org-babel-previous-src-block~ does.
+
+- ~org-backward-heading-same-level~ is the same as ~org-forward-heading-same-level~ but moves one headline backwards.
+
+- ~org-edit-special~ creates a buffer for certain elements in org-mode but it is especially useful for editing source code blocks where it will open with the correct major mode.
+
+- ~org-forward-heading-same-level~ moves one headline forward in the same level.
+  Useful for navigating sections and subsections.
+
+- ~org-goto~ creates an interface for showing the outline and it is a great navigation function.
+  Highly recommend to use it with a completion interface (e.g., ~counsel-org-goto~, ~counsel-org-imenu~).
+
+- ~org-num-mode~ adds a (non-persistent) counter to the document.
+  Very helpful in navigating larger files.
+
+- ~org-sort~ will sort the entries into your preferred criteria.
+  It also works on a list of items which is very useful if one of the list items has more than one line.

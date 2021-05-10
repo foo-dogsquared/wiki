@@ -3,7 +3,7 @@
 :END:
 #+title: Anki: Emacs
 #+date: "2021-05-02 19:18:32 +08:00"
-#+date_modified: "2021-05-06 21:57:59 +08:00"
+#+date_modified: "2021-05-10 08:40:00 +08:00"
 #+language: en
 #+property: anki_deck Emacs
 
@@ -78,32 +78,31 @@ if the buffer is modified in one of the window, it will show the changes in all 
 * Interacting with buffers in Elisp
 :PROPERTIES:
 :ANKI_NOTE_TYPE: Styled cards
-:ANKI_NOTE_ID: 1620309319576
+:ANKI_NOTE_ID: 1620387028893
 :END:
 ** Front
-Give a rough example on how to do the following.
+Give a rough example on how to do the following:
 
-- Create a temporary buffer containing the text "Hello world".
-- Name the buffer and open it as an Org mode document.
-- Get or create the ID for the document.
+Create a temporary buffer named "hello" containing an Org mode document with a "Hello world" entry.
 ** Back
 #+begin_src elisp  :exports code
 (with-temp-buffer
-  (insert "Hello world")
+  (insert "* Hello world")
+  (rename-buffer "hello")
   (org-mode))
 #+end_src
 
 * String comparison in Emacs Lisp
 :PROPERTIES:
 :ANKI_NOTE_TYPE: Styled cards
-:ANKI_NOTE_ID: 1620309321231
+:ANKI_NOTE_ID: 1620387016294
 :END:
 ** Front
 How to compare two strings?
 ** Back
 ~(string= STR1 STR2)~
 
-#+begin_src elisp
+#+begin_src elisp  :exports both
 (print (string= "WHOA" "whoa"))
 (print (string= "WHOA" (upcase "whoa")))
 (print (string= "Hello world" "HeLL0 World"))
@@ -116,3 +115,50 @@ How to compare two strings?
 : t
 :
 : nil
+
+* Using the help system
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620386877252
+:END:
+** Front
+Name different ways to use the help system inside Emacs.
+** Back
+- ~help-for-help~ is the most comprehensive help section (in my opinion).
+- ~describe-*~ series of functions are the next.
+  Among the list of describe functions, you have: ~describe-key~, ~describe-function~, ~describe-variable~, and ~describe-package~.
+  You can just open up the minibuffer and see what else is there.
+- ~apropos~ is similar to Unix apropos command which searches for every symbol in Emacs.
+
+* Word manipulation
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620607164221
+:END:
+** Front
+Give some functions on word manipulations.
+** Back
+The following functions have multiple variations each for a character (~$F-char~), word (~$F-word~), region (~$F-region~), and region or point (~$F-dwim~).
+
+- ~capitalize-*~ for making the first of the word in uppercase.
+- ~downcase-*~ for making a region all lowercase.
+- ~upcase-*~ for making a region all uppercase.
+
+evil-mode has a keybinding associated with uppercase and downcase a certain region with ~evil-upcase~ and ~evil-downcase~, respectively.
+
+* Line manipulation
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620607164494
+:END:
+** Front
+Give some functions on manipulating lines.
+** Back
+- evil-mode has ~evil-join~ which works the same way Vim's join complete with smart spacing and everything.
+
+- ~fill-region~ is useful for formatting requirements/preferences like in the Linux kernel where the maximum width of 80 characters.
+  evil-mode has an associated keybinding function with ~evil-fill~.
+
+- ~sort-lines~ is pretty useful for the common task of sorting lines.
+  Though, not useful for items that consist of multiple lines.
+

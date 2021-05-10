@@ -3,7 +3,7 @@
 :END:
 #+title: Anki: Linux
 #+date: "2021-05-01 20:20:25 +08:00"
-#+date_modified: "2021-05-06 18:33:03 +08:00"
+#+date_modified: "2021-05-08 11:15:50 +08:00"
 #+language: en
 #+property: anki_deck Linux
 
@@ -16,7 +16,7 @@
 How to list devices information?
 (I mean all sorts of devices.)
 ** Back
-- ~lspci~ is the most acceptable answer since it comprehensive lists all of the devices.
+- ~lspci~ lists PCI devices.
 - ~lsusb~ list USB-connected devices.
 - ~lsblk~ list the block devices which usually includes storage drives and such.
 
