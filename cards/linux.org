@@ -3,7 +3,7 @@
 :END:
 #+title: Anki: Linux
 #+date: "2021-05-01 20:20:25 +08:00"
-#+date_modified: "2021-05-08 11:15:50 +08:00"
+#+date_modified: "2021-05-12 14:28:29 +08:00"
 #+language: en
 #+property: anki_deck Linux
 
@@ -103,3 +103,71 @@ Only select packages available as a runtime (e.g., Qt, GTK).
 Flatpak has its set of runtimes composed of system libraries to be used with the applications.
 Thus, it stays out of its way with the operating system's libraries.
 The developer can also bundle its own set of libraries.
+
+* Changing user shell
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620793135173
+:END:
+** Front
+How to change user shell in most Linux distros?
+** Back
+~chsh~
+
+* Printing a list
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620793135476
+:END:
+** Front
+Give some ways to print a list.
+** Back
+#+begin_src shell
+# Format the string.
+printf "%s\n" foo bar 'baz ;;'
+
+# Echo the string as-is.
+echo "foo
+bar
+baz ;;"
+
+# Print with escaped newlines.
+echo -e "foo\nbar\nbaz ;;"
+#+end_src
+
+#+results:
+: foo
+: bar
+: baz ;;
+: foo
+: bar
+: baz ;;
+: foo
+: bar
+: baz ;;
+
+* systemd timestamp example
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620793135853
+:END:
+** Front
+What is ~*-*-8/4~ in systemd calendar format?
+** Back
+:PROPERTIES:
+:ID:       a118fdec-8026-433b-9a58-b738183be7a2
+:END:
+Every 4 days, starting from the 8th of the month.
+
+Assuming this was executed on 2021-05-12.
+
+#+begin_src shell
+systemd-analyze calendar *-*-8/4
+#+end_src
+
+#+results:
+:   Original form: *-*-8/4
+: Normalized form: *-*-08/4 00:00:00
+:     Next elapse: Sun 2021-05-16 00:00:00 PST
+:        (in UTC): Sat 2021-05-15 16:00:00 UTC
+:        From now: 3 days left
