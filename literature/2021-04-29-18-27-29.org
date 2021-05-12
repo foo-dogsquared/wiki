@@ -3,13 +3,21 @@
 :END:
 #+title: Fundamentals of music theory
 #+date: "2021-04-29 18:27:29 +08:00"
-#+date_modified: "2021-05-09 22:02:51 +08:00"
+#+date_modified: "2021-05-10 19:15:02 +08:00"
 #+language: en
 #+source: https://www.coursera.org/learn/edinburgh-music-theory/
 
+#+name: lilypond-paper-config
+#+begin_src lilypond
+\paper {
+  indent=10\mm
+  oddFooterMarkup=##f
+}
+#+end_src
+
 
 The course took notes from the Edinburgh's course for musical theory.
-Keep in mind this course mainly deals with western musical concepts and notations.
+Keep in mind this course mainly deals with western musical concepts and notations called Common Practice.
 
 
 
@@ -38,8 +46,53 @@ Keep in mind this course mainly deals with western musical concepts and notation
   When the distance of each note is 2 semitone, it is considered as a tone.
 
 #+ATTR_ORG: :width 550
-[[file:assets/2021-04-29-18-27-29/fds-visual-octaves-and-tones.webp]]
+[[file:assets/2021-04-29-18-27-29/fds-visual-octaves-and-tones.png]]
 
 - an interval is two pitches with a certain distance
   + starting from a note, the number of tones distanced between them is the name of an interval
   + e.g., C and D is a second, C to E is a third, D to G is a fourth, F to C is a fifth
+
+- scales is a group of notes that give the flavor of the music (e.g., melancholic, gleeful)
+  + also describes the relationship of each note
+  + each scale has a tonic which usually named after the first note
+  + the common type of scales introduced are the diatonic scales, made up of seven notes with two semitones and five tones in it
+  + e.g., the C scale is made up of the notes C, D, E, F, G, A, B, C has a pattern of TTSTTTS (tone = T, semitone = S)
+  + a major scale has a pattern of TTSTTTS, a minor scale has a pattern of TSTTSTT
+  + different tonics = different pattern of semitones and tones = different quality and flavor = different melodies
+  + each of tonics in diatonic scale is called a mode (e.g., A is called Aeolian mode, E is Phrygian)
+  + Aeolian mode is a natural minor mode (has a pattern of TSTTSTT)
+
+#+begin_src lilypond  :file modes.png
+<<lilypond-paper-config>>
+{
+  \set Staff.instrumentName = #"Aeolian"
+  \relative a' { a b c d e f g a }
+  \addlyrics { A B C D E F G A }
+}
+
+{
+  \set Staff.instrumentName = #"Ionian"
+  \relative c' { c d e f g a b c }
+  \addlyrics { C D E F G A B C }
+}
+#+end_src
+
+#+results:
+[[file:assets/2021-04-29-18-27-29/modes.png]]
+
+- chords are three or more notes played together
+  + when played with three, it is considered a triad
+  + perfect fifth + major third = major triad (Cmaj)
+  + perfect fifth + minor third = minor triad (Cmin)
+  + perfect fifth + diminished third = diminished triad (Cdim)
+  + triads are also named with the lowest notes so a triad of C, E, and G is a C triad
+  + but it is a C major triad (written as Cmaj) since C and E is a major third and C, E, and G is a perfect fifth
+  + primary major chords: tonic, dominant, subdominant
+
+#+begin_src lilypond  :file chords.png
+<<lilypond-paper-config>>
+\chordmode { c1 d e f g a b }
+#+end_src
+
+#+results:
+[[file:assets/2021-04-29-18-27-29/chords.png]]

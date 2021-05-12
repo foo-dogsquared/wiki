@@ -1,0 +1,55 @@
+#+title: Oil shell
+#+date: "2021-05-09 16:40:50 +08:00"
+#+date_modified: "2021-05-10 11:25:10 +08:00"
+#+language: en
+
+
+For future references, this note mainly notes Oil v0.8.7 and later versions.
+
+
+
+
+* What is Oil shell?
+
+A modern shell attempting the replace Bash slowly.
+The project has an ambitious goal with a wide scope.
+It is known for its shell-oriented blog and the developer is very responsive and active with shell-related posts.
+
+While there are multiple components in this project, we're focusing on two: *OSH and Oil shell*.
+
+- *OSH is the bridge between Bash and Oil.*
+  It aims to be the most Bash-compatible shell that you can run most Bash scripts just fine.
+  The point of this component is improving what's under the hood, imposing sensible defaults on them, and getting a wide reach since Bash is the most popular shell.
+  While it may not run every Bash script in existence, the other point is to require minimal rewrites to run it with OSH.
+
+- *Oil shell is the modern replacement of Bash* from its syntax and behavior.
+  It aims to be the shell for people familiar to Python, Ruby, JavaScript, and the like.
+  This is the other side of the bridge that OSH aims to reach.
+
+
+
+
+
+* Tips and tricks
+
+- You can make an array so far with ~var x = %()~.
+
+- To push for an array, use ~push :ARRAY_VAR $ITEMS...~.
+
+- Oil has two main syntactic modes: command and expression mode.
+  Command mode is more like Bash while expression mode is more like Python.
+  This is how Oil can make a rich and expressive scripting that is closer to the shell.
+
+- Oil will go into expression mode in few places:
+  + In RHS of an assignment expression.
+  + In ~if~ statements (e.g., ~if ($EXPR) { echo "WHOA" }~).
+  + Interpolated Oil expressions with ~$[]~ (e.g., ~$[true]~, ~$[len(ARGV)~).
+
+- Oil can parse different modes, making it possible to create DSLs and to deal with the complex syntax of the shell.
+
+- You can also create an array with ~[]~.
+  The ~%()~ is more like for an array of objects.
+
+- You can enter into expression mode with ~_~.
+  Although, this simply ignores the expression and will not be printed.
+  Still pretty useful.

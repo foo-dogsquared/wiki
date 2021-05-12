@@ -1,0 +1,44 @@
+#+title: Lilypond
+#+date: "2021-05-10 19:36:43 +08:00"
+#+date_modified: "2021-05-10 20:25:17 +08:00"
+#+language: en
+#+property: header-args:lilypond  :exports both
+
+
+The LaTeX of music notation.
+It is a formatting language for music notation that has to be compiled into various output formats.
+The input file is a plain-text file making it very good with version control systems.
+
+
+
+
+* Notes, chords, and scales
+
+#+begin_src lilypond  :file notes.png
+<<lilypond-paper>>
+{ c d e f g a b c' }
+\relative d' { c d e f g a b c' }
+#+end_src
+
+#+results:
+[[file:assets/lang.lilypond/notes.png]]
+
+#+begin_src lilypond  :file chords.png
+<<lilypond-paper>>
+\chordmode { c1 d e f g a b c' }
+#+end_src
+
+#+results:
+[[file:assets/lang.lilypond/chords.png]]
+
+
+
+* Paper configuration
+
+#+name: lilypond-paper
+#+begin_src lilypond  :exports none
+\paper {
+  indent=10\mm
+  oddFooterMarkup=##f
+}
+#+end_src

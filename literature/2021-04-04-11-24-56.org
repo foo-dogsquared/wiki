@@ -3,7 +3,7 @@
 :END:
 #+title: Learning how to learn
 #+date: "2021-04-04 11:24:56 +08:00"
-#+date_modified: "2021-05-08 19:05:06 +08:00"
+#+date_modified: "2021-05-12 14:10:04 +08:00"
 #+language: en
 #+source: https://www.coursera.org/learn/learning-how-to-learn
 #+tags: courses personal-info-management
@@ -264,6 +264,12 @@ Your brain is composed of neuromodulators and chemicals that affects your learni
 Emotions and cognition are related to one another and no less important to learning.
 If you want to be an effective learner, you have to be happy or in the mood.
 
+Some tips for a happier brain:
+
+- Exercise.
+  Interestingly, while new neurons does appear in our, it can disappear once it is not used.
+  It can survive by remembering and creating new experiences but exercise can help in surviving newer neurons.
+
 
 
 
@@ -323,6 +329,21 @@ Nonetheless, there are ways how to start and override your habits.
 
 
 
+* Week 4
+
+- imposter syndrome, the feeling of incompetence
+- analogies and models, while not perfect, is a great way of making sure you understand and put it in your memory for a longer time
+  + science is, after all, mostly made up of models that eventually break down
+- having a whiff of ADHD-like behavior of shifting attention even if you don't want to can help in making new connections
+- people learn by trying to make sense of information rather than someone telling them
+- changing underlying thoughts can make for a better learning
+  + while empathy is beneficial, it is great to practice into filtering other people who are malicious or criticizing for the sake of undercutting
+  + or you can turn it around and make it as your motivation
+- study groups are also great but don't turn it into a socializing session
+
+
+
+
 * Takeaways from "Interview with Dr. Terrence Sejnowski"
 
 - Learn headfirst in a new topic by getting involved with peers and experts who are already invested in similar topics.
@@ -349,7 +370,6 @@ Nonetheless, there are ways how to start and override your habits.
 
 
 * Takeaways from "Interview with Dr. Robert Bilder on creativity and problem solving"
-
 - The criteria of creativity mostly applies to what is unique to you.
   It doesn't mean that others solve it that you're not creative as long as you've solved it yourself.
 
