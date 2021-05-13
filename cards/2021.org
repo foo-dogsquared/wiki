@@ -1,0 +1,723 @@
+:PROPERTIES:
+:ID:       b3049366-b5ce-4caa-881f-e76663df2e12
+:END:
+#+title: Anki: 2021
+#+date: "2021-05-01 20:20:25 +08:00"
+#+date_modified: "2021-05-14 01:10:36 +08:00"
+#+language: en
+#+property: anki_deck 2021
+
+My collection of tips and tricks I collected in 2021.
+
+* Finding devices
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620896949865
+:END:
+** Front
+How to list devices information?
+(I mean all sorts of devices.)
+** Back
+- ~lspci~ lists PCI devices.
+- ~lsusb~ list USB-connected devices.
+- ~lsblk~ list the block devices which usually includes storage drives and such.
+
+* ~$PATH~ environment
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620896950086
+:END:
+** Front
+How does a shell find the binaries?
+** Back
+Most shell searches through the ~$PATH~ variable, a colon-delimited list of paths containing the binaries.
+
+* Testing systemd timestamps
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620896950299
+:END:
+** Front
+How to test out systemd timestamps?
+** Back
+~systemd-analyze {calendar,timestamp,timespan}~
+
+To know how the format (i.e., calendar, timestamp, and timespan) looks like, you can refer to ~man systemd.time.5~.
+
+* Enabling desktop integration
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620896951550
+:END:
+** Front
+How to make desktop environments recognize the desktop files?
+** Back
+Most of the desktop environments and certain applications like Rofi refers to the ~XDG_DATA_DIRS~ environment variable, a list of colon-delimited paths similar to ~PATH~.
+
+This enables desktop integration with certain tools like [[https://nixos.org/][Nix]] and [[https://guix.gnu.org/][Guix]] package manager.
+Here's how to integrate installed Nix packages into the desktop.
+
+#+begin_src shell
+XDG_DATA_DIRS=$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}
+#+end_src
+
+* Flatpak permissions
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620896952944
+:END:
+** Front
+What permissions does user-installed Flatpak apps have by default?
+** Back
+By default, they have none.
+[[https://docs.flatpak.org/en/latest/sandbox-permissions.html][Among the default limitations]]:
+
+- They can only access their own runtime folder =$HOME/.var/app/${FLATPAK_APP_ID}=.
+- They cannot access the network.
+
+Some apps are installed with the request to allow the following permissions enabled (e.g., Zotero).
+
+If left with no permissions, you'll see in certain situations like a file browser dialog that the permissions is in effect.
+Below are some of the examples interacting with the permissions of an app.
+
+#+begin_src shell
+# Show the permissions of an app.
+flatpak permission-show ${FLATPAK_APP_ID}
+
+# Let the user-installed Flatpak app access the home directory.
+flatpak override --user --filesystem=home ${FLATPAK_APP_ID}
+#+end_src
+
+* The basics of Flatpak apps
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620896953341
+:END:
+** Front
+What is a Flatpak package?
+Does it have its own form of managing dependencies?
+** Back
+A Flatpak package can either be a runtime or a standalone app.
+
+Runtimes are the basic dependencies of an application.
+Only select packages available as a runtime (e.g., Qt, GTK).
+
+Flatpak has its set of runtimes composed of system libraries to be used with the applications.
+Thus, it stays out of its way with the operating system's libraries.
+The developer can also bundle its own set of libraries.
+
+* Changing user shell
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620896953794
+:END:
+** Front
+How to change user shell in most Linux distros?
+** Back
+~chsh~
+
+* Printing a list in the shell
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620896955274
+:END:
+** Front
+Give some ways to print a list.
+** Back
+#+begin_src shell
+# Format the string.
+printf "%s\n" foo bar 'baz ;;'
+
+# Echo the string as-is.
+echo "foo
+bar
+baz ;;"
+
+# Print with escaped newlines.
+echo -e "foo\nbar\nbaz ;;"
+#+end_src
+
+#+results:
+: foo
+: bar
+: baz ;;
+: foo
+: bar
+: baz ;;
+: foo
+: bar
+: baz ;;
+
+* systemd timestamp example
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620896955632
+:END:
+** Front
+What is ~*-*-8/4~ in systemd calendar format?
+** Back
+Every 4 days, starting from the 8th of the month.
+
+Assuming this was executed on 2021-05-12.
+
+#+begin_src shell
+systemd-analyze calendar *-*-8/4
+#+end_src
+
+#+results:
+:   Original form: *-*-8/4
+: Normalized form: *-*-08/4 00:00:00
+:     Next elapse: Sun 2021-05-16 00:00:00 PST
+:        (in UTC): Sat 2021-05-15 16:00:00 UTC
+:        From now: 3 days left
+
+* Type checking in Bash
+  :PROPERTIES:
+  :ANKI_NOTE_TYPE: Styled cards
+  :END:
+** Front
+Implement a little bit of type checking in Bash.
+** Back
+~printf~ throws an error if the given argument is not appropriate.
+
+#+begin_src shell
+printf "%d" 532 429 40 102
+printf "%d" this_will_throw_an_error 430 that_previous_number_will_not
+printf "%f" 10 43.45 3.14
+#+end_src
+
+* Emacs: The overview of buffers
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897002911
+:END:
+** Front
+What is an Emacs buffer?
+** Back
+A buffer is anything that Emacs displays.
+It usually display file contents among other examples with ~butterfly~, ~doctor~, or the starting buffer when you first open Emacs.
+
+While buffers usually have an associated file path, a buffer doesn't need one.
+This is one of the concepts that is applied to other text editors (Vim, Atom, Visual Studio Code).
+
+* The basics of Emacs modes
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897004139
+:END:
+** Front
+What is a mode in Emacs?
+** Back
+A mode is set of behavior quite similar to Vim modes.
+
+Emacs further divides modes into two.
+
+*Major modes are Emacs' way of supporting programming languages and file formats.*
+Programming language support usually comes in major mode — e.g., ~R-mode~ for R files, ~python-mode~ for Python scripts, ~org-mode~ for Org mode documents.
+Think of them as an equivalent to Vim's filetype.
+Only one major mode can be activated in one buffer at a time and all buffers have a major mode.
+
+*Minor modes usually contain little behavioral changes that improve the editing experience.*
+When enabled, some of them are global modes — affecting every buffer in your session.
+Others are only buffer-local — affecting only the buffer when you activated the mode.
+Unlike major modes, multiple minor modes can be enabled at any given time.
+
+* Emacs: Eagle's eye view of a window
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897004490
+:END:
+** Front
+What is considered window in Emacs?
+** Back
+A window is where the buffers are being displayed.
+One window can display all buffers but only one at a time.
+To display two buffers at a single time, just add another window.
+
+All windows display the same buffer;
+if the buffer is modified in one of the window, it will show the changes in all windows.
+
+* Emacs: Point and marker
+:PROPERTIES:
+  :ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897004696
+  :END:
+** Front
+   What is a point and a marker in Emacs?
+** Back
+   A point is the current location of the cursor in the buffer.
+   You can get the point with ~point~ function.
+   Often helpful for interacting with buffers.
+
+   A marker is another point in the buffer.
+   It is usually found when interacting with regions when asked for the two points (i.e., the beginning and the ending position).
+   Furthermore, a marker can be used to save locations and jump back to that marker when asked.
+
+* Interacting with buffers in Elisp
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897006160
+:END:
+** Front
+Give a rough example on how to do the following in Emacs Lisp:
+
+Create a temporary buffer named "hello" containing an Org mode document with a "Hello world" entry.
+** Back
+#+begin_src elisp  :exports code
+(with-temp-buffer
+  (insert "* Hello world")
+  (rename-buffer "hello")
+  (org-mode))
+#+end_src
+
+* String comparison in Emacs Lisp
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897007536
+:END:
+** Front
+How to compare two strings in Emacs Lisp?
+** Back
+~(string= STR1 STR2)~
+
+#+begin_src elisp  :exports both
+(print (string= "WHOA" "whoa"))
+(print (string= "WHOA" (upcase "whoa")))
+(print (string= "Hello world" "HeLL0 World"))
+#+end_src
+
+#+results:
+:
+: nil
+:
+: t
+:
+: nil
+
+* Using the help system in Emacs
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897007813
+:END:
+** Front
+Name different ways to use the help system inside Emacs.
+** Back
+- ~help-for-help~ is the most comprehensive help section (in my opinion).
+- ~describe-*~ series of functions are the next.
+  Among the list of describe functions, you have: ~describe-key~, ~describe-function~, ~describe-variable~, and ~describe-package~.
+  You can just open up the minibuffer and see what else is there.
+- ~apropos~ is similar to Unix apropos command which searches for every symbol in Emacs.
+
+* Emacs: Word manipulation
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897008268
+:END:
+** Front
+Give some functions on word manipulations inside Emacs.
+** Back
+The following functions have multiple variations each for a character (~$F-char~), word (~$F-word~), region (~$F-region~), and region or point (~$F-dwim~).
+
+- ~capitalize-*~ for making the first of the word in uppercase.
+- ~downcase-*~ for making a region all lowercase.
+- ~upcase-*~ for making a region all uppercase.
+
+evil-mode has a keybinding associated with uppercase and downcase a certain region with ~evil-upcase~ and ~evil-downcase~, respectively.
+
+* Emacs: Line manipulation
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897008638
+:END:
+** Front
+Give some functions on manipulating lines while in Emacs.
+** Back
+- evil-mode has ~evil-join~ which works the same way Vim's join complete with smart spacing and everything.
+
+- ~fill-region~ is useful for formatting requirements/preferences like in the Linux kernel where the maximum width of 80 characters.
+  evil-mode has an associated keybinding function with ~evil-fill~.
+
+- ~sort-lines~ is pretty useful for the common task of sorting lines.
+  Though, not useful for items that consist of multiple lines.
+
+* Vim: Jump to previous jump point
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897030216
+:END:
+** Front
+In Vim, how to get back in previous jump point?
+** Back
+=Ctrl + O=
+
+Remember it as getting *out* of the current jump point and back to the previous one.
+
+* Vim: Enter jump point
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897030696
+:END:
+** Front
+How to jump into a keyword with Vim?
+** Back
+- =Ctrl + ]= will enter into the definition block of a keyword.
+- =K= also has the same effect.
+
+* Vim: Go to file path
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897031016
+:END:
+** Front
+In Vim, how to go to the file path at point?
+** Back
+=gf= (in normal mode) as in *goto file*.
+
+* Set as a pager
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897031838
+:END:
+** Front
+How to set Vim as a manpager?
+** Back
+~MANPAGER="nvim +Man!"~
+
+~+Man!~ is a command invocation (as if entering ~:Man~ inside Vim).
+It can also be written as ~-c Man!~.
+
+The ~:Man!~ command displays the current buffer as a manual page.
+
+* Vim: Show outline/table of content
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897032249
+:END:
+** Front
+How to show the table of contents of a document in Vim?
+** Back
+=gO=, although the results are filetype-specific (and some don't have any).
+Helpful examples include for manual pages and help pages (from =:help=).
+
+* Detect files through Vim filetypes
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897033214
+:END:
+** Front
+How does Vim detect the files?
+** Back
+Vim guesses the file by assigning *filetypes*, mainly through the file name and reading the file content.
+A filetype is how Vim knows what plugins to apply to the current buffer.
+
+Vim has a few built-in filetypes such as shell, manual pages, Markdown, Asciidoc, xmodmap, patch files, and JSON among others (that are in =$VIMRUNTIME/filetype.vim=).
+
+For more information, run ~:help filetype~ inside Vim.
+
+* Going to keyword definitions in Vim
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897033626
+:END:
+** Front
+How to go to the keyword definition in Vim?
+** Back
+=gd= as in *go to definition*.
+
+Though, not all the time it will do what its supposed to do.
+For better effect, you can generate a Ctags file which Vim has a built-in integration (see ~:h ctags~).
+
+* Vim modes
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897034389
+:END:
+** Front
+What is a mode (in Vim)?
+** Back
+A Vim mode is a set of behavior and actions.
+In this case, it considers editing and navigation (among other modes) to be separate.
+Thus, you need to switch between them to do those things.
+
+Vim has built-in modes which you can see with ~:h vim-modes~.
+
+* Word wrapping in Vim
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897034688
+:END:
+** Front
+How to do word wrapping (in Vim)?
+** Back
+=gw= as in *go format the words*.
+By default, it simply line wraps the lines with the 80-character limitation.
+
+* Using the help system
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897035960
+:END:
+** Front
+How to effectively make use of the help system of Vim?
+** Back
+The usual way is to execute ~:h~ or ~:help~.
+You can view what does a keybinding do with ~:h ${KEYBINDING}~ — e.g., ~:h gw~ to know what =gw= does, ~:h V~ for viewing visual line mode.
+For keybindings in visual and command line mode, prepend them with ~v_~ and ~c_~, respectively.
+
+* Pitfalls and illusions of competence
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620899217785
+:END:
+** Front
+Give various pitfalls and illusions of competence to look out when learning.
+** Back
+- *The presence of the material itself* can cause students to foolishly think they already know about the subject.
+- Similarly, *studying with solutions can be a trap if you focus on the what and how rather than the why*.
+- Various common practices such as highlighting, rereading, and mind mapping are not as effective and only applicable in specific situations.
+
+* org-babel
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897018630
+:END:
+** Front
+What makes Org mode popular for reproducible research?
+** Back
+org-babel, the library that enables superpowers for Org mode source code blocks.
+
+Among the list of features, org-babel makes the following things easier for creating lab notebooks.
+
+- Execute the source code block and print results.
+- Create files from source code blocks, making it possible to create an entire computational report with a single Org mode document.
+- Metaprogramming with [[https://orgmode.org/manual/Noweb-Reference-Syntax.html][noweb-inspired system]] making dynamic content possible.
+- Individual control over source code blocks with sessions, export options, and variables.
+- Pass values between different source code blocks even in different programming languages.
+
+* org-babel modes
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897023961
+:END:
+** Front
+How to make org-babel pass values between different source code blocks?
+** Back
+:PROPERTIES:
+:ID:       5c959c6a-04fb-4154-becc-86eeb15b20ad
+:END:
+First, configure org-babel to work in functional mode (i.e., ~:results value~) in a source code block.
+With functional mode, it will return values which will be handled by org-babel.
+
+#+begin_src org
+,#+name: num
+,#+begin_src python  :results value
+return 53
+,#+end_src
+#+end_src
+
+The value cannot be passed unless it has a name that others can reference yet so add a name property to the source code block (i.e., ~#+name: ${NAME}~).
+
+Now here's a different source code block written in a different language.
+To pass a value, you have to configure with ~:var ${VARNAME}=${NAME}~.
+
+#+begin_src org
+,#+begin_src ruby  :var num=num  :results output
+print(num)
+,#+end_src
+#+end_src
+
+* Creating files with Org mode
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897024413
+:END:
+** Front
+How to create files with Org mode source code blocks?
+** Back
+The ~:tangle~ option enables extracting code blocks into files.
+Accepted values include =yes=, =no=, or a relative path to the Org document where the file will be written.
+
+* Dynamic content with Org mode
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897025800
+:END:
+** Front
+Is creating dynamic content possible?
+If so, how?
+** Back
+Yes!
+
+With source code blocks and the [[https://orgmode.org/manual/Noweb-Reference-Syntax.html][noweb]] option enabled, you can make meta-programming in Org.
+You can declare a function by assigning a name on the code block (i.e., ~#+name: ${FUNC_NAME}~).
+
+Here's an example of a source code block with a default argument.
+
+#+begin_src org
+,#+name: greeting
+,#+header:  :var name="World"
+,#+begin_src sh
+echo "Hello ${name}"
+,#+end_src
+#+end_src
+
+You can then call the function in different ways:
+
+- For calling it inline, ~call_${FUNC_NAME}()~.
+- For creating a block, ~#+call: ${FUNC_NAME}()~.
+- For invoking inside a code block, ~<<${FUNC_NAME}()>>~, but you have to enable noweb (e.g., ~:noweb yes~).
+
+You can then pass header arguments by appending in square brackets (=[]=) before invoking it — e.g., ~call_greeting[:results replaces]()~, ~#+call: greeting[:results replace]()~, ~<<greeting[:results replace]()>>~.
+
+* Org mode: Asciidoctor-styled callouts
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897027194
+:END:
+** Front
+Are callouts possible?
+If so, how?
+** Back
+Surprisingly, yes!
+It is just hidden on the documentation.
+Specifically, on the [[https://orgmode.org/manual/Literal-Examples.html][Literal examples]] section of the Org mode manual.
+
+Here's an example to do it.
+
+#+begin_src org
+,#+begin_src python
+print("Hello world") # (ref:hello)
+print(2 + 5)         # (ref:num)
+,#+end_src
+
+In [[(hello)][line 1]], we have printed the traditional "Hello world" program.
+In [[(num)][the second line]], we've done a simple arithmetic and printed it into the console.
+#+end_src
+
+To create Asciidoctor-styled callouts, create a reference inside of the code block and refer to it (i.e., ~(${ref})~).
+
+* Org mode: Timestamps and durations
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897027661
+:END:
+** Front
+How to denote timestamps and durations in Org mode?
+** Back
+#+begin_src org
+# A timestamp looks like this.
+<2021-05-07 Fri>
+
+# To make a duration, just put two dashes between two timestamps.
+<2021-05-07 Fri>--<2021-05-08 Sat>
+#+end_src
+
+To make creating timestamps easier, execute ~org-time-stamp~ (or whatever keybinding you've set).
+
+* Org mode: Deadlines and schedules
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897027915
+:END:
+** Front
+How to make deadlines and schedules?
+** Back
+Just prepend the keywords =DEADLINE= and =SCHEDULED=, respectively.
+
+#+begin_src org
+DEADLINE: <2021-06-30 Wed>
+SCHEDULED: <2021-06-29 Tue>
+#+end_src
+
+* Org mode: Quick file navigation
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897029442
+:END:
+** Front
+Give some ways how to navigate Org mode documents quickly.
+** Back
+- I don't need to explain what ~org-babel-next-src-block~ and ~org-babel-previous-src-block~ does.
+
+- ~org-backward-heading-same-level~ is the same as ~org-forward-heading-same-level~ but moves one headline backwards.
+
+- ~org-forward-heading-same-level~ moves one headline forward in the same level.
+  Useful for navigating sections and subsections.
+
+- ~org-goto~ creates an interface for showing the outline and it is a great navigation function.
+  Highly recommend to use it with a completion interface (e.g., ~counsel-org-goto~, ~counsel-org-imenu~).
+
+- ~org-num-mode~ adds a (non-persistent) counter to the document.
+  Very helpful in navigating larger files.
+
+- ~org-sort~ will sort the entries into your preferred criteria.
+  It also works on a list of items which is very useful if one of the list items has more than one line.
+
+* Editing source code blocks in Org mode documents
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620897029913
+:END:
+** Front
+What function creates a buffer for certain elements in org-mode but it is especially useful for editing source code blocks where it will open with the correct major mode?
+** Back
+~org-edit-special~
+- The einstellung mindset, *being invested in an idea that you can't see other solutions*.
+- Similarly, *overlearning can occur if you're aiming for complete mastery when you should move on after understanding the concept*.
+
+* Practices for studying
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620899219164
+:END:
+** Front
+Give various practices for studying effectively.
+** Back
+- *Recalling is one of the more effective practices compared to rereading or highlighting.*
+  Self-testing is one of the better strategies, overall.
+
+- *Prefer spaced repetition* over cramming as scientifically, the learning process takes some time to settle.
+
+- *Get the key ideas ahead* and as you're studying, fill the details.
+  This includes skimming — reading through the chapter, looking at the keywords.
+
+- *Practice interleaving your studies* — that is, studying other subjects and/or moving to later topics as you understand the topic.
+
+- *Focus, understand, and practice.*
+  Learning can occur bottom-up (learning the details of a problem) and top-down (learning the bigger picture of a topic).
+  Using both creates context and that's where you put your understanding to the test as you learn when to apply what you've learn.
+
+- Use memory palace technique — that is, to *create analogies, narratives, and mnemonics*.
+
+- Have *efficient amount of sleep*.
+  Sleep has certain processes that helps our brain like removing toxins in our brain that accumulate when we're awake, eliminating less relevant neural structures in favor of strengthening stronger ones for tomorrow, and thinking of a solution of the thing you worry about.
+
+* Focused and diffused mode
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:END:
+# TODO: Pass this to Anki in 2021-05-14
+** Front
+What is focused and diffused mode?
+When those two modes often found in certain situations?
+** Back
+Focused mode is when you are in the middle of a mentally intensive task — e.g., cooking, writing, reading, studying.
+In this process, you gather all of the information that are immediately required to complete it.
+
+Diffused mode is the state of mental relaxation — e.g., taking a walk, watching a movie, recess and lunchtime.
+This is when the brain takes the focused task into the background and let random thoughts pass by.
+This is the reason why we sometimes get a sudden realization (a Eureka! moment).
+
+* Benefits of sleep
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:END:
+** Front
+How does sleep help in the learning process?
+** Back
+Sleep has certain processes that helps our brain.
+
+- Removing toxins in our brain that accumulate when we're awake.
+- Eliminating less relevant neural structures in favor of strengthening stronger ones for tomorrow.
+- Thinking of a solution in the background of the thing you worry about.
+
