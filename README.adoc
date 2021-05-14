@@ -11,6 +11,9 @@ This documents the "infrastructure" of my notes because I like documenting and I
 It primarily uses the link:https://zk.zettel.page/[Zettelkasten note-taking method] which means all of my notes are scattered in just one location.
 Fun.
 
+Slowly, this is turning into a monorepo for whatever findings I could find.
+Ehh, I mean why not? ¯\_(ツ)_/¯
+
 [NOTE]
 ====
 On another note, this supersedes my link:https://github.com/foo-dogsquared/personal-notes[personal notes].
@@ -66,6 +69,8 @@ footnote:[You can enable the direnv module from the Doom Emacs config.]
 
 === Setting up
 
+Here's the current project structure.
+
 This wiki uses org-roam v2 as the main note-taking system.
 As of 2021-05-04, it is yet to reach v2 but it is underway with its link:https://github.com/org-roam/org-roam/releases/tag/2.0.0a1[first alpha release].
 The notes should've been adapted for v2 by now.
@@ -75,6 +80,8 @@ If you want to fully reproduce the config, refer to my Doom Emacs configuration.
 
 Now with the pieces complete and assuming you've already have my wiki in your folder, fire up Emacs, open the wiki folder, and do your thing.
 This project has a link:./.dir-locals.el[local Emacs config] (see link:https://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html[related section]).
+It also has a project-specific functions and variables in link:./config.el[`./config.el`].
+You can load it in your `init.el`, just make sure you included it somewhere.
 If you've set `enable-local-variables` to `:safe` or any value that makes Emacs to ignore them, you may want to configure related variables for it to work.
 
 If you have direnv installed, you can also enable automatic shell environments by allowing `.entry` to set it up for you.
@@ -148,6 +155,8 @@ Here's an example Doom Emacs configuration for that:
 Just see my link:https://github.com/foo-dogsquared/dotfiles/tree/75de71b4d0dfe79fe820204e365809cee11d7349/emacs[Doom Emacs config] in my dotfiles.
 
 * The related assets are stored in the link:./assets/[`./assets/`].
+It contains anything that a document should attach.
+Each note should have its own asset folder with no note touching another notes'.
 The asset folder names should be the same as the filename of the org-mode document — e.g., `2021-04-06-15-04-11.org` should have an asset folder in `./assets/2021-04-06-15-04-11/`.
 
 ** I sometimes draw a visual aid just to strengthen my learning as well as an excuse to use my graphics tablet and I want to store them in a reasonable location without dumping it like in a landfill.
