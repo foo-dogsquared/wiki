@@ -3,12 +3,12 @@
 :END:
 #+title: Write down the simplest possible example
 #+date: "2020-06-27 18:31:40 +08:00"
-#+date_modified: "2021-05-07 09:16:20 +08:00"
+#+date_modified: "2021-05-13 16:17:27 +08:00"
 #+language: en
 
 
 On practice, writing down the simplest possible examples allows you to get started working on the definitions.
-When you're done with the simplest possible example, you can then start with a more complicated example (relative to the simplest one) until you worked your way to a real mind-boggling example that really made you bang your head to a wall.
+When you're done with the simplest possible example, you can slowly amp the complexity until you worked your way to a real mind-boggling example that really made you bang your head to a wall.
 As they say, [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]].
 
 On the non-practical side, it is said to be a cultural thing for mathematicians.

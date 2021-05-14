@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       1e135aee-0464-4756-9f55-bbf12afe8254
+:END:
+#+title: Chunking
+#+date: "2021-05-14 12:33:21 +08:00"
+#+date_modified: "2021-05-14 13:02:12 +08:00"
+#+language: en
+
+
+# TODO: Improve note
+- human tendency to chunk or group items together
+- this is similar to we form memories
+- the neuroscientific process of learning is also similar: starts from learning bits of information and eventually combining them, condensing information into chunks
+- applicable on outside of the learning process: speedtyping, memorizing, problem solving, finishing a project, etc.
+- [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]]

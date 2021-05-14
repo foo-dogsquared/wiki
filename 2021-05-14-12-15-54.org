@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       114b7874-6a20-49c8-be2c-46970c7110dc
+:END:
+#+title: Information is only acquired when you try to make sense of it
+#+date: "2021-05-14 12:15:54 +08:00"
+#+date_modified: "2021-05-14 13:02:45 +08:00"
+#+language: en
+
+
+# TODO: Improve note
+No matter how many articles, videos, and images you read, information only stays in the author's intent until you take the time to make sense of it.
+
+- experimentation, trying out through examples, documenting your process
+- this is the reason why we write notes, document a project, or asking questions to the author
+- the information will never be 100% of the author's intention
+- context and environment is just different in subtle ways
+- just the key ideas are important
+- reader may lead into different conclusions

@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       253c59a3-f5ba-4d77-b535-7447a512945d
+:END:
+#+title: Recoll
+#+date: "2021-05-13 11:43:13 +08:00"
+#+date_modified: "2021-05-13 15:10:56 +08:00"
+#+language: en
+
+
+
+A [[https://www.lesbonscomptes.com/recoll/][cross-platform desktop search engine]] that can search through [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]] from various formats including HTML, text files, PDF, and more.
+It can be automated easily with the command line and it has a GUI available as well as various third-party frontends.
+Moreover, it has a Python 3 API that can extend Recoll for support to additional file formats, for example.
+
+Like most web search engines, it searches through an index which has to be generated first (i.e., ~recollindex~).
+With the file changes, the index has to be regenerated.
+
+Recoll is an example of a well-made application that is developer-oriented and trying to be user-friendly with the GUI.
+It has extensive user documentation that lets you extend Recoll through your own.

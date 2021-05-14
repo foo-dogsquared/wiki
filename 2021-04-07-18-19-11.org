@@ -3,13 +3,17 @@
 :END:
 #+title: Spaced repetition
 #+date: "2021-04-07 18:19:11 +08:00"
-#+date_modified: "2021-05-05 19:34:34 +08:00"
+#+date_modified: "2021-05-14 12:47:14 +08:00"
 #+language: en
 
 
-- spacing out testing over a period of time
-- [[roam:Start small and improve later]]
-- tools: Anki, org-drill
-- good for recalling and memorizing information
-- to fully absorb the information, you have to set some time for your brain
-- similar to how reading is not instantaneous, learning is not instantaneous or can be done overnight
+Spacing out practice sessions over a period of time is more effective than cramming it all in one evening.
+It's because our brain takes time to absorb all of the information.
+Learning is not instantaneous.
+We might know the information now by first practice but we'll forget it sooner or later especially if we don't remember it often.
+
+This could be used as a way to learn things and form habits.
+[[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]] by practicing over small units (e.g., solve only one problem), make the unit per practice bigger (e.g., solve two problems), and repeat until you're confident to move on to other topics.
+
+There are various tools to practice spaced repetition with Anki is one of the most popular tool.
+If you're using [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]], org-drill is a plugin that builds on top of it to implement a spaced repetition memory system.

@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       06df5d69-12ac-4e98-8013-ac54d29aa80c
+:END:
+#+title: Learning process
+#+date: "2021-05-14 12:37:18 +08:00"
+#+date_modified: "2021-05-14 12:55:45 +08:00"
+#+language: en
+
+
+- Know [[id:25fb4ebf-2cc4-40fe-93ad-37a79aedfb41][The basics of memory]].
+
+- [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]] — that is, starting from rote learning.
+
+- Consider other learning techniques.
+  + [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]] is often considered to be a better method of memorization.
+  + Know how [[id:cb995494-302f-4666-b56f-ea20a8adea10][Memory palace]] is helpful in learning newer concepts.
+
+- After you understood the concepts, you start to see things in your own perspective.
+  Know that [[id:114b7874-6a20-49c8-be2c-46970c7110dc][Information is only acquired when you try to make sense of it]].
+  [[id:d885e93b-f919-4338-a6b9-3438538e18c0][Every copy of the techniques is personalized]].
