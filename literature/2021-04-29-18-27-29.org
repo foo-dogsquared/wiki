@@ -3,7 +3,7 @@
 :END:
 #+title: Fundamentals of music theory
 #+date: "2021-04-29 18:27:29 +08:00"
-#+date_modified: "2021-05-10 19:15:02 +08:00"
+#+date_modified: "2021-05-16 13:57:06 +08:00"
 #+language: en
 #+source: https://www.coursera.org/learn/edinburgh-music-theory/
 
@@ -61,6 +61,7 @@ Keep in mind this course mainly deals with western musical concepts and notation
   + different tonics = different pattern of semitones and tones = different quality and flavor = different melodies
   + each of tonics in diatonic scale is called a mode (e.g., A is called Aeolian mode, E is Phrygian)
   + Aeolian mode is a natural minor mode (has a pattern of TSTTSTT)
+  + Ionian mode is a natural major mode (has a pattern of TSTTSTT)
 
 #+begin_src lilypond  :file modes.png
 <<lilypond-paper-config>>
@@ -87,12 +88,18 @@ Keep in mind this course mainly deals with western musical concepts and notation
   + perfect fifth + diminished third = diminished triad (Cdim)
   + triads are also named with the lowest notes so a triad of C, E, and G is a C triad
   + but it is a C major triad (written as Cmaj) since C and E is a major third and C, E, and G is a perfect fifth
-  + primary major chords: tonic, dominant, subdominant
+  + primary major chords: tonic, dominant, subdominant — the first, fourth, and fifth chord in the scale, respectively
 
 #+begin_src lilypond  :file chords.png
 <<lilypond-paper-config>>
 \chordmode { c1 d e f g a b }
+\addlyrics { I II III IV V VI VII }
 #+end_src
 
 #+results:
 [[file:assets/2021-04-29-18-27-29/chords.png]]
+
+
+
+
+* Week 2

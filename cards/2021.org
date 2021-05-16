@@ -3,9 +3,17 @@
 :END:
 #+title: Anki: 2021
 #+date: "2021-05-01 20:20:25 +08:00"
-#+date_modified: "2021-05-14 01:10:36 +08:00"
+#+date_modified: "2021-05-16 13:58:36 +08:00"
 #+language: en
 #+property: anki_deck 2021
+
+#+name: lilypond-paper-config
+#+begin_src lilypond  :exports none
+\paper {
+  indent=10\mm
+  oddFooterMarkup=##f
+}
+#+end_src
 
 My collection of tips and tricks I collected in 2021.
 
@@ -174,6 +182,7 @@ systemd-analyze calendar *-*-8/4
 * Type checking in Bash
   :PROPERTIES:
   :ANKI_NOTE_TYPE: Styled cards
+  :ANKI_NOTE_ID: 1620959083242
   :END:
 ** Front
 Implement a little bit of type checking in Bash.
@@ -543,7 +552,7 @@ Accepted values include =yes=, =no=, or a relative path to the Org document wher
 :ANKI_NOTE_ID: 1620897025800
 :END:
 ** Front
-Is creating dynamic content possible?
+Is creating dynamic content in Org mode possible?
 If so, how?
 ** Back
 Yes!
@@ -575,7 +584,7 @@ You can then pass header arguments by appending in square brackets (=[]=) before
 :ANKI_NOTE_ID: 1620897027194
 :END:
 ** Front
-Are callouts possible?
+Are [[https://docs.asciidoctor.org/asciidoc/latest/verbatim/callouts/][Asciidoctor-style callouts]] possible in Org mode?
 If so, how?
 ** Back
 Surprisingly, yes!
@@ -620,7 +629,7 @@ To make creating timestamps easier, execute ~org-time-stamp~ (or whatever keybin
 :ANKI_NOTE_ID: 1620897027915
 :END:
 ** Front
-How to make deadlines and schedules?
+How to make deadlines and schedules in Org mode entries?
 ** Back
 Just prepend the keywords =DEADLINE= and =SCHEDULED=, respectively.
 
@@ -695,8 +704,8 @@ Give various practices for studying effectively.
 * Focused and diffused mode
 :PROPERTIES:
 :ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1621144711876
 :END:
-# TODO: Pass this to Anki in 2021-05-14
 ** Front
 What is focused and diffused mode?
 When those two modes often found in certain situations?
@@ -711,6 +720,7 @@ This is the reason why we sometimes get a sudden realization (a Eureka! moment).
 * Benefits of sleep
 :PROPERTIES:
 :ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1621144712101
 :END:
 ** Front
 How does sleep help in the learning process?
@@ -721,3 +731,100 @@ Sleep has certain processes that helps our brain.
 - Eliminating less relevant neural structures in favor of strengthening stronger ones for tomorrow.
 - Thinking of a solution in the background of the thing you worry about.
 
+* Bash conditional with an unset variable
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620959105474
+:END:
+** Front
+In Bash, what does ~${HOME:-"/home/me"}~ means?
+** Back
+If ~$HOME~ is unset, substitute with the given value (i.e., =/home/me=).
+
+* Bash conditional with a set variable
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1620959105702
+:END:
+** Front
+In Bash, what does ~${HOME:+"/home/me"}~ means?
+** Back
+If ~$HOME~ has a value, then return the given value (i.e., =/home/me=).
+
+* Shell help system
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1621089757772
+:END:
+** Front
+Give some ways to make use of the help system in the shell (or most Unix environment).
+** Back
+- help sections (i.e., =--help= or =-h=)
+- manual pages (i.e., ~man~)
+- TexInfo (i.e., ~info~)
+- [[https://github.com/tldr-pages/tldr][tldr pages]] (i.e., [[https://github.com/tldr-pages/tldr/wiki/tldr-pages-clients][with clients]] like tealdeer)
+
+* Basic music notation reading 1
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1621089760711
+:END:
+** Front
+What notes are displayed (in order)?
+
+#+begin_src lilypond  :file basic-notation-reading-1.png
+<<lilypond-paper-config>>
+{
+  c a' f b
+}
+#+end_src
+
+#+results:
+[[file:assets/2021/basic-notation-reading-1.png]]
+
+** Back
+C A F B
+
+* Basic music notation reading 2
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1621089763239
+:END:
+** Front
+What notes are displayed (in order)?
+
+#+begin_src lilypond  :file basic-notation-reading-2.png
+<<lilypond-paper-config>>
+{
+  \chordmode { c1 }
+  \relative c' { e f a }
+}
+#+end_src
+
+#+results:
+[[file:assets/2021/basic-notation-reading-2.png]]
+
+** Back
+A C major triad (i.e., C E G).
+Then the notes E, F, and A.
+
+* Basic music notation reading 3
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1621089765539
+:END:
+** Front
+What notes are displayed (in order)?
+
+#+begin_src lilypond  :file basic-notation-reading-3.png
+<<lilypond-paper-config>>
+{
+  c''1 d' <c' a'> <e' b'> <f'' g'>
+}
+#+end_src
+
+#+results:
+[[file:assets/2021/basic-notation-reading-3.png]]
+
+** Back
+C, D, C-A (a major sixth), E-B (a minor fifth), and G-F (a seventh).
