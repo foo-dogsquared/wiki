@@ -3,16 +3,16 @@
 :END:
 #+title: Understanding comes first from memory
 #+date: "2021-05-14 11:48:20 +08:00"
-#+date_modified: "2021-05-14 12:55:29 +08:00"
+#+date_modified: "2021-05-17 08:53:22 +08:00"
 #+language: en
 
 
 Rote learning is often considered to be an inferior method of understanding a concept.
 It is often underestimated.
 You may have often hear something along the lines of "I don't want to memorize a bunch of facts but rather understand the process." or "Knowing something is different from understanding something.";
-rooted from an experience of bad teaching thus we associate memorizing a bunch of facts as bad.
+it is rooted from an experience of bad teaching thus we associate memorizing a bunch of facts as bad.
 
-Knowing the related things — or memorizing a bunch of facts — is a good way to understand a concept.
+Knowing the related things — or memorizing a bunch of facts — is a good way to start learning a concept.
 With those things in mind, you can then combine the ideas, [[id:1e135aee-0464-4756-9f55-bbf12afe8254][Chunking]] them, and innovate new ones.
 You cannot build upon more ideas if you don't know what those ideas are.
 

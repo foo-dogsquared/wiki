@@ -3,13 +3,15 @@
 :END:
 #+title: Write down the simplest possible example
 #+date: "2020-06-27 18:31:40 +08:00"
-#+date_modified: "2021-05-13 16:17:27 +08:00"
+#+date_modified: "2021-05-17 08:26:35 +08:00"
 #+language: en
 
 
 On practice, writing down the simplest possible examples allows you to get started working on the definitions.
 When you're done with the simplest possible example, you can slowly amp the complexity until you worked your way to a real mind-boggling example that really made you bang your head to a wall.
 As they say, [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]].
+
+As a sidenote, it is also helpful to [[id:b0aee2c6-f759-4b7a-829f-79781926091e][Create examples of ranking complexity when documenting your project]] from your research or leisure studies.
 
 On the non-practical side, it is said to be a cultural thing for mathematicians.
 It is an unwritten rule for a reader to immediately write down examples and not pass through the text until they have understood it.
