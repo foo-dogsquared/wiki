@@ -3,7 +3,7 @@
 :END:
 #+title: Note-taking
 #+date: "2020-04-15 14:35:55 +08:00"
-#+date_modified: "2021-05-17 08:28:46 +08:00"
+#+date_modified: "2021-05-19 21:09:35 +08:00"
 #+language: en
 
 
@@ -21,3 +21,6 @@ One could start to [[id:d024516b-35ea-40ae-9433-ceacea695073][Write paragraphs l
 
 Not all note-taking is the formal method of paraphrasing our observations and thoughts, this can also be a method of merely writing our thoughts down.
 We can [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create an inbox to store your thoughts]], create [[id:3d1c0313-fa3d-4b18-b435-51d3837e3e2c][Fleeting notes]] as a mental scratchpad.
+
+That said, not all practices are meant to be taken seriously.
+The most subtle and most important tip to keep in mind is [[id:c6cd9441-104f-447f-9d2c-9aaead388c22][When note-taking, don't satisfy your ego]].

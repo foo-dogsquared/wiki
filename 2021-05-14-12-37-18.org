@@ -3,7 +3,7 @@
 :END:
 #+title: Learning process
 #+date: "2021-05-14 12:37:18 +08:00"
-#+date_modified: "2021-05-14 12:55:45 +08:00"
+#+date_modified: "2021-05-14 13:35:25 +08:00"
 #+language: en
 
 
@@ -14,6 +14,8 @@
 - Consider other learning techniques.
   + [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]] is often considered to be a better method of memorization.
   + Know how [[id:cb995494-302f-4666-b56f-ea20a8adea10][Memory palace]] is helpful in learning newer concepts.
+
+- With the techniques considered, take a look at the common [[roam:Pitfalls and illusions of competence]].
 
 - After you understood the concepts, you start to see things in your own perspective.
   Know that [[id:114b7874-6a20-49c8-be2c-46970c7110dc][Information is only acquired when you try to make sense of it]].

@@ -3,7 +3,7 @@
 :END:
 #+title: Org mode
 #+date: "2020-04-20 16:51:40 +08:00"
-#+date_modified: "2021-05-07 13:01:26 +08:00"
+#+date_modified: "2021-05-19 18:33:15 +08:00"
 #+language: en
 #+tags: tools writing
 
@@ -14,4 +14,4 @@ With these features, Org-mode is known as one of the many tools for [[id:6eeb7a2
 
 Unfortunately, a lot of the famous powers of the format is tied with [[roam:GNU Emacs][roam:GNU Emacs]].
 While there is an ecosystem flourishing outside of the text editor (e.g., [[https://github.com/niklasfasching/go-org][go-org]], [[https://github.com/orgapp/orgajs][orgajs]], [[https://pandoc.org/org.html][Org mode support in Pandoc]]), the plugins inside of Emacs simply cannot be ignored.
-Among other Org mode plugins inside of the Emacs ecosystem, we have [[roam:org-roam][org-roam]], [[https://github.com/jkitchin/org-ref][org-ref]], [[https://github.com/weirdNox/org-noter][org-noter]], [[https://orgmode.org/worg/exporters/index.html][a number of exporters]], and [[https://orgmode.org/worg/org-contrib/babel/languages/index.html][org-babel language plugins]] (see [[id:5569a49f-c387-4da2-8f68-d8452e35ee5b][Org mode: Babel]]) that extends to more workflows.
+Among other Org mode plugins inside of the Emacs ecosystem, we have [[roam:org-roam][org-roam]], [[https://github.com/jkitchin/org-ref][org-ref]], [[https://github.com/weirdNox/org-noter][org-noter]], [[https://orgmode.org/worg/exporters/index.html][a number of exporters]], and [[https://orgmode.org/worg/org-contrib/babel/languages/index.html][org-babel language plugins]] that extends to more workflows.

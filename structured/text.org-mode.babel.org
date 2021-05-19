@@ -1,0 +1,147 @@
+:PROPERTIES:
+:ID:       4abb9be8-4414-4045-8827-5a68632fd2a4
+:END:
+#+title: The basics of org-babel
+#+date: "2021-05-19 18:54:37 +08:00"
+#+date_modified: "2021-05-19 21:06:37 +08:00"
+#+language: en
+
+
+
+org-babel (see [[id:5569a49f-c387-4da2-8f68-d8452e35ee5b][Org mode: Babel]]) is the framework that enables Org mode features for reproducible research.
+It has a variety of applications that Org mode can do in this field so let's enumerate them.
+
+
+
+
+* Functional and scripting mode
+
+Babel works in two modes: functional and scripting mode.
+
+- Functional mode returns a value either from the last statement or the return statement.
+  The value can then be used in other source code blocks and appropriately converted into Org mode equivalents.
+  If the return value is a vector type, it will be printed as tables in Org mode which will then be rendered as a vector when used in another source code block.
+
+- Scripting mode simply prints the output.
+  Do keep in mind different languages have different ways of capturing the output.
+  [fn:: Most of them involves capturing the stdout.]
+
+The default mode is in functional mode but you can change it by setting ~:results~ header argument with the values from the [[https://orgmode.org/manual/Results-of-Evaluation.html][collection class]].
+
+
+
+
+* Functional mode values and passing them around
+
+With functional mode, the value return will appear as an appropriate element in the Org mode buffer.
+The following examples are in [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html][Python]].
+
+Scalar values appear as strings...
+
+#+begin_src python  :results value
+return "The quick brown fox jumps over the lazy dog."
+#+end_src
+
+#+results:
+: The quick brown fox jumps over the lazy dog.
+
+...and vector values print as tables.
+
+#+name: data
+#+begin_src python  :results value
+return [
+    ["Monty", 45],
+    ["Soup", 54],
+    ["Cabbages", 63]
+]
+#+end_src
+
+#+results: data
+| Monty    | 45 |
+| Soup     | 54 |
+| Cabbages | 63 |
+
+To pass values between different code blocks, you have to give the blocks a name.
+The previous code block was given a name ~data~ and passed it to the next block.
+
+#+begin_src python  :results value  :var o=data
+return o[0]
+#+end_src
+
+#+results:
+| Monty | 45 |
+
+
+
+
+* Creating dynamic content with meta-programming
+
+With [[https://orgmode.org/worg/org-contrib/babel/intro.html][Babel]], you can call named code blocks anywhere from blocks to inline.
+This creates a "function" with Babel using different languages.
+The following block creates ~init~ function with a default value for its argument.
+
+#+name: init
+#+header: :var name="world"
+#+begin_src python  :results value silent  :exports code
+return f"Hello {name}"
+#+end_src
+
+You can then call the ~init~ function inline with ~call_init[${HEADER_ARGS}](${ARGS})~ which should contain "call_init[:results raw]() Hello world".
+For blocks, you can use the ~#+call~ block with a similar syntax to inline functions — i.e., ~#+call: init[${HEADER_ARGS}](${ARGS})~.
+
+#+call: init[:results replace]()
+
+#+results:
+: Hello world
+
+You can also use it inside of code blocks with ~<<init>>~ which makes it perfect for code blocks templates like configuring paper output for Lilypond blocks.
+Though, you have to set ~:noweb yes~ in the header arguments or configure it in ~org-babel-default-header-args~ as one of the default.
+
+#+name: example
+#+begin_src shell
+echo -n <<init(name="Canavan")>>
+#+end_src
+
+#+results: example
+: Hello Canavan
+
+Babel functions are commonly used for inserting dynamic values.
+Very helpful in reducing places you need to edit (not to mention less prone to errors).
+
+
+
+
+* Executing code blocks in the same session
+
+Each of the source code block runs on an individual session.
+However, you can connect source code blocks in the same session with ~:session <SESSION NAME>~.
+This allows you to cut code blocks and add more detailed explanations for them.
+
+Let's start with a simple example where we want to demonstrate some Python shenanigans.
+Here's one Python code block.
+
+#+begin_src python  :session python-example
+x = 30
+print(x)
+#+end_src
+
+#+results:
+: 30
+
+Then here's another code block in the same session.
+
+#+begin_src python  :session python-example
+for i in range(5):
+  x += 5
+  print(x)
+#+end_src
+
+#+results:
+: 35
+: 40
+: 45
+: 50
+: 55
+
+In certain code where the output can still change (for example, try executing the previous code block again), this may not be the desired behavior.
+To correct this, simply execute ~org-babel-execute-buffer~.

@@ -3,10 +3,11 @@
 :END:
 #+title: We know more compared to what we understood
 #+date: "2021-05-17 08:47:37 +08:00"
-#+date_modified: "2021-05-17 08:55:57 +08:00"
+#+date_modified: "2021-05-17 08:59:18 +08:00"
 #+language: en
 
 
+# TODO: Improve note
 While [[id:114b7874-6a20-49c8-be2c-46970c7110dc][Information is only acquired when you try to make sense of it]], we just know more compared to what we understood.
 It doesn't mean it's a bad thing as [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]].
 The amount of things is too great that deserve our limited attention.

@@ -3,14 +3,14 @@
 :END:
 #+title: Zettelkasten
 #+date: "2021-04-22 14:00:50 +08:00"
-#+date_modified: "2021-05-07 11:03:37 +08:00"
+#+date_modified: "2021-05-19 21:56:15 +08:00"
 #+language: en
 
 
 Zettelkasten is a note-taking method popularized by Niklas Luhmann known for his prolific writings from 400 academic articles to 70 books in a lifetime.
 This system, manifested as a shelf of 60,000 notes, was credited as his writing partner.
 
-The main idea of this system is creating a global cloud of [[roam:Non-linear notes]], individually called as zettels, without any hierarchy or separation.
+The main idea of this system is creating a global cloud of [[id:2713f862-6664-4f36-9a2a-b4ddadfe4c8b][Non-linear notes]], individually called as zettels, without any hierarchy or separation.
 This non-linear system encourages freely linking between each ideas making it easier for gaining new ideas similar to neurons in your brain.
 
 While the absence of hierarchy is good for free-linking and filling gaps between wildly different topics, those ideas have to start from somewhere.

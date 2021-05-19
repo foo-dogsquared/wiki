@@ -3,10 +3,11 @@
 :END:
 #+title: Reproducible research
 #+date: "2020-04-12 11:20:53 +08:00"
-#+date_modified: "2021-05-04 20:51:31 +08:00"
+#+date_modified: "2021-05-19 19:01:34 +08:00"
 #+language: en
 
 
+# TODO: Improve this note.
 Creating your research reproducible can create the following benefits:
 
 - Easy to verify by others.

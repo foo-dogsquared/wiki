@@ -3,15 +3,14 @@
 :END:
 #+title: Information literacy
 #+date: "2020-07-01 23:19:07 +08:00"
-#+date_modified: "2021-05-09 18:02:12 +08:00"
+#+date_modified: "2021-05-20 00:00:49 +08:00"
 #+language: en
 #+tags: personal-info-management
 
 
 The ability to search information, sort the results, verify for legitimacy, and share the information effectively.
-A very useful skill nowadays with the torrential amount of information.
-
-There are many ways to improve our information literacy including usage of various effective online searching, capture relevant output, and finally evaluating your search results.
+A very useful skill nowadays with the torrential amount of information available from a few keystrokes away.
+This includes making effective narrow searches, filtering through search results, knowing the bad from the good, and recording it somewhere in our library.
 
 Having a sharp information literacy does not only mainly seen in technical fields like in research and academia (e.g., literature reviews, peer reviews) but also on everyday life as well.
 In fact, all of us practice it in some way.

@@ -3,16 +3,25 @@
 :END:
 #+title: When note-taking, don't satisfy your ego
 #+date: "2021-04-26 18:59:30 +08:00"
-#+date_modified: "2021-05-04 20:52:10 +08:00"
+#+date_modified: "2021-05-19 21:15:35 +08:00"
 #+language: en
 
+
+Note-taking are meant as a mental scratchpad, not some sort of creative writing.
+(That said, you can [[id:d024516b-35ea-40ae-9433-ceacea695073][Write paragraphs like music]].)
+The time you spent making things align as if you have OCD could be spent editing and improving other notes.
+
+Personal notes, no matter how poorly written or unmaintained, are still valuable.
+So if you have tendencies like this, just relax and correct them. :)
+Trashing notes should be taken as a last resort if you're sure it is not relevant to you in the present and in the near future.
+Still, you should keep in mind that [[id:3994e8d7-8d77-4f52-9650-330369e82143][Future-proofing your notes is only worth if the future is relevant]].
 
 Found some inconsistent titles?
 Improper metadata?
 Incorrect datetime format?
 Just correct them as you stumble upon them.
 
-Similar dilemma that I've encountered include:
+Other examples include:
 
 - Satisfying my obsessiveness over the little things such as sorting lines for the note metadata in alphanumerical order.
 - Finding the perfect note system and constantly shopping for better tools.
@@ -24,7 +33,3 @@ I've written a script and as I'm not experienced in text processing, I spent mos
 I did learned something with the tools but I've realized it's a big waste of time especially if my notes have grown.
 If I found another hip and new note-taking method and it doesn't conform to the new ideal notes in my mind, then I should relax and try it out.
 If it's good and I integrated it, I'll simply link it to my old notes.
-
-My personal notes, no matter how poorly written or unmaintained, are still valuable.
-So if you have tendencies like this, just relax and correct them. :)
-Trashing notes should be taken as a last resort if you're sure it is not relevant to you in the present and in the near future (see [[id:3994e8d7-8d77-4f52-9650-330369e82143][Future-proofing your notes is only worth if the future is relevant]]).
