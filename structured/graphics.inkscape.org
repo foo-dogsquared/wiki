@@ -1,0 +1,33 @@
+#+title: Inkscape
+#+date: "2021-05-17 18:01:51 +08:00"
+#+date_modified: "2021-05-17 18:12:14 +08:00"
+#+language: en
+
+
+A free software for editing vector files.
+One of the free alternatives to Adobe Illustrator.
+
+
+
+
+* How to turn an image to a symbol
+
+Import the image into the canvas.
+We will use the image to trace the lines on it.
+As a personal preference, reduce the opacity of the image to make it easier to see your work in progress.
+
+Then it's all free from here.
+For a start, you can use the calligraphy and the bezier curve tool.
+
+
+
+
+* Repeating patterns on a shape or path
+
+- you need two things: the object (e.g., a shape, a single line) and a pattern to stamp all over the object
+- select the object and apply the "Pattern along path" effect on it
+- configure the effect to repeat the pattern
+- copy the pattern
+- paste and link the pattern into the object
+- to finalize the effect, convert the object into path
+- the new object is a group composed of the pattern tied together, you can break it apart to change each individual pattern

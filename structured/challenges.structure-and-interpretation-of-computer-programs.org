@@ -1,0 +1,587 @@
+:PROPERTIES:
+:ID:       c1c8ac1a-d606-499c-ae2d-cc4d32681524
+:END:
+#+title: Solutions: Structure and interpretation of computer programs
+#+date: "2021-05-14 15:39:37 +08:00"
+#+date_modified: "2021-05-16 21:58:22 +08:00"
+#+language: en
+
+
+This is my exercise solutions for the [[id:fab73160-1478-4c93-9326-1e7b0837e06f][Structure and interpretation of computer programs]] book.
+Before you can use this document, you need to do some prerequisite installation of [[https://racket-lang.org/][Racket]] and [[https://docs.racket-lang.org/sicp-manual/][SICP package]].
+
+
+
+
+* Exercise 1.2
+
+#+begin_src racket  :lang sicp  :results silent
+(/ (+ 5 4
+    (- 2
+        (- 3
+          (+ 6
+              (/ 1 3)))))
+  (* 3
+    (- 6 2)
+    (- 2 7)))
+#+end_src
+
+
+
+
+* Exercise 1.3
+
+#+begin_src racket  :lang sicp  :results silent
+(define (square x) (* x x))
+(define (sum-of-squares x y z)
+  (define sum (+ (square x) (square y) (square z)))
+  (- sum (square (min x y z))))
+#+end_src
+
+
+* Exercise 1.5
+
+If the interpreter evaluates with applicative-order, it will never evaluate the if condition since ~(p)~ is now endlessly being evaluated.
+(Applicative-order evaulates each argument before passing on the function.)
+Meanwhile, if it's evaluated at normal order, it would simply expand then start to evaluate them in order.
+It would go evaluate the ~if~ condition and proceed to return 0 (since it returns true).
+
+
+* Exercise 1.6
+
+#+begin_quote
+Alyssa P. Hacker doesn't see why if needs to be provided as a special form.
+"Why can't I just define it as an ordinary procedure in terms of cond?" she asks.
+Alyssa's friend Eva Lu Ator claims this can indeed be done, and she defines a new version of if:
+
+#+begin_example
+(define (new-if predicate then-clause else-clause)
+  (cond (predicate then-clause)
+        (else else-clause)))
+#+end_example
+
+Eva demonstrates the program for Alyssa:
+
+#+begin_example
+(new-if (= 2 3) 0 5)
+5
+
+(new-if (= 1 1) 0 5)
+0
+#+end_example
+
+Delighted, Alyssa uses new-if to rewrite the square-root program:
+
+#+begin_example
+(define (sqrt-iter guess x)
+  (new-if (good-enough? guess x)
+          guess
+          (sqrt-iter (improve guess x)
+                     x)))
+#+end_example
+
+What happens when Alyssa attempts to use this to compute square roots? Explain.
+#+end_quote
+
+The reason why ~if~ needs a special form is because of applicative-order evaluation.
+Scheme (or rather Racket with the SICP package) interprets with applicative-order evaluation which it means it has to evaluate all of the arguments first before proceeding to evaluate the procedure.
+As ~new-if~ is a procedure that we defined, it would cause an infinite loop of Racket trying to evaluate ~sqrt-iter~ inside of our ~new-if~ procedure.
+
+
+
+
+* Exercise 1.7
+
+#+begin_quote
+The ~good-enough?~ test used in computing square roots will not be very effective for finding the square roots of very small numbers.
+Also, in real computers, arithmetic operations are almost always performed with limited precision. This makes our test inadequate for very large numbers.
+Explain these statements, with examples showing how the test fails for small and large numbers.
+An alternative strategy for implementing ~good-enough?~ is to watch how ~guess~ changes from one iteration to the next and to stop when the change is a very small fraction of the guess.
+Design a square-root procedure that uses this kind of end test.
+Does this work better for small and large numbers?
+#+end_quote
+
+For Exercise 1.7, I'm afraid I cannot easily answer it since the results from the example implementation is already accurate due to the interpreter.
+
+For this exercise, let's pretend the interpreter is not great.
+For example, ~(sqrt 0.0001)~ results in ~.03230844833048122~ (should be ~0.01~).
+[fn:: You can test how it really goes with the MIT Scheme interpreter.]
+
+The reason varies from a combination of interpreter, hardware configurations, and implementation of arithmetics.
+This is especially true with floating points arithmetics.
+
+In implementing our improved square root implementation from the question, we start with editing the ~improve~ function.
+
+#+begin_src racket  :lang sicp
+(define (square x) (* x x))
+(define (improve guess x)
+  (/ (+ guess (/ x guess)) 2))
+
+(define (good-enough? guess old-guess tolerance)
+  (<= (abs (- guess old-guess)) tolerance))
+
+(define (sqrt-iter guess old-guess x)
+  (if (good-enough? guess old-guess 0.0000001)
+      guess
+      (sqrt-iter (improve guess x) guess x)))
+
+(define (sqrt x)
+  (sqrt-iter 1.0 0.0 x))
+
+(sqrt 4)
+(sqrt 1)
+(sqrt 0.0001)
+(sqrt 0.00001)
+(sqrt 123456789000000)
+#+end_src
+
+#+results:
+: 2.000000000000002
+: 1.0
+: 0.01
+: 0.0031622776602038957
+: 11111111.060555555
+
+I've modified the ~good-enough?~ function by making the tolerance as an argument.
+Tested on the MIT Scheme v10.1.10, the results are more accurate closer to modern systems like Julia.
+Bigger numbers are also calculated quicker than the previous implementation (for some reason that I don't know).
+
+
+
+
+* Exercise 1.8
+
+#+begin_quote
+Newton's method for cube roots is based on the fact that if y is an approximation to the cube root of x, then a better approximation is given by the value
+
+
+\begin{equation*}
+    \frac{x / y^2 + 2y}{3}
+\end{equation*}
+
+Use this formula to implement a cube-root procedure analogous to the square-root procedure.
+(In section 1.3.4 we will see how to implement Newton's method in general as an abstraction of these square-root and cube-root procedures.)
+#+end_quote
+
+#+begin_src racket  :lang sicp
+(define (square x) (* x x))
+(define (improve guess x)
+  (/ (+ (- x (square guess)) (* guess 2)) 3))
+
+(define (good-enough? guess x)
+  (< (abs (- (square guess) x)) 0.001))
+
+(define (cbrt-iter guess x)
+  (if (good-enough? guess x)
+      guess
+      (cbrt-iter (improve guess x) x)))
+
+(define (cbrt x)
+  (cbrt-iter 1.0 x))
+
+(cbrt 9)
+#+end_src
+
+#+results:
+: 3.000163135454436
+
+
+
+
+* Exercise 1.9
+
+#+begin_quote
+Each of the following two procedures defines a method for adding two positive integers in terms of the procedures ~inc~, which increments its argument by 1, and ~dec~, which decrements its argument by 1.
+
+#+begin_example
+(define (+ a b)
+  (if (= a 0)
+      b
+      (inc (+ (dec a) b))))
+
+(define (+ a b)
+  (if (= a 0)
+      b
+      (+ (dec a) (inc b))))
+#+end_example
+
+Using the substitution model, illustrate the process generated by each procedure in evaluating (+ 4 5).
+Are these processes iterative or recursive?
+#+end_quote
+
+For the first definition, the resulting evaluation would have to look something like the following:
+
+#+begin_example
+(+ 4 5)
+(inc (+ 3 5))
+(inc (inc (+ 2 5)))
+(inc (inc (inc (+ 1 5))))
+(inc (inc (inc (inc (+ 0 5)))))
+(inc (inc (inc (inc 5))))
+(inc (inc (inc 6)))
+(inc (inc 7))
+(inc 8)
+9
+#+end_example
+
+Based from the visualization, it seems it is a recursive process.
+
+As for the second definition, the resulting evaluation would look like the following:
+
+#+begin_example
+(+ 4 5)
+(+ 3 6)
+(+ 2 7)
+(+ 1 8)
+(+ 0 9)
+9
+#+end_example
+
+As each iteration does not result in embedding procedures in one big procedure, I think it is considered as an iterative process.
+
+
+
+
+* Exercise 1.10
+
+#+begin_quote
+The following procedure computes a mathematical function called Ackermann's function.
+
+#+begin_example
+(define (A x y)
+  (cond ((= y 0) 0)
+        ((= x 0) (* 2 y))
+        ((= y 1) 2)
+        (else (A (- x 1)
+                 (A x (- y 1))))))
+#+end_example
+
+What are the values of the following expressions?
+
+#+begin_example
+(A 1 10)
+
+(A 2 4)
+
+(A 3 3)
+#+end_example
+
+Consider the following procedures, where A is the procedure defined above:
+
+#+begin_example
+(define (f n) (A 0 n))
+
+(define (g n) (A 1 n))
+
+(define (h n) (A 2 n))
+
+(define (k n) (* 5 n n))
+#+end_example
+
+Give concise mathematical definitions for the functions computed by the procedures ~f~, ~g~, and ~h~ for positive integer values of $n$.
+For example, ~(k n)~ computes $5n^2$.
+#+end_quote
+
+For the sake of completeness, here is the function in question along with the given example usage (and its results in the following block):
+
+#+begin_src racket  :lang sicp
+(define (A x y)
+  (cond ((= y 0) 0)
+        ((= x 0) (* 2 y))
+        ((= y 1) 2)
+        (else (A (- x 1)
+                 (A x (- y 1))))))
+
+(A 1 10)
+(A 2 4)
+(A 3 3)
+#+end_src
+
+#+results:
+: 1024
+: 65536
+: 65536
+
+As for notating ~f~, ~g~, and ~h~ into mathematical definitions:
+
+- ~f~ is $2n$.
+- ~g~ is $2^n$.
+- ~h~ is $2^n^2$.
+
+To prove the claim, let's run the function and see if it fits.
+Let $n = 4$.
+
+#+begin_src racket  :lang sicp
+(define (A x y)
+  (cond ((= y 0) 0)
+        ((= x 0) (* 2 y))
+        ((= y 1) 2)
+        (else (A (- x 1)
+                 (A x (- y 1))))))
+
+(define (f n) (A 0 n))
+(define (g n) (A 1 n))
+(define (h n) (A 2 n))
+
+(f 4)
+(g 4)
+(h 4)
+#+end_src
+
+#+results:
+: 8
+: 16
+: 65536
+
+
+
+* Exercise 1.30
+
+#+begin_quote
+The ~sum~ procedure above generates a linear recursion.
+The procedure can be rewritten so that the sum is performed iteratively.
+Show how to do this by filling in the missing expressions in the following definition:
+#+end_quote
+
+#+begin_src racket  :lang sicp
+(define (sum term a next b)
+  (define (iter a result)
+    (if (> a b)
+        result
+        (iter (next a) (+ result a))))
+  (iter a 0))
+#+end_src
+
+#+results:
+
+
+
+
+* Exercise 1.31a
+
+#+begin_quote
+The ~sum~ procedure is only the simplest of a vast number of similar abstractions that can be captured as higher-order procedures.
+Write an analogous procedure called ~product~ that returns the product of the values of a function at points over a given range.
+Show how to define ~factorial~ in terms of ~product~.
+Also use ~product~ to compute approximations to \pi using the formula.
+
+\begin{equation*}
+\frac{\pi}{4} = \frac{2 \cdot 4 \cdot 4 \cdot 6 \cdot 6 \cdot 8 \cdots}{3 \cdot 3 \cdot 5 \cdot 5 \cdot 7 \cdot 7 \cdots}
+\end{equation*}
+#+end_quote
+
+#+begin_src racket  :lang sicp
+(define (product term a next b)
+  (if (> a b)
+      term
+      (product (* (next a) term) (+ a 1) next b)))
+
+(define (factorial term)
+  (product 1  1 (lambda (a) a) term))
+
+(define (wallis_prod term)
+  (* 4 (product 1 1
+                (lambda (a) (*
+                             (/ (* 2 a) (+ (* 2 a) 1))
+                             (/ (+ (* 2 a) 2) (+ (* 2 a) 1))))
+                term)))
+
+(factorial 1) ; should return 1
+(factorial 5) ; should return 120
+(factorial 10) ; should return 3628800
+(factorial 20) ; should return 20!
+
+; With larger values should return closer to the value of pi.
+(wallis_prod 1)
+(wallis_prod 5)
+(wallis_prod 10)
+(wallis_prod 20)
+#+end_src
+
+#+results:
+: 1
+: 120
+: 3628800
+: 2432902008176640000
+: 32/9
+: 524288/160083
+: 274877906944/85530896451
+: 302231454903657293676544/95064880114531295493525
+
+Notwithstanding related to solving the entire problem, I'll include note on how I was able to create a procedure for the Pi value computation since it gave me the hardest time.
+In order to start creating a procedure, I've simply observed the given formula with the induction that it can be separated into pairs like the following.
+(I also simply didn't observe that each pair is also an iteration of a function.)
+
+\begin{equation*}
+\frac{\pi}{4} = \left(\frac{2}{3} \cdot \frac{4}{3} \right) \cdot \left(\frac{4}{5} \cdot \frac{6}{5} \right) \cdot \left(\frac{6}{7} \cdot \frac{8}{7} \right)
+\end{equation*}
+
+We can then observed that it has a generalized pattern.
+Each iteration, in isolation, can be summarized as such.
+
+\begin{equation*}
+\left(\frac{2n}{2n+1} \cdot \frac{2n+2}{2n+1}\right)
+\end{equation*}
+
+With simple algebra, you can get the approximation of Pi by simply multiplying the equation with $4$.
+Here is the finalized equation to my solution.
+
+\begin{equation*}
+f(j) \approx \pi \approx 4 \cdot \prod_{n=1}^j \left(\frac{2n}{2n+1} \cdot \frac{2n+2}{2n+1}\right)
+\end{equation*}
+
+With larger values, the result would be closer to the value of \pi.
+
+
+
+
+* Exercise 1.31b
+
+#+begin_quote
+If your ~product~ procedure generates a recursive process, write one that generates an iterative process.
+If it generates an iterative process, write one that generates a recursive process.
+#+end_quote
+
+Based from my answer in Exercise 1.31a, we can simply see whether we have created an iterative or recursive process simply with the ~trace~ function.
+
+#+begin_src racket  :lang racket
+(require racket/trace)
+(define (product total fn a b)
+  (if (> a b)
+      total
+      (product (* total (fn a)) fn (+ a 1) b)))
+
+(define (factorial term)
+  (product 1 (lambda (a) a) 1 term))
+
+(trace product)
+(factorial 5)
+#+end_src
+
+#+results:
+: >(product 1 #<procedure:...00/ob-inNfez.rkt:10:13> 1 5)
+: >(product 1 #<procedure:...00/ob-inNfez.rkt:10:13> 2 5)
+: >(product 2 #<procedure:...00/ob-inNfez.rkt:10:13> 3 5)
+: >(product 6 #<procedure:...00/ob-inNfez.rkt:10:13> 4 5)
+: >(product 24 #<procedure:...00/ob-inNfez.rkt:10:13> 5 5)
+: >(product 120 #<procedure:...00/ob-inNfez.rkt:10:13> 6 5)
+: <120
+: 120
+
+With our implementation, we can see it is an iterative process.
+The following code block is its recursive equivalent along with the stack trace for comprehension.
+
+#+begin_src racket  :lang racket
+(require racket/trace)
+(define (product total fn a b)
+  (if (> a b)
+      1
+      (* (fn a) (product total fn (+ a 1) b))))
+
+(define (factorial term)
+  (product 1 (lambda (a) a) 1 term))
+
+
+(trace product)
+(factorial 5)
+#+end_src
+
+#+results:
+#+begin_example
+>(product 1 #<procedure:...00/ob-pmlb3s.rkt:10:13> 1 5)
+> (product 1 #<procedure:...00/ob-pmlb3s.rkt:10:13> 2 5)
+> >(product 1 #<procedure:...00/ob-pmlb3s.rkt:10:13> 3 5)
+> > (product 1 #<procedure:...00/ob-pmlb3s.rkt:10:13> 4 5)
+> > >(product 1 #<procedure:...00/ob-pmlb3s.rkt:10:13> 5 5)
+> > > (product 1 #<procedure:...00/ob-pmlb3s.rkt:10:13> 6 5)
+< < < 1
+< < <5
+< < 20
+< <60
+< 120
+<120
+120
+#+end_example
+
+
+
+
+* Exercise 1.32a
+
+#+begin_quote
+Show that ~sum~ and ~product~ (exercise 1.31) are both special cases of a still more general notion called ~accumulate~ that combines a collection of terms, using some general accumulation function:
+
+#+begin_example
+(accumulate combiner null-value term a next b)
+#+end_example
+
+~accumulate~ takes as arguments the same term and range specifications as sum and product, together with a combiner procedure (of two arguments) that specifies how the current term is to be combined with the accumulation of the preceding terms and a null-value that specifies what base value to use when the terms run out.
+Write ~accumulate~ and show how ~sum~ and ~product~ can both be defined as simple calls to ~accumulate~.
+#+end_quote
+
+#+begin_src racket  :lang sicp
+(define (accumulate combiner null-value term a next b)
+  (if (> a b)
+      term
+      (accumulate combiner null-value (combiner (next a) term) (next a) next b)))
+
+(define (sum term a next b)
+  (accumulate (lambda (next a) (+ next )))
+#+end_src
+
+#+results:
+
+
+
+
+* Exercise 2.1
+
+#+begin_quote
+Define a better version of ~make-rat~ that handles both positive and negative arguments.
+~Make-rat~ should normalize the sign so that if the rational number is positive, both the numerator and denominator are positive, and if the rational number is negative, only the numerator is negative.
+#+end_quote
+
+#+begin_src racket  :lang sicp
+(define (Make-rat n d)
+  (let ((g (gcd n d)))
+    (cond
+      ((and (< n 0) (< d 0)) (cons (/ (abs n) g) (/ (abs d) g)))
+      ((and (> n 0) (< d 0)) (cons (/ (- n) g) (/ (abs d) g)))
+      (else (cons (/ n g) (/ d g))))))
+
+(Make-rat 4 5)
+(Make-rat -4 5)
+(Make-rat 4 -5)
+(Make-rat -4 -5)
+#+end_src
+
+#+results:
+: (4 . 5)
+: (-4 . 5)
+: (-4 . 5)
+: (4 . 5)
+
+
+
+
+* Exercise 2.2
+
+#+begin_quote
+Consider the problem of representing line segments in a plane.
+Each segment is represented as a pair of points: a starting point and an ending point.
+Define a constructor make-segment and selectors start-segment and end-segment that define the representation of segments in terms of points.
+Furthermore, a point can be represented as a pair of numbers: the x coordinate and the y coordinate.
+Accordingly, specify a constructor make-point and selectors x-point and y-point that define this representation.
+Finally, using your selectors and constructors, define a procedure midpoint-segment that takes a line segment as argument and returns its midpoint (the point whose coordinates are the average of the coordinates of the endpoints).
+To try your procedures, you'll need a way to print points:
+
+#+begin_example
+(define (print-point p)
+  (newline)
+  (display "(")
+  (display (x-point p))
+  (display ",")
+  (display (y-point p))
+  (display ")"))
+#+end_example
+#+end_quote

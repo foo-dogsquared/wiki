@@ -1,0 +1,357 @@
+:PROPERTIES:
+:ID:       d80ede15-1396-497e-888d-7d41368e8e17
+:END:
+#+title: Exercism track: Bash
+#+date: "2021-05-11 15:06:43 +08:00"
+#+date_modified: "2021-05-19 17:55:11 +08:00"
+#+language: en
+#+source: https://exercism.io/my/tracks/bash
+#+property: header-args  :cache yes
+#+property: header-args:bash  :shebang "#/usr/bin/env bash"
+
+
+These are my submitted solutions for the Bash track in Exercism.
+The document structure here is quite simple.
+Each problem is its own header with the question and solution properly separated with its own subsection.
+
+
+
+
+* Hello world
+
+The classical introductory exercise. Just say "Hello, World!".
+
+"Hello, World!" is the traditional first program for beginning programming in a new language or environment.
+
+The objectives are simple:
+
+- Write a function that returns the string "Hello, World!".
+- Run the test suite and make sure that it succeeds.
+- Submit your solution and check it at the website.
+
+
+** Solution
+:PROPERTIES:
+:ID:       e1446dd8-2392-4976-b5b2-4b00fd804928
+:END:
+
+I interpreted the comments and created a function out of it without realizing the "raw" script is completely fine.
+Whoops!
+
+#+begin_src bash  :tangle (my/concat-assets-folder "hello-world.sh")
+main() {
+  echo "Hello, World!"
+}
+
+main
+#+end_src
+
+#+results[9110ed5ee1cd74dc35880e0e285e44fc1f04e858]:
+: Hello, World!
+
+
+
+
+* Leap
+
+Given a year, report if it is a leap year.
+
+The tricky thing here is that a leap year in the Gregorian calendar occurs:
+
+#+begin_example
+on every year that is evenly divisible by 4
+  except every year that is evenly divisible by 100
+    unless the year is also evenly divisible by 400
+#+end_example
+
+For example, 1997 is not a leap year, but 1996 is.
+1900 is not a leap year, but 2000 is.
+
+
+** Solution
+:PROPERTIES:
+:ID:       325bb8a2-c1d7-47b1-86b1-2b05992a35b8
+:END:
+
+I made it as a "raw" script this time realizing the thing.
+
+#+begin_src bash  :tangle (my/concat-assets-folder "leap.sh")
+set -eo pipefail
+
+function help() {
+  echo "Usage: leap.sh <year>"
+}
+trap 'help' ERR
+
+if test $# -lt 1 || test $# -gt 1
+then
+  help && exit 1
+fi
+
+year=$1
+
+# This is a check whether the input is a year.
+# The year is expected to be an integer and printf throws an error if the specifier does not match the input.
+# Pretty odd way but it is clever, don't you think?
+printf "%d" $year 1>/dev/null 2>/dev/null
+
+if test $(expr $year % 4) -eq 0
+then
+  if test $(expr $year % 100) -eq 0 && test $(expr $year % 400) -ne 0
+    then
+      echo "false"
+      exit 0
+  fi
+  echo "true"
+else echo "false"
+fi
+#+end_src
+
+
+
+
+* Reverse string
+
+Reverse a string
+
+For example: input: "cool" output: "looc"
+
+
+** Solution
+:PROPERTIES:
+:ID:       aecdcdd1-1d66-47c8-bdcb-5f5006c3afc7
+:END:
+
+Well, it's certain very trivial.
+
+#+begin_src bash  :tangle (my/concat-assets-folder "reverse-string.sh")
+echo "$@" | rev
+#+end_src
+
+
+
+
+* Two-fer
+
+Two-fer or 2-fer is short for two for one.
+One for you and one for me.
+
+Given a name, return a string with the message:
+
+#+begin_example
+One for name, one for me.
+Where "name" is the given name.
+#+end_example
+
+However, if the name is missing, return the string:
+
+#+begin_example
+One for you, one for me.
+#+end_example
+
+Here are some examples:
+
+| Name   | String to return            |
+|--------+-----------------------------|
+| Alice  | One for Alice, one for me.  |
+| Bob    | One for Bob, one for me.    |
+|        | One for you, one for me.    |
+| Zaphod | One for Zaphod, one for me. |
+
+
+** Solution
+:PROPERTIES:
+:ID:       4f4f9d86-5e28-4be5-8781-5d4d07a6e6dc
+:END:
+
+This could be solved with the [[https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion][parameter expansion]] syntax.
+
+#+begin_src bash  :tangle (my/concat-assets-folder "two-fer.sh")
+echo "One for ${1:-"you"}, one for me."
+#+end_src
+
+
+
+
+* Error handling
+
+Implement various kinds of error handling and resource management.
+
+An important point of programming is how to handle errors and close resources even if errors occur.
+
+This exercise requires you to handle various errors.
+Because error handling is rather programming language specific you'll have to refer to the tests for your track to see what's exactly required.
+
+
+** Solution
+:PROPERTIES:
+:ID:       3c652bee-abbb-4390-9c83-571a220a550c
+:END:
+
+The test script is basically requiring to write a Bash script that requires one argument and printing =Hello, $ARG=.
+
+#+begin_src bash  :tangle (my/concat-assets-folder "error-handling.sh")
+function help() {
+    echo "Usage: error_handling.sh <person>"
+}
+
+if test ! $# -eq 1; then
+    help && exit 1
+fi
+
+echo "Hello, $1"
+#+end_src
+
+
+
+
+* Resistor color duo
+
+If you want to build something using a Raspberry Pi, you'll probably use resistors. For this exercise, you need to know two things about them:
+
+Each resistor has a resistance value.
+Resistors are small - so small in fact that if you printed the resistance value on them, it would be hard to read.
+To get around this problem, manufacturers print color-coded bands onto the resistors to denote their resistance values.
+Each band has a position and a numeric value.
+For example, if they printed a brown band (value 1) followed by a green band (value 5), it would translate to the number 15.
+In this exercise you are going to create a helpful program so that you don't have to remember the values of the bands.
+The program will take color names as input and output a two digit number, even if the input is more than two colors!
+
+The band colors are encoded as follows:
+
+- Black: 0
+- Brown: 1
+- Red: 2
+- Orange: 3
+- Yellow: 4
+- Green: 5
+- Blue: 6
+- Violet: 7
+- Grey: 8
+- White: 9
+
+From the example above: brown-green should return 15 brown-green-violet should return 15 too, ignoring the third color.
+
+
+** Solution
+
+Remember, it only prints the first two values.
+
+#+begin_src bash
+declare -A colors
+colors['black']=0
+colors['brown']=1
+colors['red']=2
+colors['orange']=3
+colors['yellow']=4
+colors['green']=5
+colors['blue']=6
+colors['violet']=7
+colors['grey']=8
+colors['white']=9
+
+function errorf {
+    printf "$@\n" && exit 1
+}
+
+output=""
+for color in ${@:1}; do
+  test ${colors[$color]} || errorf "invalid color"
+  output="$output$(printf ${colors[$color]})"
+done
+
+echo ${output:0:2}
+#+end_src
+
+
+
+
+* Resistor color trio
+
+If you want to build something using a Raspberry Pi, you'll probably use resistors. For this exercise, you need to know only three things about them:
+
+Each resistor has a resistance value.
+Resistors are small - so small in fact that if you printed the resistance value on them, it would be hard to read. To get around this problem, manufacturers print color-coded bands onto the resistors to denote their resistance values.
+Each band acts as a digit of a number. For example, if they printed a brown band (value 1) followed by a green band (value 5), it would translate to the number 15. In this exercise, you are going to create a helpful program so that you don't have to remember the values of the bands. The program will take 3 colors as input, and outputs the correct value, in ohms. The color bands are encoded as follows:
+Black: 0
+Brown: 1
+Red: 2
+Orange: 3
+Yellow: 4
+Green: 5
+Blue: 6
+Violet: 7
+Grey: 8
+White: 9
+In resistor-color duo you decoded the first two colors. For instance: orange-orange got the main value 33. The third color stands for how many zeros need to be added to the main value. The main value plus the zeros gives us a value in ohms. For the exercise it doesn't matter what ohms really are. For example:
+
+orange-orange-black would be 33 and no zeros, which becomes 33 ohms.
+orange-orange-red would be 33 and 2 zeros, which becomes 3300 ohms.
+orange-orange-orange would be 33 and 3 zeros, which becomes 33000 ohms.
+(If Math is your thing, you may want to think of the zeros as exponents of 10. If Math is not your thing, go with the zeros. It really is the same thing, just in plain English instead of Math lingo.)
+
+This exercise is about translating the colors into a label:
+
+#+begin_example
+"... ohms"
+#+end_example
+
+So an input of "orange", "orange", "black" should return:
+
+#+begin_example
+"33 ohms"
+#+end_example
+
+When we get more than a thousand ohms, we say "kiloohms". That's similar to saying "kilometer" for 1000 meters, and "kilograms" for 1000 grams. So an input of "orange", "orange", "orange" should return:
+
+#+begin_example
+"33 kiloohms"
+#+end_example
+
+
+** Solution
+
+Initially not happy with the solution as I feel it's too hacky.
+Indeed, that feeling is verified when I saw [[https://exercism.io/tracks/bash/exercises/resistor-color-trio/solutions/56beec9e73814d84914335d9ff58d121][this solution]].
+It's pretty nice and learnt a few tricks from that code, too — that other assignment operators exist (e.g., =/==, =*==), test if a variable is set with ~test -v~, and a simple separation of functions.
+
+#+begin_src bash
+declare -A colors
+colors['black']=0
+colors['brown']=1
+colors['red']=2
+colors['orange']=3
+colors['yellow']=4
+colors['green']=5
+colors['blue']=6
+colors['violet']=7
+colors['grey']=8
+colors['white']=9
+
+function errorf {
+    printf "$@\n" && exit 1
+}
+
+output=""
+for color in "$1" "$2"; do
+  test ${colors[$color]} || errorf "invalid color"
+  output="$output$(printf ${colors[$color]})"
+done
+# If there's a zero in front, it will be recognized as an octal so better be careful with that.
+output=$(echo $output | sed --regexp-extended "s|^0||")
+
+test ${colors[$3]} || errorf "invalid color"
+multiplier=$((10 ** ${colors[$3]}))
+resistance=$(($output * $multiplier))
+
+# The arbitrary limits are based from the test suite.
+if test "$resistance" -ge $((10 ** 10)); then
+    echo $(($resistance / (10 ** 9))) gigaohms
+elif test "$resistance" -ge $((10 ** 6)); then
+    echo $(($resistance / (10 ** 6))) megaohms
+elif test "$resistance" -ge 2000; then
+    echo $(($resistance / (10 ** 3))) kiloohms
+else
+    echo "$resistance" ohms
+fi
+#+end_src

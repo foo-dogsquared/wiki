@@ -1,0 +1,16 @@
+#+title: Module files
+#+date: "2021-05-13 16:40:30 +08:00"
+#+date_modified: "2021-05-13 16:40:42 +08:00"
+#+language: en
+
+
+[[https://en.wikipedia.org/wiki/Module_file][Module files]] (MOD) are simply MIDIs except with embedded soundfonts.
+They are usually associated with the demoscene culture.
+I mostly heard them from keygens which a [[http://www.keygenmusic.net/][website apparently collects]].
+One of the biggest public archive for MOD files you can find is [[https://modarchive.org/][The Mod Archive]].
+
+To play MOD files, you have to install a player like QMPlay2, MPD server with the =modplug= plugin installed, and mpv.
+Some of the primary libraries to keep in mind when considering MOD files playback is [[https://lib.openmpt.org/][libopenmpt]] and libmodplug.
+
+If you want to create MOD files, [[https://openmpt.org/][OpenMPT]] is a good primary choice.
+Being a tracker, it could present different experience from a digital audio workstation (DAW) like Ardour, LMMS, Zrythm, and FL Studio.
