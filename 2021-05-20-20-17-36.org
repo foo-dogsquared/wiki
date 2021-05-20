@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       909b4830-72c8-4943-be47-efaf77e40253
+:END:
+#+title: Professional narcissism
+#+date: "2021-05-20 20:17:36 +08:00"
+#+date_modified: "2021-05-20 20:38:46 +08:00"
+#+language: en
+
+
+Per Pinker:
+
+#+begin_quote
+The confusion of the activities of your guild, profession, or field with the subject matter designed to deal with.
+#+end_quote
+
+- coined by Steven Pinker from his book, "The sense of style"
+- focuses on an unrelated thing of your study or activity
+- some examples
+  + in film, instead of focusing what movie is about, they boast about the sales or views
+  + in media, "cover the coverage", a problem leading to echo chambers
+  + in learning, instead of focusing what and why of a note-taking method, they focus on the possible effects of your productivity

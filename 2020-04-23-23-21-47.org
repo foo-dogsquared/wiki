@@ -3,13 +3,14 @@
 :END:
 #+title: Personal information management
 #+date: "2020-04-23 23:21:47 +08:00"
-#+date_modified: "2021-05-09 18:23:39 +08:00"
+#+date_modified: "2021-05-20 15:06:09 +08:00"
 #+language: en
 
 
 Personal information management (PIM) is self-explanatory as it is.
-
-This also includes managing [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]], [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]], library management, and much more.
+It the process of managing your information including [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]], [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]], library management, and much more.
+Those information surely didn't come out of nowhere, you most likely got the idea from others.
+Thus, minding about [[id:f0d0198c-b523-4d71-a13c-0c578dfac3ef][Information literacy]] is a good thing.
 
 
 
@@ -26,3 +27,5 @@ While there's no correct way to practice PIM but to start:
 - Start to manage [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]] but only for the most relevant resources.
 
 - Start to [[id:7827b564-59ed-4604-ac2b-630c60c0a4ab][Use timestamps as a future-proofing method]].
+
+- Consider to [[roam:Create evergreen notes with your digital library]].

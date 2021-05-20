@@ -3,24 +3,23 @@
 :END:
 #+title: Note-taking
 #+date: "2020-04-15 14:35:55 +08:00"
-#+date_modified: "2021-05-19 21:09:35 +08:00"
+#+date_modified: "2021-05-20 19:21:25 +08:00"
 #+language: en
 
 
 The practice of note-taking is universal — it is everybody's concern how to write their findings efficiently with the use of a [[id:88f2256a-3359-4d10-92a3-9273cabce414][Personal information management]] system.
 Note-taking does not only involve the act of writing but also the act of retrieval from finding contextual relationships from two notes, separating notes into digestible chunks, and searching notes effectively.
 
-The reason why you may want to do note-taking is to write all of the thoughts down so you don't have to remember.
-You [[id:9a11ef31-b2a7-43a9-a7a9-48f191838c6e][Prefer referencing over remembering]].
-
 There are different ways of note-taking.
-Among the endless list of methods, popular methods include [[id:4259636e-e0e8-49e4-8210-758ec59728a3][Zettelkasten]], [[id:24b5e144-dda4-482c-9684-958a00d6c986][Roam Research]], Cornell method, or the traditional [[id:d3fbdb1a-9629-45ef-9f08-32c6e49025bb][Linear notes]].
+Among the endless list of methods, popular methods include [[id:4259636e-e0e8-49e4-8210-758ec59728a3][Zettelkasten]], [[id:24b5e144-dda4-482c-9684-958a00d6c986][Roam Research]], [[id:29ecbd86-ad97-4882-aa3f-56b5b90025d5][Digital gardens]], Cornell method, or the traditional [[id:d3fbdb1a-9629-45ef-9f08-32c6e49025bb][Linear notes]].
 
 When doing something like this, one could take notes how to make their notes interesting to read.
-One could start to [[id:d024516b-35ea-40ae-9433-ceacea695073][Write paragraphs like music]], create notes with [[id:79357d56-74bf-4854-820c-c0ad849f2468][Classic prose]], [[id:b318dc2b-5fa1-48ff-9d33-6fbbdee46a2f][Write down the simplest possible example]], and [[id:b0aee2c6-f759-4b7a-829f-79781926091e][Create examples of ranking complexity when documenting your project]].
+You could start to [[id:d024516b-35ea-40ae-9433-ceacea695073][Write paragraphs like music]], create notes with [[id:79357d56-74bf-4854-820c-c0ad849f2468][Classic prose]], [[id:b318dc2b-5fa1-48ff-9d33-6fbbdee46a2f][Write down the simplest possible example]], and [[id:b0aee2c6-f759-4b7a-829f-79781926091e][Create examples of ranking complexity when documenting your project]].
 
 Not all note-taking is the formal method of paraphrasing our observations and thoughts, this can also be a method of merely writing our thoughts down.
-We can [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create an inbox to store your thoughts]], create [[id:3d1c0313-fa3d-4b18-b435-51d3837e3e2c][Fleeting notes]] as a mental scratchpad.
+Another reason why you may want to do note-taking is to write all of the thoughts down so you don't have to remember.
+You [[id:9a11ef31-b2a7-43a9-a7a9-48f191838c6e][Prefer referencing over remembering]].
+You can [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create an inbox to store your thoughts]]: create [[id:3d1c0313-fa3d-4b18-b435-51d3837e3e2c][Fleeting notes]] as a mental scratchpad.
 
 That said, not all practices are meant to be taken seriously.
 The most subtle and most important tip to keep in mind is [[id:c6cd9441-104f-447f-9d2c-9aaead388c22][When note-taking, don't satisfy your ego]].

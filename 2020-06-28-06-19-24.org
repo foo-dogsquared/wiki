@@ -1,22 +1,14 @@
 :PROPERTIES:
 :ID:       583852e4-e56f-469b-89bc-9e5a832c9f04
 :END:
-#+title: Bidirectional links
+#+title: Backlinks
 #+date: "2020-06-28 06:19:24 +08:00"
-#+date_modified: "2021-05-05 16:50:41 +08:00"
+#+date_modified: "2021-05-20 20:13:13 +08:00"
 #+language: en
 
 
-This feature alone allows for a different way of thinking about note-taking — notes are better to be associative than hierarchical.
-The model is better suited because of how our brains work.
-When learning something new, we tend to look for familiar things as a hook or a foundation, comparing it to the new concepts.
-Moreover, there is a tendency for us to understand more when there's a story associated with the concept.
-Whenever I remember a topic from a talk, one of the few things to come first are the examples and stories.
-
-Compared to monodirectional links like in the web, bidirectional links have inherent social awareness: the ability to look back to linked pages.
-With this feature, you can easily form a graph of pages establishing contextual relationships between them.
-This is a feature I always like to see especially for technical websites such as [[https://encyclopediaofmath.org/][Encyclopedia of Mathematics]].
-
-That said, bidirectional linking is not a silver bullet.
-If this is implemented on the web today, it would cause a lot of problems — spamming is one of the most common one and it can require heavy moderation.
-Hence, this is more suitable for certain situations such as personal wikis and federated apps.
+# TODO: Improve this note
+- essentially gives the link two directions
+- usually in the form of an additional section listing the pages that link the node
+- it is not enough to rely on these, you should explicitly link nodes to get your point across and to make stronger associations with certain ideas
+- otherwise, they can be used for implicit listing of the nodes, giving a sense of structure of your notes

@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       48cef2ac-a941-463d-a07f-6be8349456ad
+:END:
+#+title: Diving head-first into a difficult problem makes a bad start
+#+date: "2021-05-20 20:32:49 +08:00"
+#+date_modified: "2021-05-20 20:33:01 +08:00"
+#+language: en
+
+
+- when learning a new skill, a difficult problem is a bad start
+- it can overwhelming with the amount of steps that you need to take
+- you can mix other problems that doesn't need to be there and difficult concepts essentially comes from understanding the basics
+- this is why you should [[roam:Start small and improve later]] to prevent forming bad habits in the first place

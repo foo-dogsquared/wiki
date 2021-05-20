@@ -3,7 +3,7 @@
 :END:
 #+title: Refer to advanced resources when skill-building for a solid short-term goal
 #+date: "2020-07-06 03:47:52 +08:00"
-#+date_modified: "2021-05-20 00:02:52 +08:00"
+#+date_modified: "2021-05-20 00:31:14 +08:00"
 #+language: en
 
 
@@ -13,10 +13,10 @@ In programming, you could look for devlogs, highly advanced competitions, fairly
 You can then store the expert resources and [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintain your own digital library]] for future references.
 
 The purpose of this is twofold: to serve as a solid short-term goal (as indicated by the title) and to create inspirations for your future projects.
-Another purpose of this is to [[id:fdf9e3eb-02c5-47a6-b586-e71a5c92d01a][Look for live sessions as another form of examples]].
+If you [[id:fdf9e3eb-02c5-47a6-b586-e71a5c92d01a][Look for live sessions as another form of examples]], the inspirations are especially great as you watch the actual process unfold.
 
 Of course, this does not entirely replace looking out for beginner-friendly resources and communities as an entryway.
 In fact, it is a bad idea to start learning with the advanced resources.
 
-Also this could lead into actively consuming just the resources without the practice.
+Also, this could lead into actively consuming just the resources without the practice.
 [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]].

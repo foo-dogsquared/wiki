@@ -3,12 +3,11 @@
 :END:
 #+title: Maintain your own digital library
 #+date: "2020-04-14 18:28:55 +08:00"
-#+date_modified: "2021-05-07 11:48:51 +08:00"
+#+date_modified: "2021-05-20 15:04:55 +08:00"
 #+language: en
 #+tags: personal-info-management
 
 
-Having your own digital library can be one of the most valuable thing for your life.
 It is flexible in purpose: you can use it as a personal knowledge base, digital novelties collection, and/or project repository.
 
 A digital library should have the following features:

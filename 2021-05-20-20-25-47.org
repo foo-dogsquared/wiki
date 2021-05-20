@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       12dc8b07-ed8b-46d8-bff0-a38d9f3cb83b
+:END:
+#+title: Diving head-first with a difficult problem is a good indicator of progress
+#+date: "2021-05-20 20:25:47 +08:00"
+#+date_modified: "2021-05-20 20:33:32 +08:00"
+#+language: en
+
+
+- when starting to learn, diving into problems are often seen as a bad thing
+- it is essentially like trying to learn to swim on an ocean
+  + it could be effective if we have a lifeguard
+- this sink-or-swim mentality can be great if we're to make a difficult problem as our model for progress
+- for example, if you're trying to learn 3D modelling by recreating a massive landscape, you can start with it as an initial exercise
+- at first try, it will fail but you can retry maybe next month to see how well you improve
+- a difficult problem can give us a clear indication of our progress
+- contrast this to learning by starting with the simplest possible example
+- in some capacity, we already have been doing this since we have an idea of what we want to do
+  + a lot of our inspirations tend to be people with advanced levels
+- beware, [[roam:Diving head-first into a difficult problem makes a bad start]]

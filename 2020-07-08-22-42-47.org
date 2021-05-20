@@ -3,7 +3,7 @@
 :END:
 #+title: When learning a new skill, begin with a specific end-goal to create a solid starting point
 #+date: "2020-07-08 22:42:47 +08:00"
-#+date_modified: "2021-05-07 22:35:55 +08:00"
+#+date_modified: "2021-05-20 00:32:55 +08:00"
 #+language: en
 
 
@@ -27,6 +27,3 @@ Most of the time, skill acquisition happens with the following workflow.
 You still do some form of the above workflow subconsciously with the goal of being familiar to a specific topic.
 Eventually, you take the time to improve it further, making [[id:d885e93b-f919-4338-a6b9-3438538e18c0][Every copy of the techniques is personalized]].
 The gist of the above list is to [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]].
-
-Not every attempts of skill acquisition is suitable with this workflow with some skills need more experiments than others.
-The above workflow is more suitable to acquire advanced skills than entry-level skills where aiming for a perfect first try is (obviously) not an attractive goal.
