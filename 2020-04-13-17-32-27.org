@@ -3,7 +3,7 @@
 :END:
 #+title: File metadata
 #+date: "2020-04-13 17:32:27 +08:00"
-#+date_modified: "2021-05-09 18:22:14 +08:00"
+#+date_modified: "2021-05-21 18:50:11 +08:00"
 #+language: en
 
 
@@ -17,7 +17,7 @@ Each type of files have different ways of embedding metadata:
 - Vorbis comments is a universal format commonly found on OGG.
 - HTML documents contain the ~<head>~ element to store the metadata.
 - [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]] and Asciidoctor documents allow file-level properties that are functionally equivalent to embedded metadata.
-- There are also universal formats such as Extensible metadata platform (XMP) or Meta Information Encapsulation (MIE) available either as embedded or a separate file.
+- Universal formats such as Extensible metadata platform (XMP) or Meta Information Encapsulation (MIE) available either as embedded or a separate file.
 
 Tools exist for writing and reading data such as [[https://exiftool.org/][Exiftool]].
 While file metadata are good and dandy, don't worry too much on them.

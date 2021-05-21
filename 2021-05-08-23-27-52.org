@@ -3,7 +3,7 @@
 :END:
 #+title: Memory palace
 #+date: "2021-05-08 23:27:52 +08:00"
-#+date_modified: "2021-05-14 12:55:23 +08:00"
+#+date_modified: "2021-05-21 19:14:28 +08:00"
 #+language: en
 
 
@@ -14,3 +14,9 @@ You can then write a crazy narrative with those things — e.g., outside of the 
 The core of this technique is learning through overlaying familiar topics with newer concepts.
 
 This is effective for memorizing since [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]] along with our tendency of [[id:1e135aee-0464-4756-9f55-bbf12afe8254][Chunking]].
+
+Memory palaces are one of the more known technique from memory sports.
+Notice how most of them tend to make a lot of effort grouping items together and weaving them with familiar concepts such as their house.
+Another interesting thing with this technique is the test of creativity.
+Going back to the memory sports scene, they usually employ this technique by creating a narrative leaning on crazier side of things.
+This makes it more memorable and easier to write more things on top of the wacky antics.

@@ -3,7 +3,7 @@
 :END:
 #+title: Personal information management
 #+date: "2020-04-23 23:21:47 +08:00"
-#+date_modified: "2021-05-20 15:06:09 +08:00"
+#+date_modified: "2021-05-21 18:46:17 +08:00"
 #+language: en
 
 
@@ -28,4 +28,4 @@ While there's no correct way to practice PIM but to start:
 
 - Start to [[id:7827b564-59ed-4604-ac2b-630c60c0a4ab][Use timestamps as a future-proofing method]].
 
-- Consider to [[roam:Create evergreen notes with your digital library]].
+- Consider to create [[id:29ecbd86-ad97-4882-aa3f-56b5b90025d5][Digital gardens]], a personal wiki with a focus on growth.

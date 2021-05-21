@@ -3,13 +3,21 @@
 :END:
 #+title: Chunking
 #+date: "2021-05-14 12:33:21 +08:00"
-#+date_modified: "2021-05-14 13:02:12 +08:00"
+#+date_modified: "2021-05-21 23:40:42 +08:00"
 #+language: en
 
 
 # TODO: Improve note
-- human tendency to chunk or group items together
-- this is similar to we form memories
-- the neuroscientific process of learning is also similar: starts from learning bits of information and eventually combining them, condensing information into chunks
-- applicable on outside of the learning process: speedtyping, memorizing, problem solving, finishing a project, etc.
-- [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]]
+The behavior of chunking is present in a lot of ways.
+
+- When we hear the word "popsicle", you may have already envisioned an image of the popsicle.
+- Memorizing a phone number, dividing the number into groups — e.g., 39281841938 into 392-818-419-38.
+- When learning about speedtyping, you may have heard of the advice to learn typing by syllables instead of individual letters.
+- In formal education, most higher-level topics are essentially combining previous topics — e.g., learning mathematics in formal education tends to be: learning the numbers, to counting, then arithmetics, and finally branching out to algebra, geometry, statistics, and calculus.
+- Problem solving tends to be divided into subtasks.
+
+Neuroscientifically, a chunk is a group of neurons learned to sing in tune whenever we react in a certain way.
+Chunking makes it easier to hold more information with fewer mental resources.
+We learn bits of information, combining them into chunks, condensing the information.
+This condensed information can then be combined with other information thereby creating a web of information (or scientifically, neural structures).
+This is the basis of how [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]].

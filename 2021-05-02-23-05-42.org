@@ -3,7 +3,7 @@
 :END:
 #+title: The basics of memory
 #+date: "2021-05-02 23:05:42 +08:00"
-#+date_modified: "2021-05-19 21:59:23 +08:00"
+#+date_modified: "2021-05-21 23:44:01 +08:00"
 #+language: en
 
 
@@ -11,7 +11,7 @@
 As for this note, we'll talk about the basics of memory neuroscientifically.
 
 Remebering from our basic biology lessons, we know that the brain contains *neurons that store information*.
-These information can be connected together with *synapses that represents a web of thoughts*.
+These information can be connected together with *synapses that represents a web of thoughts* from the process of [[roam:Chunking]].
 It shows why [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]];
 indeed, we are very skilled in linking and jumping between ideas.
 You may have moments of suddenly remembering that you forgot to bring something while in the middle of your nap or a Eureka! moment where you suddenly understand why the quadratic formula makes sense.
@@ -19,7 +19,3 @@ You may have moments of suddenly remembering that you forgot to bring something 
 The memory can be compared to the muscles as it strengthens the more you use and decays the more you neglect.
 In order for this to work, however, you need to set some time for the neural structure to harden first.
 This is why cramming doesn't work and [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]] is often considered a better method.
-
-- Know the basics of your brain
-- Neuron formation
-- Working and long-term memory
