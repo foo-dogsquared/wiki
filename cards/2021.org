@@ -3,12 +3,13 @@
 :END:
 #+title: Anki: 2021
 #+date: "2021-05-01 20:20:25 +08:00"
-#+date_modified: "2021-05-16 13:58:36 +08:00"
+#+date_modified: "2021-05-21 12:09:04 +08:00"
 #+language: en
 #+property: anki_deck 2021
+#+property: header_args  :exports both
 
 #+name: lilypond-paper-config
-#+begin_src lilypond  :exports none
+#+begin_src lilypond  :exports none  :results none
 \paper {
   indent=10\mm
   oddFooterMarkup=##f
@@ -484,6 +485,8 @@ Give various pitfalls and illusions of competence to look out when learning.
 - *The presence of the material itself* can cause students to foolishly think they already know about the subject.
 - Similarly, *studying with solutions can be a trap if you focus on the what and how rather than the why*.
 - Various common practices such as highlighting, rereading, and mind mapping are not as effective and only applicable in specific situations.
+- The einstellung mindset, *being invested in an idea that you can't see other solutions*.
+- Similarly, *overlearning can occur if you're aiming for complete mastery when you should move on after understanding the concept*.
 
 * org-babel
 :PROPERTIES:
@@ -511,9 +514,6 @@ Among the list of features, org-babel makes the following things easier for crea
 ** Front
 How to make org-babel pass values between different source code blocks?
 ** Back
-:PROPERTIES:
-:ID:       5c959c6a-04fb-4154-becc-86eeb15b20ad
-:END:
 First, configure org-babel to work in functional mode (i.e., ~:results value~) in a source code block.
 With functional mode, it will return values which will be handled by org-babel.
 
@@ -557,8 +557,7 @@ If so, how?
 ** Back
 Yes!
 
-With source code blocks and the [[https://orgmode.org/manual/Noweb-Reference-Syntax.html][noweb]] option enabled, you can make meta-programming in Org.
-You can declare a function by assigning a name on the code block (i.e., ~#+name: ${FUNC_NAME}~).
+By attaching a name to a code block and [[https://orgmode.org/manual/Evaluating-Code-Blocks.html#Evaluating-Code-Blocks][evaluating]] them, it is possible.
 
 Here's an example of a source code block with a default argument.
 
@@ -577,6 +576,7 @@ You can then call the function in different ways:
 - For invoking inside a code block, ~<<${FUNC_NAME}()>>~, but you have to enable noweb (e.g., ~:noweb yes~).
 
 You can then pass header arguments by appending in square brackets (=[]=) before invoking it — e.g., ~call_greeting[:results replaces]()~, ~#+call: greeting[:results replace]()~, ~<<greeting[:results replace]()>>~.
+
 
 * Org mode: Asciidoctor-styled callouts
 :PROPERTIES:
@@ -671,8 +671,6 @@ Give some ways how to navigate Org mode documents quickly.
 What function creates a buffer for certain elements in org-mode but it is especially useful for editing source code blocks where it will open with the correct major mode?
 ** Back
 ~org-edit-special~
-- The einstellung mindset, *being invested in an idea that you can't see other solutions*.
-- Similarly, *overlearning can occur if you're aiming for complete mastery when you should move on after understanding the concept*.
 
 * Practices for studying
 :PROPERTIES:
@@ -804,8 +802,8 @@ What notes are displayed (in order)?
 #+results:
 [[file:assets/2021/basic-notation-reading-2.png]]
 
-** Back
-A C major triad (i.e., C E G).
+** Back A
+C major triad (i.e., C E G).
 Then the notes E, F, and A.
 
 * Basic music notation reading 3
@@ -828,3 +826,88 @@ What notes are displayed (in order)?
 
 ** Back
 C, D, C-A (a major sixth), E-B (a minor fifth), and G-F (a seventh).
+
+* Watch the logs of a systemd unit
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1621570139174
+:END:
+** Front
+What is happening with the following command?
+
+#+begin_src shell  :results none
+journalctl -u backup -fb
+#+end_src
+
+** Back
+Watch the logs from the systemd unit ~backup.service~ starting from boot time.
+
+The command could also be written in the same way.
+
+#+begin_src shell  :results none
+journalctl --unit backup --follow --boot
+#+end_src
+
+* Restoring a file in Git
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1621570139642
+:END:
+** Front
+How to restore a file in Git?
+** Back
+#+begin_src shell  :results none
+git restore $FILE_PATH
+#+end_src
+
+Despite the name, it will also delete the file if it's detected as untracked file in the Git worktree.
+
+* Setting environment variables with systemd environment directive
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1621570140918
+:END:
+** Front
+How to set environment variables with systemd?
+** Back
+Create an environment directive file in the specified directory.
+You can find the search paths and the syntax from =environment.d.5= manual page.
+
+Basically, it is a shell-like config for setting environment variables.
+The following shows that.
+
+#+begin_src shell  :results none
+TERM=alacritty
+EDITOR=nvim
+BROWSER=brave
+MANPAGER="nvim +Man!"
+
+PATH=${PATH:+$PATH:}${GUIX_PROFILE:-$HOME/.guix-profile}/bin
+XDG_DATA_DIRS=${GUIX_PROFILE:-$HOME/.guix-profile}/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}
+#+end_src
+
+Compared to exporting values with the user shell (e.g., =.bashrc=, =.zshrc=) where they are only applied when the shell is called, environment variables generated from the directive can be recognized from applications that called non-interactively (e.g., GNOME desktop search, Rofi).
+
+You can also view the resulting environment with ~systemctl show-environment~.
+
+* Emacs Lisp conditionals
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1621570142444
+:END:
+** Front
+Give some functions for creating a conditional in Emacs Lisp.
+** Back
+Below are the common way to control the flow with Elisp.
+
+#+begin_src elisp  :results none
+(if (and nil nil)
+    (message "Hello there!")
+  (message "Not hello there, sith lord!"))
+
+(unless t
+  (message "Not hello there, sith lord!"))
+
+(when t
+  (message "Hello there!"))
+#+end_src

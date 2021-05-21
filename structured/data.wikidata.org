@@ -1,0 +1,13 @@
+#+title: Wikidata
+#+date: "2021-05-20 21:14:34 +08:00"
+#+date_modified: "2021-05-20 21:15:24 +08:00"
+#+language: en
+
+
+- A universal database with semi-structured data allowing for natural queries.
+- Each item in the database contains statements which in turn contain properties.
+- Querying tools are available (e.g., https://query.wikidata.org/, wikibase-cli).
+- item + statement + property
+- The item itself and its part are assigned a unique ID — e.g., the item "GNU Guix" is assigned to "Q18968627" and it has a logo image statement is which assigned at "P154".
+- Wikidata-related SDKs and APIs are available for interacting with the data without using the website.
+- [[https://www.wikidata.org/wiki/Special:ApiSandbox][API sandbox]]
