@@ -3,7 +3,7 @@
 :END:
 #+title: Anki: 2021
 #+date: "2021-05-01 20:20:25 +08:00"
-#+date_modified: "2021-05-21 12:09:04 +08:00"
+#+date_modified: "2021-05-21 12:39:01 +08:00"
 #+language: en
 #+property: anki_deck 2021
 #+property: header_args  :exports both
@@ -191,10 +191,29 @@ Implement a little bit of type checking in Bash.
 ~printf~ throws an error if the given argument is not appropriate.
 
 #+begin_src shell
-printf "%d" 532 429 40 102
-printf "%d" this_will_throw_an_error 430 that_previous_number_will_not
-printf "%f" 10 43.45 3.14
+# This is fine
+printf "%d\n" 532 429 40 102
+
+# This will return a non-zero exit code
+printf "%d\n" this_will_throw_an_error 430 that_previous_number_will_not
+
+# This is also fine
+printf "%f\n" 10 43.45 3.14
 #+end_src
+
+#+results:
+#+begin_example
+532
+429
+40
+102
+0
+430
+0
+10.000000
+43.450000
+3.140000
+#+end_example
 
 * Emacs: The overview of buffers
 :PROPERTIES:
@@ -900,14 +919,16 @@ Give some functions for creating a conditional in Emacs Lisp.
 ** Back
 Below are the common way to control the flow with Elisp.
 
-#+begin_src elisp  :results none
+#+begin_src elisp
 (if (and nil nil)
-    (message "Hello there!")
-  (message "Not hello there, sith lord!"))
+    "Hello there!"
+  "Not hello there, sith lord!")
 
 (unless t
-  (message "Not hello there, sith lord!"))
+  "Not hello there, sith lord!")
 
 (when t
-  (message "Hello there!"))
+  "Hello there!")
 #+end_src
+
+#+results:
