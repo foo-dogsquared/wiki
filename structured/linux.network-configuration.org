@@ -1,0 +1,70 @@
+#+title: Network configuration in Linux
+#+date: "2021-05-31 13:07:38 +08:00"
+#+date_modified: "2021-05-31 14:49:03 +08:00"
+#+language: en
+
+
+# TODO: Incomplete info, missing fragments.
+#       Improve the note later, pls.
+To access the internet, you need the following components:
+
+- The driver of the network device installed and enabled.
+- A network manager to manage your network devices ;p
+- A DNS resolver to access domain names which are aliases to IP addresses.
+
+
+
+
+* Network manager configuration
+
+With a systemd-ful environment, you can run the network daemon (i.e., =systemd-networkd=).
+Once enabled, you can run =networkctl= to list all of the network devices.
+[fn:: You can also run ~ip address~ for it.]
+
+#+begin_src shell
+networkctl
+#+end_src
+
+#+results:
+: IDX LINK   TYPE     OPERATIONAL SETUP
+:   1 lo     loopback carrier     unmanaged
+:   2 enp1s0 ether    off         unmanaged
+:   3 wlan0  wlan     routable    configured
+:
+: 3 links listed.
+
+To configure network manager, you can create a network file in one of systemd unit file paths in the system.
+Each of the device will be assigned an IP address.
+You can either assign an IP address or dynamically assign them in some way.
+One of the common ways to do dynamic IP addresses is installing a DHCP server (which is another thing to be configured).
+Here's an example of configuring any wireless devices and assigning a dynamic IP addresses with [[https://wiki.archlinux.org/title/Network_configuration#DHCP][DHCP]].
+
+#+begin_src
+[Match]
+Type=wlan
+
+[Network]
+DHCP=yes
+IPv6PrivacyExtensions=yes
+
+[DHCPv4]
+RouteMetric=1024
+
+[DHCPv6]
+RouteMetric=1024
+#+end_src
+
+
+
+
+* DNS server configuration
+
+While the network manager is enabled, you can access the internet.
+But only with raw IP addresses (e.g., 1.1.1.1 from Cloudflare, 93.174.95.27 for Library Genesis).
+[fn:: You can find the IP addresses with DNS clients such as [[https://github.com/ogham/dog][dog]] or the [[https://nodejs.org/api/dns.html][DNS library from NodeJS]].]
+
+Accessing the domain names as you would browse the web normally is an additional layer of the web.
+To access a domain name, you need a DNS client that can resolve them.
+While there are plenty of DNS resolvers, systemd has a component =systemd-resolved= which you can control with =resolvectl= binary.
+
+systemd-resolved takes a configuration from =/etc/resolve.conf= which most third-party programs also relies on.

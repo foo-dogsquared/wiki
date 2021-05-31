@@ -1,6 +1,6 @@
 #+title: FFmpeg
 #+date: "2021-05-09 16:40:50 +08:00"
-#+date_modified: "2021-05-09 17:13:35 +08:00"
+#+date_modified: "2021-05-31 00:35:48 +08:00"
 #+language: en
 
 
@@ -41,11 +41,38 @@ ffmpeg -i $INPUT.mp3 -o $OUTPUT.ogg
 #+end_src
 
 By default, FFmpeg will guess if certain things are missing.
-In this case, it guessed you want to convert the
+In this case, it guessed the input file is an MP3 and wants to convert OGG.
+Sometimes, it will also use default options for converting between two formats such as the default bitrate and codec.
 
 
 ** Transrate an audio file
 
 #+begin_src shell
 ffmpeg -i $INPUT -c $CODE -b:a $BITRATE $OUTPUT
+#+end_src
+
+
+** List all available options
+
+FFmpeg has compile options, heaps of them.
+You may want to know what codecs are available.
+
+#+begin_src shell  :results silent
+ffmpeg -codecs
+#+end_src
+
+It tends to be a large list so prepare to send it through a pager.
+
+You should also know FFmpeg can print out devices.
+
+#+begin_src shell  :results silent
+ffmpeg -devices
+#+end_src
+
+
+** Capture video device
+
+#+begin_src
+# Assuming /dev/video0 is your webcam.
+ffmpeg -f video4linux2 -i /dev/video0 cringe-at-yourself.mpg
 #+end_src
