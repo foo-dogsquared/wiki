@@ -3,7 +3,7 @@
 :END:
 #+title: Anki: 2021
 #+date: "2021-05-01 20:20:25 +08:00"
-#+date_modified: "2021-05-21 12:39:01 +08:00"
+#+date_modified: "2021-06-02 12:03:42 +08:00"
 #+language: en
 #+property: anki_deck 2021
 #+property: header_args  :exports both
@@ -932,3 +932,18 @@ Below are the common way to control the flow with Elisp.
 #+end_src
 
 #+results:
+
+* Finding out file types in the shell
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1622604476228
+:END:
+** Front
+Give some ways how to show the file type in the shell.
+** Back
+#+begin_src bash
+file --mime-type $FILE
+xdg-mime query filetype $FILE
+#+end_src
+
+I prefer ~file --mime-type~ since it is clearer on purpose and name alone.

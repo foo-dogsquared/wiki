@@ -1,12 +1,17 @@
+:PROPERTIES:
+:ID:       8135ece9-0dc0-4799-ac63-a24f9486ddd2
+:END:
 #+title: BorgBackup
 #+date: "2021-05-30 21:40:24 +08:00"
-#+date_modified: "2021-05-31 23:32:29 +08:00"
+#+date_modified: "2021-06-04 21:47:36 +08:00"
 #+language: en
 #+property: header_args:bash  :results silent  :exports code
 
 
 BorgBackup is a deduplicating archiver with compression and encryption.
 In other words, this is the best backup tool (as of 2021-05-30).
+
+In this note, we'll be covering the following v1.1.16 and above.
 
 For more information, you can view =borg.1= manual page.
 It has all of the information you can possibly know about the tool, making it a perfect reference.
@@ -55,6 +60,17 @@ ${REPOSITORY_URL}::${ARCHIVE_NAME}
 /home/foo-dogsquared/backup::2021-03-02
 #+end_src
 
+You can also refer to a name dynamically with placeholders.
+
+#+begin_src
+/home/foo-dogsquared/backup::{hostname}-{user}-{now}
+#+end_src
+
+For more information, you can see the related section for Borg placeholders.
+Or you can run ~borg help placeholders~.
+
+
+
 
 
 
@@ -86,7 +102,7 @@ borg init --encryption repokey ${REPO_PATH}
 
 # Create an archive in the repo and save the documents, pictures, and videos folder.
 # This will prompt you into entering the passphrase.
-borg create --verbose --progress ${REPO_PATH}::${ARCHIVE_NAME} ~/Documents ~/Pictures ~/Videos
+borg create --verbose --progress ${REPO_PATH}::{hostname}-{now:%F-%T-%z} ~/Documents ~/Pictures ~/Videos
 
 # Entering the passphrase can be annoying so let's save that into a variable.
 # Luckily, Borg already handles this by setting BORG_PASSPHRASE.
@@ -100,7 +116,7 @@ borg list ${REPO_PATH}
 borg list ${REPO_PATH}::${ARCHIVE_NAME}
 
 # Extract only the documents folder.
-borg extract --verbose --progress ${REPO_PATH}::${ARCHIVE_NAME} ~/Documents
+borg extract --verbose --progress ${REPO_PATH}::{hostname}-{now:%F-%T-%z} ~/Documents
 #+end_src
 
 
@@ -128,7 +144,7 @@ BORG_REPO="$HOME/backups" BORG_PASSCOMMAND='gopass show misc/personal-borgbackup
 
 ** An interactive interface for extracting archives
 
-All-time favorite [[https://github.com/junegunn/fzf/][fzf]] (and xargs) is required.
+All-time favorite [[id:4eb1f8b1-bc12-4a6c-8fa4-20e4c3542cf2][fzf]] (and xargs) is required.
 
 #+begin_src bash
 export BORG_PASSPHRASE="oral hygiene"

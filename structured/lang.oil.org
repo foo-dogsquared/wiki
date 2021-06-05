@@ -1,19 +1,25 @@
 #+title: Oil shell
 #+date: "2021-05-09 16:40:50 +08:00"
-#+date_modified: "2021-05-10 11:25:10 +08:00"
+#+date_modified: "2021-06-04 21:55:38 +08:00"
 #+language: en
 
 
-For future references, this note mainly notes Oil v0.8.7 and later versions.
+For future references, this note mainly notes Oil v0.8.11 and later versions.
 
 
 
 
 * What is Oil shell?
 
+Ripping off from the [[https://www.oilshell.org/blog/2020/01/simplest-explanation.html][explanation page]]:
+
+#+begin_quote
+Oil is also aimed at people who know say Python or JavaScript, but purposely avoid shell.
+#+end_quote
+
 A modern shell attempting the replace Bash slowly.
 The project has an ambitious goal with a wide scope.
-It is known for its shell-oriented blog and the developer is very responsive and active with shell-related posts.
+It is known for its [[https://oilshell.org/blog][shell-oriented blog]] and the developer is very responsive and active with shell-related posts.
 
 While there are multiple components in this project, we're focusing on two: *OSH and Oil shell*.
 
@@ -29,27 +35,83 @@ While there are multiple components in this project, we're focusing on two: *OSH
 
 
 
+* Overview of the Oil language
 
-* Tips and tricks
+Oil is an entirely new programming language built from scratch.
+It adds a hint of familiarity with Bash and takes a big queue of Python.
 
-- You can make an array so far with ~var x = %()~.
+The following block should be sufficient for jogging your memory and a quick glance of what Oil is all about.
 
-- To push for an array, use ~push :ARRAY_VAR $ITEMS...~.
+#+begin_src oil
+var title = "Catenbury's Tale"
+setvar title = "MS Fnd in a Lbry"
 
-- Oil has two main syntactic modes: command and expression mode.
-  Command mode is more like Bash while expression mode is more like Python.
-  This is how Oil can make a rich and expressive scripting that is closer to the shell.
+var keywords = %("metadata" "information overload" "information retrieval")
+push :keywords "information organization"
 
-- Oil will go into expression mode in few places:
-  + In RHS of an assignment expression.
-  + In ~if~ statements (e.g., ~if ($EXPR) { echo "WHOA" }~).
-  + Interpolated Oil expressions with ~$[]~ (e.g., ~$[true]~, ~$[len(ARGV)~).
+var metadata = {}
+setvar metadata['author'] = "Hal Draper"
+setvar metadata['year'] = 1961
 
-- Oil can parse different modes, making it possible to create DSLs and to deal with the complex syntax of the shell.
+proc kebab_case(word) {
+  write -- $word | sed -E -e 's/./\L&/g' -e 's/s+/-/g' -e 's/[^.a-z0-9-]//g' -e 's/-+/-/g'
+}
 
-- You can also create an array with ~[]~.
-  The ~%()~ is more like for an array of objects.
+var title_slug = $(kebab_case $title)
 
-- You can enter into expression mode with ~_~.
-  Although, this simply ignores the expression and will not be printed.
-  Still pretty useful.
+{
+  var keywords = %("alternate universes" "aliens" "spaceships")
+  for i in @keywords { echo "keyword: $i" }
+}
+for i in @keywords { echo "keyword: $i" }
+#+end_src
+
+
+** Arrays
+
+Arrays are mostly similar to Bash arrays except you have more options.
+
+- You can create a heterogenous list containing different types of data — e.g., ~var a = ['Dogs', 24, true ]~.
+  Useful for JSON compatability.
+
+- A homogenous array is useful for data consistency.
+  It can accept a list of data of the same type — e.g., ~var b = %("foo" "bar" "baz")~.
+
+You can iterate through an array with a loop.
+
+#+begin_src oil
+for i in @a { echo "word: $i" }
+#+end_src
+
+You can also add an item to the array with =push= keyword.
+
+#+begin_src oil
+push :a "biz"
+
+# The expression mode equivalent
+# You can also append associative arrays due to the expressiveness of the mode
+_ a.append("biz")
+#+end_src
+
+
+
+
+* Expression and command mode
+
+- There are different ways [[https://www.oilshell.org/release/latest/doc/syntactic-concepts.html][how Oil can create an expressive language with the shell]].
+  It can parse different sublanguages with different lexer modes.
+  But there are dominantly two modes to keep in mind: expression and command mode.
+
+- simply put:
+  + *command mode is similar to Bash expressions*
+  + *expression mode is akin to Python expressions*
+
+- The addition of a Python-like expressiveness is how Oil can make a rich scripting exprience.
+
+- command mode is what you see most of the time
+- expression mode is activated when:
+  + right-hand side of === — e.g., ~var a = 234~
+  + the =_= keyword where output will be ignored — e.g., ~_ a.append(b)~
+  + the === command where it will print the results — e.g., ~= 53~
+  + you can interpolate expression mode expressions with =$[]= — e.g., ~echo $[4 + 43 + a]~, ~echo $[len(ARGV)]~
+  + in =if= statements — e.g., ~if (true) { echo "WHOA" }~

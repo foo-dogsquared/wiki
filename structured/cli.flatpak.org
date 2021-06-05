@@ -1,0 +1,62 @@
+#+title: Flatpak
+#+date: "2021-06-04 07:39:11 +08:00"
+#+date_modified: "2021-06-04 07:54:18 +08:00"
+#+language: en
+
+
+Flatpak is a cross-Linux-distro deployment system commonly used for packaging desktop applications.
+
+
+
+
+* Options
+
+Flatpak has a similar interface to Git being composed of subcommands with specific options.
+
+- =-v, --verbose= - just print more information
+
+Most of the query-related subcommands (e.g., =search=, =list=) has the following options.
+
+- =--columns=${COLUMNS}= - print the columns listed; useful for extracting the information you want
+                           you can find the related fields from the respective manual page
+
+
+
+* Examples
+
+Flatpak has a lot of stuff so we'll bring some examples to get started.
+
+
+** Basic usage
+
+Or at least how I think it would be for a starting user.
+
+#+begin_src shell
+flatpak search ferdi
+
+flatpak install ferdi
+
+flatpak uninstall ferdi
+#+end_src
+
+
+** Package installation interface
+
+[[id:4eb1f8b1-bc12-4a6c-8fa4-20e4c3542cf2][fzf]] is the star here.
+
+#+begin_src shell
+flatpak search ${QUERY} --columns=application \
+    | fzf --multi --prompt "Choose Flatpak package(s) to install > " \
+    | xargs --replace="{}" flatpak install --noninteractive {}
+#+end_src
+
+
+** Package uninstallation interface
+
+If there's one for installing packages, there's also one for removing them.
+
+#+begin_src shell
+flatpak list ${QUERY} --columns=application \
+    | fzf --multi --prompt "Choose Flatpak package(s) to remove > " \
+    | xargs --replace="{}" flatpak uninstall --noninteractive {}
+#+end_src

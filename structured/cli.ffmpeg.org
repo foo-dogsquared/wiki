@@ -1,7 +1,8 @@
 #+title: FFmpeg
 #+date: "2021-05-09 16:40:50 +08:00"
-#+date_modified: "2021-05-31 00:35:48 +08:00"
+#+date_modified: "2021-06-04 17:01:26 +08:00"
 #+language: en
+#+property: header-args :eval no
 
 
 The swiss army knife for interacting with multimedia files (except images because ImageMagick).
@@ -72,7 +73,17 @@ ffmpeg -devices
 
 ** Capture video device
 
-#+begin_src
+#+begin_src shell
 # Assuming /dev/video0 is your webcam.
 ffmpeg -f video4linux2 -i /dev/video0 cringe-at-yourself.mpg
+#+end_src
+
+
+** Extract a segment from a file
+
+The timestamps are essentially seeking to a file.
+For more information, see [[https://trac.ffmpeg.org/wiki/Seeking][FFmpeg documentation]].
+
+#+begin_src shell
+ffmpeg -nostdin -i $INPUT -ss 00:05:22 -to 00:22:43 $OUTPUT
 #+end_src

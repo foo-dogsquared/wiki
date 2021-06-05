@@ -3,7 +3,7 @@
 :END:
 #+title: The basics of org-babel
 #+date: "2021-05-19 18:54:37 +08:00"
-#+date_modified: "2021-05-19 21:06:37 +08:00"
+#+date_modified: "2021-06-04 11:11:18 +08:00"
 #+language: en
 
 
@@ -62,7 +62,7 @@ return [
 | Cabbages | 63 |
 
 To pass values between different code blocks, you have to give the blocks a name.
-The previous code block was given a name ~data~ and passed it to the next block.
+The previous code block was given a name =data= and passed it to the next block.
 
 #+begin_src python  :results value  :var o=data
 return o[0]
@@ -71,6 +71,19 @@ return o[0]
 #+results:
 | Monty | 45 |
 
+
+
+
+* Source code evaluation
+
+The header property for executing a source code block is =eval=.
+It can accept either the following values:
+
+- =no= to disable evaluation of the code block.
+- =query= will prompt to enable evaluation first.
+- =never-export= will not show the results in export but can still interact with it from the raw source.
+
+By default, it will enable evaluation so you have to explicitly define it (or set it in your Emacs config).
 
 
 

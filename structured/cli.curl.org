@@ -1,0 +1,63 @@
+#+title: cURL
+#+date: "2021-06-04 10:56:52 +08:00"
+#+date_modified: "2021-06-04 11:23:39 +08:00"
+#+language: en
+#+property: header-args  :eval no
+
+
+The all-time favorite client-side networking tool for basic stuff.
+It is seriously one of the best free and open-source tool out there with the plethora of protocols, leading implementation for various protocols such as HTTP3, and a lot of configurable options to fully control your request.
+
+
+
+
+* Synopsis
+
+#+begin_src
+curl [option...] [URL...]
+#+end_src
+
+cURL supports creating requests with different protocols.
+Among them are HTTP, Gopher, DICT, and simple file.
+To see more, you can view the cURL manual page (i.e., ~man curl.1~) and see the protocols section.
+
+
+
+
+* Options
+
+- =-o [FILE], --output [FILE]= - save the results in the given file
+- =-O, --remote-name= - save the results as the remote name; useful for downloading
+- =-L, --location= - if there redirects, follow them; mainly used in HTTP
+
+
+
+
+* Examples
+
+This is a massive tool with a massive history so a massive list may be justified for this one.
+
+
+** Basic usage
+
+#+begin_src bash
+# It will be recognized as a request to an HTTP endpoint in 'gnu.org'.
+curl https://gnu.org
+
+# Save the result in a file.
+curl https://foo-dogsquared.github.io --output filename
+#+end_src
+
+
+** Go-to command for downloading files with cURL
+
+#+begin_src bash
+curl -LO https://cdn.media.ccc.de/events/lac/lac18/h264-hd/lac18-24-eng-Carla_Plugin_Host_-_Feature_overview_and_workflows_hd.mp4
+#+end_src
+
+It can be also written like the following code block.
+Useful when scripting to make it readable.
+
+#+begin_src bash
+curl --location --output-name https://cdn.media.ccc.de/events/lac/lac18/h264-hd/lac18-24-eng-Carla_Plugin_Host_-_Feature_overview_and_workflows_hd.mp4
+#+end_src
