@@ -3,7 +3,7 @@
 :END:
 #+title: Fundamentals of music theory
 #+date: "2021-04-29 18:27:29 +08:00"
-#+date_modified: "2021-05-16 13:57:06 +08:00"
+#+date_modified: "2021-05-18 15:26:56 +08:00"
 #+language: en
 #+source: https://www.coursera.org/learn/edinburgh-music-theory/
 
@@ -61,7 +61,7 @@ Keep in mind this course mainly deals with western musical concepts and notation
   + different tonics = different pattern of semitones and tones = different quality and flavor = different melodies
   + each of tonics in diatonic scale is called a mode (e.g., A is called Aeolian mode, E is Phrygian)
   + Aeolian mode is a natural minor mode (has a pattern of TSTTSTT)
-  + Ionian mode is a natural major mode (has a pattern of TSTTSTT)
+  + Ionian mode is a natural major mode (has a pattern of TTSTTTS)
 
 #+begin_src lilypond  :file modes.png
 <<lilypond-paper-config>>
@@ -103,3 +103,24 @@ Keep in mind this course mainly deals with western musical concepts and notation
 
 
 * Week 2
+
+- there are mainly two accidentals
+  + a sharp will increase a note by one semitone
+  + a flat will decrease a note by one semitone
+
+#+begin_src lilypond  :file accidentals.png
+<<lilypond-paper-config>>
+\relative c' { cis dis }
+#+end_src
+
+#+results:
+[[file:assets/2021-04-29-18-27-29/accidentals.png]]
+
+#+begin_src lilypond  :file accidental-with-chords.png
+<<lilypond-paper-config>>
+\chordmode { cis dis eis fis gis ais bis cis' }
+\chordmode { g a b c' d' e' fis' g' }
+#+end_src
+
+#+results:
+[[file:assets/2021-04-29-18-27-29/accidental-with-chords.png]]

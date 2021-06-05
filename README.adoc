@@ -12,7 +12,7 @@ It primarily uses the link:https://zk.zettel.page/[Zettelkasten note-taking meth
 Fun.
 
 Slowly, this is turning into a monorepo for whatever findings I could find.
-Ehh, I mean why not? ¯\_(ツ)_/¯
+Ehh, I mean why not? ¯\\_(ツ)_/¯
 
 [NOTE]
 ====
@@ -30,7 +30,7 @@ Fortunately for me, most of the private files are connected with each other (a s
 == Why set up like this?
 
 We need to focus on why did I need to make the structure like this.
-For this question, I answer with the outcomes that I expect from the note-taking system I eventually settled with.
+In other words, **what is the purpose**?
 
 - I want ideas to be searched and woven so easily with the rest.
 - I want to accumulate my reading effectively.
@@ -38,6 +38,7 @@ For this question, I answer with the outcomes that I expect from the note-taking
 - I want to easily integrate spaced repetition and randomness to encourage improvement on my notes.
 
 This project is the result of that with org-roam, Anki, and eventually more (preferably less) tools to stick around and gain ideas from.
+In a way, THIS is my zettelkasten, digital garden, whatever-thingamajig-you-want-to-call-it.
 
 
 
@@ -69,8 +70,6 @@ footnote:[You can enable the direnv module from the Doom Emacs config.]
 
 === Setting up
 
-Here's the current project structure.
-
 This wiki uses org-roam v2 as the main note-taking system.
 As of 2021-05-04, it is yet to reach v2 but it is underway with its link:https://github.com/org-roam/org-roam/releases/tag/2.0.0a1[first alpha release].
 The notes should've been adapted for v2 by now.
@@ -84,10 +83,43 @@ It also has a project-specific functions and variables in link:./config.el[`./co
 You can load it in your `init.el`, just make sure you included it somewhere.
 If you've set `enable-local-variables` to `:safe` or any value that makes Emacs to ignore them, you may want to configure related variables for it to work.
 
-If you have direnv installed, you can also enable automatic shell environments by allowing `.entry` to set it up for you.
+If you have direnv installed, you can also enable automatic shell environments by allowing it to set it up for you.
 Just run `direnv allow`!
 
-If you have link:https://github.com/target/lorri[lorri] installed, you're better to go with the faster startup for the environment.
+If you have link:https://github.com/target/lorri[lorri] installed, you're better to go with the faster startup when setting up the environment.
+
+
+
+
+== Project structure
+
+Here's the current project structure.
+
+[src, tree]
+----
+wiki
+├── assets/
+├── cards/
+├── daily/
+├── structured/
+├── *a bunch of org documents*
+├── config.el
+├── index.org*
+├── Makefile
+├── README.adoc
+├── references.bib
+└── shell.nix
+----
+
+For full details, see <<Conventions>>.
+But for summary:
+
+* Separate notes by purpose.
+Separate as may be, they can freely link other notes.
+
+* Evergreen notes are the top-level notes.
+
+* Each type of note has an asset folder where all of the stuff linked from the note.
 
 
 
@@ -101,17 +133,31 @@ If you have link:https://github.com/target/lorri[lorri] installed, you're better
 ** link:https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions/[Admonition blocks] — e.g., `\#+begin_important`, `#+begin_tip`, `#+begin_warning`.
 
 * Mainly uses https://zk.zettel.page/types-of-notes[the convention of note categories found in zk.zettel.page].
-That said, not all notes are going to be self-contained.
-footnote:[Also, not all notes have the same structure so that makes it complicated.]
+But in practice, the separation is a bit blurry so feel free to combine them in some way.
++
+The entire point is separating the notes by purpose.
+That said, just don't sweat it too much when you find something that doesn't belong there.
+Ask yourself if a note really serves its intended purpose.
 
 ** Fleeting notes are in link:./daily/[`./daily/`].
 The fleeting notes are ignored since they're meant to processed on the daily so having them in the worktree will make a messy history.
+It is basically my inbox for various things: my random realizations, ideas, and whatnot.
 
-** Literature notes are in link:./literature/[`./literature/`].
-The literature notes may be a combination of Org roam notes and other notes from previous set of notes.
+** My "traditional" notes is at link:./structured/[`./structured/`].
 Practically, this is your 2D system of notes — the hierarchical notebook.
+All notes here are named with the safe version of the filename (in kebab-case).
+The filename is also just the normal path name except with the directory separator replaced with the dot (e.g., `cookbook/introduction-to-builder-pattern.org` will be `cookbook.introduction-to-builder-pattern.org`).
+This allows to make a directory of flat files while representing the schema of your notes.
+Pretty handy.
 
-** The permanent and index notes are in the root folder.
+** Literature notes are in my hierarchical notebooks.
+The file name are prefixed with `literature`.
+These are notes from a specific resource (e.g., an article, talk, video, post, tweet) intended for recording the key ideas from it.
+Eventually, the ideas will be added to the evergreen notes.
+Furthermore, they shouldn't be referenced anywhere.
+Naming them is the same as the one in my traditional notes.
+
+** The root folder contains my evergreen notes.
 
 ** Additional types of notes can be put in a separate folder (e.g., cards, microposts).
 There is not set hierarchy but be sure to create a new type by purpose.
@@ -139,8 +185,6 @@ It is managed with link:https://www.zotero.org/[Zotero] with the link:https://gi
 * A creation datetime and a modification datetime is a cruicial part of my notes.
 It lets me know how up-to-date my notes are without relying on the filesystem metadata because I copy them carelessly, not to mention how various tools deal with them differently.
 The modification datetime is handled with link:https://www.gnu.org/software/emacs/manual/html_node/emacs/Time-Stamps.html[timestamps] automatically.
-Here's an example Doom Emacs configuration for that:
-+
 [source, elisp]
 ----
 (after! org
@@ -158,6 +202,8 @@ Just see my link:https://github.com/foo-dogsquared/dotfiles/tree/75de71b4d0dfe79
 It contains anything that a document should attach.
 Each note should have its own asset folder with no note touching another notes'.
 The asset folder names should be the same as the filename of the org-mode document — e.g., `2021-04-06-15-04-11.org` should have an asset folder in `./assets/2021-04-06-15-04-11/`.
+
+** If one of the files is being linked from more than one note, you can move the file out in the top-level of the asset folder.
 
 ** I sometimes draw a visual aid just to strengthen my learning as well as an excuse to use my graphics tablet and I want to store them in a reasonable location without dumping it like in a landfill.
 Unfortunately, this means having to scour the assets folder like a clueless babboon holding a hammer because all of it is named after a timestamp but I can deal with it.
