@@ -3,8 +3,9 @@
 :END:
 #+title: BorgBackup
 #+date: "2021-05-30 21:40:24 +08:00"
-#+date_modified: "2021-06-04 21:47:36 +08:00"
+#+date_modified: "2021-06-05 09:11:53 +08:00"
 #+language: en
+#+property: header_args :eval no
 #+property: header_args:bash  :results silent  :exports code
 
 
@@ -63,7 +64,7 @@ ${REPOSITORY_URL}::${ARCHIVE_NAME}
 You can also refer to a name dynamically with placeholders.
 
 #+begin_src
-/home/foo-dogsquared/backup::{hostname}-{user}-{now}
+/home/{user}/backup::{hostname}-{user}-{now}
 #+end_src
 
 For more information, you can see the related section for Borg placeholders.
@@ -125,8 +126,8 @@ borg extract --verbose --progress ${REPO_PATH}::{hostname}-{now:%F-%T-%z} ~/Docu
 Better be safe than sorry.
 Here's the safe backup in all of its glory in Bash.
 
-#+begin_src bash  :file safe-borg-backup  :shebang '/usr/bin/env bash'
-if $# -eq 0; then echo "No directories and files to be saved." && exit 1; fi
+#+begin_src bash  :tangle (my/concat-assets-folder "safe-borg-backup")  :shebang "#/usr/bin/env bash"
+if $# -eq 1; then echo "No directories and files to be saved." && exit 1; fi
 
 locations=$@
 
@@ -134,6 +135,8 @@ borg create --verbose --stats --compression lz4 --exclude '**/.node_modules' ::{
 borg check --verbose --verify-data
 borg prune --verbose --keep-daily 7 --keep-hourly 7 --keep-weekly 6 --keep-monthly 6
 #+end_src
+
+#+results:
 
 Since the script only lets you enter arguments used for saving into the archive, you have to use environment variables.
 

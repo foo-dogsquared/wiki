@@ -1,11 +1,12 @@
 #+title: Oil shell
 #+date: "2021-05-09 16:40:50 +08:00"
-#+date_modified: "2021-06-04 21:55:38 +08:00"
+#+date_modified: "2021-06-05 16:36:01 +08:00"
 #+language: en
+#+property: header-args:oil  :eval no
 
 
 For future references, this note mainly notes Oil v0.8.11 and later versions.
-
+Also, we'll be comparing to Bash shell (src_bash[:eval yes  :results output]{bash --version}) as it is the most popular shell on the Unix world.
 
 
 
@@ -67,6 +68,33 @@ for i in @keywords { echo "keyword: $i" }
 #+end_src
 
 
+** Strings
+
+While strings are similar to Bash strings [fn:: Really more like Python strings.], there are subtle differences.
+Most notably, Bash splits the string when trying to do something.
+
+#+begin_src bash
+d='echo 3'
+e='echo "The quick brown fox jumps over the lazy dog."'
+
+parallel -- $d $e
+#+end_src
+
+It should throw an error because =parallel= interprets it as if it has 4 arguments due to the splitting — i.e., ~parallel -- echo 3 echo "The quick brown fox jumps over the lazy dog."~.
+The solution here is to quote the variables in evaluation (e.g., ~parallel -- "$d" "$e"~).
+
+Compare that to Oil...
+
+#+begin_src oil
+var d = 'echo 3'
+var e = 'echo "The quick brown fox jumps over the lazy dog."'
+
+parallel -- $d $e
+#+end_src
+
+If you want splitting, you could use =split= Oil function — e.g., ~@split(array_var)~.
+
+
 ** Arrays
 
 Arrays are mostly similar to Bash arrays except you have more options.
@@ -94,6 +122,24 @@ _ a.append("biz")
 #+end_src
 
 
+** Conditionals
+
+#+begin_src oil
+# Ternary conditionals
+echo $['dogs' if dogs == 'cute' else 'cats']
+
+# If-else statements
+if (4 == 5) {
+  echo "Alright, this is true."
+} elif (1 > 5) {
+  echo "Another condition?"
+} else {
+  echo "It seems you got me."
+}
+#+end_src
+
+
+
 
 
 * Expression and command mode
@@ -115,3 +161,13 @@ _ a.append("biz")
   + the === command where it will print the results — e.g., ~= 53~
   + you can interpolate expression mode expressions with =$[]= — e.g., ~echo $[4 + 43 + a]~, ~echo $[len(ARGV)]~
   + in =if= statements — e.g., ~if (true) { echo "WHOA" }~
+
+
+
+
+* Tips and tricks
+
+- Oil seems to evaluate in applicative order, evaluating only when the conditions passed — e.g., ~echo $['' + null if null else 'EEEEHHH']~ should print =EEEEHHH=.
+  + Just like most modern mainstream languages... nice.
+- Two operands of different types are considered unequal — e.g., ~'4' == 4~.
+  + You can use Python-like type conversions like =Int=, =Bool=, and =Str= — e.g., ~Int('4') == 4~.
