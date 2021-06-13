@@ -3,15 +3,20 @@
 :END:
 #+title: The basics of memory
 #+date: "2021-05-02 23:05:42 +08:00"
-#+date_modified: "2021-05-21 23:44:01 +08:00"
+#+date_modified: "2021-06-05 22:33:17 +08:00"
 #+language: en
 
 
-# TODO: working and long-term memory
 As for this note, we'll talk about the basics of memory neuroscientifically.
 
+
+
+
+# TODO: Practices on improving memory
+* Basic anatomy of the brain
+
 Remebering from our basic biology lessons, we know that the brain contains *neurons that store information*.
-These information can be connected together with *synapses that represents a web of thoughts* from the process of [[roam:Chunking]].
+These information can be connected together with *synapses that represents a web of thoughts* from the process of [[id:1e135aee-0464-4756-9f55-bbf12afe8254][Chunking]].
 It shows why [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]];
 indeed, we are very skilled in linking and jumping between ideas.
 You may have moments of suddenly remembering that you forgot to bring something while in the middle of your nap or a Eureka! moment where you suddenly understand why the quadratic formula makes sense.
@@ -19,3 +24,22 @@ You may have moments of suddenly remembering that you forgot to bring something 
 The memory can be compared to the muscles as it strengthens the more you use and decays the more you neglect.
 In order for this to work, however, you need to set some time for the neural structure to harden first.
 This is why cramming doesn't work and [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]] is often considered a better method.
+
+
+
+
+* Working and long-term memory
+
+Our brain has a lot of ideas and random thought that pass by each day, it also has a large space of information we can store to accommodate.
+While we can categorize many parts of the memory, we'll focus with the two main parts:
+
+- *The working memory contains all of the immediate information we have for the task at hand.*
+  This is our mental scratchpad or our working desk containing all of the tools and materials needed for the project.
+
+- *The long-term memory contains all of the information we know.*
+  This is like our notebook, formally linking all of the information with each other.
+  Continuing with the working desk analogy, this is our warehouse of our tools and materials.
+
+With time, our memory consolidates, becoming more familiar with the concept.
+This is when we get out of our beginner phase to a semi-expert.
+When we retrieve a memory, it can be strengthened and even altered forming false memories.

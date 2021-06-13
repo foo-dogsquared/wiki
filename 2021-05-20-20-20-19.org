@@ -3,7 +3,7 @@
 :END:
 #+title: Involuntary attention switch is good for preventing tunnel vision
 #+date: "2021-05-20 20:20:19 +08:00"
-#+date_modified: "2021-05-20 20:23:31 +08:00"
+#+date_modified: "2021-06-05 11:13:27 +08:00"
 #+language: en
 
 
@@ -14,4 +14,4 @@ This is why interleaving can sometimes be helpful in exploring uncharted territo
 - we sometimes slip into this involuntarily, this ADHD-like tendency to switch our attention is good for getting new perspective even when we don't want to
 - the more time we spent on the environment that we're comfortable with, the more chance we'll be entrenched in an idea
 - for example, constantly shopping for a better tool or checking for the hip new programming language is still a good practice to get a new perspective for improving your workflow or your programming ideas
-- doesn't mean lack of commitment, you still have to strive to improve your own (see [[roam:Every copy of the techniques is personalized]])
+- doesn't mean lack of commitment, you still have to strive to improve your own (see [[id:d885e93b-f919-4338-a6b9-3438538e18c0][Every copy of the techniques is personalized]])

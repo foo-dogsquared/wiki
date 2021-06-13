@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       df20e58b-6d38-4ace-8468-413bc708c772
+:END:
+#+title: Most of the work is done from smaller amount of effort
+#+date: "2021-05-22 11:16:25 +08:00"
+#+date_modified: "2021-05-22 11:17:30 +08:00"
+#+language: en
+
+
+- a principle applicable in many places:
+  + learning 20% of a skill is enough to get started e.g., illustration, programming, music production
+  + most of the contributions in an open-source project is usually done by a small group
+- this is why it is important to [[roam:Start small and improve later]]
+- this is why some may prefer simpler tools and methods because a lot of what they want is already done
+- getting the final 20% would require more effort and when done incorrectly, you could go into some trouble
+  + bikeshedding
+  + in learning, you could be overlearning
+  + in development, you could optimize to the point of
+  + you may have done configuring your editor in a matter of days reaching the ideal workflow

@@ -3,15 +3,15 @@
 :END:
 #+title: We know more compared to what we understood
 #+date: "2021-05-17 08:47:37 +08:00"
-#+date_modified: "2021-05-17 08:59:18 +08:00"
+#+date_modified: "2021-05-31 18:55:53 +08:00"
 #+language: en
 
 
-# TODO: Improve note
 While [[id:114b7874-6a20-49c8-be2c-46970c7110dc][Information is only acquired when you try to make sense of it]], we just know more compared to what we understood.
 It doesn't mean it's a bad thing as [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]].
 The amount of things is too great that deserve our limited attention.
 
-- we can still make sense since we are more associative than structured
-- the skill of referencing through can help starting to understand
-- note-taking can help increase
+We can still make sense of the things we know since [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]].
+Our associative thinking along with our intuition is enough to make sense of things, we can always know the details later.
+This is where we [[id:9a11ef31-b2a7-43a9-a7a9-48f191838c6e][Prefer referencing over remembering]].
+But for the little things, it helps to write down what we've remember.

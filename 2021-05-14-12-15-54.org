@@ -3,7 +3,7 @@
 :END:
 #+title: Information is only acquired when you try to make sense of it
 #+date: "2021-05-14 12:15:54 +08:00"
-#+date_modified: "2021-05-17 08:56:27 +08:00"
+#+date_modified: "2021-06-11 11:05:00 +08:00"
 #+language: en
 
 
@@ -15,7 +15,9 @@ It will never start unless you experiment.
 One of the simplest way to start is to sit down, [[id:b318dc2b-5fa1-48ff-9d33-6fbbdee46a2f][Write down the simplest possible example]], and work your way through those examples.
 
 This is also applied when we collect knowledge: collecting books, downloading eBooks, bookmarking articles, and archiving resources.
-When we never used them, it is just the same as window shopping for that wanted thing except we bought it and just an arm's length away when we want to use it.
+[[id:6b0e6b75-410f-42a3-8921-bcc4589b2d2a][Collecting information only feels like progress]].
+We never used them.
+It is just the same as window shopping for that wanted thing except we bought it and just an arm's length away when we want to use it.
 
 That doesn't mean we should understand every bit of information coming our way.
 In the end, [[id:864a9242-eb10-44ad-81b7-c237276523e5][We know more compared to what we understood]].
