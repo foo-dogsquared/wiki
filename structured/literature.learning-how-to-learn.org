@@ -3,7 +3,7 @@
 :END:
 #+title: Learning how to learn
 #+date: "2021-04-04 11:24:56 +08:00"
-#+date_modified: "2021-05-12 14:10:04 +08:00"
+#+date_modified: "2021-06-05 22:33:37 +08:00"
 #+language: en
 #+source: https://www.coursera.org/learn/learning-how-to-learn
 #+tags: courses personal-info-management
@@ -370,6 +370,7 @@ Nonetheless, there are ways how to start and override your habits.
 
 
 * Takeaways from "Interview with Dr. Robert Bilder on creativity and problem solving"
+
 - The criteria of creativity mostly applies to what is unique to you.
   It doesn't mean that others solve it that you're not creative as long as you've solved it yourself.
 

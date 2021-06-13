@@ -1,0 +1,103 @@
+#+title: Podman
+#+date: "2021-06-10 11:51:26 +08:00"
+#+date_modified: "2021-06-10 16:23:23 +08:00"
+#+language: en
+#+property: header-args  :eval no
+
+
+Podman is a daemonless container engine.
+It was also designed to be a drop-in replacement for Docker with similar command-line interface and everything.
+Thus, it is also compatible with Docker images and configurations (i.e., Dockerfiles).
+
+
+
+
+* Configuring to include =docker.io=
+
+By default, Podman focuses on making the user concious about multiple registries outside DockerHub.
+Thus, it doesn't have any by default.
+You have to configure it first.
+For more information, see the =podman.1= manual page and the linked pages.
+
+Here's an incredibly simple example configuration that includes DockerHub.
+
+#+begin_src toml
+unqualified-search-registries = ['docker.io']
+#+end_src
+
+
+
+* Subcommands
+
+Podman has Git-style command-line interface with subcommands and exclusive options.
+
+- =build= is for building images from the configuration — e.g., ~podman build .~ will build an image from the current directory with the Dockerfile.
+  + =-t, --tag [NAME]= attaches a tag to the image.
+  + =-f, --file [FILE]= sets the name of the Dockerfile to be built from.
+
+- =run= will create a container from an image.
+  + =-d, --detach= will make the process run in the background.
+  + =-it= will make an interactive shell.
+  + =-p, --publish= exposes the port of the image to the host.
+
+- =tag= will tag an existing image.
+  Useful for correcting tags for pushing into a remote registry.
+
+- =image= is anything about interaction with images.
+  In fact, a lot of the subcommands presented so far are aliases with =image= being the original — e.g., =image tag= vs =tag=, =image pull= vs =pull=, =image rm= vs =rmi=.
+
+
+
+
+* Examples
+
+Podman is a big tool so it needs a big list of examples.
+
+
+** Quickstart for pushing a container
+
+As with big tools, comes with a big quickstart.
+
+#+begin_src shell
+# Builds an image from the Dockerfile of the current directory.
+podman build --tag todo-list-web-app .
+
+# List the images to see if our app image has been built.
+podman image list
+
+# Assuming the app creates an HTTP server at port 5000, we'll expose it to the host, making it accessible from there.
+podman run -d -p 5111:5000 todo-list-web-app
+
+# See if we did run a containerized version of our app.
+podman container list
+
+# Tag the image with the convention seen in Docker registry.
+podman tag foodogsquared/python-helloworld:v1.0.0
+
+# Push the image to the Docker registry (assuming you've already logged in to Docker registry).
+podman push foodogsquared/python-helloworld
+#+end_src
+
+
+** Interactive selection of removing images
+
+What would be an example script without something like [[id:4eb1f8b1-bc12-4a6c-8fa4-20e4c3542cf2][fzf]]?
+
+#+begin_src bash
+podman image list --format "{{.ID}} {{.Repository}} {{.Tag}}" \
+    | fzf --multi --prompt "Choose images to remove > " \
+    | awk '{print $1}' \
+    | xargs podman image rm
+#+end_src
+
+
+** Interactive image search and install
+
+Yes, another one with fzf...
+
+#+begin_src bash
+podman image search --format "{{.Index}} {{.Name}}" alpine \
+    | fzf --multi --prompt "Choose images to install > " \
+    | awk '{print $2}' \
+    | xargs podman image pull
+#+end_src

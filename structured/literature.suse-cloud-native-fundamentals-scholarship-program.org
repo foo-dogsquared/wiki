@@ -1,0 +1,83 @@
+:PROPERTIES:
+:ID:       21b0625d-56a0-41cf-b7b6-d95aba4a711a
+:END:
+#+title: SUSE Cloud native fundamentals scholarship program
+#+date: "2021-06-07 18:21:19 +08:00"
+#+date_modified: "2021-06-10 19:38:02 +08:00"
+#+language: en
+
+
+A course from Udacity with SUSE from their scholarship program.
+
+Some things to keep in mind:
+
+- Required to interact with the [[https://susecloudchallenge.slack.com/][student community]]
+- [[https://sites.google.com/udacity.com/suse-cloud-native-foundations/home][Hub for all course-related information]]
+
+
+
+* Lesson 1 and 2
+
+- There is a dedicated organization for cloud-related called the Cloud Native Computing Foundation (CNCF).
+  Among the list of projects, they have Kubernetes and Docker.
+
+- While cloud-native tools are widely adopted, you need to consider the stakeholders.
+  From a business perspective, it needs to represent agility and growth.
+  From a technical perspective, it needs to present automation and observability.
+
+- Application architecture:
+  + One way to construct an application is with the *monolith structure where all of the components are stored in a monorepo*.
+  + Another is through *microservice architecture where each component can live in its own repository*.
+
+#+name: Architecture comparison
+| Monolith                          | Microservices                 |
+|-----------------------------------+-------------------------------|
+| Single repository                 | Multiple repositories         |
+| Sequential                        | Concurrent                    |
+| Has to be reproduced holistically | Only reproduces the component |
+| One delivery pipeline             | Multiple pipelines            |
+
+Best practices for application deployment:
+
+- *health checks enable easier way of making sure each component is functional*;
+  usually implemented as an HTTP endpoint (e.g., =/status/=)
+
+- *metrics track the individual counts for each component* from the number of logins, how many times the user has reach the interface, etc.
+
+- *logs are the most important component enabling easier debugging*;
+  this process could be passively printing to stdout/stderr or actively logs through a log handler;
+  oftentimes, log levels are used to easily identify the type of information a developer may need — e.g., debug, info, warn, error, fatal;
+  furthermore, it is often recommended to attach a log with a timestamp
+
+- *tracing enables easier debugging by recording certain information to make reproducible steps*;
+  oftentimes, these involves recording the number of times to call a function or indicating whether it entered a state
+
+- implementing to *record resource consumption makes sure that the application is ready to fight while not going above certain limits*;
+  these often involves knowing the upper boundary of the network bandwidth and CPU consumption, creating benchmarks or stress tests for the application
+
+- to make it easier to memorize, know the word "HuMLTR"
+
+
+
+
+* Lesson 3
+
+- containers versus virtual machines
+  + virtual machines are software that emulates the full stack of a computer including the operating system, applications, and hardware
+  + containers are similar to virtual machines except they have less components — e.g., there is no need for hardware emulation, the operating system is removed
+  + by their nature, containers are lightweight compared to virtual machines
+  + nowadays, both features make use of OS-level virtualization — e.g., chroot, FreeBSD jails, Linux containers (LXC)
+
+- Docker is one of the more popular platforms for containers;
+  as a platform, it is composed of a daemon that has to be activated first before you can do container stuff and also hosts a [[https://hub.docker.com/][large library of images]] to make as a foundation
+
+- an application can be packaged with Docker images as a distribution method — e.g., [[https://github.com/ArchiveBox/ArchiveBox][ArchiveBox]]
+
+- container workflow: configuring what image to create, then build an image from the configuration (i.e., Dockerfile), run the image for testing purposes, tagging it, then pushing the image to a registry
+
+- while managing containers is viable, you may have to manage a lot of containers;
+  while possible, it does scale a lot for the developer;
+  for this, you can use a container orchestrator
+
+- among the list of orchestrators, we have Docker Swarm, Apache Mesos, and Kubernetes among others;
+  but for this topic, we'll go with Kubernetes as it is popular and also goes with the building blocks structure (a set of primitive blocks that can be customized to create more complex operations)

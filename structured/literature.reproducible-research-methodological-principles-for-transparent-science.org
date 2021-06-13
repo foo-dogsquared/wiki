@@ -3,7 +3,7 @@
 :END:
 #+title: Reproducible research: methodological principles for transparent science
 #+date: "2020-04-12 10:24:25 +08:00"
-#+date_modified: "2021-05-04 20:51:31 +08:00"
+#+date_modified: "2021-06-05 20:29:35 +08:00"
 #+language: en
 #+source :: https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/about
 #+tags: @fleeting courses research.reproducibility
@@ -63,7 +63,7 @@ Examples include Markdown, Asciidoctor, Org-mode, and reStructuredText.
 
 ** Search tools and techniques
 
-I've created a dedicated note (see [[file:2020-06-27-16-21-47.org][Search tools and techniques]]) on this as derived from this course.
+I've created a dedicated note (see [[id:799c5a72-2e8f-48a3-a22d-6657b9d1c05d][Apply search tools and techniques for your digital library]]) on this as derived from this course.
 
 With digital files comes digital tools (and some techniques) to help us in searching for our notes.
 These can vary from complex technologies to simple format-agnostic techniques that can make narrow searching an easy task.
@@ -129,7 +129,7 @@ As much as text formats are an attractive option, there are some tradeoffs you n
 Data are often big and text generally consume more memory since text has to be converted into binary format.
 If we want to take less, we can consider our data to be in binary in the first place.
 
-Binary formats are good for performance but there's a factor to consider it which is the [[file:2020-07-10-23-30-27.org][Endianness]].
+Binary formats are good for performance but there's a factor to consider it which is the [[id:0dff95e9-3bb0-41dc-9007-fc5e9c685728][Endianness]].
 They can be read differently depending on the computer architecture so it is best practice to announce the endianness in your paper.
 
 Text formats, however, has the upper hand of easily adding *metadata* to our data which is a must for reproducible research.
@@ -158,8 +158,7 @@ Certain options are trying to get around this:
 
 - Jupyter offer the option of delegating the calcuations to a supercomputer.
 
-- As of 2021-03-31, the Emacs community is trying to bring the editor into native code which in turn improves the situation for Org-Mode.
-[fn:: Even though Org-Mode can be separated outside of Emacs, one cannot deny it is one of the major parts of Emacs at this point.]
+- As of 2021-03-31, the Emacs community is trying to bring the editor into native code which in turn improves the situation for Org-Mode. [fn:: Even though Org-Mode can be separated outside of Emacs, one cannot deny it is one of the major parts of Emacs at this point.]
 
 Another solution is introducing a *workflow engine* that takes a *workflow* as input.
 A workflow is a language describes each step of the study into a digestible graph.

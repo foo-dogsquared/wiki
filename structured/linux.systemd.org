@@ -1,7 +1,8 @@
 #+title: Exploring systemd features
 #+date: "2021-05-20 22:37:22 +08:00"
-#+date_modified: "2021-05-31 17:59:28 +08:00"
+#+date_modified: "2021-06-09 10:29:31 +08:00"
 #+language: en
+#+property: header-args  :eval no
 
 
 systemd is a big tool for a big system.
@@ -43,7 +44,7 @@ systemd has different ways to denote time.
 Here's an example of setting a timer for an example backup service.
 The following timer unit sets it to execute every day at 18:00.
 
-#+begin_src
+#+begin_src ini
 [Unit]
 Description=A deduplicated backup from my computer
 Documentation=man:borg(1) https://borgbackup.readthedocs.io/
@@ -128,7 +129,7 @@ Though, this is oriented around service units, making it useful for one-time con
 
 Like most systemd-related binaries, this can configure in system- and user-level.
 
-#+begin_src
+#+begin_src shell
 # This will create a user-level service file with the given command as the task.
 systemd-run --user borgmatic --config emergency-config.yaml --verbose
 

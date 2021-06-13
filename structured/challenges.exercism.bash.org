@@ -3,7 +3,7 @@
 :END:
 #+title: Exercism track: Bash
 #+date: "2021-05-11 15:06:43 +08:00"
-#+date_modified: "2021-05-19 17:55:11 +08:00"
+#+date_modified: "2021-06-05 11:13:09 +08:00"
 #+language: en
 #+source: https://exercism.io/my/tracks/bash
 #+property: header-args  :cache yes
@@ -31,9 +31,6 @@ The objectives are simple:
 
 
 ** Solution
-:PROPERTIES:
-:ID:       e1446dd8-2392-4976-b5b2-4b00fd804928
-:END:
 
 I interpreted the comments and created a function out of it without realizing the "raw" script is completely fine.
 Whoops!
@@ -69,9 +66,6 @@ For example, 1997 is not a leap year, but 1996 is.
 
 
 ** Solution
-:PROPERTIES:
-:ID:       325bb8a2-c1d7-47b1-86b1-2b05992a35b8
-:END:
 
 I made it as a "raw" script this time realizing the thing.
 
@@ -118,9 +112,6 @@ For example: input: "cool" output: "looc"
 
 
 ** Solution
-:PROPERTIES:
-:ID:       aecdcdd1-1d66-47c8-bdcb-5f5006c3afc7
-:END:
 
 Well, it's certain very trivial.
 
@@ -160,9 +151,6 @@ Here are some examples:
 
 
 ** Solution
-:PROPERTIES:
-:ID:       4f4f9d86-5e28-4be5-8781-5d4d07a6e6dc
-:END:
 
 This could be solved with the [[https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion][parameter expansion]] syntax.
 
@@ -184,9 +172,6 @@ Because error handling is rather programming language specific you'll have to re
 
 
 ** Solution
-:PROPERTIES:
-:ID:       3c652bee-abbb-4390-9c83-571a220a550c
-:END:
 
 The test script is basically requiring to write a Bash script that requires one argument and printing =Hello, $ARG=.
 
@@ -273,21 +258,24 @@ If you want to build something using a Raspberry Pi, you'll probably use resisto
 Each resistor has a resistance value.
 Resistors are small - so small in fact that if you printed the resistance value on them, it would be hard to read. To get around this problem, manufacturers print color-coded bands onto the resistors to denote their resistance values.
 Each band acts as a digit of a number. For example, if they printed a brown band (value 1) followed by a green band (value 5), it would translate to the number 15. In this exercise, you are going to create a helpful program so that you don't have to remember the values of the bands. The program will take 3 colors as input, and outputs the correct value, in ohms. The color bands are encoded as follows:
-Black: 0
-Brown: 1
-Red: 2
-Orange: 3
-Yellow: 4
-Green: 5
-Blue: 6
-Violet: 7
-Grey: 8
-White: 9
+
+- Black: 0
+- Brown: 1
+- Red: 2
+- Orange: 3
+- Yellow: 4
+- Green: 5
+- Blue: 6
+- Violet: 7
+- Grey: 8
+- White: 9
+
 In resistor-color duo you decoded the first two colors. For instance: orange-orange got the main value 33. The third color stands for how many zeros need to be added to the main value. The main value plus the zeros gives us a value in ohms. For the exercise it doesn't matter what ohms really are. For example:
 
-orange-orange-black would be 33 and no zeros, which becomes 33 ohms.
-orange-orange-red would be 33 and 2 zeros, which becomes 3300 ohms.
-orange-orange-orange would be 33 and 3 zeros, which becomes 33000 ohms.
+- orange-orange-black would be 33 and no zeros, which becomes 33 ohms.
+- orange-orange-red would be 33 and 2 zeros, which becomes 3300 ohms.
+- orange-orange-orange would be 33 and 3 zeros, which becomes 33000 ohms.
+
 (If Math is your thing, you may want to think of the zeros as exponents of 10. If Math is not your thing, go with the zeros. It really is the same thing, just in plain English instead of Math lingo.)
 
 This exercise is about translating the colors into a label:

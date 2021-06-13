@@ -1,0 +1,335 @@
+#+title: Solutions to SUSE Cloud native fundamentals scholarship exercises
+#+date: "2021-06-08 23:23:35 +08:00"
+#+date_modified: "2021-06-12 12:24:19 +08:00"
+#+language: en
+
+
+I'll attempt to archive my answers to exercise here in one Org mode document.
+Let's see the reproducibility capability of this thing.
+
+For future references, the lessons have their repo.
+
+- [[https://github.com/udacity/nd064_course_1][Lesson 1 exercises]]
+
+
+
+
+* Note on my personal setup
+
+For this program, I'm using Podman instead of Docker.
+There are subtle differences when using with Podman — the biggest difference being it is not attached to the Docker registry by default.
+
+| Docker                 | Podman                           |
+|------------------------+----------------------------------|
+| =docker pull alpine=   | =podman pull docker.io/alpine=   |
+| =docker search alpine= | =podman search docker.io/alpine= |
+
+Since Podman is not attached to the Docker registry by default, you also have to specify this in Dockerfiles.
+
+#+begin_src docker
+FROM docker.io/alpine
+#+end_src
+
+You can make Podman search through DockerHub by setting it as one of the fallback registries.
+Just set =unqualified-search-registries= from your container configuration (see =containers-registries.conf.5= manual page for more details).
+
+#+begin_src toml
+unqualified-search-registries = ['docker.io']
+#+end_src
+
+Don't forget to login to DockerHub (e.g., ~podman login docker.io~).
+
+
+
+
+* Trade-offs for monoliths and microservices
+
+From the early stages of application development, it is fundamental to understand the requirements and available resources.
+Overall, these will contour the architecture decisions.
+
+Imagine this scenario: you are part of the team that needs to outline the structure of a centralized system to book flight tickets for different airlines.
+At this stage, the clients require the front-end(UI), payment, and customer functionalities to be designed.
+Also, these are the individual requirements of each airline:
+
+- Airline A - payments should be allowed only through PayPal
+- Airline B - payments should be disabled (bookings will be exclusively in person or via telephone)
+- Airline C - payments should be allowed to use PayPal and debit cards
+
+Using the above requirements, outline the application architecture.
+Also, elaborate your reasoning on choosing a microservice or monolith based approach.
+
+
+** Solution
+
+Considering that the airlines has an overlap of use cases particularly with Airline A and C both allowing Paypal, we're leaning into considering a microservice architecture.
+Each component in the service can then be configured individually by the development team of each airline.
+We could also take in the factor if one of the airline changes its requirements, we would only have to inspect one component.
+Having an monolith would be nice that all of the requirements of the airlines is wrapped in one package but if one team would have to maintain it, it would require them to go through the entire stack of each airline.
+In this case, they would have to do it three times.
+
+In my opinion, microservices would be a better choice.
+
+Here's the summarized outline of the application design we're going to develop.
+
+- Each component of the application would have to be stored with their own repository.
+
+- The front-end can be developed in parallel as we prioritize the payment system.
+  We can then improve it as we develop the other and ideally make it easy for the clients to modify it for their own needs.
+
+- The payment system can then be configured to integrate with different services or be disabled entirely.
+
+- Set up individual pipelines for each component as we can test them individually at different pace.
+
+
+
+
+* Endpoints for an application status
+
+This exercise can be located in the Lesson 1 exercise repo at =exercises/python-helloworld=.
+
+Extend the Python Flask application with /status and /metrics endpoints, considering the following requirements:
+
+-  Both endpoints should return an HTTP 200 status code
+-  Both endpoints should return a JSON response e.g. ={"user": "admin"}=. (Note: the JSON response can be hardcoded at this stage)
+-  The =/status= endpoint should return a response similar to this example: =result: OK - healthy=
+-  The =/metrics= endpoint should return a response similar to this example: =data: {UserCount: 140, UserCountActive: 23}=
+
+
+** Solution
+
+For the prerequisites, you can just install Flask and you're mostly done.
+For future references, here are the version of the tools I've used at the time.
+
+#+begin_src bash  :cache yes
+nix-shell -p 'python3Packages.flask' entr --run 'flask --version'
+#+end_src
+
+#+results[4674aa09a83cfbedff7e8991ba81b077dd0483d3]:
+: Python 3.8.9
+: Flask 1.1.2
+: Werkzeug 1.0.1
+
+As for the solution:
+
+#+begin_src python  :tangle (my/concat-assets-folder "python-helloworld-app.py")
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+@app.route("/status")
+def health_check():
+    return { "result": "OK - healthy" }
+
+@app.route("/metrics")
+def metrics():
+    return { "data": { "UserCount": 140, "UserCountActive": 23} }
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
+#+end_src
+
+
+** Findings after solution
+
+Comparing my solution from the solution shown in the video, I found out that Flask converts Python dictionaries into JSON.
+We're still good on that note.
+
+
+
+
+
+
+* Application logging
+
+Logging is a core factor in increasing the visibility and transparency of an application.
+When in troubleshooting or debugging scenarios, it is paramount to pin-point the functionality that impacted the service.
+This exercise will focus on bringing the logging capabilities to an application.
+
+At this stage, you have extended the Hello World application to handle different endpoints.
+Once an endpoint is reached, a log line should be recorded showcasing this operation.
+In this exercise, you need to further develop the Hello World application collect logs, with the following requirements:
+
+- A log line should be recorded the timestamp and the requested endpoint e.g. ="{{TIMESTAMP}}, {{ ENDPOINT_NAME}} endpoint was reached"=.
+
+- The logs should be stored in a file with the name =app.log=.
+  Refer to the logging Python module for more details.
+
+- Enable the collection of Python logs at the DEBUG level.
+  Refer to the logging Python module for more details.
+
+
+** Solution
+
+Continuing from [[Endpoints for an application status]], here is the resulting Python code.
+
+#+begin_src python  :tangle (my/concat-assets-folder "application-logging.py")
+import logging
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    logging.info("/ endpoint was reached")
+    return "Hello World!"
+
+@app.route("/status")
+def health_check():
+    logging.info("/status endpoint was reached")
+    return { "result": "OK - healthy" }
+
+@app.route("/metrics")
+def metrics():
+    logging.info("/metrics endpoint was reached")
+    return { "data": { "UserCount": 140, "UserCountActive": 23} }
+
+if __name__ == "__main__":
+    logging.basicConfig(format="%(asctime)s, %(message)s", level=logging.DEBUG, filename="app.log")
+    app.run(host='0.0.0.0')
+#+end_src
+
+
+
+
+* Docker for application packaging
+
+Create the Docker image for the Go web application and push it to DockerHub, considering the following requirements:
+
+Dockerfile:
+
+- use the =golang:alpine= base image
+- set the working directory to =/go/src/app=
+- make sure to copy all the files from the current directory to the container working directory (e.g. =/go/src/app=)
+- to build the application, use =go build -o helloworld= command, where =-o helloworld= will create the binary of the application with the name =helloworld=
+- the application should be accessible on port =6111=
+- and lastly, the command to start the container is to invoke the binary created earlier, which is =./helloworld=
+
+Docker image:
+
+- should have the name =go-helloworld=
+- should have a valid tag, and a version with a major, minor, and patch included
+- should be available in DockerHub, under your username e.g. =pixelpotato/go-helloworld=
+
+Docker container:
+
+- should be running on your local machine, by referencing the image from the DockerHub with a valid tag e.g. =pixelpotato/go-helloworld:v5.12.3=
+
+
+** First working solution
+
+This should be simple enough as we can see from the file structure.
+
+#+begin_src
+go-helloworld
+├── main.go
+└── README.md
+#+end_src
+
+As for the Dockerfile, I've made the following:
+
+#+begin_src docker
+FROM docker.io/golang:alpine
+
+COPY . /go/src/app
+WORKDIR /go/src/app
+RUN go build -o helloworld main.go
+CMD ["./helloworld"]
+#+end_src
+
+As for the requirements of the images and running the containerized app, we'll summarize it with the following Bash script.
+
+#+begin_src bash
+OWNER="foodogsquared"
+IMG="go-helloworld"
+VERSION="1.0.0"
+REMOTE_IMG="${OWNER}/${IMG}:v${VERSION}"
+
+# Build the image with the tag already in place.
+podman build --tag "$IMG" .
+
+# Run the packaged app.
+podman run -d -p 6111:6111 "$IMG"
+
+# Verify it's running.
+podman ps
+
+# Create another image to push it into the Docker registry with the proper naming.
+podman tag "$IMG" "$REMOTE_IMG"
+
+# Push the image to the Docker registry.
+podman push "$REMOTE_IMG"
+#+end_src
+
+
+** Findings after solution
+
+I guess my solution is close enough, I didn't realize the application should be configured its port to be exposed already in the Dockerfile and not when running the containerized app.
+Whoops!
+
+Apparently, there is the [[https://docs.docker.com/engine/reference/builder/#expose][=EXPOSE=]] instruction, just requiring a port number.
+I also tested the Dockerfile from the solution and it still gave me an error from build time.
+
+I also didn't realize the solution is pretty much how the instructions laid it out.
+At the end, it should look like the following code.
+
+#+begin_src docker
+FROM docker.io/golang:alpine
+
+WORKDIR /go/src/app
+ADD . .
+
+RUN go build -o helloworld main.go
+EXPOSE 6111
+CMD ["./helloworld"]
+#+end_src
+
+
+
+
+* Deploy your first Kubernetes cluster
+
+Now you should have a Kubernetes cluster up and running.
+Examine the cluster and identity of the following details.
+
+From the kubeconfig, identify:
+
+- the IP and port of the API server
+- authentication mechanism
+
+From the cluster using kubectl commands to identify:
+
+- endpoints of the control plane and add-ons
+- amount of nodes
+- node internal IP
+- the pod CIDR allocate to the node
+
+
+** Solution
+
+From my setup with the given Vagrantfile from the lesson repo — i.e., after installing k3s in the virtual machine — you can inspect the kubeconfig located at =/etc/rancher/k3s/k3s.yaml=.
+
+The IP and the port of the API server is visible from there.
+In my case, it is 127.0.0.1 at port 6443.
+
+As for the authentication mechanism, I'm not sure.
+Both the cluster and the user have an attached certificate data.
+It seems to be using matching certificate data from the user and the cluster.
+
+As for getting cluster-related information.
+
+- Getting the endpoints of the control plane and the add-ons through ~kubectl cluster-info~.
+- One way of getting the amount of nodes is through ~kubectl get nodes~ where it will print the nodes and their information one line at a time.
+- For the node's internal IP and the pod CIDR, both of them can be extracted with ~kubectl describe node ${NODE_NAME}~.
+
+
+** Findings after solution
+
+I mostly got it right.
+It turns out there are [[https://kubernetes.io/docs/reference/access-authn-authz/authentication/][different methods for authentication]].
+While the solution gave it as user and passwords, the kubeconfig I have seem to be using keys and certificates. [fn:: I'm using the default installation from k3s for future references.]
+
+Also, you can get the configuration of the cluster with ~kubectl config view~.
+Pretty handy.

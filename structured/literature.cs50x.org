@@ -1,0 +1,37 @@
+:PROPERTIES:
+:ID:       d0982ce9-6b39-482a-990c-f333d33a4a2a
+:END:
+#+title: CS50x
+#+date: "2021-06-06 17:58:08 +08:00"
+#+date_modified: "2021-06-06 20:07:35 +08:00"
+#+language: en
+#+source: https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/
+
+
+The beloved course of CS50.
+I took this course some time ago but didn't finish it due to me having difficulty on it.
+I'll finish this thing for real this time.
+
+
+
+
+* Week 0
+
+- computer science is about solving problems that are applicable not only to computers but also in art, social sciences, sciences, and beyond
+- computers communicate through binary digits (or base 2)
+- binary numbers are simpler but it implies large ideas
+  + computers often have binary due to history, just with the available components at the time easily creates
+  + with only two digits, we can represent ideas from simple concepts like states, letters, and numbers to complex concepts combining several of them together
+- our computers are composed of millions of tiny electrical switches representing binary data
+- all of the data represented is just binary all the way down
+  + text, colors, images are all just patterns of bits
+  + the files we usually see from JPG, PNG, Photoshop files, HTML, and Microsoft Word documents are just pattern of bits agreed by us to what the bits look like and what information it supposed to represent
+- concepts:
+  + to start solving a problem, we could lay the steps down;
+    you may hear this as our pseudocode
+  + functions are the actions or the verb of our pseudocode
+  + conditionals are branches of actions
+  + variables hold a piece of information
+  + boolean expressions are yes/no questions to a conditional, entering that branch if said condition is met
+  + abstractions are one way of solving a problem by framing the problem one level higher, focusing on the problems without worrying on the details;
+    we could also think abstractions as wishful thinking
