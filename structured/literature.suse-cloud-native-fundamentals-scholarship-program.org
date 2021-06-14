@@ -3,7 +3,7 @@
 :END:
 #+title: SUSE Cloud native fundamentals scholarship program
 #+date: "2021-06-07 18:21:19 +08:00"
-#+date_modified: "2021-06-10 19:38:02 +08:00"
+#+date_modified: "2021-06-13 15:59:44 +08:00"
 #+language: en
 
 
@@ -81,3 +81,13 @@ Best practices for application deployment:
 
 - among the list of orchestrators, we have Docker Swarm, Apache Mesos, and Kubernetes among others;
   but for this topic, we'll go with Kubernetes as it is popular and also goes with the building blocks structure (a set of primitive blocks that can be customized to create more complex operations)
+
+- Kubernetes manages several resources:
+  + it manages a cluster, the entire group of nodes where each node (service or master)
+  + worker nodes is a group of pods
+  + pods are a group of containers
+  + deployments indicate the state of the pod
+  + replica sets ensure at least one similar pod is running at a time
+  + services
+  + ConfigMaps handles pod configurations
+  + namespaces provide separation of logic between different applications, that is, application context

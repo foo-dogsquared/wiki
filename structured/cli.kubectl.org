@@ -1,0 +1,63 @@
+:PROPERTIES:
+:ID:       49867854-3780-45ed-a703-4f5d22a92d39
+:END:
+#+title: kubectl
+#+date: "2021-06-13 00:29:49 +08:00"
+#+date_modified: "2021-06-14 22:48:57 +08:00"
+#+language: en
+#+property: header-arg  :eval no
+
+
+The main binary when managing [[id:9e4f04d4-00a3-4898-ac98-924957fa868b][Kubernetes]] clusters.
+
+
+
+
+* Subcommands
+
+- =api-resource= lists all of the resources it currently supports.
+- =cluster-info= prints information of the cluster and the add-ons installed.
+- =create [RESOURCE] [NAME]= creates the specified resource with the given name.
+- =describe [RESOURCE] [NAME]= prints a detailed description of the given resource.
+- =logs [RESOURCE] [NAME]= shows the log printed from the given resource.
+- =explain [RESOURCE]= prints an explaination of the given resource — e.g., ~kubectl explain pods~, ~kubectl explain rs~.
+- =get [RESOURCE]= list the specified resource from the cluster.
+  + =-o, --output [yaml|json|wide]= prints in the specified format.
+    You can also print [[https://kubernetes.io/docs/reference/kubectl/overview/#custom-columns][the columns]] you only need.
+- =apply= applies a manifest, that is, a configuration file.
+
+
+** Resource names
+
+Most of the subcommands require a resource type and a name.
+You can also refer to a specific resource with =${RESOURCE}/${NAME}= — e.g., =namespace/demo=, =deploy/hello=.
+
+In the command line, you can refer to it like the following.
+
+- ~kubectl create ns/demo~
+- ~kubectl describe deploy/hello~
+- ~kubectl create pod/python-app --namespace=demo~
+
+
+
+
+* Examples
+
+As this is a massive tool, this needs massive examples.
+
+
+** Basic workflow example from a beginner's perspective
+
+Say you want to deploy your application with Kubernetes akin to Docker with a single container.
+
+# TODO: Improve this example, please.
+#+begin_src bash
+# Get the description of the cluster.
+kubectl cluster-info
+
+# List all of the supported resources.
+kubectl api-resources
+
+# Create a deployment.
+kubectl create deployment/hello-world --image=alpine
+#+end_src
