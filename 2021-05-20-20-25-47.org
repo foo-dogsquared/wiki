@@ -3,7 +3,7 @@
 :END:
 #+title: Diving head-first with a difficult problem is a good indicator of progress
 #+date: "2021-05-20 20:25:47 +08:00"
-#+date_modified: "2021-05-20 20:33:32 +08:00"
+#+date_modified: "2021-06-18 22:46:45 +08:00"
 #+language: en
 
 
@@ -17,4 +17,4 @@
 - contrast this to learning by starting with the simplest possible example
 - in some capacity, we already have been doing this since we have an idea of what we want to do
   + a lot of our inspirations tend to be people with advanced levels
-- beware, [[roam:Diving head-first into a difficult problem makes a bad start]]
+- beware, [[id:48cef2ac-a941-463d-a07f-6be8349456ad][Diving head-first into a difficult problem makes a bad start]]

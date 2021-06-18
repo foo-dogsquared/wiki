@@ -3,7 +3,7 @@
 :END:
 #+title: Deliberate practice
 #+date: "2020-07-06 23:55:47 +08:00"
-#+date_modified: "2021-05-20 20:34:52 +08:00"
+#+date_modified: "2021-06-18 22:46:46 +08:00"
 #+language: en
 
 
@@ -18,5 +18,5 @@ You can also [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resour
 With it, identify the top performers in the field and try to make a conclusion on how do they get so far.
 
 You can also put yourself in their shoes as a newcomer.
-Try to tackle a difficult problem, [[roam:Diving head-first with a difficult problem is a good indicator of progress]].
-Beware, [[roam:Diving head-first into a difficult problem makes a bad start]].
+Try to tackle a difficult problem, [[id:12dc8b07-ed8b-46d8-bff0-a38d9f3cb83b][Diving head-first with a difficult problem is a good indicator of progress]].
+Beware, [[id:48cef2ac-a941-463d-a07f-6be8349456ad][Diving head-first into a difficult problem makes a bad start]].

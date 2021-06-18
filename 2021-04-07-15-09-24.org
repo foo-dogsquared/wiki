@@ -3,14 +3,11 @@
 :END:
 #+title: Classic prose
 #+date: "2021-04-07 15:09:24 +08:00"
-#+date_modified: "2021-05-04 20:52:14 +08:00"
+#+date_modified: "2021-06-18 19:50:47 +08:00"
 #+language: en
-#+tags: writing
 
 
-Classic prose is a model of communication with the philosophy of using prose as a window onto the writer's world.
-
-In order to make this model effective, the writer has to keep the guidelines in mind:
+In essence, classic prose represents the following ideals:
 
 - The reader and writer are equals.
 - Only shows the objective reality.
@@ -18,6 +15,7 @@ In order to make this model effective, the writer has to keep the guidelines in 
 - Focus on the subject, not the process of studying it.
 
 This model of communication encourages a reader-centric focus on writing without looking down on them.
+Thus, it also encourages engagement with a variety of opinions.
 For example, with the saying "The people of America are getting fatter.", we both know means that the average of the population of America are getting fatter, not every single one of them.
 Just like in a casual conversation, the reader has a rough idea of what they're reading.
 They are reading to see what the writer has to do something about the subject.
