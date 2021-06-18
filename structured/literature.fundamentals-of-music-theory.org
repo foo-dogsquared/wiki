@@ -3,7 +3,7 @@
 :END:
 #+title: Fundamentals of music theory
 #+date: "2021-04-29 18:27:29 +08:00"
-#+date_modified: "2021-05-18 15:26:56 +08:00"
+#+date_modified: "2021-06-16 18:40:52 +08:00"
 #+language: en
 #+source: https://www.coursera.org/learn/edinburgh-music-theory/
 
@@ -46,7 +46,7 @@ Keep in mind this course mainly deals with western musical concepts and notation
   When the distance of each note is 2 semitone, it is considered as a tone.
 
 #+ATTR_ORG: :width 550
-[[file:assets/2021-04-29-18-27-29/fds-visual-octaves-and-tones.png]]
+[[file:assets/literature.fundamentals-of-music-theory/fds-visual-octaves-and-tones.png]]
 
 - an interval is two pitches with a certain distance
   + starting from a note, the number of tones distanced between them is the name of an interval
@@ -79,7 +79,7 @@ Keep in mind this course mainly deals with western musical concepts and notation
 #+end_src
 
 #+results:
-[[file:assets/2021-04-29-18-27-29/modes.png]]
+[[file:assets/literature.fundamentals-of-music-theory/modes.png]]
 
 - chords are three or more notes played together
   + when played with three, it is considered a triad
@@ -97,7 +97,7 @@ Keep in mind this course mainly deals with western musical concepts and notation
 #+end_src
 
 #+results:
-[[file:assets/2021-04-29-18-27-29/chords.png]]
+[[file:assets/literature.fundamentals-of-music-theory/chords.png]]
 
 
 
@@ -114,7 +114,7 @@ Keep in mind this course mainly deals with western musical concepts and notation
 #+end_src
 
 #+results:
-[[file:assets/2021-04-29-18-27-29/accidentals.png]]
+[[file:assets/literature.fundamentals-of-music-theory/accidentals.png]]
 
 #+begin_src lilypond  :file accidental-with-chords.png
 <<lilypond-paper-config>>
@@ -123,4 +123,4 @@ Keep in mind this course mainly deals with western musical concepts and notation
 #+end_src
 
 #+results:
-[[file:assets/2021-04-29-18-27-29/accidental-with-chords.png]]
+[[file:assets/literature.fundamentals-of-music-theory/accidental-with-chords.png]]

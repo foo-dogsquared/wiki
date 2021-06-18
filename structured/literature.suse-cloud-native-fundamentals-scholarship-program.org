@@ -3,11 +3,12 @@
 :END:
 #+title: SUSE Cloud native fundamentals scholarship program
 #+date: "2021-06-07 18:21:19 +08:00"
-#+date_modified: "2021-06-13 15:59:44 +08:00"
+#+date_modified: "2021-06-16 19:46:33 +08:00"
 #+language: en
 
 
 A course from Udacity with SUSE from their scholarship program.
+If you're interested in the exercises for other solutions, see [[id:0617c544-0d04-4a55-9d70-b8b4998fad92][Solutions to SUSE Cloud native fundamentals scholarship exercises]].
 
 Some things to keep in mind:
 
@@ -91,3 +92,35 @@ Best practices for application deployment:
   + services
   + ConfigMaps handles pod configurations
   + namespaces provide separation of logic between different applications, that is, application context
+
+
+
+
+
+* Lesson 4
+
+- small organizations do not often have the resources to manage their own clusters thus often use third-party providers;
+  while some organizations do have the resources, the scope to manage clusters often overshadow the team managing it
+
+- in cases like those, it make sense to use Platform-as-a-Service platforms (PaaS)
+
+- there are different components in a technology stack that an organization can manage:
+  starting from servers, storage, virtualization, operating system, runtime, data, and application
+
+- several providers are offering the above components and usually go into several umbrellas:
+  + the organization can choose no provider and instead manage their own with their own hardware, infrastructure, and all;
+    having an on-premises instance lets the organization full control of the whole stack but it can take a while to setup before the team can manage their deployments
+
+  + some organizations will choose a provider that offers a infrastructure-as-a-service (IaaS) — e.g., Google Cloud Platform, Amazon Web Services — just not providing a way to manage the hardware (e.g., servers, storage)
+
+  + others will choose platform-as-a-service (PaaS), reducing further what the organization can manage, only the application and the data
+
+  + some providers offer functions-as-a-service (FaaS) — e.g., Amazon Lambda, Netlify Lambda — that only invokes the application on-demand
+
+- the point is the more the organization has full control of, the more complexity the organization has to worry about;
+  while they have full control over the stack, they have also to cover the full expense for managing it;
+  having more control also means less chances of being vendor lock-in, thus, more flexibility with more options to add and remove features into the market
+
+- the less components they have control over, the less complexity;
+  with less things to worry about, it takes less time to create prototypes and less overall expenses;
+  but since they delegate the tasks to a third-party provider, they are vulnerable to vendor lock-in, thus, can only move from the limitations of the platform;

@@ -3,7 +3,7 @@
 :END:
 #+title: CS50x
 #+date: "2021-06-06 17:58:08 +08:00"
-#+date_modified: "2021-06-06 20:07:35 +08:00"
+#+date_modified: "2021-06-15 12:30:13 +08:00"
 #+language: en
 #+source: https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/
 
@@ -35,3 +35,11 @@ I'll finish this thing for real this time.
   + boolean expressions are yes/no questions to a conditional, entering that branch if said condition is met
   + abstractions are one way of solving a problem by framing the problem one level higher, focusing on the problems without worrying on the details;
     we could also think abstractions as wishful thinking
+
+
+
+
+* Week 1
+
+- writing good code should be foremost correct
+- but style is also important just like with writing requiring correct use of punctuations and grammar

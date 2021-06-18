@@ -3,9 +3,9 @@
 :END:
 #+title: Reproducible research: methodological principles for transparent science
 #+date: "2020-04-12 10:24:25 +08:00"
-#+date_modified: "2021-06-05 20:29:35 +08:00"
+#+date_modified: "2021-06-13 14:18:21 +08:00"
 #+language: en
-#+source :: https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/about
+#+source: https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/about
 #+tags: @fleeting courses research.reproducibility
 
 

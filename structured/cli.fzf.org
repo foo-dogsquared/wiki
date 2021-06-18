@@ -3,7 +3,7 @@
 :END:
 #+title: fzf
 #+date: "2021-05-31 23:08:57 +08:00"
-#+date_modified: "2021-06-04 07:52:35 +08:00"
+#+date_modified: "2021-06-14 22:33:37 +08:00"
 #+language: en
 
 
@@ -64,7 +64,7 @@ function fzf-cd() {
 }
 #+end_src
 
-Even better when you bind it with a keyboard shortcut (e.g., ~bind '"\C-f":'fzf-cd\n"'~).
+Even better when you bind it with a keyboard shortcut (e.g., ~bind '"\C-f":'fzf-cd\n"'~ on your Bash config).
 
 
 ** Package selection in Arch Linux

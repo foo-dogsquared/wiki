@@ -3,7 +3,7 @@
 :END:
 #+title: kubectl
 #+date: "2021-06-13 00:29:49 +08:00"
-#+date_modified: "2021-06-14 22:48:57 +08:00"
+#+date_modified: "2021-06-14 23:27:29 +08:00"
 #+language: en
 #+property: header-arg  :eval no
 
@@ -18,6 +18,10 @@ The main binary when managing [[id:9e4f04d4-00a3-4898-ac98-924957fa868b][Kuberne
 - =api-resource= lists all of the resources it currently supports.
 - =cluster-info= prints information of the cluster and the add-ons installed.
 - =create [RESOURCE] [NAME]= creates the specified resource with the given name.
+  + =--dry-run= just initiates the process and does nothing.
+    Useful with =-o yaml= to create a minimal manifest.
+  + =-o [yaml|json|wide]= prints the created resource as the specified output.
+    Specially useful to create manifests and manage clusters declaratively.
 - =describe [RESOURCE] [NAME]= prints a detailed description of the given resource.
 - =logs [RESOURCE] [NAME]= shows the log printed from the given resource.
 - =explain [RESOURCE]= prints an explaination of the given resource — e.g., ~kubectl explain pods~, ~kubectl explain rs~.
@@ -26,17 +30,7 @@ The main binary when managing [[id:9e4f04d4-00a3-4898-ac98-924957fa868b][Kuberne
     You can also print [[https://kubernetes.io/docs/reference/kubectl/overview/#custom-columns][the columns]] you only need.
 - =apply= applies a manifest, that is, a configuration file.
 
-
-** Resource names
-
-Most of the subcommands require a resource type and a name.
-You can also refer to a specific resource with =${RESOURCE}/${NAME}= — e.g., =namespace/demo=, =deploy/hello=.
-
-In the command line, you can refer to it like the following.
-
-- ~kubectl create ns/demo~
-- ~kubectl describe deploy/hello~
-- ~kubectl create pod/python-app --namespace=demo~
+When referring to a specific resource with =${RESOURCE}/${NAME}= — e.g., =namespace/demo=, =deploy/hello=.
 
 
 

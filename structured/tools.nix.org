@@ -3,7 +3,7 @@
 :END:
 #+title: The basics of Nix package manager
 #+date: "2021-06-05 12:34:49 +08:00"
-#+date_modified: "2021-06-09 17:39:23 +08:00"
+#+date_modified: "2021-06-15 10:37:05 +08:00"
 #+language: en
 
 
@@ -70,7 +70,7 @@ let overlay = self: super:
 #+end_src
 
 # TODO: Bring more examples
-For another example, you can see some examples from [[https://github.com/neovim/neovim/blob/f695457f815544d0dc16469569c70556e3165bb6/contrib/flake.nix][Neovim]] (which also uses Nix flakes).
+For another example, you can see some examples from [[https://github.com/neovim/neovim/blob/f695457f815544d0dc16469569c70556e3165bb6/contrib/flake.nix][Neovim]] and [[https://gitlab.com/veloren/veloren/-/tree/685f4971ac0deb31b301e9d2bc0201d2531fd895/nix][Veloren]] (which also uses Nix flakes).
 
 You can set overlays automatically either by setting =nixpkgs.overlays= from your system configuration or =~/.config/nixpkgs/overlays/= folder for user-specific settings.
 You could also set overlays for standalone Nix code similarly through the =overlays= key — e.g., ~import <nixpkgs> ? { overlays = (self: super: { } ); };~.

@@ -1,6 +1,6 @@
 #+title: Oil shell
 #+date: "2021-05-09 16:40:50 +08:00"
-#+date_modified: "2021-06-05 16:36:01 +08:00"
+#+date_modified: "2021-06-14 22:26:24 +08:00"
 #+language: en
 #+property: header-args:oil  :eval no
 
@@ -70,7 +70,7 @@ for i in @keywords { echo "keyword: $i" }
 
 ** Strings
 
-While strings are similar to Bash strings [fn:: Really more like Python strings.], there are subtle differences.
+While strings are similar to Bash strings[fn:: Really more like Python strings.], there are subtle differences.
 Most notably, Bash splits the string when trying to do something.
 
 #+begin_src bash

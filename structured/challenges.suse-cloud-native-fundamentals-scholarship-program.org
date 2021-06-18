@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       0617c544-0d04-4a55-9d70-b8b4998fad92
+:END:
 #+title: Solutions to SUSE Cloud native fundamentals scholarship exercises
 #+date: "2021-06-08 23:23:35 +08:00"
-#+date_modified: "2021-06-12 12:24:19 +08:00"
+#+date_modified: "2021-06-16 18:18:39 +08:00"
 #+language: en
 
 
@@ -333,3 +336,173 @@ While the solution gave it as user and passwords, the kubeconfig I have seem to 
 
 Also, you can get the configuration of the cluster with ~kubectl config view~.
 Pretty handy.
+
+
+
+
+* Kubernetes resources
+
+Now you have learned many Kubernetes recourses, in this exercise, you will deploy the following resources using the kubectl command.
+
+- a namespace
+  + name: =demo=
+  + label: =tier: test=
+- a deployment:
+  + image: =nginx:alpine=
+  + name: =nginx-apline=
+  + namespace: =demo=
+  + replicas: =3=
+  + labels: =app: nginx, tag: alpine=
+- a service:
+  + expose the above deployment on port 8111
+  + namespace: =demo=
+- a configmap:
+  + name: =nginx-version=
+  + containing key-value pair: =version=alpine=
+  + namespace: =demo=
+
+
+** Solution
+
+This is practical test but it can summarized with a shell script.
+
+#+begin_src bash  :eval no
+# Create the namespace with the specified label.
+kubectl create namespaces demo
+kubectl label namespaces demo tier=test
+
+# Create the specified deployment.
+kubectl create deployment nginx-alpine --image=nginx:alpine --replicas=3 --namespace=demo
+kubectl label deployment nginx-alpine app=nginx tag=alpine --namespace=demo
+
+# Expose the deployment as a service.
+kubectl expose deployment nginx-alpine --namespace=demo --port=8111
+
+# Create the config map.
+kubectl create configmaps nginx-version --namespace=demo --from-literal=version=alpine
+#+end_src
+
+
+
+
+* Declarative Kubernetes manifests
+
+Kubernetes is widely known for its imperative and declarative management techniques.
+In the previous exercise, you have deployed the following resources using the imperative approach.
+Now deploy them using the declarative approach.
+
+- a namespace
+  + name: demo
+  + label: tier: test
+- a deployment:
+  + image: nginx:alpine
+  + name:nginx-apline
+  + namespace: demo
+  + replicas: 3
+  + labels: app: nginx, tag: alpine
+- a service:
+  + expose the above deployment on port 8111
+  + namespace: demo
+- a configmap:
+  + name: nginx-version
+  + containing key-value pair: version=alpine
+  + namespace: demo
+
+
+** Solution
+
+Since they ask for 4 resources, we need 4 manifests.
+We'll create four YAML manifests for this exercise.
+
+The following manifests are created with the option to print the resources in YAML format with some modifications.
+
+Here's one for the namespace.
+The command used to make the template is ~kubectl create namespace demo --dry-run=client --output=yaml~.
+
+#+begin_src yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: demo
+  labels:
+    tier: test
+spec: {}
+status: {}
+#+end_src
+
+The manifest for the deployment.
+The command used to create the starting template is ~kubectl create deployment nginx-alpine --namespace=demo --replicas=3 --image=nginx:alpine --dry-run=client --output=yaml~.
+
+#+begin_src yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx
+    tag: alpine
+  name: nginx-alpine
+  namespace: demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-alpine
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-alpine
+    spec:
+      containers:
+      - image: nginx:alpine
+        name: nginx
+        resources: {}
+status: {}
+#+end_src
+
+The service manifest should be created after the deployment manifest is applied (i.e., ~kubectl apply -f deployment.yaml~).
+It is created with ~kubectl expose deploy nginx-alpine --port=8111 --dry-run=client --output=yaml --namespace=demo~.
+
+#+begin_src yaml
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx
+    tag: alpine
+  name: nginx-alpine
+  namespace: demo
+spec:
+  ports:
+  - port: 8111
+    protocol: TCP
+    targetPort: 8111
+  selector:
+    app: nginx-alpine
+status:
+  loadBalancer: {}
+#+end_src
+
+The resulting YAML output is from running the command (i.e., ~kubectl create configmap nginx-version --from-literal=version=alpine --dry-run=client --output=yaml --namespace=demo~).
+No cleaning up is required.
+
+#+begin_src yaml
+apiVersion: v1
+data:
+  version: alpine
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: nginx-version
+  namespace: demo
+#+end_src
+
+
+** Findings after solution
+
+Aside from the mostly correct answers, I also found out ~kubectl get all -n demo~ to get all of the resources in the specified namespace.
+Pretty handy for inspecting application-specific resources.
