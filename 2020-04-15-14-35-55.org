@@ -3,7 +3,7 @@
 :END:
 #+title: Note-taking
 #+date: "2020-04-15 14:35:55 +08:00"
-#+date_modified: "2021-05-20 19:21:25 +08:00"
+#+date_modified: "2021-06-18 13:53:54 +08:00"
 #+language: en
 
 
@@ -14,7 +14,7 @@ There are different ways of note-taking.
 Among the endless list of methods, popular methods include [[id:4259636e-e0e8-49e4-8210-758ec59728a3][Zettelkasten]], [[id:24b5e144-dda4-482c-9684-958a00d6c986][Roam Research]], [[id:29ecbd86-ad97-4882-aa3f-56b5b90025d5][Digital gardens]], Cornell method, or the traditional [[id:d3fbdb1a-9629-45ef-9f08-32c6e49025bb][Linear notes]].
 
 When doing something like this, one could take notes how to make their notes interesting to read.
-You could start to [[id:d024516b-35ea-40ae-9433-ceacea695073][Write paragraphs like music]], create notes with [[id:79357d56-74bf-4854-820c-c0ad849f2468][Classic prose]], [[id:b318dc2b-5fa1-48ff-9d33-6fbbdee46a2f][Write down the simplest possible example]], and [[id:b0aee2c6-f759-4b7a-829f-79781926091e][Create examples of ranking complexity when documenting your project]].
+Thus you could consider [[id:815b2beb-40a0-4e79-9097-5b688189ad5b][Writing]] tips.
 
 Not all note-taking is the formal method of paraphrasing our observations and thoughts, this can also be a method of merely writing our thoughts down.
 Another reason why you may want to do note-taking is to write all of the thoughts down so you don't have to remember.

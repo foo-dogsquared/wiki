@@ -3,9 +3,10 @@
 :END:
 #+title: Types of notes
 #+date: "2021-05-07 09:22:06 +08:00"
-#+date_modified: "2021-05-19 21:58:25 +08:00"
+#+date_modified: "2021-06-18 10:17:12 +08:00"
 #+language: en
 
+In note-taking, we don't conciously categorize our notes.
 
 
 
@@ -17,7 +18,10 @@
 
 The "traditional" method for personal note-taking.
 The notes formed with linear notes tend to be tree-like thus it is useful for ordered information.
+
 Useful for initial learning where you want a roadmap of the lesson.
+It is helpful for memorizing as [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]].
+In the end, we might have more linear notes as [[id:864a9242-eb10-44ad-81b7-c237276523e5][We know more compared to what we understood]].
 
 Linear notes also tend to create hierarchy over time.
 While nice to have, it can also limit the information you can put in each note.
