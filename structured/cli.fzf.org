@@ -3,7 +3,7 @@
 :END:
 #+title: fzf
 #+date: "2021-05-31 23:08:57 +08:00"
-#+date_modified: "2021-06-14 22:33:37 +08:00"
+#+date_modified: "2021-06-18 19:16:44 +08:00"
 #+language: en
 
 
@@ -76,4 +76,16 @@ You can do this on other operating systems as long as their package manager lets
 pacman -S --list --quiet \
     | fzf --multi --prompt "Install package(s) > " \
     | xargs doas pacman -S --noconfirm
+#+end_src
+
+
+** Create an interactive tldr list
+
+Have a [[https://github.com/tldr-pages/tldr/wiki/tldr-pages-clients][tldr client]] (e.g., tealdeer) and [[https://github.com/sharkdp/bat][bat]] installed.
+
+#+begin_src shell
+tldr --list \
+    | fzf --multi \
+    | xargs --replace="{}" tldr {} \
+    | bat
 #+end_src

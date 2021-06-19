@@ -1,0 +1,17 @@
+#+title: Android free and open source apps
+#+date: "2021-06-19 01:02:29 +08:00"
+#+date_modified: "2021-06-19 01:12:20 +08:00"
+#+language: en
+
+
+Android is not much of an open ecosystem despite the kernel is [[https://source.android.com/][open source]] due to the most of the phones distributed with the manufacturer's modification.
+
+There are solutions into this such as Android custom ROMs and privacy-oriented mobile operating systems such as [[https://source.android.com/][postmarketOS]] and [[https://lineageos.org/][LineageOS]] but that is not the topic.
+However, they are often not ready and/or widely supported.
+We may as well take advantage of the Android improvements and features by creating free and open source apps on it.
+
+Here is my personal list of noteworthy Android apps:
+
+- [[https://f-droid.org/en/packages/][F-Droid]]
+- [[https://newpipe.net/][Newpipe]]
+- Goodtime

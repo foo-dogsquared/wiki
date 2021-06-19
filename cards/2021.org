@@ -3,7 +3,7 @@
 :END:
 #+title: Anki: 2021
 #+date: "2021-05-01 20:20:25 +08:00"
-#+date_modified: "2021-06-02 12:03:42 +08:00"
+#+date_modified: "2021-06-18 22:12:31 +08:00"
 #+language: en
 #+property: anki_deck 2021
 #+property: header_args  :exports both
@@ -784,7 +784,7 @@ Give some ways to make use of the help system in the shell (or most Unix environ
 * Basic music notation reading 1
 :PROPERTIES:
 :ANKI_NOTE_TYPE: Styled cards
-:ANKI_NOTE_ID: 1621089760711
+:ANKI_NOTE_ID: 1623400713011
 :END:
 ** Front
 What notes are displayed (in order)?
@@ -805,7 +805,7 @@ C A F B
 * Basic music notation reading 2
 :PROPERTIES:
 :ANKI_NOTE_TYPE: Styled cards
-:ANKI_NOTE_ID: 1621089763239
+:ANKI_NOTE_ID: 1623400713210
 :END:
 ** Front
 What notes are displayed (in order)?
@@ -828,7 +828,7 @@ Then the notes E, F, and A.
 * Basic music notation reading 3
 :PROPERTIES:
 :ANKI_NOTE_TYPE: Styled cards
-:ANKI_NOTE_ID: 1621089765539
+:ANKI_NOTE_ID: 1623400713512
 :END:
 ** Front
 What notes are displayed (in order)?
@@ -947,3 +947,211 @@ xdg-mime query filetype $FILE
 #+end_src
 
 I prefer ~file --mime-type~ since it is clearer on purpose and name alone.
+
+* Factors to consider when choosing an architecture for cloud applications
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1623240125201
+:END:
+** Front
+Give the factors to consider how a cloud application should be made of.
+** Back
+- Scalability
+- Development complexity
+- Time to deploy
+- Flexibility
+- Reliability
+- Operational costs
+
+For easier memorization, just use the mnemonic "Slide down to Freedom Ravine, Olsen."
+
+Take note that however you compose an application whether with a monolistic or composable approach, there are tradeoffs to consider.
+For example, with reliability that describes the ability to recover from a failure, a monolith application would have to retrieved with its entire stack.
+Composable services only require the faulty service to be examined.
+
+* Monolith and microservices
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1623240125447
+:END:
+** Front
+What are monolith and microservices?
+** Back
+*A monolithic application store all of its components in one repository.*
+It is usually done in one programming language to tie everything together.
+While it is nice to have it bundled in one package, a monolith can easily reach limit and scale slower.
+Furthermore, for debugging, it would take a reproduction of the whole stack to get an idea of what is happening.
+
+*On the other hand, an application built with microservices is just a bundle of individual services.*
+Each component can be developed in parallel and made up of wildly different tools and languages appropriate for their purpose.
+Since components are individualized, you can just inspect one of the components.
+
+* Duckduckgo bangs
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1623240125883
+:END:
+** Front
+List some Duckduckgo bangs you often use.
+** Back
+As of 2021-06-09, here are some of the bangs I use.
+
+- =wikipedia= or =w=
+- =google= or =g=
+- =twitter= or =tw=
+- =github= or =gh=
+- =youtube= or =yt=
+- =twitch= or =ttv=
+- =archwiki= or =aw=
+- =researchgate= or =rgate=
+- =arxiv= or =arx=
+- =orcid=
+
+* Best application development practices
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1623400715411
+:END:
+** Front
+Give the list of practices and their summary from the SUSE Cloud native fundamentals scholarship program.
+** Back
+- *Health checks provide a way to check if a component is active.*
+
+- *Metrics provides quick feedback such as the number of active users, number of logins for today, and how many users know a certain feature (or clicked the button).*
+
+- *Logs records what happened on your application** thus making debugging easier.
+  A recommended practice for logging is creating log levels to indicate the severity of the problem and attaching a timestamp.
+
+- *Tracing lets you recreate how a request is done*, often through multiple services.
+  Oftentimes, this is done on application-level.
+
+- *Knowing the resource consumption is good for assessing whether the application is ready.*
+  Examples include monitoring the CPU and memory consumption during a service and creating benchmarks.
+
+For easier memorizing, we can use the phrase "Healthy metrics leaves the logs a trace of resource consumption."
+
+If you're deploying a web application, for example, you may assign certain routes for some of the above practices — e.g., =/status/= for health checks, =/metrics/= to create a metrics dashboard.
+
+* Cloud Native Computing Foundation
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1623400715709
+:END:
+** Front
+What is the Cloud Native Computing Foundation (CNCF) do and how do they contribute?
+** Back
+CNCF is an organization that spearheads the development of cloud computing.
+It hosts and manages a [[https://www.cncf.io/projects/][plethora of cloud-related projects]] representing a whole suite of tools needed for cloud computing management.
+As of 2021-06-09, CNCF managed some of the popular cloud-related tools of today like Prometheus (metrics), Kubernetes (orchestration), containerd (container runtime), Jaeger (tracing), among others.
+
+* Container workflow
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1623986971249
+:END:
+** Front
+Summarize the workflow of using containers with a container engine (e.g., Docker, Podman).
+** Back
+- Create a file containing instructions how to build an image.
+- Build the actual image with the container engine (e.g., Docker, Podman) and the instruction file (e.g., Dockerfile, Buildpack).
+- Create a container from the image running the application.
+- If successfully created one, you can publish the image in a registry (e.g., docker.io).
+
+* Kubernetes resources
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1623986971597
+:END:
+** Front
+List the resources Kubernetes manages in a cluster.
+** Back
+- *Pod is a group of containers* that run on nodes.
+- *Node is a representation of a computer.*
+  This may be a physical or a virtual computer to run multiple pods at a time.
+- *Deployment contains the state of the pods.*
+- *Replica set ensures the pod is running at any given time by creating a set of identical pod.*
+- *Service creates a single point for pods.*
+- *Ingress lets an external user access to the cluster*, typically using HTTP.
+- *ConfigMap manages the secrets of a cluster.*
+- *Namespaces create separation between applications.*
+
+For easier memorizing, think of the name "DR SICPNN".
+
+Take note it is not an exhaustive list as it usually manages more than 10 resources.
+You can see what Kubernetes handle with the =api-resource= subcommand.
+
+* Kubernetes external user access
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:ANKI_NOTE_ID: 1623986971836
+:END:
+** Front
+Since nodes in a Kubernetes cluster are normally accessed only within, is third-party access possible?
+** Back
+[[https://kubernetes.io/docs/concepts/services-networking/ingress/][Kubernetes ingress]] is exactly built for that purpose.
+It mainly does the job by exposing a resource through HTTP.
+
+For example, if you have an application that is normally opens an HTTP server at port 5000, you can expose the application with the following command.
+
+Assuming the application came from an image and deployed through Kubernetes (with the deployment name =hello-ports=).
+
+#+begin_src bash  :eval no
+kubectl expose deployment hello-ports --port=5000 --target-port=5000
+#+end_src
+
+This will create a service that exposes the application to the outside.
+
+* Platform mechanisms
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:END:
+** Front
+What are the components to manage a cloud application?
+** Back
+- Networking connects between other hardware.
+- Storage provides a place to store data.
+- Servers makes up the hardware to do its computational capabilities.
+- Operating system is the software to connect with the hardware.
+- Virtualization abstracts servers by emulating other systems (e.g., Ubuntu, Manjaro, Windows Server).
+- Middleware provides a way to consume platform capabilities (e.g., messaging, API).
+- Runtime provides the environment of the application.
+- Data is where application-related data are stored.
+- Application, where the business logic is.
+
+* Platform mechanisms: business models
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:END:
+** Front
+What are the different business models that make up the platform mechanisms?
+** Back
+- On-premises simply lets the organization full control of the stack with their own physical location, establishment and everything.
+
+- Infrastructure as a Service (IaaS) reduces the physical location.
+  Though, it lets their customers control the software of the servers with their clusters.
+  Usually in this model, they let you install a cluster management system like Kubernetes.
+  Examples include Google Cloud Platform, Amazon Web Services, and Microsoft Azure.
+
+- Platform as a Service (PaaS) further reduces the components into letting you manage only the application and the data.
+  Examples include Heroku and Google App Engine.
+
+- Function as a Service (FaaS) only lets their customers access the application.
+  Usually, it is activated on-demand and involves being serverless.
+  Examples include Amazon Lambda, Netlify Functions, and Google Cloud Functions.
+
+* Linux kernel options
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Styled cards
+:END:
+** Front
+How to know what kernel options has been compiled for a Linux kernel?
+** Back
+You can know what options has been compiled by looking at =/proc/config.gz=.
+However, it is only possible when compiled with =CONFIG_IKCONFIG_PROC= option.
+
+Here's an example how to know it on your shell right away.
+
+#+begin_src bash  :results none  :exports none
+gunzip -c /proc/config.gz
+#+end_src
+
