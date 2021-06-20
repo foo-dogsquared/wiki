@@ -3,7 +3,7 @@
 :END:
 #+title: SUSE Cloud native fundamentals scholarship program
 #+date: "2021-06-07 18:21:19 +08:00"
-#+date_modified: "2021-06-16 19:46:33 +08:00"
+#+date_modified: "2021-06-19 17:31:22 +08:00"
 #+language: en
 
 
@@ -124,3 +124,25 @@ Best practices for application deployment:
 - the less components they have control over, the less complexity;
   with less things to worry about, it takes less time to create prototypes and less overall expenses;
   but since they delegate the tasks to a third-party provider, they are vulnerable to vendor lock-in, thus, can only move from the limitations of the platform;
+
+
+
+
+* Lesson 5
+
+- most organizations want to polish the end-product as much as possible before it reach their customers;
+  in software, most applications go through a variety of steps such as putting through a testing suite, building the image with reproducible results, and packaging it for enabling everyone be able to open the app, and deploying it (or an actual release)
+
+- to make application development faster, they usually divide it into several environments: one for development where they can change things with minimal risk and one for production, that is, the customer-facing interface
+
+- to make it easier, some of them delegate the usual tasks of testing, building, packaging, and deployment to the cloud
+
+- this has resulted into the usual practice of continuous integration (CI) and continuous delivery (CD)
+  + CI is a tool for automating testing, building, and packaging the application
+  + CD is a tool for automatic deployment of the application
+
+- there are many cloud services that offer CI/CD like CircleCI, Jenkins, Travis CI, Gitlab CI, and GitHub Actions
+  + for this lesson, we'll go with GitHub Actions which is the integrated CI/CD workflow for GitHub repos
+  + GitHub Actions enables event-listening jobs
+  + each job are then divided into steps
+  + you can configure GitHub Actions through =.github/workflows= inside of the GitHub repo

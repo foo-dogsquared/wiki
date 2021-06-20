@@ -3,16 +3,15 @@
 :END:
 #+title: Reproducible research: methodological principles for transparent science
 #+date: "2020-04-12 10:24:25 +08:00"
-#+date_modified: "2021-06-13 14:18:21 +08:00"
+#+date_modified: "2021-06-19 14:49:55 +08:00"
 #+language: en
 #+source: https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/about
-#+tags: @fleeting courses research.reproducibility
 
 
 I'm not a researcher but I've learned so many things from this course that are applicable to general workflows: organizing your digital files for easy retrieval, creating reproducible notes, and setting out to create reproducible studies with open formats.
 In my desktop workflow, I've managed to create a generic desktop search for my projects which also serves as an format-agnostic option for personal braindump/wiki which I'll taking notes of it somewhere.
 
-This is the notes for [[https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/info][Reproducible research: methodological prinicples for transparent science]], an open course on how to create [[file:2020-04-12-11-20-53.org][Reproducible research]] and notes with various tools.
+This is the notes for [[https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/info][Reproducible research: methodological prinicples for transparent science]], an open course on how to create [[id:6eeb7a24-b662-46d6-9ece-00a5028ff4d8][Reproducible research]]  and notes with various tools.
 The course itself is divided into three paths for [[https://jupyter.org][Jupyter Notebooks]], R, and Org-Mode.
 There is also a [[https://gitlab.inria.fr/learninglab/mooc-rr/mooc-rr-ressources][dedicated Git repo with additional resources]] (most of them are in French but some come with English translations), be sure to check it out.
 
@@ -189,15 +188,16 @@ os             linux-gnu
 system         x86_64, linux-gnu
 status
 major          4
-minor          0.1
-year           2020
-month          06
-day            06
-svn rev        78648
+minor          0.4
+year           2021
+month          02
+day            15
+svn rev        80002
 language       R
-version.string R version 4.0.1 (2020-06-06)
-nickname       See Things Now
+version.string R version 4.0.4 (2021-02-15)
+nickname       Lost Library Book
 #+end_example
+
 
 Even then, specifying versions explicitly can only do so little since most of these libraries depend on another (SciPy, for example depends on C).
 It could still "break" if your machine or the library has been updated which may or may not contain breaking changes.

@@ -3,7 +3,7 @@
 :END:
 #+title: Text Encoding Initiative
 #+date: "2020-04-12 13:07:20 +08:00"
-#+date_modified: "2021-05-04 20:52:07 +08:00"
+#+date_modified: "2021-06-19 14:45:10 +08:00"
 #+language: en
 
 
@@ -18,11 +18,3 @@ Being a standard, it also frees the writers from software dependency and develop
 
 The specification uses XML for markup and there are [[https://wiki.tei-c.org/index.php/Category:Tools][various tools]] for creating TEI-specific contents aside from the already existing ecosystem of XML-related tools.
 It can also export into various formats through [[https://github.com/TEIC/Stylesheets][XSLT 2.0 stylesheets]] including HTML, LaTeX, and JSON files.
-
-
-
-
-* Relevant notes
-
-- [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]]
-- [[id:6eeb7a24-b662-46d6-9ece-00a5028ff4d8][Reproducible research]]

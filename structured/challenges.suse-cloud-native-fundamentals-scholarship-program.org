@@ -3,7 +3,7 @@
 :END:
 #+title: Solutions to SUSE Cloud native fundamentals scholarship exercises
 #+date: "2021-06-08 23:23:35 +08:00"
-#+date_modified: "2021-06-16 18:18:39 +08:00"
+#+date_modified: "2021-06-19 21:09:41 +08:00"
 #+language: en
 
 
@@ -506,3 +506,63 @@ metadata:
 
 Aside from the mostly correct answers, I also found out ~kubectl get all -n demo~ to get all of the resources in the specified namespace.
 Pretty handy for inspecting application-specific resources.
+
+
+
+
+* Continuous application deployment
+
+Create a new GitHub Actions in the =/.github/workflows/docker-build.yml= that will build and push the Docker image for a Python web application, with the following requirements:
+
+- Image name: =python-helloworld=
+- Tag: =latest=
+- Platforms: =platforms: linux/amd64,linux/arm64=
+
+GitHub marketplace has a rich suite of upstream actions that can be easily integrated within a repository.
+One of the upstream action is [[https://github.com/marketplace/actions/build-and-push-docker-images][Build and Push Docker images]], which can be used to implement the required CI task.
+
+The above GitHub action uses DockerHub Tokens and encrypted GitHub secrets to login into DockerHub and to push new images.
+To set up these credentials refer to the following resources:
+
+- Create [[https://www.docker.com/blog/docker-hub-new-personal-access-tokens/][DockerHub Tokens]]
+- Create [[https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets][GitHub encrypted secrets]]
+
+
+** Solution
+
+After creating a DockerHub access token (that serves as an alternative to passwords) and creating a GitHub encrypted secret, the workflow should now work.
+
+Here's the resulting workflow file:
+
+#+begin_src yaml
+name: Docker build image
+on: [push]
+jobs:
+    docker:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Set up QEMU
+              uses: docker/setup-qemu-action@v1
+            - name: Setup Docker Buildx
+              uses: docker/setup-buildx-action@v1
+            - name: Login to DockerHub
+              uses: docker/login-action@v1
+              with:
+                  username: ${{ secrets.DOCKERHUB_USERNAME }}
+                  password: ${{ secrets.DOCKERHUB_TOKEN }}
+            - name: Build and push
+              id: docker_build
+              uses: docker/build-push-action@v2
+              with:
+                  push: true
+                  tags: ${{ secrets.DOCKERHUB_USERNAME }}/python-helloworld:latest
+                  platforms: linux/amd64,linux/arm64
+            - name: Image digest
+              run: echo ${{ steps.docker_build.outputs.digest }}
+#+end_src
+
+This is shamelessly ripped off from the sample from the [[https://github.com/marketplace/actions/build-and-push-docker-images][GitHub Actions page]].
+I realized it's basically the answer for this exercise.
+Embarrassing that I spent an hour for this.
