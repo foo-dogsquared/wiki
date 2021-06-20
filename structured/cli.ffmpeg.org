@@ -1,6 +1,6 @@
-#+title: FFmpeg
+#+title: Command line: FFmpeg
 #+date: "2021-05-09 16:40:50 +08:00"
-#+date_modified: "2021-06-04 17:01:26 +08:00"
+#+date_modified: "2021-06-19 17:43:07 +08:00"
 #+language: en
 #+property: header-args :eval no
 

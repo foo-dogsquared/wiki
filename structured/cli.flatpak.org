@@ -1,6 +1,6 @@
-#+title: Flatpak
+#+title: Command line: Flatpak
 #+date: "2021-06-04 07:39:11 +08:00"
-#+date_modified: "2021-06-04 07:54:18 +08:00"
+#+date_modified: "2021-06-19 17:42:15 +08:00"
 #+language: en
 
 

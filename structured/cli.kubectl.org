@@ -1,9 +1,9 @@
 :PROPERTIES:
 :ID:       49867854-3780-45ed-a703-4f5d22a92d39
 :END:
-#+title: kubectl
+#+title: Command line: kubectl
 #+date: "2021-06-13 00:29:49 +08:00"
-#+date_modified: "2021-06-14 23:27:29 +08:00"
+#+date_modified: "2021-06-19 17:41:50 +08:00"
 #+language: en
 #+property: header-arg  :eval no
 

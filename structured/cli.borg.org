@@ -1,9 +1,9 @@
 :PROPERTIES:
 :ID:       8135ece9-0dc0-4799-ac63-a24f9486ddd2
 :END:
-#+title: BorgBackup
+#+title: Command line: BorgBackup
 #+date: "2021-05-30 21:40:24 +08:00"
-#+date_modified: "2021-06-05 09:11:53 +08:00"
+#+date_modified: "2021-06-20 10:02:15 +08:00"
 #+language: en
 #+property: header_args :eval no
 #+property: header_args:bash  :results silent  :exports code
@@ -147,7 +147,7 @@ BORG_REPO="$HOME/backups" BORG_PASSCOMMAND='gopass show misc/personal-borgbackup
 
 ** An interactive interface for extracting archives
 
-All-time favorite [[id:4eb1f8b1-bc12-4a6c-8fa4-20e4c3542cf2][fzf]] (and xargs) is required.
+All-time favorite fzf (see [[id:4eb1f8b1-bc12-4a6c-8fa4-20e4c3542cf2][Command line: fzf]]) is required.
 
 #+begin_src bash
 export BORG_PASSPHRASE="oral hygiene"

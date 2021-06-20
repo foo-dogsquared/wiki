@@ -1,6 +1,6 @@
-#+title: Pacman
+#+title: Command line: Pacman
 #+date: "2021-06-08 15:00:04 +08:00"
-#+date_modified: "2021-06-08 17:27:45 +08:00"
+#+date_modified: "2021-06-19 17:42:03 +08:00"
 #+language: en
 #+property: header_args  :eval no
 
