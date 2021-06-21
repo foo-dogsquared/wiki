@@ -3,7 +3,7 @@
 :END:
 #+title: Prefer referencing over remembering
 #+date: "2021-04-06 22:25:17 +08:00"
-#+date_modified: "2021-05-19 21:55:29 +08:00"
+#+date_modified: "2021-06-19 10:20:35 +08:00"
 #+language: en
 #+tags: personal-info-management
 
@@ -12,7 +12,7 @@ It makes for less cognitive overhead.
 This is especially true in the age of internet where information is widely distributed.
 Even without the internet, however, it is still useful to find ways to refer to things or store them locally whether by archiving or creating related notes.
 
-This doesn't mean that you should avert remembering, that would be silly as little remembering is still required.
+This doesn't mean that you should avert remembering, that would be silly as [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]].
 You're still trying to understand a concept, after all.
 The gist of it is knowing the basics of a concept and its relations to others, enabling you to come up with a more effective search query.
 If nothing else, you could take advantage of the help system insisted by the tool.

@@ -3,10 +3,11 @@
 :END:
 #+title: Diving head-first with a difficult problem is a good indicator of progress
 #+date: "2021-05-20 20:25:47 +08:00"
-#+date_modified: "2021-06-18 22:46:45 +08:00"
+#+date_modified: "2021-06-21 10:19:00 +08:00"
 #+language: en
 
 
+- a difficult problem is to [[id:01459b18-3f30-418e-bd8d-42661d5ea223][Start with wishful thinking]]
 - when starting to learn, diving into problems are often seen as a bad thing
 - it is essentially like trying to learn to swim on an ocean
   + it could be effective if we have a lifeguard
