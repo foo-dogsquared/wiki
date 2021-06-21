@@ -3,7 +3,7 @@
 :END:
 #+title: Solutions to SUSE Cloud native fundamentals scholarship exercises
 #+date: "2021-06-08 23:23:35 +08:00"
-#+date_modified: "2021-06-19 21:09:41 +08:00"
+#+date_modified: "2021-06-21 10:54:53 +08:00"
 #+language: en
 
 
@@ -244,7 +244,7 @@ CMD ["./helloworld"]
 
 As for the requirements of the images and running the containerized app, we'll summarize it with the following Bash script.
 
-#+begin_src bash
+#+begin_src bash  :tangle (my/concat-assets-folder "docker-packaging.sh")
 OWNER="foodogsquared"
 IMG="go-helloworld"
 VERSION="1.0.0"
@@ -532,9 +532,9 @@ To set up these credentials refer to the following resources:
 
 After creating a DockerHub access token (that serves as an alternative to passwords) and creating a GitHub encrypted secret, the workflow should now work.
 
-Here's the resulting workflow file:
+Here's the resulting GitHub Actions workflow file:
 
-#+begin_src yaml
+#+begin_src yaml  :tangle (my/concat-assets-folder "github-docker-workflow.yaml")
 name: Docker build image
 on: [push]
 jobs:

@@ -1,0 +1,17 @@
+#+title: GitHub Actions
+#+date: "2021-06-20 18:58:48 +08:00"
+#+date_modified: "2021-06-20 20:13:03 +08:00"
+#+language: en
+
+
+#+ATTR_ORG: :width 550
+[[file:assets/cloud.github-actions/fds-visual-github-actions-description.png]]
+
+- a CI/CD tool integrated into GitHub
+- it is free for public repos but limited time per month for private repos
+- focused into creating workflows which can be separate and applied in different contexts
+  + a workflow is activated from an event
+  + stored in ~.github/workflows~ in the remote repo
+- each workflow can run a job which are composed of steps
+- each step make uses an action which is basically a script;
+  it can interact with the repo or do something else entirely without ever touching it

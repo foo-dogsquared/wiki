@@ -1,0 +1,55 @@
+article {
+    // Named after the LaTeX counters after `chapter` counter.
+    counter-reset: section subsection subsubsection paragraph subparagraph;
+    --counter-spacing: 0.5rem;
+
+    // <h2> is used as a section header since <h1> is the main title
+    h2 {
+        counter-reset: subsection;
+        counter-increment: section;
+
+        &::before {
+            content: counter(section) ".";
+            margin-right: var(--counter-spacing);
+        }
+    }
+
+    h3 {
+        counter-reset: subsubsection;
+        counter-increment: subsection;
+
+        &::before {
+            content: counter(section) "." counter(subsection) ".";
+            margin-right: var(--counter-spacing);
+        }
+    }
+
+    h4 {
+        counter-reset: paragraph;
+        counter-increment: subsubsection;
+
+        &::before {
+            content: counter(section) "." counter(subsection) "." counter(subsubsection) ".";
+            margin-right: var(--counter-spacing);
+        }
+    }
+
+    h5 {
+        counter-reset: subparagraph;
+        counter-increment: paragraph;
+
+        &::before {
+            content: counter(section) "." counter(subsection) "." counter(subsubsection) "." counter(paragraph) ".";
+            margin-right: var(--counter-spacing);
+        }
+    }
+
+    h6 {
+        counter-increment: subparagraph;
+
+        &::before {
+            content: counter(section) "." counter(subsection) "." counter(subsubsection) "." counter(paragraph) "." counter(subparagraph);
+            margin-right: var(--counter-spacing);
+        }
+    }
+}
