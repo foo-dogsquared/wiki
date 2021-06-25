@@ -3,9 +3,10 @@
 :END:
 #+title: Fundamentals of music theory
 #+date: "2021-04-29 18:27:29 +08:00"
-#+date_modified: "2021-06-16 18:40:52 +08:00"
+#+date_modified: "2021-06-21 18:13:51 +08:00"
 #+language: en
 #+source: https://www.coursera.org/learn/edinburgh-music-theory/
+#+property: header_args:lilypond  :exports results  :noweb true
 
 #+name: lilypond-paper-config
 #+begin_src lilypond

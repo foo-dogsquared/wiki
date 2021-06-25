@@ -1,0 +1,63 @@
+:PROPERTIES:
+:ID:       8750a413-7cb8-4160-b4b3-3b54265b2825
+:END:
+#+title: Percent encoding in Bash
+#+date: "2021-06-23 21:10:33 +08:00"
+#+date_modified: "2021-06-24 20:42:43 +08:00"
+#+language: en
+
+
+Percent-encoding is commonly used in URLs.
+Pretty nice especially when used with spaces.
+
+Based from [[https://gist.github.com/cdown/1163649][this implementation]].
+It was modified to be closer to the output from [[https://docs.python.org/3.8/library/urllib.parse.html#urllib.parse.urlencode][Python =urlencode=]].
+
+#+begin_src bash
+function urlencode {
+    local msg=$1
+    local length="${#1}"
+
+    for (( i = 0; i < length; i++ )); do
+        local ch="${msg:i:1}"
+        case $ch in
+            [a-zA-Z0-9.~_-])
+                printf "%c" $ch;;
+            ,*)
+                printf '%s' "$ch" | xxd -plain -cols 1 | {
+                    while read hex; do
+                        printf "%%%s" $hex
+                    done
+                };;
+        esac
+    done
+    printf "\n"
+}
+
+urlencode "El Doggo"
+urlencode "El Niño"
+urlencode "Whoa there, sonny!"
+#+end_src
+
+#+results:
+: ElDoggo
+: ElNi�o
+: Whoatheresonny
+
+To decode percent-encoded strings:
+
+#+begin_src bash
+function urldecode {
+    # urldecode <string>
+
+    local url_encoded="${1//+/ }"
+    printf '%b\n' "${url_encoded//%/\\x}"
+}
+
+urldecode "El%20Doggo"
+urldecode "%e9%bd%8b%e8%97%a4%e3%83%bbB%e3%83%bb%e6%a5%b5%e3%83%bb%e5%b0%86%e5%97%a3"
+#+end_src
+
+#+results:
+: El Doggo
+: 齋藤・ B ・極・将嗣

@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       dd64a585-6fa1-438e-9e0d-5775c0d55c37
+:END:
 #+title: Command line: cURL
 #+date: "2021-06-04 10:56:52 +08:00"
-#+date_modified: "2021-06-19 17:41:38 +08:00"
+#+date_modified: "2021-06-20 20:25:49 +08:00"
 #+language: en
 #+property: header-args  :eval no
 

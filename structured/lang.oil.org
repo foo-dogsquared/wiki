@@ -1,6 +1,6 @@
 #+title: Oil shell
 #+date: "2021-05-09 16:40:50 +08:00"
-#+date_modified: "2021-06-14 22:26:24 +08:00"
+#+date_modified: "2021-06-23 20:12:37 +08:00"
 #+language: en
 #+property: header-args:oil  :eval no
 
@@ -54,6 +54,8 @@ var metadata = {}
 setvar metadata['author'] = "Hal Draper"
 setvar metadata['year'] = 1961
 
+# Practically, it's a function.
+# Not necessarily a function since it doesn't return an output.
 proc kebab_case(word) {
   write -- $word | sed -E -e 's/./\L&/g' -e 's/s+/-/g' -e 's/[^.a-z0-9-]//g' -e 's/-+/-/g'
 }
@@ -122,13 +124,12 @@ _ a.append("biz")
 #+end_src
 
 
-** Conditionals
+** Conditions
+
+Conditions in Oil look like this...
+Note that the parenthesis is a part of it.
 
 #+begin_src oil
-# Ternary conditionals
-echo $['dogs' if dogs == 'cute' else 'cats']
-
-# If-else statements
 if (4 == 5) {
   echo "Alright, this is true."
 } elif (1 > 5) {
@@ -138,6 +139,49 @@ if (4 == 5) {
 }
 #+end_src
 
+You can also make ternary conditionals.
+
+#+begin_src oil
+echo $['dogs' if dogs == 'cute' else 'cats']
+#+end_src
+
+While Oil expressions are usually used for conditions, you can also use command mode lines (see [[Expression and command mode]]).
+Similar to Bash conditions, it will pass when the exit code is zero.
+
+#+begin_src oil
+if test -d /usr/home {
+  echo "OK, you have an unusual home."
+} elif test -d /home {
+  echo "Alrighty, home does exist."
+} else {
+  echo "Homeless."
+}
+#+end_src
+
+
+** Associative arrays
+
+- similar to Bash associative arrays or Python dictionaries (practically like Python dictionaries)
+- when interacting with Oil, an associative array is exactly that, an array
+
+#+begin_src oil
+const conditions = {}
+setvar conditions['sunny'] = 80
+setvar conditions['cloudy'] = 30
+setvar conditions['rainy'] = -20
+
+for key in @conditions {
+  write -- $key $[conditions[key]]
+}
+#+end_src
+
+You can check for a member in an associative with =in= keyword.
+
+#+begin_src oil
+if ('rainy' in conditions) {
+  write -- "We have rainy days over here."
+}
+#+end_src
 
 
 
@@ -165,9 +209,24 @@ if (4 == 5) {
 
 
 
+* Quoted string notation (QSN)
+
+- a data format that can represent any byte sequence
+- adapted from Rust's string syntax
+- Oil can print non-ASCII stuff through [[https://www.oilshell.org/release/latest/doc/qsn.html][QSN]]
+
+#+begin_src oil
+write -- $'\u044f\u043c\u0443' $'\u3bc'
+#+end_src
+
+
+
+
 * Tips and tricks
 
 - Oil seems to evaluate in applicative order, evaluating only when the conditions passed — e.g., ~echo $['' + null if null else 'EEEEHHH']~ should print =EEEEHHH=.
   + Just like most modern mainstream languages... nice.
 - Two operands of different types are considered unequal — e.g., ~'4' == 4~.
   + You can use Python-like type conversions like =Int=, =Bool=, and =Str= — e.g., ~Int('4') == 4~.
+- By default, errexit is disabled (e.g., the script will not exit on error).
+  You can have fine control over it with =run=.
