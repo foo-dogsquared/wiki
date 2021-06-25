@@ -7,7 +7,7 @@
 #+LANGUAGE: en
 
 
-Hello!
+Hey there!
 This is my public knowledge graph publicly available for the public.
 It is mostly intended for easy access for my notes in case I'm not in my computer along with sharing my findings with the rest of the world (and hopefully getting feedback on it).
 

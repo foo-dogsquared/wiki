@@ -158,6 +158,12 @@ Furthermore, they shouldn't be referenced anywhere.
 Naming them is the same as the one in my traditional notes.
 
 ** The root folder contains my evergreen notes.
+These are essentially like my Zettelkasten, a bunch of my own ideas (that I have processed and realized myself, anyways).
+footnote:[Not necessarily original but just some of them being developed and processed, with/out a Eureka moment.]
+
+** For challenges and answers to problem sets, they are set in my hierarchical notebook with the prefix `challenges`.
+The conventions are each question are its own section and are copied verbatim (as much as possible) with my solution as a subsection.
+I may also make some additional comments and subsections with my findings after peeking at the solution.
 
 ** Additional types of notes can be put in a separate folder (e.g., cards, microposts).
 There is not set hierarchy but be sure to create a new type by purpose.
@@ -185,6 +191,9 @@ It is managed with link:https://www.zotero.org/[Zotero] with the link:https://gi
 * A creation datetime and a modification datetime is a cruicial part of my notes.
 It lets me know how up-to-date my notes are without relying on the filesystem metadata because I copy them carelessly, not to mention how various tools deal with them differently.
 The modification datetime is handled with link:https://www.gnu.org/software/emacs/manual/html_node/emacs/Time-Stamps.html[timestamps] automatically.
++
+Just see my link:https://github.com/foo-dogsquared/dotfiles/tree/75de71b4d0dfe79fe820204e365809cee11d7349/emacs[Doom Emacs config] in my dotfiles.
++
 [source, elisp]
 ----
 (after! org
@@ -195,8 +204,6 @@ The modification datetime is handled with link:https://www.gnu.org/software/emac
 ; Automate updating timestamps on save.
 (add-hook 'before-save-hook 'time-stamp)
 ----
-+
-Just see my link:https://github.com/foo-dogsquared/dotfiles/tree/75de71b4d0dfe79fe820204e365809cee11d7349/emacs[Doom Emacs config] in my dotfiles.
 
 * The related assets are stored in the link:./assets/[`./assets/`].
 It contains anything that a document should attach.
@@ -242,7 +249,7 @@ I could whip up an Elisp script and export it by batch then move them over to an
 This is also how link:https://github.com/jethrokuan/braindump[Jethro Kuan's org-roam notes] are setup.
 
 ** Use a parser outside of Emacs.
-link:https://github.com/rasendubi/uniorg/tree/master/examples/org-braindump[uniorg] has a good example with Next.js as the site generator.
+link:https://github.com/rasendubi/uniorg/tree/master/examples/org-braindump[uniorg] has a good example with Next.js as the site generator and it can support org-roam v2 ID links.
 It requires an external JavaScript-based setup but it can also be an advantage.
 
 * Try out link:https://github.com/srid/neuron/[Neuron].
