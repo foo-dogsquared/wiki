@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       ce6ab58e-b295-4fdb-8af7-fc89c63ec208
+:END:
+#+title: GNU Emacs
+#+date: "2021-06-20 20:42:44 +08:00"
+#+date_modified: "2021-06-24 18:06:12 +08:00"
+#+language: en
+
+
+The ever-popular Emacs, [[https://insights.stackoverflow.com/survey/2019#technology-_-most-popular-development-environments][at least popular enough to be used by 4.5% of the respondents from the Stack Overflow survey of 2019]].
+It is one of the usual symbol of extensibility and [[roam:Free software]] due to its ecosystem of plugins and extensions integrating Emacs.
+It also allows the user to customize anything within it.
+
+To show how extensible it is, here is a list of extensions that may as well be an entirely new application altogether:
+
+- [[https://gitlab.com/phillord/org-drill/][Entirely new spaced repetition on top of Org mode]].
+- [[https://github.com/org-roam/org-roam/][Implementation of Roam Research with Org mode documents]].
+- [[http://magit.vc/][Comprehensive Git client]].
+- [[https://melpa.org/#/?q=window%20manager][Window managers inside Emacs]].
+
+Among other things, it is also where [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]] documents are often written from, making use of [[id:5569a49f-c387-4da2-8f68-d8452e35ee5b][Org mode: Babel]].
+
+People have been building it with complex workflows all in one environment.
+In a way, Emacs is an entire operating system by itself.
+
+As a complex text editor, you can start with [[id:0efb9c51-3a12-4e5a-9e9b-d48cf4bd53ce][Using the built-in help system of Emacs]].

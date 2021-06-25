@@ -3,7 +3,7 @@
 :END:
 #+title: Make a hub note to connect ideas together
 #+date: "2021-05-07 22:46:41 +08:00"
-#+date_modified: "2021-05-07 23:45:26 +08:00"
+#+date_modified: "2021-06-24 19:45:51 +08:00"
 #+language: en
 
 
@@ -20,6 +20,6 @@ In order of preference, there are several ways to get around this:
 
 - [[id:c15325eb-4506-449c-b8dd-300801f53adc][A good tagging system for files for reducing information overload]].
 
-As a side effect, writing a hub note enforces chunking of your notes.
+As a side effect, writing a hub note enforces [[id:1e135aee-0464-4756-9f55-bbf12afe8254][Chunking]] of your notes.
 Furthermore, it also [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]] with the ability to select certain notes for a topic.
 You get to explicitly define the topic instead of relying on backlinks or similar features.

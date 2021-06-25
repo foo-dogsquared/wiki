@@ -3,12 +3,11 @@
 :END:
 #+title: When note-taking, don't satisfy your ego
 #+date: "2021-04-26 18:59:30 +08:00"
-#+date_modified: "2021-05-19 21:15:35 +08:00"
+#+date_modified: "2021-06-24 20:12:47 +08:00"
 #+language: en
 
 
 Note-taking are meant as a mental scratchpad, not some sort of creative writing.
-(That said, you can [[id:d024516b-35ea-40ae-9433-ceacea695073][Write paragraphs like music]].)
 The time you spent making things align as if you have OCD could be spent editing and improving other notes.
 
 Personal notes, no matter how poorly written or unmaintained, are still valuable.
@@ -26,7 +25,7 @@ Other examples include:
 - Satisfying my obsessiveness over the little things such as sorting lines for the note metadata in alphanumerical order.
 - Finding the perfect note system and constantly shopping for better tools.
 - Consequently from the previous point, obsessing over the fact that the first draft of my notes are not perfect.
-- Collecting every links that I may need to refer to the future (see [[link][Collector's Fallacy]]) and mistakenly putting them at my notes (when it should be at my inboxes to be processed).
+- Collecting every resources for the future (see [[id:6b0e6b75-410f-42a3-8921-bcc4589b2d2a][Collecting information only feels like progress]]).
 
 A similar dilemma I have yesterday is trying to format the metadata my Org mode files and sorting them alphabetically.
 I've written a script and as I'm not experienced in text processing, I spent most of my time reading up documentation on the tools.
