@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       ecee1a61-3d5c-4c8f-a205-67e5278beed6
+:END:
+#+title: Flatpak packages
+#+date: "2021-06-27 23:46:41 +08:00"
+#+date_modified: "2021-06-29 16:54:58 +08:00"
+#+language: en
+
+
+- a Flatpak package usually is an application that depends on runtimes which are collections of library
+- while runtimes can be created, there are only a handful of them in the official Flathub remote
+- some of the runtimes include Freedesktop, GNOME, and KDE
+- you can run the runtimes to know the installed packages (e.g., ~flatpak run org.freedesktop.Sdk//19.08~)
+- examples:
+  + [[https://github.com/flathub/com.mojang.Minecraft/][Minecraft]] is fairly simple by fetching the compiled binary and its dependencies with minimal compilation needed
+  + [[https://github.com/flathub/com.rawtherapee.RawTherapee][RawTherapee]] is slightly complex with various dependencies defined mostly in one file
+  + [[https://github.com/flathub/org.gnucash.GnuCash][Gnucash]] has a complex manifest that is composed of multiple dependencies packages as its own module file

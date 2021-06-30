@@ -1,0 +1,13 @@
+#+title: Nix language
+#+date: "2021-06-30 13:30:19 +08:00"
+#+date_modified: "2021-06-30 13:33:32 +08:00"
+#+language: en
+
+
+Nix can be aptly described as JSON but with functions.
+While you can make Nix work with basic configurations, you need to know the details if you're creating packages.
+
+* TODO Basic data types
+* TODO Derivations
+* TODO Standard library
+* TODO Imports

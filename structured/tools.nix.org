@@ -3,7 +3,7 @@
 :END:
 #+title: The basics of Nix package manager
 #+date: "2021-06-05 12:34:49 +08:00"
-#+date_modified: "2021-06-15 10:37:05 +08:00"
+#+date_modified: "2021-06-30 22:36:30 +08:00"
 #+language: en
 
 
@@ -16,13 +16,30 @@ Taking it up to the next level with NixOS, your whole installation.
 
 * Ecosystem
 
-- Nix has tools to make setting up environments easier with direnv, lorri, and [[id:c05e1aa9-0619-4617-abb6-870fceca3430][Niv]]
+Nix has tools to make setting up environments easier.
+
+- [[https://direnv.net/][direnv]] has [[https://github.com/direnv/direnv/wiki/Nix][integration with Nix]] as well as a lot of editors
+- [[https://github.com/nix-community/lorri][lorri]] replaces nix-shell integrating with direnv
+- [[https://github.com/nmattia/niv][niv]] provides a easier way to manage dependencies though it will be easier with Nix flakes
+- [[Nix flakes]] is an upcoming feature for Nix, replacing the traditional Nix channels into a decentralized set of derivations that can be retrieved from anywhere similar to Go modules [fn:: At a glance, anyways. I'm not experienced enough with Go to say that with utmost confidence.]
+- [[https://cachix.org/][Cachix]] is a cache service enabling to easily distribute binaries built with Nix.
+
+
+
+
+* Reproducible executables
 
 You can create a [[https://nix.dev/tutorials/ad-hoc-developer-environments#reproducible-executables][reproducible executable]] that only requires Nix.
 
+Here's a sample script that uses multiple dependencies.
+
+#+begin_tip
+If the script interact with the network (e.g., =curl=, =wget=) and the environment is completely pure, don't forget to install public Certificate Authorities with =cacert=.
+#+end_tip
+
 #+begin_src bash
 #!/usr/bin/env nix-shell
-#! nix-shell --pure -i bash -p curl jq fzf findutils
+#! nix-shell --pure -i bash -p coreutils curl cacert jq fzf findutils
 
 # A quick command line interface for creating a gitignore with the API from https://gitignore.io.
 # This script comes with a simple caching to avoid creating too much requests.
@@ -74,3 +91,66 @@ For another example, you can see some examples from [[https://github.com/neovim/
 
 You can set overlays automatically either by setting =nixpkgs.overlays= from your system configuration or =~/.config/nixpkgs/overlays/= folder for user-specific settings.
 You could also set overlays for standalone Nix code similarly through the =overlays= key — e.g., ~import <nixpkgs> ? { overlays = (self: super: { } ); };~.
+
+
+
+
+* TODO Nix flakes
+
+#+begin_note
+As of 2021-06-30, the version used for this note is at v2.3 so it needs to be invoked with the unstable version.
+#+end_note
+
+- similar to [[https://guix.gnu.org/manual/en/html_node/Channels.html][Guix channels]]
+- a collection of packages and functions while making it easy to configure Nix declaratively
+- replaces the traditional Nix channels since fully reproducing an environment with Nix requires special care in practice;
+  plus, there's no standard way of composing projects with Nix
+- as of 2021-06-30, this is on the unstable version of the Nix package manager and needs some additional configuration
+
+why flakes?
+
+- provides a structure for discoverability
+- makes 100% reproducibility a little easier with Nix
+- in case you're using NixOS, it also provides an easier way to extend it with third-party custom modules
+
+Here's an example to interact with a flake.
+It will show the entire outputs of a flake as well as the normalized version of the flake object.
+
+#+name: flake-sample-object
+#+begin_src python  :results value silent :exports none
+return "github:edolstra/dwarffs"
+#+end_src
+
+#+begin_src shell  :shebang "#!/usr/bin/env nix-shell"
+#! nix-shell -i bash -p nixUnstable
+nix --experimental-features 'nix-command flakes' flake show <<flake-sample-object()>> | sed -e "s/\x1b\[.\{1,5\}m//g"
+#+end_src
+
+#+results:
+#+begin_example
+github:edolstra/dwarffs/f691e2c991e75edb22836f1dbe632c40324215c5
+├───checks
+│   ├───aarch64-linux
+│   │   ├───build: derivation 'dwarffs-0.1.20210121.f691e2c'
+│   │   └───test: derivation 'vm-test-run-unnamed'
+│   ├───i686-linux
+│   │   ├───build: derivation 'dwarffs-0.1.20210121.f691e2c'
+│   │   └───test: derivation 'vm-test-run-unnamed'
+│   └───x86_64-linux
+│       ├───build: derivation 'dwarffs-0.1.20210121.f691e2c'
+│       └───test: derivation 'vm-test-run-unnamed'
+├───defaultPackage
+│   ├───aarch64-linux: package 'dwarffs-0.1.20210121.f691e2c'
+│   ├───i686-linux: package 'dwarffs-0.1.20210121.f691e2c'
+│   └───x86_64-linux: package 'dwarffs-0.1.20210121.f691e2c'
+├───nixosModules
+│   └───dwarffs: NixOS module
+└───overlay: Nixpkgs overlay
+#+end_example
+
+Let's build from one of the outputs of call_flake-sample-object().
+
+#+begin_src shell  :shebang "#!/usr/bin/env nix-shell"  :results silent  :exports none
+#! nix-shell -i bash -p nixUnstable
+nix --experimental-features 'nix-command flakes' build '<<flake-sample-object()>>#checks.aarch64-linux.build'
+#+end_src
