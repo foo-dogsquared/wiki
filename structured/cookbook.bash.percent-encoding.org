@@ -3,7 +3,7 @@
 :END:
 #+title: Percent encoding in Bash
 #+date: "2021-06-23 21:10:33 +08:00"
-#+date_modified: "2021-06-24 20:42:43 +08:00"
+#+date_modified: "2021-07-01 13:46:04 +08:00"
 #+language: en
 
 
@@ -50,7 +50,10 @@ To decode percent-encoded strings:
 function urldecode {
     # urldecode <string>
 
+    # Replace all pluses with spaces since it usually represents it in URLs.
     local url_encoded="${1//+/ }"
+
+    # Replace all percent sign with '\x' and print the message with byte interpretation.
     printf '%b\n' "${url_encoded//%/\\x}"
 }
 

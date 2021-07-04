@@ -3,7 +3,7 @@
 :END:
 #+title: The basics of Nix package manager
 #+date: "2021-06-05 12:34:49 +08:00"
-#+date_modified: "2021-06-30 22:36:30 +08:00"
+#+date_modified: "2021-06-30 23:01:51 +08:00"
 #+language: en
 
 
@@ -16,12 +16,12 @@ Taking it up to the next level with NixOS, your whole installation.
 
 * Ecosystem
 
-Nix has tools to make setting up environments easier.
+Nix has several tools that integrates them into the already existing ecosystem of developer tools.
 
-- [[https://direnv.net/][direnv]] has [[https://github.com/direnv/direnv/wiki/Nix][integration with Nix]] as well as a lot of editors
-- [[https://github.com/nix-community/lorri][lorri]] replaces nix-shell integrating with direnv
-- [[https://github.com/nmattia/niv][niv]] provides a easier way to manage dependencies though it will be easier with Nix flakes
-- [[Nix flakes]] is an upcoming feature for Nix, replacing the traditional Nix channels into a decentralized set of derivations that can be retrieved from anywhere similar to Go modules [fn:: At a glance, anyways. I'm not experienced enough with Go to say that with utmost confidence.]
+- [[https://direnv.net/][direnv]] has [[https://github.com/direnv/direnv/wiki/Nix][integration with Nix]] as well as a lot of editors.
+- [[https://github.com/nix-community/lorri][lorri]] replaces nix-shell integrating with direnv.
+- [[https://github.com/nmattia/niv][niv]] provides a easier way to manage dependencies though it will be easier with Nix flakes.
+- [[Nix flakes]] is an upcoming feature for Nix, replacing the traditional Nix channels into a decentralized set of derivations that can be retrieved from anywhere similar to Go modules [fn:: At a glance, anyways. I'm not experienced enough with Go to say that with utmost confidence.].
 - [[https://cachix.org/][Cachix]] is a cache service enabling to easily distribute binaries built with Nix.
 
 
@@ -86,7 +86,6 @@ let overlay = self: super:
       }
 #+end_src
 
-# TODO: Bring more examples
 For another example, you can see some examples from [[https://github.com/neovim/neovim/blob/f695457f815544d0dc16469569c70556e3165bb6/contrib/flake.nix][Neovim]] and [[https://gitlab.com/veloren/veloren/-/tree/685f4971ac0deb31b301e9d2bc0201d2531fd895/nix][Veloren]] (which also uses Nix flakes).
 
 You can set overlays automatically either by setting =nixpkgs.overlays= from your system configuration or =~/.config/nixpkgs/overlays/= folder for user-specific settings.
@@ -150,7 +149,46 @@ github:edolstra/dwarffs/f691e2c991e75edb22836f1dbe632c40324215c5
 
 Let's build from one of the outputs of call_flake-sample-object().
 
-#+begin_src shell  :shebang "#!/usr/bin/env nix-shell"  :results silent  :exports none
+#+begin_src shell  :shebang "#!/usr/bin/env nix-shell"
 #! nix-shell -i bash -p nixUnstable
-nix --experimental-features 'nix-command flakes' build '<<flake-sample-object()>>#checks.aarch64-linux.build'
+nix --experimental-features 'nix-command flakes' build 'github:edolstra/dwarffs#checks.aarch64-linux.build'
+
+nix --experimental-features 'nix-command flakes' shell 'github:edolstra/dwarffs' --command dwarffs --version
 #+end_src
+
+#+results:
+: fusermount version: 2.9.9
+
+For full reproducibility, you can refer to specific point of a flake (e.g., commit).
+
+#+begin_tip
+To easily get a pinned URL, you can run =flake metadata= subcommand.
+
+#+begin_src shell  :shebang "#!/usr/bin/env nix-shell"
+#! nix-shell -i bash -p nixUnstable
+nix --experimental-features 'nix-command flakes' flake metadata 'github:edolstra/dwarffs' | sed -e "s/\x1b\[.\{1,5\}m//g"
+#+end_src
+
+#+results:
+#+begin_example
+Resolved URL:  github:edolstra/dwarffs
+Locked URL:    github:edolstra/dwarffs/f691e2c991e75edb22836f1dbe632c40324215c5
+Description:   A filesystem that fetches DWARF debug info from the Internet on demand
+Path:          /nix/store/769s05vjydmc2lcf6b02az28wsa9ixh1-source
+Revision:      f691e2c991e75edb22836f1dbe632c40324215c5
+Last modified: 2021-01-21 22:41:26
+Inputs:
+├───nix: github:NixOS/nix/6254b1f5d298ff73127d7b0f0da48f142bdc753c
+│   ├───lowdown-src: github:kristapsdz/lowdown/1705b4a26fbf065d9574dce47a94e8c7c79e052f
+│   └───nixpkgs: github:NixOS/nixpkgs/ad0d20345219790533ebe06571f82ed6b034db31
+└───nixpkgs follows input 'nix/nixpkgs'
+#+end_example
+#+end_tip
+
+#+begin_src shell  :shebang "#!/usr/bin/env nix-shell"
+#! nix-shell -i bash -p nixUnstable
+nix --experimental-features 'nix-command flakes' shell github:edolstra/dwarffs/f691e2c991e75edb22836f1dbe632c40324215c5 --command dwarffs --version
+#+end_src
+
+#+results:
+: fusermount version: 2.9.9

@@ -1,6 +1,6 @@
 #+title: Exploring systemd features
 #+date: "2021-05-20 22:37:22 +08:00"
-#+date_modified: "2021-06-19 15:07:52 +08:00"
+#+date_modified: "2021-07-01 11:54:34 +08:00"
 #+language: en
 #+property: header-args  :eval no
 
@@ -68,6 +68,52 @@ But you can omit it if you named the timer unit file similarly (e.g., =borg-back
 
 You can find more information about it from the =systemd.time.5= manual page.
 Furthermore, systemd has a testing tool for time with ~systemd-analyze {timespan,timestamp,calendar}~.
+
+#+begin_src shell  :eval yes
+printf "Timespan example:\n"
+printf "..............\n"
+systemd-analyze timespan 4000min
+printf "..............\n\n"
+
+printf "Timestamp example:\n"
+printf "..............\n"
+systemd-analyze timestamp 2021-07-01
+printf "..............\n\n"
+
+printf "Calendar example:\n"
+printf "..............\n"
+systemd-analyze calendar "*-1/4-5 0/2:00:00"
+printf "..............\n\n"
+#+end_src
+
+#+results:
+#+begin_example
+Timespan example:
+..............
+Original: 4000min
+      μs: 240000000000
+   Human: 2d 18h 40min
+..............
+
+Timestamp example:
+..............
+  Original form: 2021-07-01
+Normalized form: Thu 2021-07-01 00:00:00 PST
+       (in UTC): Wed 2021-06-30 16:00:00 UTC
+   UNIX seconds: @1625068800
+       From now: 11h ago
+..............
+
+Calendar example:
+..............
+  Original form: *-1/4-5 0/2:00:00
+Normalized form: *-01/4-05 00/2:00:00
+    Next elapse: Sun 2021-09-05 00:00:00 PST
+       (in UTC): Sat 2021-09-04 16:00:00 UTC
+       From now: 2 months 4 days left
+..............
+
+#+end_example
 
 
 
@@ -152,22 +198,55 @@ Like most of the components, it can be used at user-level with their set locatio
 
 Just plop down a service unit file at one of the search paths and you can start managing right away.
 For more information, see the manual page (i.e., =systemd.service.5=).
+A summarized version can be found at [[Service configuration]].
 
-Here's an example of a user service resided as =$HOME/.config/systemd/user/borgbackup@.service=.
+Here's an example of a user service resided as =$HOME/.config/systemd/user/drive-backup.service=.
 
 #+begin_src ini
 [Unit]
-Description=Periodic safety backup for %i
+Description=Periodic safety backup for my external drive
 Documentation=man:borg(1) https://www.borgbackup.org/ https://torsion.org/borgmatic/
 
 [Service]
-Type=simple
-ExecStartPre=%h/.nix-profile/bin/borgmatic --config %h/dotfiles/borgmatic/%i.yaml --verbosity 2 create
-ExecStart=%h/.nix-profile/bin/borgmatic --config %h/dotfiles/borgmatic/%i.yaml --verbosity 2 check
+Type=oneshot
+ExecStart=%h/.nix-profile/bin/borgmatic --config %h/dotfiles/borgmatic/personal-drive.yaml --verbosity 2 create
+ExecStart=%h/.nix-profile/bin/borgmatic --config %h/dotfiles/borgmatic/personal-drive.yaml --verbosity 2 prune
+ExecStart=%h/.nix-profile/bin/borgmatic --config %h/dotfiles/borgmatic/personal-drive.yaml --verbosity 2 check
 
 [Install]
 WantedBy=default.target
 #+end_src
+
+You can then start the service with:
+
+#+begin_src shell  :eval no
+systemctl --user start drive-backup.service
+#+end_src
+
+You can also stop it with the =stop= subcommand (e.g., ~systemctl --user stop drive-backup.service~) and restart it with =restart= (e.g., ~systemctl --user restart drive-backup.service~).
+
+If you want to enable it at startup, you can go with =enable= subcommand.
+(To disable it, use the =disable= subcommand.)
+
+#+begin_src shell  :eval no
+systemctl --user enable drive-backup.service
+#+end_src
+
+systemd will use the configuration file as-is by the time it is started/enabled.
+Which means if the config file has been modified after activation, it will not take effect until you restarted it.
+For this, you can reload the daemon with =daemon-reload= subcommand.
+But for simpler cases, you can use the =reload= subcommand without fully restarting the daemon.
+
+#+begin_src shell  :eval no
+systemctl --user reload drive-backup.service
+
+# You could also use...
+#   systemctl --user daemon-reload
+# ...if you need a stronger option.
+#+end_src
+
+
+** Service configuration
 
 There are different types of services.
 

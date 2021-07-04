@@ -3,7 +3,7 @@
 :END:
 #+title: Solutions to SUSE Cloud native fundamentals scholarship exercises
 #+date: "2021-06-08 23:23:35 +08:00"
-#+date_modified: "2021-06-21 10:54:53 +08:00"
+#+date_modified: "2021-07-02 16:48:37 +08:00"
 #+language: en
 
 
@@ -366,7 +366,7 @@ Now you have learned many Kubernetes recourses, in this exercise, you will deplo
 
 This is practical test but it can summarized with a shell script.
 
-#+begin_src bash  :eval no
+#+begin_src bash  :eval no  :tangle (my/concat-assets-folder "kubernetes-resources.sh")  :shebang "#!/usr/bin/env bash"
 # Create the namespace with the specified label.
 kubectl create namespaces demo
 kubectl label namespaces demo tier=test
@@ -419,7 +419,7 @@ The following manifests are created with the option to print the resources in YA
 Here's one for the namespace.
 The command used to make the template is ~kubectl create namespace demo --dry-run=client --output=yaml~.
 
-#+begin_src yaml
+#+begin_src yaml  :tangle (my/concat-assets-folder "manifests/namespace.yaml")
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -434,7 +434,7 @@ status: {}
 The manifest for the deployment.
 The command used to create the starting template is ~kubectl create deployment nginx-alpine --namespace=demo --replicas=3 --image=nginx:alpine --dry-run=client --output=yaml~.
 
-#+begin_src yaml
+#+begin_src yaml  :tangle (my/concat-assets-folder "manifests/deployment.yaml")
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -466,7 +466,7 @@ status: {}
 The service manifest should be created after the deployment manifest is applied (i.e., ~kubectl apply -f deployment.yaml~).
 It is created with ~kubectl expose deploy nginx-alpine --port=8111 --dry-run=client --output=yaml --namespace=demo~.
 
-#+begin_src yaml
+#+begin_src yaml  :tangle (my/concat-assets-folder "manifests/service.yaml")
 apiVersion: v1
 kind: Service
 metadata:
@@ -490,7 +490,7 @@ status:
 The resulting YAML output is from running the command (i.e., ~kubectl create configmap nginx-version --from-literal=version=alpine --dry-run=client --output=yaml --namespace=demo~).
 No cleaning up is required.
 
-#+begin_src yaml
+#+begin_src yaml  :tangle (my/concat-assets-folder "manifests/configmap.yaml")
 apiVersion: v1
 data:
   version: alpine
@@ -566,3 +566,55 @@ jobs:
 This is shamelessly ripped off from the sample from the [[https://github.com/marketplace/actions/build-and-push-docker-images][GitHub Actions page]].
 I realized it's basically the answer for this exercise.
 Embarrassing that I spent an hour for this.
+
+
+
+
+* The CD fundamentals
+
+Continuous Delivery (CD) is the ability to get code changes reliably to production environments.
+This practice should be automated and should enable developers to provide value to consumers efficiently.
+
+In this exercise, you will use ArgoCD to automate the delivery of an application to a Kubernetes cluster.
+
+
+** Solution
+
+The manifest is really the same as the example manifest from the walkthrough except with a different path pointing to the required manifests.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "argocd-nginx-alpine.yaml")
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ngnix-alpine
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: exercises/manifests
+    repoURL: https://github.com/udacity/nd064_course_1
+    targetRevision: HEAD
+  syncPolicy: {}
+#+end_src
+
+Then integrate it into the cluster with the following command.
+
+#+begin_src shell  :eval no
+kubectl apply -f argocd-nginx-alpine.yaml
+#+end_src
+
+You should then see the project on the ArgoCD application list where it requires an initial sync.
+
+For assurance, you can check to see if the resources are deployed.
+Continuing from [[Declarative Kubernetes manifests]], the resources are mostly in the =demo= namespace.
+
+#+begin_src shell  :eval no
+kubectl get pod -n demo
+kubectl get deploy -n demo
+kubectl get rs -n demo
+#+end_src
+
+You should see them up and running.

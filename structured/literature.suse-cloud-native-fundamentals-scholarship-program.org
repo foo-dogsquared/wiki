@@ -3,7 +3,7 @@
 :END:
 #+title: SUSE Cloud native fundamentals scholarship program
 #+date: "2021-06-07 18:21:19 +08:00"
-#+date_modified: "2021-06-19 17:31:22 +08:00"
+#+date_modified: "2021-07-02 18:58:12 +08:00"
 #+language: en
 
 
@@ -146,3 +146,14 @@ Best practices for application deployment:
   + GitHub Actions enables event-listening jobs
   + each job are then divided into steps
   + you can configure GitHub Actions through =.github/workflows= inside of the GitHub repo
+
+- in this chapter, they go with ArgoCD which is an application deployment frontend to Kubernetes clusters
+
+- with similar configurations, you may want to use templates;
+  this is where configuration managers come in;
+  this course chooses Helm as the tool of the trade as it is integrated into ArgoCD
+
+- Helm is a configuration manager
+  + it mainly manages charts which are basically packages in a package manager
+  + a chart contains parameterized values which is mainly done through Go templates
+  + Helm recognizes a chart with the =Chart.yaml= file that contains metadata about the deployment
