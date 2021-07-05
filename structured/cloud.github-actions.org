@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       319b52f8-5e60-4bbf-b649-73d864ed186f
+:END:
 #+title: GitHub Actions
 #+date: "2021-06-20 18:58:48 +08:00"
-#+date_modified: "2021-06-20 20:13:03 +08:00"
+#+date_modified: "2021-07-05 01:46:35 +08:00"
 #+language: en
 
 
@@ -15,3 +18,163 @@
 - each workflow can run a job which are composed of steps
 - each step make uses an action which is basically a script;
   it can interact with the repo or do something else entirely without ever touching it
+- you can use already defined actions or with your own
+
+
+
+
+* Examples
+
+With GitHub Actions being a massive ecosystem of integrations as of 2021-07-05, we have to find some examples in the worldwide community repos from there.
+
+
+** Python version of an installation
+
+The following block is a minimal example checking the Python version in the installation.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "minimal-python-version.yaml")
+name: Python version
+on: [push]
+jobs:
+  check-python-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: python --version
+#+end_src
+
+
+** Docker container integration
+
+In this case, we'll push an image to docker.io registry.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "docker-image.yaml")
+name: Docker build image
+on: [push]
+jobs:
+    docker:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Set up QEMU
+              uses: docker/setup-qemu-action@v1
+            - name: Setup Docker Buildx
+              uses: docker/setup-buildx-action@v1
+            - name: Login to DockerHub
+              uses: docker/login-action@v1
+              with:
+                  username: ${{ secrets.DOCKERHUB_USERNAME }}
+                  password: ${{ secrets.DOCKERHUB_TOKEN }}
+            - name: Build and push
+              id: docker_build
+              uses: docker/build-push-action@v2
+              with:
+                  push: true
+                  tags: ${{ secrets.DOCKERHUB_USERNAME }}/python-helloworld:latest
+                  platforms: linux/amd64,linux/arm64
+            - name: Image digest
+              run: echo ${{ steps.docker_build.outputs.digest }}
+#+end_src
+
+
+** Building a Nix binary cache
+
+We'll use [[id:366aeb8f-5a84-40c8-bf16-a919639790ab][Cachix]] as our binary cache service.
+This makes it easier to setup and distribute your own project built with [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]].
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "cachix-build.yaml")
+name: "Push packages into Cachix cache"
+on:
+  pull_request:
+  push:
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.3.4
+    - uses: cachix/install-nix-action@v13
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+    - uses: cachix/cachix-action@v10
+      with:
+        name: mycache
+        signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+    - run: nix-build
+    - run: nix-shell --run "echo OK"
+#+end_src
+
+
+** Multiple jobs with matrix
+
+We'll use the GitHub Actions workflow file from the NUR template.
+It is somewhat complex and it is doing a fine job showcasing some of GitHub Actions features.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "nur-build.yaml")
+name: "Build and populate cache"
+on:
+  pull_request:
+  push:
+  schedule:
+    # rebuild everyday at 2:51
+    # TIP: Choose a random time here so not all repositories are build at once:
+    # https://www.random.org/clock-times/?num=1&earliest=01%3A00&latest=08%3A00&interval=5&format=html&rnd=new
+    - cron:  '27 4 * * *'
+jobs:
+  tests:
+    strategy:
+      matrix:
+        # Set this to notify the global nur package registry that changes are
+        # available.
+        #
+        # The repo name as used in
+        # https://github.com/nix-community/NUR/blob/master/repos.json
+        nurRepo:
+          - '<YOUR_NUR_REPO>'
+        # Set this to cache your build results in cachix for faster builds
+        # in CI and for everyone who uses your cache.
+        #
+        # Format: Your cachix cache host name without the ".cachix.org" suffix.
+        # Example: mycache (for mycache.cachix.org)
+        #
+        # For this to work, you also need to set the CACHIX_SIGNING_KEY secret
+        # in your repository settings in Github found at https://github.com/<your_githubname>/nur-packages/settings/secrets
+        cachixName:
+          - '<YOUR_CACHIX_NAME>'
+        nixPath:
+          - nixpkgs=channel:nixos-unstable
+          - nixpkgs=channel:nixpkgs-unstable
+          - nixpkgs=channel:nixos-21.05
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2.3.4
+    - name: Install nix
+      uses: cachix/install-nix-action@v13
+      with:
+        nix_path: "${{ matrix.nixPath }}"
+    - name: Show nixpkgs version
+      run: nix-instantiate --eval -E '(import <nixpkgs> {}).lib.version'
+    - name: Setup cachix
+      uses: cachix/cachix-action@v10
+      if: ${{ matrix.cachixName != '<YOUR_CACHIX_NAME>' }}
+      with:
+        name: ${{ matrix.cachixName }}
+        signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+    - name: Check evaluation
+      run: |
+        nix-env -f . -qa \* --meta --xml \
+          --allowed-uris https://static.rust-lang.org \
+          --option restrict-eval true \
+          --option allow-import-from-derivation true \
+          --drv-path --show-trace \
+          -I nixpkgs=$(nix-instantiate --find-file nixpkgs) \
+          -I $PWD
+    - name: Build nix packages
+      # TODO switch to default nixpkgs channel once nix-build-uncached 1.0.0 is in stable
+      run: nix run -I 'nixpkgs=channel:nixos-unstable' nixpkgs.nix-build-uncached -c nix-build-uncached ci.nix -A cacheOutputs
+    - name: Trigger NUR update
+      if: ${{ matrix.nurRepo != <YOUR_NUR_REPO>' }}
+      run: curl -XPOST "https://nur-update.herokuapp.com/update?repo=${{ matrix.nurRepo }}"
+#+end_src
