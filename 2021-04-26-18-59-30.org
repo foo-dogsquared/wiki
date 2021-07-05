@@ -3,11 +3,12 @@
 :END:
 #+title: When note-taking, don't satisfy your ego
 #+date: "2021-04-26 18:59:30 +08:00"
-#+date_modified: "2021-06-24 20:12:47 +08:00"
+#+date_modified: "2021-07-05 13:16:37 +08:00"
 #+language: en
 
 
 Note-taking are meant as a mental scratchpad, not some sort of creative writing.
+[[id:b62c61f1-ee12-4bd9-b59a-ec6eafe29f38][Unnecessary optimizations cripple progress]] from the goal that [[roam:Note-taking should make better thinking]].
 The time you spent making things align as if you have OCD could be spent editing and improving other notes.
 
 Personal notes, no matter how poorly written or unmaintained, are still valuable.

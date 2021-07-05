@@ -3,7 +3,7 @@
 :END:
 #+title: Create an inbox to store your thoughts
 #+date: "2020-06-25 12:37:23 +08:00"
-#+date_modified: "2021-05-08 12:36:58 +08:00"
+#+date_modified: "2021-07-05 13:40:18 +08:00"
 #+language: en
 
 
@@ -19,3 +19,7 @@ Not all of them are going to be important so feel free to remove entries that ar
 
 If you want to store an idea for an indefinite future (e.g., a project idea, future hobbies) that you cannot surely do now, you can then create a dedicated inbox.
 In practice, this is great as a starter point for [[id:3d1c0313-fa3d-4b18-b435-51d3837e3e2c][Fleeting notes]] or a reading list to [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintain your own digital library]].
+
+Beware, this [[id:1bdbdcfa-98f9-4d08-a0dc-ad2f1b9b9ec9][Advice shouldn't be taken literally]].
+Not all thoughts are worthy of being noted, the same principle how some thoughts are not worthy to stay in your list.
+Don't get into the business of unnecessary note-taking of jotting every thoughts as [[id:b62c61f1-ee12-4bd9-b59a-ec6eafe29f38][Unnecessary optimizations cripple progress]].

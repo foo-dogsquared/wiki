@@ -3,7 +3,7 @@
 :END:
 #+title: We know more compared to what we understood
 #+date: "2021-05-17 08:47:37 +08:00"
-#+date_modified: "2021-05-31 18:55:53 +08:00"
+#+date_modified: "2021-07-05 12:14:21 +08:00"
 #+language: en
 
 
@@ -14,4 +14,4 @@ The amount of things is too great that deserve our limited attention.
 We can still make sense of the things we know since [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]].
 Our associative thinking along with our intuition is enough to make sense of things, we can always know the details later.
 This is where we [[id:9a11ef31-b2a7-43a9-a7a9-48f191838c6e][Prefer referencing over remembering]].
-But for the little things, it helps to write down what we've remember.
+But for the little things, it helps to write down [[id:3d1c0313-fa3d-4b18-b435-51d3837e3e2c][Fleeting notes]] what we've remember.

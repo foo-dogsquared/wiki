@@ -3,7 +3,7 @@
 :END:
 #+title: Most of the work is done from smaller amount of effort
 #+date: "2021-05-22 11:16:25 +08:00"
-#+date_modified: "2021-06-17 11:12:11 +08:00"
+#+date_modified: "2021-07-05 13:43:41 +08:00"
 #+language: en
 
 
@@ -17,3 +17,4 @@
   + in learning, you could be overlearning
   + in development, you could optimize to the point of
   + you may have done configuring your editor in a matter of days reaching the ideal workflow
+- this is also a good solution for not indulging into perfectionism as [[id:b62c61f1-ee12-4bd9-b59a-ec6eafe29f38][Unnecessary optimizations cripple progress]]

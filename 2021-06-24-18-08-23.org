@@ -1,9 +1,9 @@
 :PROPERTIES:
 :ID:       c886bc6d-e9dc-4f62-8841-59123236eda0
 :END:
-#+title: A failed idea can be repurposed
+#+title: Failed ideas can be repurposed
 #+date: "2021-06-24 18:08:23 +08:00"
-#+date_modified: "2021-06-24 19:33:56 +08:00"
+#+date_modified: "2021-07-05 13:13:16 +08:00"
 #+language: en
 
 
@@ -12,6 +12,6 @@
 - while some are taking risks investing into the new research, its concept and ideas can influence upcoming projects
 - it could also take note on the failures and flaws of the research
 - case in point:
-  + Virtual Boy with the start of the virtual reality
+  + Virtual Boy that eventually popularizes virtual reality
   + A bad animation can be used for an amateurish character
   + A very alien concept can be remixed with a new familiar concept

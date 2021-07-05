@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       1bdbdcfa-98f9-4d08-a0dc-ad2f1b9b9ec9
+:END:
+#+title: Advice shouldn't be taken literally
+#+date: "2021-07-04 15:36:22 +08:00"
+#+date_modified: "2021-07-04 15:37:27 +08:00"
+#+language: en
+
+
+- advice are contextual;
+  what works from the person whose giving the advice is different from yours
+- furthermore, most people can read between the lines
+- eventually the advice will depend on your interpretation;
+  [[id:d885e93b-f919-4338-a6b9-3438538e18c0][Every copy of the techniques is personalized]]
