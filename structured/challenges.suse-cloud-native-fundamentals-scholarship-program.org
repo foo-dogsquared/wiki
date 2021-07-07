@@ -3,7 +3,7 @@
 :END:
 #+title: Solutions to SUSE Cloud native fundamentals scholarship exercises
 #+date: "2021-06-08 23:23:35 +08:00"
-#+date_modified: "2021-07-02 16:48:37 +08:00"
+#+date_modified: "2021-07-07 16:33:05 +08:00"
 #+language: en
 
 
@@ -618,3 +618,293 @@ kubectl get rs -n demo
 #+end_src
 
 You should see them up and running.
+
+
+
+
+* Configuration managers
+
+Using the manifests provided in the course repository, create a helm chart (Chart.yaml, templates, values.yaml) that will template the following parameters:
+
+- namespace name
+- replica count
+- image:
+  + name
+  + tag
+  + pull policy
+- resources
+  + requests for CPU and memory
+- service
+  + port
+  + type (e.g. ClusterIP)
+- configmap data (e.g. the key-value pair)
+
+The chart details should be as following:
+
+- name: nginx-deployment
+- version: 1.0.0
+- keywords: nginx
+
+Once the Helm chart is available make sure that a default values.yaml file is available. This values file will be used as a default input file for the Helm chart. The values.yaml file should have the following specification:
+
+- values.yaml
+  + namespace name: demo
+  + replica count: 3
+  + image repository: nginx
+  + image tag: alpine
+  + image pull policy: IfNotPresent
+  + resources: CPU 50m and memory 256Mi
+  + service type: ClusterIP
+  + service port: 8111
+  + configmap data: "version: alpine"
+
+Next, create 2 values files with the following specifications:
+
+- values-staging.yaml
+  + namespace name: staging
+  + replica count: 1
+  + image repository: nginx
+  + image tag: 1.18.0
+  + resources: CPU 50m and memory 128Mi
+  + configmap data: "version: 1.18.0"
+
+- values-prod.yaml
+  + namespace name: prod
+  + replica count: 2
+  + image repository: nginx
+  + image tag: 1.17.0
+  + resources: CPU 70m and memory 256Mi
+  + service port: 80
+  + configmap data: "version: 1.17.0"
+
+Finally, using the values files above (values-prod, values-staging), create 2 ArgoCD application, nginx-staging and nginx-prod respectively. These should deploy the nginx Helm Chart referencing each input values files.
+
+
+** Solution
+
+With the given manifests, we'll have to create a Helm package (or a Chart).
+Here's what the file structure of the chart.
+
+#+begin_src
+helm-nginx
+├── templates
+│   ├── configmap.yaml
+│   ├── deployment.yaml
+│   ├── namespace.yaml
+│   └── service.yaml
+├── Chart.yaml
+├── values.yaml
+├── values-prod.yaml
+└── values-staging.yaml
+#+end_src
+
+The chart definition is the following file.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "Chart.yaml")
+apiVersion: v1
+name: nginx-deployment
+version: 1.0.0
+keywords:
+- nginx
+#+end_src
+
+With the chart definition, we move on to the values to be used in the templates.
+It's up to you how to structure the data but here's my solution on it.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "values.yaml")
+# namespace refers to the Kubernetes namespace resource.
+namespace:
+  name: demo
+
+# replicaCount is the number of instances to run in a replica set.
+replicaCount: 3
+
+# image contains the detail of the container image to be used
+image:
+  repository: nginx
+  tag: alpine
+  pullPolicy: IfNotPresent
+
+# resources dictate the amount to spend
+resources:
+  cpu: 50m
+  memory: 256Mi
+
+# service configures the Kubernetes service resource
+service:
+  type: ClusterIP
+  port: 8111
+
+# configmap configures the Kubernetes configmap resource
+configmap:
+  data: "version: alpine"
+#+end_src
+
+As for different versions of the values such as...
+
+...for development version (=values-staging.yaml=)...
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "values-staging.yaml")
+namespace:
+  name: staging
+replicaCount: 1
+image:
+  repository: nginx
+  tag: 1.18.0
+resources:
+  cpu: 50m
+  memory: 128Mi
+configmap:
+  data: "version: 1.18.0"
+#+end_src
+
+...and for production (=values-prod.yaml=).
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "values-prod.yaml")
+namespace:
+  name: prod
+replicaCount: 2
+image:
+  repository: nginx
+  tag: 1.17.0
+resources:
+  cpu: 70m
+  memory: 256Mi
+configmap:
+  data: "version: 1.17.0"
+#+end_src
+
+With the templates, it is already given to us from the course exercise repo.
+We just have to parameterize some of the values from the value file.
+
+Here's one for the configmap...
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "templates" "namespace.yaml")
+apiVersion: v1
+data:
+  {{ .Values.configmap.data }}
+kind: ConfigMap
+metadata:
+  name: nginx-version
+  namespace: {{ .Values.namespace.name }}
+#+end_src
+
+..., deployment...
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "templates" "deployment.yaml")
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+    tag: alpine
+  name: nginx-alpine
+  namespace: {{ .Values.namespace.name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: nginx
+      tag: alpine
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tag: alpine
+    spec:
+      containers:
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: nginx-alpine
+#+end_src
+
+..., namespace...
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "templates" "namespace.yaml")
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    tier: test
+  name: {{ .Values.namespace.name }}
+#+end_src
+
+..., and service.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "templates" "service.yaml")
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nginx
+    tag: alpine
+  name: nginx-alpine
+  namespace: {{ .Values.namespace.name }}
+spec:
+  ports:
+  - port: {{ .Values.service.port }}
+    protocol: TCP
+    targetPort: {{ .Values.service.port }}
+  selector:
+    app: nginx
+    tag: alpine
+  type: {{ .Values.service.type }}
+#+end_src
+
+To deploy it in ArgoCD, we'll just have to specify it in the ArgoCD manifest.
+Since ArgoCD is heavily a GitOps tool, we have to put the files in a Git repo.
+For now, let's assume the course repo as ours. [fn:: Be sure to be honest to compare with the solutions from the repo.]
+Just change the Git repo URL and the path if you have your own version.
+
+Additionally, the exercise requires to deploy two ArgoCD applications: one for staging (i.e., =nginx-staging=) and production version (i.e., =nginx-prod=) of the app.
+
+Here's one for the production version...
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx-prod.yaml")
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-prod
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      valueFiles:
+        - values-prod.yaml
+    path: structured/assets/challenges.suse-cloud-native-fundamentals-scholarship-program/helm-nginx
+    repoURL: https://github.com/foo-dogsquared/wiki
+    targetRevision: HEAD
+  syncPolicy: {}
+#+end_src
+
+...and the development version.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx-staging.yaml")
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-staging
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      valueFiles:
+        - values-staging.yaml
+    path: structured/assets/challenges.suse-cloud-native-fundamentals-scholarship-program/helm-nginx
+    repoURL: https://github.com/foo-dogsquared/wiki
+    targetRevision: HEAD
+  syncPolicy: {}
+#+end_src

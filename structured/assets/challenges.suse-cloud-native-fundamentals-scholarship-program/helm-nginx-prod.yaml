@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-prod
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      valueFiles:
+        - values-prod.yaml
+    path: structured/assets/challenges.suse-cloud-native-fundamentals-scholarship-program/helm-nginx
+    repoURL: https://github.com/foo-dogsquared/wiki
+    targetRevision: HEAD
+  syncPolicy: {}

@@ -18,9 +18,9 @@
       (f-join my/wiki-asset-directory-name (f-base buffer-file-name))
     nil))
 
-(defun my/concat-assets-folder (path)
+(defun my/concat-assets-folder (&rest args)
   "Concatenate PATH to the assets folder."
-  (f-join (my/get-assets-folder) path))
+  (apply #'f-join (my/get-assets-folder) args))
 
 (defun my/create-assets-folder ()
   "A quick convenient function to create an assets folder in the wiki folder."

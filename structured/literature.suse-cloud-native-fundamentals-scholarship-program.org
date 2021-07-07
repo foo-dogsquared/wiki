@@ -3,7 +3,7 @@
 :END:
 #+title: SUSE Cloud native fundamentals scholarship program
 #+date: "2021-06-07 18:21:19 +08:00"
-#+date_modified: "2021-07-02 18:58:12 +08:00"
+#+date_modified: "2021-07-07 15:53:36 +08:00"
 #+language: en
 
 
@@ -157,3 +157,13 @@ Best practices for application deployment:
   + it mainly manages charts which are basically packages in a package manager
   + a chart contains parameterized values which is mainly done through Go templates
   + Helm recognizes a chart with the =Chart.yaml= file that contains metadata about the deployment
+
+- ArgoCD can accept multiple sources including Helm, making it easy to integrate Helm into it
+
+- CI/CD tools can be categorized based on the push/pull methodology
+  + traditionally, CI/CD platforms are push, delivering updates once changes have been pushed into the repository;
+    the changes will also be pushed to the CD where it will create new clusters;
+    while it makes update flow from new version easier, it also requires more resources and more awareness as it has more chance of a disruption, requiring more resources;
+    on the other hand, this makes versioning easier making it easier to debug and analyze
+  + pull-based CI/CD platforms is mostly similar except it will detect changes and apply them to the cluster;
+    while this is easier to apply new changes, it also makes it harder to analyze for future improvements
