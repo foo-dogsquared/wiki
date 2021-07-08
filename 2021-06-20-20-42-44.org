@@ -3,7 +3,7 @@
 :END:
 #+title: GNU Emacs
 #+date: "2021-06-20 20:42:44 +08:00"
-#+date_modified: "2021-06-24 18:06:12 +08:00"
+#+date_modified: "2021-06-30 21:18:50 +08:00"
 #+language: en
 
 
@@ -18,7 +18,7 @@ To show how extensible it is, here is a list of extensions that may as well be a
 - [[http://magit.vc/][Comprehensive Git client]].
 - [[https://melpa.org/#/?q=window%20manager][Window managers inside Emacs]].
 
-Among other things, it is also where [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]] documents are often written from, making use of [[id:5569a49f-c387-4da2-8f68-d8452e35ee5b][Org mode: Babel]].
+Among other things, it is also where [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]] documents are often written from as well as making use of [[id:5569a49f-c387-4da2-8f68-d8452e35ee5b][Org mode: Babel]] as a component for [[id:6eeb7a24-b662-46d6-9ece-00a5028ff4d8][Reproducible research]].
 
 People have been building it with complex workflows all in one environment.
 In a way, Emacs is an entire operating system by itself.

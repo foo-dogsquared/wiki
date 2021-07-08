@@ -3,14 +3,16 @@
 :END:
 #+title: Create examples of ranking complexity when documenting your project
 #+date: "2021-02-28 14:52:58 +08:00"
-#+date_modified: "2021-05-17 08:57:48 +08:00"
+#+date_modified: "2021-07-08 19:33:49 +08:00"
 #+language: en
 
 
 Some projects such as user applications include examples of usage varying of the complexity from a simple "Hello world"-esque example to a real-life example that the developer uses.
 This acts as a quick introduction to the project as well as subtly giving hints about what you can do with the program.
-Examples include the manual pages from [[https://www.freebsd.org/][the FreeBSD project]] where each tool is given a dedicated section for example usage.
-Another that stuck out to me is the README of [[https://github.com/naelstrof/maim/tree/b1b28fcb0c3a44e699fd879189316440b7edff22][maim]], a screenshot capture tool, where one of the examples demonstrate that you can pipe binary output which leads to useful things such as [[https://github.com/naelstrof/maim/tree/b1b28fcb0c3a44e699fd879189316440b7edff22][OCR selection]] or a colorpicker.
+Examples include...
+
+- The manual pages from [[https://www.freebsd.org/][the FreeBSD project]] where each tool is given a dedicated section for example usage.
+- [[https://github.com/naelstrof/maim/tree/b1b28fcb0c3a44e699fd879189316440b7edff22][maim]], a screenshot capture tool, has one of the examples demonstrate that you can pipe binary output which leads to useful things such as [[https://github.com/naelstrof/maim/tree/b1b28fcb0c3a44e699fd879189316440b7edff22][OCR selection]] or a colorpicker.
 
 Practicing this in your studies is also helpful, creating a primer of the topic that you can refer to.
 You can then break the examples down and include it in a [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]] session (e.g., include the examples in Anki).

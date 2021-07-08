@@ -3,11 +3,13 @@
 :END:
 #+title: Diving head-first into a difficult problem makes a bad start
 #+date: "2021-05-20 20:32:49 +08:00"
-#+date_modified: "2021-06-18 22:46:35 +08:00"
+#+date_modified: "2021-07-09 07:38:22 +08:00"
 #+language: en
 
 
-- when learning a new skill, a difficult problem is a bad start
+- while you can [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]], a difficult problem is... difficult;
+  you might see little progress compared to starting with a beginner's choice
+- you can always practice roam:Interleaving between the two as [[id:12dc8b07-ed8b-46d8-bff0-a38d9f3cb83b][Diving head-first with a difficult problem is a good indicator of progress]] as you make your steps
 - it can overwhelming with the amount of steps that you need to take
 - you can mix other problems that doesn't need to be there and difficult concepts essentially comes from understanding the basics
 - this is why you should [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]] to prevent forming bad habits in the first place

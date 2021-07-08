@@ -3,12 +3,12 @@
 :END:
 #+title: We are more associative than structured
 #+date: "2021-05-08 23:12:29 +08:00"
-#+date_modified: "2021-05-21 23:41:22 +08:00"
+#+date_modified: "2021-07-09 07:32:26 +08:00"
 #+language: en
 
 
 Knowing [[id:25fb4ebf-2cc4-40fe-93ad-37a79aedfb41][The basics of memory]], our neurons represent more like a web of thoughts.
-Innovation often comes from combining aspects from a network of ideas.
+Innovation often comes from combining aspects from a network of ideas (see [[id:af581713-d4a8-438a-84ea-9f3b8e1353e6][Creativity does not mean originality]]).
 Our brain is good at relating each topic with something else.
 To exemplify the point further, try to start at a single word and make a word map around it.
 
