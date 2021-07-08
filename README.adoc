@@ -227,6 +227,17 @@ As a side effect, this mitigates against overwriting of generated assets from or
 
 
 
+== Static site export
+
+While the wiki is exclusively used with Emacs, there is an exported website with Next.js and link:https://github.com/rasendubi/uniorg/[uniorg] deployed using GitHub Actions (at link:./.github/workflows/[`./.github/workflows/`]).
+The source code of the site is at link:./site/[`./site/`].
+
+Here's the image summarizing the workflow.
+
+image::assets/workflow.png[]
+
+
+
 == Future tasks
 
 This also means expect the following changes if you're watching this repo for some reason.
