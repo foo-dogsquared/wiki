@@ -5,6 +5,7 @@ import org2rehype from 'uniorg-rehype';
 import extractKeywords from 'uniorg-extract-keywords';
 import { uniorgSlug } from 'uniorg-slug';
 import { visitIds } from 'orgast-util-visit-ids';
+import toc from '@jsdevtools/rehype-toc'
 
 const processor = unified()
   .use(orgParse)
@@ -12,6 +13,7 @@ const processor = unified()
   .use(uniorgSlug)
   .use(extractIds)
   .use(org2rehype)
+  .use(toc)
   .use(toJson);
 
 export default async function orgToHtml(file) {

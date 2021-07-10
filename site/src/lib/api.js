@@ -1,4 +1,5 @@
 import * as path from 'path';
+import toc from '@jsdevtools/rehype-toc';
 import trough from 'trough';
 import toVFile from 'to-vfile';
 import findDown from 'vfile-find-down';
@@ -73,6 +74,7 @@ function populateBacklinks(files) {
       backlinks[file.data.slug] || new Set();
 
     file.data.links.forEach((other) => {
+      if (other === file.data.slug) { return; }
       backlinks[other] = backlinks[other] || new Set();
       backlinks[other].add(file.data.slug);
     });
