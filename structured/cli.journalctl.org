@@ -1,6 +1,6 @@
 #+title: Command line: journalctl
 #+date: "2021-05-20 23:07:39 +08:00"
-#+date_modified: "2021-06-19 17:43:20 +08:00"
+#+date_modified: "2021-07-10 22:19:08 +08:00"
 #+language: en
 #+property: header-args  :results none
 
@@ -16,13 +16,13 @@ For more information, see =journalctl.1= manual page.
 
 * Options
 
-- ~-b, --boot~ - show the logs starting from boot time
-- ~-e, --pager-end~ - go to the end of the logs
-- ~-f, --follow~ - watch the logs
-- ~--user-unit~ - show logs from a user unit
-- ~-u, --unit [UNIT]~ - show the logs of a system unit
-- ~--vacuum-time=[TIMESPAN]~ - delete logs older than the specified timespan [fn:: View =systemd.time.5= for more information.]
-- ~-x, --catalog~ - prints helpful messages such as the documentation URIs
+- =-b, --boot= - show the logs starting from boot time
+- =-e, --pager-end= - go to the end of the logs
+- =-f, --follow= - watch the logs
+- =--user-unit= - show logs from a user unit
+- =-u, --unit [UNIT]= - show the logs of a system unit
+- =--vacuum-time [TIMESPAN]= - delete logs older than the specified timespan [fn:: View =systemd.time.5= for more information.]
+- =-x, --catalog= - prints helpful messages such as the documentation URIs
 
 
 

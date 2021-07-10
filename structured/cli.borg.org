@@ -3,7 +3,7 @@
 :END:
 #+title: Command line: BorgBackup
 #+date: "2021-05-30 21:40:24 +08:00"
-#+date_modified: "2021-06-20 10:02:15 +08:00"
+#+date_modified: "2021-07-08 17:56:25 +08:00"
 #+language: en
 #+property: header_args :eval no
 #+property: header_args:bash  :results silent  :exports code
@@ -36,9 +36,9 @@ It can be picky with certain subcommands output being affected from the order of
 
 Borg uses a Git-style command-line interface with subcommands and some common options to choose from.
 
-- You can set the log level of the program with ~--debug~, ~--info~, ~--warning~, ~--error~, and ~--critical~.
-- ~-v, --verbose~ - alias for ~--info~
-- ~-p, --progress~ - show progress information; will be slower on certain operations due to additional passing of the metadata
+- You can set the log level of the program with =--debug=, =--info=, =--warning=, =--error=, and =--critical=.
+- =-v, --verbose= - alias for =--info=
+- =-p, --progress= - show progress information; will be slower on certain operations due to additional passing of the metadata
 
 Keep in mind, Borg doesn't have global configuration files, only per-repo configurations.
 You can create configurations with a little hard work and shell scripts.
