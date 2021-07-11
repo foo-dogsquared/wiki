@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@jsdevtools/rehype-toc": "^3.0.2",
     "next": "10.0.5",
     "orgast-util-visit-ids": "^0.3.0",
     "react": "17.0.1",
