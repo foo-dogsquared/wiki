@@ -3,12 +3,16 @@
 :END:
 #+title: Every copy of the techniques is personalized
 #+date: "2021-05-02 16:52:22 +08:00"
-#+date_modified: "2021-05-14 13:01:31 +08:00"
+#+date_modified: "2021-07-11 20:15:56 +08:00"
 #+language: en
 
 
 Different people have different ways of understanding.
+[[id:114b7874-6a20-49c8-be2c-46970c7110dc][Information is only acquired when you try to make sense of it]].
+At the end of the day, you have a workflow that works for you.
+
 From every tips, tricks, and techniques that are echoed throughout the internet, the most effective technique will always end up that you optimized.
+This can end up as an exercise of creativity (and [[id:af581713-d4a8-438a-84ea-9f3b8e1353e6][Creativity does not mean originality]]).
 This is especially true for (primarily) solo activities such as [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]] or learning a new hobby.
 Whether you've been speedrunning a game, aiming to type 100 words per minute, composing an album, or illustrating a character, you are eventually taking the time to improve it.
 

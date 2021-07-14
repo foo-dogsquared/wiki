@@ -3,16 +3,22 @@
 :END:
 #+title: Start with wishful thinking
 #+date: "2021-06-21 10:08:01 +08:00"
-#+date_modified: "2021-06-21 10:18:26 +08:00"
+#+date_modified: "2021-07-13 21:54:00 +08:00"
 #+language: en
 
 
-In other words, fake it till you make it.
-This is how projects start.
-Envision how you would use the end product then create a prototype that completes it no matter how badly implemented.
+In other words, start with the end result.
+This is the core of prototyping, starting with the end product and getting there no matter how badly implemented.
 
 - In programming, we usually call this abstractions where we don't need to worry about the implementation details and whatnot.
+  Some would even take one more step by starting with the user-oriented documentation or unit tests.
 
-- In learning, we could [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]].
-  These roadmaps usually represents what we want to be in the future.
-  If a roadmap is not enough, you can simply create a bucket list similar to [[https://collegeinfogeek.com/about/meet-the-author/my-impossible-list/][Thomas Frank's impossible list]].
+- In learning, we could start with our end-goal.
+  This is quite similar to [[https://collegeinfogeek.com/about/meet-the-author/my-impossible-list/][Thomas Frank's impossible list]] that we explicitly say what we want to do.
+  We could apply the principle what we want to do when we learn a skill.
+
+This is like the practice to [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]], only the examples are created yourself.
+It also allows to make iterations with a [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]]-kind of workflow.
+
+However, focusing too much on the destination can block your progress from having a clear sight on how to get there.
+We can [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]] and establish milestones.

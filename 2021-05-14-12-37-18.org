@@ -3,7 +3,7 @@
 :END:
 #+title: Learning process
 #+date: "2021-05-14 12:37:18 +08:00"
-#+date_modified: "2021-07-09 07:31:05 +08:00"
+#+date_modified: "2021-07-09 19:20:40 +08:00"
 #+language: en
 
 
@@ -18,7 +18,6 @@
 - With the techniques considered, take a look at the common [[id:9dc7cb08-3aea-4f66-80ac-49a14b4b7642][Pitfalls and illusions of competence]].
 
 - After you understood the concepts, you start to see things in your own perspective.
-  Know that [[id:114b7874-6a20-49c8-be2c-46970c7110dc][Information is only acquired when you try to make sense of it]].
   [[id:d885e93b-f919-4338-a6b9-3438538e18c0][Every copy of the techniques is personalized]].
 
 - Beware, this could lead into actively consuming just the resources without the practice.

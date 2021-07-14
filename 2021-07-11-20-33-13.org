@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       499cd6a0-8055-4c28-8bd4-64877aa2c46f
+:END:
+#+title: Note-taking should make better thinking
+#+date: "2021-07-11 20:33:13 +08:00"
+#+date_modified: "2021-07-11 20:33:53 +08:00"
+#+language: en
+
+
+- most of the education emphasizes note-taking as an indicator of academic success;
+  while true, it misses the point of taking notes if forced among students
+- while note-taking makes to [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create an inbox to store your thoughts]] and [[id:3d1c0313-fa3d-4b18-b435-51d3837e3e2c][Fleeting notes]], it should also improve your thinking;
+  notes are just additional storage for your thoughts
+- some people like to take note for the sake of taking note;
+  some may even get into addiction to optimization as [[id:b62c61f1-ee12-4bd9-b59a-ec6eafe29f38][Unnecessary optimizations cripple progress]]

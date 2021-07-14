@@ -3,14 +3,13 @@
 :END:
 #+title: Future-proofing your notes is only worth if the future is relevant
 #+date: "2021-04-07 18:53:58 +08:00"
-#+date_modified: "2021-05-09 17:23:07 +08:00"
+#+date_modified: "2021-07-11 20:37:21 +08:00"
 #+language: en
 
 
 At some point, your notes will be a gigantic mess.
 Even if you [[id:ea263f6f-fa8e-4e6d-a585-d30d493d1e3c][Add a desktop search engine for your digital library]] and know the structure, it's not always worth with the overwhelming pile that will accumulate further since you always navigate certain notes through a fixed path.
-Similar to certain software projects like Xorg, Rust language, magit, and org-roam, there will be a point where you have to redesign them.
-[fn:: Xorg has Wayland as the successor, the Rust community can revise the language freely through editions, magit did have a crownfunding campaign to pay the developer to rewrite it for a year, and org-roam is recently through a major redesign.]
+Similar to certain software projects like Xorg, Rust language, magit, and org-roam, there will be a point where you have to redesign them. [fn:: Xorg has Wayland as the successor, the Rust community can revise the language freely through editions, magit did have a crownfunding campaign to pay the developer to rewrite it for a year, and org-roam is recently through a major redesign.]
 You have to assign a garbage day at some point.
 
 Future-proofing your notes creates pressure on managing your note-taking seriously and efficiently.
@@ -20,7 +19,8 @@ They should eventually evolve into [[id:431532c3-6506-4565-b193-dbfb60eac7d6][Ev
 An alternative to trashing your notes is to [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create an inbox to store your thoughts]].
 
 However, focusing too much on future-proofing your notes will limit them because you're limited with the basics of a tool.
-You're not using the tool to its full potential and note-taking should make for better thinking.
+It is a matter of [[roam:Tradeoffs lock yourself in a position]].
+You're not using the tool to its full potential and [[id:499cd6a0-8055-4c28-8bd4-64877aa2c46f][Note-taking should make better thinking]].
 Also, it's not like those notes will last for centuries.
 A lot of the technology can be obselete in decades, constantly challenged with modern tools and findings.
 Plus, you always have time to migrate your notes.

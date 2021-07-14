@@ -3,7 +3,7 @@
 :END:
 #+title: Involuntary attention switch is good for preventing tunnel vision
 #+date: "2021-05-20 20:20:19 +08:00"
-#+date_modified: "2021-06-05 11:13:27 +08:00"
+#+date_modified: "2021-07-13 21:06:13 +08:00"
 #+language: en
 
 
@@ -11,7 +11,8 @@ The more out-of-place the topic, the less associations we make.
 We understand this idea as if an isolated land far away from the main body of ideas, just waiting to drift towards them.
 This is why interleaving can sometimes be helpful in exploring uncharted territory, expanding your viewpoints.
 
-- we sometimes slip into this involuntarily, this ADHD-like tendency to switch our attention is good for getting new perspective even when we don't want to
+- we sometimes slip into this involuntarily, this ADHD-like tendency to switch our attention is good for getting new perspective even when we don't want to;
+  this is as if [[id:c10ebbb7-2af6-419e-a8f3-3417c5b82de3][Randomness in systems introduces interest]]
 - the more time we spent on the environment that we're comfortable with, the more chance we'll be entrenched in an idea
 - for example, constantly shopping for a better tool or checking for the hip new programming language is still a good practice to get a new perspective for improving your workflow or your programming ideas
 - doesn't mean lack of commitment, you still have to strive to improve your own (see [[id:d885e93b-f919-4338-a6b9-3438538e18c0][Every copy of the techniques is personalized]])
