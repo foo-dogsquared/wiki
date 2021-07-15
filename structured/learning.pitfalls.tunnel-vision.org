@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       5c603e2c-4dae-465e-abb5-12897ad7466d
+:END:
+#+title: Tunnel vision
+#+date: "2021-07-15 22:21:04 +08:00"
+#+date_modified: "2021-07-15 22:31:42 +08:00"
+#+language: en
+
+
+- being invested in an idea that it blocks other ideas;
+  this makes it harder to solve new problems where they expect to work similarly from their experience;
+  it is a net negative if we force our way with the familiar solution while not understanding the new type of problem
+- [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]];
+  we tend to create connections between different things including new things
+- it is present on most experts with their experience on the field;
+  but this is also a potential problem for students in training where certain principles are taught then encountering a new idea overall
+- This is the reason why most of the discoveries are made either by young people or those who haven't formally trained for the original field.
+- to combat against this, we can do roam:Interleaving
+- by the same principle, we could also let our attention switch at times;
+  [[id:0e2c9eaf-f12a-47b2-9c9c-d1a590db131b][Involuntary attention switch is good for preventing tunnel vision]]

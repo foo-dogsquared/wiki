@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       b7671178-ceef-4ae7-958f-33d3b57a598e
+:END:
+#+title: Ignorance is better than misinformation
+#+date: "2021-07-15 07:26:02 +08:00"
+#+date_modified: "2021-07-15 22:40:55 +08:00"
+#+language: en
+
+
+- the lack of knowledge can make clearer conclusions since we don't have any misunderstandings to clear up first;
+  we tend to be more open with the topic
+- but it doesn't mean most of the things we learn are from zero knowledge, [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]], we try to understand the new by comparing them with the familiar things;
+  if any, there's a pinch of prerequisite knowledge we already possess
+- however, being ignorant can also mean no actions nor thinking will occur when discussing a topic;
+  at times, [[id:60361cab-d006-4572-a7b2-e9dc7e1bc4da][Being misinformed is better than being ignorant]];
+  but then again, we are more vulnerable to misinformation

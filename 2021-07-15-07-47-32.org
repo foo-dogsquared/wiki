@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       10214008-71da-4d1e-b761-80e671d6fc40
+:END:
+#+title: When starting out, focus on quantity over quality
+#+date: "2021-07-15 07:47:32 +08:00"
+#+date_modified: "2021-07-15 23:45:05 +08:00"
+#+language: en
+
+
+- when learning a new skill, there is a tendency to overanalyze what is the next move;
+  remember: [[id:03cd9fad-e187-4939-9347-1a034c6efbe2][Overanalyzing slow you down]]
+- to solve against this, it is better to just start, not minding the quality of each piece/project you create
+- when you have a portfolio, you're essentially creating an improved version of your previous works;
+  creating projects can be an iterative process
+- examples:
+  + when starting a YouTube channel, focus more on putting out more videos
+  + when producing music, create more music and publish them
+  + when programming, create more programs of all usability from completely useless to something useful for you
+- more importantly, good sense of skill develops over time;
+  you may as well finish a lot of work from it
+- just like how [[id:60361cab-d006-4572-a7b2-e9dc7e1bc4da][Being misinformed is better than being ignorant]], having mountainous amount of bad ideas can make something better, [[id:c886bc6d-e9dc-4f62-8841-59123236eda0][Failed ideas can be repurposed]];
+- however, being focus on quantity leaves the opportunity to make something stand out
+- furthermore, being focused on quantity for a long time creates stagnation and bad habits start to manifest;
+  to mitigate against this event, you can start focusing on the quality, making [[id:9b669fd4-e04e-43dd-a61e-81dea5ec0764][Deliberate practice]] sessions;
+- beyond that, you can balance the focus between quality and quantity;
+  you can [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]], tracking deadlines to produce reasonable amount of work over a period of time

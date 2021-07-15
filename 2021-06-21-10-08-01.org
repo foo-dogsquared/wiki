@@ -3,7 +3,7 @@
 :END:
 #+title: Start with wishful thinking
 #+date: "2021-06-21 10:08:01 +08:00"
-#+date_modified: "2021-07-13 21:54:00 +08:00"
+#+date_modified: "2021-07-15 22:43:49 +08:00"
 #+language: en
 
 
@@ -17,7 +17,7 @@ This is the core of prototyping, starting with the end product and getting there
   This is quite similar to [[https://collegeinfogeek.com/about/meet-the-author/my-impossible-list/][Thomas Frank's impossible list]] that we explicitly say what we want to do.
   We could apply the principle what we want to do when we learn a skill.
 
-This is like the practice to [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]], only the examples are created yourself.
+This is similar to [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]], only the examples are created yourself.
 It also allows to make iterations with a [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]]-kind of workflow.
 
 However, focusing too much on the destination can block your progress from having a clear sight on how to get there.

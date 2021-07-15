@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       9986bd9e-763e-497e-a35d-ecd0aa93f408
+:END:
+#+title: Presence of the material fools students into learning
+#+date: "2021-07-15 07:38:09 +08:00"
+#+date_modified: "2021-07-15 07:42:26 +08:00"
+#+language: en
+
+
+- this is similar to how [[id:6b0e6b75-410f-42a3-8921-bcc4589b2d2a][Collecting information only feels like progress]];
+  only then when we open a book or logged into an e-learning website, we may feel we have already learned the material
+- to pressure yourself against this, you should close the material and recall it;
+  [[roam:Recall reinforces better learning]] by relying entirely from your understanding

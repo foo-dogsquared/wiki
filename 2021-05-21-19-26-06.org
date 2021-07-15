@@ -3,7 +3,7 @@
 :END:
 #+title: Pitfalls and illusions of competence
 #+date: "2021-05-21 19:26:06 +08:00"
-#+date_modified: "2021-05-22 11:47:23 +08:00"
+#+date_modified: "2021-07-15 22:32:16 +08:00"
 #+language: en
 
 
@@ -12,14 +12,9 @@ This could cost you either time or forming bad habits that require unlearning la
 
 The following is an exhaustive list of things to look out for.
 
-- The presence of the material itself can fool the student thinking they already know the material.
-  + Solution: close the material and practice self-testing.
-- Overlearning: tackling the material for complete mastery for the nth time
-  + Solution: simply move on once you already know the basics of the concept.
-  + Remember [[id:df20e58b-6d38-4ace-8468-413bc708c772][Most of the work is done from smaller amount of effort]].
-- Being invested in an idea that you cannot see other solutions.
-  + Solution: do some occasional workshopping with related concepts or tools.
-  + This is the reason why most of the discoveries are made either by young people or those who haven't formally trained or studied for the original field.
+- The [[id:9986bd9e-763e-497e-a35d-ecd0aa93f408][Presence of the material fools students into learning]].
+- [[id:9138397a-a965-45e9-97ea-71849e8d4f94][Overlearning]] is a habitual problem of students, thinking they should master the concept holistically before moving on to other topics.
+- [[id:5c603e2c-4dae-465e-abb5-12897ad7466d][Tunnel vision]]: learning new things can be impeded from our own experience.
 - Working with solutions can be a trap if you focus solely on the steps.
   + Solution: give time to focus on the bigger picture.
   + Inversely, understanding without the memorization is still bad as [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]].

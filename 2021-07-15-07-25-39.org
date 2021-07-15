@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       60361cab-d006-4572-a7b2-e9dc7e1bc4da
+:END:
+#+title: Being misinformed is better than being ignorant
+#+date: "2021-07-15 07:25:39 +08:00"
+#+date_modified: "2021-07-15 07:50:49 +08:00"
+#+language: en
+
+
+- we can see the mistakes that we'll inevitably make when making our first steps;
+  misinformation can be corrected
+- in rare cases, being misinformed could bring better ideas or other inspirations;
+  misunderstood or [[id:c886bc6d-e9dc-4f62-8841-59123236eda0][Failed ideas can be repurposed]]
+- however, as knowledge spreads, so does false knowledge;
+  bringing your misinformed impression can propagate to others and might make a stronger opinion only because most people says so;
+  in cases like those, [[id:b7671178-ceef-4ae7-958f-33d3b57a598e][Ignorance is better than misinformation]]
+- the spreading of misinformation is also a dangerous thing especially today with the internet making it easier to publish (mis)information

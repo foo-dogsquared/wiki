@@ -3,11 +3,10 @@
 :END:
 #+title: Chunking
 #+date: "2021-05-14 12:33:21 +08:00"
-#+date_modified: "2021-05-21 23:40:42 +08:00"
+#+date_modified: "2021-06-05 22:26:39 +08:00"
 #+language: en
 
 
-# TODO: Improve note
 The behavior of chunking is present in a lot of ways.
 
 - When we hear the word "popsicle", you may have already envisioned an image of the popsicle.
