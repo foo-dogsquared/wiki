@@ -3,14 +3,13 @@
 :END:
 #+title: Apply search tools and techniques for your digital library
 #+date: "2020-06-27 16:21:47 +08:00"
-#+date_modified: "2021-05-04 20:52:15 +08:00"
+#+date_modified: "2021-07-11 20:10:35 +08:00"
 #+language: en
 #+tags: personal-info-management
 
 
 With digital files comes digital tools (and some techniques) to help us in searching for our notes.
-These can vary from complex technologies to simple format-agnostic techniques that can make querying files with specific information to be a breeze.
-[fn:: If you want to maintain your personal digital library, make sure to document how you work.
+These can vary from complex technologies to simple format-agnostic techniques that can make querying files with specific information to be a breeze. [fn:: If you want to maintain your personal digital library, make sure to document how you work.
 Your future self will thank you later.]
 
 In order to search effectively, you need to consider [[id:ea263f6f-fa8e-4e6d-a585-d30d493d1e3c][Desktop search engines]] that can also search [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]].

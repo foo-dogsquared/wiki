@@ -1,6 +1,6 @@
 #+title: Command-line: youtube-dl
 #+date: "2021-07-08 17:36:26 +08:00"
-#+date_modified: "2021-07-08 19:02:10 +08:00"
+#+date_modified: "2021-07-13 22:56:11 +08:00"
 #+language: en
 #+property: header-args  :eval no
 
@@ -22,16 +22,44 @@ youtube-dl [OPTIONS...] [URLS...]
 
 * Options
 
-- =--add-metadata= - add metadata to the resulting file
-- =--audio-format [EXTENSION]= - download the video with the select format of "opus", "mp3", "opus", and "vorbis"; but there is also the convenient "best" option
-- =--audio-quality [QUALITY]= - quality of the audio from 0 to 9, best to worst respectively; bitrates are also accepted (e.g., =320K=, =1M=)
-- =--config-location [PATH]= - set the config to be used; useful for local configs with specific options
-- =-F, --list-format= - prints a list of format available for downloading
-- =--format [QUALITY]= - download the video with the format shown in =--list-format=; there are convenient options such as =bestaudio= and =bestvideo= referring to the best quality it could find
-- =-j, --dump-json= - dry-run and prints in JSON format
-- =--no-overwrite= - error if the file already exists which is handy for scripts
-- =--write-sub= - writes the subtitle file into disk
-- =-x, --extract-audio= - extract only the audio track
+- =--add-metadata= adds metadata to the resulting file after download
+- =--audio-format [EXTENSION]= downloads the video with the select format of "opus", "mp3", "opus", and "vorbis"; but there is also the convenient "best" option
+- =--audio-quality [QUALITY]= sets the quality of the audio from 0 to 9, best to worst respectively; bitrates are also accepted (e.g., =320K=, =1M=)
+- =-c, --continue= resumes the download; useful if the download process is interrupted
+- =--config-location [PATH]= set the config to be used; useful for local configs with specific options
+- =-F, --list-format= prints a list of format available for downloading
+- =--list-extractors= prints a list of supported sites and their specific features.
+- =--format [QUALITY]= downloads the video with the format shown in =--list-format=; there are convenient options such as =bestaudio= and =bestvideo= referring to the best quality it could find
+- =-j, --dump-json= completes a dry-run and prints in JSON format
+- =-o, --output [STRING]= formats the resulting filename of the tracks to be downloaded
+- =--no-overwrite= throws an error if the file already exists which is handy for scripts
+- =--write-sub= writes the subtitle file into disk
+- =-x, --extract-audio= extracts only the audio track
+
+
+** Output formats
+
+For =--output= option, there are a lot of things to consider naming your files.
+You may want to automate them yourself but =youtube-dl= has plenty of options from the get-go.
+
+The following code is the sensible default output string.
+
+#+begin_src
+%(playlist_index)02d-%(title)s.%(ext)s
+#+end_src
+
+A few of the usual stuff I use:
+
+- =title= (string) is the title of the track
+- =ext= (string) is the extension to be used; pretty much recommended to use it
+
+A lot of the things I have to do is to download multiple tracks from an album or playlist.
+Unfortunately, these are often different from one site to another.
+
+- =playlist_index= (number) indicates the position of the track in a playlist.
+  These are usually used from YouTube and Soundcloud playlists.
+- =track_number= (number) is the position of the track from an album.
+  Usually, these are used from Bandcamp and Vimeo playlists.
 
 
 
@@ -58,7 +86,7 @@ Though, you should look at the supported sites if it supports downloading an alb
 In this example, we have Bandcamp.
 
 #+begin_src shell
-youtube-dl --output '%(title)s.%(ext)s' --format bestaudio https://gametal.bandcamp.com/album/side-quests-vol-3
+youtube-dl --output '%(track_number)02d-%(title)s.%(ext)s' --format bestaudio https://gametal.bandcamp.com/album/side-quests-vol-3
 #+end_src
 
 

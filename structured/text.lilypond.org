@@ -1,6 +1,6 @@
 #+title: Lilypond
 #+date: "2021-05-10 19:36:43 +08:00"
-#+date_modified: "2021-05-21 18:23:00 +08:00"
+#+date_modified: "2021-07-11 08:39:53 +08:00"
 #+language: en
 #+property: header-args:lilypond  :exports both
 
@@ -36,7 +36,7 @@ The input file is a plain-text file making it very good with version control sys
 * Paper configuration
 
 #+name: lilypond-paper
-#+begin_src lilypond  :exports none
+#+begin_src lilypond  :exports code
 \paper {
   indent=10\mm
   oddFooterMarkup=##f

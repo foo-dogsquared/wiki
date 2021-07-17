@@ -1,12 +1,12 @@
-#+title: Oil shell
+#+title: Oil shell language
 #+date: "2021-05-09 16:40:50 +08:00"
-#+date_modified: "2021-06-23 20:12:37 +08:00"
+#+date_modified: "2021-07-13 23:32:05 +08:00"
 #+language: en
 #+property: header-args:oil  :eval no
 
 
 For future references, this note mainly notes Oil v0.8.11 and later versions.
-Also, we'll be comparing to Bash shell (src_bash[:eval yes  :results output]{bash --version}) as it is the most popular shell on the Unix world.
+Also, we'll be comparing to Bash shell (src_bash[:eval yes  :results output]{bash --version | head -n 1} {{{results(=GNU bash\, version 4.4.23(1)-release (x86_64-unknown-linux-gnu)=)}}}) as it is the most popular shell on the Unix world.
 
 
 
@@ -196,6 +196,8 @@ if ('rainy' in conditions) {
   + *command mode is similar to Bash expressions*
   + *expression mode is akin to Python expressions*
 
+- Expression mode even has Python familiarisms — e.g., ~if ("item" in array)~, ~if ("key" in object)~.
+
 - The addition of a Python-like expressiveness is how Oil can make a rich scripting exprience.
 
 - command mode is what you see most of the time
@@ -218,6 +220,48 @@ if ('rainy' in conditions) {
 #+begin_src oil
 write -- $'\u044f\u043c\u0443' $'\u3bc'
 #+end_src
+
+
+
+
+* Structured data
+
+While Bash have support for structured data such as arrays and associative arrays, it does not go any further such as not letting you assign arrays in an item.
+As of v0.8.9, Oil also comes with the same problem but it seems [[https://github.com/oilshell/oil/issues/741][the developer is also interested in solving that]].
+
+Though, you can still declare and assign variables with nested data structures.
+
+#+begin_src oil
+const author = {
+  "name": "John Doe",
+  "birthdate": "1992-04-04",
+  "portfolio": [
+    { "title": "Philistine: A Jon Doe story", "isbn": "392-423-2113-123" },
+    { "title": "Whoa there!", "isbn": "241-123-35241-123" }
+  ]
+  "has_criminal_record": false
+}
+
+write -- $[author['name']] $[author['portfolio'][0]['title']]
+#+end_src
+
+Oil has a built-in JSON support with the =json= keyword.
+
+#+begin_src oil  :shebang "#!/usr/bin/env oil"
+const author = {
+  "name": "John Doe",
+  "birthdate": "1992-04-04",
+  "portfolio": [
+    { "title": "Philistine: A Jon Doe story", "isbn": "392-423-2113-123" },
+    { "title": "Whoa there!", "isbn": "241-123-35241-123" }
+  ]
+  "has_criminal_record": false
+}
+
+json write :author
+#+end_src
+
+This is handy as most tools has an option to print JSON data — e.g., =systemctl=, Ripgrep, =buku=, [[id:8135ece9-0dc0-4799-ac63-a24f9486ddd2][BorgBackup]].
 
 
 
