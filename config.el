@@ -44,16 +44,16 @@
                                :if-new
                                (file+head "%<%Y-%m-%d-%H-%M-%S>.org"
                                           "#+title: ${title}
-#+date: \"%<%Y-%m-%d %T %:z>\"
-#+date_modified: \"%<%Y-%m-%d %T %:z>\"
+#+date: %<%Y-%m-%d %T %:z>
+#+date_modified: %<%Y-%m-%d %T %:z>
 #+language: en")
                                :unnarrowed t)
 
                               ("c" "cards" plain "%?"
                                :if-new
                                (file+head ,(f-join +anki-cards-directory-name "%<%Y>.org") "#+title: Anki: ${title}
-#+date: \"%<%Y-%m-%d %T %:z>\"
-#+date_modified: \"%<%Y-%m-%d %T %:z>\"
+#+date: %<%Y-%m-%d %T %:z>
+#+date_modified: %<%Y-%m-%d %T %:z>
 #+language: en
 #+property: anki_deck ${title}")
                                :unnarrowed t)
@@ -61,8 +61,8 @@
                               ("l" "literature" plain "%?"
                                :if-new
                                (file+head ,(f-join +structured-notes-directory-name "literature.${slug}.org") "#+title: ${title}
-#+date: \"%<%Y-%m-%d %T %:z>\"
-#+date_modified: \"%<%Y-%m-%d %T %:z>\"
+#+date: %<%Y-%m-%d %T %:z>
+#+date_modified: %<%Y-%m-%d %T %:z>
 #+language: en")
                                :unnarrowed t)
 

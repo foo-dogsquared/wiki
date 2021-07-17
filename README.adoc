@@ -243,25 +243,7 @@ image::assets/workflow.png[]
 This also means expect the following changes if you're watching this repo for some reason.
 Keep in mind all of the details are still under consideration.
 
-* Create a static site for my wiki.
-org-roam doesn't have a built-in export option yet but there are solutions.
-For now, I'm not worrying to much on this one.
-
-** I could make a custom publication script.
-I did create a publication script back then for a small org-mode-based for testing purposes but it is messy and life happened so I wasn't able to get back on it immediately.
-Here's a link:https://git.sr.ht/~brettgilio/website/[very good example of a org-mode-and-Emacs-powered site] complete with features and without JavaScript!
-footnote:[link:https://brettgilio.com/[Brett Gilio] is kind enough to answer my noob org-mode related questions back then so big thanks to him for the guidance. :)]
-The advantage is complete control and the disadvantage is starting from scratch.
-Still, you can start from already existing solutions.
-
-** Convert the org documents to commonly-supported text formats like Markdown and use static site generators.
-Most of them supports Markdown and there is an "export to Markdown" option for org-mode.
-I could whip up an Elisp script and export it by batch then move them over to an SSG setup like Hugo.
-This is also how link:https://github.com/jethrokuan/braindump[Jethro Kuan's org-roam notes] are setup.
-
-** Use a parser outside of Emacs.
-link:https://github.com/rasendubi/uniorg/tree/master/examples/org-braindump[uniorg] has a good example with Next.js as the site generator and it can support org-roam v2 ID links.
-It requires an external JavaScript-based setup but it can also be an advantage.
+* Make the site prettier.
 
 * Try out link:https://github.com/srid/neuron/[Neuron].
 I've used it on and off and even tried to support both org-roam and Neuron because I like the static site generated and also because org-roam doesn't have a killer HTML exporter yet (in my opinion).
