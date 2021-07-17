@@ -45,3 +45,14 @@ ol>li::before {
 img {
   max-width: 100%;
 }
+
+.post-metadata {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  font-size: 0.9em;
+}
+
+.post-metadata > * {
+  margin-right: 0.5em;
+}

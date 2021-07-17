@@ -2,10 +2,12 @@ import unified from 'unified';
 
 import orgParse from 'uniorg-parse';
 import org2rehype from 'uniorg-rehype';
+import mathjax from 'rehype-mathjax/browser';
 import extractKeywords from 'uniorg-extract-keywords';
 import { uniorgSlug } from 'uniorg-slug';
 import { visitIds } from 'orgast-util-visit-ids';
-import toc from '@jsdevtools/rehype-toc'
+import toc from '@jsdevtools/rehype-toc';
+import visit from 'unist-util-visit';
 
 const processor = unified()
   .use(orgParse)
@@ -14,6 +16,7 @@ const processor = unified()
   .use(extractIds)
   .use(org2rehype)
   .use(toc)
+  .use(mathjax)
   .use(toJson);
 
 export default async function orgToHtml(file) {

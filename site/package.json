@@ -13,6 +13,7 @@
     "orgast-util-visit-ids": "^0.3.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "rehype-mathjax": "^3.1.0",
     "rehype-react": "^6.1.0",
     "rehype-url-inspector": "^2.0.2",
     "to-vfile": "^6.1.0",

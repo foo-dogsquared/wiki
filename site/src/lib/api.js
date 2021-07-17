@@ -1,5 +1,4 @@
 import * as path from 'path';
-import toc from '@jsdevtools/rehype-toc';
 import trough from 'trough';
 import toVFile from 'to-vfile';
 import findDown from 'vfile-find-down';
