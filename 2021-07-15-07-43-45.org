@@ -3,13 +3,13 @@
 :END:
 #+title: Collecting information to learn new skills
 #+date: "2021-07-15 07:43:45 +08:00"
-#+date_modified: "2021-07-15 07:44:45 +08:00"
+#+date_modified: "2021-07-17 21:56:06 +08:00"
 #+language: en
 
 
 - we can take advantage of our attention-switching habits as [[id:0e2c9eaf-f12a-47b2-9c9c-d1a590db131b][Involuntary attention switch is good for preventing tunnel vision]] when it comes for [[id:af0ccefe-c671-47bf-94f7-62243c805745][Skill-building]], anyway
 - this practice is basically to [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create an inbox to store your thoughts]], that is, a bunch of resources you've seen
 - you can store all of the resources then skim them and evaluating them whether they are a good starting point
-- be sure to [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]] with at least one for roam:Interleaving
+- be sure to [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]] with at least one to practice [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]]
 - [[roam:Subpar resources are better to start than nothing]];
   however, there are times where [[id:b7671178-ceef-4ae7-958f-33d3b57a598e][Ignorance is better than misinformation]] to make clearer conclusions

@@ -3,7 +3,7 @@
 :END:
 #+title: Org mode: Babel
 #+date: "2020-04-17 21:41:30 +08:00"
-#+date_modified: "2021-05-19 20:37:16 +08:00"
+#+date_modified: "2021-07-17 19:03:50 +08:00"
 #+language: en
 #+tags: research.reproducibility
 
@@ -19,6 +19,6 @@ Among other features, it can do the following.
 - Create graphics similarly to Jupyter and R Markdown notebooks.
 - Call code blocks either inline, as a block, or inside of another code block, thereby enabling metaprogramming and dynamic contents.
 
-The unfortunate thing is most of these features are only available when using with [[roam:GNU Emacs]].
+The unfortunate thing is most of these features are only available when using with [[id:ce6ab58e-b295-4fdb-8af7-fc89c63ec208][GNU Emacs]].
 
 For more details, you can see [[id:4abb9be8-4414-4045-8827-5a68632fd2a4][The basics of org-babel]].

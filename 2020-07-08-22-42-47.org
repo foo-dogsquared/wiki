@@ -1,21 +1,22 @@
 :PROPERTIES:
 :ID:       1a6187c9-6c79-4378-bf8d-935c8a3d9167
 :END:
-#+title: When learning a new skill, begin with a specific end-goal to create a solid starting point
+#+title: Learning a new skill often starts from specific places
 #+date: "2020-07-08 22:42:47 +08:00"
-#+date_modified: "2021-05-20 00:32:55 +08:00"
+#+date_modified: "2021-07-19 19:08:26 +08:00"
 #+language: en
 
 
-This top-bottom learning approach (i.e., specific to general topics) is often used by self-learners.
-It usually involves something like wanting to create a 2.5D fighting game rivalling [[https://en.wikipedia.org/wiki/Arc_System_Works][Arc System Works]], a gorgeous anime-inspired illustration, [[https://www.youtube.com/watch?v=TF9I1GxNdJQ][a flashy short animation]], or [[https://www.youtube.com/watch?v=ZwR0zFe57Y4][a cool-looking demoscene]].
+We often [[id:01459b18-3f30-418e-bd8d-42661d5ea223][Start with wishful thinking]].
+Thus, most would start learning with the top-bottom approach (i.e., specific to general topics).
 
-Most of the time, skill acquisition happens with the following workflow.
+Documenting this process, the core of [[id:af0ccefe-c671-47bf-94f7-62243c805745][Skill-building]] has the following workflow.
 
 - Document your specific example (e.g., a website, a drawing, a 3D scene).
   You can [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]] to clear your specific example similar to a final proof-reading before you submit your paper.
 
 - Then, try to learn the specific example.
+  For a start, you can [[id:b318dc2b-5fa1-48ff-9d33-6fbbdee46a2f][Write down the simplest possible example]].
 
 - For every unknown part of the example, try to understand the underlying concepts.
   If the underlying concept is not yet understood, then dig deeper into understanding the underlying concept of that underlying concept ad infinitum.
@@ -24,6 +25,5 @@ Most of the time, skill acquisition happens with the following workflow.
 
 - Work your way up the knowledge tree you've just created until you can reproduce/create the example with your newfound hierarchical knowledge.
 
-You still do some form of the above workflow subconsciously with the goal of being familiar to a specific topic.
-Eventually, you take the time to improve it further, making [[id:d885e93b-f919-4338-a6b9-3438538e18c0][Every copy of the techniques is personalized]].
-The gist of the above list is to [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]].
+The key idea is to [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]].
+Normally, we do the above process subconciously but to explicitly write tasks and projects that we want to tackle can lessen the burden.

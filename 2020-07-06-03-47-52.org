@@ -3,7 +3,7 @@
 :END:
 #+title: Refer to advanced resources when skill-building for a solid short-term goal
 #+date: "2020-07-06 03:47:52 +08:00"
-#+date_modified: "2021-07-09 07:41:01 +08:00"
+#+date_modified: "2021-07-20 00:34:34 +08:00"
 #+language: en
 
 
@@ -15,10 +15,13 @@ For example...
 - In roam:Programming, you could look for devlogs, highly advanced competitions, fairly popular software projects, or a live coding session.
 - In [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]], you can look for speedpainting, competitions, and art contests that can be found online.
 
+This is to [[id:01459b18-3f30-418e-bd8d-42661d5ea223][Start with wishful thinking]] at its finest.
+
 You can then store the expert resources and [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintain your own digital library]] for future references.
 
 The purpose of this is twofold: to serve as a solid short-term goal (as indicated by the title) and to create inspirations for your future projects.
 If you [[id:fdf9e3eb-02c5-47a6-b586-e71a5c92d01a][Look for live sessions as another form of examples]], the inspirations are especially great as you watch the actual process unfold.
 
 Of course, this does not entirely replace looking out for beginner-friendly resources and communities as an entryway.
-In fact, it is a bad idea to consider [[id:48cef2ac-a941-463d-a07f-6be8349456ad][Diving head-first into a difficult problem makes a bad start]].
+You can start with [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]] (e.g., starting with beginners' tutorial then refer to expert resources for improvement).
+In fact, it is a bad idea to start with expert resources as [[id:48cef2ac-a941-463d-a07f-6be8349456ad][Diving head-first into a difficult problem makes a bad start]].

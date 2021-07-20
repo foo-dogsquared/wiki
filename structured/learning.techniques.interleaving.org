@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       2667d942-48b6-4d1e-b92b-15c2dab645ed
+:END:
+#+title: Switching between different topics makes new perspective
+#+date: 2021-07-17 21:01:18 +08:00
+#+date_modified: 2021-07-17 21:01:18 +08:00
+#+language: en
+
+
+While [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]], It is mainly done to prevent [[id:5c603e2c-4dae-465e-abb5-12897ad7466d][Tunnel vision]] and getting stuck to what the material taught.
+As [[id:0e2c9eaf-f12a-47b2-9c9c-d1a590db131b][Involuntary attention switch is good for preventing tunnel vision]], it lets you make connections between them and even form new perspectives or sudden realizations when learning a topic.
+
+Despite the perceived quality of public education, this is how students went through to choose their career.
+
+You can choose to switch between topics of different scope either from specific concept to a wildly different topic altogether.
+
+Some examples...
+
+- Studying different entire fields of knowledge.
+  Set a study session for illustration, programming, and mathematics.
+
+- Switching between different topics.
+  For example, you can study the basics of music theory and learning to play a guitar.
+
+- Solving different types of problems in one session.
+  Instead of studying one type of problem at a time, you study three.
+
+Switching between context doesn't necessarily mean equally dividing the time.
+You still need to prioritize the topic you have difficulties with.
+However, you need to watch out for [[id:9138397a-a965-45e9-97ea-71849e8d4f94][Overlearning]].

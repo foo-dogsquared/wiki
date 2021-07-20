@@ -3,12 +3,12 @@
 :END:
 #+title: GitHub Actions
 #+date: "2021-06-20 18:58:48 +08:00"
-#+date_modified: "2021-07-07 16:43:41 +08:00"
+#+date_modified: "2021-07-19 00:06:57 +08:00"
 #+language: en
 
 
 #+ATTR_ORG: :width 550
-[[file:assets/cloud.github-actions/fds-visual-github-actions-description.png]]
+[[file:assets/fds-visual-github-actions-description.png]]
 
 - a CI/CD tool integrated into GitHub
 - it is free for public repos but limited time per month for private repos

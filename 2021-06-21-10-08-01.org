@@ -3,22 +3,24 @@
 :END:
 #+title: Start with wishful thinking
 #+date: "2021-06-21 10:08:01 +08:00"
-#+date_modified: "2021-07-15 22:43:49 +08:00"
+#+date_modified: "2021-07-20 14:38:45 +08:00"
 #+language: en
 
 
 In other words, start with the end result.
-This is the core of prototyping, starting with the end product and getting there no matter how badly implemented.
+Whether it usually involves something like wanting to create a 2.5D fighting game rivalling [[https://en.wikipedia.org/wiki/Arc_System_Works][Arc System Works]], a gorgeous anime-inspired illustration, [[https://www.youtube.com/watch?v=TF9I1GxNdJQ][a flashy short animation]], or [[https://www.youtube.com/watch?v=ZwR0zFe57Y4][a cool-looking demoscene]].
+
+This is also the core of prototyping, starting with the end product and getting there no matter how badly implemented.
 
 - In programming, we usually call this abstractions where we don't need to worry about the implementation details and whatnot.
   Some would even take one more step by starting with the user-oriented documentation or unit tests.
 
-- In learning, we could start with our end-goal.
+- In learning, we could start with our end-goal dreaming about the completed project.
   This is quite similar to [[https://collegeinfogeek.com/about/meet-the-author/my-impossible-list/][Thomas Frank's impossible list]] that we explicitly say what we want to do.
   We could apply the principle what we want to do when we learn a skill.
 
-This is similar to [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]], only the examples are created yourself.
-It also allows to make iterations with a [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]]-kind of workflow.
-
 However, focusing too much on the destination can block your progress from having a clear sight on how to get there.
+Sometimes, the endgoal is tad more difficult.
+[[id:48cef2ac-a941-463d-a07f-6be8349456ad][Diving head-first into a difficult problem makes a bad start]].
 We can [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]] and establish milestones.
+It allows to make iterations with a [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]]-kind of workflow.

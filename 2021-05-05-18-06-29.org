@@ -3,7 +3,7 @@
 :END:
 #+title: Start small and improve later
 #+date: "2021-05-05 18:06:29 +08:00"
-#+date_modified: "2021-05-09 00:27:43 +08:00"
+#+date_modified: "2021-07-20 14:41:31 +08:00"
 #+language: en
 
 
@@ -15,23 +15,23 @@ This is a very simple advice applicable on lots of places.
 - When learning to program, you can start with solving one coding problem until you're now comfortable to take two.
   Then, with a couple of problems, you're now comfortable to take three and so on.
 
-- In drawing, one often starts with a sketch with rough shapes and outlines.
+- In [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]], one often starts with a sketch with rough shapes and outlines.
   The details may then change in the later phases of the sketch.
   This can make immediate improvements especially when you found out the outcome does not fit with what you've visualized.
 
 - In learning a new skill, you start from the basic concepts.
   This is to build a foundation for complex topics and flexibility you need to create a solution.
 
-- In writing, you often start with the outlines of the article or a story.
+- In [[id:815b2beb-40a0-4e79-9097-5b688189ad5b][Writing]], you often start with the outlines of the article or a story.
   You then fill the details for the point or scenario you're writing.
 
 The point is to reach bigger advancements must come from somewhere even in the smallest amounts.
+[[roam:Consistency over time creates more progress]].
+Once you get comfortable with the task you're supposed to do, you're now getting bigger results than you anticipated from doing one big task in a day.
 There is always on opportunity to improve things.
+
 On the other hand, this gradual progression also presents itself on other areas.
 
 - Video games with well-designed tutorials introducing you to the game slowly building up to more complex levels.
 - Applications with well-designed tours [fn:: Also known as an out-of-box experience.] where it present limited aspects of an app enabling you to combine them and create more complex pieces.
 - Programming documentation often involves the simplest examples then letting you figure out how the rest of the stuff works.
-
-Once you get comfortable with the task you're supposed to do, you're now getting bigger results.
-For an effective start, you can go to [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]] to gain a 30,000 foot view on the topic and eventually [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]].

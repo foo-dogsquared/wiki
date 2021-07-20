@@ -3,16 +3,19 @@
 :END:
 #+title: Create an inbox to store your thoughts
 #+date: "2020-06-25 12:37:23 +08:00"
-#+date_modified: "2021-07-05 13:40:18 +08:00"
+#+date_modified: "2021-07-19 18:54:39 +08:00"
 #+language: en
 
 
 While our brain is good at storing ideas, it has other things to worry about such as the random thoughts passing by each day, context switching from one task to another, and generating new ideas.
 A lot of the newer thoughts have more chance to be gone in a few hours.
 For this, you want to make a dedicated repository.
+The following list shows a few examples what you can store into dedicated inboxes.
 
-- The important random thoughts and the generated ideas can then be revisited for future ideas.
+- [[id:fa53b258-a6c0-4817-9b8c-ead294e6772a][Store a dedicated inbox for randomly generated ideas]].
 - Tasks can then be tracked, reminding what and/or when to be done.
+- You can create an inbox for various links, [[id:db298171-834d-4348-92a8-68e3f830d5d0][Collecting information to learn new skills]].
+- [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]] as a way to learn new skills.
 
 Like our emails, our writing inbox should be cleaned up each time we visit our inbox.
 Not all of them are going to be important so feel free to remove entries that are not in need.

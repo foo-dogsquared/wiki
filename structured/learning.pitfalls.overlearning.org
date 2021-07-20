@@ -3,7 +3,7 @@
 :END:
 #+title: Overlearning
 #+date: "2021-07-15 07:29:54 +08:00"
-#+date_modified: "2021-07-15 08:34:24 +08:00"
+#+date_modified: "2021-07-19 19:09:20 +08:00"
 #+language: en
 
 
@@ -14,9 +14,9 @@
 - for some (myself included), this stems from avoiding rote learning which is associated from bad education;
   however, realize that [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]]
 - for others, this may be an indicator of aimlessness;
-  be sure to [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]] and [[id:1a6187c9-6c79-4378-bf8d-935c8a3d9167][When learning a new skill, begin with a specific end-goal to create a solid starting point]]
+  be sure to [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]] and understand how [[id:1a6187c9-6c79-4378-bf8d-935c8a3d9167][Learning a new skill often starts from specific places]]
 - this could lead into a bad habit of mastering everything
 - remember, [[id:df20e58b-6d38-4ace-8468-413bc708c772][Most of the work is done from smaller amount of effort]];
   additionally, [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]], we can use our intuition to fill in the rest of the details;
   but be sure to study and review those details for some time
-- you can also do some roam:Interleaving between learning new topics and mastering the previous ones
+- you can also do some [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]] between learning new topics and mastering the previous ones

@@ -3,7 +3,7 @@
 :END:
 #+title: Professional narcissism
 #+date: "2021-05-20 20:17:36 +08:00"
-#+date_modified: "2021-06-18 20:25:17 +08:00"
+#+date_modified: "2021-07-19 17:46:44 +08:00"
 #+language: en
 
 
@@ -20,5 +20,5 @@ The confusion of the activities of your guild, profession, or field with the sub
   + in media, "cover the coverage", a problem leading to echo chambers
   + in learning, instead of focusing what and why of a note-taking method, they focus on the possible effects of your productivity
 - this could also happen on yourself
-  + in note-taking, you may focus on the number of notes instead of the quality of each notes
+  + in note-taking, you may focus on the number of notes, neglecting certain aspects such as the purpose and the quality of the notes
   + in programming, you may boast how the program is fast instead of making sure the program is usable

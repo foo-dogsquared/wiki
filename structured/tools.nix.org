@@ -3,7 +3,7 @@
 :END:
 #+title: The basics of Nix package manager
 #+date: "2021-06-05 12:34:49 +08:00"
-#+date_modified: "2021-06-30 23:01:51 +08:00"
+#+date_modified: "2021-07-19 14:52:11 +08:00"
 #+language: en
 
 
@@ -11,53 +11,36 @@
 [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]] is a great tool for reproducibility as you can easily set up your environment.
 Taking it up to the next level with NixOS, your whole installation.
 
+Among other things, Nix also has the following features to look out for.
+
+- Creating [[id:de801b92-819e-4944-9f5b-5cea145a2798][Reproducible executables with Nix]] enabling to execute with one script only requiring the package manager.
+- How the build process works along with [[id:8f23f862-a19a-4a13-8d8f-69c280a8e072][Nix derivations]].
+- The new way to manage channels with [[id:6873de22-9eac-492c-93a8-6cdf8cbfc0f8][Nix flakes]].
+
 
 
 
 * Ecosystem
 
-Nix has several tools that integrates them into the already existing ecosystem of developer tools.
+The basic ropes into getting started with Nix.
+
+- [[https://github.com/NixOS/nixpkgs][nixpkgs]] is the official package set similar to Flathub for Flatpak.
+  In terms of size, nixpkgs is comparable to AUR.
+
+- [[https://github.com/nix-community/NUR][NUR]] is the user-contributed Nix packages curated by the community.
+  While most of the packages can be passed into nixpkgs, most of them are niche packages (or the package author are not interested in maintaining it).
 
 - [[https://direnv.net/][direnv]] has [[https://github.com/direnv/direnv/wiki/Nix][integration with Nix]] as well as a lot of editors.
+
 - [[https://github.com/nix-community/lorri][lorri]] replaces nix-shell integrating with direnv.
+
 - [[https://github.com/nmattia/niv][niv]] provides a easier way to manage dependencies though it will be easier with Nix flakes.
+
 - [[Nix flakes]] is an upcoming feature for Nix, replacing the traditional Nix channels into a decentralized set of derivations that can be retrieved from anywhere similar to Go modules [fn:: At a glance, anyways. I'm not experienced enough with Go to say that with utmost confidence.].
+
 - [[https://cachix.org/][Cachix]] is a cache service enabling to easily distribute binaries built with Nix.
 
-
-
-
-* Reproducible executables
-
-You can create a [[https://nix.dev/tutorials/ad-hoc-developer-environments#reproducible-executables][reproducible executable]] that only requires Nix.
-
-Here's a sample script that uses multiple dependencies.
-
-#+begin_tip
-If the script interact with the network (e.g., =curl=, =wget=) and the environment is completely pure, don't forget to install public Certificate Authorities with =cacert=.
-#+end_tip
-
-#+begin_src bash
-#!/usr/bin/env nix-shell
-#! nix-shell --pure -i bash -p coreutils curl cacert jq fzf findutils
-
-# A quick command line interface for creating a gitignore with the API from https://gitignore.io.
-# This script comes with a simple caching to avoid creating too much requests.
-
-set -eo pipefail
-
-CACHE_FILE="${XDG_CACHE_DIR:-$HOME/.cache}/gitignore-io.langs.json"
-
-# Check if the language list is downloaded for the last hour (3600 seconds).
-if [ ! -e $CACHE_FILE ] || test $(expr $(date "+%s") - $(date -r $CACHE_FILE "+%s")) -gt 3600
-then
-    ping "gitignore.io" --count 4 && curl --silent --location --output $CACHE_FILE "https://gitignore.io/api/list?format=json"
-fi
-
-KEYS=$(jq 'keys | .[] | @text' --raw-output $CACHE_FILE | fzf --multi | while read lang; do echo " .[\"$lang\"].contents"; done | paste -s -d ',')
-
-jq "$KEYS" --raw-output $CACHE_FILE
-#+end_src
+- [[https://github.com/divnix/devos][DevOS]] is a configuration framework for deploying NixOS-based systems.
 
 
 
@@ -94,101 +77,36 @@ You could also set overlays for standalone Nix code similarly through the =overl
 
 
 
-* TODO Nix flakes
+* Opinionated guide to learn Nix
 
-#+begin_note
-As of 2021-06-30, the version used for this note is at v2.3 so it needs to be invoked with the unstable version.
-#+end_note
+Nix throws a bunch of traditional concepts behind as well as pioneers a bunch of things creating a steeper learning curve.
+The [[https://nixos.org/learn][official documentation]] for Nix is pretty great at covering ground of all Nix stuff which makes it good as a reference but horrible for a newbie who wants to gain a quick overview of what Nix is all about.
+So I'll list a bunch of resources that helped me becoming comfortable with the Nix thing.
 
-- similar to [[https://guix.gnu.org/manual/en/html_node/Channels.html][Guix channels]]
-- a collection of packages and functions while making it easy to configure Nix declaratively
-- replaces the traditional Nix channels since fully reproducing an environment with Nix requires special care in practice;
-  plus, there's no standard way of composing projects with Nix
-- as of 2021-06-30, this is on the unstable version of the Nix package manager and needs some additional configuration
+- If you want an introduction to Nix, the [[https://www.youtube.com/playlist?list=PLRGI9KQ3_HP_OFRG6R-p4iFgMSK1t5BHs][Nixology]] video series is a great primer starting with [[https://youtu.be/6iVXaqUfHi4][this video]].
+  You don't have to watch through the whole playlist but it also gives practical starter points such as [[https://youtu.be/q8bZy9kuzEY][demystifying Nixpkgs]] and [[https://youtu.be/qYGo9QYNVpM][the standard library]] which you'll need you know once you've started packaging with Nix.
+  I really recommend this series, it's pretty great!
 
-why flakes?
+- If you're decided to go with NixOS, the first few chapters of the [[https://nixos.org/learn.html][official manuals]] are great and extensive.
+  A good first reading section after installation is [[https://nixos.org/manual/nixos/stable/index.html#ch-running][how to administer your NixOS installation]] and [[https://nixos.org/manual/nix/stable/#chap-package-management][its package management process]].
 
-- provides a structure for discoverability
-- makes 100% reproducibility a little easier with Nix
-- in case you're using NixOS, it also provides an easier way to extend it with third-party custom modules
+  + I have difficulty grokking the manual but thankfully a fellow newcomer [[https://stephank.nl/p/2020-06-01-a-nix-primer-by-a-newcomer.html][wrote a document listing the terminologies]] helping me absorb the material (big thanks to Stéphan Kochen for the writing).
 
-Here's an example to interact with a flake.
-It will show the entire outputs of a flake as well as the normalized version of the flake object.
+- Take a look at [[https://nixos.wiki/wiki/Configuration_Collection][others' NixOS config]] and see how they did it.
+  For other examples, you can take a look at [[https://github.com/foo-dogsquared/nixos-config][my config]] and the [[https://github.com/hlissner/dotfiles/][inspiration behind my config]] (except his' is on the edge of the bleeding edge).
 
-#+name: flake-sample-object
-#+begin_src python  :results value silent :exports none
-return "github:edolstra/dwarffs"
-#+end_src
+- If you want to keep up-to-date with the community, you might want to hang out in the [[https://discourse.nixos.org/][official forum]].
+  If you want realtime help, you can go to the IRC channel =#nix= at =libera.chat=.
+  The Nix community knows that its documentation is lagging so they're pretty open to newbies asking for help that could've been easily missed.
 
-#+begin_src shell  :shebang "#!/usr/bin/env nix-shell"
-#! nix-shell -i bash -p nixUnstable
-nix --experimental-features 'nix-command flakes' flake show <<flake-sample-object()>> | sed -e "s/\x1b\[.\{1,5\}m//g"
-#+end_src
+- What about if you're now comfortable with Nix (or NixOS) and now looking for more ways to use its power (i.e., packaging some applications)?
 
-#+results:
-#+begin_example
-github:edolstra/dwarffs/f691e2c991e75edb22836f1dbe632c40324215c5
-├───checks
-│   ├───aarch64-linux
-│   │   ├───build: derivation 'dwarffs-0.1.20210121.f691e2c'
-│   │   └───test: derivation 'vm-test-run-unnamed'
-│   ├───i686-linux
-│   │   ├───build: derivation 'dwarffs-0.1.20210121.f691e2c'
-│   │   └───test: derivation 'vm-test-run-unnamed'
-│   └───x86_64-linux
-│       ├───build: derivation 'dwarffs-0.1.20210121.f691e2c'
-│       └───test: derivation 'vm-test-run-unnamed'
-├───defaultPackage
-│   ├───aarch64-linux: package 'dwarffs-0.1.20210121.f691e2c'
-│   ├───i686-linux: package 'dwarffs-0.1.20210121.f691e2c'
-│   └───x86_64-linux: package 'dwarffs-0.1.20210121.f691e2c'
-├───nixosModules
-│   └───dwarffs: NixOS module
-└───overlay: Nixpkgs overlay
-#+end_example
+  + The [[https://nixos.org/guides/nix-pills][beloved Nix pills series]] and the [[https://nixos.org/manual/nixpkgs/stable][nixpkgs manual]] is a great starting point especially if you're starting to contribute to the [[https://github.com/NixOS/nixpkgs/][official package set]].
 
-Let's build from one of the outputs of call_flake-sample-object().
+  + [[https://nix.dev/][nix.dev]] and [[https://nixos.wiki/][the unofficial Nix wiki]] are also great introductions to more Nix stuff with practical applications.
 
-#+begin_src shell  :shebang "#!/usr/bin/env nix-shell"
-#! nix-shell -i bash -p nixUnstable
-nix --experimental-features 'nix-command flakes' build 'github:edolstra/dwarffs#checks.aarch64-linux.build'
+  + Jon Ringer, one of the long-time Nix user and contributor, has a [[https://www.youtube.com/channel/UC-cY3DcYladGdFQWIKL90SQ][YouTube channel focused on Nix tutorials at beginners- and intermediate-level]].
 
-nix --experimental-features 'nix-command flakes' shell 'github:edolstra/dwarffs' --command dwarffs --version
-#+end_src
-
-#+results:
-: fusermount version: 2.9.9
-
-For full reproducibility, you can refer to specific point of a flake (e.g., commit).
-
-#+begin_tip
-To easily get a pinned URL, you can run =flake metadata= subcommand.
-
-#+begin_src shell  :shebang "#!/usr/bin/env nix-shell"
-#! nix-shell -i bash -p nixUnstable
-nix --experimental-features 'nix-command flakes' flake metadata 'github:edolstra/dwarffs' | sed -e "s/\x1b\[.\{1,5\}m//g"
-#+end_src
-
-#+results:
-#+begin_example
-Resolved URL:  github:edolstra/dwarffs
-Locked URL:    github:edolstra/dwarffs/f691e2c991e75edb22836f1dbe632c40324215c5
-Description:   A filesystem that fetches DWARF debug info from the Internet on demand
-Path:          /nix/store/769s05vjydmc2lcf6b02az28wsa9ixh1-source
-Revision:      f691e2c991e75edb22836f1dbe632c40324215c5
-Last modified: 2021-01-21 22:41:26
-Inputs:
-├───nix: github:NixOS/nix/6254b1f5d298ff73127d7b0f0da48f142bdc753c
-│   ├───lowdown-src: github:kristapsdz/lowdown/1705b4a26fbf065d9574dce47a94e8c7c79e052f
-│   └───nixpkgs: github:NixOS/nixpkgs/ad0d20345219790533ebe06571f82ed6b034db31
-└───nixpkgs follows input 'nix/nixpkgs'
-#+end_example
-#+end_tip
-
-#+begin_src shell  :shebang "#!/usr/bin/env nix-shell"
-#! nix-shell -i bash -p nixUnstable
-nix --experimental-features 'nix-command flakes' shell github:edolstra/dwarffs/f691e2c991e75edb22836f1dbe632c40324215c5 --command dwarffs --version
-#+end_src
-
-#+results:
-: fusermount version: 2.9.9
+  + If you want to look out for its future, the community arranges an [[https://nixcon.org][annual event with talks all about Nix]].
+    In fact, as of 2020-11-03, a [[https://2020.nixcon.org/][NixCon online conference]] has recently occurred with the event lasting for two days.
+    They also archive their talks and whatnot on their [[https://www.youtube.com/channel/UCjqkNrQ8F3OhKSCfCgagWLg][YouTube channel]].

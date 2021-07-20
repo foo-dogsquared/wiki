@@ -3,12 +3,20 @@
 :END:
 #+title: Advice shouldn't be taken literally
 #+date: "2021-07-04 15:36:22 +08:00"
-#+date_modified: "2021-07-04 15:37:27 +08:00"
+#+date_modified: "2021-07-19 18:04:56 +08:00"
 #+language: en
 
 
-- advice are contextual;
-  what works from the person whose giving the advice is different from yours
-- furthermore, most people can read between the lines
+- advice, suggestions, whatchamacallit should only be used as frameworks, not a dogma
+- furthermore, advice are contextual;
+  what works from the person whose giving the advice is different from yours from the environment, financial status, etc.
+- examples:
+  + in note-taking, you may have heard of making [[id:431532c3-6506-4565-b193-dbfb60eac7d6][Evergreen notes]] with one idea per note;
+    some may take the advice in a literal sense;
+    alternatively, atomicity can be interpreted as one message that can be made of multiple ideas which works more for you
+  + in productivity, multiple advice on habits have been thrown such as the Pomodoro technique and bullet journaling;
+    some may practice as-is but you can modify the number of reps in a Pomodoro session or add another type of bullet for writing
 - eventually the advice will depend on your interpretation;
   [[id:d885e93b-f919-4338-a6b9-3438538e18c0][Every copy of the techniques is personalized]]
+- additionally, when giving advice, most people can read between the lines;
+  it's not like they cannot understand context

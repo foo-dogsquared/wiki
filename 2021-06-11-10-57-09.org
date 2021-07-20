@@ -3,18 +3,18 @@
 :END:
 #+title: Collecting information only feels like progress
 #+date: "2021-06-11 10:57:09 +08:00"
-#+date_modified: "2021-06-18 20:28:11 +08:00"
+#+date_modified: "2021-07-19 17:47:49 +08:00"
 #+language: en
 
 
-We are tricking ourselves, falling into one of the [[id:9dc7cb08-3aea-4f66-80ac-49a14b4b7642][Pitfalls and illusions of competence]] with the presence of the material making us feel like we already know the subject.
-The keyword here is *feels like progress*.
-The most important thing you should know when finding yourself with this tendency is information is only stored, not consumed.
+We are tricking ourselves, falling into one of the [[id:9dc7cb08-3aea-4f66-80ac-49a14b4b7642][Pitfalls and illusions of competence]] with the [[id:9986bd9e-763e-497e-a35d-ecd0aa93f408][Presence of the material fools students into learning]].
+The keyword here is "feels like progress".
+*The most important thing you should know when finding yourself with this tendency is information is only stored, not consumed.*
 [[id:114b7874-6a20-49c8-be2c-46970c7110dc][Information is only acquired when you try to make sense of it]].
 
 Collecting information is like going to a gym, reading all of the articles and books about working out, and simply stopping at that.
 You've been hanging out in the gym for a year and yet, your body is the same as last year.
-On a personal level, this is reaching into [[id:909b4830-72c8-4943-be47-efaf77e40253][Professional narcissism]].
+On a personal level, this is reaching into [[id:909b4830-72c8-4943-be47-efaf77e40253][Professional narcissism]] where you know all about specific things like the reason people really get fat and how to manage diet but you haven't done anything. [fn:: Or armchair discussions, as they say.]
 
 Nonetheless, it is still useful if we can control our resource-collecting tendencies.
 One of the simplest ways to reduce this is to [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create an inbox to store your thoughts]].

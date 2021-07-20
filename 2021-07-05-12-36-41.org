@@ -3,13 +3,13 @@
 :END:
 #+title: Unnecessary optimizations cripple progress
 #+date: "2021-07-05 12:36:41 +08:00"
-#+date_modified: "2021-07-15 07:23:10 +08:00"
+#+date_modified: "2021-07-19 16:05:54 +08:00"
 #+language: en
 
 
 - while [[id:0e2c9eaf-f12a-47b2-9c9c-d1a590db131b][Involuntary attention switch is good for preventing tunnel vision]] — e.g., trying out new things, window shopping for better tools — it can go into a case of optimizing every choice
 - this is a form of analyzing too much except we're acting upon our choices;
-  remember: [[roam:Overanalyzing slow you down]]
+  remember: [[id:03cd9fad-e187-4939-9347-1a034c6efbe2][Overanalyzing slow you down]]
 - additionally, you could think of this addiction from taking too much advantages as you can;
   it always create the impression that there is an absolute way to do it and you just haven't figured it out yet;
   recall that [[id:9a9163d7-502b-4540-b723-e15afba1e917][Tradeoffs lock yourself in a position]]

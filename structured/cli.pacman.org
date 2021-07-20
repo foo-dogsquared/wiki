@@ -1,6 +1,9 @@
-#+title: Command line: Pacman
+:PROPERTIES:
+:ID:       77f3ec38-9885-4f2b-8019-9042f0c6e4cb
+:END:
+#+title: Command line: pacman
 #+date: "2021-06-08 15:00:04 +08:00"
-#+date_modified: "2021-06-19 17:42:03 +08:00"
+#+date_modified: "2021-07-19 23:49:40 +08:00"
 #+language: en
 #+property: header_args  :eval no
 
@@ -67,7 +70,7 @@ pacman --sync --refresh --upgrade
 With everybody's favorite fuzzy finder, [[id:4eb1f8b1-bc12-4a6c-8fa4-20e4c3542cf2][fzf]].
 
 #+begin_src bash
-pacman --sync --quiet --search pkg | fzf --prompt "Package to install > " | xargs --replace='{}' doas pacman --sync {}
+pacman --sync --quiet --search pkg | fzf --prompt "Package to install > " | xargs doas pacman --sync
 #+end_src
 
 You can also create a search selection with all of the packages with the following one-liner.

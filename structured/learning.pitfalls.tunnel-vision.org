@@ -3,7 +3,7 @@
 :END:
 #+title: Tunnel vision
 #+date: "2021-07-15 22:21:04 +08:00"
-#+date_modified: "2021-07-15 22:31:42 +08:00"
+#+date_modified: "2021-07-19 17:50:51 +08:00"
 #+language: en
 
 
@@ -11,10 +11,21 @@
   this makes it harder to solve new problems where they expect to work similarly from their experience;
   it is a net negative if we force our way with the familiar solution while not understanding the new type of problem
 - [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]];
-  we tend to create connections between different things including new things
+  we tend to create connections between different things including new things;
+- we may also have to [[roam:Learn how to forget]];
+  in a world of quick and constant changes, learning new rules and topics takes up mental resources;
+  we have to assign some garbage day at some point;
+  unfortunately, we cannot easily do that from our experience as creates dogmatic mindset, that is, to survive by sticking to what we know
 - it is present on most experts with their experience on the field;
   but this is also a potential problem for students in training where certain principles are taught then encountering a new idea overall
 - This is the reason why most of the discoveries are made either by young people or those who haven't formally trained for the original field.
-- to combat against this, we can do roam:Interleaving
+- to combat against this, we do [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]]
 - by the same principle, we could also let our attention switch at times;
   [[id:0e2c9eaf-f12a-47b2-9c9c-d1a590db131b][Involuntary attention switch is good for preventing tunnel vision]]
+- examples:
+  + studying about different software engineering principles such as "Don't repeat yourself", modularity, and clean code;
+    fully applying those principles even when it is not appropriate — e.g., modularizing files even if it consists of one line, creating a dedicated function if encountered two events even if insignificant
+  + being entrenched in an idea that they overlooked simpler solutions by veterans;
+    in academia, this situation is often manifested as a supposed school assignments solved by a student like [[https://www.abc.net.au/news/2021-04-13/sydney-university-student-solves-quantum-computing-problem/100064328][how a long-standing quantum computing problem was solved by a student with simple modifications to the existing solution]];
+    in an unlikely manner, this is also present in speedrunning where tricks and techniques are often discovered by accident by a newcomer trying out things the veterans didn't think to do
+- sometimes, this is when we go against the idea of [[id:1bdbdcfa-98f9-4d08-a0dc-ad2f1b9b9ec9][Advice shouldn't be taken literally]]

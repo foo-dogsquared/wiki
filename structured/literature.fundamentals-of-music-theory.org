@@ -1,12 +1,13 @@
 :PROPERTIES:
 :ID:       c6dddd6e-4f51-48db-a2ce-56ec41b7506e :END:
 :END:
+
 #+title: Fundamentals of music theory
 #+date: "2021-04-29 18:27:29 +08:00"
-#+date_modified: "2021-06-21 18:13:51 +08:00"
+#+date_modified: "2021-07-19 00:08:51 +08:00"
 #+language: en
-#+source: https://www.coursera.org/learn/edinburgh-music-theory/
 #+property: header_args:lilypond  :exports results  :noweb true
+#+source: https://www.coursera.org/learn/edinburgh-music-theory/
 
 #+name: lilypond-paper-config
 #+begin_src lilypond
@@ -47,7 +48,7 @@ Keep in mind this course mainly deals with western musical concepts and notation
   When the distance of each note is 2 semitone, it is considered as a tone.
 
 #+ATTR_ORG: :width 550
-[[file:assets/literature.fundamentals-of-music-theory/fds-visual-octaves-and-tones.png]]
+[[file:assets/fds-visual-octaves-and-tones.png]]
 
 - an interval is two pitches with a certain distance
   + starting from a note, the number of tones distanced between them is the name of an interval

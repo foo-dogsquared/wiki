@@ -1,12 +1,14 @@
 #+title: Command-line: youtube-dl
 #+date: "2021-07-08 17:36:26 +08:00"
-#+date_modified: "2021-07-13 22:56:11 +08:00"
+#+date_modified: "2021-07-19 00:11:15 +08:00"
 #+language: en
 #+property: header-args  :eval no
 
 
 One of the archivists' best friends.
 At least you don't have to go to those shady YouTube conversion sites anymore when you have a [[https://ytdl-org.github.io/youtube-dl/supportedsites.html][complete list of other video sites]] you can download from.
+
+For complete information, you can always inspect =youtube-dl.1= manual page.
 
 
 

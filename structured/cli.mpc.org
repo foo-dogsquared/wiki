@@ -1,6 +1,6 @@
 #+title: Command line: mpc
 #+date: "2021-06-22 19:10:53 +08:00"
-#+date_modified: "2021-06-22 19:41:21 +08:00"
+#+date_modified: "2021-07-19 21:55:37 +08:00"
 #+language: en
 
 
@@ -10,12 +10,25 @@ Pretty nifty for controlling it in the command line and a bit of automation.
 
 
 
+* Subcommands
+
+The subcommands mainly deals with interacting with the server, letting you play and manage your music in the command line!
+
+- =listall= lists all of the recognized files from the music directory.
+- =play= play the playlist from the server.
+- =add [FILES...]= add the files (that are in the music directory) to the playlist.
+
+
+
+
 * Examples
 
 Welp, it's a music daemon client so it should be simple enough.
 
 
-** Random piecewise shuffle
+** Randomized playlist
+
+Even more useful if you schedule it.
 
 #+begin_src shell
 mpc listall | shuf --head-count 10 | xargs --replace='{}' mpc add '{}'
