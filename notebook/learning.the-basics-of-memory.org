@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       25fb4ebf-2cc4-40fe-93ad-37a79aedfb41
+:END:
+#+title: The basics of memory
+#+date: 2021-05-02 23:05:42 +08:00
+#+date_modified: 2021-07-21 15:32:47 +08:00
+#+language: en
+
+
+As for this note, we'll talk about the basics of memory neuroscientifically.
+
+- To understand the memory, we need to know the [[id:6e8912b3-1687-47dc-9d85-269ea6372317][Anatomy of the brain]].
+
+- With the basic understanding of the brain, we then study the process of memory.
+  We often summarizes this as the [[id:d0d97498-3cb1-4cf7-abe5-327cbb89ff29][Working and long-term memory]].
+
+- Our learning sessions are also dictated by our mood.
+  In this case, we have [[id:8b1be01b-d7d4-4590-a3a8-1fa27b3eef4e][Learning modes]].

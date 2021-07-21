@@ -1,7 +1,3 @@
-# TODO:
-# - Setup the structure correctly for site generation
-# - Build the site
-# - Export the site to GitHub pages
 name: Generate site to GitHub pages
 on: [push]
 jobs:
@@ -12,16 +8,16 @@ jobs:
       - uses: cachix/install-nix-action@v13
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-      - uses: workflow/nix-shell-action@v1
+      - name: Setup for static site generation
+        uses: workflow/nix-shell-action@v1
         with:
           packages: nodejs,coreutils
           script: |
             mkdir -p site/public
-            mv *.org structured/ site/public
+            mv notebook/* site/public
             cd site
             npm install
             npm run build
-            ls -la
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2

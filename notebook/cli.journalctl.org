@@ -1,0 +1,57 @@
+:PROPERTIES:
+:ID:       941e0a85-1bb4-45be-a729-1b577c7ee317
+:END:
+#+title: Command line: journalctl
+#+date: "2021-05-20 23:07:39 +08:00"
+#+date_modified: "2021-07-20 23:31:16 +08:00"
+#+language: en
+#+property: header-args  :results none
+
+
+The logging daemon of systemd.
+(Ooooh...)
+Not only it can view your logs, you can ask to view specific logs and delete some of them.
+
+For more information, see =journalctl.1= manual page.
+
+
+
+
+* Options
+
+- =-b, --boot= - show the logs starting from boot time
+- =-e, --pager-end= - go to the end of the logs
+- =-f, --follow= - watch the logs
+- =--user-unit= - show logs from a user unit
+- =-u, --unit [UNIT]= - show the logs of a system unit
+- =--vacuum-time [TIMESPAN]= - delete logs older than the specified timespan [fn:: View =systemd.time.5= for more information.]
+- =-x, --catalog= - prints helpful messages such as the documentation URIs
+
+
+
+
+* Examples
+
+This tool is already comprehensive.
+Needs a comprehensive database of examples to fight against this scope.
+
+
+** Watch the logs from a specific unit at boot time
+
+#+begin_src
+journalctl --user-unit borgbackup.service -fb
+#+end_src
+
+
+** Delete the logs older than a month
+
+#+begin_src
+journalctl --vacuum-time=1m
+#+end_src
+
+
+** View the latest logs with helpful messages
+
+#+begin_src
+journalctl -xe
+#+end_src

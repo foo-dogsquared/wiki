@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       fa34ab22-2b49-485b-a797-cbcccb8bcd04
+:END:
+#+title: Neovim Lua integration
+#+date: "2021-07-15 07:45:50 +08:00"
+#+date_modified: "2021-07-20 23:31:52 +08:00"
+#+language: en
+
+
+- [[https://github.com/nanotee/nvim-lua-guide][go-to resource when introducing using Lua into Neovim]]
+- similar to VimL configs, really
+- init file is =${XDG_CONFIG_HOME}/nvim/init.lua=
+- Lua configs doesn't configure much by default
+- you can start with =lua-intro= help section in the =lua= help page from Neovim — i.e., =:h lua=
+- you can still execute Vimscript with =vim.cmd=;
+  more information is at =:h lua-vimscript=
+- basics from VimL
+  + to set options, it's mostly in =vim.opt= — e.g., ~set number relativenumber~ versus ~vim.opt.number, vim.opt.relativenumber = true, true~
+  + highlight options are mostly in =vim.highlight= — e.g., ~highlight clear SpellCap~ versus ~vim.highlight~
+  + to set local options, use =vim.opt_local= — e.g., ~setlocal spell~ versus ~vim.opt_local.spell = true~
+  + otherwise, to set global options, use =vim.opt_global=
+  + you can access environment variables through =vim.env= — e.g., ~vim.env.HOME~, ~vim.env.MYVIMRC~
+  + you can manipulate variables of various scales from =vim.{g,b,t}=;
+    to see more details, see =lua-vim-variables= help section
+  + =vim.opt= will return an Option object, it has a common API;
+    to learn more about it, see =vim.opt= and its subsections
+  + to run Vimscript, you can use =vim.cmd= — e.g., ~vim.cmd "colorscheme nord"~
+- there are Neovim configurations written in Lua
+  + [[https://github.com/mjlbach/defaults.nvim][defaults.nvim]]
+- comprehensive examples include Neovim plugins that are already written in Lua
+  + [[https://github.com/savq/paq-nvim][paq-nvim]] is a simple Neovim package manager
+  + [[https://github.com/wbthomason/packer.nvim][packer.nvim]] is a more comprehensive package manager
+  + [[https://github.com/L3MON4D3/LuaSnip][LuaSnip]] is a snippet engine
+  + [[https://github.com/nvim-telescope/telescope.nvim][telescope.nvim]] is a fuzzy finder integrated inside Neovim

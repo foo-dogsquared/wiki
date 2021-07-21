@@ -26,8 +26,6 @@ const Note = ({ metadata, title, hast, backlinks }) => {
                         processHtmlClass = "math"
                     }
                 }
-
-                console.log(MathJax)
                 `}
         </script>
 
@@ -88,7 +86,6 @@ export const getStaticProps = async ({ params }) => {
       language: data.language,
       source: data.src || ''
   };
-  console.log(data);
   return {
     props: {
       metadata,

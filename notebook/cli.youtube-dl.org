@@ -1,0 +1,107 @@
+:PROPERTIES:
+:ID:       369700fa-7787-4e70-9b3b-24637ab67035
+:END:
+#+title: Command-line: youtube-dl
+#+date: "2021-07-08 17:36:26 +08:00"
+#+date_modified: "2021-07-20 23:31:35 +08:00"
+#+language: en
+#+property: header-args  :eval no
+
+
+One of the archivists' best friends.
+At least you don't have to go to those shady YouTube conversion sites anymore when you have a [[https://ytdl-org.github.io/youtube-dl/supportedsites.html][complete list of other video sites]] you can download from.
+
+For complete information, you can always inspect =youtube-dl.1= manual page.
+
+
+
+
+* Synopsis
+
+#+begin_src shell
+youtube-dl [OPTIONS...] [URLS...]
+#+end_src
+
+
+
+
+* Options
+
+- =--add-metadata= adds metadata to the resulting file after download
+- =--audio-format [EXTENSION]= downloads the video with the select format of "opus", "mp3", "opus", and "vorbis"; but there is also the convenient "best" option
+- =--audio-quality [QUALITY]= sets the quality of the audio from 0 to 9, best to worst respectively; bitrates are also accepted (e.g., =320K=, =1M=)
+- =-c, --continue= resumes the download; useful if the download process is interrupted
+- =--config-location [PATH]= set the config to be used; useful for local configs with specific options
+- =-F, --list-format= prints a list of format available for downloading
+- =--list-extractors= prints a list of supported sites and their specific features.
+- =--format [QUALITY]= downloads the video with the format shown in =--list-format=; there are convenient options such as =bestaudio= and =bestvideo= referring to the best quality it could find
+- =-j, --dump-json= completes a dry-run and prints in JSON format
+- =-o, --output [STRING]= formats the resulting filename of the tracks to be downloaded
+- =--no-overwrite= throws an error if the file already exists which is handy for scripts
+- =--write-sub= writes the subtitle file into disk
+- =-x, --extract-audio= extracts only the audio track
+
+
+** Output formats
+
+For =--output= option, there are a lot of things to consider naming your files.
+You may want to automate them yourself but =youtube-dl= has plenty of options from the get-go.
+
+The following code is the sensible default output string.
+
+#+begin_src
+%(playlist_index)02d-%(title)s.%(ext)s
+#+end_src
+
+A few of the usual stuff I use:
+
+- =title= (string) is the title of the track
+- =ext= (string) is the extension to be used; pretty much recommended to use it
+
+A lot of the things I have to do is to download multiple tracks from an album or playlist.
+Unfortunately, these are often different from one site to another.
+
+- =playlist_index= (number) indicates the position of the track in a playlist.
+  These are usually used from YouTube and Soundcloud playlists.
+- =track_number= (number) is the position of the track from an album.
+  Usually, these are used from Bandcamp and Vimeo playlists.
+
+
+
+
+* Examples
+
+Here is an entryway into your newfound archiving habit.
+Enjoy! :)
+
+
+** Download the thumbnail and the audio of the video
+
+Very simple.
+Very useful as most of the thumbnails can go to high resolution and if you need them for some reason.
+
+#+begin_src shell
+youtube-dl --write-thumbnail --extract-audio https://www.youtube.com/watch?v=wy9VvdaLuSs
+#+end_src
+
+
+** Download an entire album
+
+Though, you should look at the supported sites if it supports downloading an album out of the URL.
+In this example, we have Bandcamp.
+
+#+begin_src shell
+youtube-dl --output '%(track_number)02d-%(title)s.%(ext)s' --format bestaudio https://gametal.bandcamp.com/album/side-quests-vol-3
+#+end_src
+
+
+** Specific video download requirements
+
+In this example, I want to download a video with a width of 1080px and the best video and audio at 320Kbit/s.
+Oh, and the video should be in MP4 and the audio in Opus.
+
+This is will only succeed if the format is available to download which you can do with =--list-format=.
+
+#+begin_src shell
+youtube-dl --format 'bestvideo[width=1080,ext=mp4]+bestaudio[abr=320K,ext=opus]' https://www.youtube.com/watch?v=wy9VvdaLuSs
+#+end_src

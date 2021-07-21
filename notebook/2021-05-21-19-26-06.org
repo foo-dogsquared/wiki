@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       9dc7cb08-3aea-4f66-80ac-49a14b4b7642
+:END:
+#+title: Pitfalls and illusions of competence
+#+date: "2021-05-21 19:26:06 +08:00"
+#+date_modified: "2021-07-21 16:14:29 +08:00"
+#+language: en
+
+
+The learning process is not perfect and just like everything else in life, there are some traps that you could step in.
+This could cost you either time or forming bad habits that require unlearning later.
+
+The following is an exhaustive list of things to look out for.
+
+- The [[id:9986bd9e-763e-497e-a35d-ecd0aa93f408][Presence of the material fools students into learning]].
+- [[id:0bb464a1-94c4-4130-bc7d-413465aea8e8][Procrastination]] is a common habitual problem among students, postponing their learning and leading into cramming.
+- [[id:9138397a-a965-45e9-97ea-71849e8d4f94][Overlearning]] is a habitual problem of students, thinking they should master the concept holistically before moving on to other topics.
+- [[id:5c603e2c-4dae-465e-abb5-12897ad7466d][Tunnel vision]]: learning new things can be impeded from our own experience.
+- Working with solutions can be a trap if you focus solely on the steps.
+  + Solution: give time to focus on the bigger picture.
+  + Inversely, understanding without the memorization is still bad as [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]].

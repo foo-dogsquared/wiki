@@ -1,4 +1,6 @@
 (defvar +wiki-directory "~/writings/wiki")
+(defvar +wiki-notebook-name "notebook")
+(defvar +wiki-notebook-directory (f-join +wiki-directory +wiki-notebook-name))
 (defvar +structured-notes-directory-name "structured")
 (defvar +structured-notes-directory (f-join +wiki-directory +structured-notes-directory-name))
 (defvar my/wiki-asset-directory-name "assets")
@@ -40,9 +42,12 @@
     (org-entry-delete (point) anki-editor-prop-note-id)))
 
 (setq
+ org-roam-v2-ack 't
+ org-roam-directory "~/writings/wiki"
+ org-roam-db-location (f-join org-roam-directory "org-roam.db")
  org-roam-capture-templates `(("p" "permanent" plain "%?"
                                :if-new
-                               (file+head "%<%Y-%m-%d-%H-%M-%S>.org"
+                               (file+head (f-join "notebook/" "%<%Y-%m-%d-%H-%M-%S>.org")
                                           "#+title: ${title}
 #+date: %<%Y-%m-%d %T %:z>
 #+date_modified: %<%Y-%m-%d %T %:z>
@@ -60,7 +65,7 @@
 
                               ("l" "literature" plain "%?"
                                :if-new
-                               (file+head ,(f-join +structured-notes-directory-name "literature.${slug}.org") "#+title: ${title}
+                               (file+head ,(f-join +wiki-notebook-directory "literature.${slug}.org") "#+title: ${title}
 #+date: %<%Y-%m-%d %T %:z>
 #+date_modified: %<%Y-%m-%d %T %:z>
 #+language: en")
@@ -72,7 +77,7 @@
 
                               ("s" "structured" plain "%?"
                                :if-new
-                               (file+head ,(f-join +structured-notes-directory-name "${slug}.org") "#+title: ${title}")
+                               (file+head ,(f-join +wiki-notebook-directory "${slug}.org") "#+title: ${title}")
                                :unnarrowed t)))
 
 (eval-after-load "org-roam"

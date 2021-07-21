@@ -10,7 +10,7 @@
                                                 (:exports . "code")))
           (time-stamp-format . "%Y-%02m-%02d %02H:%02M:%02S %:z")
           (time-stamp-start . "date_modified:[ 	]+\\\\?[\"< ]*")
-          (time-stamp-end . "\\\\?[\"> ]+$")
+          (time-stamp-end . "\\\\?[\"> ]*$")
           (eval . (setq org-babel-default-header-args
                         (cons `(:dir . ,(concat
                                          (file-name-directory (buffer-file-name))

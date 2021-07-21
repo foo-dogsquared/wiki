@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       3bfe8650-775f-4dd3-994e-050c35fc39c8
+:END:
+#+title: Archive files
+#+date: "2021-06-18 18:50:14 +08:00"
+#+date_modified: "2021-07-20 23:28:42 +08:00"
+#+language: en
+
+
+Archive files are good for saving some space and reducing the files needed for transfer.
+Nowadays, there are a lot of archive formats.
+Having worked with multiple of them, it can be confusing.
+
+I'll just track them with this file.
+
+Take note that not all files are stored with the file extension.
+If it lacks the extension, inspect the file with the magic number.
+You can do that with any file inspection tools like =file.1=.
+
+| Format | File extension | Command to extract                  |
+|--------+----------------+-------------------------------------|
+| Gunzip | =.gz=, =.gzip= | ~tar -zxf $FILE~, ~gunzip -c $FILE~ |
+| ZIP    | =.zip=         | ~unzip $FILE~                       |
+| Zstd   | =.zst=         | ~tar --zstd xf $FILE~               |
+| xz     | =.xz=          | ~tar --xz xf $FILE~                 |
+| ISO    | =.iso=         |                                     |
+
+There are also some libraries and applications for certain types of files.
+
+- [[https://www.libarchive.org/][libarchive]] is a library that supports [[https://github.com/libarchive/libarchive/wiki/LibarchiveFormats][multiple archive formats]]
+- [[http://www.gnu.org/software/tar/][GNU tar]] is the most popular utility for extracting archives

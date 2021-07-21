@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       8b1be01b-d7d4-4590-a3a8-1fa27b3eef4e
+:END:
+#+title: Learning modes
+#+date: 2021-07-21 15:11:16 +08:00
+#+date_modified: 2021-07-21 15:12:25 +08:00
+#+language: en
+
+
+While there are many ways to describe the state of memory, we'll use two: focused and diffused mode.
+
+- *Focused mode is when we intensely use our mental capacity to do a task.* — e.g., solving a math problem, completing a coding competition problem set, cooking a new meal, [[id:815b2beb-40a0-4e79-9097-5b688189ad5b][Writing]], [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]], [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]].
+
+- *Diffused mode is the relaxed state of our mind.*
+  It often happens when we take a break, walk outside, and give in to guilty pleasures.
+
+Despite the conception our brain is working whenever we focus, our brain is working all day.
