@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       ff0d49d3-e0b3-45fe-8964-0af611eaa20f
+:END:
+#+title: We are more structured than associative
+#+date: 2021-07-22 14:13:16 +08:00
+#+date_modified: 2021-07-22 14:13:24 +08:00
+#+language: en
+
+
+- our [[id:1e135aee-0464-4756-9f55-bbf12afe8254][Chunking]] behavior eventually lead into chunking general information;
+  it can form into a shallower forms of opinions and generalizing information
+- despite that [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]], we enforce structure to make some sense to the world around us
+- this tends to tribalism;
+  people love to categorize themselves into groups;
+  furthermore, we like communicating with like-minded people
+- regarding tribalism, this comes down with how most people treat categorization

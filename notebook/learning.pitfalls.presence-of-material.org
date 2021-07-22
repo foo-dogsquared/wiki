@@ -3,7 +3,7 @@
 :END:
 #+title: Presence of the material fools students into learning
 #+date: "2021-07-15 07:38:09 +08:00"
-#+date_modified: "2021-07-15 07:42:26 +08:00"
+#+date_modified: "2021-07-21 18:46:59 +08:00"
 #+language: en
 
 
@@ -11,3 +11,5 @@
   only then when we open a book or logged into an e-learning website, we may feel we have already learned the material
 - to pressure yourself against this, you should close the material and recall it;
   [[roam:Recall reinforces better learning]] by relying entirely from your understanding
+- additionally, you can also do [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]];
+  not only it stops you from thinking you have earned the knowledge from a material (when you didn't) but also spaces out the session like a [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]]

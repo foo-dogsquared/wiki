@@ -3,11 +3,11 @@
 :END:
 #+title: Using the built-in help system of Emacs
 #+date: "2021-04-21 16:26:50 +08:00"
-#+date_modified: "2021-05-04 20:51:21 +08:00"
+#+date_modified: "2021-07-22 14:25:46 +08:00"
 #+language: en
 
 
-[[roam:Emacs][GNU Emacs]], being a flexible program with a supremely overwhelming number of options to choose from (arguably), has a comprehensive help system.
+[[id:ce6ab58e-b295-4fdb-8af7-fc89c63ec208][GNU Emacs]], being a flexible program with a supremely overwhelming number of options to choose from (arguably), has a comprehensive help system.
 [fn:: It's a necessity after all by how massive of a software this is.]
 
 

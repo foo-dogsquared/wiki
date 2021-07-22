@@ -3,7 +3,7 @@
 :END:
 #+title: Arch Linux
 #+date: 2021-07-19 22:35:53 +08:00
-#+date_modified: 2021-07-19 22:35:53 +08:00
+#+date_modified: 2021-07-21 19:22:43 +08:00
 #+language: en
 
 
@@ -34,7 +34,7 @@ Memed as the elit3 hacker's distro with its manual installation process and roll
 
 - creating packages requires writing [[https://wiki.archlinux.org/title/PKGBUILD][PKGBUILD]] for ABS
 
-- Arch User Repository (AUR) is a unsupported repository of packages with most of them being user-contributed package definitions;
+- [[https://aur.archlinux.org][Arch User Repository]] (AUR) is a unsupported repository of packages with most of them being user-contributed package definitions;
   while not official, it is integrated within the community;
   it has a moderation group called Trusted Users (TUs) that carries out [[https://wiki.archlinux.org/title/AUR_Trusted_User_Guidelines][certain responsibilities with the AUR]]
 

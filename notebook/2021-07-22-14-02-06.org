@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       125ca096-9769-465f-b923-ed1fd7956ae0
+:END:
+#+title: Learning techniques
+#+date: 2021-07-22 14:02:06 +08:00
+#+date_modified: 2021-07-22 14:02:28 +08:00
+#+language: en
+
+
+- [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]] and roam:Recalling are two fundamental practice for learning.
+
+- [[id:9b669fd4-e04e-43dd-a61e-81dea5ec0764][Deliberate practice]] helps in increasing our skill level and a necessity if we want to really master the concepts.
+
+- [[id:6f9c552f-055b-4238-874e-8608006ce0ca][Communicate with others to learn]] will prevent you from [[id:5c603e2c-4dae-465e-abb5-12897ad7466d][Tunnel vision]].
+  This includes actively [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]].
+
+- Skimming the material helps being familiar with the topic.
+  [[id:5c1e9540-9663-4512-8c84-05529ad22212][Speedreading is all about skimming well]].

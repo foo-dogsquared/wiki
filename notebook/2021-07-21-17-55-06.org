@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       fa53b258-a6c0-4817-9b8c-ead294e6772a
+:END:
+#+title: Store a dedicated inbox for randomly generated ideas
+#+date: 2021-07-21 17:55:06 +08:00
+#+date_modified: 2021-07-21 17:55:37 +08:00
+#+language: en
+
+
+- [[id:c10ebbb7-2af6-419e-a8f3-3417c5b82de3][Randomness in systems introduces interest]]
+- while most of them will be nonsensical, [[id:c886bc6d-e9dc-4f62-8841-59123236eda0][Failed ideas can be repurposed]]
+- if nothing else, you can also start [[id:1e135aee-0464-4756-9f55-bbf12afe8254][Chunking]] those ideas together and generate from those chunks

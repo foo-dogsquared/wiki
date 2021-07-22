@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       2b2a4c85-905a-478c-9e2c-2a64d08e4785
+:END:
+#+title: Creativity and logic are not opposites
+#+date: 2021-07-21 19:26:45 +08:00
+#+date_modified: 2021-07-21 19:27:17 +08:00
+#+language: en
+
+
+- most would get the impression that art and logic are separate especially with the presence of "personality types"
+- it often involves at least two existing ideas and making connections between them;
+  [[id:af581713-d4a8-438a-84ea-9f3b8e1353e6][Creativity does not mean originality]]
+- logic mostly consists of processing information
+- in conclusion, creativity is an application of logic

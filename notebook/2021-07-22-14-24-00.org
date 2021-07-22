@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       7382c605-b481-4baa-997a-317f6cb1819c
+:END:
+#+title: Self-learning is about responsibility
+#+date: 2021-07-22 14:24:00 +08:00
+#+date_modified: 2021-07-22 14:24:10 +08:00
+#+language: en
+
+
+- teaching others is an art and a science dealing with the individuality of the students;
+  in a similar way, self-teaching is dealing with your individuality
+- in a sense, it is about responsibility
+- having the discipline to evaluate and criticise yourself, applying all of the [[id:125ca096-9769-465f-b923-ed1fd7956ae0][Learning techniques]] yourself
+- it isn't about learning on your own, either;
+  this is especially true with [[id:9b669fd4-e04e-43dd-a61e-81dea5ec0764][Deliberate practice]] where the main component is feedback;
+  you can learn from others, too, as to [[id:6f9c552f-055b-4238-874e-8608006ce0ca][Communicate with others to learn]] including taking and giving criticisms, passively expanding your view

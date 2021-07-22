@@ -3,7 +3,7 @@
 :END:
 #+title: Start small and improve later
 #+date: "2021-05-05 18:06:29 +08:00"
-#+date_modified: "2021-07-20 14:41:31 +08:00"
+#+date_modified: "2021-07-22 14:25:58 +08:00"
 #+language: en
 
 
@@ -26,7 +26,7 @@ This is a very simple advice applicable on lots of places.
   You then fill the details for the point or scenario you're writing.
 
 The point is to reach bigger advancements must come from somewhere even in the smallest amounts.
-[[roam:Consistency over time creates more progress]].
+[[id:adefcd38-46a8-4c9c-b609-9d3393b074d0][Consistency over time creates more progress]].
 Once you get comfortable with the task you're supposed to do, you're now getting bigger results than you anticipated from doing one big task in a day.
 There is always on opportunity to improve things.
 

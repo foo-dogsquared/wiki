@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       6f9c552f-055b-4238-874e-8608006ce0ca
+:END:
+#+title: Communicate with others to learn
+#+date: 2021-07-22 14:01:10 +08:00
+#+date_modified: 2021-07-22 14:01:49 +08:00
+#+language: en
+
+
+- easy to criticize others but not your own;
+  having others to look out for your work is a good incentive to get in touch
+- furthermore, depending on the community, you can learn more outside of the niche;
+  oftentimes, they also make off-topic discussions
+- though, you have to choose your community and target audience to make more effective feedback
+- [[roam:Niche projects brings more interesting audience]]

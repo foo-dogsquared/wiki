@@ -1,6 +1,6 @@
 #+title: Android free and open source apps
 #+date: "2021-06-19 01:02:29 +08:00"
-#+date_modified: "2021-07-21 14:36:24 +08:00"
+#+date_modified: "2021-07-21 16:37:01 +08:00"
 #+language: en
 
 
@@ -13,7 +13,17 @@ We may as well take advantage of the Android improvements and features by creati
 Here is my personal list of noteworthy Android apps:
 
 - [[https://f-droid.org/en/packages/][F-Droid]] is a privacy-oriented app store for Android.
-  It builds all of the hosted apps from scratch for privacy and security sake of fully Repr
-- [[https://newpipe.net/][Newpipe]]
-- [[https://f-droid.org/packages/com.apps.adrcotfas.goodtime/][Goodtime]]
--
+  It builds all of the hosted apps from scratch for privacy and security sake of fully [[id:fe9e21bc-3b38-4d0f-a785-253248a38ed7][Reproducible builds]].
+
+- [[https://newpipe.net/][Newpipe]] is a YouTube frontend alternative to the official YouTube mobile app.
+  Most of the features you would find in the app doesn't require logins such as subscription and playlist management.
+  Also can import and export user data from the app.
+
+- [[https://f-droid.org/packages/com.apps.adrcotfas.goodtime/][Goodtime]] is a Pomodoro timer.
+  You can also export your sessions to data.
+
+- [[https://f-droid.org/packages/mn.tck.semitone/][Semitone]] is a piano app for musicians.
+  This is what I use for studying music theory.
+
+- [[https://kisslauncher.com/][KISS Launcher]] is a self-titled simple launcher with a homepage and a search interface.
+  Supports pinning apps and adding app widgets in the homepage.

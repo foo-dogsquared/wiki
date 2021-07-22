@@ -3,23 +3,23 @@
 :END:
 #+title: Deliberate practice
 #+date: "2020-07-06 23:55:47 +08:00"
-#+date_modified: "2021-07-19 19:05:56 +08:00"
+#+date_modified: "2021-07-22 14:12:19 +08:00"
 #+language: en
 
 
 Unlike regular practice that involves mindless repetitions, deliberate practice involves purposeful sessions.
+Remember, [[id:e994f2d6-c9d6-4ca8-9dfe-fcc69414e0a4][Repetition is not understanding]].
 Each session aims to improve performance and increase the skill ceiling of the practitioner.
 
 To put it simply, deliberate practice involves getting out of comfort zone and enforces discipline.
 For example, trying yourself to solve some hard mathematical problems or competitive programming for the first time with a mentor.
 
 You can also [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]].
-With it, identify the top performers in the field and try to make a conclusion on how do they get so far.
+With it, [[id:7f73f745-8ce0-4a02-b454-1b7c57b1e202][Follow the experts in the field]] and try to make a conclusion on how do they get so far.
 
 The most important component of this practice is feedback.
 Find a platform to publish your work or to apply your practice — e.g., an online forum, a local event, a contest/competition.
-[[roam:Communicate with others as a way to learn]].
+[[id:6f9c552f-055b-4238-874e-8608006ce0ca][Communicate with others to learn]].
 
 You can also put yourself in their shoes as a newcomer.
 Try to tackle a difficult problem, [[id:12dc8b07-ed8b-46d8-bff0-a38d9f3cb83b][Diving head-first with a difficult problem is a good indicator of progress]].
-Beware, [[id:48cef2ac-a941-463d-a07f-6be8349456ad][Diving head-first into a difficult problem makes a bad start]].

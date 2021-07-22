@@ -3,7 +3,7 @@
 :END:
 #+title: We are more associative than structured
 #+date: "2021-05-08 23:12:29 +08:00"
-#+date_modified: "2021-07-09 07:32:26 +08:00"
+#+date_modified: "2021-07-22 14:13:32 +08:00"
 #+language: en
 
 
@@ -22,3 +22,6 @@ This is subtly present in daily life mostly filled with links from one thing to 
 When knowing a new topic, we strive to compare between the new and the familiar things.
 [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]] including the things we already know.
 We are desperate to create a hook between the new and the old as we have an inherent understanding that newer ideas are built on top of other ideas.
+
+However, [[id:ff0d49d3-e0b3-45fe-8964-0af611eaa20f][We are more structured than associative]] at times.
+We do need some order to make some sense.

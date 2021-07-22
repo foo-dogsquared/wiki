@@ -3,7 +3,7 @@
 :END:
 #+title: Switching between different topics makes new perspective
 #+date: 2021-07-17 21:01:18 +08:00
-#+date_modified: 2021-07-21 16:18:15 +08:00
+#+date_modified: 2021-07-21 18:47:20 +08:00
 #+language: en
 
 
@@ -29,5 +29,6 @@ Some examples...
   Knowing about [[id:8b1be01b-d7d4-4590-a3a8-1fa27b3eef4e][Learning modes]] and can depend on our emotion, taking a break is a good advice.
 
 Switching between context doesn't necessarily mean equally dividing the time.
+In a way, you're practicing [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]].
 You still need to prioritize the topic you have difficulties with.
 However, you need to watch out for [[id:9138397a-a965-45e9-97ea-71849e8d4f94][Overlearning]].
