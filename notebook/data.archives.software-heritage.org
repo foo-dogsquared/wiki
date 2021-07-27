@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       9c85ffb2-fc90-4b38-abce-f0425a2b79de
+:END:
+#+title: Software Heritage
+#+date: 2021-07-25 21:01:45 +08:00
+#+date_modified: 2021-07-27 23:11:52 +08:00
+#+language: en
+
+
+- project link is at https://www.softwareheritage.org/
+- the infrastructure and tools they used is also open source;
+  primarily happening at [[https://forge.softwareheritage.org/][their software forge]]
+- an ambitious project archiving all of humanity's publicly available source code
+- primarily made for researchers to easily refer to software;
+  a centralized database for referring software, in other words
+- it is stored in a global merkle tree which each project is given an identifer referred to as Software Heritage persistent identifiers (SWHIDs)
+- the archive itself is more of a gigantic merkle tree with the ability to interact with the individualities such as commits, revisions, snapshots, and even the very source code files of an archived repo
+- funded from donations including big companies and several not-for-profit foundations
+- a big component for [[id:6eeb7a24-b662-46d6-9ece-00a5028ff4d8][Reproducible research]] for other projects such as [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]] and [[id:be917383-84c4-4bf5-9ca0-b04bfb778f4f][Guix package manager]] used as a fallback when upstream vanished;
+  soon enough, it will develop tools to integrate them further such as archiving the code used to build the binary cache
+- there is a [[https://archive.softwareheritage.org/][public interface for browsing the archive]]
+- they have dedicated resources into creating an infrastructure for creating a centralized reference for software such as a user-local filesystem integrating the archive for development workflow (see [[id:4703f8c2-225c-4c76-a788-af04b84309ac][The Software Heritage Filesystem (SwhFS): Integrating Source Code Archival with Development]])

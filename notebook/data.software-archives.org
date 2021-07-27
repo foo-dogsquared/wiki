@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       67ed9916-0e60-44fa-8844-af86727870fc
+:END:
+#+title: Software archives
+#+date: 2021-07-25 19:20:39 +08:00
+#+date_modified: 2021-07-27 17:31:16 +08:00
+#+language: en
+
+
+- [[id:9c85ffb2-fc90-4b38-abce-f0425a2b79de][Software Heritage]] is an ambitious project archiving all of the source code of humanity.
+  Has a [[https://archive.softwareheritage.org/][browsable interface]] of the total archive.
+
+- roam:archive.org has [[https://archive.org/details/software][a dedicated section for software]].
+  They are especially nice for scouring historical versions of software.
+
+- [[id:f3f1201a-9fb9-4481-981f-5f50f8982a5e][Arch Linux]] has an [[https://archive.archlinux.org/][archive]] that keeps the snapshots, packages, and repos for a few years before uploading it to their [[https://archive.org/details/archlinuxarchive][historical archive]].
+
+- [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]] has [[https://cache.nixos.org/][a binary cache]].
+  According to [[https://chaos.social/@davidak/106640211327736471][one of the contributors]], it makes up 120TB as of 2021-07-25.
+
+- [[id:be917383-84c4-4bf5-9ca0-b04bfb778f4f][Guix package manager]] has a binary cache primarily maintained with its [[https://ci.guix.gnu.org/][homegrown continuous integration software]].
+
+- roam:F-Droid has an archive for its compiled apps.
+  From [[https://mastodon.technology/@fdroidorg/106635571616898675][one of their comments]], it is sitting at ~390GB as of 2021-07-25.
