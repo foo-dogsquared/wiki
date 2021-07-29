@@ -3,13 +3,23 @@
 :END:
 #+title: Digital gardens
 #+date: "2020-06-04 21:32:23 +08:00"
-#+date_modified: "2021-05-20 20:13:35 +08:00"
+#+date_modified: "2021-07-25 23:21:23 +08:00"
 #+language: en
 
 
 An environment for crafting [[id:431532c3-6506-4565-b193-dbfb60eac7d6][Evergreen notes]].
 Unlike a traditional blog where it concerns the final output, a digital garden cares more on the process of creating notes even if it's incomplete.
-Examples of a digital garden includes [[https://notes.andymatuschak.org/][Andy Matuschak's]], [[https://maggieappleton.com/garden][Maggie Appleton's]], and [[https://www.mentalnodes.com/][Anne-Laure De Cunff's]].
+
+A list of examples...
+
+- One of the more popular one especially with the relatively recent note-taking craze with [[id:4259636e-e0e8-49e4-8210-758ec59728a3][Zettelkasten]], [[https://notes.andymatuschak.org/][Andy Matuschak's]] notes have always been referred to especially with the navigation of notes by stacking them horizontally.
+  It is nice to navigate representing your curiosity as most note-taking system sucks at providing navigation.
+
+- [[https://maggieappleton.com/garden][Maggie Appleton's]] is a simple one with some metadata for completion, when it was first created and updated.
+
+- [[https://www.gwern.net/index][Gwern Branwen's]] website is an aesthetically nice website with the pop-ups at hover.
+  They also address concerns of seeing changes by explicitly listing them in [[https://www.gwern.net/Red][a dedicated page]].
+  Similarly, their posts also has attached meaningful metadata with their confidence, completion status, and backlinks.
 
 In other words, wikis with a fancier name and a gardening metaphor.
 
@@ -26,5 +36,7 @@ While digital gardens are essentially glorified personal knowledge bases, digita
   Usually, this comes in the form of [[id:583852e4-e56f-469b-89bc-9e5a832c9f04][Backlinks]].
 
 - Composes of different notes of different maturity level: either an incomplete seedling of a note, a partially complete note, or a fully-developed evergreen note.
+
+- Attaching meaningful [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]] to enable further tracking the status of your notes.
 
 - Sports a note-taking workflow along with a publication workflow (e.g., web, PDf documents), encouraging to work in the open.

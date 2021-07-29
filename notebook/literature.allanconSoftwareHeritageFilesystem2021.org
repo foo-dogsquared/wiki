@@ -4,21 +4,22 @@
 :END:
 #+title: The Software Heritage Filesystem (SwhFS): Integrating Source Code Archival with Development
 #+date: 2021-07-27 17:06:14 +08:00
-#+date_modified: 2021-07-27 23:07:36 +08:00
+#+date_modified: 2021-07-28 00:06:18 +08:00
 #+published: 2021-02-12
 #+author: Allançon, T., Pietri, A., & Zacchiroli, S.
 #+source: http://arxiv.org/abs/2102.06390
 #+language: en
 
 
-- primarily features =swh-fuse=, a utility allowing to mount software from Software Heritage to your local environment
+- primarily features =swh-fuse=, a utility allowing to mount software from [[id:9c85ffb2-fc90-4b38-abce-f0425a2b79de][Software Heritage]] to your local environment quickly
 - it is based from POSIX filesystems built with FUSE framework;
   as such it does not require root privileges to use it
 - it exposes the global merkle tree as a filesystem along with its metadata, archive, etc.
 - it can interact with the objects in the merkle tree such as the source code files, commits, snapshots, etc.
 - the tool is essentially a FUSE adapter to Software Heritage API
+- future considerations include for mining software repositories and integrations with Git making commands work inside of the filesystem
 
 features:
-- the tool loads the archives lazily to save bandwidth and disk space
+- the tool lazily loads the archives to save bandwidth and disk space
 - caches for performance especially with how bad remote filesystems can be
 - reduces redundancy by using symlinks extensively

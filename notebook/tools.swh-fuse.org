@@ -1,6 +1,9 @@
-#+title: swh-fuse
+:PROPERTIES:
+:ID:       cf5cadae-e01b-4099-86fe-b0e05bda4d39
+:END:
+#+title: swh.fuse
 #+date: 2021-07-27 21:02:05 +08:00
-#+date_modified: 2021-07-27 22:08:39 +08:00
+#+date_modified: 2021-07-28 00:00:24 +08:00
 #+language: en
 
 
@@ -32,7 +35,8 @@ swhfs
 For up-to-date information, you can read the =README= file.
 
 With the complete setup, you are now ready to interact with the filesystem.
-The point of interest here is the =archive/= directory which holds all of the archived source code in the library.
+The point of interest here is the =archive/= directory which holds all of the objects in the merkle tree.
+You can see the [[https://docs.softwareheritage.org/devel/swh-model/data-model.html#data-model][model data]] from their documentation.
 
 You can interact with it by accessing one of the repo through their SWHID.
 

@@ -3,7 +3,7 @@
 :END:
 #+title: Repetition is not understanding
 #+date: 2021-07-22 14:03:33 +08:00
-#+date_modified: 2021-07-22 14:16:19 +08:00
+#+date_modified: 2021-07-28 11:22:57 +08:00
 #+language: en
 
 
@@ -15,3 +15,5 @@ However, with the number of times we are doing, there are bounds to have mistake
 
 [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]].
 This is where purposeful practice like [[id:9b669fd4-e04e-43dd-a61e-81dea5ec0764][Deliberate practice]] comes into play as we're lifting our skill level to be improved.
+But not all repetition has to be useful either as [[id:864a9242-eb10-44ad-81b7-c237276523e5][We know more compared to what we understood]].
+Sometimes, we practice repetition only to remember immediate information.

@@ -1,0 +1,61 @@
+:PROPERTIES:
+:ID:       80866258-4fd5-4ddc-b3e4-00fa3d3372d3
+:END:
+#+title: Command line: systemctl
+#+date: 2021-07-27 13:47:34 +08:00
+#+date_modified: 2021-07-27 14:06:35 +08:00
+#+language: en
+#+property: header_args  :eval no
+
+
+The go-to command to manage units in a systemd-ful system.
+
+For full details, you can view the =systemctl.1= manual page.
+
+
+
+
+* Synopsis
+
+#+begin_src shell
+systemctl [OPTIONS...] COMMAND [COMMAND_ARGS...] [COMMAND_OPTIONS...]
+#+end_src
+
+
+
+
+* Options
+
+- =--user= runs the binary in user mode with the user-specific options and load-path.
+  See [[id:c7edff80-6dea-47fc-8ecd-e43b5ab8fb1e][systemd at user-level]] for more details.
+
+- =--help= is an obvious one.
+  It prints a detailed help section of the command.
+
+
+
+
+* Subcommands
+
+- =enable UNIT= and =disable UNIT= enables and disables units.
+  It mainly adds the unit activation at startup.
+
+  + =--now= starts/stops the unit.
+    It is the equivalent of =systemctl {enable,disable} UNIT && systemctl {start,stop} UNIT=.
+    Pretty handy if you intend to add the unit at startup and want to use it now.
+
+- =start UNIT= and =stop UNIT= starts and stops the unit, respectively.
+  Though, this doesn't activate
+
+- =restart UNIT= restarts the given unit.
+  This also reloads with the modified changes of the unit.
+
+- In some cases where restarting the unit isn't enough, =daemon-reload= will reload the daemon with the modified units.
+  systemd does not have reload-at-change for its unit.
+  That is, if a unit is modified, systemd will not run the modified version until reloaded.
+
+- =show-environment= shows the environment variables of the system.
+
+- =list-units [PATTERN...]= is self-explanatory ;p.
+
+- =is-active PATTERN...= prints the status of the matched unit and exits successfully if it's active.

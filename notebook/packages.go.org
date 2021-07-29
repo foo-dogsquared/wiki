@@ -1,0 +1,13 @@
+#+title: Go packages
+#+date: 2021-07-27 10:38:45 +08:00
+#+date_modified: 2021-07-28 10:43:39 +08:00
+#+language: en
+
+
+- [[https://golang.org/ref/mod][reference page]]
+- names are traditionally URL-like (e.g., =github.com/gohugoio/hugo=, =github.com/errata-ai/vale=) similar to [[roam:Deno packages]]
+- has to be explicitly set with the =go.mod= file (i.e., =module MODULE_NAME=)
+- =go.sum= functions similarly to lockfiles containing cryptographic hashes of the modules used for a successful build
+- Go modules can be vendored (e.g., =go mod vendor=);
+  it will be stored in the =vendor/= directory of the root module
+  + example of a project using vendored Go modules is [[https://github.com/errata-ai/vale/tree/v2.5.0][Vale v2.5.0]]

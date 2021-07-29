@@ -3,7 +3,7 @@
 :END:
 #+title: Oil shell language
 #+date: "2021-05-09 16:40:50 +08:00"
-#+date_modified: "2021-07-21 13:04:45 +08:00"
+#+date_modified: "2021-07-28 10:52:44 +08:00"
 #+language: en
 #+property: header-args:oil  :eval no
 
@@ -30,11 +30,13 @@ While there are multiple components in this project, we're focusing on two: *OSH
 - *OSH is the bridge between Bash and Oil.*
   It aims to be the most Bash-compatible shell that you can run most Bash scripts just fine.
   The point of this component is improving what's under the hood, imposing sensible defaults on them, and getting a wide reach since Bash is the most popular shell.
-  While it may not run every Bash script in existence, the other point is to require minimal rewrites to run it with OSH.
+  While it may not run every Bash script in existence, the other point is to require minimal rewrites to run it with OSH or eventually rewrite it in Oil.
 
 - *Oil shell is the modern replacement of Bash* from its syntax and behavior.
   It aims to be the shell for people familiar to Python, Ruby, JavaScript, and the like.
   This is the other side of the bridge that OSH aims to reach.
+
+Both OSH and Oil are referring to the same interpreter but configured differently.
 
 
 
@@ -51,7 +53,7 @@ var title = "Catenbury's Tale"
 setvar title = "MS Fnd in a Lbry"
 
 var keywords = %("metadata" "information overload" "information retrieval")
-push :keywords "information organization"
+append :keywords "information organization"
 
 var metadata = {}
 setvar metadata['author'] = "Hal Draper"
@@ -116,10 +118,10 @@ You can iterate through an array with a loop.
 for i in @a { echo "word: $i" }
 #+end_src
 
-You can also add an item to the array with =push= keyword.
+You can also add an item to the array with =append= keyword.
 
 #+begin_src oil
-push :a "biz"
+append :a "biz"
 
 # The expression mode equivalent
 # You can also append associative arrays due to the expressiveness of the mode

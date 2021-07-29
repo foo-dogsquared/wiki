@@ -3,7 +3,7 @@
 :END:
 #+title: Skill-building
 #+date: "2021-07-09 19:20:50 +08:00"
-#+date_modified: "2021-07-22 14:26:08 +08:00"
+#+date_modified: "2021-07-28 11:27:10 +08:00"
 #+language: en
 
 
@@ -11,6 +11,5 @@
 - [[id:1a6187c9-6c79-4378-bf8d-935c8a3d9167][Learning a new skill often starts from specific places]].
 - [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]].
 - Get into [[id:db298171-834d-4348-92a8-68e3f830d5d0][Collecting information to learn new skills]].
-- Practice and understand how [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]].
 - Learn a thing or two about the [[id:06df5d69-12ac-4e98-8013-ac54d29aa80c][Learning process]] and [[id:125ca096-9769-465f-b923-ed1fd7956ae0][Learning techniques]].
 - To push your level, do some [[id:9b669fd4-e04e-43dd-a61e-81dea5ec0764][Deliberate practice]].

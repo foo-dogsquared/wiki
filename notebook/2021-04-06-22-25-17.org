@@ -3,7 +3,7 @@
 :END:
 #+title: Prefer referencing over remembering
 #+date: "2021-04-06 22:25:17 +08:00"
-#+date_modified: "2021-07-14 15:36:24 +08:00"
+#+date_modified: "2021-07-28 13:07:51 +08:00"
 #+language: en
 #+tags: personal-info-management
 
@@ -28,5 +28,11 @@ Examples:
 
 - [[id:ce6ab58e-b295-4fdb-8af7-fc89c63ec208][GNU Emacs]] has a great built-in help system.
   (See [[id:0efb9c51-3a12-4e5a-9e9b-d48cf4bd53ce][Using the built-in help system of Emacs]] for more details.)
+
+- [[id:ea263f6f-fa8e-4e6d-a585-d30d493d1e3c][Add a desktop search engine for your digital library]].
+
+- Referring to official documentation and tools (e.g., [[https://devdocs.io/][DevDocs]], [[https://zealdocs.org/][Zeal]]).
+
+- Making full use of search tools from programs such as the command palette in [[roam:Visual Studio Code]], help system in Microsoft Word, and dynamic menus in roam:Blender.
 
 If the system has a way of referencing something (other than the internet), use it to your advantage as you may find something valuable.

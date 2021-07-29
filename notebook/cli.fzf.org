@@ -3,7 +3,7 @@
 :END:
 #+title: Command line: fzf
 #+date: "2021-05-31 23:08:57 +08:00"
-#+date_modified: "2021-06-19 17:42:49 +08:00"
+#+date_modified: "2021-07-27 12:38:25 +08:00"
 #+language: en
 
 
@@ -48,6 +48,8 @@ apropos . \
     | awk '{ print $1 "." gensub(/[()]/, "", "g", $2) }' \
     | xargs man
 #+end_src
+
+Since a manual page can have the same title in different sections (e.g., =tput.1= and =tput.1p=), it is necessary to extract the sections.
 
 
 ** Goto directory with fzf and Bash

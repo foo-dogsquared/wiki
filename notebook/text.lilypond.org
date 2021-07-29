@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       700ed776-8663-4a15-ab39-13ed31027bfd
+:END:
 #+title: Lilypond
 #+date: "2021-05-10 19:36:43 +08:00"
-#+date_modified: "2021-07-11 08:39:53 +08:00"
+#+date_modified: "2021-07-22 14:34:36 +08:00"
 #+language: en
 #+property: header-args:lilypond  :exports both
 

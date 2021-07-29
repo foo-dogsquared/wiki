@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       8568ce92-99a8-4d20-9723-eee41a507327
+:END:
+#+title: Nix overrides and overlays
+#+date: 2021-07-28 12:54:40 +08:00
+#+date_modified: 2021-07-28 12:55:03 +08:00
+#+language: en
+
+
+You can override values in Nix as a way to customize nixpkgs.
+For example, if you want to use a different version from the nixpkgs channel, you can change the appropriate value.
+
+#+begin_src nix
+let overlay = self: super:
+      {
+        ncmpcpp = super.ncmpcpp.override { visualizerSupport = true; };
+      }
+#+end_src
+
+For another example, you can see some examples from [[https://github.com/neovim/neovim/blob/f695457f815544d0dc16469569c70556e3165bb6/contrib/flake.nix][Neovim]] and [[https://gitlab.com/veloren/veloren/-/tree/685f4971ac0deb31b301e9d2bc0201d2531fd895/nix][Veloren]] (which also uses Nix flakes).
+
+You can set overlays automatically either by setting =nixpkgs.overlays= from your system configuration or =~/.config/nixpkgs/overlays/= folder for user-specific settings.
+You could also set overlays for standalone Nix code similarly through the =overlays= key — e.g., ~import <nixpkgs> ? { overlays = (self: super: { } ); };~.

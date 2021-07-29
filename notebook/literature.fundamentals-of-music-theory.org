@@ -4,7 +4,7 @@
 
 #+title: Fundamentals of music theory
 #+date: "2021-04-29 18:27:29 +08:00"
-#+date_modified: "2021-07-19 00:08:51 +08:00"
+#+date_modified: "2021-07-22 23:21:21 +08:00"
 #+language: en
 #+property: header_args:lilypond  :exports results  :noweb true
 #+source: https://www.coursera.org/learn/edinburgh-music-theory/
@@ -120,9 +120,24 @@ Keep in mind this course mainly deals with western musical concepts and notation
 
 #+begin_src lilypond  :file accidental-with-chords.png
 <<lilypond-paper-config>>
-\chordmode { cis dis eis fis gis ais bis cis' }
 \chordmode { g a b c' d' e' fis' g' }
 #+end_src
 
 #+results:
 [[file:assets/literature.fundamentals-of-music-theory/accidental-with-chords.png]]
+
+- ledger lines are just extensions to the stave for lacking space
+
+#+begin_src lilypond  :file ledger-lines.png
+<<lilypond-paper-config>>
+\relative c' { c a'' }
+#+end_src
+
+#+results:
+[[file:assets/literature.fundamentals-of-music-theory/ledger-lines.png]]
+
+- keys and key signatures
+- the keys come from the keys of a scale
+- it makes the quality of the song
+  + if a song goes back to 'A' often, it has 'A' as the tonic
+- circle of fifths

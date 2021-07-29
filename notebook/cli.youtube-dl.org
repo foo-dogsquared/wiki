@@ -3,7 +3,7 @@
 :END:
 #+title: Command-line: youtube-dl
 #+date: "2021-07-08 17:36:26 +08:00"
-#+date_modified: "2021-07-20 23:31:35 +08:00"
+#+date_modified: "2021-07-28 14:38:09 +08:00"
 #+language: en
 #+property: header-args  :eval no
 
@@ -28,17 +28,37 @@ youtube-dl [OPTIONS...] [URLS...]
 * Options
 
 - =--add-metadata= adds metadata to the resulting file after download
-- =--audio-format [EXTENSION]= downloads the video with the select format of "opus", "mp3", "opus", and "vorbis"; but there is also the convenient "best" option
-- =--audio-quality [QUALITY]= sets the quality of the audio from 0 to 9, best to worst respectively; bitrates are also accepted (e.g., =320K=, =1M=)
-- =-c, --continue= resumes the download; useful if the download process is interrupted
-- =--config-location [PATH]= set the config to be used; useful for local configs with specific options
+
+- =--audio-format EXTENSION= downloads the video with the select format of "opus", "mp3", "opus", and "vorbis";
+  but there is also the convenient "best" option
+
+- =--audio-quality QUALITY= sets the quality of the audio from 0 to 9, best to worst respectively;
+  bitrates are also accepted (e.g., =320K=, =1M=)
+
+- =-c, --continue= resumes the download;
+  useful if the download process is interrupted
+
+- =--config-location PATH= set the config to be used;
+  useful for local configs with specific options
+
 - =-F, --list-format= prints a list of format available for downloading
+
 - =--list-extractors= prints a list of supported sites and their specific features.
-- =--format [QUALITY]= downloads the video with the format shown in =--list-format=; there are convenient options such as =bestaudio= and =bestvideo= referring to the best quality it could find
+
+- =--format QUALITY= downloads the video with the format shown in =--list-format=;
+  there are convenient options such as =bestaudio= and =bestvideo= referring to the best quality it could find
+
+- =--match-title REGEX= downloads only with the matched titles;
+  for the inverse operation, =--reject-title REGEX=
+
 - =-j, --dump-json= completes a dry-run and prints in JSON format
-- =-o, --output [STRING]= formats the resulting filename of the tracks to be downloaded
+
+- =-o, --output STRING= formats the resulting filename of the tracks to be downloaded
+
 - =--no-overwrite= throws an error if the file already exists which is handy for scripts
+
 - =--write-sub= writes the subtitle file into disk
+
 - =-x, --extract-audio= extracts only the audio track
 
 

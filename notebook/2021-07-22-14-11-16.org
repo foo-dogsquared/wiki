@@ -3,11 +3,13 @@
 :END:
 #+title: Follow the experts in the field
 #+date: 2021-07-22 14:11:16 +08:00
-#+date_modified: 2021-07-22 14:11:24 +08:00
+#+date_modified: 2021-07-22 15:54:38 +08:00
 #+language: en
 
 
-- similar to [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]], this time is actively following the people that made a career out of it
+- similar to [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]], this time we're actively following the people that made a career out of it
+- they often figured things out already that may have took years of realization;
+  you may want to get some insights from them to save yourself from [[id:9138397a-a965-45e9-97ea-71849e8d4f94][Overlearning]]
 - not only you are getting the trending topics but also inspire to create other projects;
   we [[roam:Learn by copying]]
 - furthermore, we can [[id:6f9c552f-055b-4238-874e-8608006ce0ca][Communicate with others to learn]] and interacting with a community as passive learning and relaxing (if that's your preference)

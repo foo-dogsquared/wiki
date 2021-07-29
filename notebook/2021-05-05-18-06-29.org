@@ -3,7 +3,7 @@
 :END:
 #+title: Start small and improve later
 #+date: "2021-05-05 18:06:29 +08:00"
-#+date_modified: "2021-07-22 14:25:58 +08:00"
+#+date_modified: "2021-07-22 14:31:32 +08:00"
 #+language: en
 
 
@@ -12,14 +12,14 @@ This is a very simple advice applicable on lots of places.
 - In speedrunning, when starting to learn the mechanics of the game, you may want to finish a whole run no matter how bad it is to get the bigger picture.
   This way, you'll know what techniques and tricks you find difficult and improve on it immediately.
 
-- When learning to program, you can start with solving one coding problem until you're now comfortable to take two.
+- When [[id:4b33103b-7f64-4b51-8f03-cac06d4001bb][Programming]], you can start with solving one coding problem until you're now comfortable to take two.
   Then, with a couple of problems, you're now comfortable to take three and so on.
 
 - In [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]], one often starts with a sketch with rough shapes and outlines.
   The details may then change in the later phases of the sketch.
   This can make immediate improvements especially when you found out the outcome does not fit with what you've visualized.
 
-- In learning a new skill, you start from the basic concepts.
+- In [[id:af0ccefe-c671-47bf-94f7-62243c805745][Skill-building]], you start from the basic concepts.
   This is to build a foundation for complex topics and flexibility you need to create a solution.
 
 - In [[id:815b2beb-40a0-4e79-9097-5b688189ad5b][Writing]], you often start with the outlines of the article or a story.

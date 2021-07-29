@@ -1,21 +1,26 @@
 :PROPERTIES:
-:ID:       892676b3-76cb-4cd4-9689-910c1fe6587a
+:ID:       3b3fdcbf-eb40-4c89-81f3-9d937a0be53c
 :END:
-#+title: The basics of Nix package manager
+#+title: Nix package manager
 #+date: "2021-06-05 12:34:49 +08:00"
-#+date_modified: "2021-07-19 14:52:11 +08:00"
+#+date_modified: "2021-07-28 16:31:56 +08:00"
 #+language: en
 
 
 
-[[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]] is a great tool for reproducibility as you can easily set up your environment.
-Taking it up to the next level with NixOS, your whole installation.
+[[https://nixos.org/][Nix]] is a package manager that pioneered [[id:bfed6daf-4c2b-4426-bab9-2804caa5e079][Functional package management]] which addresses the criticisms of traditional Unix systems while making it as a specialized tool for [[id:fe9e21bc-3b38-4d0f-a785-253248a38ed7][Reproducible builds]].
+It features a handrolled configuration language (also called Nix) that leans into functional paradigm, making it easier if you have experience on it.
+A popular tool mostly featured in Haskell programming projects.
+
+Eventually inspired GNU to create a fork, [[id:be917383-84c4-4bf5-9ca0-b04bfb778f4f][Guix package manager]], that takes it to another direction with more focus on reproducibility and its extensions such as bootstrapping.
 
 Among other things, Nix also has the following features to look out for.
 
 - Creating [[id:de801b92-819e-4944-9f5b-5cea145a2798][Reproducible executables with Nix]] enabling to execute with one script only requiring the package manager.
 - How the build process works along with [[id:8f23f862-a19a-4a13-8d8f-69c280a8e072][Nix derivations]].
+- With [[id:8568ce92-99a8-4d20-9723-eee41a507327][Nix overrides and overlays]], you can change parts of a system and/or packages.
 - The new way to manage channels with [[id:6873de22-9eac-492c-93a8-6cdf8cbfc0f8][Nix flakes]].
+- How [[id:963c043e-4972-4b29-8360-223ec3465203][Nix packages]] are built and eventually created an extensive package ecosystem with the [[id:a57e63a7-6daa-4639-910d-c6648df156a3][Nix language]].
 
 
 
@@ -36,7 +41,7 @@ The basic ropes into getting started with Nix.
 
 - [[https://github.com/nmattia/niv][niv]] provides a easier way to manage dependencies though it will be easier with Nix flakes.
 
-- [[Nix flakes]] is an upcoming feature for Nix, replacing the traditional Nix channels into a decentralized set of derivations that can be retrieved from anywhere similar to Go modules [fn:: At a glance, anyways. I'm not experienced enough with Go to say that with utmost confidence.].
+- [[id:6873de22-9eac-492c-93a8-6cdf8cbfc0f8][Nix flakes]] is an upcoming feature for Nix, replacing the traditional Nix channels into a decentralized set of derivations that can be retrieved from anywhere similar to Go modules [fn:: At a glance, anyways. I'm not experienced enough with Go to say that with utmost confidence.].
 
 - [[https://cachix.org/][Cachix]] is a cache service enabling to easily distribute binaries built with Nix.
 
@@ -51,62 +56,5 @@ Holistically, Nix is made up of at least four components: the store, the languag
 
 - The store is a immutable centralized location where all of the outputs are placed.
 - The derivations are essentially build instructions.
-- The language (also called as Nix but we'll refer to it as Nixlang) is a domain-specific language for creating derivations.
+- [[id:a57e63a7-6daa-4639-910d-c6648df156a3][Nix language]] is a domain-specific language for creating derivations.
 - The build process can be locked in a sandbox, improving the reproducibility of a setup and lowering the attack surface for a malicious package.
-
-
-
-
-* Overlays
-
-You can override values in Nix as a way to customize nixpkgs.
-For example, if you want to use a different version from the nixpkgs channel, you can change the appropriate value.
-
-#+begin_src nix
-let overlay = self: super:
-      {
-        ncmpcpp = super.ncmpcpp.override { visualizerSupport = true; };
-      }
-#+end_src
-
-For another example, you can see some examples from [[https://github.com/neovim/neovim/blob/f695457f815544d0dc16469569c70556e3165bb6/contrib/flake.nix][Neovim]] and [[https://gitlab.com/veloren/veloren/-/tree/685f4971ac0deb31b301e9d2bc0201d2531fd895/nix][Veloren]] (which also uses Nix flakes).
-
-You can set overlays automatically either by setting =nixpkgs.overlays= from your system configuration or =~/.config/nixpkgs/overlays/= folder for user-specific settings.
-You could also set overlays for standalone Nix code similarly through the =overlays= key — e.g., ~import <nixpkgs> ? { overlays = (self: super: { } ); };~.
-
-
-
-
-* Opinionated guide to learn Nix
-
-Nix throws a bunch of traditional concepts behind as well as pioneers a bunch of things creating a steeper learning curve.
-The [[https://nixos.org/learn][official documentation]] for Nix is pretty great at covering ground of all Nix stuff which makes it good as a reference but horrible for a newbie who wants to gain a quick overview of what Nix is all about.
-So I'll list a bunch of resources that helped me becoming comfortable with the Nix thing.
-
-- If you want an introduction to Nix, the [[https://www.youtube.com/playlist?list=PLRGI9KQ3_HP_OFRG6R-p4iFgMSK1t5BHs][Nixology]] video series is a great primer starting with [[https://youtu.be/6iVXaqUfHi4][this video]].
-  You don't have to watch through the whole playlist but it also gives practical starter points such as [[https://youtu.be/q8bZy9kuzEY][demystifying Nixpkgs]] and [[https://youtu.be/qYGo9QYNVpM][the standard library]] which you'll need you know once you've started packaging with Nix.
-  I really recommend this series, it's pretty great!
-
-- If you're decided to go with NixOS, the first few chapters of the [[https://nixos.org/learn.html][official manuals]] are great and extensive.
-  A good first reading section after installation is [[https://nixos.org/manual/nixos/stable/index.html#ch-running][how to administer your NixOS installation]] and [[https://nixos.org/manual/nix/stable/#chap-package-management][its package management process]].
-
-  + I have difficulty grokking the manual but thankfully a fellow newcomer [[https://stephank.nl/p/2020-06-01-a-nix-primer-by-a-newcomer.html][wrote a document listing the terminologies]] helping me absorb the material (big thanks to Stéphan Kochen for the writing).
-
-- Take a look at [[https://nixos.wiki/wiki/Configuration_Collection][others' NixOS config]] and see how they did it.
-  For other examples, you can take a look at [[https://github.com/foo-dogsquared/nixos-config][my config]] and the [[https://github.com/hlissner/dotfiles/][inspiration behind my config]] (except his' is on the edge of the bleeding edge).
-
-- If you want to keep up-to-date with the community, you might want to hang out in the [[https://discourse.nixos.org/][official forum]].
-  If you want realtime help, you can go to the IRC channel =#nix= at =libera.chat=.
-  The Nix community knows that its documentation is lagging so they're pretty open to newbies asking for help that could've been easily missed.
-
-- What about if you're now comfortable with Nix (or NixOS) and now looking for more ways to use its power (i.e., packaging some applications)?
-
-  + The [[https://nixos.org/guides/nix-pills][beloved Nix pills series]] and the [[https://nixos.org/manual/nixpkgs/stable][nixpkgs manual]] is a great starting point especially if you're starting to contribute to the [[https://github.com/NixOS/nixpkgs/][official package set]].
-
-  + [[https://nix.dev/][nix.dev]] and [[https://nixos.wiki/][the unofficial Nix wiki]] are also great introductions to more Nix stuff with practical applications.
-
-  + Jon Ringer, one of the long-time Nix user and contributor, has a [[https://www.youtube.com/channel/UC-cY3DcYladGdFQWIKL90SQ][YouTube channel focused on Nix tutorials at beginners- and intermediate-level]].
-
-  + If you want to look out for its future, the community arranges an [[https://nixcon.org][annual event with talks all about Nix]].
-    In fact, as of 2020-11-03, a [[https://2020.nixcon.org/][NixCon online conference]] has recently occurred with the event lasting for two days.
-    They also archive their talks and whatnot on their [[https://www.youtube.com/channel/UCjqkNrQ8F3OhKSCfCgagWLg][YouTube channel]].

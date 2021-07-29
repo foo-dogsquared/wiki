@@ -3,7 +3,7 @@
 :END:
 #+title: Exploring systemd features
 #+date: "2021-05-20 22:37:22 +08:00"
-#+date_modified: "2021-07-20 00:49:40 +08:00"
+#+date_modified: "2021-07-28 12:50:06 +08:00"
 #+language: en
 #+property: header-args  :eval no
 
@@ -15,6 +15,9 @@ Let's explore some of them from a perspective of a wannabe power user.
 
 
 * systemd at user-level
+:PROPERTIES:
+:ID:       c7edff80-6dea-47fc-8ecd-e43b5ab8fb1e
+:END:
 
 systemd has the ability to run at user-level empowering the user to manage their own system with their own settings.
 It immensely helps separating user-specific settings from the system-wide settings.
@@ -38,7 +41,7 @@ systemctl --user start $SERVICE
 
 
 
-* Timers as cron replacement
+* systemd timers as cron replacement
 
 You can schedule tasks with timers.
 If systemd is compiled with the feature, it makes cron unnecessary.
@@ -190,6 +193,10 @@ systemd-run --user borgmatic --config emergency-config.yaml --verbose
 # Create a transient timer for the service.
 systemd-run --user borg-backup@external-drive.service --on-calendar=12:00
 #+end_src
+
+The result should give you the generated name of the unit.
+Then, they can be managed like an ordinary unit.
+
 
 
 
@@ -386,3 +393,18 @@ To access a domain name, you need a DNS client that can resolve them.
 While there are plenty of DNS resolvers, systemd has a component =systemd-resolved= which you can control with =resolvectl= binary.
 
 systemd-resolved takes a configuration from =/etc/resolve.conf= which most third-party programs also relies on.
+
+
+
+
+* Log management
+
+systemd has a journal service storing logs from units.
+It provides a consistent and structured way how to check the logs.
+
+It uses =journalctl= as the command for managing logs.
+See [[id:941e0a85-1bb4-45be-a729-1b577c7ee317][Command line: journalctl]] for more details.
+
+#+begin_src shell
+journalctl --user-unit backup.service --follow --boot
+#+end_src
