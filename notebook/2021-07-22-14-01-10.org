@@ -3,13 +3,13 @@
 :END:
 #+title: Communicate with others to learn
 #+date: 2021-07-22 14:01:10 +08:00
-#+date_modified: 2021-07-22 14:01:49 +08:00
+#+date_modified: 2021-07-30 13:45:22 +08:00
 #+language: en
 
 
-- easy to criticize others but not your own;
-  having others to look out for your work is a good incentive to get in touch
-- furthermore, depending on the community, you can learn more outside of the niche;
-  oftentimes, they also make off-topic discussions
-- though, you have to choose your community and target audience to make more effective feedback
-- [[roam:Niche projects brings more interesting audience]]
+Easy to criticize others but not your own.
+Having others to look out for your work is a good incentive to get in touch.
+Furthermore, depending on the community, you can learn more outside of the niche as oftentimes, they also make off-topic discussions.
+This is best used for making a quick feedback loop especially [[id:10214008-71da-4d1e-b761-80e671d6fc40][When starting out, focus on quantity over quality]].
+
+Though, you have to choose your community and target audience to make more effective feedback.

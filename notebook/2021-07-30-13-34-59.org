@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       864dfb57-af7c-4f03-80ea-fac2a0735b9e
+:END:
+#+title: Niche projects brings more interesting audience
+#+date: 2021-07-30 13:34:59 +08:00
+#+date_modified: 2021-07-30 13:45:18 +08:00
+#+language: en
+
+
+- most niche projects only cater to smaller audience
+- smaller audience means there is lower noise and the feedback often comes from people who are genuinely interested in your project
+- when done correctly, this is one of the more intimate examples of [[id:6f9c552f-055b-4238-874e-8608006ce0ca][Communicate with others to learn]]
