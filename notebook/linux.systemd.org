@@ -3,13 +3,19 @@
 :END:
 #+title: Exploring systemd features
 #+date: "2021-05-20 22:37:22 +08:00"
-#+date_modified: "2021-07-28 12:50:06 +08:00"
+#+date_modified: "2021-08-02 12:02:46 +08:00"
 #+language: en
 #+property: header-args  :eval no
 
 
 systemd is a big tool for a big system.
 Let's explore some of them from a perspective of a wannabe power user.
+
+Among other things, it has the following list of features.
+
+- [[id:f1b21fc8-86a5-47cd-b3d8-da6ac7a34427][systemd timers]] which can replace cron for task scheduling.
+- [[id:cd5f0d04-d9bb-44e8-a0f2-630ea58c1e94][systemd services]] along with the usual antics of a service manager such as managing dependencies and commands to run when killed.
+- [[id:a602f900-cdcf-4090-9278-d5926d80eedc][systemd transient units]] for quickly creating and scheduling one-off services.
 
 
 
@@ -37,89 +43,6 @@ systemctl show-environment
 
 systemctl --user start $SERVICE
 #+end_src
-
-
-
-
-* systemd timers as cron replacement
-
-You can schedule tasks with timers.
-If systemd is compiled with the feature, it makes cron unnecessary.
-
-systemd has different ways to denote time.
-
-- Timespans denote the duration — e.g., =100 seconds=, =5M 3w=.
-- Timestamps refer to a specific point in time — e.g., =2021-04-02=, =today=, =now=.
-- Calendar events can refer to more than one point of time — e.g., =*-*-4/2=, =Sun,Wed,Fri *-1/2-1/8=.
-
-Here's an example of setting a timer for an example backup service.
-The following timer unit sets it to execute every day at 18:00.
-
-#+begin_src ini
-[Unit]
-Description=A deduplicated backup from my computer
-Documentation=man:borg(1) https://borgbackup.readthedocs.io/
-
-[Timer]
-Unit=borg-backup.service
-OnCalendar=*-*-* 18:00:00
-Persistent=true
-
-[Install]
-WantedBy=graphical.target
-#+end_src
-
-This will trigger =borg-backup.service= from the load path.
-But you can omit it if you named the timer unit file similarly (e.g., =borg-backup.timer= with =borg-backup.service=).
-
-You can find more information about it from the =systemd.time.5= manual page.
-Furthermore, systemd has a testing tool for time with ~systemd-analyze {timespan,timestamp,calendar}~.
-
-#+begin_src shell  :eval yes
-printf "Timespan example:\n"
-printf "..............\n"
-systemd-analyze timespan 4000min
-printf "..............\n\n"
-
-printf "Timestamp example:\n"
-printf "..............\n"
-systemd-analyze timestamp 2021-07-01
-printf "..............\n\n"
-
-printf "Calendar example:\n"
-printf "..............\n"
-systemd-analyze calendar "*-1/4-5 0/2:00:00"
-printf "..............\n\n"
-#+end_src
-
-#+results:
-#+begin_example
-Timespan example:
-..............
-Original: 4000min
-      μs: 240000000000
-   Human: 2d 18h 40min
-..............
-
-Timestamp example:
-..............
-  Original form: 2021-07-01
-Normalized form: Thu 2021-07-01 00:00:00 PST
-       (in UTC): Wed 2021-06-30 16:00:00 UTC
-   UNIX seconds: @1625068800
-       From now: 2 weeks 4 days ago
-..............
-
-Calendar example:
-..............
-  Original form: *-1/4-5 0/2:00:00
-Normalized form: *-01/4-05 00/2:00:00
-    Next elapse: Sun 2021-09-05 00:00:00 PST
-       (in UTC): Sat 2021-09-04 16:00:00 UTC
-       From now: 1 month 16 days left
-..............
-
-#+end_example
 
 
 
@@ -174,113 +97,6 @@ Persistent=true
 [Install]
 WantedBy=default.target
 #+end_src
-
-
-
-
-* Transient units
-
-You can create units on-the-go with =systemd-run=.
-It generates transient unit files.
-Though, this is oriented around service units, making it useful for one-time configurations and task scheduling.
-
-Like most systemd-related binaries, this can configure in system- and user-level.
-
-#+begin_src shell
-# This will create a user-level service file with the given command as the task.
-systemd-run --user borgmatic --config emergency-config.yaml --verbose
-
-# Create a transient timer for the service.
-systemd-run --user borg-backup@external-drive.service --on-calendar=12:00
-#+end_src
-
-The result should give you the generated name of the unit.
-Then, they can be managed like an ordinary unit.
-
-
-
-
-
-* Service management
-
-One of the functions of the system suite is service management.
-Like most of the components, it can be used at user-level with their set locations, managing the service daemon, and all.
-
-Just plop down a service unit file at one of the search paths and you can start managing right away.
-For more information, see the manual page (i.e., =systemd.service.5=).
-A summarized version can be found at [[Service configuration]].
-
-Here's an example of a user service resided as =$HOME/.config/systemd/user/drive-backup.service=.
-
-#+begin_src ini
-[Unit]
-Description=Periodic safety backup for my external drive
-Documentation=man:borg(1) https://www.borgbackup.org/ https://torsion.org/borgmatic/
-
-[Service]
-Type=oneshot
-ExecStart=%h/.nix-profile/bin/borgmatic --config %h/dotfiles/borgmatic/personal-drive.yaml --verbosity 2 create
-ExecStart=%h/.nix-profile/bin/borgmatic --config %h/dotfiles/borgmatic/personal-drive.yaml --verbosity 2 prune
-ExecStart=%h/.nix-profile/bin/borgmatic --config %h/dotfiles/borgmatic/personal-drive.yaml --verbosity 2 check
-
-[Install]
-WantedBy=default.target
-#+end_src
-
-You can then start the service with:
-
-#+begin_src shell  :eval no
-systemctl --user start drive-backup.service
-#+end_src
-
-You can also stop it with the =stop= subcommand (e.g., ~systemctl --user stop drive-backup.service~) and restart it with =restart= (e.g., ~systemctl --user restart drive-backup.service~).
-
-If you want to enable it at startup, you can go with =enable= subcommand.
-(To disable it, use the =disable= subcommand.)
-
-#+begin_src shell  :eval no
-systemctl --user enable drive-backup.service
-#+end_src
-
-systemd will use the configuration file as-is by the time it is started/enabled.
-Which means if the config file has been modified after activation, it will not take effect until you restarted it.
-For this, you can reload the daemon with =daemon-reload= subcommand.
-But for simpler cases, you can use the =reload= subcommand without fully restarting the daemon.
-
-#+begin_src shell  :eval no
-systemctl --user reload drive-backup.service
-
-# You could also use...
-#   systemctl --user daemon-reload
-# ...if you need a stronger option.
-#+end_src
-
-
-** Service configuration
-
-There are different types of services.
-
-- The most common type of service is =simple= which considers the unit active after the main process is forked (e.g., =Service.ExecStart=).
-  This is the recommended type for long-running processes.
-
-- =oneshot= marks the service resolved after the main process exits.
-  Due to the behavior, it will directly go from activating to deactivating instead of active.
-
-- =exec= considers the service active after the binary has been executed.
-
-Aside from types, each service may have one or more commands although the behavior is set depending on the type.
-
-- =ExecStart= which is usually the main command and most services will throw an error if it's missing.
-  All services, unless specified as a =oneshot= service, only have one of these values.
-
-- =ExecStop= only executes after the main command successfully starts.
-
-- =ExecStartPre= and =ExecStartPost= gives you additional commands that will be executed before and after the main command, respectively.
-
-- =ExecStopPre= and =ExecStopPost= is similar to the pre- and post-start commands except for the stop command.
-
-- =Reload= sets whether the service restarts on fail.
-  Values accepted are =no=, =on-failure=, and =on-success=.
 
 
 
@@ -407,4 +223,26 @@ See [[id:941e0a85-1bb4-45be-a729-1b577c7ee317][Command line: journalctl]] for mo
 
 #+begin_src shell
 journalctl --user-unit backup.service --follow --boot
+#+end_src
+
+
+
+
+* Environment directive
+
+systemd enables setting the environment through environment directives.
+
+Just like how [[id:c7edff80-6dea-47fc-8ecd-e43b5ab8fb1e][systemd at user-level]], you can set it at user-level.
+Useful for setting specific environment only for that user.
+
+It needs a =*.conf= file in one of the load paths (seen from the =environment.d.5= manual page).
+Keep in mind it does not use the shell and instead makes use of shell-like syntax.
+
+The following code block is an example of setting Nix-related environment variables to enable desktop integrations.
+
+#+begin_src
+# Enable desktop integration with Nix-installed applications.
+NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
+PATH=${PATH:+$PATH:}$HOME/.nix-profile/bin
+XDG_DATA_DIRS=${XDG_DATA_DIRS:+$XDG_DATA_DIRS:}$HOME/.nix-profile/share/
 #+end_src

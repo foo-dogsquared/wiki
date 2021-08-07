@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       e42758b5-e355-4a01-8d03-5bba518fd201
+:END:
+#+title: Fleeting notes makes up most of our thoughts
+#+date: 2021-08-07 11:11:35 +08:00
+#+date_modified: 2021-08-07 11:15:10 +08:00
+#+language: en
+
+
+- [[id:864a9242-eb10-44ad-81b7-c237276523e5][We know more compared to what we understood]];
+  we have filtered most of it into something either for the immediate task or for the future ventures
+- [[id:3d1c0313-fa3d-4b18-b435-51d3837e3e2c][Fleeting notes]] is a mental scratchpad;
+  with a messy notebook, it can be made to generate ideas as if to [[id:fa53b258-a6c0-4817-9b8c-ead294e6772a][Store a dedicated inbox for randomly generated ideas]]

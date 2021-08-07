@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       022bc306-973d-4efe-ae76-d194a0ce1fca
+:END:
+#+title: 3D modelling
+#+date: 2021-07-22 14:09:32 +08:00
+#+date_modified: 2021-07-22 14:09:35 +08:00
+#+language: en

@@ -1,0 +1,86 @@
+:PROPERTIES:
+:ID:       f1b21fc8-86a5-47cd-b3d8-da6ac7a34427
+:END:
+#+title: systemd timers
+#+date: 2021-07-19 21:45:47 +08:00
+#+date_modified: 2021-08-02 11:55:59 +08:00
+#+language: en
+
+
+You can schedule tasks with timers.
+If systemd is compiled with the feature, it makes cron unnecessary.
+
+systemd has different ways to denote time.
+
+- Timespans denote the duration — e.g., =100 seconds=, =5M 3w=.
+- Timestamps refer to a specific point in time — e.g., =2021-04-02=, =today=, =now=.
+- Calendar events can refer to more than one point of time — e.g., =*-*-4/2=, =Sun,Wed,Fri *-1/2-1/8=.
+
+Here's an example of setting a timer for an example backup service.
+The following timer unit sets it to execute every day at 18:00.
+
+#+begin_src ini
+[Unit]
+Description=A deduplicated backup from my computer
+Documentation=man:borg(1) https://borgbackup.readthedocs.io/
+
+[Timer]
+Unit=borg-backup.service
+OnCalendar=*-*-* 18:00:00
+Persistent=true
+
+[Install]
+WantedBy=graphical.target
+#+end_src
+
+If the timer unit is started, this will trigger =borg-backup.service= from the load path.
+But you can omit it if you named the timer unit file similarly (e.g., =borg-backup.timer= with =borg-backup.service=).
+
+You can find more information about it from the =systemd.time.5= manual page.
+Furthermore, systemd has a testing tool for time with ~systemd-analyze {timespan,timestamp,calendar}~.
+
+#+begin_src shell  :eval yes
+printf "Timespan example:\n"
+printf "..............\n"
+systemd-analyze timespan 4000min
+printf "..............\n\n"
+
+printf "Timestamp example:\n"
+printf "..............\n"
+systemd-analyze timestamp 2021-07-01
+printf "..............\n\n"
+
+printf "Calendar example:\n"
+printf "..............\n"
+systemd-analyze calendar "*-1/4-5 0/2:00:00"
+printf "..............\n\n"
+#+end_src
+
+#+results:
+#+begin_example
+Timespan example:
+..............
+Original: 4000min
+      μs: 240000000000
+   Human: 2d 18h 40min
+..............
+
+Timestamp example:
+..............
+  Original form: 2021-07-01
+Normalized form: Thu 2021-07-01 00:00:00 PST
+       (in UTC): Wed 2021-06-30 16:00:00 UTC
+   UNIX seconds: @1625068800
+       From now: 11h ago
+..............
+
+Calendar example:
+..............
+  Original form: *-1/4-5 0/2:00:00
+Normalized form: *-01/4-05 00/2:00:00
+    Next elapse: Sun 2021-09-05 00:00:00 PST
+       (in UTC): Sat 2021-09-04 16:00:00 UTC
+       From now: 2 months 4 days left
+..............
+
+#+end_example

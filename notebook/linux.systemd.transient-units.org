@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       a602f900-cdcf-4090-9278-d5926d80eedc
+:END:
+#+title: systemd transient units
+#+date: 2021-08-02 12:01:49 +08:00
+#+date_modified: 2021-08-02 12:05:06 +08:00
+#+language: en
+
+
+You can create units on-the-go with =systemd-run=.
+Very useful for quickly creating and scheduling one-off services.
+This tool involves [[id:cd5f0d04-d9bb-44e8-a0f2-630ea58c1e94][systemd services]] and [[id:f1b21fc8-86a5-47cd-b3d8-da6ac7a34427][systemd timers]].
+
+Like most systemd-related binaries, this can be run at system- and user-level (see [[id:c7edff80-6dea-47fc-8ecd-e43b5ab8fb1e][systemd at user-level]]).
+
+#+begin_src shell
+# This will create a user-level service file with the given command as the task.
+systemd-run --user borgmatic --config emergency-config.yaml --verbose
+
+# Create a transient timer for the service.
+systemd-run --user borg-backup@external-drive.service --on-calendar=12:00
+#+end_src
+
+The result should give you the generated name of the unit.
+Then, they can be managed like an ordinary unit.

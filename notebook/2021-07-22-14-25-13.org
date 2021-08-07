@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       e8c1218f-35a4-4dd3-a174-5d8f848b74b2
+:END:
+#+title: Free software
+#+date: 2021-07-22 14:25:13 +08:00
+#+date_modified: 2021-07-22 14:25:17 +08:00
+#+language: en

@@ -3,17 +3,19 @@
 :END:
 #+title: Specific use cases are better than step-by-step tutorials
 #+date: 2021-08-01 07:50:47 +08:00
-#+date_modified: 2021-08-01 07:50:55 +08:00
+#+date_modified: 2021-08-07 11:37:19 +08:00
 #+language: en
 
 
 - a written specific use case showcases multiple things;
-  a step-by-step tutorial mostly follow one with a fixed path
+  a step-by-step tutorial mostly follow one with a fixed path;
+  this enables the audience to do some interleaving as [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]]
 - usually because it [[id:3a605fb2-b867-41c2-bcf9-00ef772808e5][Show the result at the front]];
   similar reasons as to why [[id:e158b742-53c7-4442-9af3-489ea8240af9][Examples and stories are more memorable than explanations]]
 - examples:
   + devlogs which a lot of the [[roam:Game development]] creates
   + a lot of blog posts that tackles only one specific thing by its author usually to make them remember that thing
+  + showcases
 - from a content creator perspective, it creates more interesting options (e.g., skits, persona) that are usually unneeded in a tutorial;
   it can take advantage of our tendency to [[id:9a11ef31-b2a7-43a9-a7a9-48f191838c6e][Prefer referencing over remembering]] by being more memorable
 - with it, we can [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]]

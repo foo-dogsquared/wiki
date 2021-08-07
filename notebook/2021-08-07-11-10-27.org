@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       f2012707-1220-4bf4-8e42-f558f19ca178
+:END:
+#+title: Learn with the materials intended for kids
+#+date: 2021-08-07 11:10:27 +08:00
+#+date_modified: 2021-08-07 11:10:36 +08:00
+#+language: en
+
+
+- a lot of the things have been simplified, making it easier to follow
+- however, you could present into problems where it can be too simple
+- most people tends to underestimate these types of educational materials, most likely due to the [[id:9986bd9e-763e-497e-a35d-ecd0aa93f408][Presence of the material fools students into learning]]
+- at the same time, you could do [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]];
+  [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]]

@@ -3,7 +3,7 @@
 :END:
 #+title: Tunnel vision
 #+date: "2021-07-15 22:21:04 +08:00"
-#+date_modified: "2021-07-19 17:50:51 +08:00"
+#+date_modified: "2021-08-07 11:35:53 +08:00"
 #+language: en
 
 
@@ -15,9 +15,11 @@
 - we may also have to [[roam:Learn how to forget]];
   in a world of quick and constant changes, learning new rules and topics takes up mental resources;
   we have to assign some garbage day at some point;
-  unfortunately, we cannot easily do that from our experience as creates dogmatic mindset, that is, to survive by sticking to what we know
+  unfortunately, we cannot easily do that from our experience as we try to survive by sticking to what we know
 - it is present on most experts with their experience on the field;
   but this is also a potential problem for students in training where certain principles are taught then encountering a new idea overall
+- a lot of the teaching focuses on explaining things;
+  one could try to use specific use cases as [[id:e5d4cb07-d0e6-4bda-b2fc-426240b04f78][Specific use cases are better than step-by-step tutorials]]
 - This is the reason why most of the discoveries are made either by young people or those who haven't formally trained for the original field.
 - to combat against this, we do [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]]
 - by the same principle, we could also let our attention switch at times;
