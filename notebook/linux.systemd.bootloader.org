@@ -1,0 +1,57 @@
+:PROPERTIES:
+:ID:       8505f1f0-f15b-4b04-91fc-12be01913ce6
+:END:
+#+title: systemd-boot
+#+date: 2021-08-07 20:08:09 +08:00
+#+date_modified: 2021-08-07 20:08:31 +08:00
+#+language: en
+
+
+systemd also comes with a bootloader aptly named =systemd-boot= though it only supports UEFI-based firmware.
+Just like GRUB, they can be configured through plain-text files.
+
+For detailed information about the bootloader, see the manual page =systemd-boot.7=.
+
+With a complete installation, the bootloader config folder may look like the following list.
+
+#+begin_src
+/boot/
+`-- loader
+    |-- entries             # (ref:loader-entries)
+    |   `-- arch.conf
+    |-- loader.conf         # (ref:loader-conf)
+    `-- random-seed
+#+end_src
+
+- [[(loader-entries)][=loader/entries/=]] is a directory containing all of the entries available to be booted.
+- [[(loader-conf)][=loader.conf=]] contains the loader configuration.
+
+Most Linux distros with systemd installed should have a sample config file somewhere. [fn:: In case of Arch Linux, it has an example file at =/usr/share/systemd/bootctl/=.]
+As an example, we'll show what those look like.
+
+=loader.conf= is the configuration for the boot loader including the timeout seconds among others.
+Here is a sample of a bootloader configuration.
+
+#+begin_src
+default arch
+timeout 4
+#+end_src
+
+In this config, this simply makes the =arch= loader entry to be default when no actions has occurred.
+It will start loading it automatically after a timeout of 4 seconds.
+
+The =arch= loader entry can be found at =${ESP}/loader/entries/arch.conf=.
+The following code block shows what a loader entry looks like.
+
+#+begin_src
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /initramfs-linux.img
+options root="PARTUUID=${PARTUUID}"
+#+end_src
+
+You can customize and create extra entries for the same installation.
+This is what roam:NixOS does with its package generations, letting the user to boot to a specific point in time from the boot loader.
+Very useful for emergency boots in case the current generation breaks for whatever reason.
+
+For complete details of the configuration file, you can see =loader.conf.5= manual page.

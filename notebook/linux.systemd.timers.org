@@ -3,7 +3,7 @@
 :END:
 #+title: systemd timers
 #+date: 2021-07-19 21:45:47 +08:00
-#+date_modified: 2021-08-02 11:55:59 +08:00
+#+date_modified: 2021-08-07 19:29:15 +08:00
 #+language: en
 
 
@@ -15,6 +15,8 @@ systemd has different ways to denote time.
 - Timespans denote the duration — e.g., =100 seconds=, =5M 3w=.
 - Timestamps refer to a specific point in time — e.g., =2021-04-02=, =today=, =now=.
 - Calendar events can refer to more than one point of time — e.g., =*-*-4/2=, =Sun,Wed,Fri *-1/2-1/8=.
+
+To find more details about time notation, you can view the =systemd.time.5= manual page.
 
 Here's an example of setting a timer for an example backup service.
 The following timer unit sets it to execute every day at 18:00.
@@ -36,7 +38,7 @@ WantedBy=graphical.target
 If the timer unit is started, this will trigger =borg-backup.service= from the load path.
 But you can omit it if you named the timer unit file similarly (e.g., =borg-backup.timer= with =borg-backup.service=).
 
-You can find more information about it from the =systemd.time.5= manual page.
+You can find more information about it from the =systemd.timer.5= manual page.
 Furthermore, systemd has a testing tool for time with ~systemd-analyze {timespan,timestamp,calendar}~.
 
 #+begin_src shell  :eval yes

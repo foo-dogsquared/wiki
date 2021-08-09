@@ -1,0 +1,44 @@
+:PROPERTIES:
+:ID:       e4dba4ef-71dd-4d30-9a2c-4ad97223510b
+:END:
+#+title: systemd-networkd
+#+date: 2021-08-07 20:01:23 +08:00
+#+date_modified: 2021-08-07 20:06:47 +08:00
+#+language: en
+
+
+With a systemd-ful environment, you can run the network daemon (i.e., =systemd-networkd=).
+Once enabled, you can run =networkctl= to list all of the network devices. [fn:: You can also run ~ip address~ for it.]
+
+#+begin_src shell  :cache yes
+networkctl
+#+end_src
+
+#+results[84c83a400d07ef38e6813bc9ce677cef8a38bd66]:
+: IDX LINK   TYPE     OPERATIONAL SETUP
+:   1 lo     loopback carrier     unmanaged
+:   2 enp1s0 ether    routable    configured
+:   3 wlan0  wlan     routable    configured
+:
+: 3 links listed.
+
+To configure network manager, you can create a network file in one of systemd unit file paths in the system.
+Each of the device will be assigned an IP address.
+You can either assign an IP address or dynamically assign them in some way.
+One of the common ways to do dynamic IP addresses is installing a DHCP server (which is another thing to be configured).
+Here's an example of configuring any wireless devices and assigning a dynamic IP addresses with [[https://wiki.archlinux.org/title/Network_configuration#DHCP][DHCP]].
+
+#+begin_src
+[Match]
+Type=wlan
+
+[Network]
+DHCP=yes
+IPv6PrivacyExtensions=yes
+
+[DHCPv4]
+RouteMetric=1024
+
+[DHCPv6]
+RouteMetric=1024
+#+end_src
