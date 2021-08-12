@@ -3,7 +3,7 @@
 :END:
 #+title: Consistency over time creates more progress
 #+date: 2021-07-22 14:02:51 +08:00
-#+date_modified: 2021-07-22 14:18:30 +08:00
+#+date_modified: 2021-08-07 14:57:38 +08:00
 #+language: en
 
 
@@ -18,7 +18,7 @@
   [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]];
   you'll make more progress through multiple iterations
 - however, consistency without improvements over a select period of time is essentially just repetition;
-  [[id:e994f2d6-c9d6-4ca8-9dfe-fcc69414e0a4][Repetition is not understanding]]
+  [[id:e994f2d6-c9d6-4ca8-9dfe-fcc69414e0a4][Repetition is not understanding]] nor it is improvement
 - additionally, don't put too much eggs in one basket;
   don't put too much time into making consistent;
   let yourself relax as [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]]

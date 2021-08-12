@@ -3,7 +3,7 @@
 :END:
 #+title: Spaced repetition
 #+date: "2021-04-07 18:19:11 +08:00"
-#+date_modified: "2021-07-08 19:32:46 +08:00"
+#+date_modified: "2021-08-07 16:04:14 +08:00"
 #+language: en
 
 
@@ -18,5 +18,7 @@ For example, say you want to be efficient with competitive coding.
 You can start with solving only one problem per 3 days for a week.
 Then, you can go with 2 problems per week, then 3, then 4, and so forth.
 
-There are various tools to practice spaced repetition with Anki is one of the most popular tool.
-If you're using [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]], org-drill is a plugin that builds on top of it to implement a spaced repetition memory system.
+There are various tools to practice spaced repetition.
+
+- Anki is one of the most popular tool for this purpose with smart repetition and calculating the best time for you to repeat something.
+- If you're using [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]], org-drill is a plugin that builds on top of it to implement a spaced repetition memory system.

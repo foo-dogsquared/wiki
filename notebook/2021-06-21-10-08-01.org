@@ -3,7 +3,7 @@
 :END:
 #+title: Start with wishful thinking
 #+date: "2021-06-21 10:08:01 +08:00"
-#+date_modified: "2021-07-20 14:38:45 +08:00"
+#+date_modified: "2021-08-07 14:57:10 +08:00"
 #+language: en
 
 
@@ -12,15 +12,16 @@ Whether it usually involves something like wanting to create a 2.5D fighting gam
 
 This is also the core of prototyping, starting with the end product and getting there no matter how badly implemented.
 
-- In programming, we usually call this abstractions where we don't need to worry about the implementation details and whatnot.
+- In [[id:4b33103b-7f64-4b51-8f03-cac06d4001bb][Programming]], we usually call this abstractions where we don't need to worry about the implementation details and whatnot.
   Some would even take one more step by starting with the user-oriented documentation or unit tests.
 
-- In learning, we could start with our end-goal dreaming about the completed project.
+- In [[id:af0ccefe-c671-47bf-94f7-62243c805745][Skill-building]], we could start with our end-goal dreaming about the completed project.
   This is quite similar to [[https://collegeinfogeek.com/about/meet-the-author/my-impossible-list/][Thomas Frank's impossible list]] that we explicitly say what we want to do.
   We could apply the principle what we want to do when we learn a skill.
 
 However, focusing too much on the destination can block your progress from having a clear sight on how to get there.
-Sometimes, the endgoal is tad more difficult.
+It could be just the endgoal is tad more difficult.
 [[id:48cef2ac-a941-463d-a07f-6be8349456ad][Diving head-first into a difficult problem makes a bad start]].
 We can [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]] and establish milestones.
-It allows to make iterations with a [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]]-kind of workflow.
+
+All of this allows to iterate through the project multiple times as [[id:adefcd38-46a8-4c9c-b609-9d3393b074d0][Consistency over time creates more progress]].
