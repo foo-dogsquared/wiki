@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       01582125-8f7c-4a05-a980-d935a6250956
+:END:
+#+title: Contrast can create more impressions
+#+date: 2021-08-13 17:50:54 +08:00
+#+date_modified: 2021-08-13 17:51:02 +08:00
+#+language: en
+
+
+- not all things in life has to be some grandiose moments
+  + not all moments of a critically acclaimed masterpiece of a film is a deliberate decision
+  + not all tracks of an album has to be great to be a classic
+  + not all parts of a song has to be bombastic
+  + not all parts of a game has to be epic
+  + not all parts of the picture has to be attention-grabbing
+- contrasts give breathing room for people to take all of the stuff we intend to
+- in other words, when everything stands out, nothing will
+- real-life examples
+  + most of the memorable tracks from Touhou are from the final bosses as ZUN makes the best track he can make;
+    it makes his game more memorable by building up to the final theme
+  + badly-designed advertisements will try to make everything stands out
+    (lots of examples in the wild especially if you go to your local events)

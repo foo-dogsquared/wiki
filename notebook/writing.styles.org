@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       370889fd-345c-4063-b2e5-ab296b128dc3
+:END:
+#+title: Writing styles
+#+date: 2021-08-12 17:21:19 +08:00
+#+date_modified: 2021-08-12 19:12:07 +08:00
+#+language: en
+
+
+A lot of the listed styles here rely on little referential humor.
+Most of the memes often come from deriving their own style.
+
+- [[https://www.youtube.com/channel/UC2C_jShtL725hvbm1arSV9w][CGP Grey]]'s videos often feature playful dialogue with alliterations and rhymes.
+  [[https://www.youtube.com/watch?v=9LMr5XTgeyI][His recent videos]] especially feature this.
+
+- [[https://www.youtube.com/user/phreakindee][LGR]]'s videos also has a playful dialogue similar to CGP Grey's with the alliterations however with more subtle and dry humor.
+  It makes watching game reviews such as his videos on The Sims 3 and Cities: Skyline more entertaining.
+
+- [[https://www.youtube.com/channel/UC-3J5xNrAbTLbU1gN8mMpOA][Nitro Rad]]'s videos mostly features chill dialogue like some friend from high school you haven't seen in years talking about games just beside the couch.
+  It is pretty nice and very easy to follow.
+  Combine this with his resolve to see positives within the game and understanding of the circumstances from development and you have a unique persona of a game reviewer.

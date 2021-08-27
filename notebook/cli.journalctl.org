@@ -3,13 +3,12 @@
 :END:
 #+title: Command line: journalctl
 #+date: "2021-05-20 23:07:39 +08:00"
-#+date_modified: "2021-07-20 23:31:16 +08:00"
+#+date_modified: "2021-08-07 20:17:29 +08:00"
 #+language: en
 #+property: header-args  :results none
 
 
-The logging daemon of systemd.
-(Ooooh...)
+The logging daemon of systemd (see [[id:d83c099a-fc11-4ccc-b265-4de97c85dcbe][systemd-journald]]).
 Not only it can view your logs, you can ask to view specific logs and delete some of them.
 
 For more information, see =journalctl.1= manual page.

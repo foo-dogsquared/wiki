@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       35f0cb7a-d453-4e69-8c22-8553ef3380fc
+:END:
+#+title: Balancing creativity and familiarity
+#+date: 2021-08-07 14:05:35 +08:00
+#+date_modified: 2021-08-07 14:06:29 +08:00
+#+language: en
+
+
+- a familiar idea has more value compared to more alien ideas
+- the most satisfying act for creativity is balancing the new idea with familiarity
+- this practice can be stretched into [[id:9b669fd4-e04e-43dd-a61e-81dea5ec0764][Deliberate practice]], seeing creativity more of a skill than an inherent talent
+- remember, [[id:af581713-d4a8-438a-84ea-9f3b8e1353e6][Creativity does not mean originality]]

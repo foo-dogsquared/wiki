@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       e527e948-911f-4719-8cd4-8b9dac7e6318
+:END:
+#+title: Supercell games art style
+#+date: 2021-08-07 13:43:47 +08:00
+#+date_modified: 2021-08-07 13:45:15 +08:00
+#+language: en
+
+
+
+- There's a lot of graphics design inspiration to be had from their games from Clash of Clans, Brawl Stars, Clash Quest, and even Hay Day.
+- Most of them are pretty simple to look at but very stylistic.
+- A lot of them is a good starting point for art (e.g., illustration, 3D modelling).
+- This is especially true for their recent games especially the spin-offs from established universes (e.g., Clash Quest, Clash Mini).
+  They designed it to look different but completely familiar with their gameplay and associated tropes.
+  It really is one of my role models for game design except for the mobile-oriented inconveniences, of course ;D.

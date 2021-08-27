@@ -3,7 +3,7 @@
 :END:
 #+title: Flatpak packages
 #+date: "2021-06-27 23:46:41 +08:00"
-#+date_modified: "2021-06-29 16:54:58 +08:00"
+#+date_modified: "2021-08-14 15:54:46 +08:00"
 #+language: en
 
 
@@ -15,3 +15,4 @@
   + [[https://github.com/flathub/com.mojang.Minecraft/][Minecraft]] is fairly simple by fetching the compiled binary and its dependencies with minimal compilation needed
   + [[https://github.com/flathub/com.rawtherapee.RawTherapee][RawTherapee]] is slightly complex with various dependencies defined mostly in one file
   + [[https://github.com/flathub/org.gnucash.GnuCash][Gnucash]] has a complex manifest that is composed of multiple dependencies packages as its own module file
+  + [[https://github.com/flathub/org.libretro.RetroArch][RetroArch]] is similarly complex to Gnucash with its vendored dependencies packaged as its own module
