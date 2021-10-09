@@ -3,7 +3,7 @@
 :END:
 #+title: Software archives
 #+date: 2021-07-25 19:20:39 +08:00
-#+date_modified: 2021-07-27 17:31:16 +08:00
+#+date_modified: 2021-10-09 17:56:31 +08:00
 #+language: en
 
 
@@ -22,3 +22,5 @@
 
 - roam:F-Droid has an archive for its compiled apps.
   From [[https://mastodon.technology/@fdroidorg/106635571616898675][one of their comments]], it is sitting at ~390GB as of 2021-07-25.
+
+- [[https://fosstorrents.com/][FOSS Torrents]] is a torrent repository of precompiled software projects.

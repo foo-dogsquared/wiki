@@ -3,7 +3,7 @@
 :END:
 #+title: Command line: journalctl
 #+date: "2021-05-20 23:07:39 +08:00"
-#+date_modified: "2021-08-07 20:17:29 +08:00"
+#+date_modified: "2021-09-01 22:39:16 +08:00"
 #+language: en
 #+property: header-args  :results none
 
@@ -18,13 +18,15 @@ For more information, see =journalctl.1= manual page.
 
 * Options
 
-- =-b, --boot= - show the logs starting from boot time
-- =-e, --pager-end= - go to the end of the logs
-- =-f, --follow= - watch the logs
-- =--user-unit= - show logs from a user unit
-- =-u, --unit [UNIT]= - show the logs of a system unit
-- =--vacuum-time [TIMESPAN]= - delete logs older than the specified timespan [fn:: View =systemd.time.5= for more information.]
-- =-x, --catalog= - prints helpful messages such as the documentation URIs
+- =-b, --boot [ID][+OFFSET]= shows the logs starting from given boot time (or current boot if empty).
+- =-e, --pager-end= to go to the end of the logs.
+- =-f, --follow= watches the logs.
+- =-k, --dmesg= prints the logs from the kernel.
+- =--list-boots= prints a list of boots useful for knowing the boot logs from =-b=.
+- =--user-unit= shows logs from a user unit.
+- =-u, --unit [UNIT]= shows the logs of a system unit.
+- =--vacuum-time [TIMESPAN]= deletes logs older than the specified timespan [fn:: View =systemd.time.5= for more information.].
+- =-x, --catalog= prints helpful messages such as the documentation URIs.
 
 
 
@@ -53,4 +55,11 @@ journalctl --vacuum-time=1m
 
 #+begin_src
 journalctl -xe
+#+end_src
+
+
+** Get the logs of a service unit from 2 boots ago
+
+#+begin_src
+journalctl --boot -2 --user-unit borgbackup@personal-drive.service
 #+end_src

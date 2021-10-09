@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       855fa6b6-bdb4-4d09-b6d4-c9b95e69642c
+:END:
+#+title: Problems with simpler tools
+#+date: 2021-09-16 11:45:21 +08:00
+#+date_modified: 2021-09-16 13:11:29 +08:00
+#+language: en
+
+
+While [[id:69ec18ec-ae88-4cb8-bf03-299bc5d8a2a5][Simple tools make better workflows]], it can have problems too.
+
+- The scope of simpler tools often results in doing the same task with multiple tools compared to less simpler tools.
+  This is a sign of the process being too small or atomic.
+  In this case, [[roam:All-in-one tools make good explorations]] to look how other tools does it while adding the necessary parts preventing from being too simple.
+
+- Consequently, with the plethora of simple tools working together, incidental complexity will arise with the quirks of the tools starting to appear.
+  Complexity is inevitable even in simpler tools.
+
+- Simple tools can be deceiving.
+  C (the programming language), for example, is very simple but hides undefined behaviors.
+  This often comes from the consequence of focusing being smaller in scope while being used for bigger use cases.
+  This is where complex tools often wins by considering more problems to solve than its simpler counterparts.
+
+- With the limited scope, simple tools don't often have good out-of-the-box experience compared to complex tools — e.g., lack of tutorials.
+  Though, this depends on the audience and the intended scope — e.g., maybe they [[id:9a11ef31-b2a7-43a9-a7a9-48f191838c6e][Prefer referencing over remembering]], too technical to make it streamlined for general use cases, targeted for expert users.

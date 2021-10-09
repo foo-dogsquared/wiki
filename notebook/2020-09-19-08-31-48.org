@@ -3,11 +3,13 @@
 :END:
 #+title: Functional package management
 #+date: "2020-09-19 08:31:48 +08:00"
-#+date_modified: "2021-06-05 20:35:30 +08:00"
+#+date_modified: "2021-09-08 02:42:50 +08:00"
 #+language: en
 
 
 Functional package management (FPM) is the next step forward [[https://edolstra.github.io/pubs/nixos-icfp2008-final.pdf][pioneered by Eelco Dolstra]] with [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]] as the living implementation. [fn:: Eventually, it became the inspiration for other projects that focuses on reproducibility and security such as [[https://guix.gnu.org/][GNU Guix]] and [[https://silverblue.fedoraproject.org/][Fedora Silverblue]].]
+
+It was first realized from the thesis "[[id:f2e1e2f3-cc34-4c76-91d4-2706ce7756d2][The Purely Functional Software Deployment Model]]".
 
 The conceptual overview of it is similar to [[id:7e1e2bcc-6f70-4624-a049-b42f9db5e28b][Functional programming]] with how it views with data and functions (in this case, packages and build processes).
 It views that packages are a unique result from combining different things: dependencies, build processes, versions, and more.

@@ -3,12 +3,13 @@
 :END:
 #+title: Restrictions bring out creativity
 #+date: 2021-08-07 14:14:23 +08:00
-#+date_modified: 2021-08-07 14:14:28 +08:00
+#+date_modified: 2021-09-16 11:17:44 +08:00
 #+language: en
 
 
 - with practically limitless resources at your side, you may get into choosing how to implement such things;
-  you can get into thinking too much as [[id:03cd9fad-e187-4939-9347-1a034c6efbe2][Overanalyzing slow you down]]
+  you can get into thinking too much as [[id:03cd9fad-e187-4939-9347-1a034c6efbe2][Overanalyzing slow you down]] if you think about the best solution possible
+- the path of least resistance usually brings the least creative solutions
 - furthermore, restrictions forces you to create systems that fit with the requirements;
   that can also lead to accidental discoveries, finding paths that you haven't thought of before
 - examples:

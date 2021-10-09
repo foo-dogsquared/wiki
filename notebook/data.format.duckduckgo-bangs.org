@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       26309bec-d32a-4ab4-9664-5b6a4852df41
+:END:
+#+title: Duckduckgo bangs data
+#+date: 2021-09-10 01:54:21 +08:00
+#+date_modified: 2021-09-10 14:45:03 +08:00
+#+language: en
+
+
+- DDG keeps their bangs in a file =/bang.v${VERSION}.js= (e.g., =/bang.v260.js=, =/bang.v245.js=)
+- despite the file extension, it is a JSON file
+- conveniently versioned though older versions are missing
+- though, you can the latest version through =/bang.js=
+- slightly not readable at first glance but by taking multiple examples, we can get a pattern
+  + =d= is the domain
+  + =c= is the category
+  + =u= is the template and the URL that we sorely need
+  + =t= is the trigger word, aka the thing we need to search (e.g., =!w= will have =t: "w"=)
+  + =a= is a list of aliases
+  + =sc= is subcategory

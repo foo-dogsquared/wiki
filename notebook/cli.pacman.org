@@ -3,7 +3,7 @@
 :END:
 #+title: Command line: pacman
 #+date: "2021-06-08 15:00:04 +08:00"
-#+date_modified: "2021-07-19 23:49:40 +08:00"
+#+date_modified: "2021-10-09 18:12:07 +08:00"
 #+language: en
 #+property: header_args  :eval no
 
@@ -28,10 +28,17 @@ pacman -S podman
 Here's what you can do with the package manager:
 
 - =-S= are concerned with syncing the local database to the remote databases.
+  - =-y= syncs the local database to the remote database; running with this flag alone is not recommended as the package manager will have problems.
+  - =-u= upgrades the local database; this should be used with =-y= if you intend it for a proper operating system upgrade.
+- =-Q= is primarily from querying information from your installed packages ranging from listing installed packages to listing all of the files owned by a certain package.
+  - =-l, --list= lists the files associated with the package.
+  - =-i, --info= prints information about the package.
 - =-F= are mostly query-related operations with the database.
 - =-R= removes installed packages.
+  - =-n, --nosave= removes the configuration files associated with the package; this doesn't remove files from the home directory, though.
+  - =-s, --recursive= will recursively removes dependencies that are not used anywhere else.
 
-You can see more of them in the Operations section of the manual page (i.e., =pacman.1=).
+You can see more of them in the "Operations" section of the manual page (i.e., =pacman.1=).
 
 
 
@@ -79,4 +86,13 @@ You can also create a search selection with all of the packages with the followi
 pacman -S --list --quiet \
     | fzf --multi --prompt "Install package(s) > " \
     | xargs doas pacman -S --noconfirm
+#+end_src
+
+
+** Package removal selection
+
+Another interactive script with [[id:4eb1f8b1-bc12-4a6c-8fa4-20e4c3542cf2][fzf]].
+
+#+begin_src bash
+pacman -Q --native --quiet | fzf --multi --prompt "Remove installed package(s) > " | xargs doas pacman -Rns --noconfirm
 #+end_src

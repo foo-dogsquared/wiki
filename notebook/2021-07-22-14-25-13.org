@@ -3,5 +3,29 @@
 :END:
 #+title: Free software
 #+date: 2021-07-22 14:25:13 +08:00
-#+date_modified: 2021-07-22 14:25:17 +08:00
+#+date_modified: 2021-08-29 01:08:22 +08:00
 #+language: en
+
+
+Per [[roam:Free Software Foundation]]:
+
+#+begin_quote
+Free software means that the users have the freedom to run, edit, contribute to, and share the software.
+#+end_quote
+
+- a software that is primarily concerned with the liberty of the user regards to the software;
+  thus, a dedicated user can influence the project working in the same realm as the team
+- one of the major components for [[roam:Free culture]] movement
+- "free as in free speech, not as in beer" is a popular phrase to describe the idea;
+  thus, also applying that free software doesn't have to be free in price but it should still support the idea of openness with software
+- despite the moniker, several companies have been making profits from free software
+  + [[roam:Red Hat]] is one of the biggest for-profit companies from selling support for Linux-based ecosystems
+  + Sony made the operating systems for PS3, PS4, and PS5 from roam:FreeBSD
+  + roam:Microsoft has been making free software (e.g., [[roam:Visual Studio Code]], roam:TypeScript)
+- practically, a lot of the free software applications are created and maintained by volunteers in their spare time
+- furthermore, a lot of them are user-centric (e.g., roam:GNUnet, [[id:be917383-84c4-4bf5-9ca0-b04bfb778f4f][Guix package manager]]) usually catering to power users and tinkerers with options for advanced configurations
+- due to their open nature, it often represents how [[id:d73e539c-5bf5-4853-99bb-ac95dd52fbc3][Openness makes diversity]] with the options to create forks of the software
+- most of them are also interested in compatibility as opposed to creating ecosystem from scratch;
+  it is likely motivated from just pragmatism
+  + roam:Inkscape offers importing from formats from its competitors such a Adobe Illustrator AI format
+  + roam:LibreOffice can open several versions of Microsoft Word documents [fn:: To be fair, =DOC= format is an open standard at this point.] and AppleWorks documents

@@ -3,7 +3,7 @@
 :END:
 #+title: GitHub Actions
 #+date: "2021-06-20 18:58:48 +08:00"
-#+date_modified: "2021-07-19 00:06:57 +08:00"
+#+date_modified: "2021-09-24 22:19:21 +08:00"
 #+language: en
 
 
@@ -20,6 +20,16 @@
   it can interact with the repo or do something else entirely without ever touching it
 - you can use already defined actions or with your own
 - if you want to explore other options, the [[https://github.com/marketplace][GitHub marketplace]] allows searching for various third-party actions
+
+
+
+
+* Ecosystem
+
+- the workflow allows you to create build artifacts;
+  you have fine-grained control such as letting you [[https://github.com/marketplace/actions/upload-a-build-artifact][upload certain files to be artifacts]] and [[https://github.com/marketplace/actions/download-a-build-artifact][downloading them]] after a workflow run;
+  it also enables sharing of data between jobs
+- it can make automated releases
 
 
 

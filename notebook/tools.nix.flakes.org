@@ -3,7 +3,7 @@
 :END:
 #+title: Nix flakes
 #+date: 2021-07-18 22:34:11 +08:00
-#+date_modified: 2021-07-18 22:34:11 +08:00
+#+date_modified: 2021-09-14 18:39:43 +08:00
 #+language: en
 
 
@@ -14,6 +14,7 @@ As of 2021-06-30, the version used for this note is at v2.3 so it needs to be in
 - similar to [[https://guix.gnu.org/manual/en/html_node/Channels.html][Guix channels]]
 - a collection of packages and functions while making it easy to configure Nix declaratively
 - replaces the traditional Nix channels since fully reproducing an environment with Nix requires special care in practice;
+  it isn't fully reproducible in practice such as the inclusion of Nix paths embedded in environment variables and access to arbitrary files;
   plus, there's no standard way of composing projects with Nix
 - as of 2021-06-30, this is on the unstable version of the Nix package manager and needs some additional configuration
 
