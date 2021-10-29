@@ -3,7 +3,7 @@
 :END:
 #+title: How To Draw Anything
 #+date: 2021-09-19 20:54:51 +08:00
-#+date_modified: 2021-09-19 23:23:12 +08:00
+#+date_modified: 2021-10-24 19:43:29 +08:00
 #+published: 2008-01-16
 #+author: 
 #+source: https://www.youtube.com/watch?v=p9TFLQq1Uh4
@@ -16,3 +16,6 @@
   this is where sketching comes in handy
 - sketching is the ability to quickly pull the image
 - the drawing process consists of creating loose lines, slowly improving the lines, then finalizing the image when you're done
+- practically, the very basis of sketching is starting with the simplest basis and gradually adding details;
+  in the demo, the sketch starts with the basic shapes — e.g., two circles for the jar and a circle for the apple;
+  furthermore, the simplified foundation should also observe the relationships as we pull the image to our drawing — e.g., the verticals of the image, the distance and/or proportion;
