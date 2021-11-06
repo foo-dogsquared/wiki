@@ -3,7 +3,7 @@
 :END:
 #+title: Flatpak packages
 #+date: "2021-06-27 23:46:41 +08:00"
-#+date_modified: "2021-08-14 15:54:46 +08:00"
+#+date_modified: "2021-11-04 16:21:45 +08:00"
 #+language: en
 
 
@@ -11,8 +11,17 @@
 - while runtimes can be created, there are only a handful of them in the official Flathub remote
 - some of the runtimes include Freedesktop, GNOME, and KDE
 - you can run the runtimes to know the installed packages (e.g., ~flatpak run org.freedesktop.Sdk//19.08~)
+- Flatpak can get packages from a repository referred to as *remotes* similar to Arch packages or FreeBSD ports
+- the package definition are referred to as a *manifest* similar to [[id:963c043e-4972-4b29-8360-223ec3465203][Nix packages]]
+- Flatpak can create bundles from a manifest, enabling easier distribution without a Flatpak remote
+- similar to [[id:963c043e-4972-4b29-8360-223ec3465203][Nix packages]] and [[id:be917383-84c4-4bf5-9ca0-b04bfb778f4f][Guix package manager]], sandboxing is an important part of the build process;
+  thus, there are limitations such as no network availability, filesystem access, and socket access;
+  by default, applications only have access to their runtime folders
+- Flathub, the main repository, is concerned with [[id:fe9e21bc-3b38-4d0f-a785-253248a38ed7][Reproducible builds]]
 - examples:
   + [[https://github.com/flathub/com.mojang.Minecraft/][Minecraft]] is fairly simple by fetching the compiled binary and its dependencies with minimal compilation needed
   + [[https://github.com/flathub/com.rawtherapee.RawTherapee][RawTherapee]] is slightly complex with various dependencies defined mostly in one file
   + [[https://github.com/flathub/org.gnucash.GnuCash][Gnucash]] has a complex manifest that is composed of multiple dependencies packages as its own module file
   + [[https://github.com/flathub/org.libretro.RetroArch][RetroArch]] is similarly complex to Gnucash with its vendored dependencies packaged as its own module
+- Flathub has a [[https://github.com/flatpak/flatpak-builder-tools][curated set of scripts]] to automate building manifests for several projects such as Python, Rust, and Node similar to roam:nixpkgs
+- Flathub also has a [[https://github.com/flathub/shared-modules/][collection of modules intended to be shared among the repo]] serving as an additional base for the most common dependencies that cannot be found in runtimes

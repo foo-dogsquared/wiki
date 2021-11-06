@@ -1,9 +1,9 @@
 :PROPERTIES:
 :ID:       20830b22-9e55-42a6-9cef-62a1697ea63d
 :END:
-#+title: Exploring systemd features
+#+title: systemd
 #+date: "2021-05-20 22:37:22 +08:00"
-#+date_modified: "2021-08-07 20:21:53 +08:00"
+#+date_modified: "2021-08-29 00:07:15 +08:00"
 #+language: en
 #+property: header-args  :eval no
 

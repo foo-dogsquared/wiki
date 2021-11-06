@@ -1,0 +1,18 @@
+#+title: Git
+#+date: 2021-08-27 22:10:45 +08:00
+#+date_modified: 2021-08-28 16:27:45 +08:00
+#+language: en
+
+
+The de-facto version control system.
+
+
+
+
+* Submodules
+
+- one way to vendor dependencies or use another project within the worktree
+- Git will inspect =.gitmodules= as the submodule configuration file;
+  while it is plain-text, it is mostly managed with the ~git submodule~ subcommand
+- to clone an existing project that uses submodules, you can add the =--recursive= flag on the ~git fetch~ subcommand;
+  if it's already clone, you can proceed as normal (e.g., ~git submodule init && git submodule update~)

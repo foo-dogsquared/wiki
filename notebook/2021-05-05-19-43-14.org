@@ -3,15 +3,15 @@
 :END:
 #+title: Look for live sessions as another form of examples
 #+date: "2021-05-05 19:43:14 +08:00"
-#+date_modified: "2021-05-20 00:29:46 +08:00"
+#+date_modified: "2021-10-27 16:41:42 +08:00"
 #+language: en
 
 
 There is something powerful in seeing others doing the task as you are now seeing the process in action.
-This is why seeing live sessions such as live studying, live coding, and speedpainting sessions are compelling to watch.
 A possible reason is our human tendency to follow by example.
 
 Watching live sessions in any form can be a good way to learn and gain perspectives as you're viewing the raw footage of the task from its conception to its completion.
+This is why seeing live sessions such as live studying, live coding, and speedpainting sessions are compelling to watch.
 
-Even pre-rendered forms of live sessions such as documentaries, behind-the-scenes footage, and commentaries are great to look for albeit incomplete.
+Even pre-rendered forms of live sessions such as documentaries, pre-recorded competition matches, behind-the-scenes footage, and commentaries are great to look for albeit incomplete.
 It still gives you an idea of the process behind the topic.

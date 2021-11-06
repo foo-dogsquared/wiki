@@ -3,7 +3,7 @@
 :END:
 #+title: Command line: cURL
 #+date: "2021-06-04 10:56:52 +08:00"
-#+date_modified: "2021-06-20 20:25:49 +08:00"
+#+date_modified: "2021-10-24 22:02:49 +08:00"
 #+language: en
 #+property: header-args  :eval no
 
@@ -31,7 +31,7 @@ To see more, you can view the cURL manual page (i.e., ~man curl.1~) and see the 
 
 - =-o [FILE], --output [FILE]= - save the results in the given file
 - =-O, --remote-name= - save the results as the remote name; useful for downloading
-- =-L, --location= - if there redirects, follow them; mainly used in HTTP
+- =-L, --location= - if there redirects, follow them; mainly used in HTTP and download links that often redirects to the real location
 
 
 

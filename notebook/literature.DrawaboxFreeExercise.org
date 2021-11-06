@@ -3,7 +3,7 @@
 :END:
 #+title: Drawabox course
 #+date: 2021-10-22 13:53:45 +08:00
-#+date_modified: 2021-10-29 17:03:30 +08:00
+#+date_modified: 2021-10-30 19:04:13 +08:00
 #+published: 
 #+author: 
 #+source: https://drawabox.com/
@@ -51,12 +51,20 @@
 
 - Superimposed lines - this is an exercise enforcing to draw with your arm;
   it is a straightforward exercise so far
+
 - Ghosted Lines - this is where the ghosting method is introduced which is essential as more exercises will build upon this technique;
   it is an interesting exercise especially for me having some hand-eye coordination issues ;p
+
 - Ghosted Planes - this is "Ghosted Lines" exercise but on steroids;
   enforces the ghosting method even more
+
 - Tables of Ellipses - this is where I have problems with creating smooth ellipses;
   I eventually realized my problem is how I grip and how it fall backs to creating ellipses with my wrist instead of my arm;
   it's harder than I thought to draw circles with a pen;
+  it's a disaster;
   this is a habitual problem and will work out on this;
   I'm very tempted to restart this exercise but as the course says "No grinding and attempts at mastery before moving to each exercise"
+
+- Ellipses in Planes - I've done a little warm up with creating ellipses with the ghosting method and it indeed improve my ellipses unlike the previous disastrous result;
+  most of the ellipses appear to be confident but not much in accuracy;
+  that's the next thing to be worked on the upcoming warm ups, I guess
