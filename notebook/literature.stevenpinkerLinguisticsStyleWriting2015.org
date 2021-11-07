@@ -1,9 +1,10 @@
 :PROPERTIES:
 :ID:       63f1aae8-75f9-4282-91f4-9a0289ad2bf3
+:roam_refs: @stevenpinkerLinguisticsStyleWriting2015
 :END:
 #+title: Linguistics, style, and writing in the 21st century
 #+date: "2020-11-14 22:07:13 +08:00"
-#+date_modified: "2021-05-04 20:52:14 +08:00"
+#+date_modified: "2021-11-07 18:31:43 +08:00"
 #+language: en
 #+tags: media.talk writing
 #+source: https://youtu.be/OV5J6BfToSw

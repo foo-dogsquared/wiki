@@ -1,9 +1,10 @@
 :PROPERTIES:
 :ID:       fab73160-1478-4c93-9326-1e7b0837e06f
+:roam_refs: @StructureInterpretationComputer
 :END:
 #+title: Structure and interpretation of computer programs
 #+date: "2020-06-02 12:41:43 +08:00"
-#+date_modified: "2021-05-16 22:07:22 +08:00"
+#+date_modified: "2021-11-07 00:39:27 +08:00"
 #+language: en
 #+tags: @fleeting courses compsci
 

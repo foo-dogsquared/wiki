@@ -1,9 +1,10 @@
 :PROPERTIES:
 :ID:       39e895ee-5207-4e1b-a948-e7ed3e708c47
+:roam_refs: @arnaudReproducibleResearchMethodological
 :END:
 #+title: Reproducible research: methodological principles for transparent science
 #+date: "2020-04-12 10:24:25 +08:00"
-#+date_modified: "2021-06-19 14:49:55 +08:00"
+#+date_modified: "2021-11-07 00:38:07 +08:00"
 #+language: en
 #+source: https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/about
 

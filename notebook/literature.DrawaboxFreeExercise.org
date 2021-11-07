@@ -1,9 +1,10 @@
 :PROPERTIES:
 :ID:       f7d03d2e-53b5-4b1c-8b97-2cc07c4272fe
+:ROAM_REFS: @DrawaboxFreeExercise
 :END:
 #+title: Drawabox course
 #+date: 2021-10-22 13:53:45 +08:00
-#+date_modified: 2021-10-30 19:04:13 +08:00
+#+date_modified: 2021-11-07 00:33:58 +08:00
 #+published: 
 #+author: 
 #+source: https://drawabox.com/
@@ -12,7 +13,6 @@
 - a good roam:Illustration course for absolute beginners;
   though, this is not a good course if you're exclusively following this;
   I advice to mix other course
-
 
 
 # TODO: Upload the exercise pictures

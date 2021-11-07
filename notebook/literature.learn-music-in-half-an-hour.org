@@ -1,0 +1,77 @@
+:PROPERTIES:
+:ID:       564b829b-8c8f-4d4d-85f2-5125892de83a
+:roam_refs: @andrewhuangLearnMusicTheory
+:END:
+#+title: Learn music theory in half an hour
+#+date: 2021-07-21 14:29:42 +08:00
+#+date_modified: 2021-11-07 18:34:30 +08:00
+#+language: en
+#+source: https://youtu.be/rgaTLrZGlk0
+
+
+- sounds are vibrations of air just repeated quickly in a short period of time
+- for the sake of easily referring to the sounds, we name them;
+  *the commonly agreed number of notes are 12 composing of an octave*;
+- scales are the flavor of the song;
+  certain genres are often written in some scales (e.g., blues are often written in Emaj)
+- major scales; WWhWWWh
+- minor scales; WWWhWWh
+-
+
+
+
+
+
+* Exercises
+
+- practice applying the major scale for 5
+  + D E Fb G A B C# D
+  + E# G A A# C D E E# [fn:: Yes, this is just F. It's still a nice exercise sample, though.]
+  + A# C D D# F G A A#
+  + G A B C D E F# G
+  + C D E F G A B C
+  + A B C# D E F# G# A
+
+- practice getting familiar with their letter names
+  + assuming A# is the root of the major scale
+    - A# is the first
+    - C is the second of A#maj
+    - D# is the fourth of A#maj
+    - D is the third
+    - G is the sixth of A#maj
+
+- practice making triads from first through sixth degrees of a major scale
+  + G major scale:
+    - G B D = Gmaj
+    - A C E = Amin
+    - B D F# = Bmin
+    - C E G = Cmaj
+    - D F# A = Dmaj
+    - E G B = Emin
+    - F# A C = F#dim
+  + A major scale:
+    - A C# E = Amaj
+    - B D F# = Bmin
+    - C# E G# = C#min
+    - D F# A = Dmaj
+    - E G# B = Emaj
+    - F# A C# = F#min
+    - G# B D = G#dim
+  + C major scale:
+    - C E G = Cmaj
+    - D F A = Dmin
+    - E G B = Emin
+    - F A C = Fmaj
+    - G B D = Gmaj
+    - A C E = Amin
+    - B D F = Bdim
+- each of them has a certain pattern: maj, min, min, maj, maj, min, dim
+
+- practice making chord progressions with numbers
+  + 1 4 2 5 in G and A key
+  + 4 2 1 1 6 in E
+  + 3 1 4 in C
+
+#+begin_src lilypond  :file chord-progressions.png
+
+#+end_src
