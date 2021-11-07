@@ -130,34 +130,31 @@ Separate as may be, they can freely link other notes.
 ** Appendix — e.g., `#+begin_appendix`.
 ** link:https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions/[Admonition blocks] — e.g., `\#+begin_important`, `#+begin_tip`, `#+begin_warning`.
 
-* Mainly uses https://zk.zettel.page/types-of-notes[the convention of note categories found in zk.zettel.page].
+* All of my notes (in a normal sense) are in link:./notebook[`./notebook`].
+Mainly uses https://zk.zettel.page/types-of-notes[the convention of note categories found in zk.zettel.page].
 But in practice, the separation is a bit blurry so feel free to combine them in some way.
-+
-The entire point is separating the notes by purpose.
-That said, just don't sweat it too much when you find something that doesn't belong there.
-Ask yourself if a note really serves its intended purpose.
 
-** Fleeting notes are in link:./daily/[`./daily/`].
+** However, my fleeting notes are in link:./daily/[`./daily/`].
 The fleeting notes are ignored since they're meant to processed on the daily so having them in the worktree will make a messy history.
 It is basically my inbox for various things: my random realizations, ideas, and whatnot.
 
 ** My "traditional" notes is at link:./notebook/[`./notebook/`].
-Since both of my evergreen and traditional notes are in the same folder, you can tell with the traditional notes not having a timestamp as the file name.
 Practically, this is your 2D system of notes — the hierarchical notebook.
 All notes here are named with the safe version of the filename (in kebab-case).
 The filename is also just the normal path name except with the directory separator replaced with the dot (e.g., `cookbook/introduction-to-builder-pattern.org` will be `cookbook.introduction-to-builder-pattern.org`).
 This allows to make a directory of flat files while representing the schema of your notes.
 Pretty handy.
 
-** Literature notes are in my notebook.
+** Literature notes are in my notebook, too.
 The file name are prefixed with `literature`.
 These are notes from a specific resource (e.g., an article, talk, video, post, tweet) intended for recording the key ideas from it.
 Eventually, the ideas will be added to the evergreen notes.
 Furthermore, they shouldn't be referenced anywhere.
 Naming them is the same as the one in my traditional notes.
 
-** The root folder contains my evergreen notes.
+** My evergreen notes, essentially a ripoff from Andy Matuschak's notes.
 These are essentially like my Zettelkasten, a bunch of my own ideas (that I have processed and realized myself, anyways).
+The file name are just timestamps for convenience.
 footnote:[Not necessarily original but just some of them being developed and processed, with/out a Eureka moment.]
 
 ** For challenges and answers to problem sets, they are set in my hierarchical notebook with the prefix `challenges`.

@@ -1,5 +1,7 @@
 name: Generate site to GitHub pages
-on: [push]
+on:
+  push:
+    - master
 jobs:
   generate-site:
     runs-on: ubuntu-latest
@@ -13,8 +15,7 @@ jobs:
         with:
           packages: nodejs,coreutils
           script: |
-            mkdir -p site/public
-            mv notebook/* site/public
+            mv notebook/ site/public/
             cd site
             npm install
             npm run build
