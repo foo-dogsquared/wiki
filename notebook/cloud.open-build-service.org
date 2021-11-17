@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       53061a97-e907-4a31-9109-a2f6c57c6e22
+:END:
+#+title: Open Build Service
+#+date: 2021-11-12 09:45:15 +08:00
+#+date_modified: 2021-11-17 13:22:28 +08:00
+#+language: en
+
+
+- a generic package builder that supports buiding packages for other distributions (e.g., [[id:f3f1201a-9fb9-4481-981f-5f50f8982a5e][Arch Linux]], Debian, roam:Fedora, FreeBSD) and architectures
+- for [[id:f3f1201a-9fb9-4481-981f-5f50f8982a5e][Arch Linux]], you can configure =pacman= to include the result;
+  for example, adding the OpenSUSE repository that outputs specifically for Arch Linux packages
+
+#+begin_src conf
+[openSUSE_Tools_Arch]
+SigLevel = Optional TrustAll
+Server = http://download.opensuse.org/repositories/openSUSE:/Tools/Arch/$arch/
+#+end_src

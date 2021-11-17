@@ -3,7 +3,7 @@
 :END:
 #+title: Command line: pacman
 #+date: "2021-06-08 15:00:04 +08:00"
-#+date_modified: "2021-11-06 12:05:11 +08:00"
+#+date_modified: "2021-11-06 12:12:06 +08:00"
 #+language: en
 #+property: header_args  :eval no
 
@@ -109,4 +109,4 @@ pacman -Q --native --quiet | fzf --multi --prompt "Remove installed package(s) >
   for example, you cannot know what files are owned by the package unless it is installed (also you have =pkgfile= for that)
 
 - pacman also cannot view the PKGBUILD of packages that are not installed;
-  you can use
+  you can use the =asp= tool for that (i.e., ~asp show ${PACKAGE}~)

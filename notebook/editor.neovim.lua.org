@@ -3,7 +3,7 @@
 :END:
 #+title: Neovim Lua integration
 #+date: "2021-07-15 07:45:50 +08:00"
-#+date_modified: "2021-07-20 23:31:52 +08:00"
+#+date_modified: "2021-11-16 19:15:13 +08:00"
 #+language: en
 
 
@@ -25,6 +25,7 @@
   + =vim.opt= will return an Option object, it has a common API;
     to learn more about it, see =vim.opt= and its subsections
   + to run Vimscript, you can use =vim.cmd= — e.g., ~vim.cmd "colorscheme nord"~
+  + interacting with Neovim API through =vim.api=
 - there are Neovim configurations written in Lua
   + [[https://github.com/mjlbach/defaults.nvim][defaults.nvim]]
 - comprehensive examples include Neovim plugins that are already written in Lua
@@ -32,3 +33,4 @@
   + [[https://github.com/wbthomason/packer.nvim][packer.nvim]] is a more comprehensive package manager
   + [[https://github.com/L3MON4D3/LuaSnip][LuaSnip]] is a snippet engine
   + [[https://github.com/nvim-telescope/telescope.nvim][telescope.nvim]] is a fuzzy finder integrated inside Neovim
+- for more information to create Lua modules, see =lua-require-example= help section

@@ -3,7 +3,7 @@
 :END:
 #+title: Command line: Flatpak
 #+date: "2021-06-04 07:39:11 +08:00"
-#+date_modified: "2021-08-14 16:04:15 +08:00"
+#+date_modified: "2021-11-08 20:12:02 +08:00"
 #+language: en
 
 
@@ -29,8 +29,11 @@ Most of the query-related subcommands (e.g., =search=, =list=) has the following
 * Subcommands
 
 - =info PACKAGE [BRANCH]= prints related information of the package.
-  + =-M, --show-permissions= prints the permissions of the package in a INI-like format.
-  + =-m, --show-metadata= prints the metadata in a INI-like format.
+  - =-M, --show-permissions= prints the permissions of the package in a INI-like format.
+  - =-m, --show-metadata= prints the metadata in a INI-like format.
+- =remote-ls [REMOTE]= lists all of the packages of the given remote.
+  - =--app= only includes standalone applications.
+  - =--runtime= only lists runtimes.
 
 
 
