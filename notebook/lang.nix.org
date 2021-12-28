@@ -3,7 +3,7 @@
 :END:
 #+title: Nix language
 #+date: "2021-06-30 13:30:19 +08:00"
-#+date_modified: "2021-07-19 11:30:52 +08:00"
+#+date_modified: "2021-12-28 00:17:58 +08:00"
 #+language: en
 
 
@@ -18,18 +18,24 @@ This is just a personal reference note, the recommended resource for learning th
 
 * What is it for?
 
-- most importantly, writing packages
+- most importantly, writing packages, specifically [[id:8f23f862-a19a-4a13-8d8f-69c280a8e072][Nix derivations]]
 - mostly used for configuring [[https://nixos.org/manual/nixos/stable/][operating systems]] and create servers quickly with its variety of services
 - configuring [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]]
 
 
 
 
-* Derivations
+* Builtins
 
-- [[id:8f23f862-a19a-4a13-8d8f-69c280a8e072][Nix derivations]] are one of the central components of the package manager
-- =mkDerivation=
-- derivations are more verbose than necessary, most of the packaging process are done with the =nixpkgs= which contains a standard library to easily create derivations with different setups from programming languages and frameworks
+- ~builtins.toString ./.~ will print out the current directory.
+- ~builtins.getFlake $PATH~
+
+
+** Imports
+
+- the =import= builtin will simply import the Nix expression given a path.
+- because of the functional paradigm, you'll often see the builtin used with the parameters in one go — e.g., ~import <nixpkgs> {  }~ which will import nixpkgs from one of the module paths with the default attribute set.
+
 
 
 
@@ -37,4 +43,4 @@ This is just a personal reference note, the recommended resource for learning th
 
 - nixpkgs has a standard library that comes with functions mitigating against the verbosity for packaging or simply convenience
 
-* TODO Imports
+-
