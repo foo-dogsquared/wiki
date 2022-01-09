@@ -3,7 +3,7 @@
 :END:
 #+title: Nix flakes
 #+date: 2021-07-18 22:34:11 +08:00
-#+date_modified: 2021-12-28 21:12:39 +08:00
+#+date_modified: 2022-01-07 13:58:21 +08:00
 #+language: en
 
 
@@ -46,7 +46,7 @@ It is really just an attribute set that mainly deals with three attributes:
 
 - =description= which is self-descriptive enough to see what's it for. ;p
 - =inputs= which contains inputs (that are other flakes) to be used for...
-- ...the =outputs= which is a function that returns an attribute set to be exported.
+- ...the =outputs= which is a set or a function that returns an attribute set to be exported.
 
 Here's a real example of a basic flake.
 

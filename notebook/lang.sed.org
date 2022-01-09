@@ -1,0 +1,23 @@
+#+title: GNU sed
+#+date: 2021-08-02 22:00:52 +08:00
+#+date_modified: 2021-08-02 22:09:07 +08:00
+#+language: en
+#+source: https://www.gnu.org/software/sed/
+
+
+Stands for *stream editor*, it is a language for interfacing with text streams.
+
+Quick pointers
+
+- the tool will interact with the stream per line
+- ~;~ to denote end of expression
+- ~-E, --regexp-extended~ to use PCRE
+- ~s~ is one of the most common and extensive commands for it
+
+#+begin_src shell
+printf "Hello\nThere" | sed -E -e 's/[aeiou]//g; s/[l]//g'
+#+end_src
+
+#+results:
+: H
+: Thr

@@ -3,7 +3,7 @@
 :END:
 #+title: Flatpak packages
 #+date: "2021-06-27 23:46:41 +08:00"
-#+date_modified: "2021-11-17 13:31:30 +08:00"
+#+date_modified: "2021-12-13 17:04:58 +08:00"
 #+language: en
 
 
@@ -47,3 +47,10 @@ To get us on the same page very quickly, here's the terminologies you'll encount
   + [[https://github.com/flathub/org.libretro.RetroArch][RetroArch]] is similarly complex to Gnucash with its vendored dependencies packaged as its own module
 - Flathub has a [[https://github.com/flatpak/flatpak-builder-tools][curated set of scripts]] to automate building manifests for several projects such as Python, Rust, and Node similar to roam:nixpkgs
 - Flathub also has a [[https://github.com/flathub/shared-modules/][collection of modules intended to be shared among the repo]] serving as an additional base for the most common dependencies that cannot be found in runtimes
+
+
+
+
+* Nuances
+- the pip generator from [[https://github.com/flatpak/flatpak-builder-tools/tree/68aacd5d076070db2dd5eca2a86f15955bcd700b][flatpak-builder-tools]] will not build with binary wheels;
+  as of the linked commit, it does accept it [[https://github.com/flatpak/flatpak-builder-tools/blob/68aacd5d076070db2dd5eca2a86f15955bcd700b/pip/flatpak-pip-generator#L229][but only in certain formats]]

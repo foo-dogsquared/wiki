@@ -3,7 +3,7 @@
 :END:
 #+title: systemd
 #+date: "2021-05-20 22:37:22 +08:00"
-#+date_modified: "2021-08-29 00:07:15 +08:00"
+#+date_modified: "2022-01-03 22:03:26 +08:00"
 #+language: en
 #+property: header-args  :eval no
 
@@ -48,3 +48,15 @@ systemctl show-environment
 
 systemctl --user start $SERVICE
 #+end_src
+
+
+
+
+* Extra information
+
+- =systemd.directives.7= is an index of configuration directives including unit keys, environment variables, and command line options for systemd-related things.
+  Also contains the related manual pages for a deeper references.
+  [fn:: How did I pass a year without knowing this?]
+
+- =systemd.mount= units require the filename to be the mountpoint.
+  Though, it has to be converted to what systemd accepts (e.g., =systemd-escape --path $PATH=).

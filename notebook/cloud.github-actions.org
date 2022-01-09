@@ -3,7 +3,7 @@
 :END:
 #+title: GitHub Actions
 #+date: "2021-06-20 18:58:48 +08:00"
-#+date_modified: "2021-09-24 22:19:21 +08:00"
+#+date_modified: "2022-01-05 22:37:05 +08:00"
 #+language: en
 
 
@@ -12,6 +12,7 @@
 
 - a CI/CD tool integrated into GitHub
 - it is free for public repos but limited time per month for private repos
+- [[https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions][documentation]] for it
 - focused into creating workflows which can be separate and applied in different contexts
   + a workflow is activated from an event
   + stored in ~.github/workflows~ in the remote repo
@@ -26,10 +27,24 @@
 
 * Ecosystem
 
+- there is also a [[https://docs.github.com/en/actions/guides][detailed guide]] in introducing the overall concept
 - the workflow allows you to create build artifacts;
   you have fine-grained control such as letting you [[https://github.com/marketplace/actions/upload-a-build-artifact][upload certain files to be artifacts]] and [[https://github.com/marketplace/actions/download-a-build-artifact][downloading them]] after a workflow run;
   it also enables sharing of data between jobs
-- it can make automated releases
+- it can make automated releases like what I have done with [[https://github.com/foo-dogsquared/pop-launcher-plugin-duckduckgo-bangs/blob/d878e991dbb3269b4ea520e8c41bfa3e6346e4ab/.github/workflows/release.yml][one of my projects]]
+- it can create automated Git commits with [[https://github.com/marketplace/actions/git-auto-commit][Git Auto Commit]];
+  combine with the ability to set schedules, you can create an automatic sync following a project
+- otherwise, you can also create automated release but have to go through a merge request;
+  for example, this is how [[https://github.com/simple-icons/simple-icons/blob/9020eb4a8163817813f90f493c66e8d6b565d31c/.github/workflows/create-release.yml][Simple Icons maintain their releases]]
+
+
+
+
+* Actions
+
+- each of the job is mostly built with the actions
+- like previously mentioned, you can search these actions in GitHub's marketplace
+- the actions are primarily defined with =actions.yml= from the root which can serve as a documentation for the parameters
 
 
 
