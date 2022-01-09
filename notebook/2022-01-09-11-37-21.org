@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       088acbae-4394-4771-9cef-3b336b101f80
+:END:
+#+title: Look into tutorials with a solid-end goal
+#+date: 2022-01-09 11:37:21 +08:00
+#+date_modified: 2022-01-09 12:21:10 +08:00
+#+language: en
+
+
+Oftentimes, [[id:e158b742-53c7-4442-9af3-489ea8240af9][Examples and stories are more memorable than explanations]].
+This includes tutorials with a solid-end goal.
+
+Consider this idea with the following example:
+
+#+begin_quote
+A general purpose book that teaches you how to use Adobe Photoshop with information that is full to the brim but no solid examples versus a video tutorial that teaches how to create a cool-looking logo with Photoshop.
+#+end_quote
+
+With this, the scenario for most people will most likely end up like the following:
+
+- The book will eventually teach us nothing as there's no practical application to make use of our newly-learnt knowledge.
+  (Though the practice could be effective by skimming the content.)
+
+- While the video tutorial is specific, we have taught how to make use of several things in one intertwined way.
+  The video example may showcase workflows that gives you more ideas how a thing work.
+
+In most cases, we'll end up more informed with the video tutorial as most of us [[id:01459b18-3f30-418e-bd8d-42661d5ea223][Start with wishful thinking]] when [[id:af0ccefe-c671-47bf-94f7-62243c805745][Skill-building]].
+Furthermore, a lot of the example-specific tutorials subtly showcases two or more information.
+As you learn how to recreate the tutorial, you'll gather more ideas.
+You have the prerequisites to understand and transfer those skills into another project.
+Going back with the Photoshop video tutorial example, you now have learnt several things such as how to create shapes, apply gradients, and masking which is useful for other projects.
+
+It is sometimes better to know how to accomplish something without knowing how it works.
+You can always look into it later and to prevent [[id:9138397a-a965-45e9-97ea-71849e8d4f94][Overlearning]].
+[[id:10214008-71da-4d1e-b761-80e671d6fc40][When starting out, focus on quantity over quality]] as you can create more ideas while following more tutorials.
+
+Even more specific, you can look into how others do such thing.
+[[id:fdf9e3eb-02c5-47a6-b586-e71a5c92d01a][Look for live sessions as another form of examples]] and [[id:6f9c552f-055b-4238-874e-8608006ce0ca][Communicate with others to learn]].

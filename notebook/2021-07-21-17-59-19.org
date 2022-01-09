@@ -3,7 +3,7 @@
 :END:
 #+title: Examples and stories are more memorable than explanations
 #+date: 2021-07-21 17:59:19 +08:00
-#+date_modified: 2021-07-22 14:27:17 +08:00
+#+date_modified: 2022-01-09 11:25:08 +08:00
 #+language: en
 
 
@@ -15,3 +15,5 @@
 - at times, we are also more creative than logical but it does not mean that [[id:2b2a4c85-905a-478c-9e2c-2a64d08e4785][Creativity and logic are not opposites]]
 - obviously, this doesn't mean explanations should be abandoned;
   [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]] and explanations tend to be one of the first things we remember when going back to a topic
+- furthermore, those examples can serve as practical way to start learning on things;
+  [[id:1a6187c9-6c79-4378-bf8d-935c8a3d9167][Learning a new skill often starts from specific places]]

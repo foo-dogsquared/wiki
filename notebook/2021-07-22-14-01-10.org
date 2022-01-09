@@ -3,7 +3,7 @@
 :END:
 #+title: Communicate with others to learn
 #+date: 2021-07-22 14:01:10 +08:00
-#+date_modified: 2021-07-30 13:45:22 +08:00
+#+date_modified: 2022-01-09 12:10:33 +08:00
 #+language: en
 
 
@@ -13,3 +13,12 @@ Furthermore, depending on the community, you can learn more outside of the niche
 This is best used for making a quick feedback loop especially [[id:10214008-71da-4d1e-b761-80e671d6fc40][When starting out, focus on quantity over quality]].
 
 Though, you have to choose your community and target audience to make more effective feedback.
+
+Doing this practice can also net some benefits:
+
+- As you [[id:7f73f745-8ce0-4a02-b454-1b7c57b1e202][Follow the experts in the field]], you can create ideas from their experiments.
+
+- You can look into how others do as you [[id:fdf9e3eb-02c5-47a6-b586-e71a5c92d01a][Look for live sessions as another form of examples]] and help out one another to understand an idea.
+
+- Having others present can present another perspective as most of them have different experiences to offer.
+  [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]].
