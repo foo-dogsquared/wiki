@@ -1,0 +1,31 @@
+:properties:
+:id:       2ba59995-1fc7-46a7-aa0b-cceca4134a7f
+:roam_refs: @packagingconPythonPackagingWhy2021
+:end:
+#+title: Python Packaging: Why don't you just?
+#+date: 2021-12-21 17:31:18 +08:00
+#+date_modified: 2021-12-21 20:52:58 +08:00>
+#+published: 2021-11-22
+#+author: Tzu-ping Chung (TP)
+#+source: https://www.youtube.com/watch?v=jpP07nZiicE
+#+language: en
+
+* The state of Python packaging
+- Python predates the common packaging ecosystem we all interact today thus it has some artifacts from history
+- back in the day, for someone to use a dependency, they have to download the source;
+  in Python's case, they chose with the most common way to download a file: simple tarballs
+- as more platforms grow and being supported, there are more incentives to make delivering dependencies faster but each output may contain different metadata;
+  this results in big packages to [[https://pypi.org/project/Pillow/#files][create huge lists of possible outputs]]
+- for the package manager to know the metadata, it has to download the whole package and run the build script
+- however, this simplicity also brings advantage that you can simply create a Python package repository by simply building the wheels and dropping them along with the source in a directory
+- another artifact to consider is Python supports a lot of platforms;
+  it is considered supported when Python is confirmed to run on a platform;
+  it cannot support building all wheels for all platforms so at some point when doing a =pip install= of a big package, it has to build the package from source
+- metadata are just placed in files which is a good thing since they can be placed next to the sources
+
+* The answer to the question
+- third system effect;
+  the first few efforts went well but some people want to create a better system with more ambitious goals and a grander vision;
+  except it didn't work out and the attempts will inspire another group to try a better version
+- the quick succession of attempts at standardizing Python packaging fragmented the packaging process by offering multiple ways to do the goal;
+  as more attempts have made, there's lesser central driving force

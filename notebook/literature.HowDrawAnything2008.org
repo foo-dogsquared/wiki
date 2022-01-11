@@ -1,9 +1,10 @@
 :PROPERTIES:
 :ID:       0c00ac45-109a-499e-b521-01eaef2b03b4
+:ROAM_REFS: @HowDrawAnything2008
 :END:
 #+title: How To Draw Anything
 #+date: 2021-09-19 20:54:51 +08:00
-#+date_modified: 2021-10-24 19:43:29 +08:00
+#+date_modified: 2022-01-07 11:22:20 +08:00
 #+published: 2008-01-16
 #+author: 
 #+source: https://www.youtube.com/watch?v=p9TFLQq1Uh4
