@@ -1,18 +1,22 @@
-{ pkgs ? import (fetchTarball "http://nixos.org/channels/nixos-21.05/nixexprs.tar.xz") {} }:
+{ pkgs ? import <nixpkgs> { } }:
 
 let
   python3WithPackages = pkgs.python3.withPackages(p:
     with pkgs.python3Packages; [
       pynvim
+      jupyter
+      black
     ]);
 in
 pkgs.mkShell {
   buildInputs = with pkgs; [
+    flow
+    gcc
     gnumake
     gnuplot
     graphviz
     lilypond
-    nodejs-14_x
+    nodejs-16_x
     octaveFull
     python3WithPackages
     racket
