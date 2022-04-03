@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       5c4641ab-91d5-4cd6-bdec-4f899fdd9ea5
+:END:
+#+title: Neovim text objects
+#+date: 2022-04-01 16:06:02 +08:00
+#+date_modified: 2022-04-02 19:35:33 +08:00
+#+language: en
+
+
+(Neo)Vim has a bunch of text objects that are beyond simple boundaries other than a word (~aw~, ~aW~).
+You can find more of them with ~text-objects~ section from [[id:0a0fe63e-dcf3-4928-9e82-5513784c1244][Neovim help system]].
+
+| Text object | Description                     |
+|-------------+---------------------------------|
+| ~ap~        | A paragraph, equivalent to ~}~. |
+| ~as~        | A sentence, equivalent to ~)~.  |
+| ~ab~        | A '( )' block.                  |
+| ~aB~        | A '{ }' block.                  |
+
+There is also a variation for selecting only the inner content of the previous text objects (e.g., ~ip~ for the inner paragraph, ~is~ for inner sentence) with the whitespace removed.
+
+Note that selecting with text objects is different from selecting with [[roam:Neovim motions]] where it refers to the current position up to the end of the next selection.
+Meanwhile, text objects selection will select to the referred object as a whole no matter where the cursor position.
+For example, selecting with the paragraph (i.e., ~vap~) will select the whole paragraph where the cursor rests.
+
+Aside from the built-in text objects, you can create your own.
+Which also means others have created some custom text objects.
+
+- [[https://github.com/nvim-treesitter/nvim-treesitter-textobjects][nvim-treesitter-textobjects]] add text objects support for selecting (and swapping, moving, and peeking) tree-sitter nodes.
+  (Assuming you have tree-sitter support enabled for Neovim.)

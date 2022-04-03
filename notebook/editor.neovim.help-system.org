@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       0a0fe63e-dcf3-4928-9e82-5513784c1244
+:END:
+#+title: Neovim help system
+#+date: 2022-04-01 16:20:55 +08:00
+#+date_modified: 2022-04-03 16:59:48 +08:00
+#+language: en
+
+
+- the main command is ~:h~ which should open ~help.txt~ if given no arguments;
+  this should be enough if you want to explore much of Neovim itself as the document has
+- if given an argument, Vim will open the section of the document with the closest match
+- some points of interest
+  - you can view the complete listing of help tags with ~help-tags~
+  - there is also a index of tags from ~index.txt~
