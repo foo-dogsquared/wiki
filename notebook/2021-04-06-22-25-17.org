@@ -3,7 +3,7 @@
 :END:
 #+title: Prefer referencing over remembering
 #+date: "2021-04-06 22:25:17 +08:00"
-#+date_modified: "2022-01-05 22:42:30 +08:00"
+#+date_modified: "2022-04-01 16:26:08 +08:00"
 #+language: en
 #+tags: personal-info-management
 
@@ -28,7 +28,8 @@ Here are some examples:
 
 - [[https://www.gnu.org/software/texinfo/][Texinfo]] and [[https://github.com/tldr-pages/tldr][tldr pages]].
 
-- [[id:0efb9c51-3a12-4e5a-9e9b-d48cf4bd53ce][Using the built-in help system of Emacs]].
+- Remembering to use the help system of the tools if available.
+  For example, [[id:0efb9c51-3a12-4e5a-9e9b-d48cf4bd53ce][Using the built-in help system of Emacs]] or [[id:0a0fe63e-dcf3-4928-9e82-5513784c1244][Neovim help system]].
 
 - [[id:ea263f6f-fa8e-4e6d-a585-d30d493d1e3c][Add a desktop search engine for your digital library]].
 

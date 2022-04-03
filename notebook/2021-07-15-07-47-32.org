@@ -3,24 +3,49 @@
 :END:
 #+title: When starting out, focus on quantity over quality
 #+date: "2021-07-15 07:47:32 +08:00"
-#+date_modified: "2021-07-15 23:45:05 +08:00"
+#+date_modified: "2022-04-03 16:55:53 +08:00"
 #+language: en
 
 
-- when learning a new skill, there is a tendency to overanalyze what is the next move;
-  remember: [[id:03cd9fad-e187-4939-9347-1a034c6efbe2][Overanalyzing slow you down]]
-- to solve against this, it is better to just start, not minding the quality of each piece/project you create
-- when you have a portfolio, you're essentially creating an improved version of your previous works;
-  creating projects can be an iterative process
-- examples:
-  + when starting a YouTube channel, focus more on putting out more videos
-  + when producing music, create more music and publish them
-  + when programming, create more programs of all usability from completely useless to something useful for you
-- more importantly, good sense of skill develops over time;
-  you may as well finish a lot of work from it
-- just like how [[id:60361cab-d006-4572-a7b2-e9dc7e1bc4da][Being misinformed is better than being ignorant]], having mountainous amount of bad ideas can make something better, [[id:c886bc6d-e9dc-4f62-8841-59123236eda0][Failed ideas can be repurposed]];
-- however, being focus on quantity leaves the opportunity to make something stand out
-- furthermore, being focused on quantity for a long time creates stagnation and bad habits start to manifest;
-  to mitigate against this event, you can start focusing on the quality, making [[id:9b669fd4-e04e-43dd-a61e-81dea5ec0764][Deliberate practice]] sessions;
-- beyond that, you can balance the focus between quality and quantity;
-  you can [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]], tracking deadlines to produce reasonable amount of work over a period of time
+When we do [[id:af0ccefe-c671-47bf-94f7-62243c805745][Skill-building]], there can be a tendency to overanalyze.
+Remember: [[id:03cd9fad-e187-4939-9347-1a034c6efbe2][Overanalyzing slow you down]].
+
+The solution to prevent the tendency to overanalyze is simple: just start one.
+It doesn't matter how low the quality is, it serves as a foundation for you to know what could be improved.
+It is pointless task especially if you have absolute zero experience.
+
+Instead of thinking that learning and improving a skill as a linear process jump to a higher level with a more ambitious and over-the-top project, you could think of creating projects as an iterative process improving your grand vision of things with each step.
+For each project you start, it could be the next version towards the realization of your dream project.
+The most important point for this is a good sense of skill improves over time.
+Since time is a (more important) limited resource, you may as well make as many of them as possible.
+With it, you're getting a sense of what is good and bad practice with the previous projects.
+This is especially important as you remember more of your projects early on your journey.
+
+This project-based thinking process can be lent to several situations.
+
+- When starting a YouTube channel, focus on putting out more videos.
+  Over time, you'll know what is good practice for a decent audio and you tend to notice what is a better way of presenting something.
+  A bonus that you might have an audience at that point with the time you might spend overthinking and preparing for it.
+
+- When producing music, create and publish them.
+  Over time, you'll know what is good mixing or good melody with your previous projects especially with the bad pieces.
+
+- When [[id:4b33103b-7f64-4b51-8f03-cac06d4001bb][Programming]], make more programs of varying usefulness.
+  Over time, you'll have experiences building habits on how to solve problems and search effectively for a topic.
+
+- When learning [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]], draw more pieces.
+  Over time, you'll know what bad anatomy looks like and effectively improve your visualization to create more dynamic illustrations.
+
+The above situations pretty much assumes that you're doing it from self-learning.
+Just remember that [[id:7382c605-b481-4baa-997a-317f6cb1819c][Self-learning is about responsibility]].
+
+While having more of the lower quality work can be detrimental, [[id:c886bc6d-e9dc-4f62-8841-59123236eda0][Failed ideas can be repurposed]].
+You do have a mountainous amount of bad ideas that could be combined into something better which is nice for ideations.
+
+However, this tendency is without its problems.
+Being focus on quantity on a longer time creates stagnation and bad habits start to stick.
+To prevent as much fallout as possible, put some time for [[id:9b669fd4-e04e-43dd-a61e-81dea5ec0764][Deliberate practice]] and start focusing on quality.
+
+Beyond quantity versus quality, it can be good to balance them.
+Putting some time on quantity means that you can put your muscle memory to good use, almost like [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]].
+On other hand, it is important to [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]] and put deadlines to create a reasonable amount of work over a period of time.
