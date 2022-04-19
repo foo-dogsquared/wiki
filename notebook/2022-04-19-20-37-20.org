@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       b9fc16e8-fb2b-4a22-889c-623cde30c9b1
+:END:
+#+title: How I approach note-taking
+#+date: 2022-04-19 20:37:20 +08:00
+#+date_modified: 2022-04-19 20:48:01 +08:00
+#+language: en
+
+
+As much as I like [[id:815b2beb-40a0-4e79-9097-5b688189ad5b][Writing]], I find myself not doing [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]] as much as I thought.
+Here's how I maintain this wiki (which is not much but it is something):
+
+- I only take notes when I found myself remembering the same thing twice.
+  I very much [[id:9a11ef31-b2a7-43a9-a7a9-48f191838c6e][Prefer referencing over remembering]] (i.e., searching online instead of hardtaking notes).
+
+- Writing my wiki only serves as an occasional thought exercise and an occassional need for a notebook for various things (i.e., Linux, [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]]).
+  Though, this changes things when I learn unfamiliar topics (see [[id:af0ccefe-c671-47bf-94f7-62243c805745][Skill-building]]).
+  I take a lot of notes... then remove irrelevant and specific bits of information some time later.
+
+- My daily notes are being reviewed weekly which are then put into my notebook.
+  Even then, this is not consistent as it is always depends on their relevance to me at that time.
+
+I find that my note-taking is not so much built for future me.
+Instead, it is a mish-mash of information that is always going to be scattered everywhere only to be picked up occasionally.
+I think this is a good thing as [[id:0e2c9eaf-f12a-47b2-9c9c-d1a590db131b][Involuntary attention switch is good for preventing tunnel vision]] sometimes.
+
+Ultimately, note-taking is mostly about quickly finding relevant information, not for archiving knowledge.
+How we frame things can always change, our notes will not unless we have updated it.
+Sounds like a pain.

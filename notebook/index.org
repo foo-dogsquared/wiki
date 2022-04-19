@@ -15,3 +15,6 @@ If you want to view my notes in its raw form, you can look at the [[http://githu
 There's no good index note yet so eeeeeeeeeeeeeehhhhhhhhhhhhhhhhhhhhh...
 
 As of 2021-06-18, my interest documents [[id:88f2256a-3359-4d10-92a3-9273cabce414][Personal information management]], [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]], [[id:815b2beb-40a0-4e79-9097-5b688189ad5b][Writing]], [[id:af0ccefe-c671-47bf-94f7-62243c805745][Skill-building]], and roam:Programming.
+
+This wiki is not always maintained "correctly" as much as I want to.
+Just see [[id:b9fc16e8-fb2b-4a22-889c-623cde30c9b1][How I approach note-taking]].
