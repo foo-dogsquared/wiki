@@ -3,13 +3,17 @@
 :END:
 #+title: Neovim help system
 #+date: 2022-04-01 16:20:55 +08:00
-#+date_modified: 2022-04-03 16:59:48 +08:00
+#+date_modified: 2022-04-20 19:04:55 +08:00
 #+language: en
 
 
-- the main command is ~:h~ which should open ~help.txt~ if given no arguments;
-  this should be enough if you want to explore much of Neovim itself as the document has
+- the main command is =:h= which should open =help.txt= if given no arguments;
+  this should be enough if you want to explore much of Neovim itself as the document has an index of tutorials and local additions (most likely from the installed plugins)
+- the help documents are written in a custom formatting language that is recognized as a separate filetype;
+  in addition to navigating the buffer like any other buffer, you can also run =gO= to show the table of contents
 - if given an argument, Vim will open the section of the document with the closest match
 - some points of interest
-  - you can view the complete listing of help tags with ~help-tags~
-  - there is also a index of tags from ~index.txt~
+  - you can view the complete listing of help tags with =help-tags=
+  - there is also a index of tags from =index.txt=
+  - you can easily get the keybind with =CTRL-V= (e.g., =CTRL-V= then =META-D= will quickly print the keymap)
+  - tab completion is present

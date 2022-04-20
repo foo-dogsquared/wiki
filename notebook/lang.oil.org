@@ -3,7 +3,7 @@
 :END:
 #+title: Oil shell language
 #+date: "2021-05-09 16:40:50 +08:00"
-#+date_modified: "2021-07-28 10:52:44 +08:00"
+#+date_modified: "2022-04-16 20:18:16 +08:00"
 #+language: en
 #+property: header-args:oil  :eval no
 
@@ -21,7 +21,7 @@ Ripping off from the [[https://www.oilshell.org/blog/2020/01/simplest-explanatio
 Oil is also aimed at people who know say Python or JavaScript, but purposely avoid shell.
 #+end_quote
 
-A modern shell attempting the replace Bash slowly.
+A modern shell attempting the replace [[id:dd9d3ffa-03ff-42a1-8c5d-55dc9fcc70fe][GNU Bash]] slowly.
 The project has an ambitious goal with a wide scope.
 It is known for its [[https://oilshell.org/blog][shell-oriented blog]] and the developer is very responsive and active with shell-related posts.
 
@@ -107,7 +107,7 @@ If you want splitting, you could use =split= Oil function — e.g., ~@split(arra
 Arrays are mostly similar to Bash arrays except you have more options.
 
 - You can create a heterogenous list containing different types of data — e.g., ~var a = ['Dogs', 24, true ]~.
-  Useful for JSON compatability.
+  Useful for JSON compatibility.
 
 - A homogenous array is useful for data consistency.
   It can accept a list of data of the same type — e.g., ~var b = %("foo" "bar" "baz")~.

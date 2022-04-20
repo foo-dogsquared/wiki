@@ -3,12 +3,32 @@
 :END:
 #+title: systemd timers
 #+date: 2021-07-19 21:45:47 +08:00
-#+date_modified: 2021-08-07 19:29:15 +08:00
+#+date_modified: 2022-04-16 19:37:37 +08:00
 #+language: en
 
 
 You can schedule tasks with timers.
 If systemd is compiled with the feature, it makes cron unnecessary.
+
+
+
+
+* Timer management
+
+In a fully-installed systemd-enabled system, there are multiple ways to manage your timers.
+
+While managing them is practically the same as any other units (see [[id:20830b22-9e55-42a6-9cef-62a1697ea63d][systemd]]), there are timer-specific ways to manage them easier.
+
+- ~systemctl list-timers~ is the go-to command that displays an overview of all active timers.
+  Just give the =--all= flag to list all timers including disabled timers.
+
+- ~systemctl status ${TIMER_UNIT}~ is another way for a specific timer unit.
+  It gives the same details as the =list-timers= subcommand so you'll rarely use this subcommand in practice.
+
+
+
+
+* Timedate formats
 
 systemd has different ways to denote time.
 
@@ -16,7 +36,7 @@ systemd has different ways to denote time.
 - Timestamps refer to a specific point in time — e.g., =2021-04-02=, =today=, =now=.
 - Calendar events can refer to more than one point of time — e.g., =*-*-4/2=, =Sun,Wed,Fri *-1/2-1/8=.
 
-To find more details about time notation, you can view the =systemd.time.5= manual page.
+To find more details about time notation, you can view the =systemd.time.7= manual page.
 
 Here's an example of setting a timer for an example backup service.
 The following timer unit sets it to execute every day at 18:00.

@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       ffb8b08a-ca0a-48a4-bebc-d2bf11aa5ccf
+:END:
+#+title: Lua modules
+#+date: 2022-04-20 18:36:59 +08:00
+#+date_modified: 2022-04-20 18:37:17 +08:00
+#+language: en
+
+
+- for future references, this is documented from the [[https://www.lua.org/manual][Lua manual]]
+- to use the modules from =lua=, you can call =require= builtin;
+  the ~require~'d module are stored in a table =packages.loaded= and its content will be loaded inside of a function;
+  the module will only load once and it will only cache the return value
+- to unload a module, you can set the package from the package table to null (i.e., ~nil~)

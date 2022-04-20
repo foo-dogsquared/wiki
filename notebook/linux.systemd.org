@@ -3,7 +3,7 @@
 :END:
 #+title: systemd
 #+date: "2021-05-20 22:37:22 +08:00"
-#+date_modified: "2022-01-03 22:03:26 +08:00"
+#+date_modified: "2022-04-19 20:21:56 +08:00"
 #+language: en
 #+property: header-args  :eval no
 
@@ -21,6 +21,7 @@ Among other things, it has the following list of features.
 - [[id:e4dba4ef-71dd-4d30-9a2c-4ad97223510b][systemd-networkd]] is the network configuration manager in case you want to do [[id:a208dd50-2ebc-404d-b407-3ec2f556535e][Network configuration in Linux]].
 - [[id:8505f1f0-f15b-4b04-91fc-12be01913ce6][systemd-boot]] is a bootloader mainly for UEFI-based systems.
 - [[id:d83c099a-fc11-4ccc-b265-4de97c85dcbe][systemd-journald]] is the system logging service providing a structured way to manage your logs from different units.
+- [[id:7fce893f-418f-42aa-b2b1-59d9f0993406][systemd unit hardening]] can help your services secure.
 
 
 
@@ -57,6 +58,8 @@ systemctl --user start $SERVICE
 - =systemd.directives.7= is an index of configuration directives including unit keys, environment variables, and command line options for systemd-related things.
   Also contains the related manual pages for a deeper references.
   [fn:: How did I pass a year without knowing this?]
+
+- On a similar note, =systemd.index.7= is an alphabetical index of the important keywords found in systemd.
 
 - =systemd.mount= units require the filename to be the mountpoint.
   Though, it has to be converted to what systemd accepts (e.g., =systemd-escape --path $PATH=).

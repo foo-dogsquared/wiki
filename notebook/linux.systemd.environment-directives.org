@@ -3,16 +3,18 @@
 :END:
 #+title: systemd environment directives
 #+date: 2021-08-07 19:58:29 +08:00
-#+date_modified: 2021-08-07 19:59:45 +08:00
+#+date_modified: 2022-04-16 20:19:15 +08:00
 #+language: en
 
 
 systemd enables setting the environment through environment directives.
-
-Just like how [[id:c7edff80-6dea-47fc-8ecd-e43b5ab8fb1e][systemd at user-level]], you can set it at user-level by placing them in certain user-level load paths (e.g., =$XDG_CONFIG_HOME/environment.d=).
+For some, this is a nice shell-agnostic way of setting environment variables and could replace setting through shell profiles (i.e., =.bashrc=, =.profile=).
 
 It needs a =*.conf= file in one of the load paths (seen from the =environment.d.5= manual page).
-Keep in mind it does not use the shell and instead makes use of shell-like syntax.
+Just like how [[id:c7edff80-6dea-47fc-8ecd-e43b5ab8fb1e][systemd at user-level]], you can set it at user-level by placing them in certain user-level load paths (e.g., =$XDG_CONFIG_HOME/environment.d=).
+
+Keep in mind it does not use the shell directly and instead makes use of shell-like syntax.
+The syntax takes variable substitutions and parameter expansion seen from [[id:dd9d3ffa-03ff-42a1-8c5d-55dc9fcc70fe][GNU Bash]].
 
 The following code block is an example of setting Nix-related environment variables to enable desktop integrations.
 
