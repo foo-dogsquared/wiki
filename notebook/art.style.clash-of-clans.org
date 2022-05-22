@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       c278f8ce-32c1-4df4-8b91-e0325eb37778
+:END:
+#+title: Clash of Clans art style
+#+date: 2022-05-21 08:22:57 +08:00
+#+date_modified: 2022-05-21 09:06:54 +08:00
+#+language: en
+
+
+- the overall [[id:e527e948-911f-4719-8cd4-8b9dac7e6318][Supercell games art style]] is already great but we'll inspect one of their games extensively with Clash of Clans
+- just like most of their games, Clash of Clans mainly features a semi-blocky cartoonish art style with a realistic 3D model
+- all of their models are a nice of example of simple but great with subtle details on their units;
+  this can be seen in their environments: terrain, models, units, and buildings;
+  it's what made them to be individuals despite there can be multiple of them;
+  furthermore, this whats makes them easy to remember and memorable
+  - most (if not all) objects in the game have this hand-crafted feel to them;
+    this could be seen when inspected closely with the [[https://raw.githubusercontent.com/Statscell/clash-assets/main/troops/models/Barbarian.png][barbarian's]] chipped sword or the [[https://raw.githubusercontent.com/Statscell/clash-assets/main/troops/models/Wall_Wrecker.png][wall wrecker]] being a siege machine with the wooden texture and metallic accents
+  - combine this with their cartoonish art style, it is very nice to look at
+  - the art style in the rendered image begins to pop out even more in [[https://www.youtube.com/watch?v=ZdOkHJjLP2Q][their]] [[https://www.youtube.com/watch?v=g8S-Ee-TZzc][videos]]
+- though, the same cannot be said for the in-game sprites for units are due to how the game uses them;
+  they still need to be recognizable but it will have multiple instances of them;

@@ -3,7 +3,7 @@
 :END:
 #+title: Nix flakes
 #+date: 2021-07-18 22:34:11 +08:00
-#+date_modified: 2022-01-07 13:58:21 +08:00
+#+date_modified: 2022-05-22 21:24:01 +08:00
 #+language: en
 
 
@@ -22,7 +22,7 @@ So, why use flakes?
 - Since it is self-contained, it is easier to compose and develop environments for projects.
 - It is more declarative compared to Nix channels.
 - Provides a structure for discoverability through exploring the output.
-- In case you're using roam:NixOS, it also provides an easier way to extend it with third-party custom modules.
+- In case you're using [[id:7e8e83d5-4b08-44f6-800d-a322f6960a62][NixOS]], it also provides an easier way to extend it with third-party custom modules.
 
 
 

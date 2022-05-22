@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       788f57d1-86de-4ddd-81f5-f4680b04b0ea
+:END:
+#+title: Learn how to forget
+#+date: 2022-05-20 21:48:41 +08:00
+#+date_modified: 2022-05-20 22:06:46 +08:00
+#+language: en
+
+
+As a popular saying goes:
+
+#+begin_quote
+Empty the cup so that it may filled.
+Become devoid to gain totality.
+#+end_quote
+
+Forgetting is often looked at a negative view but it can be used in a good way.
+Accumulation of knowledge is not often a good thing.
+There are various [[id:9dc7cb08-3aea-4f66-80ac-49a14b4b7642][Pitfalls and illusions of competence]] and situations where one can make a better judgement since [[id:60361cab-d006-4572-a7b2-e9dc7e1bc4da][Being misinformed is better than being ignorant]] (sometimes).
+
+A good reason to learn about forgetting is [[id:5c603e2c-4dae-465e-abb5-12897ad7466d][Tunnel vision]].
+Its tendency to block out new ideas in the way of solving a problem is certainly not a great situation to be in.
+The solution can be simple: don't think about your initial solution.
+In other words, forget it.
+
+It can thought of as forcing yourself to see things in a (hopefully) new perspective.
+Basically, the idea of [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]].
+
+As much as this idea sounds unique, it completely isn't.
+This idea is already made its way through all of our lives.
+
+- Taking a break whenever we're stumped at a problem.
+- [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]] is a minor example of this.

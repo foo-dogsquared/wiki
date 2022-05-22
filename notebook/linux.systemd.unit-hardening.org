@@ -3,7 +3,7 @@
 :END:
 #+title: systemd unit hardening
 #+date: 2022-04-19 20:19:26 +08:00
-#+date_modified: 2022-04-19 20:21:27 +08:00
+#+date_modified: 2022-04-22 18:10:16 +08:00
 #+language: en
 
 
@@ -14,19 +14,23 @@
   - the only unit possible to attain the lowest score is a simple "Hello world" program or similar so don't go for a 1.0
 - several systemd unit options are only available in certain units such as system services
 - here is a list of sandboxing-related options;
-  for more information, see ~systemd.exec.5~ manual page
-  - ~ProtectHome~ will restrict process to interact with ~/home~, ~/root~, and ~/run/user~;
-    can accept a boolean or certain values: ~read-only~ will set certain directories to read-only and ~tmpfs~ will mount the temporary filesystems to the directories as read-only;
-  - ~ProtectControlGroups~ will make the control group filesystem (i.e., ~/sys/fs/cgroup~) to read-only
-  - ~PrivateUsers~, if enabled, will run the processes through another user
-  - ~ProtectClock~ prohibits interacting with the system clock
-  - ~ProtectKernelModules~ restricts loading of kernel modules
-  - ~ProtectKernelLogs~ prevents logging into the kernel ring buffer
-  - ~PrivateTmp~ will create a new temporary filesystem for the unit
-  - ~PrivateNetwork~ will create a new set of network devices only composing of a loopback network device;
+  for more information, see =systemd.exec.5= manual page
+  - =ProtectHome= will restrict process to interact with =/home=, =/root=, and =/run/user=;
+    can accept a boolean or certain values: =read-only= will set certain directories to read-only and =tmpfs= will mount the temporary filesystems to the directories as read-only;
+  - =ProtectControlGroups= will make the control group filesystem (i.e., =/sys/fs/cgroup=) to read-only
+  - =PrivateUsers=, if enabled, will run the processes through another user
+  - =ProtectClock= prohibits interacting with the system clock
+  - =ProtectKernelModules= restricts loading of kernel modules
+  - =ProtectKernelLogs= prevents logging into the kernel ring buffer
+  - =PrivateTmp= will create a new temporary filesystem for the unit
+  - =PrivateNetwork= will create a new set of network devices only composing of a loopback network device;
     this will disallow network access and thus should only use for processes with no business with network access
-  - ~PrivateDevices~ will create a new set of devices with only the pseudo-devices (e.g., ~/dev/null~, ~/dev/zero~);
+  - =PrivateDevices= will create a new set of devices with only the pseudo-devices (e.g., =/dev/null=, =/dev/zero=);
     this will restrict device access and should be used for processes with no device access
+  - =SystemCallFilter= takes a space-separated list of system calls to be filtered to the unit;
+    if the unit is detected to call one of the listed syscall, systemd will terminate them;
+    while listing them individually is possible, systemd has predefined set of calls putting them into categories;
+    to see them, use ~systemd-analyze syscall-filters~
 - extra resources
   - [[https://www.ctrl.blog/entry/systemd-service-hardening.html][systemd service hardening]] from ctrl.blog
   - also, a [[https://www.ctrl.blog/entry/systemd-opensmtpd-hardening.html][follow-up post that uses a real-life example for service hardening a web server with recent exploits]]

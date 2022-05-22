@@ -3,7 +3,7 @@
 :END:
 #+title: systemd timers
 #+date: 2021-07-19 21:45:47 +08:00
-#+date_modified: 2022-04-16 19:37:37 +08:00
+#+date_modified: 2022-05-22 22:28:49 +08:00
 #+language: en
 
 
@@ -56,7 +56,7 @@ WantedBy=graphical.target
 #+end_src
 
 If the timer unit is started, this will trigger =borg-backup.service= from the load path.
-But you can omit it if you named the timer unit file similarly (e.g., =borg-backup.timer= with =borg-backup.service=).
+But you can omit =Timer.Unit= key if you named the timer unit file similarly (e.g., =borg-backup.timer= with =borg-backup.service=).
 
 You can find more information about it from the =systemd.timer.5= manual page.
 Furthermore, systemd has a testing tool for time with ~systemd-analyze {timespan,timestamp,calendar}~.
@@ -93,16 +93,16 @@ Timestamp example:
 Normalized form: Thu 2021-07-01 00:00:00 PST
        (in UTC): Wed 2021-06-30 16:00:00 UTC
    UNIX seconds: @1625068800
-       From now: 11h ago
+       From now: 10 months 21 days ago
 ..............
 
 Calendar example:
 ..............
   Original form: *-1/4-5 0/2:00:00
 Normalized form: *-01/4-05 00/2:00:00
-    Next elapse: Sun 2021-09-05 00:00:00 PST
-       (in UTC): Sat 2021-09-04 16:00:00 UTC
-       From now: 2 months 4 days left
+    Next elapse: Mon 2022-09-05 00:00:00 PST
+       (in UTC): Sun 2022-09-04 16:00:00 UTC
+       From now: 3 months 13 days left
 ..............
 
 #+end_example

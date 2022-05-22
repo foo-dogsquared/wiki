@@ -3,11 +3,13 @@
 :END:
 #+title: Skill-building
 #+date: "2021-07-09 19:20:50 +08:00"
-#+date_modified: "2021-08-07 19:53:52 +08:00"
+#+date_modified: "2022-05-22 22:32:39 +08:00"
 #+language: en
 
 
 - [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]] as a way to plan ahead.
+- It is important to know that not all time should be spent on this.
+  [[id:98625da4-8e40-4b3c-bd3e-65781ae1d76f][Time spent on learning a skill should equally spend time for applying said skill]].
 - [[id:1a6187c9-6c79-4378-bf8d-935c8a3d9167][Learning a new skill often starts from specific places]].
 - [[id:f2012707-1220-4bf4-8e42-f558f19ca178][Learn with the materials intended for kids]] as a starting place.
 - [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]].

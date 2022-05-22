@@ -3,7 +3,7 @@
 :END:
 #+title: Understanding comes first from memory
 #+date: "2021-05-14 11:48:20 +08:00"
-#+date_modified: "2021-07-11 20:15:07 +08:00"
+#+date_modified: "2022-05-22 22:41:10 +08:00"
 #+language: en
 
 
@@ -14,15 +14,17 @@ it is rooted from an experience of bad teaching thus we associate memorizing a b
 
 Knowing the related things — or memorizing a bunch of facts — is a good way to start learning a concept.
 With those things in mind, you can then combine the ideas, [[id:1e135aee-0464-4756-9f55-bbf12afe8254][Chunking]] them, and innovate new ones.
-You cannot build upon more ideas if you don't know what those ideas are.
+You cannot build upon more ideas if you don't know what those ideas are in the first place.
 
 - You cannot know how to read and write traditional music notation if you don't want to memorize the order of the notes or the meaning of various symbols.
   You can't put your finger why Undertale's music ties altogether with familiarity in its entire soundtrack or why [[https://www.youtube.com/watch?v=SdDeufxfJeE][Baka Mitai sounds very good]].
 
 - Don't expect to have a good time comprehending derivatives if you don't know how to get the missing values from a system of equations or don't know what is a function.
 
+- You cannot know what makes a good film if you cannot bother with the basics of 180 rule and solely focusing on understanding film techniques and comparing them from other films.
+
 From personal experience, I used to not like this rote method of learning.
 After some reflection, I think I got the reason: lack of understanding especially with the basics.
 Remember that [[id:114b7874-6a20-49c8-be2c-46970c7110dc][Information is only acquired when you try to make sense of it]].
 The problem could be the lack of time understanding it.
-For practice, you can start with simple solutions like [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]].
+For one solution, see how my perspective on [[id:af0ccefe-c671-47bf-94f7-62243c805745][Skill-building]].

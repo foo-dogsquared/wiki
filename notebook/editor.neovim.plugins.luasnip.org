@@ -1,0 +1,159 @@
+:PROPERTIES:
+:ID:       61949403-45c1-495f-818e-01229d304dbb
+:END:
+#+title: Neovim plugin: LuaSnip
+#+date: 2022-04-21 15:33:29 +08:00
+#+date_modified: 2022-04-21 16:41:42 +08:00
+#+language: en
+#+property: header-args :eval no
+
+
+- manual from [[id:0a0fe63e-dcf3-4928-9e82-5513784c1244][Neovim help system]]: =luasnip.txt=
+- snippets are made of nodes
+- there are different type of nodes;
+  these can be found on the =luasnip-snippets= on the manual
+  - *text nodes* are just static text
+  - *insert nodes* are points to be edited;
+    can be given default text for the snippet
+  - *function nodes* generate text based from other nodes;
+    this is used mostly to generate dynamic output from the snippet
+  - *choice nodes* contains multiple nodes to be chosen for a given jump position
+  - *snippet nodes* contains other node to be inserted in the snippet
+  - *dynamic nodes* are similar to function nodes except they return snippet nodes
+- LuaSnip can support several types of snippets other than its own
+  - SnipMate snippets
+  - Visual Studio Code snippets
+  - Lua snippets, obviously
+- snippets are not automatically loaded unless you have invoked the appropriate function for a certain type;
+  you will not load Visual Studio Code-style snippets unless you have run =lazy_load= function from =luasnip.loaders.from_vscode=;
+  for more details, each supported format has a specific section for loading them from the manual (e.g., =luasnip-vscode-snippets-loader=)
+- adding snippets is as simple as adding them in =require("luasnip").snippets.FILETYPE=;
+  though, you have to know how to add a snippet through LuaSnip module
+
+
+
+
+
+* Example snippets in Lua
+
+We'll explore different examples from the simplest to the more complex snippets made with Lua.
+The following code blocks will assume the environment with the default value from =luasnip.config.snip_env=.
+
+The plugin source code also has a comprehensive set of examples in the =Examples/= folder.
+It also has a [[https://github.com/L3MON4D3/LuaSnip/wiki][wiki]] containing multiple example snippets showcasing the various nodes.
+
+
+** Simple word trigger
+
+The simplest snippet possible.
+This will simply replace =hello= with =world=.
+
+#+begin_src lua
+s("hello", t "world")
+#+end_src
+
+Exploring other nodes, we could replace the text node with a function node.
+
+#+begin_src lua
+s("hello", f(function ()
+    return "world"
+end))
+#+end_src
+
+
+** Patterned trigger
+
+A simple snippet that will answer you back when triggered.
+
+This snippet makes use of:
+
+- Pattern triggers (see [[roam:Lua patterns]]).
+- Snippet captures similar to UltiSnips' capture.
+- Usage of a function node.
+
+#+begin_src lua
+s(
+  { trig = "hello (%a+)", regTrig = true },
+  f(function (_, snip)
+      return string.format("hey there, %s", snip.captures[1])
+  end)
+)
+#+end_src
+
+
+** Choosing between Asciidoctor admonition blocks
+
+We can easily create a snippet for multiple choices.
+In Asciidoctor, we have [[https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions/][admonition blocks]] that are formatted similarly.
+
+Here's one way to define such snippet...
+
+#+begin_src lua
+s(
+  "admo",
+  fmt([[
+    {}: {}
+  ]], {
+    c(1, {
+        t "NOTE",
+        t "TIP",
+        t "IMPORTANT",
+        t "CAUTION",
+        t "WARNING",
+    }),
+    i(0),
+  })
+)
+#+end_src
+
+
+** Dynamic Asciidoctor header with optional automatic TOC
+
+Here is a snippet for Asciidoc documents for creating headers.
+As an example, =h6= should print the appropriate header level.
+
+It should follow some restrictions for this snippet.
+
+- It can only have a maximum level of 6.
+- As a bonus, we could set the table of contents on if the header level is 1.
+
+This snippet makes use of dynamic node to change the node between a choice node for the first heading level and a blank text node for the rest.
+
+#+begin_src lua
+function min_asciidoc_header_level(level)
+  math.min(level, 6)
+end
+
+s(
+  { trig = "h(%d)", regTrig = true },
+  fmt([[
+      {} {}
+      {}
+      {}
+    ]], {
+      f(function(_, snip)
+          local level = min_asciidoc_header(snip.captures[1])
+          return string.rep("=", level)
+      end),
+      i(1, "CHAPTER"),
+      d(2, function(_, snip)
+          local nodes = {}
+          table.insert(nodes, t "")
+
+          local level = min_asciidoc_header(snip.captures[1])
+
+          if level == 1 then
+            table.insert(nodes, t ":toc:")
+          end
+
+          local parent = c(1, nodes)
+          if level > 1 then
+            parent = t ""
+          end
+
+          return sn(nil, parent)
+      end, {}),
+      i(0),
+  })
+)
+#+end_src
