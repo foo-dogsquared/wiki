@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       11ad06b1-c3ad-4675-9fc0-f651bd62a6d7
+:ROAM_REFS: [cite:@courtesCodeStagingGNU2017]
+:END:
+#+title: Code Staging in GNU Guix
+#+date: 2022-06-11 17:36:08 +08:00
+#+date_modified: 2022-06-11 18:10:24 +08:00>
+#+published: 2017-10-23
+#+author: Courtès, L.
+#+source: https://hal.inria.fr/hal-01580582
+#+language: en
+
+
+- describes the code staging process for package definitions in [[id:be917383-84c4-4bf5-9ca0-b04bfb778f4f][Guix package manager]];
+  mainly describing [[roam:Guix G-expressions]]
+- creating package definitions often certain parts of the definitions to carry through the build stage;
+  oftentimes, these parts of code include additional build instructions for non-trivial packages and additional inputs for that package
+- while S-expressions (sexp) are nice, they can be verbose at times;
+  this is where G-expressions (gexp) comes in handy
+  - gexp are hygenic — they preserve lexical scope across different stages
+  - they can easily refer to the high-level objects (e.g., packages, local file) in the store (i.e., ~/gnu/store~)
+  - first-class Scheme values
+  - binds deployment to staging — when brought into staging, all inputs are also deployed as well
+- use cases for gexps
+  - code sharing between multiple stages;
+    this is mostly present such as defining packages and building them
+  - cross-compilation — there are additional operators to denote "nativeness" where it will refer to the "native" version rather than the target version
+  - package definitions — less verbose definitions which is always nice especially with the use of referring to the absolute file names from the store
+  - system services — the process and lifecycle of system services is similar to defining packages being composed of multiple stages: one in definition and one in building the services in the init system
+  - system tests — they can be defined through the =operating-system= interface which are derivations describing entire operating systems;
+    in Guix, this is implemented through a tool called =marionette= which introduces another stage in the pipeline
