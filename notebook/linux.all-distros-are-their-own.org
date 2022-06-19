@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       c64836f4-19db-4da7-8532-4ebacf6c1ed1
+:END:
+#+title: How all Linux distros are technically operating systems of their own
+#+date: 2022-05-22 21:02:46 +08:00
+#+date_modified: 2022-06-19 12:10:16 +08:00
+#+language: en
+
+
+In all technicality, Linux distributions (distros) are their own operating system.
+Linux distros have one thing in common: the Linux kernel.
+
+It just so happens that most Linux distros follow certain standards such as the Filesystem hierarchy standard (FHS), some Freedesktop standards, some POSIX standards, and similarly placed files from packages that makes them compatible... for the most part.
+This also contributes to the public consciousness of presenting different Linux distros as a collective single thing.
+Whether or not this can be misleading is another question (see [[id:a8c6f23f-d642-4cf6-abe2-edcf054f1823][Does presenting Linux distributions as a single thing proves beneficial for newcomers?]]).
+
+Even by then, some of them follow the standard differently with their own tweaks ranging from subtle difference to distinct modifications.
+
+- Linux distros such as [[id:7e8e83d5-4b08-44f6-800d-a322f6960a62][NixOS]] and [[roam:Guix system]] throws the FHS completely.
+
+- Other Linux distros such as roam:GoboLinux redefines the FHS completely considering user-friendliness by making the filesystem as the database itself.
+
+- Several software have been patched differently on several Linux distributions.
+  [[roam:Fedora Linux]], for example, has patches on Firefox that eventually made their way upstream.
+  [[roam:Debian Linux]]
+
+- Ecosystems move at a different pace with different focus.
+  [[id:f3f1201a-9fb9-4481-981f-5f50f8982a5e][Arch Linux]], for example, takes the pragmatic approach with an up-to-date list of software.
+  [[roam:Fedora Linux]], as another example, is heading towards futuristic approaches for application development with a bias for Red Hat-backed products (e.g., roam:Flatpak, [[id:20830b22-9e55-42a6-9cef-62a1697ea63d][systemd]]).
+
+A lot of the distros are made by small pockets of communities that also interacts with the rest of the ecosystem.
+This is where [[id:31c16009-b965-4288-8654-93a404c0961c][Collaboration through competition]] manifests from parallel efforts.

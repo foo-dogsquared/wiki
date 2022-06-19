@@ -3,12 +3,13 @@
 :END:
 #+title: Percent encoding in Bash
 #+date: "2021-06-23 21:10:33 +08:00"
-#+date_modified: "2021-07-01 13:46:04 +08:00"
+#+date_modified: "2022-04-16 20:17:53 +08:00"
 #+language: en
 
 
 Percent-encoding is commonly used in URLs.
 Pretty nice especially when used with spaces.
+Though, this is something that is rarely needed in [[id:dd9d3ffa-03ff-42a1-8c5d-55dc9fcc70fe][GNU Bash]] except if you're writing a quick script.
 
 Based from [[https://gist.github.com/cdown/1163649][this implementation]].
 It was modified to be closer to the output from [[https://docs.python.org/3.8/library/urllib.parse.html#urllib.parse.urlencode][Python =urlencode=]].

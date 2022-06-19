@@ -3,7 +3,7 @@
 :END:
 #+title: GitHub Actions
 #+date: "2021-06-20 18:58:48 +08:00"
-#+date_modified: "2022-01-05 22:37:05 +08:00"
+#+date_modified: "2022-06-19 11:46:41 +08:00"
 #+language: en
 
 
@@ -42,7 +42,10 @@
 
 * Actions
 
-- each of the job is mostly built with the actions
+- each of the job is mostly built with the actions;
+  the job can be controlled further through the workflow file;
+  see the [[https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions][Workflow Syntax]] for more information
+- related information such as the current branch, runners specifics, and so forth are stored in [[https://docs.github.com/en/actions/learn-github-actions/contexts][Contexts]]
 - like previously mentioned, you can search these actions in GitHub's marketplace
 - the actions are primarily defined with =actions.yml= from the root which can serve as a documentation for the parameters
 
@@ -73,7 +76,16 @@ jobs:
 
 ** Docker container integration
 
-In this case, we'll push an image to docker.io registry.
+GitHub workflows can make use of containers for easier delivering of dependencies and reproducing the development environment (among other things).
+This includes...
+
+- [[https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry][GitHub's own container registry]],
+- [[https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idcontainer][using a container to be used in a workflow]] which is nice for building for multiple operating systems (e.g., multiple Linux distros)
+- [[https://docs.github.com/en/actions/using-containerized-services/about-service-containers][service containers]] to make use of tools to your workflow,
+- and even [[https://docs.github.com/en/actions/publishing-packages/publishing-docker-images][publishing containers to a registry from a workflow]].
+
+In this example, we'll push an image to docker.io registry.
+Be sure to have the necessary credentials and set it to the workflow environment to successfully run this workflow.
 
 #+begin_src yaml  :tangle (my/concat-assets-folder "docker-image.yaml")
 name: Docker build image
@@ -107,7 +119,7 @@ jobs:
 
 ** Building a Nix binary cache
 
-We'll use [[id:366aeb8f-5a84-40c8-bf16-a919639790ab][Cachix]] as our binary cache service.
+We'll use [[id:366aeb8f-5a84-40c8-bf16-a919639790ab][Cachix]] as our binary cache service which has a free 10GB space (as of 2022-06-19).
 This makes it easier to setup and distribute your own project built with [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]].
 
 #+begin_src yaml  :tangle (my/concat-assets-folder "cachix-build.yaml")
@@ -132,7 +144,9 @@ jobs:
 #+end_src
 
 
-** Multiple jobs with matrix
+** Building packages in multiple architectures
+
+This makes use of job matrix allowing to easily create similar workflows with different configurations.
 
 We'll use the GitHub Actions workflow file from the NUR template.
 It is somewhat complex and it is doing a fine job showcasing some of GitHub Actions features.
@@ -143,35 +157,18 @@ on:
   pull_request:
   push:
   schedule:
-    # rebuild everyday at 2:51
-    # TIP: Choose a random time here so not all repositories are build at once:
-    # https://www.random.org/clock-times/?num=1&earliest=01%3A00&latest=08%3A00&interval=5&format=html&rnd=new
     - cron:  '27 4 * * *'
 jobs:
   tests:
     strategy:
       matrix:
-        # Set this to notify the global nur package registry that changes are
-        # available.
-        #
-        # The repo name as used in
-        # https://github.com/nix-community/NUR/blob/master/repos.json
         nurRepo:
           - '<YOUR_NUR_REPO>'
-        # Set this to cache your build results in cachix for faster builds
-        # in CI and for everyone who uses your cache.
-        #
-        # Format: Your cachix cache host name without the ".cachix.org" suffix.
-        # Example: mycache (for mycache.cachix.org)
-        #
-        # For this to work, you also need to set the CACHIX_SIGNING_KEY secret
-        # in your repository settings in Github found at https://github.com/<your_githubname>/nur-packages/settings/secrets
         cachixName:
           - '<YOUR_CACHIX_NAME>'
         nixPath:
           - nixpkgs=channel:nixos-unstable
           - nixpkgs=channel:nixpkgs-unstable
-          - nixpkgs=channel:nixos-21.05
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
@@ -198,7 +195,6 @@ jobs:
           -I nixpkgs=$(nix-instantiate --find-file nixpkgs) \
           -I $PWD
     - name: Build nix packages
-      # TODO switch to default nixpkgs channel once nix-build-uncached 1.0.0 is in stable
       run: nix run -I 'nixpkgs=channel:nixos-unstable' nixpkgs.nix-build-uncached -c nix-build-uncached ci.nix -A cacheOutputs
     - name: Trigger NUR update
       if: ${{ matrix.nurRepo != <YOUR_NUR_REPO>' }}

@@ -3,13 +3,16 @@
 :END:
 #+title: Command-line: youtube-dl
 #+date: "2021-07-08 17:36:26 +08:00"
-#+date_modified: "2021-07-28 14:38:09 +08:00"
+#+date_modified: "2022-04-22 11:25:43 +08:00"
 #+language: en
 #+property: header-args  :eval no
 
 
 One of the archivists' best friends.
 At least you don't have to go to those shady YouTube conversion sites anymore when you have a [[https://ytdl-org.github.io/youtube-dl/supportedsites.html][complete list of other video sites]] you can download from.
+
+Take note, I use [[https://github.com/yt-dlp/yt-dlp][yt-dlp]].
+Any yt-dlp-specific options should be in the appropriate note.
 
 For complete information, you can always inspect =youtube-dl.1= manual page.
 
@@ -35,29 +38,20 @@ youtube-dl [OPTIONS...] [URLS...]
 - =--audio-quality QUALITY= sets the quality of the audio from 0 to 9, best to worst respectively;
   bitrates are also accepted (e.g., =320K=, =1M=)
 
-- =-c, --continue= resumes the download;
-  useful if the download process is interrupted
+- =--date RANGE= finds videos that are uploaded from a certain date range.
+  See the [[Date ranges]] section to see the format required.
 
-- =--config-location PATH= set the config to be used;
-  useful for local configs with specific options
-
-- =-F, --list-format= prints a list of format available for downloading
+- =--dateafter RANGE= and =--datebefore RANGE= is a similar option to =--date= but to find videos before or after the specified date range, respectively.
+  Accepts the same format as =--date=.
 
 - =--list-extractors= prints a list of supported sites and their specific features.
 
 - =--format QUALITY= downloads the video with the format shown in =--list-format=;
   there are convenient options such as =bestaudio= and =bestvideo= referring to the best quality it could find
 
-- =--match-title REGEX= downloads only with the matched titles;
-  for the inverse operation, =--reject-title REGEX=
-
-- =-j, --dump-json= completes a dry-run and prints in JSON format
-
 - =-o, --output STRING= formats the resulting filename of the tracks to be downloaded
 
 - =--no-overwrite= throws an error if the file already exists which is handy for scripts
-
-- =--write-sub= writes the subtitle file into disk
 
 - =-x, --extract-audio= extracts only the audio track
 
@@ -77,6 +71,7 @@ A few of the usual stuff I use:
 
 - =title= (string) is the title of the track
 - =ext= (string) is the extension to be used; pretty much recommended to use it
+- =creator= (string) and =uploader= (string)
 
 A lot of the things I have to do is to download multiple tracks from an album or playlist.
 Unfortunately, these are often different from one site to another.
@@ -85,6 +80,17 @@ Unfortunately, these are often different from one site to another.
   These are usually used from YouTube and Soundcloud playlists.
 - =track_number= (number) is the position of the track from an album.
   Usually, these are used from Bandcamp and Vimeo playlists.
+
+
+** Date ranges
+
+The options =--date= and the like accept a certain format for date ranges in =(now|today)[-|+][\\d+](day|week|month|year)s?= or =YYYYMMDD= for absolute date.
+
+| Example       | Description                    |
+|---------------+--------------------------------|
+| =now-2weeks=  | From today to 2 weeks ago.     |
+| =today+3days= | From today to 3 days from now. |
+| =20000505=    | Equivalent to =2000-05-05=.    |
 
 
 
@@ -124,4 +130,15 @@ This is will only succeed if the format is available to download which you can d
 
 #+begin_src shell
 youtube-dl --format 'bestvideo[width=1080,ext=mp4]+bestaudio[abr=320K,ext=opus]' https://www.youtube.com/watch?v=wy9VvdaLuSs
+#+end_src
+
+
+** Check the first 50 videos at certain date range
+
+In this example, I want to download videos from [[roam:David Revoy]]'s YouTube channel that uploaded up to 2 months ago while checking only the first 50 videos.
+This is a useful template especially if the channel has a large selection of videos.
+Also useful if you're checking for videos daily to mitigate against potential bans from overusing it.
+
+#+begin_src shell
+youtube-dl --playlist-end 50 --dateafter 'today-2weeks' "https://www.youtube.com/c/DavidRevoy"
 #+end_src

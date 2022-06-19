@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       7e8e83d5-4b08-44f6-800d-a322f6960a62
+:END:
+#+title: NixOS
+#+date: 2021-08-28 17:11:24 +08:00
+#+date_modified: 2022-05-22 21:23:19 +08:00
+#+language: en
+
+
+- an operating system that uses [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]] as the core component to build a whole operating system;
+  this make NixOS as an image-based operating system similar to [[roam:Fedora Silverblue]], roam:MicroOS, and [[roam:Endless OS]]
+- despite being mentioned to the aforementioned image-based operating systems, it isn't an immutable system;
+  NixOS itself is not immutable as you can still interact with the system just like with traditional Linux-based OS;
+  most of the system is set up by the package manager which does have an inherent property of being immutable but this doesn't make NixOS an immutable system
+- most of the workflow and ecosystem comes from the central repository for any Nix-related system: roam:nixpkgs;
+  it is where most of the [[roam:NixOS modules]] come from
+- it isn't really like the traditional Linux distros that you'll see as it has made decisions that can majorly affect how you daily-drive the system
+  - the Filesystem Hierarchy Standard (FHS) is nowhere to be found;
+    there is only the =/bin/sh= and =/usr/bin/env= which is there for convenience purposes which is nice if you rely on some scripts
+  - the absence of the FHS alone has some implications;
+    one of them is the inability to run precompiled binaries (including AppImages which rely on system libraries) since most of them rely on the files that are expected to be present in the traditional distros like Debian and Fedora
+  - because of the non-existent FHS, you have to compile and/or create a derivation for that project;
+    workarounds exists for certain situations like AppImages and programs that expects a system with FHS but you still have to create a Nix package for it
