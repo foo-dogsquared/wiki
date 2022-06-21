@@ -1,0 +1,84 @@
+:PROPERTIES:
+:ID:       79588923-7d9c-49e6-a175-3f518e004c69
+:ROAM_REFS: [cite:@adlerHowReadBook]
+:END:
+#+title: How to Read a Book
+#+date: 2022-06-21 14:11:12 +08:00
+#+date_modified: 2022-06-21 19:16:36 +08:00
+#+published:
+#+author: Adler, M., & Van Doren, C.
+#+source: https://www.amazon.com/How-Read-Book-Classic-Intelligent/dp/0671212095
+#+language: en
+
+
+Like most activities, different people tend to have different results.
+Some writers are better at writing concise messages and some readers are better at understanding the message without firsthand reading.
+How to deal with different types of writings is the one of the main focus of this book.
+
+* The dimensions of reading
+- while there are other forms of getting information (e.g., watching videos, listening audio recordings), reading is still a relevant way as there are many information available through text;
+  still, they relate all in the form of listening
+- most information are packaged in a way that minimizes thought and only requiring to listen;
+  this has become a problem that persists — while most can read, most will agree without thought;
+  most will consume information like music even to the point of playing it whenever they need to
+- most people think of reading as a passive process unlike writing;
+  however, it is impossible to read passively — to move your eyes while your mind is sleeping as there should be no information to get;
+  a better way to see reading is in the similar manner as writing with how more or less active you did with your activity;
+  just as the more thought you put in writing will result in a better piece (e.g., concise, containing no unnecessary information), the more active reading you do, the better result it will be
+- most of the time, *we read for some purpose whether it is greater understanding or something else*;
+  when we read, we either understand the message without problem or we don't;
+  - when we understands the message without problem at first pass, then we are pretty much at the author's level;
+    thus, we tend to stop reading and go with another literature;
+    what's the point of continuing if we already know what's containing the writing?
+  - when we don't, we tend to continue whether it is get more understanding of that subject
+  - in conclusion, *for reading, there should be an inequality of understanding between the author and the reader*
+- *in the bigger picture, reading is just a part of the process of communication between the author and the reader where both are self-interested and must cooperate to be able to get what they want*;
+  - the author wants their message to be heard loud and clear to make understanding the message easier for their reader;
+    this includes practices on how to keep their structure of their arguments nicely put and how well-written are they, among other things
+  - the reader wants something from the writing whether to acquire information, greater understanding, or entertainment (which requires the least amount of effort);
+    thus, they should be active on their reading to get to that level of understanding
+
+* Levels of reading
+- with the reader in mind, there are various ways of dissecting a writing just as there are various purposes for doing reading in the first place
+- in this book, this is given through levels, strictly called as that since one level cumulates from the previous levels
+- the first level of reading is *elementary reading*: the attempt of understanding the marks on the written surface;
+  it mainly involves with the question of "What the written words say?" in its simplest sense;
+  while most of the readers already attain elementary reading from elementary schooling, difficulties with elementary reading is still present at all levels whether this is due to the writing being written in a foreign language or requiring knowing certain jargon in the first place
+- the second level is *inspectional reading*;
+  this is described as simply reading the words quickly and putting the ideas together;
+  after understanding the words, the question moves on into "What does the writing piece contains?";
+  - this is also described as skimming (see [[id:5c1e9540-9663-4512-8c84-05529ad22212][Speedreading is all about skimming well]]) especially when given limited time
+  - most readers make the mistake of reading a book by starting from page one and plowing through it;
+    the problem is not only it is slow but given a limited time, we are then tasked of acquiring understanding which will most likely be superficial at best
+  - the book encourages the reader to quickly take a walk at the pages then move at the next level if the reader wants to move beyond acquiring information into understanding the topic well
+- the third level is *analytical reading*;
+  this is the level prerequisite to understanding and making the acquired information as part of their own;
+  for this to be effective, the reader should organize a list of questions which is described in the book (and later in this note)
+- the last level is *synoptical reading*;
+  the process of synoptical reading is described as getting ideas not only from one book but from multiple books that revolves around a particular subject;
+  the reader is then drawing multiple conclusions that may not even be from the books they read and instead from the understanding they eventually molded;
+  this is the most intense level requiring an immense amount of effort from the reader;
+  appropriately, this is also the most rewarding level of reading;
+
+* First level of reading: Elementary reading
+- take note most of the things are said in the perspective of United States from the time of writing (1970s);
+  some info may be outdated and non-applicable
+- most of the writing found in this book is mostly discussing and describing on the problems of the educational system at the time and the stages of elementary reading that relates into the initial objectives of this book
+- the United States came into the era of trying to make a nation full of literates but reality sets a problem for facilitating learning elementary reading
+  - the initial method of learning fundamentals is one of them with the initial focus on the ABCs method: a method that focuses on the letters, then combining those letters to make a syllable;
+    this method primarily aims on mastery of the language but some finds it to be slow and synthetic
+  - other proposed methods include:
+    - phonic method which focuses on the sound to recognize words instead of the letters
+    - visual method that focuses on whole words instead of starting from letters
+- any changes to the initial method of learning is going to be heavily scrutinized
+- because of the changes and focus of the nation to the reading, research has accelerated
+  - other proposals to learning method have been looked into such as eclectic approach of teaching, individualized reading, total immersion method, look-see method, among other methods
+  - learning how one can read has been documented;
+    it can be summarized into four phases
+    - first stage is "reading readiness", whether the child is can listen well, can pay attention, can absorb information, among other qualities
+    - second stage mostly deals with mastering basic words
+    - third stage is building vocabulary, encouraging the student to unlock more words;
+      this is usually done by looking into other sources such as science, mathematics, social studies, etc.;
+      this is also the stage the student realizes that reading is not something that is not only can be done for completing school work but something that can be done for fun, for curiosity, and the like
+    - fourth stage deals with reading maturity, that is refining previously acquired skills;
+      this is the point where a student can read any given material and make purposeful conclusions from it, comparing other writings

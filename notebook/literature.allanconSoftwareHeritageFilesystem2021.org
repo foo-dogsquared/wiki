@@ -1,10 +1,10 @@
 :PROPERTIES:
 :ID:       4703f8c2-225c-4c76-a788-af04b84309ac
-:ROAM_REFS: @allanconSoftwareHeritageFilesystem2021
+:ROAM_REFS: [cite:@allanconSoftwareHeritageFilesystem2021]
 :END:
 #+title: The Software Heritage Filesystem (SwhFS): Integrating Source Code Archival with Development
 #+date: 2021-07-27 17:06:14 +08:00
-#+date_modified: 2021-11-06 22:29:30 +08:00
+#+date_modified: 2022-06-21 12:11:41 +08:00
 #+published: 2021-02-12
 #+author: Allançon, T., Pietri, A., & Zacchiroli, S.
 #+source: http://arxiv.org/abs/2102.06390

@@ -1,10 +1,10 @@
 :properties:
 :id:       2ba59995-1fc7-46a7-aa0b-cceca4134a7f
-:roam_refs: @packagingconPythonPackagingWhy2021
+:roam_refs: [cite:@chungPythonPackagingWhy2021]
 :end:
 #+title: Python Packaging: Why don't you just?
 #+date: 2021-12-21 17:31:18 +08:00
-#+date_modified: 2021-12-21 20:52:58 +08:00>
+#+date_modified: 2022-06-21 12:05:30 +08:00>
 #+published: 2021-11-22
 #+author: Tzu-ping Chung (TP)
 #+source: https://www.youtube.com/watch?v=jpP07nZiicE

@@ -1,10 +1,10 @@
 :properties:
 :id:       30d6a3d2-42f3-4f49-8d4c-bf433dc82350
-:roam_refs: @packagingconPackagingGrailLudovic2021
+:roam_refs: [cite:@courtesPackagingGrail2021]
 :end:
-#+title: The Packaging Grail - Ludovic Courtès | PackagingCon 2021
+#+title: The Packaging Grail
 #+date: 2021-12-28 21:27:18 +08:00
-#+date_modified: 2021-12-28 22:51:08 +08:00>
+#+date_modified: 2022-06-21 12:14:07 +08:00>
 #+published: 2021-11-23
 #+author: Ludovic Courtès
 #+source: https://youtu.be/tcTOkXlE_ac
@@ -39,6 +39,7 @@
 - *move non-free software*;
   at the very least, move it to another repository to let people make informed decisions;
   not only this cannot be reproduced well but also impedes security
+  - as far as I can remember, this is considered from the Flathub maintainers when it will eventually be a popular host of apps for both free and proprietary apps
 - *disallow developer-uploaded binaries*;
   the talk presented an example with the previous case with Debian allowing it some time ago;
   if it is allowed, at least provide a way to reproduce it;
