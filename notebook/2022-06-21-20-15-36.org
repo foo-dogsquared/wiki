@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       65ee583a-bacd-480d-8d9b-90ecc1e22090
+:END:
+#+title: All-in-one tools make good explorations
+#+date: 2022-06-21 20:15:36 +08:00
+#+date_modified: 2022-06-21 20:23:36 +08:00
+#+language: en
+
+
+- the user can explore the components and features of a similar tool
+- examples:
+  - Swiss army knife versus a toolbox of individual tools
+  - kitchen-sink IDEs versus a text editor with a shell
+  - roam:Zotero versus a simpler BibTex database manager
+- oftentimes, all-in-one tools integrate multiple ideas together into one smooth workflow
+- however, they also often hides complexity which can backfire if the user encountered an error;
+- if the user takes the time to break apart the tool and study its components, they can replace those components piecewise resembling to what they're used to;
+  this is where [[id:69ec18ec-ae88-4cb8-bf03-299bc5d8a2a5][Simple tools make better workflows]] as they can reduce complexity

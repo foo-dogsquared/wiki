@@ -3,21 +3,30 @@
 :END:
 #+title: Diving head-first with a difficult problem is a good indicator of progress
 #+date: "2021-05-20 20:25:47 +08:00"
-#+date_modified: "2021-07-22 18:06:45 +08:00"
+#+date_modified: "2022-07-21 16:40:47 +08:00"
 #+language: en
 
 
-- a difficult problem is to [[id:01459b18-3f30-418e-bd8d-42661d5ea223][Start with wishful thinking]]
-- when starting to learn, diving into problems are often seen as a bad thing
-- it is essentially like trying to learn to swim on an ocean
-  + it could be effective if we have a lifeguard
-- this sink-or-swim mentality can be great if we're to make a difficult problem as our model for progress
-- for example, if you're trying to learn 3D modelling by recreating a massive landscape, you can start with it as an initial exercise
-- at first try, it will fail but you can retry maybe next month to see how well you improve;
-  this goes well with consistency as [[id:adefcd38-46a8-4c9c-b609-9d3393b074d0][Consistency over time creates more progress]]
-- a difficult problem can give us a clear indication of our progress
-- contrast this to learning by starting with the simplest possible example
-- in some capacity, we already have been doing this since we have an idea of what we want to do
-  + a lot of our inspirations tend to be people with advanced levels;
-    we tend to [[id:7f73f745-8ce0-4a02-b454-1b7c57b1e202][Follow the experts in the field]]
-- beware, [[id:48cef2ac-a941-463d-a07f-6be8349456ad][Diving head-first into a difficult problem makes a bad start]]
+Solving with a difficult problem often [[id:01459b18-3f30-418e-bd8d-42661d5ea223][Start with wishful thinking]].
+This allows us to think about the steps we need to deeply learn about a particular field.
+
+This practice also comes with additional benefits especially when we're beginners of a field.
+
+- We learn things that are going to be explored later down the line as if [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]].
+
+- Most of the application comes from the understanding of the subject and creating custom solutions from that pool of knowledge.
+  What we're really doing is practicing under that situation and creating a drill exercise for ourselves.
+  We're getting used what it means to fail and how to deal with such difficulties.
+  This is what it really means to be familiar as we'll learn that [[id:7382c605-b481-4baa-997a-317f6cb1819c][Self-learning is about responsibility]].
+
+In other words, practicing this prevents us from quitting at the first sign of difficulties.
+We have a fallback excuse that we're beginners and shouldn't expect it learn it smoothly but rather smoothen the process of learning with [[id:adefcd38-46a8-4c9c-b609-9d3393b074d0][Consistency over time creates more progress]].
+
+It is more important to know the importance of failure as an indicator of progress.
+That successes show where you are and failure show where you lack.
+Having a difficult problem where it can present "real" application of that subject can put yourself to the test how to gauge where you stand.
+
+However, this could go very badly with very real consequence of wasting real efforts.
+[[id:48cef2ac-a941-463d-a07f-6be8349456ad][Diving head-first into a difficult problem makes a bad start]] if you don't have an intention to begin with.
+It costs you time that you could have spent learning more on fundamentals.
+This is best used as a measuring tool, not a real application of skill (regardless of the result).

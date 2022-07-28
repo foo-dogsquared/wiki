@@ -3,7 +3,7 @@
 :END:
 #+title: Problems with simpler tools
 #+date: 2021-09-16 11:45:21 +08:00
-#+date_modified: 2021-09-16 13:11:29 +08:00
+#+date_modified: 2022-06-21 20:23:43 +08:00
 #+language: en
 
 
@@ -11,7 +11,7 @@ While [[id:69ec18ec-ae88-4cb8-bf03-299bc5d8a2a5][Simple tools make better workfl
 
 - The scope of simpler tools often results in doing the same task with multiple tools compared to less simpler tools.
   This is a sign of the process being too small or atomic.
-  In this case, [[roam:All-in-one tools make good explorations]] to look how other tools does it while adding the necessary parts preventing from being too simple.
+  In this case, [[id:65ee583a-bacd-480d-8d9b-90ecc1e22090][All-in-one tools make good explorations]] to look how other tools does it while adding the necessary parts preventing from being too simple.
 
 - Consequently, with the plethora of simple tools working together, incidental complexity will arise with the quirks of the tools starting to appear.
   Complexity is inevitable even in simpler tools.

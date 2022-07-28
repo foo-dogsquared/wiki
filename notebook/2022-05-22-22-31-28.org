@@ -3,7 +3,7 @@
 :END:
 #+title: Time spent on learning a skill should equally spend time for applying said skill                                                 
 #+date: 2022-05-22 22:31:28 +08:00
-#+date_modified: 2022-05-22 22:31:43 +08:00
+#+date_modified: 2022-07-08 14:24:11 +08:00
 #+language: en
 
 
@@ -21,7 +21,7 @@
     the fear of embarrassing ourselves to the wider audience if mistakes are shown;
     the worst case scenario is people will simply ignore it;
     simply put, no one truly cares;
-    while it is important to [[id:6f9c552f-055b-4238-874e-8608006ce0ca][Communicate with others to learn]], you should also put up to reduce that tendency of self-critical and let go of that judgement
+    while it is important to [[id:6f9c552f-055b-4238-874e-8608006ce0ca][Communicate with others to learn]], you should also tone down being self-critical
   - [[id:0bb464a1-94c4-4130-bc7d-413465aea8e8][Procrastination]] is also one but not of the typical variety;
     most people would see a thing for future projects and evaluate it as something that they cannot do in the current level until they can reach their desired skill level;
     there is one more problem to this approach: we cannot simply know;
