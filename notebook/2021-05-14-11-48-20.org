@@ -3,7 +3,7 @@
 :END:
 #+title: Understanding comes first from memory
 #+date: "2021-05-14 11:48:20 +08:00"
-#+date_modified: "2022-05-22 22:41:10 +08:00"
+#+date_modified: "2022-06-19 13:10:24 +08:00"
 #+language: en
 
 
@@ -28,3 +28,6 @@ After some reflection, I think I got the reason: lack of understanding especiall
 Remember that [[id:114b7874-6a20-49c8-be2c-46970c7110dc][Information is only acquired when you try to make sense of it]].
 The problem could be the lack of time understanding it.
 For one solution, see how my perspective on [[id:af0ccefe-c671-47bf-94f7-62243c805745][Skill-building]].
+
+However, once you applied and understood a topic, this could lead to another perspective into looking at the process of understanding.
+That [[id:47d78835-a519-4e61-b735-858f3eaa678c][Understanding doesn't have to come from memory]].
