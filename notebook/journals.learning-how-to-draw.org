@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to draw
 #+date: 2022-07-21 18:10:57 +08:00
-#+date_modified: 2022-07-28 22:56:40 +08:00
+#+date_modified: 2022-07-29 23:45:29 +08:00
 #+language: en
 
 
@@ -163,3 +163,41 @@ Both are done with a purpose which will be explained tomorrow.
 
 Unfortunately, I did not fulfilled my 2 pages of sketchbook for this day since I started this in the evening.
 It should be done at roam:2022-07-30.
+
+
+* 2022-07-29
+
+Hey, look!
+I made a sketch of the parrot though with a single reference image complete with shading.
+I don't know how to draw from imagination so this is a [[id:9b669fd4-e04e-43dd-a61e-81dea5ec0764][Deliberate practice]] to getting used to sketching in general.
+Not exactly good shading as I expected such [[https://www.artquid.com/artwork/35462/13992/u-lookin-at-me.html][this bird sketch]] or [[https://i.pinimg.com/600x/3d/ea/9e/3dea9ec9f0cb5ffe6e2302aae3aed09e.jpg][this sketch of a bluejay]] but it is surprisingly good for a first-time sketch.
+
+Next time, it'll be a parrot but with multiple references.
+
+Total time spent: 4 pomodoro sessions (~2 hours) which is not bad.
+
+The sketch is simpler than I expected but the thing that took me the most is making sure it is accurate.
+How its tail look like, what about its feet, etc.
+
+There's a lot of things I would like improve here.
+
+- The texture look flat.
+  I didn't made it look feathery and instead made it look like a smooth-looking parrot (which sounds good but not the intention I'm trying to make).
+
+- Picking values is harder than I thought.
+  While it did come out as recognizable, some of the values I've picked are not really that great in the bigger picture.
+  Thankfully, this is solvable by adjusting your sketch.
+
+- Make it realistic like the previously linked sketches.
+  I would really like to make it look realistic like Ali Bahabadi's work or any scientific illustrations, really.
+
+Down the line, I've discovered online encyclopedias such as [[https://eol.org/][Encyclopedia of Life]], [[https://species.wikimedia.org/wiki/Main_Page][Wikispecies]], and [[https://www.discoverlife.org/][Discover life project]].
+These are some nice references for future animal sketches.
+
+I've also watched some speedpaints of animal portraits using Krita from Ali Bahabadi.
+Now, I'm tempted to try out digital painting early on.
+Unfortunately, I don't have my digital tablet with me so ehhh...
+
+I've also looking more into learning how to draw from imagination.
+There's seem to be [[https://www.reddit.com/r/learnart/comments/46euf3/what_are_the_best_resources_for_learning_how_to/][a thread with a nicely summarized discussion on this exact topic]] so I'll be using those starting with [cite:@loomisFunPencilHow2013].
+Basically, mainly focus on [[roam:Constructive drawing]] and [[roam:Drawing perspective]].
