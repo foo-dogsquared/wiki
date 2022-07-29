@@ -13,7 +13,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - name: Setup for static site generation
         run: |
-          nix shell nixpkgs#nodejs
+          nix-shell -p nodejs
           mv notebook/ site/public/
           cd site
           npm install
