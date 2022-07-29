@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><title>systemd unit templates</title><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script type="text/x-mathjax-config">
+                MathJax = {
+                    tex: {
+                        inlineMath: [ [&#x27;$&#x27;,&#x27;$&#x27;], [&#x27;\(&#x27;,&#x27;\)&#x27;] ],
+                        displayMath: [ [&#x27;$$&#x27;,&#x27;$$&#x27;], [&#x27;[&#x27;,&#x27;]&#x27;] ]
+                    },
+                    options = {
+                        processHtmlClass = &quot;math&quot;
+                    }
+                }
+                </script><meta name="next-head-count" content="6"/><link rel="preload" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" as="style"/><link rel="stylesheet" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" as="script"/></head><body><div id="__next"><main><h1>systemd unit templates</h1><section class="post-metadata"><span>Date: <!-- -->2021-08-07 19:55:05 +08:00</span><span>Date modified: <!-- -->2021-08-07 19:55:26 +08:00</span></section><nav class="toc"><ol class="toc-level toc-level-1"></ol></nav><p>You can create unit templates which is useful for simple services that only requires an argument.
+Rather than creating individual simple service files, let systemd handle it.
+</p><p>For example, you may want to spawn a service for Borgmatic with multiple repos.
+If you don&#x27;t know templates, the dumb way to serve multiple repos is to create individual unit files for each.
+If you want to schedule them, you also have to create a timer unit for each.
+</p><p>The more efficient solution is to use templates.
+To make a unit template, there are only a handful of requirements:
+</p><ul><li><p>Addition of <code class="inline-verbatim">%i</code> to represent the template value.
+</p></li><li><p>The unit file name has to end with <code class="inline-verbatim">@</code> (e.g., <code class="inline-verbatim">unit-name@.service</code>, <code class="inline-verbatim">unit-name@.timer</code>).
+</p></li></ul><p>This could be compressed into a template for a service unit.
+The following code shows how to create one.
+</p><pre class="src-block"><code class="language-ini">[Unit]
+Description=Periodic safety backup for %i
+Documentation=man:borg(1) https://www.borgbackup.org/
+
+[Service]
+Type=simple
+ExecStart=borgmatic --config %i --verbose
+
+[Install]
+WantedBy=default.target
+</code></pre><p>To use the service, you have to give it a value — e.g., <code class="inline-code">systemctl --user start borg-backup@test.yaml.service</code>.
+</p><p>That&#x27;s all good but what about scheduling them?
+What if you want to create an archive every hour starting at 08:00?
+You can just create a templated timer unit.
+</p><pre class="src-block"><code class="language-ini">[Unit]
+Description=Periodic safety backup for %i
+Documentation=man:borg(1) https://www.borgbackup.org/
+
+[Timer]
+Unit=borg-backup@%i.service
+Calendar=08/1:00:00
+Persistent=true
+
+[Install]
+WantedBy=default.target
+</code></pre><section><h2>Backlinks</h2><ul><li><a href="/wiki/linux.systemd">systemd</a></li></ul></section></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"metadata":{"date":"2021-08-07 19:55:05 +08:00","date_modified":"2021-08-07 19:55:26 +08:00","language":"en","source":""},"title":"systemd unit templates","hast":{"type":"root","children":[{"type":"element","tagName":"nav","properties":{"className":"toc"},"children":[{"type":"element","tagName":"ol","properties":{"className":"toc-level toc-level-1"},"children":[]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"You can create unit templates which is useful for simple services that only requires an argument.\nRather than creating individual simple service files, let systemd handle it.\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"For example, you may want to spawn a service for Borgmatic with multiple repos.\nIf you don't know templates, the dumb way to serve multiple repos is to create individual unit files for each.\nIf you want to schedule them, you also have to create a timer unit for each.\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"The more efficient solution is to use templates.\nTo make a unit template, there are only a handful of requirements:\n"}]},{"type":"element","tagName":"ul","properties":{},"children":[{"type":"element","tagName":"li","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Addition of "},{"type":"element","tagName":"code","properties":{"className":["inline-verbatim"]},"children":[{"type":"text","value":"%i"}]},{"type":"text","value":" to represent the template value.\n"}]}]},{"type":"element","tagName":"li","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"The unit file name has to end with "},{"type":"element","tagName":"code","properties":{"className":["inline-verbatim"]},"children":[{"type":"text","value":"@"}]},{"type":"text","value":" (e.g., "},{"type":"element","tagName":"code","properties":{"className":["inline-verbatim"]},"children":[{"type":"text","value":"unit-name@.service"}]},{"type":"text","value":", "},{"type":"element","tagName":"code","properties":{"className":["inline-verbatim"]},"children":[{"type":"text","value":"unit-name@.timer"}]},{"type":"text","value":").\n"}]}]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"This could be compressed into a template for a service unit.\nThe following code shows how to create one.\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-ini"]},"children":[{"type":"text","value":"[Unit]\nDescription=Periodic safety backup for %i\nDocumentation=man:borg(1) https://www.borgbackup.org/\n\n[Service]\nType=simple\nExecStart=borgmatic --config %i --verbose\n\n[Install]\nWantedBy=default.target\n"}]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"To use the service, you have to give it a value — e.g., "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"systemctl --user start borg-backup@test.yaml.service"}]},{"type":"text","value":".\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"That's all good but what about scheduling them?\nWhat if you want to create an archive every hour starting at 08:00?\nYou can just create a templated timer unit.\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-ini"]},"children":[{"type":"text","value":"[Unit]\nDescription=Periodic safety backup for %i\nDocumentation=man:borg(1) https://www.borgbackup.org/\n\n[Timer]\nUnit=borg-backup@%i.service\nCalendar=08/1:00:00\nPersistent=true\n\n[Install]\nWantedBy=default.target\n"}]}]}]},"backlinks":[{"path":"/linux.systemd","title":"systemd"}]},"__N_SSG":true},"page":"/[[...slug]]","query":{"slug":["linux.systemd.unit-templates"]},"buildId":"Ie9t5zutrXP6Of75Cb5xF","assetPrefix":"/wiki","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="/wiki/_next/static/chunks/polyfills-99d808df29361cf7ffb1.js"></script><script src="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" async=""></script><script src="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" async=""></script><script src="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" async=""></script><script src="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" async=""></script><script src="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" async=""></script><script src="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_buildManifest.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_ssgManifest.js" async=""></script></body></html>

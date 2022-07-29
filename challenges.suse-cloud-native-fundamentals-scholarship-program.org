@@ -1,0 +1,910 @@
+:PROPERTIES:
+:ID:       0617c544-0d04-4a55-9d70-b8b4998fad92
+:END:
+#+title: Solutions to SUSE Cloud native fundamentals scholarship exercises
+#+date: "2021-06-08 23:23:35 +08:00"
+#+date_modified: "2021-07-07 16:33:05 +08:00"
+#+language: en
+
+
+I'll attempt to archive my answers to exercise here in one Org mode document.
+Let's see the reproducibility capability of this thing.
+
+For future references, the lessons have their repo.
+
+- [[https://github.com/udacity/nd064_course_1][Lesson 1 exercises]]
+
+
+
+
+* Note on my personal setup
+
+For this program, I'm using Podman instead of Docker.
+There are subtle differences when using with Podman — the biggest difference being it is not attached to the Docker registry by default.
+
+| Docker                 | Podman                           |
+|------------------------+----------------------------------|
+| =docker pull alpine=   | =podman pull docker.io/alpine=   |
+| =docker search alpine= | =podman search docker.io/alpine= |
+
+Since Podman is not attached to the Docker registry by default, you also have to specify this in Dockerfiles.
+
+#+begin_src docker
+FROM docker.io/alpine
+#+end_src
+
+You can make Podman search through DockerHub by setting it as one of the fallback registries.
+Just set =unqualified-search-registries= from your container configuration (see =containers-registries.conf.5= manual page for more details).
+
+#+begin_src toml
+unqualified-search-registries = ['docker.io']
+#+end_src
+
+Don't forget to login to DockerHub (e.g., ~podman login docker.io~).
+
+
+
+
+* Trade-offs for monoliths and microservices
+
+From the early stages of application development, it is fundamental to understand the requirements and available resources.
+Overall, these will contour the architecture decisions.
+
+Imagine this scenario: you are part of the team that needs to outline the structure of a centralized system to book flight tickets for different airlines.
+At this stage, the clients require the front-end(UI), payment, and customer functionalities to be designed.
+Also, these are the individual requirements of each airline:
+
+- Airline A - payments should be allowed only through PayPal
+- Airline B - payments should be disabled (bookings will be exclusively in person or via telephone)
+- Airline C - payments should be allowed to use PayPal and debit cards
+
+Using the above requirements, outline the application architecture.
+Also, elaborate your reasoning on choosing a microservice or monolith based approach.
+
+
+** Solution
+
+Considering that the airlines has an overlap of use cases particularly with Airline A and C both allowing Paypal, we're leaning into considering a microservice architecture.
+Each component in the service can then be configured individually by the development team of each airline.
+We could also take in the factor if one of the airline changes its requirements, we would only have to inspect one component.
+Having an monolith would be nice that all of the requirements of the airlines is wrapped in one package but if one team would have to maintain it, it would require them to go through the entire stack of each airline.
+In this case, they would have to do it three times.
+
+In my opinion, microservices would be a better choice.
+
+Here's the summarized outline of the application design we're going to develop.
+
+- Each component of the application would have to be stored with their own repository.
+
+- The front-end can be developed in parallel as we prioritize the payment system.
+  We can then improve it as we develop the other and ideally make it easy for the clients to modify it for their own needs.
+
+- The payment system can then be configured to integrate with different services or be disabled entirely.
+
+- Set up individual pipelines for each component as we can test them individually at different pace.
+
+
+
+
+* Endpoints for an application status
+
+This exercise can be located in the Lesson 1 exercise repo at =exercises/python-helloworld=.
+
+Extend the Python Flask application with /status and /metrics endpoints, considering the following requirements:
+
+-  Both endpoints should return an HTTP 200 status code
+-  Both endpoints should return a JSON response e.g. ={"user": "admin"}=. (Note: the JSON response can be hardcoded at this stage)
+-  The =/status= endpoint should return a response similar to this example: =result: OK - healthy=
+-  The =/metrics= endpoint should return a response similar to this example: =data: {UserCount: 140, UserCountActive: 23}=
+
+
+** Solution
+
+For the prerequisites, you can just install Flask and you're mostly done.
+For future references, here are the version of the tools I've used at the time.
+
+#+begin_src bash  :cache yes
+nix-shell -p 'python3Packages.flask' entr --run 'flask --version'
+#+end_src
+
+#+results[4674aa09a83cfbedff7e8991ba81b077dd0483d3]:
+: Python 3.8.9
+: Flask 1.1.2
+: Werkzeug 1.0.1
+
+As for the solution:
+
+#+begin_src python  :tangle (my/concat-assets-folder "python-helloworld-app.py")
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+@app.route("/status")
+def health_check():
+    return { "result": "OK - healthy" }
+
+@app.route("/metrics")
+def metrics():
+    return { "data": { "UserCount": 140, "UserCountActive": 23} }
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
+#+end_src
+
+
+** Findings after solution
+
+Comparing my solution from the solution shown in the video, I found out that Flask converts Python dictionaries into JSON.
+We're still good on that note.
+
+
+
+
+
+
+* Application logging
+
+Logging is a core factor in increasing the visibility and transparency of an application.
+When in troubleshooting or debugging scenarios, it is paramount to pin-point the functionality that impacted the service.
+This exercise will focus on bringing the logging capabilities to an application.
+
+At this stage, you have extended the Hello World application to handle different endpoints.
+Once an endpoint is reached, a log line should be recorded showcasing this operation.
+In this exercise, you need to further develop the Hello World application collect logs, with the following requirements:
+
+- A log line should be recorded the timestamp and the requested endpoint e.g. ="{{TIMESTAMP}}, {{ ENDPOINT_NAME}} endpoint was reached"=.
+
+- The logs should be stored in a file with the name =app.log=.
+  Refer to the logging Python module for more details.
+
+- Enable the collection of Python logs at the DEBUG level.
+  Refer to the logging Python module for more details.
+
+
+** Solution
+
+Continuing from [[Endpoints for an application status]], here is the resulting Python code.
+
+#+begin_src python  :tangle (my/concat-assets-folder "application-logging.py")
+import logging
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    logging.info("/ endpoint was reached")
+    return "Hello World!"
+
+@app.route("/status")
+def health_check():
+    logging.info("/status endpoint was reached")
+    return { "result": "OK - healthy" }
+
+@app.route("/metrics")
+def metrics():
+    logging.info("/metrics endpoint was reached")
+    return { "data": { "UserCount": 140, "UserCountActive": 23} }
+
+if __name__ == "__main__":
+    logging.basicConfig(format="%(asctime)s, %(message)s", level=logging.DEBUG, filename="app.log")
+    app.run(host='0.0.0.0')
+#+end_src
+
+
+
+
+* Docker for application packaging
+
+Create the Docker image for the Go web application and push it to DockerHub, considering the following requirements:
+
+Dockerfile:
+
+- use the =golang:alpine= base image
+- set the working directory to =/go/src/app=
+- make sure to copy all the files from the current directory to the container working directory (e.g. =/go/src/app=)
+- to build the application, use =go build -o helloworld= command, where =-o helloworld= will create the binary of the application with the name =helloworld=
+- the application should be accessible on port =6111=
+- and lastly, the command to start the container is to invoke the binary created earlier, which is =./helloworld=
+
+Docker image:
+
+- should have the name =go-helloworld=
+- should have a valid tag, and a version with a major, minor, and patch included
+- should be available in DockerHub, under your username e.g. =pixelpotato/go-helloworld=
+
+Docker container:
+
+- should be running on your local machine, by referencing the image from the DockerHub with a valid tag e.g. =pixelpotato/go-helloworld:v5.12.3=
+
+
+** First working solution
+
+This should be simple enough as we can see from the file structure.
+
+#+begin_src
+go-helloworld
+├── main.go
+└── README.md
+#+end_src
+
+As for the Dockerfile, I've made the following:
+
+#+begin_src docker
+FROM docker.io/golang:alpine
+
+COPY . /go/src/app
+WORKDIR /go/src/app
+RUN go build -o helloworld main.go
+CMD ["./helloworld"]
+#+end_src
+
+As for the requirements of the images and running the containerized app, we'll summarize it with the following Bash script.
+
+#+begin_src bash  :tangle (my/concat-assets-folder "docker-packaging.sh")
+OWNER="foodogsquared"
+IMG="go-helloworld"
+VERSION="1.0.0"
+REMOTE_IMG="${OWNER}/${IMG}:v${VERSION}"
+
+# Build the image with the tag already in place.
+podman build --tag "$IMG" .
+
+# Run the packaged app.
+podman run -d -p 6111:6111 "$IMG"
+
+# Verify it's running.
+podman ps
+
+# Create another image to push it into the Docker registry with the proper naming.
+podman tag "$IMG" "$REMOTE_IMG"
+
+# Push the image to the Docker registry.
+podman push "$REMOTE_IMG"
+#+end_src
+
+
+** Findings after solution
+
+I guess my solution is close enough, I didn't realize the application should be configured its port to be exposed already in the Dockerfile and not when running the containerized app.
+Whoops!
+
+Apparently, there is the [[https://docs.docker.com/engine/reference/builder/#expose][=EXPOSE=]] instruction, just requiring a port number.
+I also tested the Dockerfile from the solution and it still gave me an error from build time.
+
+I also didn't realize the solution is pretty much how the instructions laid it out.
+At the end, it should look like the following code.
+
+#+begin_src docker
+FROM docker.io/golang:alpine
+
+WORKDIR /go/src/app
+ADD . .
+
+RUN go build -o helloworld main.go
+EXPOSE 6111
+CMD ["./helloworld"]
+#+end_src
+
+
+
+
+* Deploy your first Kubernetes cluster
+
+Now you should have a Kubernetes cluster up and running.
+Examine the cluster and identity of the following details.
+
+From the kubeconfig, identify:
+
+- the IP and port of the API server
+- authentication mechanism
+
+From the cluster using kubectl commands to identify:
+
+- endpoints of the control plane and add-ons
+- amount of nodes
+- node internal IP
+- the pod CIDR allocate to the node
+
+
+** Solution
+
+From my setup with the given Vagrantfile from the lesson repo — i.e., after installing k3s in the virtual machine — you can inspect the kubeconfig located at =/etc/rancher/k3s/k3s.yaml=.
+
+The IP and the port of the API server is visible from there.
+In my case, it is 127.0.0.1 at port 6443.
+
+As for the authentication mechanism, I'm not sure.
+Both the cluster and the user have an attached certificate data.
+It seems to be using matching certificate data from the user and the cluster.
+
+As for getting cluster-related information.
+
+- Getting the endpoints of the control plane and the add-ons through ~kubectl cluster-info~.
+- One way of getting the amount of nodes is through ~kubectl get nodes~ where it will print the nodes and their information one line at a time.
+- For the node's internal IP and the pod CIDR, both of them can be extracted with ~kubectl describe node ${NODE_NAME}~.
+
+
+** Findings after solution
+
+I mostly got it right.
+It turns out there are [[https://kubernetes.io/docs/reference/access-authn-authz/authentication/][different methods for authentication]].
+While the solution gave it as user and passwords, the kubeconfig I have seem to be using keys and certificates. [fn:: I'm using the default installation from k3s for future references.]
+
+Also, you can get the configuration of the cluster with ~kubectl config view~.
+Pretty handy.
+
+
+
+
+* Kubernetes resources
+
+Now you have learned many Kubernetes recourses, in this exercise, you will deploy the following resources using the kubectl command.
+
+- a namespace
+  + name: =demo=
+  + label: =tier: test=
+- a deployment:
+  + image: =nginx:alpine=
+  + name: =nginx-apline=
+  + namespace: =demo=
+  + replicas: =3=
+  + labels: =app: nginx, tag: alpine=
+- a service:
+  + expose the above deployment on port 8111
+  + namespace: =demo=
+- a configmap:
+  + name: =nginx-version=
+  + containing key-value pair: =version=alpine=
+  + namespace: =demo=
+
+
+** Solution
+
+This is practical test but it can summarized with a shell script.
+
+#+begin_src bash  :eval no  :tangle (my/concat-assets-folder "kubernetes-resources.sh")  :shebang "#!/usr/bin/env bash"
+# Create the namespace with the specified label.
+kubectl create namespaces demo
+kubectl label namespaces demo tier=test
+
+# Create the specified deployment.
+kubectl create deployment nginx-alpine --image=nginx:alpine --replicas=3 --namespace=demo
+kubectl label deployment nginx-alpine app=nginx tag=alpine --namespace=demo
+
+# Expose the deployment as a service.
+kubectl expose deployment nginx-alpine --namespace=demo --port=8111
+
+# Create the config map.
+kubectl create configmaps nginx-version --namespace=demo --from-literal=version=alpine
+#+end_src
+
+
+
+
+* Declarative Kubernetes manifests
+
+Kubernetes is widely known for its imperative and declarative management techniques.
+In the previous exercise, you have deployed the following resources using the imperative approach.
+Now deploy them using the declarative approach.
+
+- a namespace
+  + name: demo
+  + label: tier: test
+- a deployment:
+  + image: nginx:alpine
+  + name:nginx-apline
+  + namespace: demo
+  + replicas: 3
+  + labels: app: nginx, tag: alpine
+- a service:
+  + expose the above deployment on port 8111
+  + namespace: demo
+- a configmap:
+  + name: nginx-version
+  + containing key-value pair: version=alpine
+  + namespace: demo
+
+
+** Solution
+
+Since they ask for 4 resources, we need 4 manifests.
+We'll create four YAML manifests for this exercise.
+
+The following manifests are created with the option to print the resources in YAML format with some modifications.
+
+Here's one for the namespace.
+The command used to make the template is ~kubectl create namespace demo --dry-run=client --output=yaml~.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "manifests/namespace.yaml")
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: demo
+  labels:
+    tier: test
+spec: {}
+status: {}
+#+end_src
+
+The manifest for the deployment.
+The command used to create the starting template is ~kubectl create deployment nginx-alpine --namespace=demo --replicas=3 --image=nginx:alpine --dry-run=client --output=yaml~.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "manifests/deployment.yaml")
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx
+    tag: alpine
+  name: nginx-alpine
+  namespace: demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-alpine
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-alpine
+    spec:
+      containers:
+      - image: nginx:alpine
+        name: nginx
+        resources: {}
+status: {}
+#+end_src
+
+The service manifest should be created after the deployment manifest is applied (i.e., ~kubectl apply -f deployment.yaml~).
+It is created with ~kubectl expose deploy nginx-alpine --port=8111 --dry-run=client --output=yaml --namespace=demo~.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "manifests/service.yaml")
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx
+    tag: alpine
+  name: nginx-alpine
+  namespace: demo
+spec:
+  ports:
+  - port: 8111
+    protocol: TCP
+    targetPort: 8111
+  selector:
+    app: nginx-alpine
+status:
+  loadBalancer: {}
+#+end_src
+
+The resulting YAML output is from running the command (i.e., ~kubectl create configmap nginx-version --from-literal=version=alpine --dry-run=client --output=yaml --namespace=demo~).
+No cleaning up is required.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "manifests/configmap.yaml")
+apiVersion: v1
+data:
+  version: alpine
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: nginx-version
+  namespace: demo
+#+end_src
+
+
+** Findings after solution
+
+Aside from the mostly correct answers, I also found out ~kubectl get all -n demo~ to get all of the resources in the specified namespace.
+Pretty handy for inspecting application-specific resources.
+
+
+
+
+* Continuous application deployment
+
+Create a new GitHub Actions in the =/.github/workflows/docker-build.yml= that will build and push the Docker image for a Python web application, with the following requirements:
+
+- Image name: =python-helloworld=
+- Tag: =latest=
+- Platforms: =platforms: linux/amd64,linux/arm64=
+
+GitHub marketplace has a rich suite of upstream actions that can be easily integrated within a repository.
+One of the upstream action is [[https://github.com/marketplace/actions/build-and-push-docker-images][Build and Push Docker images]], which can be used to implement the required CI task.
+
+The above GitHub action uses DockerHub Tokens and encrypted GitHub secrets to login into DockerHub and to push new images.
+To set up these credentials refer to the following resources:
+
+- Create [[https://www.docker.com/blog/docker-hub-new-personal-access-tokens/][DockerHub Tokens]]
+- Create [[https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets][GitHub encrypted secrets]]
+
+
+** Solution
+
+After creating a DockerHub access token (that serves as an alternative to passwords) and creating a GitHub encrypted secret, the workflow should now work.
+
+Here's the resulting GitHub Actions workflow file:
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "github-docker-workflow.yaml")
+name: Docker build image
+on: [push]
+jobs:
+    docker:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Set up QEMU
+              uses: docker/setup-qemu-action@v1
+            - name: Setup Docker Buildx
+              uses: docker/setup-buildx-action@v1
+            - name: Login to DockerHub
+              uses: docker/login-action@v1
+              with:
+                  username: ${{ secrets.DOCKERHUB_USERNAME }}
+                  password: ${{ secrets.DOCKERHUB_TOKEN }}
+            - name: Build and push
+              id: docker_build
+              uses: docker/build-push-action@v2
+              with:
+                  push: true
+                  tags: ${{ secrets.DOCKERHUB_USERNAME }}/python-helloworld:latest
+                  platforms: linux/amd64,linux/arm64
+            - name: Image digest
+              run: echo ${{ steps.docker_build.outputs.digest }}
+#+end_src
+
+This is shamelessly ripped off from the sample from the [[https://github.com/marketplace/actions/build-and-push-docker-images][GitHub Actions page]].
+I realized it's basically the answer for this exercise.
+Embarrassing that I spent an hour for this.
+
+
+
+
+* The CD fundamentals
+
+Continuous Delivery (CD) is the ability to get code changes reliably to production environments.
+This practice should be automated and should enable developers to provide value to consumers efficiently.
+
+In this exercise, you will use ArgoCD to automate the delivery of an application to a Kubernetes cluster.
+
+
+** Solution
+
+The manifest is really the same as the example manifest from the walkthrough except with a different path pointing to the required manifests.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "argocd-nginx-alpine.yaml")
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ngnix-alpine
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: exercises/manifests
+    repoURL: https://github.com/udacity/nd064_course_1
+    targetRevision: HEAD
+  syncPolicy: {}
+#+end_src
+
+Then integrate it into the cluster with the following command.
+
+#+begin_src shell  :eval no
+kubectl apply -f argocd-nginx-alpine.yaml
+#+end_src
+
+You should then see the project on the ArgoCD application list where it requires an initial sync.
+
+For assurance, you can check to see if the resources are deployed.
+Continuing from [[Declarative Kubernetes manifests]], the resources are mostly in the =demo= namespace.
+
+#+begin_src shell  :eval no
+kubectl get pod -n demo
+kubectl get deploy -n demo
+kubectl get rs -n demo
+#+end_src
+
+You should see them up and running.
+
+
+
+
+* Configuration managers
+
+Using the manifests provided in the course repository, create a helm chart (Chart.yaml, templates, values.yaml) that will template the following parameters:
+
+- namespace name
+- replica count
+- image:
+  + name
+  + tag
+  + pull policy
+- resources
+  + requests for CPU and memory
+- service
+  + port
+  + type (e.g. ClusterIP)
+- configmap data (e.g. the key-value pair)
+
+The chart details should be as following:
+
+- name: nginx-deployment
+- version: 1.0.0
+- keywords: nginx
+
+Once the Helm chart is available make sure that a default values.yaml file is available. This values file will be used as a default input file for the Helm chart. The values.yaml file should have the following specification:
+
+- values.yaml
+  + namespace name: demo
+  + replica count: 3
+  + image repository: nginx
+  + image tag: alpine
+  + image pull policy: IfNotPresent
+  + resources: CPU 50m and memory 256Mi
+  + service type: ClusterIP
+  + service port: 8111
+  + configmap data: "version: alpine"
+
+Next, create 2 values files with the following specifications:
+
+- values-staging.yaml
+  + namespace name: staging
+  + replica count: 1
+  + image repository: nginx
+  + image tag: 1.18.0
+  + resources: CPU 50m and memory 128Mi
+  + configmap data: "version: 1.18.0"
+
+- values-prod.yaml
+  + namespace name: prod
+  + replica count: 2
+  + image repository: nginx
+  + image tag: 1.17.0
+  + resources: CPU 70m and memory 256Mi
+  + service port: 80
+  + configmap data: "version: 1.17.0"
+
+Finally, using the values files above (values-prod, values-staging), create 2 ArgoCD application, nginx-staging and nginx-prod respectively. These should deploy the nginx Helm Chart referencing each input values files.
+
+
+** Solution
+
+With the given manifests, we'll have to create a Helm package (or a Chart).
+Here's what the file structure of the chart.
+
+#+begin_src
+helm-nginx
+├── templates
+│   ├── configmap.yaml
+│   ├── deployment.yaml
+│   ├── namespace.yaml
+│   └── service.yaml
+├── Chart.yaml
+├── values.yaml
+├── values-prod.yaml
+└── values-staging.yaml
+#+end_src
+
+The chart definition is the following file.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "Chart.yaml")
+apiVersion: v1
+name: nginx-deployment
+version: 1.0.0
+keywords:
+- nginx
+#+end_src
+
+With the chart definition, we move on to the values to be used in the templates.
+It's up to you how to structure the data but here's my solution on it.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "values.yaml")
+# namespace refers to the Kubernetes namespace resource.
+namespace:
+  name: demo
+
+# replicaCount is the number of instances to run in a replica set.
+replicaCount: 3
+
+# image contains the detail of the container image to be used
+image:
+  repository: nginx
+  tag: alpine
+  pullPolicy: IfNotPresent
+
+# resources dictate the amount to spend
+resources:
+  cpu: 50m
+  memory: 256Mi
+
+# service configures the Kubernetes service resource
+service:
+  type: ClusterIP
+  port: 8111
+
+# configmap configures the Kubernetes configmap resource
+configmap:
+  data: "version: alpine"
+#+end_src
+
+As for different versions of the values such as...
+
+...for development version (=values-staging.yaml=)...
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "values-staging.yaml")
+namespace:
+  name: staging
+replicaCount: 1
+image:
+  repository: nginx
+  tag: 1.18.0
+resources:
+  cpu: 50m
+  memory: 128Mi
+configmap:
+  data: "version: 1.18.0"
+#+end_src
+
+...and for production (=values-prod.yaml=).
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "values-prod.yaml")
+namespace:
+  name: prod
+replicaCount: 2
+image:
+  repository: nginx
+  tag: 1.17.0
+resources:
+  cpu: 70m
+  memory: 256Mi
+configmap:
+  data: "version: 1.17.0"
+#+end_src
+
+With the templates, it is already given to us from the course exercise repo.
+We just have to parameterize some of the values from the value file.
+
+Here's one for the configmap...
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "templates" "namespace.yaml")
+apiVersion: v1
+data:
+  {{ .Values.configmap.data }}
+kind: ConfigMap
+metadata:
+  name: nginx-version
+  namespace: {{ .Values.namespace.name }}
+#+end_src
+
+..., deployment...
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "templates" "deployment.yaml")
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+    tag: alpine
+  name: nginx-alpine
+  namespace: {{ .Values.namespace.name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: nginx
+      tag: alpine
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tag: alpine
+    spec:
+      containers:
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: nginx-alpine
+#+end_src
+
+..., namespace...
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "templates" "namespace.yaml")
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    tier: test
+  name: {{ .Values.namespace.name }}
+#+end_src
+
+..., and service.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx" "templates" "service.yaml")
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nginx
+    tag: alpine
+  name: nginx-alpine
+  namespace: {{ .Values.namespace.name }}
+spec:
+  ports:
+  - port: {{ .Values.service.port }}
+    protocol: TCP
+    targetPort: {{ .Values.service.port }}
+  selector:
+    app: nginx
+    tag: alpine
+  type: {{ .Values.service.type }}
+#+end_src
+
+To deploy it in ArgoCD, we'll just have to specify it in the ArgoCD manifest.
+Since ArgoCD is heavily a GitOps tool, we have to put the files in a Git repo.
+For now, let's assume the course repo as ours. [fn:: Be sure to be honest to compare with the solutions from the repo.]
+Just change the Git repo URL and the path if you have your own version.
+
+Additionally, the exercise requires to deploy two ArgoCD applications: one for staging (i.e., =nginx-staging=) and production version (i.e., =nginx-prod=) of the app.
+
+Here's one for the production version...
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx-prod.yaml")
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-prod
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      valueFiles:
+        - values-prod.yaml
+    path: structured/assets/challenges.suse-cloud-native-fundamentals-scholarship-program/helm-nginx
+    repoURL: https://github.com/foo-dogsquared/wiki
+    targetRevision: HEAD
+  syncPolicy: {}
+#+end_src
+
+...and the development version.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "helm-nginx-staging.yaml")
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-staging
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      valueFiles:
+        - values-staging.yaml
+    path: structured/assets/challenges.suse-cloud-native-fundamentals-scholarship-program/helm-nginx
+    repoURL: https://github.com/foo-dogsquared/wiki
+    targetRevision: HEAD
+  syncPolicy: {}
+#+end_src

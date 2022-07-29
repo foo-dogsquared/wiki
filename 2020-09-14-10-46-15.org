@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       fe9e21bc-3b38-4d0f-a785-253248a38ed7
+:END:
+#+title: Reproducible builds
+#+date: "2020-09-14 10:46:15 +08:00"
+#+date_modified: "2021-05-04 20:52:15 +08:00"
+#+language: en
+
+
+- [[https://reproducible-builds.org/][Reproducible builds]]
+- [[https://static.conf.archlinux.org/archconf2019/recordings/][Reproducible builds in Arch Linux from Arch Conf 2019]]
+- [[id:6eeb7a24-b662-46d6-9ece-00a5028ff4d8][Reproducible research]] usually found on scientific workflows
+- Docker containers
+- Nix and Guix

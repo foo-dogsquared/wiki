@@ -1,0 +1,75 @@
+#+title: CCMixter web API
+#+date: "2021-05-09 17:23:51 +08:00"
+#+date_modified: "2021-05-09 17:24:13 +08:00"
+#+language: en
+
+
+Apparently, the website has an [[http://ccmixter.org/query-api][API]] that can be accessed with HTTP.
+It can also return the values in JSON.
+
+#+begin_src sh  :results output
+curl -L "http://ccmixter.org/api/query?tags=chill,instrumental&sort=name&user=Mseq&format=json&limit=1" | jq '.' -r
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[
+  {
+    "upload_id": 53960,
+    "upload_name": "Rooster",
+    "upload_extra": {
+      "usertags": "dnb,instrumental,male_vocals,electronic,drums,bass,synthesizer,experimental,chill,jazz,downtempo,trip_hop",
+      "ccud": "media,remix,bpm_085_090",
+      "systags": "non_commercial,audio,mp3,44k,stereo,CBR",
+      "featuring": "Dj Vadim",
+      "relative_dir": "content/Mseq",
+      "bpm": 85,
+      "nsfw": false,
+      "num_reviews": 1,
+      "last_op": "replace"
+    },
+    "user_name": "Mseq",
+    "upload_tags": ",media,remix,bpm_085_090,alternate,non_commercial,audio,mp3,44k,stereo,CBR,dnb,instrumental,male_vocals,electronic,drums,bass,synthesizer,experimental,chill,jazz,downtempo,trip_hop,",
+    "upload_num_scores": 7,
+    "file_page_url": "http://ccmixter.org/files/Mseq/53960",
+    "user_real_name": "logos",
+    "artist_page_url": "http://ccmixter.org/people/Mseq",
+    "license_logo_url": "http://ccmixter.org/ccskins/shared/images/lics/small-by-nc-3.png",
+    "license_url": "http://creativecommons.org/licenses/by-nc/3.0/",
+    "license_name": "Attribution Noncommercial  (3.0)",
+    "upload_date_format": "Thu, Jun 2, 2016 @ 12:59 PM",
+    "files": [
+      {
+        "file_id": 85598,
+        "file_upload": 53960,
+        "file_name": "Mseq_-_Rooster.mp3",
+        "file_nicname": "mp3",
+        "file_format_info": {
+          "media-type": "audio",
+          "format-name": "audio-mp3-mp3",
+          "default-ext": "mp3",
+          "mime_type": "audio/mpeg",
+          "sr": "44k",
+          "ch": "stereo",
+          "ps": "2:55",
+          "br": "CBR"
+        },
+        "file_extra": {
+          "sha1": "LEYBOKEY63NRX5VAGAHKB66WKJGANSE4",
+          "ccud": "alternate",
+          "type": "alternate"
+        },
+        "file_filesize": " (6.70MB)",
+        "file_order": 0,
+        "file_is_remote": 0,
+        "file_num_download": 0,
+        "download_url": "http://ccmixter.org/content/Mseq/Mseq_-_Rooster.mp3",
+        "local_path": "/var/www/ccmixter/content/Mseq/Mseq_-_Rooster.mp3",
+        "file_rawsize": 7020712
+      }
+    ],
+    "upload_description_plain": "Thanks to Dj Vadim!",
+    "upload_description_html": "Thanks to Dj Vadim!"
+  }
+]
+#+end_example

@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       bdcff35e-15e1-4539-9c4e-5fdd5b978c26
+:END:
+#+title: Neovim Lua modules
+#+date: 2022-04-20 18:36:23 +08:00
+#+date_modified: 2022-04-20 18:39:40 +08:00
+#+language: en
+
+
+- Neovim will load the requires files from its runtime paths;
+  see =runtimepath= from the [[id:0a0fe63e-dcf3-4928-9e82-5513784c1244][Neovim help system]]
+- built on top of the already existing [[id:ffb8b08a-ca0a-48a4-bebc-d2bf11aa5ccf][Lua modules]] system
+- while searching for the runtime paths, Neovim will search for certain folders
+  - =plugin/= will load all of the Lua files that are placed in that subdirectory
+  - =lua/= also contains Lua files but does not automatically load until some other module will call ~require~ to that module
+  - =init.lua= is basically the =index.html= for HTML files, =default.nix= for [[id:a57e63a7-6daa-4639-910d-c6648df156a3][Nix language]], or =mod.rs= for [[id:d7d7d8f0-adf9-461d-ace5-c8624dab1083][Rust language]]
+- in module names that are ~require~'d, =.= is treated as a separator and representing as a directory in the file tree;
+  e.g., when running ~require("custom.plugins")~, =custom.plugins= should have a module at =$RUNTIMEPATH/lua/custom/plugins/init.lua=
+- at some point, Neovim can make use of more Lua modules with [[https://luarocks.org/][Luarocks]]

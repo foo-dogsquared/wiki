@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       bd3cb898-d15a-4aab-837e-e256437f4953
+:END:
+#+title: Oil processes
+#+date: 2021-08-08 16:02:37 +08:00
+#+date_modified: 2021-08-09 00:17:41 +08:00
+#+language: en
+
+
+Oil has an alternative way for managing processes.
+
+The biggest difference is the =fork= and =forkwait= keyword which are blocks.
+
+#+begin_src oil
+fork {
+  sleep 4
+  write -- "Hello world"
+}
+
+forkwait {
+  sleep 4
+  write -- "Hello world 2"
+}
+#+end_src
+
+- =fork= is the alternative to the =&= operator (e.g., ~sleep 6 &~) which can be blocked with the =wait= keyword.
+- =forkwait= is the proposed alternative for subshells.
+- =jobs= views the jobs and processes of the shell.
+- =fg= brings a job into the foreground.

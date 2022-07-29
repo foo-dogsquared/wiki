@@ -1,0 +1,144 @@
+:PROPERTIES:
+:ID:       369700fa-7787-4e70-9b3b-24637ab67035
+:END:
+#+title: Command-line: youtube-dl
+#+date: "2021-07-08 17:36:26 +08:00"
+#+date_modified: "2022-04-22 11:25:43 +08:00"
+#+language: en
+#+property: header-args  :eval no
+
+
+One of the archivists' best friends.
+At least you don't have to go to those shady YouTube conversion sites anymore when you have a [[https://ytdl-org.github.io/youtube-dl/supportedsites.html][complete list of other video sites]] you can download from.
+
+Take note, I use [[https://github.com/yt-dlp/yt-dlp][yt-dlp]].
+Any yt-dlp-specific options should be in the appropriate note.
+
+For complete information, you can always inspect =youtube-dl.1= manual page.
+
+
+
+
+* Synopsis
+
+#+begin_src shell
+youtube-dl [OPTIONS...] [URLS...]
+#+end_src
+
+
+
+
+* Options
+
+- =--add-metadata= adds metadata to the resulting file after download
+
+- =--audio-format EXTENSION= downloads the video with the select format of "opus", "mp3", "opus", and "vorbis";
+  but there is also the convenient "best" option
+
+- =--audio-quality QUALITY= sets the quality of the audio from 0 to 9, best to worst respectively;
+  bitrates are also accepted (e.g., =320K=, =1M=)
+
+- =--date RANGE= finds videos that are uploaded from a certain date range.
+  See the [[Date ranges]] section to see the format required.
+
+- =--dateafter RANGE= and =--datebefore RANGE= is a similar option to =--date= but to find videos before or after the specified date range, respectively.
+  Accepts the same format as =--date=.
+
+- =--list-extractors= prints a list of supported sites and their specific features.
+
+- =--format QUALITY= downloads the video with the format shown in =--list-format=;
+  there are convenient options such as =bestaudio= and =bestvideo= referring to the best quality it could find
+
+- =-o, --output STRING= formats the resulting filename of the tracks to be downloaded
+
+- =--no-overwrite= throws an error if the file already exists which is handy for scripts
+
+- =-x, --extract-audio= extracts only the audio track
+
+
+** Output formats
+
+For =--output= option, there are a lot of things to consider naming your files.
+You may want to automate them yourself but =youtube-dl= has plenty of options from the get-go.
+
+The following code is the sensible default output string.
+
+#+begin_src
+%(playlist_index)02d-%(title)s.%(ext)s
+#+end_src
+
+A few of the usual stuff I use:
+
+- =title= (string) is the title of the track
+- =ext= (string) is the extension to be used; pretty much recommended to use it
+- =creator= (string) and =uploader= (string)
+
+A lot of the things I have to do is to download multiple tracks from an album or playlist.
+Unfortunately, these are often different from one site to another.
+
+- =playlist_index= (number) indicates the position of the track in a playlist.
+  These are usually used from YouTube and Soundcloud playlists.
+- =track_number= (number) is the position of the track from an album.
+  Usually, these are used from Bandcamp and Vimeo playlists.
+
+
+** Date ranges
+
+The options =--date= and the like accept a certain format for date ranges in =(now|today)[-|+][\\d+](day|week|month|year)s?= or =YYYYMMDD= for absolute date.
+
+| Example       | Description                    |
+|---------------+--------------------------------|
+| =now-2weeks=  | From today to 2 weeks ago.     |
+| =today+3days= | From today to 3 days from now. |
+| =20000505=    | Equivalent to =2000-05-05=.    |
+
+
+
+
+* Examples
+
+Here is an entryway into your newfound archiving habit.
+Enjoy! :)
+
+
+** Download the thumbnail and the audio of the video
+
+Very simple.
+Very useful as most of the thumbnails can go to high resolution and if you need them for some reason.
+
+#+begin_src shell
+youtube-dl --write-thumbnail --extract-audio https://www.youtube.com/watch?v=wy9VvdaLuSs
+#+end_src
+
+
+** Download an entire album
+
+Though, you should look at the supported sites if it supports downloading an album out of the URL.
+In this example, we have Bandcamp.
+
+#+begin_src shell
+youtube-dl --output '%(track_number)02d-%(title)s.%(ext)s' --format bestaudio https://gametal.bandcamp.com/album/side-quests-vol-3
+#+end_src
+
+
+** Specific video download requirements
+
+In this example, I want to download a video with a width of 1080px and the best video and audio at 320Kbit/s.
+Oh, and the video should be in MP4 and the audio in Opus.
+
+This is will only succeed if the format is available to download which you can do with =--list-format=.
+
+#+begin_src shell
+youtube-dl --format 'bestvideo[width=1080,ext=mp4]+bestaudio[abr=320K,ext=opus]' https://www.youtube.com/watch?v=wy9VvdaLuSs
+#+end_src
+
+
+** Check the first 50 videos at certain date range
+
+In this example, I want to download videos from [[roam:David Revoy]]'s YouTube channel that uploaded up to 2 months ago while checking only the first 50 videos.
+This is a useful template especially if the channel has a large selection of videos.
+Also useful if you're checking for videos daily to mitigate against potential bans from overusing it.
+
+#+begin_src shell
+youtube-dl --playlist-end 50 --dateafter 'today-2weeks' "https://www.youtube.com/c/DavidRevoy"
+#+end_src

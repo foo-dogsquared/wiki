@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       806bf416-78fa-4136-8329-9d2c9da12485
+:END:
+#+title: Live sessions of yourself doing things as an example
+#+date: 2022-05-21 08:08:45 +08:00
+#+date_modified: 2022-05-21 08:09:11 +08:00
+#+language: en
+
+
+- [[id:fdf9e3eb-02c5-47a6-b586-e71a5c92d01a][Look for live sessions as another form of examples]] mainly concerns with others doing it, how about a live session for yourself?
+- unlike looking at others' live sessions, learning new approaches and perspectives is not the goal;
+  rather, it is to see flaws in our doing since we're busy focusing on doing the task
+- we can use our tendency to be self-critical here especially now that examples are right in our faces
+- examples
+  - live session of yourself doing [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]];
+    you can see your mistakes clearly and what you could've done better
+  - doing a recording of yourself [[id:4b33103b-7f64-4b51-8f03-cac06d4001bb][Programming]] your project
+  - recording a live session doing [[roam:Music composition]]

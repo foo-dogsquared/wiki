@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       4b003442-5f0e-4399-befa-c069e7b6ec27
+:END:
+#+title: IPFS protocol
+#+date: "2021-05-13 16:41:26 +08:00"
+#+date_modified: "2021-08-08 20:05:20 +08:00"
+#+language: en
+
+
+A project that aims to power the next generation of the web (Web 3.0).
+The core component is a protocol (also called IPFS protocol) that aims to replace HTTP.
+
+In order to understand what sets IPFS apart, we need to discuss a bit on the current way of delivering content.
+
+Currently, 99% of the web today are delivered through HTTP.
+It is primarily delivered through *location-based addressing*.
+That is, in order to get what the client needs, they need to send a request to the server that has that content wherever they are.
+[fn:: Yes, content delivery networks (CDN) exist but we'll disregard it for now since it is not baked in on the protocol.]
+Problems can come through if the server is located in another country or continent, even, which will result in slower requests.
+Furthermore, it will create a bottleneck for that server especially if it's a popular site like Facebook, YouTube, and Twitter.
+
+IPFS addresses this problem by settling into a different approach: *content-based addressing*.
+In this protocol, when the client requests for the content, it will crawl through the network searching for the node that has the content.
+
+For content-based addressing, they make content hashes as the central component for that as a way to identify the content.
+But since cryptography is not perfect and can always be broken, content IDs can come in multiple format.

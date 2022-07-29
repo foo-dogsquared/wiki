@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       ccb3bc14-a801-4ed0-b066-50b1bcd853aa
+:END:
+#+title: File metadata
+#+date: "2020-04-13 17:32:27 +08:00"
+#+date_modified: "2021-05-21 18:50:11 +08:00"
+#+language: en
+
+
+File metadata is one of the most subtle requirements in [[id:88f2256a-3359-4d10-92a3-9273cabce414][Personal information management]].
+It embeds data without relying too much on filesystem such as the file name, creation date, and modification date.
+
+Each type of files have different ways of embedding metadata:
+
+- Image files such as JPEG or PNG, metadata are embedded in Exchangeable image file format (EXIF).
+- MP3 files have the ID3 format.
+- Vorbis comments is a universal format commonly found on OGG.
+- HTML documents contain the ~<head>~ element to store the metadata.
+- [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]] and Asciidoctor documents allow file-level properties that are functionally equivalent to embedded metadata.
+- Universal formats such as Extensible metadata platform (XMP) or Meta Information Encapsulation (MIE) available either as embedded or a separate file.
+
+Tools exist for writing and reading data such as [[https://exiftool.org/][Exiftool]].
+While file metadata are good and dandy, don't worry too much on them.
+Just start with the more important data such as the title, authors, and the date.
+It is preferred if you can edit the metadata manually so you can mark more relevant information.
+Having too much however might as well have no metadata due to information overload.

@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       0dff95e9-3bb0-41dc-9007-fc5e9c685728
+:END:
+#+title: Endianness
+#+date: "2020-07-10 23:30:27 +08:00"
+#+date_modified: "2021-05-19 17:37:14 +08:00"
+#+language: en
+
+
+Endianness refers to how bits are read and this depends on the underlying hardware architecture.
+[fn:: You can enforce endianness in software but oftentimes, it is not a good idea.]
+
+For example, given the following bit, 11010, this could be read as $(1\times2^{0}) + (1\times2^{1}) + (0\times2^{2}) + (1\times2^{3}) + (0\times2^{4})$ or $11$ with the first bit being the least significant also known as *little-endian*.
+On the other hand, this could also be read as $(0\times2^{0}) + (1\times2^{1}) + (0\times2^{2}) + (1\times2^{3}) + (1\times2^{4})$ or $26$ with the last bit being the least significant which we refer to as *big-endian*.
+[fn:: Endianness focuses on byte order, not bit order but it is best to give the simplest example.]
+
+Endianness can have subtle effects on various things — e.g., using binary data formats like [[https://fits.gsfc.nasa.gov/][FITS]] and [[https://www.hdfgroup.org/solutions/hdf5][HDF]] — like having the wrong endianness.
+
+To know the endianness of your machine, you can simply create a test number (preferably in binary) and check for the first few digits if it's little-endian — otherwise, it is big-endian.
+If you have Python installed, you can simply use [[https://docs.python.org/3/library/sys.html#sys.byteorder][~sys.byteorder~]] (e.g., ~python -c 'import sys; print(sys.byteorder)~).

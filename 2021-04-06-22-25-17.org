@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       9a11ef31-b2a7-43a9-a7a9-48f191838c6e
+:END:
+#+title: Prefer referencing over remembering
+#+date: "2021-04-06 22:25:17 +08:00"
+#+date_modified: "2022-04-01 16:26:08 +08:00"
+#+language: en
+#+tags: personal-info-management
+
+
+It makes for less cognitive overhead.
+This is especially true in the age of internet where information is widely distributed.
+Even without the internet, however, it is still useful to find ways to refer to things or store them locally whether by roam:Archiving or [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]].
+
+This doesn't mean that you should avert remembering, that would be silly as [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]].
+You're still trying to understand a concept, after all.
+The gist of it is knowing the basics of a concept and its relations to others,
+[[id:df20e58b-6d38-4ace-8468-413bc708c772][Most of the work is done from smaller amount of effort]].
+This enables you to come up with a more effective search query.
+If nothing else, you could take advantage of the help system insisted by the tool.
+
+Here are some examples:
+
+- Leave links to official documentations and guides instead of writing detailed notes for yourself.
+
+- On a Unix-based environment, for example, has the manual pages with ~man~ and you can search through ~apropos~.
+  This is especially needed if you're using BSD-based operating systems such as FreeBSD and OpenBSD.
+
+- [[https://www.gnu.org/software/texinfo/][Texinfo]] and [[https://github.com/tldr-pages/tldr][tldr pages]].
+
+- Remembering to use the help system of the tools if available.
+  For example, [[id:0efb9c51-3a12-4e5a-9e9b-d48cf4bd53ce][Using the built-in help system of Emacs]] or [[id:0a0fe63e-dcf3-4928-9e82-5513784c1244][Neovim help system]].
+
+- [[id:ea263f6f-fa8e-4e6d-a585-d30d493d1e3c][Add a desktop search engine for your digital library]].
+
+- Referring to official documentation and tools (e.g., [[https://devdocs.io/][DevDocs]], [[https://zealdocs.org/][Zeal]]).
+
+- Making full use of search tools from programs such as the command palette in [[roam:Visual Studio Code]], help system in Microsoft Word, and dynamic menus in roam:Blender.

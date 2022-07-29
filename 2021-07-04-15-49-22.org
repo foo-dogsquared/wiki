@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       c10ebbb7-2af6-419e-a8f3-3417c5b82de3
+:END:
+#+title: Randomness in systems introduces interest
+#+date: "2021-07-04 15:49:22 +08:00"
+#+date_modified: "2021-07-05 13:42:14 +08:00"
+#+language: en
+
+
+- while luck is not often greeted with welcoming reactions, introducing randomness in system can generate interest
+- on [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]] systems such as [[id:4259636e-e0e8-49e4-8210-758ec59728a3][Zettelkasten]], this could introduce more surprise thoughts that a user could make
+- on video games
+  + critical and missing hits on most turn-based RPGs (e.g., Pokemon, Battle for Wesnoth, Fire Emblem)
+  + Mortal Kombat 9 has the Toasty boost mechanic that requires fast reaction and button inputs rewarding you with a full meter on success
+- most gambling games are also this (e.g., blackjack, poker)
+- with the randomness in effect, several strategies are forming with the factor in mind
+  + on competitive settings, this can keep the players on their toes
+  + on creative environment, this could be a source of inspiration

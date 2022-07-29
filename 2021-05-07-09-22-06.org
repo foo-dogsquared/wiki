@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       835941c8-b021-44da-9c1f-a55d43a57cc2
+:END:
+#+title: Types of notes
+#+date: "2021-05-07 09:22:06 +08:00"
+#+date_modified: "2021-06-18 10:17:12 +08:00"
+#+language: en
+
+In note-taking, we don't conciously categorize our notes.
+
+
+
+
+* Linear notes
+:PROPERTIES:
+:ID:       d3fbdb1a-9629-45ef-9f08-32c6e49025bb
+:END:
+
+The "traditional" method for personal note-taking.
+The notes formed with linear notes tend to be tree-like thus it is useful for ordered information.
+
+Useful for initial learning where you want a roadmap of the lesson.
+It is helpful for memorizing as [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]].
+In the end, we might have more linear notes as [[id:864a9242-eb10-44ad-81b7-c237276523e5][We know more compared to what we understood]].
+
+Linear notes also tend to create hierarchy over time.
+While nice to have, it can also limit the information you can put in each note.
+Tools like [[https://www.dendron.so/][Dendron]] help with hierarchical notes.
+
+
+
+
+* Non-linear notes
+:PROPERTIES:
+:ID:       2713f862-6664-4f36-9a2a-b4ddadfe4c8b
+:END:
+
+While linear notes are great with ordered learning, it is not great with linking the notes.
+The solution: free the hierarchy.
+
+Non-linear notes free you the worrying where to put the note by removing the structure.
+This allows to freely make notes and extend in any direction.
+However, this makes it difficult if you have no idea how to get started.
+Otherwise, it can take advantage that [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]].
+
+One of the notable features of non-linear notes is the freedom to link different topics.
+This is where non-linear notes like the ones found in [[id:4259636e-e0e8-49e4-8210-758ec59728a3][Zettelkasten]] or [[id:24b5e144-dda4-482c-9684-958a00d6c986][Roam Research]] tend to shine because of freedom from hierarchy.

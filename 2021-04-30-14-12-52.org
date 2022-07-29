@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5
+:END:
+#+title: Create roadmaps to stay on track
+#+date: "2021-04-30 14:12:52 +08:00"
+#+date_modified: "2022-05-22 22:32:08 +08:00"
+#+language: en
+
+
+The internet is a place full of information.
+In fact, too full.
+
+You could consume endless information from one resource to another and create stagnation because you're adapting too many ideas at a time.
+[[id:98625da4-8e40-4b3c-bd3e-65781ae1d76f][Time spent on learning a skill should equally spend time for applying said skill]].
+It could further your hoarding tendencies and maybe just start collecting knowledge as [[id:6b0e6b75-410f-42a3-8921-bcc4589b2d2a][Collecting information only feels like progress]].
+
+Having a roadmap helps you to stay on track whether you're studying for a job, creating a new project, or learning a new hobby.
+This roadmap could be just a simple to-do list, an elaborate plan, or a one-line description of the output you expect [fn:: This is still a terrible example but it should eventually evolve into details.].

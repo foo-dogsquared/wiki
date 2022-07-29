@@ -1,0 +1,46 @@
+:PROPERTIES:
+:ID:       a57e63a7-6daa-4639-910d-c6648df156a3
+:END:
+#+title: Nix language
+#+date: "2021-06-30 13:30:19 +08:00"
+#+date_modified: "2021-12-28 00:17:58 +08:00"
+#+language: en
+
+
+Nix can be aptly described as JSON but with functions.
+While you can make Nix work with basic configurations, you need to know the details if you're creating packages.
+
+You can actively play with the language by running ~nix repl~.
+This is just a personal reference note, the recommended resource for learning the language is the beloved [[https://nixos.org/guides/nix-pills/][Nix pills]].
+
+
+
+
+* What is it for?
+
+- most importantly, writing packages, specifically [[id:8f23f862-a19a-4a13-8d8f-69c280a8e072][Nix derivations]]
+- mostly used for configuring [[https://nixos.org/manual/nixos/stable/][operating systems]] and create servers quickly with its variety of services
+- configuring [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]]
+
+
+
+
+* Builtins
+
+- ~builtins.toString ./.~ will print out the current directory.
+- ~builtins.getFlake $PATH~
+
+
+** Imports
+
+- the =import= builtin will simply import the Nix expression given a path.
+- because of the functional paradigm, you'll often see the builtin used with the parameters in one go — e.g., ~import <nixpkgs> {  }~ which will import nixpkgs from one of the module paths with the default attribute set.
+
+
+
+
+* TODO Standard library
+
+- nixpkgs has a standard library that comes with functions mitigating against the verbosity for packaging or simply convenience
+
+-

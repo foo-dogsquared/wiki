@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><title>Percent encoding in Bash</title><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script type="text/x-mathjax-config">
+                MathJax = {
+                    tex: {
+                        inlineMath: [ [&#x27;$&#x27;,&#x27;$&#x27;], [&#x27;\(&#x27;,&#x27;\)&#x27;] ],
+                        displayMath: [ [&#x27;$$&#x27;,&#x27;$$&#x27;], [&#x27;[&#x27;,&#x27;]&#x27;] ]
+                    },
+                    options = {
+                        processHtmlClass = &quot;math&quot;
+                    }
+                }
+                </script><meta name="next-head-count" content="6"/><link rel="preload" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" as="style"/><link rel="stylesheet" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" as="script"/></head><body><div id="__next"><main><h1>Percent encoding in Bash</h1><section class="post-metadata"><span>Date: <!-- -->2021-06-23 21:10:33 +08:00</span><span>Date modified: <!-- -->2022-04-16 20:17:53 +08:00</span></section><nav class="toc"><ol class="toc-level toc-level-1"></ol></nav><p>Percent-encoding is commonly used in URLs.
+Pretty nice especially when used with spaces.
+Though, this is something that is rarely needed in <a href="id:dd9d3ffa-03ff-42a1-8c5d-55dc9fcc70fe">GNU Bash</a> except if you&#x27;re writing a quick script.
+</p><p>Based from <a href="https://gist.github.com/cdown/1163649">this implementation</a>.
+It was modified to be closer to the output from <a href="https://docs.python.org/3.8/library/urllib.parse.html#urllib.parse.urlencode">Python <code class="inline-verbatim">urlencode</code></a>.
+</p><pre class="src-block"><code class="language-bash">function urlencode {
+    local msg=$1
+    local length=&quot;${#1}&quot;
+
+    for (( i = 0; i &lt; length; i++ )); do
+        local ch=&quot;${msg:i:1}&quot;
+        case $ch in
+            [a-zA-Z0-9.~_-])
+                printf &quot;%c&quot; $ch;;
+*)
+                printf &#x27;%s&#x27; &quot;$ch&quot; | xxd -plain -cols 1 | {
+                    while read hex; do
+                        printf &quot;%%%s&quot; $hex
+                    done
+                };;
+        esac
+    done
+    printf &quot;\n&quot;
+}
+
+urlencode &quot;El Doggo&quot;
+urlencode &quot;El Niño&quot;
+urlencode &quot;Whoa there, sonny!&quot;
+</code></pre><pre class="fixed-width">ElDoggo
+ElNi�o
+Whoatheresonny</pre><p>
+To decode percent-encoded strings:
+</p><pre class="src-block"><code class="language-bash">function urldecode {
+    # urldecode &lt;string&gt;
+
+    # Replace all pluses with spaces since it usually represents it in URLs.
+    local url_encoded=&quot;${1//+/ }&quot;
+
+    # Replace all percent sign with &#x27;\x&#x27; and print the message with byte interpretation.
+    printf &#x27;%b\n&#x27; &quot;${url_encoded//%/\\x}&quot;
+}
+
+urldecode &quot;El%20Doggo&quot;
+urldecode &quot;%e9%bd%8b%e8%97%a4%e3%83%bbB%e3%83%bb%e6%a5%b5%e3%83%bb%e5%b0%86%e5%97%a3&quot;
+</code></pre><pre class="fixed-width">El Doggo
+齋藤・ B ・極・将嗣</pre></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"metadata":{"date":"\"2021-06-23 21:10:33 +08:00\"","date_modified":"\"2022-04-16 20:17:53 +08:00\"","language":"en","source":""},"title":"Percent encoding in Bash","hast":{"type":"root","children":[{"type":"element","tagName":"nav","properties":{"className":"toc"},"children":[{"type":"element","tagName":"ol","properties":{"className":"toc-level toc-level-1"},"children":[]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Percent-encoding is commonly used in URLs.\nPretty nice especially when used with spaces.\nThough, this is something that is rarely needed in "},{"type":"element","tagName":"a","properties":{"href":"id:dd9d3ffa-03ff-42a1-8c5d-55dc9fcc70fe"},"children":[{"type":"text","value":"GNU Bash"}]},{"type":"text","value":" except if you're writing a quick script.\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Based from "},{"type":"element","tagName":"a","properties":{"href":"https://gist.github.com/cdown/1163649"},"children":[{"type":"text","value":"this implementation"}]},{"type":"text","value":".\nIt was modified to be closer to the output from "},{"type":"element","tagName":"a","properties":{"href":"https://docs.python.org/3.8/library/urllib.parse.html#urllib.parse.urlencode"},"children":[{"type":"text","value":"Python "},{"type":"element","tagName":"code","properties":{"className":["inline-verbatim"]},"children":[{"type":"text","value":"urlencode"}]}]},{"type":"text","value":".\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-bash"]},"children":[{"type":"text","value":"function urlencode {\n    local msg=$1\n    local length=\"${#1}\"\n\n    for (( i = 0; i \u003c length; i++ )); do\n        local ch=\"${msg:i:1}\"\n        case $ch in\n            [a-zA-Z0-9.~_-])\n                printf \"%c\" $ch;;\n*)\n                printf '%s' \"$ch\" | xxd -plain -cols 1 | {\n                    while read hex; do\n                        printf \"%%%s\" $hex\n                    done\n                };;\n        esac\n    done\n    printf \"\\n\"\n}\n\nurlencode \"El Doggo\"\nurlencode \"El Niño\"\nurlencode \"Whoa there, sonny!\"\n"}]}]},{"type":"element","tagName":"pre","properties":{"className":["fixed-width"]},"children":[{"type":"text","value":"ElDoggo\nElNi�o\nWhoatheresonny"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"\nTo decode percent-encoded strings:\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-bash"]},"children":[{"type":"text","value":"function urldecode {\n    # urldecode \u003cstring\u003e\n\n    # Replace all pluses with spaces since it usually represents it in URLs.\n    local url_encoded=\"${1//+/ }\"\n\n    # Replace all percent sign with '\\x' and print the message with byte interpretation.\n    printf '%b\\n' \"${url_encoded//%/\\\\x}\"\n}\n\nurldecode \"El%20Doggo\"\nurldecode \"%e9%bd%8b%e8%97%a4%e3%83%bbB%e3%83%bb%e6%a5%b5%e3%83%bb%e5%b0%86%e5%97%a3\"\n"}]}]},{"type":"element","tagName":"pre","properties":{"className":["fixed-width"]},"children":[{"type":"text","value":"El Doggo\n齋藤・ B ・極・将嗣"}]}]},"backlinks":[]},"__N_SSG":true},"page":"/[[...slug]]","query":{"slug":["cookbook.bash.percent-encoding"]},"buildId":"Ie9t5zutrXP6Of75Cb5xF","assetPrefix":"/wiki","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="/wiki/_next/static/chunks/polyfills-99d808df29361cf7ffb1.js"></script><script src="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" async=""></script><script src="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" async=""></script><script src="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" async=""></script><script src="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" async=""></script><script src="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" async=""></script><script src="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_buildManifest.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_ssgManifest.js" async=""></script></body></html>

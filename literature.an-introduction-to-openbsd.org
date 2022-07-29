@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       81d1ac42-5c72-4785-8195-e4f1e3598be5
+:END:
+#+title: An introduction to OpenBSD
+#+date: "2021-05-01 19:41:25 +08:00"
+#+date_modified: "2021-05-04 20:51:30 +08:00"
+#+language: en
+#+source: https://youtu.be/EkDVKthufAM
+
+
+- OpenBSD is a part of BSD family of Unixes.
+  It is not a Linux distro contrary to popular belief.
+
+- Fork of NetBSD by Theo DeRaat as a result of a disagreement from the NetBSD developers.
+
+* TODO Continue to 8:00
+- Known for its sharp focus on security.
+  + Randomly assigns process IDs (PID)

@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       5569a49f-c387-4da2-8f68-d8452e35ee5b
+:END:
+#+title: Org mode: Babel
+#+date: "2020-04-17 21:41:30 +08:00"
+#+date_modified: "2021-07-17 19:03:50 +08:00"
+#+language: en
+#+tags: research.reproducibility
+
+
+Babel is the framework that enables [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]] to be a [[id:6eeb7a24-b662-46d6-9ece-00a5028ff4d8][Reproducible research]] tool.
+It is comparable to Jupyter and R Markdown that other computational scientists use it.
+
+Among other features, it can do the following.
+
+- Prints the results from code blocks.
+- Create files from a single document, making it possible to create entire computational reports.
+- Pass values from one code block to another, even with different programming languages.
+- Create graphics similarly to Jupyter and R Markdown notebooks.
+- Call code blocks either inline, as a block, or inside of another code block, thereby enabling metaprogramming and dynamic contents.
+
+The unfortunate thing is most of these features are only available when using with [[id:ce6ab58e-b295-4fdb-8af7-fc89c63ec208][GNU Emacs]].
+
+For more details, you can see [[id:4abb9be8-4414-4045-8827-5a68632fd2a4][The basics of org-babel]].

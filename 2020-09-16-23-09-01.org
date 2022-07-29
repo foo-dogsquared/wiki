@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       7827b564-59ed-4604-ac2b-630c60c0a4ab
+:END:
+#+title: Use timestamps as a future-proofing method
+#+date: "2020-09-16 23:09:01 +08:00"
+#+date_modified: "2021-05-09 18:22:54 +08:00"
+#+language: en
+
+
+Datetime is extremely informative by itself:
+
+- It is static compared to other data (e.g., title, IDs, language), not prone to change.
+- It quickly informs us if our stuff is outdated.
+- It lets us know of the related history.
+- It relates to other resources we refer to at the time.
+
+To make future references easier to make, we could create two timestamps: one for the creation date and one for the modification date.
+This adds another point for useful comparison.
+
+To start, we could interact with the [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]].
+This lets you quickly evaluate whether the information is up-to-date without relying on the filesystem.
+It also lets you [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintain your own digital library]] with relative ease if your focus is on up-to-date information.

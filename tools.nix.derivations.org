@@ -1,0 +1,83 @@
+:PROPERTIES:
+:ID:       8f23f862-a19a-4a13-8d8f-69c280a8e072
+:END:
+#+title: Nix derivations
+#+date: 2021-07-18 23:16:39 +08:00
+#+date_modified: 2021-12-28 00:16:07 +08:00
+#+language: en
+
+
+Derivations are recipes for the Nix build daemon how to build the package.
+At a glance, this is the equivalent to manifests from [[id:ecee1a61-3d5c-4c8f-a205-67e5278beed6][Flatpak packages]] or Guix packages.
+
+The following code block shows what a derivation looks like.
+
+#+begin_src bash  :cache yes
+nix show-derivation nixpkgs#hello
+#+end_src
+
+#+results[41a57682cb5744db1bd748068384a6d4bc4702c5]:
+#+begin_example
+{
+  "/nix/store/vvb4wxmnjixmrkhmj2xb75z62hrr41i7-hello-2.10.drv": {
+    "outputs": {
+      "out": {
+        "path": "/nix/store/xcp9cav49dmsjbwdjlmkjxj10gkpx553-hello-2.10"
+      }
+    },
+    "inputSrcs": [
+      "/nix/store/9krlzvny65gdc8s7kpb6lkx8cd02c25b-default-builder.sh"
+    ],
+    "inputDrvs": {
+      "/nix/store/127p1886lb1q7x02wyy77ib9ghhc324v-hello-2.10.tar.gz.drv": [
+        "out"
+      ],
+      "/nix/store/4lzwc3wzbqjq973psxkph8jjq4g6cssr-stdenv-linux.drv": [
+        "out"
+      ],
+      "/nix/store/js6ib8zv84knb7kwnjdrqgwf86djjblk-bash-5.1-p12.drv": [
+        "out"
+      ]
+    },
+    "system": "x86_64-linux",
+    "builder": "/nix/store/a54wrar1jym1d8yvlijq0l2gghmy8szz-bash-5.1-p12/bin/bash",
+    "args": [
+      "-e",
+      "/nix/store/9krlzvny65gdc8s7kpb6lkx8cd02c25b-default-builder.sh"
+    ],
+    "env": {
+      "buildInputs": "",
+      "builder": "/nix/store/a54wrar1jym1d8yvlijq0l2gghmy8szz-bash-5.1-p12/bin/bash",
+      "configureFlags": "",
+      "depsBuildBuild": "",
+      "depsBuildBuildPropagated": "",
+      "depsBuildTarget": "",
+      "depsBuildTargetPropagated": "",
+      "depsHostHost": "",
+      "depsHostHostPropagated": "",
+      "depsTargetTarget": "",
+      "depsTargetTargetPropagated": "",
+      "doCheck": "1",
+      "doInstallCheck": "",
+      "name": "hello-2.10",
+      "nativeBuildInputs": "",
+      "out": "/nix/store/xcp9cav49dmsjbwdjlmkjxj10gkpx553-hello-2.10",
+      "outputs": "out",
+      "patches": "",
+      "pname": "hello",
+      "propagatedBuildInputs": "",
+      "propagatedNativeBuildInputs": "",
+      "src": "/nix/store/3x7dwzq014bblazs7kq20p9hyzz0qh8g-hello-2.10.tar.gz",
+      "stdenv": "/nix/store/xcmlbsqabmckx42p8w18ri5zq8v2iiav-stdenv-linux",
+      "strictDeps": "",
+      "system": "x86_64-linux",
+      "version": "2.10"
+    }
+  }
+}
+#+end_example
+
+While we can create derivations with the =derivations= builtin from the [[id:a57e63a7-6daa-4639-910d-c6648df156a3][Nix language]], in practice you'll use =stdenv.mkDerivation= from nixpkgs standard library.
+
+- nixpkgs also comes with several convenient functions/environments for several programming languages and frameworks including Python, Rust, Go, and Nim
+- it also includes environments for common setups such as for clang compiler

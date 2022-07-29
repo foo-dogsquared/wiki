@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       b62c61f1-ee12-4bd9-b59a-ec6eafe29f38
+:END:
+#+title: Unnecessary optimizations cripple progress
+#+date: "2021-07-05 12:36:41 +08:00"
+#+date_modified: "2021-08-07 10:58:04 +08:00"
+#+language: en
+
+
+- while [[id:0e2c9eaf-f12a-47b2-9c9c-d1a590db131b][Involuntary attention switch is good for preventing tunnel vision]] — e.g., trying out new things, window shopping for better tools — it can go into a case of optimizing every choice
+- this is a form of [[id:03cd9fad-e187-4939-9347-1a034c6efbe2][Overanalyzing slow you down]]
+- additionally, you could think of this addiction from taking too much advantages as you can;
+  it always create the impression that there is an absolute way to do it and you just haven't figured it out yet;
+  recall that [[id:9a9163d7-502b-4540-b723-e15afba1e917][Tradeoffs lock yourself in a position]]
+- unnecessary optimizations are unnecessary wasting of time that could've been used for something else more worthy;
+  in a way, you are [[id:9138397a-a965-45e9-97ea-71849e8d4f94][Overlearning]];
+  the problem, however, is it can be addicting as you dig deeper into the rabbithole
+- this is affecting people of all walks of life that it has various names: productivity porn, yak shaving, and pre-optimizing software;
+  in other words, the perfectionist stereotype
+- a lot of the improvements we do often comes from new ideas;
+  thus, there is an incentive to present it as a new and shiny thing that you should try it out;
+  sometimes this easily reaches [[id:909b4830-72c8-4943-be47-efaf77e40253][Professional narcissism]]
+- most of the time, this can be harmful:
+  + this can be seen with self-help and productivity culture with gurus presenting themselves as someone who finally figured it out how to get into a constant productive state — e.g., a new method of note-taking, habit management methods, productivity applications showcase
+  + part of the Linux ricing desktop community where software are fetishized to make their computing experience to be more productive — e.g., text editors galore, tiling window managers versus traditional desktops, command line versus graphical tools, quests for mouseless computing, learning new keyboard layouts
+  + the gaming community has much emphasis on how to game more effectively with specialized mice and keyboards, wide monitors, and software setups
+  + on programming, there is a tendency for making the optimized program at early stages or unnecessary optimizations on non-critical code
+- the simplest solution is to get into the mindset of "good enough" and reflecting if it is really worth it at the end;
+  remember that [[id:df20e58b-6d38-4ace-8468-413bc708c772][Most of the work is done from smaller amount of effort]]

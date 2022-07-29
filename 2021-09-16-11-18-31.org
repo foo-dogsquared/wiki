@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       69ec18ec-ae88-4cb8-bf03-299bc5d8a2a5
+:END:
+#+title: Simple tools make better workflows
+#+date: 2021-09-16 11:18:31 +08:00
+#+date_modified: 2021-09-16 13:00:06 +08:00
+#+language: en
+
+
+Simpler tools are often limited in scope compared to complex tools.
+[[id:e44f6bd7-fd73-436a-965a-66e06f8174ab][Restrictions bring out creativity]] by forcing you to create compromises and [[id:9a9163d7-502b-4540-b723-e15afba1e917][Tradeoffs lock yourself in a position]].
+Even from trending topics, there are people who are already creating extraordinary results with simpler tools.
+
+- Luhmann, the man who popularized the [[id:4259636e-e0e8-49e4-8210-758ec59728a3][Zettelkasten]] method, by using a physical drawer of notes.
+  With the limited physical space of the paper and the amount of information he often interacts with, he has to create a system that can easily refer to various papers.
+  Compare this to modern workflows such as [[id:24b5e144-dda4-482c-9684-958a00d6c986][Roam Research]], roam:org-roam, and roam:Dendron.
+
+- Text editors with terminal versus kitchen-sink IDEs.
+  However, with the advent of protocols that enable IDE-like features, the line between them is getting blurry.
+
+- The core of the [[https://suckless.org/philosophy/][Suckless philosophy]] by removing all of the cruft and removing as much needless features as possible to maintain quality.
+
+Practically, it all comes to their [[id:88f2256a-3359-4d10-92a3-9273cabce414][Personal information management]] skills.
+It all depends on their use cases and if the tool is suitable to their workflow.
+People can make simpler tools integrate with complex setups and complex tools can make their workflow simpler.
+Furthermore, there are [[id:855fa6b6-bdb4-4d09-b6d4-c9b95e69642c][Problems with simpler tools]] that often comes with preferring this type of tools.

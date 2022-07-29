@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       de801b92-819e-4944-9f5b-5cea145a2798
+:END:
+#+title: Reproducible executables with Nix
+#+date: 2021-07-18 22:16:30 +08:00
+#+date_modified: 2021-07-18 22:16:30 +08:00
+#+language: en
+
+
+You can create a [[https://nix.dev/tutorials/ad-hoc-developer-environments#reproducible-executables][reproducible executable]] that only requires Nix.
+
+Here's a sample script that uses multiple dependencies.
+
+#+begin_tip
+If the script interact with the network (e.g., =curl=, =wget=) and the environment is completely pure, don't forget to install public Certificate Authorities with =cacert=.
+#+end_tip
+
+#+begin_src bash  :tangle (my/concat-assets-folder "reproducible-shell-script")
+#!/usr/bin/env nix-shell
+#! nix-shell --pure -i bash -p coreutils curl cacert jq fzf findutils
+
+# A quick command line interface for creating a gitignore with the API from https://gitignore.io.
+# This script comes with a simple caching to avoid creating too much requests.
+
+set -eo pipefail
+
+CACHE_FILE="${XDG_CACHE_DIR:-$HOME/.cache}/gitignore-io.langs.json"
+
+# Check if the language list is downloaded for the last hour (3600 seconds).
+if [ ! -e $CACHE_FILE ] || test $(expr $(date "+%s") - $(date -r $CACHE_FILE "+%s")) -gt 3600
+then
+    ping "gitignore.io" --count 4 && curl --silent --location --output $CACHE_FILE "https://gitignore.io/api/list?format=json"
+fi
+
+KEYS=$(jq 'keys | .[] | @text' --raw-output $CACHE_FILE | fzf --multi | while read lang; do echo " .[\"$lang\"].contents"; done | paste -s -d ',')
+
+jq "$KEYS" --raw-output $CACHE_FILE
+#+end_src

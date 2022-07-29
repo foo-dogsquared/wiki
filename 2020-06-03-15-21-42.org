@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       af4a2867-dfa6-4241-950d-2fdb9cf3016c
+:END:
+#+title: Computational processes
+#+date: "2020-06-03 15:21:42 +08:00"
+#+date_modified: "2021-05-04 20:51:32 +08:00"
+#+language: en
+
+
+Just as a sorcerer needs spells, a programmer needs code to do its bidding.
+Simple processes such as designing models with computer-aided design programs and controlling a robot arm in a factory are possible through expressing in code.
+
+In order to study the idea of how code works, we need to study the idea of computational processes.
+Programming mainly need two things: *processes* which is a set of instructions and *data* which is the object being manipulated for various purposes.
+However, as one may dig into the rabbithole, they find that the hard line of separation between processes and data is a myth and unlocks more possibilities to solve problems.

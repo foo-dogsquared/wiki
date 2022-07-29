@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       c422175a-5b65-4311-8cc6-11efd55364e8
+:END:
+#+title: Org mode
+#+date: "2020-04-20 16:51:40 +08:00"
+#+date_modified: "2021-07-17 19:03:31 +08:00"
+#+language: en
+#+tags: tools writing
+
+
+A lightweight (arguably) text formatting tool mostly used as an outliner at its core.
+Org mode has a variety of features allowing it to be flexibly used for note-taking and even in research.
+
+- Text formatting options similar to Markdown perfect for [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]].
+
+- Task management with TODO, [[id:3a57fe56-9e6d-41e4-a76f-5ffdeb5840a2][Org mode timestamps]], and the agenda view.
+  Making it a good plain-text tool for [[id:88f2256a-3359-4d10-92a3-9273cabce414][Personal information management]].
+
+- [[id:5569a49f-c387-4da2-8f68-d8452e35ee5b][Org mode: Babel]] that enables notes suited for [[id:6eeb7a24-b662-46d6-9ece-00a5028ff4d8][Reproducible research]].
+
+Unfortunately, a lot of the famous powers of the format is tied with [[id:ce6ab58e-b295-4fdb-8af7-fc89c63ec208][GNU Emacs]].
+While there is an ecosystem flourishing outside of the text editor (e.g., [[https://github.com/niklasfasching/go-org][go-org]], [[https://github.com/orgapp/orgajs][orgajs]], [[https://pandoc.org/org.html][Org mode support in Pandoc]]), the plugins inside of Emacs simply cannot be ignored.
+Among other Org mode plugins inside of the Emacs ecosystem, we have [[roam:org-roam][org-roam]], [[https://github.com/jkitchin/org-ref][org-ref]], [[https://github.com/weirdNox/org-noter][org-noter]], [[https://orgmode.org/worg/exporters/index.html][a number of exporters]], and [[https://orgmode.org/worg/org-contrib/babel/languages/index.html][org-babel language plugins]] that extends to more workflows.

@@ -1,0 +1,90 @@
+:PROPERTIES:
+:ID:       3a57fe56-9e6d-41e4-a76f-5ffdeb5840a2
+:END:
+#+title: Org mode timestamps
+#+date: "2020-04-21 19:44:15 +08:00"
+#+date_modified: "2021-05-04 20:52:15 +08:00"
+#+language: en
+#+property: header-args:org  :results silent
+#+tags: personal-info-management
+
+
+As previously stated, [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]] is first created as an outliner enabling you to manage tasks.
+Here's some of the features you might be interested when using it as such.
+
+
+
+
+* Timestamps and durations
+
+Being a personal information tool, Org mode heavily features timestamps.
+
+#+begin_src org
+<2021-04-21 Wed>
+#+end_src
+
+You can easily set a timestamp with ~org-time-stamp~ that comes with an interactive calendar and a prompt to indicate the date and time.
+The [[https://orgmode.org/manual/The-date_002ftime-prompt.html][prompt]] is more useful since you can quickly enter relative values such as:
+
+- =+1d= for tomorrow.
+- =2020-05-01 +23d= means 23 days after the 2020-05-01.
+- =+4d 10:00+2= for 4 days later starting from 10:00 to 12:00.
+- =+1m 1pm+3= for a month later starting from 1:00 PM to 4:00 PM.
+
+Durations are made by putting a pair of dashes between two timestamps.
+
+#+begin_src org
+<2021-04-22 Thu>--<2021-04-25 Sun>
+#+end_src
+
+You can quickly create a duration by running ~org-time-stamp~ two times consecutively.
+
+
+
+
+* Deadlines and schedules
+
+In Org mode agenda view, it can show deadlines and schedules by prepending the timestamps with =DEADLINE= and =SCHEDULED=, respectively.
+
+#+begin_src org
+DEADLINE: <2021-04-26 Mon 22:00>
+SCHEDULED: <2021-04-25 Sun 20:00>
+#+end_src
+
+- Deadline entries make up the tasks that has to be done by the specified datetime.
+  When present in the agenda, it will warn an issue when the task is not done after the deadline had passed.
+
+- Scheduled entries indicate the tasks that you will do starting from the timestamp.
+  When present in the agenda, it will simply remind you to do the task until done.
+
+
+
+
+* Repeated tasks
+
+One can set [[https://orgmode.org/manual/Repeated-tasks.html][repeated tasks]] in the following format.
+
+#+begin_src org
+SCHEDULED: <2020-06-22 Mon +2d>
+#+end_src
+
+Any missed session will cause the agenda to keep overdued sessions and accumulate to repeat the tasks 'X' number of times with the number of overdued sessions.
+
+Some tasks does not work this way, however.
+You don't need to replace the batteries 5 times or brush your teeth 10 times to make up for it.
+For this, you can do the following.
+
+#+begin_src org
+SCHEDULED: <2020-06-22 Mon ++2d>
+#+end_src
+
+One cool thing about it if you mark a task as done, it will simply create an entry of the task completed and update the base date.
+
+#+begin_src org
+,* TODO Watch the lectures from Brian Harvey's SICP series (https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=titleSorter)
+SCHEDULED: <2020-06-24 Wed .+2d>
+:PROPERTIES:
+:LAST_REPEAT: [2020-06-22 Mon 22:01]
+:END:
+- State "DONE"       from "TODO"       [2020-06-22 Mon 22:01]
+#+end_src

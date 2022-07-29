@@ -1,0 +1,15 @@
+#+title: Summary of a Linux installation
+#+date: "2021-06-05 22:30:48 +08:00"
+#+date_modified: "2021-06-05 22:32:56 +08:00"
+#+language: en
+
+
+# TODO: Improve note
+- initial setup
+- partitioning
+- installation of the operating system
+  + base package set
+  + feature-specific packages
+  + boot loader
+  + network manager
+  + init system

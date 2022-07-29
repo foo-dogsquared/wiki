@@ -1,0 +1,57 @@
+:PROPERTIES:
+:ID:       14b49597-011c-4da1-b955-bed6059af4a3
+:END:
+#+title: systemd unit templates
+#+date: 2021-08-07 19:55:05 +08:00
+#+date_modified: 2021-08-07 19:55:26 +08:00
+#+language: en
+
+
+You can create unit templates which is useful for simple services that only requires an argument.
+Rather than creating individual simple service files, let systemd handle it.
+
+For example, you may want to spawn a service for Borgmatic with multiple repos.
+If you don't know templates, the dumb way to serve multiple repos is to create individual unit files for each.
+If you want to schedule them, you also have to create a timer unit for each.
+
+The more efficient solution is to use templates.
+To make a unit template, there are only a handful of requirements:
+
+- Addition of =%i= to represent the template value.
+- The unit file name has to end with =@= (e.g., =unit-name@.service=, =unit-name@.timer=).
+
+This could be compressed into a template for a service unit.
+The following code shows how to create one.
+
+#+begin_src ini
+[Unit]
+Description=Periodic safety backup for %i
+Documentation=man:borg(1) https://www.borgbackup.org/
+
+[Service]
+Type=simple
+ExecStart=borgmatic --config %i --verbose
+
+[Install]
+WantedBy=default.target
+#+end_src
+
+To use the service, you have to give it a value — e.g., ~systemctl --user start borg-backup@test.yaml.service~.
+
+That's all good but what about scheduling them?
+What if you want to create an archive every hour starting at 08:00?
+You can just create a templated timer unit.
+
+#+begin_src ini
+[Unit]
+Description=Periodic safety backup for %i
+Documentation=man:borg(1) https://www.borgbackup.org/
+
+[Timer]
+Unit=borg-backup@%i.service
+Calendar=08/1:00:00
+Persistent=true
+
+[Install]
+WantedBy=default.target
+#+end_src

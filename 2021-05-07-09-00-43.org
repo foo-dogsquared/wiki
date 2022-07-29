@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       d024516b-35ea-40ae-9433-ceacea695073
+:END:
+#+title: Write paragraphs like music
+#+date: "2021-05-07 09:00:43 +08:00"
+#+date_modified: "2021-05-07 10:49:18 +08:00"
+#+language: en
+
+
+Reading consecutive sentences with similar lengths can have an impression of being monotonous.
+Writing as if it's music keeps the interest of the inner narrator as if they subsconciously demand variety in their reading.
+
+To make musical-like quality of writing, the following guidelines can make things easier.
+
+- Vary the sentence length per paragraph.
+- Instill a gram of personal expression.
+- Create a playful persona.
+
+While musical-like writing invoke a sense of creativity and playfulness, it doesn't have to be this way.
+You can occasionally apply it on certain situations where it can make interesting reading.
+Examples include writing in a playful persona when writing explanations and introductions, instilling personality only with short phrases, or creating a short narrative inside of the writing while interleaving technical information.
+
+For technical documentations, I think it could be applied.
+But not forgetting that you're writing for the user who expects an accurate writing with a factual tone.
+Several style guides such as from [[https://styleguide.mailchimp.com/][Mailchimp]] has casualness and informality.
+Overall, it is going to be a task of balance.
+
+It is especially interesting for personal note-taking.
+The place where the personal needs are first before a hypothetical reader can make notes of various writing styles with various completeness.
+But you shouldn't forget that you're writing for yourself, not the audience.

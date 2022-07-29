@@ -1,0 +1,92 @@
+:PROPERTIES:
+:ID:       9484532c-16c8-4b3c-8ca4-109396bbf2ef
+:END:
+#+title: Command line: FFmpeg
+#+date: "2021-05-09 16:40:50 +08:00"
+#+date_modified: "2021-07-20 23:30:49 +08:00"
+#+language: en
+#+property: header-args :eval no
+
+
+The swiss army knife for interacting with multimedia files (except images because ImageMagick).
+
+
+
+
+* Options
+
+The FFmpeg command line interface is mostly picky because of order.
+Whatever options are given will be processed with those options in order.
+
+- =-hide_banner= - hide the annoying banner
+- =-loglevel [level] | -v [level]= - set the verbosity level
+- =-codecs= - list all codecs
+- =-devices= - list all devices
+- =-i [file]= - the input file
+- =c [codec]= - set the codec
+- =-b [rate]= - set the bitrate
+- =-o [file]= - set the output
+
+Certain options have the option of specifying whether you're interacting with the audio or video track.
+For example, =-codec:audio= (=-c:a=) to set the audio codec.
+
+
+
+
+* Examples
+
+FFmpeg is comprehensive and so needs some specific examples to fill my monkey brain.
+
+
+** Convert an MP3 to OGG
+
+#+begin_src shell
+ffmpeg -i $INPUT.mp3 -o $OUTPUT.ogg
+#+end_src
+
+By default, FFmpeg will guess if certain things are missing.
+In this case, it guessed the input file is an MP3 and wants to convert OGG.
+Sometimes, it will also use default options for converting between two formats such as the default bitrate and codec.
+
+
+** Transrate an audio file
+
+#+begin_src shell
+ffmpeg -i $INPUT -c $CODE -b:a $BITRATE $OUTPUT
+#+end_src
+
+
+** List all available options
+
+FFmpeg has compile options, heaps of them.
+You may want to know what codecs are available.
+
+#+begin_src shell  :results silent
+ffmpeg -codecs
+#+end_src
+
+It tends to be a large list so prepare to send it through a pager.
+
+You should also know FFmpeg can print out devices.
+
+#+begin_src shell  :results silent
+ffmpeg -devices
+#+end_src
+
+
+** Capture video device
+
+#+begin_src shell
+# Assuming /dev/video0 is your webcam.
+ffmpeg -f video4linux2 -i /dev/video0 cringe-at-yourself.mpg
+#+end_src
+
+
+** Extract a segment from a file
+
+The timestamps are essentially seeking to a file.
+For more information, see [[https://trac.ffmpeg.org/wiki/Seeking][FFmpeg documentation]].
+
+#+begin_src shell
+ffmpeg -nostdin -i $INPUT -ss 00:05:22 -to 00:22:43 $OUTPUT
+#+end_src

@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       d7d7d8f0-adf9-461d-ace5-c8624dab1083
+:END:
+#+title: Rust language
+#+date: 2021-09-14 21:35:47 +08:00
+#+date_modified: 2021-09-14 21:49:14 +08:00
+#+language: en
+
+
+- [[https://doc.rust-lang.org/book/][Rust handbook]]
+- Haskell with the familiarity of C
+- variables are immutable by default and has to be annotated with the =mut= keyword;
+  for full immutability, you can declare constants with the =const= keyword and has to be type-annotated
+- namespacing is available through =mod= and all of the items are private by default;
+  if you intended an item to be accessed with others, you have to add the =pub= keyword

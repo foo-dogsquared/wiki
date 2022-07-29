@@ -1,0 +1,15 @@
+#+title: Command line: ripgrep
+#+date: 2021-11-07 20:56:49 +08:00
+#+date_modified: 2021-11-07 20:59:33 +08:00
+#+language: en
+
+
+A modern replacement for grep... that is written in [[id:d7d7d8f0-adf9-461d-ace5-c8624dab1083][Rust language]]... because why not make it faster?
+
+
+
+
+* Flags
+
+- =-i, --ignore-case= enables searches regardless of letter case (e.g., uppercase, lowercase).
+- =-g, --glob [GLOB...]= searches for the file to be included in the search; you can prepend the glob with =!= to exclude it

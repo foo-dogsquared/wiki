@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       a7d9897e-fbaa-4ab1-a26d-4a86d2621df8
+:END:
+#+title: Linux drivers
+#+date: "2020-09-09 05:27:17 +08:00"
+#+date_modified: "2021-05-04 20:51:26 +08:00"
+#+language: en
+
+
+Linux drivers (also called as kernel modules) are software executed in the kernel.
+Usually, they are used to communicate between hardware and create an inteface with it, making them usable.
+Examples include [[http://linuxwacom.sourceforge.net/][the Linux Wacom project]] to make Wacom graphics tablet usable in Linux, those sort of stuff.
+
+[[https://www.youtube.com/watch?v=juGNPLdjLH4][Liveoverflow's video summary]]:
+- A driver is just a compiled module (e.g., ~driver.o~) that makes use of the code in the Linux header and does the communication from the associated device.
+- Each driver may have functions attached to an event (e.g., opening in ~module_open~, closing in ~module_exit~).
+- You can insert a driver with the ~insmod~ program and remove it with the ~rmmod~ program.
+- Each driver will appear on a special filesystem in ~/dev~ as a special type of file which you can view what type of file it is with ~ls -l~.
+- You can print out events (i.e., ~printk~) and view it in the system log (e.g., ~/var/log/syslog~).
+- Essentially, a driver is basically a handler that does its magic whenever an associated system call (syscall) has been invoked by the kernel.
+  The kernel provides an abstraction for the events associated with the syscall.
+  For example, whenever the kernel invokes a syscall for writing in the device file, the associated code defined in ~module_write~ (or something equivalent) event will run.
+- NEEDS INVESTIGATION: Another interesting of note here is how the kernel does not immediately writes the bytes in the device file until closing it.
+
+- [[https://everything-is-sheep.herokuapp.com/posts/on-developing-a-linux-driver=-][An overview from a student without prior experience]]
+- [[https://unix.stackexchange.com/questions/507687/graphic-tablet-veikk-pressure-sensitivity-on-linux][Creating a driver for a graphics tablet]] on Unix StackExchange
+- [[https://lwn.net/Kernel/LDD3/][The de-facto reference on creating Linux drivers]]
+- [[https://www.youtube.com/watch?v=juGNPLdjLH4][How do Linux kernel drivers work?]] from LiveOverflow
+- [[https://www.youtube.com/watch?v=RyY01fRyGhM][Writing Linux kernel modules in safe Rust]] from the Linux Foundation
+- [[https://lwn.net/Kernel/LDD3/][Linux device drivers, 3rd edition]], the de-facto reference for kernel modules

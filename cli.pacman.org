@@ -1,0 +1,112 @@
+:PROPERTIES:
+:ID:       77f3ec38-9885-4f2b-8019-9042f0c6e4cb
+:END:
+#+title: Command line: pacman
+#+date: "2021-06-08 15:00:04 +08:00"
+#+date_modified: "2021-11-06 12:12:06 +08:00"
+#+language: en
+#+property: header_args  :eval no
+
+
+The built-in package manager of Arch Linux (among others).
+This note is based from =pacman v6= and above.
+
+
+
+
+* Subcommands
+
+Interestingly, pacman does not have subcommands with specific options.
+Instead, they go with specific flags denoting a subcommand.
+Practically, they're just subcommands except appearing as options.
+
+#+begin_src shell
+# Rather than 'pacman install podman' or something similar.
+pacman -S podman
+#+end_src
+
+Here's what you can do with the package manager:
+
+- =-S= are concerned with syncing the local database to the remote databases.
+  - =-y, --refresh= syncs the local database to the remote database; running with this flag alone is not recommended as the package manager will have problems.
+  - =-u, --sysupgrade= upgrades the local database; this should be used with =-y= if you intend it for a proper operating system upgrade.
+  - =-g, --groups [GROUP]= prints what packages belong to the given group
+- =-Q= is primarily from querying information from your installed packages ranging from listing installed packages to listing all of the files owned by a certain package.
+  - =-l, --list [PACKAGES...]= lists the files associated with the package.
+  - =-i, --info [PACKAGES...]= prints information about the package.
+- =-F [FILENAME]= are mostly query-related operations with the database.
+  It also prints which package owns the given file.
+  - =-y, --refresh= refreshes the database.
+- =-R= removes installed packages.
+  - =-n, --nosave= removes the configuration files associated with the package; this doesn't remove files from the home directory, though.
+  - =-s, --recursive= will recursively removes dependencies that are not used anywhere else.
+
+You can see more of them in the "Operations" section of the manual page (i.e., =pacman.1=).
+
+
+
+
+* Examples
+
+Welp, this is what you came for so let's go ahead.
+
+
+** Quickstart
+
+It's a package manager so it's supposed to do basic package manager stuff.
+All of the shown commands are in longform with the shortform just commented for practical purposes.
+
+#+begin_src shell
+# Search for a pacakge
+# pacman -Ss podman
+pacman --sync --search podman
+
+# Install a package
+# pacman -S podman
+pacman --sync podman
+
+# Uninstall a package
+# pacman -Rns podman
+pacman --remove --no-save --recursive podman
+
+# Upgrade the system
+# pacman -Syu
+pacman --sync --refresh --upgrade
+#+end_src
+
+
+** Package search selection
+
+With everybody's favorite fuzzy finder, [[id:4eb1f8b1-bc12-4a6c-8fa4-20e4c3542cf2][fzf]].
+
+#+begin_src bash
+pacman --sync --quiet --search pkg | fzf --prompt "Package to install > " | xargs doas pacman --sync
+#+end_src
+
+You can also create a search selection with all of the packages with the following one-liner.
+
+#+begin_src bash
+pacman -S --list --quiet \
+    | fzf --multi --prompt "Install package(s) > " \
+    | xargs doas pacman -S --noconfirm
+#+end_src
+
+
+** Package removal selection
+
+Another interactive script with [[id:4eb1f8b1-bc12-4a6c-8fa4-20e4c3542cf2][fzf]].
+
+#+begin_src bash
+pacman -Q --native --quiet | fzf --multi --prompt "Remove installed package(s) > " | xargs doas pacman -Rns --noconfirm
+#+end_src
+
+
+
+
+* Related notes
+
+- pacman does not have a way to query packages that are not installed;
+  for example, you cannot know what files are owned by the package unless it is installed (also you have =pkgfile= for that)
+
+- pacman also cannot view the PKGBUILD of packages that are not installed;
+  you can use the =asp= tool for that (i.e., ~asp show ${PACKAGE}~)

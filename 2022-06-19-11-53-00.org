@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       a8c6f23f-d642-4cf6-abe2-edcf054f1823
+:END:
+#+title: Does presenting Linux distributions as a single thing proves beneficial for newcomers?
+#+date: 2022-06-19 11:53:00 +08:00
+#+date_modified: 2022-06-19 12:16:54 +08:00
+#+filetags: questions
+#+language: en
+
+
+- see [[id:c64836f4-19db-4da7-8532-4ebacf6c1ed1][How Linux distributions are technically their own operating system]];
+  we'll present two polarizing sides for this question
+- on the side of "Yes"
+  - it can be beneficial as most users see it in a similar way;
+    the newcomers would have to be familiar with the common concepts between the mainstream distros;
+    having presented as a collective single effort makes it easier for communities to communicate between each other
+  - the notion of Linux distros being the same with different configuration does have a grain of truth to it;
+    presenting it as such is not exactly misleading
+- on the side of "No"
+  - if presented as a single thing, the newcomers' expectation can be mislead with the notion that all distros are the same;
+    having explicitly introduced as an entirely different operating system can be an easier time since the user will tend to find more similarities than differences like some sort of [[id:5c603e2c-4dae-465e-abb5-12897ad7466d][Tunnel vision]];
+    this potential problem could be present with the group that expected different but it will be dealt in a different way since they already have an expectation that two Linux distros are different to one another
+  - most users seem to address Linux referring to the overall Linux ecosystem, not the individual operating system, subtleties of languages and all;
+    the Linux distro of choice is still its own bubble and it should be the main focus when presenting a Linux distro
+- overall this depends on how the Linux ecosystem is being presented and the user themselves;
+  this question has explicit focus on *expectation and required technical expertise* for the user;
+  both answers can end the same as it still requires effort from the user

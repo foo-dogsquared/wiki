@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       4b33103b-7f64-4b51-8f03-cac06d4001bb
+:END:
+#+title: Programming
+#+date: 2021-07-22 14:09:26 +08:00
+#+date_modified: 2021-07-22 14:09:29 +08:00
+#+language: en

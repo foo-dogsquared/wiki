@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       b0aee2c6-f759-4b7a-829f-79781926091e
+:END:
+#+title: Create examples of ranking complexity when documenting your project
+#+date: "2021-02-28 14:52:58 +08:00"
+#+date_modified: "2021-07-22 13:59:53 +08:00"
+#+language: en
+
+
+Some projects such as user applications include examples of usage varying of the complexity from a simple "Hello world"-esque example to a real-life example that the developer uses.
+This acts as a quick introduction to the project as well as subtly giving hints about what you can do with the program.
+Examples include...
+
+- The manual pages from [[https://www.freebsd.org/][the FreeBSD project]] where each tool is given a dedicated section for example usage.
+- [[https://github.com/naelstrof/maim/tree/b1b28fcb0c3a44e699fd879189316440b7edff22][maim]], a screenshot capture tool, has one of the examples demonstrate that you can pipe binary output which leads to useful things such as [[https://github.com/naelstrof/maim/tree/b1b28fcb0c3a44e699fd879189316440b7edff22][OCR selection]] or a colorpicker.
+
+This makes it easier to skim (see [[id:5c1e9540-9663-4512-8c84-05529ad22212][Speedreading is all about skimming well]]) and to [[id:9a11ef31-b2a7-43a9-a7a9-48f191838c6e][Prefer referencing over remembering]].
+Furthermore, [[id:e158b742-53c7-4442-9af3-489ea8240af9][Examples and stories are more memorable than explanations]].

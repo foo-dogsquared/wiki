@@ -1,0 +1,132 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><title>Generating human-friendly color schemes</title><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script type="text/x-mathjax-config">
+                MathJax = {
+                    tex: {
+                        inlineMath: [ [&#x27;$&#x27;,&#x27;$&#x27;], [&#x27;\(&#x27;,&#x27;\)&#x27;] ],
+                        displayMath: [ [&#x27;$$&#x27;,&#x27;$$&#x27;], [&#x27;[&#x27;,&#x27;]&#x27;] ]
+                    },
+                    options = {
+                        processHtmlClass = &quot;math&quot;
+                    }
+                }
+                </script><meta name="next-head-count" content="6"/><link rel="preload" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" as="style"/><link rel="stylesheet" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" as="script"/></head><body><div id="__next"><main><h1>Generating human-friendly color schemes</h1><section class="post-metadata"><span>Date: <!-- -->2020-09-19 18:43:07 +08:00</span><span>Date modified: <!-- -->2021-05-04 20:52:07 +08:00</span></section><nav class="toc"><ol class="toc-level toc-level-1"></ol></nav><p>Though we already have <a href="/wiki/2020-09-11-04-08-34">Human-friendly colorspaces</a>, it doesn&#x27;t mean that we can simply generate human-friendly color schemes.
+Certain colors can be perceived as too bright or too dark and having them grouped in a color palette will look out-of-place and/or horrible.
+</p><p>Color spaces such as <a href="https://www.hsluv.org/">HSLuv</a> and <a href="https://en.wikipedia.org/wiki/CIELUV">CIELUV</a> respects perceptual uniformity which approximates how human vision see things.
+We can simply generate colors with the aforementioned color spaces.
+Here&#x27;s an example of a <a href="http://chriskempson.com/projects/base16/">Base16</a> color scheme generation from <a href="https://terminal.sexy/">terminal.sexy</a> ported to Rust.
+</p><pre class="src-block"><code class="language-rust">use std::error::Error;
+use std::collections::HashMap;
+use std::env;
+
+use hsluv;
+use rand_chacha::ChaCha8Rng;
+use rand::{Rng, SeedableRng};
+
+#[macro_use]
+use serde::{Deserialize, Serialize};
+
+
+// Based from the implemention at terminal.sexy repo
+// at https://github.com/stayradiated/terminal.sexy/blob/2e2c9bec994723a657cce8bf708d83879a50c0ce/lib/stores/random.js
+// which in turn based from the demo example at https://www.hsluv.org/syntax/.
+type Colors = HashMap&lt;String, String&gt;;
+
+#[derive(Serialize, Deserialize, Debug)]
+struct SpecialColors {
+  background: String,
+  foreground: String,
+  cursor: String,
+}
+
+impl SpecialColors {
+  pub fn new() -&gt; Self {
+    Self {
+      background: String::from(&quot;#000000&quot;),
+      foreground: String::from(&quot;#000000&quot;),
+      cursor: String::from(&quot;#000000&quot;)
+    }
+  }
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+struct PywalObject {
+  #[serde(default)]
+  alpha: u8,
+
+  special: SpecialColors,
+
+  colors: Colors,
+
+  wallpaper: Option&lt;String&gt;,
+}
+
+impl PywalObject {
+  pub fn new() -&gt; Self {
+    Self {
+      alpha: 255,
+      special: SpecialColors::new(),
+      colors: Colors::new(),
+      wallpaper: None
+    }
+  }
+}
+
+/// The command-line interface simply needs a seed to be parsed as an unsigned 64-bit integer (`u64`).
+fn main() -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
+  let args: Vec&lt;String&gt; = env::args().collect();
+  let mut result = PywalObject::new();
+
+  let mut rng = match args.get(1) {
+    Some(arg) =&gt; ChaCha8Rng::seed_from_u64(arg.parse::&lt;u64&gt;()?),
+    None =&gt; ChaCha8Rng::from_entropy()
+  };
+
+  // 6 hues to pick from
+  let base_hue: f64 = rng.gen_range(0.0, 360.0);
+  let hues: Vec&lt;f64&gt; = ([0.0, 60.0, 120.0, 180.0, 240.0, 300.0])
+        .iter()
+        .map(|offset| (base_hue + offset) % 360.0)
+        .collect();
+
+  //  8 shades of low-saturated color
+  let base_saturation: f64 = rng.gen_range(8.0, 40.0);
+  let base_lightness: f64 = rng.gen_range(0.0, 10.0);
+  let range_lightness: f64 = 90.0 - base_lightness;
+
+  result.special.background = hsluv::hsluv_to_hex(
+    (hues[0],
+    base_saturation,
+    base_lightness / 2.0)
+  );
+
+  result.special.foreground = hsluv::hsluv_to_hex(
+    (hues[0],
+    base_saturation,
+    range_lightness)
+  );
+
+  result.special.cursor = result.special.foreground.clone();
+
+  // Setting the colors according to the Base16 spec at http://chriskempson.com/projects/base16.
+  for i in 0..7 {
+    result.colors.insert(format!(&quot;color{}&quot;, i), hsluv::hsluv_to_hex(
+      (hues[0], base_saturation, base_lightness + (range_lightness * ((i as f64)/7.0).powf(1.5)))
+    ));
+  }
+
+  // 8 random shades
+  let min_saturation: f64 = rng.gen_range(30.0, 70.0);
+  let max_saturation: f64 = min_saturation + 30.0;
+  let min_lightness: f64 = rng.gen_range(50.0, 70.0);
+  let max_lightness: f64 = min_lightness + 20.0;
+
+  for j in 8..16 {
+    result.colors.insert(format!(&quot;color{}&quot;, j), hsluv::hsluv_to_hex(
+      (hues[rng.gen_range(0, hues.len() - 1)], rng.gen_range(min_saturation, max_saturation), rng.gen_range(min_lightness, max_lightness))
+    ));
+  }
+
+  println!(&quot;{:?}&quot;, result);
+  Ok(())
+}
+</code></pre><ul><li><p><a href="https://www.hsluv.org/">HSLuv</a></p></li><li><p><a href="https://www.kuon.ch/post/2020-03-08-hsluv/">This introductory article is a great resource on HSLuv</a></p></li><li><p><a href="https://www.boronine.com/2012/03/26/Color-Spaces-for-Human-Beings/">Color spaces for human beings</a></p></li><li><p>Human-friendly color scheme generation implementation based on <a href="https://terminal.sexy/">terminal.sexy</a>.
+</p></li></ul><section><h2>Backlinks</h2><ul><li><a href="/wiki/2020-11-05-17-21-58">Generate a color scheme based from a single color</a></li></ul></section></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"metadata":{"date":"\"2020-09-19 18:43:07 +08:00\"","date_modified":"\"2021-05-04 20:52:07 +08:00\"","language":"en","source":""},"title":"Generating human-friendly color schemes","hast":{"type":"root","children":[{"type":"element","tagName":"nav","properties":{"className":"toc"},"children":[{"type":"element","tagName":"ol","properties":{"className":"toc-level toc-level-1"},"children":[]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Though we already have "},{"type":"element","tagName":"a","properties":{"href":"/2020-09-11-04-08-34"},"children":[{"type":"text","value":"Human-friendly colorspaces"}]},{"type":"text","value":", it doesn't mean that we can simply generate human-friendly color schemes.\nCertain colors can be perceived as too bright or too dark and having them grouped in a color palette will look out-of-place and/or horrible.\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Color spaces such as "},{"type":"element","tagName":"a","properties":{"href":"https://www.hsluv.org/"},"children":[{"type":"text","value":"HSLuv"}]},{"type":"text","value":" and "},{"type":"element","tagName":"a","properties":{"href":"https://en.wikipedia.org/wiki/CIELUV"},"children":[{"type":"text","value":"CIELUV"}]},{"type":"text","value":" respects perceptual uniformity which approximates how human vision see things.\nWe can simply generate colors with the aforementioned color spaces.\nHere's an example of a "},{"type":"element","tagName":"a","properties":{"href":"http://chriskempson.com/projects/base16/"},"children":[{"type":"text","value":"Base16"}]},{"type":"text","value":" color scheme generation from "},{"type":"element","tagName":"a","properties":{"href":"https://terminal.sexy/"},"children":[{"type":"text","value":"terminal.sexy"}]},{"type":"text","value":" ported to Rust.\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-rust"]},"children":[{"type":"text","value":"use std::error::Error;\nuse std::collections::HashMap;\nuse std::env;\n\nuse hsluv;\nuse rand_chacha::ChaCha8Rng;\nuse rand::{Rng, SeedableRng};\n\n#[macro_use]\nuse serde::{Deserialize, Serialize};\n\n\n// Based from the implemention at terminal.sexy repo\n// at https://github.com/stayradiated/terminal.sexy/blob/2e2c9bec994723a657cce8bf708d83879a50c0ce/lib/stores/random.js\n// which in turn based from the demo example at https://www.hsluv.org/syntax/.\ntype Colors = HashMap\u003cString, String\u003e;\n\n#[derive(Serialize, Deserialize, Debug)]\nstruct SpecialColors {\n  background: String,\n  foreground: String,\n  cursor: String,\n}\n\nimpl SpecialColors {\n  pub fn new() -\u003e Self {\n    Self {\n      background: String::from(\"#000000\"),\n      foreground: String::from(\"#000000\"),\n      cursor: String::from(\"#000000\")\n    }\n  }\n}\n\n#[derive(Serialize, Deserialize, Debug)]\nstruct PywalObject {\n  #[serde(default)]\n  alpha: u8,\n\n  special: SpecialColors,\n\n  colors: Colors,\n\n  wallpaper: Option\u003cString\u003e,\n}\n\nimpl PywalObject {\n  pub fn new() -\u003e Self {\n    Self {\n      alpha: 255,\n      special: SpecialColors::new(),\n      colors: Colors::new(),\n      wallpaper: None\n    }\n  }\n}\n\n/// The command-line interface simply needs a seed to be parsed as an unsigned 64-bit integer (`u64`).\nfn main() -\u003e Result\u003c(), Box\u003cdyn Error\u003e\u003e {\n  let args: Vec\u003cString\u003e = env::args().collect();\n  let mut result = PywalObject::new();\n\n  let mut rng = match args.get(1) {\n    Some(arg) =\u003e ChaCha8Rng::seed_from_u64(arg.parse::\u003cu64\u003e()?),\n    None =\u003e ChaCha8Rng::from_entropy()\n  };\n\n  // 6 hues to pick from\n  let base_hue: f64 = rng.gen_range(0.0, 360.0);\n  let hues: Vec\u003cf64\u003e = ([0.0, 60.0, 120.0, 180.0, 240.0, 300.0])\n        .iter()\n        .map(|offset| (base_hue + offset) % 360.0)\n        .collect();\n\n  //  8 shades of low-saturated color\n  let base_saturation: f64 = rng.gen_range(8.0, 40.0);\n  let base_lightness: f64 = rng.gen_range(0.0, 10.0);\n  let range_lightness: f64 = 90.0 - base_lightness;\n\n  result.special.background = hsluv::hsluv_to_hex(\n    (hues[0],\n    base_saturation,\n    base_lightness / 2.0)\n  );\n\n  result.special.foreground = hsluv::hsluv_to_hex(\n    (hues[0],\n    base_saturation,\n    range_lightness)\n  );\n\n  result.special.cursor = result.special.foreground.clone();\n\n  // Setting the colors according to the Base16 spec at http://chriskempson.com/projects/base16.\n  for i in 0..7 {\n    result.colors.insert(format!(\"color{}\", i), hsluv::hsluv_to_hex(\n      (hues[0], base_saturation, base_lightness + (range_lightness * ((i as f64)/7.0).powf(1.5)))\n    ));\n  }\n\n  // 8 random shades\n  let min_saturation: f64 = rng.gen_range(30.0, 70.0);\n  let max_saturation: f64 = min_saturation + 30.0;\n  let min_lightness: f64 = rng.gen_range(50.0, 70.0);\n  let max_lightness: f64 = min_lightness + 20.0;\n\n  for j in 8..16 {\n    result.colors.insert(format!(\"color{}\", j), hsluv::hsluv_to_hex(\n      (hues[rng.gen_range(0, hues.len() - 1)], rng.gen_range(min_saturation, max_saturation), rng.gen_range(min_lightness, max_lightness))\n    ));\n  }\n\n  println!(\"{:?}\", result);\n  Ok(())\n}\n"}]}]},{"type":"element","tagName":"ul","properties":{},"children":[{"type":"element","tagName":"li","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"element","tagName":"a","properties":{"href":"https://www.hsluv.org/"},"children":[{"type":"text","value":"HSLuv"}]}]}]},{"type":"element","tagName":"li","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"element","tagName":"a","properties":{"href":"https://www.kuon.ch/post/2020-03-08-hsluv/"},"children":[{"type":"text","value":"This introductory article is a great resource on HSLuv"}]}]}]},{"type":"element","tagName":"li","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"element","tagName":"a","properties":{"href":"https://www.boronine.com/2012/03/26/Color-Spaces-for-Human-Beings/"},"children":[{"type":"text","value":"Color spaces for human beings"}]}]}]},{"type":"element","tagName":"li","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Human-friendly color scheme generation implementation based on "},{"type":"element","tagName":"a","properties":{"href":"https://terminal.sexy/"},"children":[{"type":"text","value":"terminal.sexy"}]},{"type":"text","value":".\n"}]}]}]}]},"backlinks":[{"path":"/2020-11-05-17-21-58","title":"Generate a color scheme based from a single color"}]},"__N_SSG":true},"page":"/[[...slug]]","query":{"slug":["2020-09-19-18-43-07"]},"buildId":"Ie9t5zutrXP6Of75Cb5xF","assetPrefix":"/wiki","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="/wiki/_next/static/chunks/polyfills-99d808df29361cf7ffb1.js"></script><script src="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" async=""></script><script src="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" async=""></script><script src="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" async=""></script><script src="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" async=""></script><script src="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" async=""></script><script src="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_buildManifest.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_ssgManifest.js" async=""></script></body></html>

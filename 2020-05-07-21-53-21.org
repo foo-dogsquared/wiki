@@ -1,0 +1,37 @@
+:PROPERTIES:
+:ID:       431532c3-6506-4565-b193-dbfb60eac7d6
+:END:
+#+title: Evergreen notes
+#+date: "2020-05-07 21:53:21 +08:00"
+#+date_modified: "2021-07-21 18:52:38 +08:00"
+#+language: en
+#+tags: pim writing
+
+
+Just like how books are not published from first draft, notes should have the same process.
+With this in mind, evergreen notes should have the following properties:
+
+- It is atomic.
+- It enables you to develop further insight.
+- As you develop more evergreen notes, more time is put on editing them rather than creating them.
+
+Writing evergreen notes is a [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]] process to make your current notes a worthwhile read.
+[[id:499cd6a0-8055-4c28-8bd4-64877aa2c46f][Note-taking should make better thinking]].
+It encourages [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]] and realizations from all ideas including failed ones as [[id:c886bc6d-e9dc-4f62-8841-59123236eda0][Failed ideas can be repurposed]].
+
+
+
+
+* Getting started to write evergreen notes
+
+- [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]].
+  Most notes start as [[id:3d1c0313-fa3d-4b18-b435-51d3837e3e2c][Fleeting notes]] and later create evergreen notes as you get more insight on the topic.
+
+- [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create an inbox to store your thoughts]].
+  You can always process your thoughts later.
+
+- Make a habit out of writing.
+
+- Reflect on the common topics between the transient notes for each video, books, paper, etc.
+  As you write more notes on more resources, you'll begin to notice the overlapping concepts between each note.
+  [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]].

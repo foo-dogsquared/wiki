@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       a7de7178-d674-4c86-8413-66dd8d88b4ad
+:END:
+#+title: Recalling
+#+date: 2021-07-28 11:09:19 +08:00
+#+date_modified: 2021-07-28 11:23:28 +08:00
+#+language: en
+
+
+- a basic but necessary that it strengthens memory by repetition;
+  [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]]
+- usually practiced by [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]]
+- compared to other Learning techniques, it is more effective for [[id:af0ccefe-c671-47bf-94f7-62243c805745][Skill-building]]
+- however, if you're simply recalling information for the sake of remembering, it can reach the point where [[id:e994f2d6-c9d6-4ca8-9dfe-fcc69414e0a4][Repetition is not understanding]]

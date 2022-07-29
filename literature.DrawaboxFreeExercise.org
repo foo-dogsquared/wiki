@@ -1,0 +1,70 @@
+:PROPERTIES:
+:ID:       f7d03d2e-53b5-4b1c-8b97-2cc07c4272fe
+:ROAM_REFS: @DrawaboxFreeExercise
+:END:
+#+title: Drawabox course
+#+date: 2021-10-22 13:53:45 +08:00
+#+date_modified: 2021-11-07 00:33:58 +08:00
+#+published: 
+#+author: 
+#+source: https://drawabox.com/
+#+language: en
+
+- a good roam:Illustration course for absolute beginners;
+  though, this is not a good course if you're exclusively following this;
+  I advice to mix other course
+
+
+# TODO: Upload the exercise pictures
+* Lesson 0
+
+- this is a chapter that is quite more insightful than I thought
+- it mainly preps you up on expectations, attitudes, and prerequisites needed to tackle the course more effectively
+- among them is the separation between fun and training (e.g., 50% rule)
+- it is an interesting point that training and drawing for the sake of drawing (e.g., for fun) should be separated
+- it also sets the expectation of the author to their audience;
+  for example, the course itself is set for absolute beginners and self-taught artists (that hopefully realized how little they know about things);
+  the course also expects students to follow the instructions to the letter and emphasizes how exercises should be used
+- grinding and mastery over the exercises is discouraged mostly because it is a waste of time that could've been used somewhere else;
+  the focus is to build a foundation similar to [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]]
+- do some warm ups before taking on the exercises
+
+
+
+
+* Lesson 1
+
+- since writing and drawing both involves the pen, there are some habits that we bring when starting to draw;
+  one of the most common form is our grip;
+- we mostly use only our wrist which is suitable for creating precise and finer detailed lines;
+  this is perfectly fine for letters but not for lines that come in a variety of length
+- beyond our wrist, we can use our whole arm and shoulder;
+  this enables to easily create longer lines with confidence
+- this course also enforces to draw with the whole arm;
+  the way to do this is to simply glide and practice with the following exercises
+- if you're familiar with or have seen figure drawing videos, there are some certain beliefs to grip the "correct way" with the backhand grip;
+  just like in [[id:4b33103b-7f64-4b51-8f03-cac06d4001bb][Programming]] where people insists the best way to code with different paradigms to the point of dogma, there is a resemblance when it comes to arguing the best way to hold;
+  it is best to know however that things apply differently in different context (i.e., the backhand grip is only applicable to pencils, not pens)
+
+
+** Exercise comments
+
+- Superimposed lines - this is an exercise enforcing to draw with your arm;
+  it is a straightforward exercise so far
+
+- Ghosted Lines - this is where the ghosting method is introduced which is essential as more exercises will build upon this technique;
+  it is an interesting exercise especially for me having some hand-eye coordination issues ;p
+
+- Ghosted Planes - this is "Ghosted Lines" exercise but on steroids;
+  enforces the ghosting method even more
+
+- Tables of Ellipses - this is where I have problems with creating smooth ellipses;
+  I eventually realized my problem is how I grip and how it fall backs to creating ellipses with my wrist instead of my arm;
+  it's harder than I thought to draw circles with a pen;
+  it's a disaster;
+  this is a habitual problem and will work out on this;
+  I'm very tempted to restart this exercise but as the course says "No grinding and attempts at mastery before moving to each exercise"
+
+- Ellipses in Planes - I've done a little warm up with creating ellipses with the ghosting method and it indeed improve my ellipses unlike the previous disastrous result;
+  most of the ellipses appear to be confident but not much in accuracy;
+  that's the next thing to be worked on the upcoming warm ups, I guess

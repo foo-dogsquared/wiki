@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       79357d56-74bf-4854-820c-c0ad849f2468
+:END:
+#+title: Classic prose
+#+date: "2021-04-07 15:09:24 +08:00"
+#+date_modified: "2021-06-18 19:50:47 +08:00"
+#+language: en
+
+
+In essence, classic prose represents the following ideals:
+
+- The reader and writer are equals.
+- Only shows the objective reality.
+- Conversational.
+- Focus on the subject, not the process of studying it.
+
+This model of communication encourages a reader-centric focus on writing without looking down on them.
+Thus, it also encourages engagement with a variety of opinions.
+For example, with the saying "The people of America are getting fatter.", we both know means that the average of the population of America are getting fatter, not every single one of them.
+Just like in a casual conversation, the reader has a rough idea of what they're reading.
+They are reading to see what the writer has to do something about the subject.
+
+The guideline of keeping it as objective as possible also encourages being concise.
+You can [[id:b0aee2c6-f759-4b7a-829f-79781926091e][Create examples of ranking complexity when documenting your project]] serving as an abstract.
+It is written on equal footing with the reader, after all.
+Thus, any writing suited to impress is a pointless addition (and can rub the wrong way for the reader).
+
+Consequently, this [[id:785c4cc7-4a18-4546-a876-2f2c7dd8d19e][Reduce writing fluff]] that you often see in academic and legal writings.

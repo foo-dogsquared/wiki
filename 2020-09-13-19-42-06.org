@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       5af044d1-b143-4718-b6ae-69b1c4120eb0
+:END:
+#+title: Common problems with software packaging
+#+date: "2020-09-13 19:42:06 +08:00"
+#+date_modified: "2021-05-04 20:52:10 +08:00"
+#+language: en
+
+
+Several of the problems I've encountered while practicing packaging (aside from unfamiliarity, of course) is of the following:
+
+- How distinct each project could be in case they don't follow the standard.
+  Not really a problem as most of them has documentation available for it.
+
+- Some of them are built with assumptions or a preset environment which may need patching.
+
+- Sparse documentation for building the software.
+  Some of them are particularly intuitive but in case it is lacking, you're on your own (unless they're open for discussions and pull requests).
+
+The process of software packaging might vary but in my case, it is pretty straightforward with [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]] (though not-so-great with its [[https://nixos.org/learn.html][documentation]]) and even more so with [[id:be917383-84c4-4bf5-9ca0-b04bfb778f4f][GNU Guix]] with its [[https://guix.gnu.org/help][open communication and well-made documentation]].

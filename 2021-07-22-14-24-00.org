@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       7382c605-b481-4baa-997a-317f6cb1819c
+:END:
+#+title: Self-learning is about responsibility
+#+date: 2021-07-22 14:24:00 +08:00
+#+date_modified: 2022-04-03 16:56:33 +08:00
+#+language: en
+
+
+Learning can be done for a variety of purposes whether be it for fun, self-satisfaction, career, or academics.
+Self-learning amplifies this purposeful sense but it is more strict in requirement.
+
+It is purposeful in the sense that our learnt lessons will be put to use.
+E.g., learning [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]] for the self-expression, make beautiful landscapes, or create the series you've been dreaming about.
+Or you could learn foreign languages because you found a job from abroad that requires you to communicate with others.
+
+Teaching others is an art and a science dealing with the individuality of the students.
+Self-teaching is you dealing with your individuality.
+In a sense, self-learning is more about responsibility than learning in isolation.
+
+It needs more self-control and self-reflection: the ability to criticize yourself constructively, evaluating and correcting those mistakes.
+You need to apply the [[id:125ca096-9769-465f-b923-ed1fd7956ae0][Learning techniques]] for yourself while looking out how you're doing.
+
+Self-learning shouldn't be taken in a literal sense (see [[id:1bdbdcfa-98f9-4d08-a0dc-ad2f1b9b9ec9][Advice shouldn't be taken literally]]).
+Learning in isolation is not a good way to learn either especially that you'll be lacking feedback, one of the most important component for learning.
+You cannot simply have a basis for how far you've reached with [[id:9b669fd4-e04e-43dd-a61e-81dea5ec0764][Deliberate practice]] when you don't have others to compare.
+[[id:6f9c552f-055b-4238-874e-8608006ce0ca][Communicate with others to learn]].

@@ -1,0 +1,92 @@
+:PROPERTIES:
+:ID:       cd5f0d04-d9bb-44e8-a0f2-630ea58c1e94
+:END:
+#+title: systemd services
+#+date: 2021-07-19 21:46:52 +08:00
+#+date_modified: 2021-08-02 11:56:12 +08:00
+#+language: en
+
+
+One of the functions of the system suite is service management.
+Like most of the components, it can be used at user-level with their set locations, managing the service daemon, and all.
+
+
+
+
+* Service management basics
+
+Just plop down a service unit file at one of the search paths and you can start managing right away.
+For more information, see the manual page (i.e., =systemd.service.5=).
+A summarized version can be found at [[Service configuration]].
+
+Here's an example of a user service resided as =$HOME/.config/systemd/user/drive-backup.service=.
+
+#+begin_src ini
+[Unit]
+Description=Periodic safety backup for my external drive
+Documentation=man:borg(1) https://www.borgbackup.org/ https://torsion.org/borgmatic/
+
+[Service]
+Type=oneshot
+ExecStart=%h/.nix-profile/bin/borgmatic --config %h/dotfiles/borgmatic/personal-drive.yaml --verbosity 2 create
+ExecStart=%h/.nix-profile/bin/borgmatic --config %h/dotfiles/borgmatic/personal-drive.yaml --verbosity 2 prune
+ExecStart=%h/.nix-profile/bin/borgmatic --config %h/dotfiles/borgmatic/personal-drive.yaml --verbosity 2 check
+
+[Install]
+WantedBy=default.target
+#+end_src
+
+You can then start the service with:
+
+#+begin_src shell  :eval no
+systemctl --user start drive-backup.service
+#+end_src
+
+You can also stop it with the =stop= subcommand (e.g., ~systemctl --user stop drive-backup.service~) and restart it with =restart= (e.g., ~systemctl --user restart drive-backup.service~).
+
+If you want to enable it at startup, you can go with =enable= subcommand.
+(To disable it, use the =disable= subcommand.)
+
+#+begin_src shell  :eval no
+systemctl --user enable drive-backup.service
+#+end_src
+
+systemd will use the configuration file as-is by the time it is started/enabled.
+Which means if the config file has been modified after activation, it will not take effect until you restarted it.
+For this, you can reload the daemon with =daemon-reload= subcommand.
+But for simpler cases, you can use the =reload= subcommand without fully restarting the daemon.
+
+#+begin_src shell  :eval no
+systemctl --user reload drive-backup.service
+
+# You could also use...
+#   systemctl --user daemon-reload
+# ...if you need a stronger option.
+#+end_src
+
+
+* Service configuration
+
+There are different types of services.
+
+- The most common type of service is =simple= which considers the unit active after the main process is forked (e.g., =Service.ExecStart=).
+  This is the recommended type for long-running processes.
+
+- =oneshot= marks the service resolved after the main process exits.
+  Due to the behavior, it will directly go from activating to deactivating instead of active.
+
+- =exec= considers the service active after the binary has been executed.
+
+Aside from types, each service may have one or more commands although the behavior is set depending on the type.
+
+- =ExecStart= which is usually the main command and most services will throw an error if it's missing.
+  All services, unless specified as a =oneshot= service, only have one of these values.
+
+- =ExecStop= only executes after the main command successfully starts.
+
+- =ExecStartPre= and =ExecStartPost= gives you additional commands that will be executed before and after the main command, respectively.
+
+- =ExecStopPre= and =ExecStopPost= is similar to the pre- and post-start commands except for the stop command.
+
+- =Reload= sets whether the service restarts on fail.
+  Values accepted are =no=, =on-failure=, and =on-success=.

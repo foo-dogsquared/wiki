@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       cb995494-302f-4666-b56f-ea20a8adea10
+:END:
+#+title: Memory palace
+#+date: "2021-05-08 23:27:52 +08:00"
+#+date_modified: "2021-07-22 14:26:51 +08:00"
+#+language: en
+
+
+# TODO: visual aid of the basics of this technique
+One of the [[id:125ca096-9769-465f-b923-ed1fd7956ae0][Learning techniques]] that uses familiar environments for better recalling.
+For example, you can use your house as a layout and putting new concepts in it such as the related memory for mathematical formulae (e.g., the formula for an area of a square [\(s^2\)] is remembered as 2 stuffed toys, area of an triangle [\(1/2 * bh\)] as a half-hobo).
+You can then write a crazy narrative with those things — e.g., outside of the house are 2 stuffed toys (area of square) and through the entrance is a half-dressed hobo.
+The core of this technique is learning through overlaying familiar topics with newer concepts.
+
+This is effective for memorizing since [[id:e158b742-53c7-4442-9af3-489ea8240af9][Examples and stories are more memorable than explanations]], knowing fully that [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]].
+
+Memory palaces are one of the more known technique from memory sports.
+Notice how most of them tend to make a lot of effort [[id:1e135aee-0464-4756-9f55-bbf12afe8254][Chunking]] items together and weaving them with familiar concepts such as their house.
+Another interesting thing with this technique is the test of creativity.
+Going back to the memory sports scene, they usually employ this technique by creating a narrative leaning on crazier side of things.
+This makes it more memorable and easier to write more things on top of the wacky antics.

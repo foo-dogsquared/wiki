@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       66337935-420c-40e6-81a6-f74ab0965ed5
+:END:
+#+title: Maintain your own digital library
+#+date: "2020-04-14 18:28:55 +08:00"
+#+date_modified: "2021-08-07 11:20:29 +08:00"
+#+language: en
+#+tags: personal-info-management
+
+
+It is flexible in purpose: you can use it as a personal knowledge base, digital novelties collection, and/or project repository.
+
+A digital library should have the following features:
+
+- Easy to maintain (e.g., modifying [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]], adding more digital objects) which is the top priority.
+- Catalog the files using open standardized tools and specifications if available.
+- Provide an easy and reliable search interface with rich metadata.
+
+Instituition libraries such as Internet Archive and ArXiv are the go-to examples for a long sustaining digital library.
+On the other hand, personal digital libraries are basically personal information management systems where your resources are stored: documents, notes, references, and media files.
+
+
+
+
+* How to create one?
+
+I have been thinking of creating a digital library for myself.
+These are the tools I've been using for my experiment:
+
+- roam:Zotero as my reference management library.
+- Exiftool for annotating my files with [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]].
+- [[id:253c59a3-f5ba-4d77-b535-7447a512945d][Recoll]] as the search interface.
+- [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]] with org-roam as my personal wiki/knowledge base as my [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]] system.
+
+There are a couple of minor things such as Buku as my bookmarks manager, lf as a file explorer, mpv for multimedia, and Firefox as my web browser.
+
+The digital library does not have to be integrated as the established libraries, you just have to loosely connect a system with each of the components of your library.
+My digital library are fragmented with each component located in its own directory (e.g., Zotero data directory is in ~$HOME/Documents/references~, books and documents are at ~$HOME/Documents/books~, wiki at ~$HOME/writings/wiki~) but it is a non-problem for me and it is easy to solve if it's a problem.

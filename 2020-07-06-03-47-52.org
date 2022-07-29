@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       0dbfee88-cdce-48d1-9a10-23fc12d9bcd5
+:END:
+#+title: Refer to advanced resources when skill-building for a solid short-term goal
+#+date: "2020-07-06 03:47:52 +08:00"
+#+date_modified: "2021-07-22 14:09:43 +08:00"
+#+language: en
+
+
+Expert resources are often very specific so you'll have a solid idea what you can do.
+This is more helpful if you already have a rough idea as you'll be forming more concrete tasks by the time you refer to them.
+For example...
+
+- When starting out to [[id:022bc306-973d-4efe-ae76-d194a0ce1fca][3D modelling]], you can look for speedsculpting videos or a competition that involves many talented people in the industry.
+- In [[id:4b33103b-7f64-4b51-8f03-cac06d4001bb][Programming]], you could look for devlogs, highly advanced competitions, fairly popular software projects, or a live coding session.
+- In [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]], you can look for speedpainting, competitions, and art contests that can be found online.
+
+This is to [[id:01459b18-3f30-418e-bd8d-42661d5ea223][Start with wishful thinking]] at its finest.
+
+You can then store the expert resources and [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintain your own digital library]] for future references.
+
+The purpose of this is twofold: to serve as a solid short-term goal (as indicated by the title) and to create inspirations for your future projects.
+If you [[id:fdf9e3eb-02c5-47a6-b586-e71a5c92d01a][Look for live sessions as another form of examples]], the inspirations are especially great as you watch the actual process unfold.
+
+Of course, this does not entirely replace looking out for beginner-friendly resources and communities as an entryway.
+You can start with [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]] (e.g., starting with beginners' tutorial then refer to expert resources for improvement).
+In fact, it is a bad idea to start with expert resources as [[id:48cef2ac-a941-463d-a07f-6be8349456ad][Diving head-first into a difficult problem makes a bad start]].

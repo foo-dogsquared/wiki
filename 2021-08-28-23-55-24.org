@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       d73e539c-5bf5-4853-99bb-ac95dd52fbc3
+:END:
+#+title: Openness makes diversity
+#+date: 2021-08-28 23:55:24 +08:00
+#+date_modified: 2021-08-29 01:02:47 +08:00
+#+language: en
+
+
+- from the nature of openness, there tends to be more options that offer the same thing
+- at times, it also causes diversity by people who disagrees with the standard or wants to take it in a different direction
+- it is good especially it lets other projects to stand on their vision;
+  [[id:9a9163d7-502b-4540-b723-e15afba1e917][Tradeoffs lock yourself in a position]]
+- as one or two progresses, it turns into a cooperative competition
+- examples
+  + Linux distros and [[id:c64836f4-19db-4da7-8532-4ebacf6c1ed1][How Linux distributions are technically their own operating system]] with their subtle (or major) differences to others
+  + [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]] pioneered functional package management;
+    then [[id:be917383-84c4-4bf5-9ca0-b04bfb778f4f][Guix package manager]] took it in a different direction with a stronger focus on [[id:fe9e21bc-3b38-4d0f-a785-253248a38ed7][Reproducible builds]] and roam:Bootstrapping
+  + in terms of desktop landscape in Linux, both GNOME and KDE creates friendly competition to progress desktop standards;
+    this rings true especially both are contributing to the Freedesktop repository to create more standards for the desktop
+  + bits 128-255 that ASCII leave made a competition for other standards such as OEM by IBM-PC for graphical characters or simply used for non-English alphabets
+  + the major members of the BSD family (i.e., NetBSD, FreeBSD, and OpenBSD) all have different priorities;
+    NetBSD focuses on compatibility, FreeBSD is on minimal system with the adequate amount of support, and OpenBSD in security

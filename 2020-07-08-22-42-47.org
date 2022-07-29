@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       1a6187c9-6c79-4378-bf8d-935c8a3d9167
+:END:
+#+title: Learning a new skill often starts from specific places
+#+date: "2020-07-08 22:42:47 +08:00"
+#+date_modified: "2022-01-09 11:50:50 +08:00"
+#+language: en
+
+
+We often [[id:01459b18-3f30-418e-bd8d-42661d5ea223][Start with wishful thinking]].
+Thus, most would start learning with the top-bottom approach (i.e., specific to general topics).
+
+A lot of those learning process starts from what you've seen from other people.
+You want to [[id:088acbae-4394-4771-9cef-3b336b101f80][Look into tutorials with a solid-end goal]] or [[id:7f73f745-8ce0-4a02-b454-1b7c57b1e202][Follow the experts in the field]].
+You most likely start from similar types as [[id:e158b742-53c7-4442-9af3-489ea8240af9][Examples and stories are more memorable than explanations]].
+
+Documenting this process, the core of [[id:af0ccefe-c671-47bf-94f7-62243c805745][Skill-building]] has the following workflow.
+
+- Document your specific example (e.g., a website, a drawing, a 3D scene).
+  You can [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]] to clear your specific example similar to a final proof-reading before you submit your paper.
+
+- Then, try to learn the specific example.
+  For a start, you can [[id:b318dc2b-5fa1-48ff-9d33-6fbbdee46a2f][Write down the simplest possible example]].
+
+- For every unknown part of the example, try to understand the underlying concepts.
+  If the underlying concept is not yet understood, then dig deeper into understanding the underlying concept of that underlying concept ad infinitum.
+
+- With the tree of to-be-understood underlying concepts, take a peek between each underlying concepts  of various depths until you can easily see the connections between them.
+  Be careful of [[id:9138397a-a965-45e9-97ea-71849e8d4f94][Overlearning]].
+
+- Work your way up the knowledge tree you've just created until you can reproduce/create the example with your newfound hierarchical knowledge accurately.
+
+The key idea is to [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]].
+Normally, we do the above process subconciously but to explicitly write tasks and projects that we want to tackle can lessen the burden.

@@ -1,0 +1,26 @@
+# namespace refers to the Kubernetes namespace resource.
+namespace:
+  name: demo
+
+# replicaCount is the number of instances to run in a replica set.
+replicaCount: 3
+
+# image contains the detail of the container image to be used
+image:
+  repository: nginx
+  tag: alpine
+  pullPolicy: IfNotPresent
+
+# resources dictate the amount to spend
+resources:
+  cpu: 50m
+  memory: 256Mi
+
+# service configures the Kubernetes service resource
+service:
+  type: ClusterIP
+  port: 8111
+
+# configmap configures the Kubernetes configmap resource
+configmap:
+  data: "version: alpine"

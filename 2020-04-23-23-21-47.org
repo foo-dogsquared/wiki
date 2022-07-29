@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       88f2256a-3359-4d10-92a3-9273cabce414
+:END:
+#+title: Personal information management
+#+date: "2020-04-23 23:21:47 +08:00"
+#+date_modified: "2021-05-21 18:46:17 +08:00"
+#+language: en
+
+
+Personal information management (PIM) is self-explanatory as it is.
+It the process of managing your information including [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]], [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]], library management, and much more.
+Those information surely didn't come out of nowhere, you most likely got the idea from others.
+Thus, minding about [[id:f0d0198c-b523-4d71-a13c-0c578dfac3ef][Information literacy]] is a good thing.
+
+
+
+
+* Practicing information management
+
+While there's no correct way to practice PIM but to start:
+
+- [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintain your own digital library]] which can make managing personal belongings from your personal photos, academic libraries and references, and your anime collection all the more easier.
+
+- While not a good one, the 3-2-1 rule is a good starting point for practicing backups.
+  The rule is simple: 3 copies of your data stored in 2 media (e.g., internal hard drive, external storage) with at least 1 of them stored offsite of your computer (e.g., remote location, cloud service).
+
+- Start to manage [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]] but only for the most relevant resources.
+
+- Start to [[id:7827b564-59ed-4604-ac2b-630c60c0a4ab][Use timestamps as a future-proofing method]].
+
+- Consider to create [[id:29ecbd86-ad97-4882-aa3f-56b5b90025d5][Digital gardens]], a personal wiki with a focus on growth.

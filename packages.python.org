@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       1aa68415-adc6-473f-8026-bae00979cd52
+:END:
+#+title: Python packages
+#+date: 2021-07-17 21:59:04 +08:00
+#+date_modified: 2021-07-17 21:59:04 +08:00
+#+language: en
+
+
+- the most common distribution tool as of 2021-07-17 is =setuptools= which uses =setup.py= which is a script telling how to build the Python module;
+  it is [[https://docs.python.org/3/distributing/index.html][documented from the official documentation]]
+- some projects replaces the =setup.py= with =pyproject.toml= which solves the dependency problem;
+  it is specified from [[https://www.python.org/dev/peps/pep-0518/][PEP-0518]]
+- some projects replaced the official Python package manager (=pip=) with [[https://python-poetry.org/][poetry]] which requires a new setup;
+  it can use =pyproject.toml= which makes it easy to install with either the official setup or Poetry;
+  projects may have a =poetry.toml= to configure the module similarly to =package.json= in NodeJS packages;
+  Poetry packages may also has a lockfile at =poetry.lock=
+- examples:
+  + the [[https://github.com/python-poetry/poetry][source of Poetry itself]] uses the Poetry package manager
+  + [[id:08f43012-a152-48c4-8943-9fe557a39232][Cookiecutter]] (at commit =d6037b7dee5756e35a6ecd5b522899a9061c2c79=) uses =pyproject.toml= with a shim for the =setuptools=
+  + [[https://github.com/cruft/cruft][Cruft]] uses Poetry (which in turn can use the official distribution setup)
+  + [[https://github.com/rschroll/rmfuse][rmfuse]] uses =pyproject.toml= that can be installed either with Pip or Poetry

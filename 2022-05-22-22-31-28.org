@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       98625da4-8e40-4b3c-bd3e-65781ae1d76f
+:END:
+#+title: Time spent on learning a skill should equally spend time for applying said skill                                                 
+#+date: 2022-05-22 22:31:28 +08:00
+#+date_modified: 2022-07-08 14:24:11 +08:00
+#+language: en
+
+
+- as drawn from the [[id:f7d03d2e-53b5-4b1c-8b97-2cc07c4272fe][Drawabox course]], there should be time spent on actually applying said skill for your own purposes;
+  in the end, [[id:7382c605-b481-4baa-997a-317f6cb1819c][Self-learning is about responsibility]];
+  you may as well throw the whole progress if you don't soak time for doing said skill
+- technical knowledge isn't going to your future practical applications any better;
+  the act of applying said knowledge is a skill itself
+  - while you may have the technical knowledge of [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]], if you cannot draw the things that truly matters then it isn't truly progress
+  - while you have taken several online courses about [[id:4b33103b-7f64-4b51-8f03-cac06d4001bb][Programming]], if you don't have an actual project to work on (whether it is to scratch your own itch or contribute in other projects) for whatever reason then it is ultimately useless
+  - that is basically applying for biology major in college and only stopping at the actual knowledge
+- basically, the idea of balancing time on work versus play
+- obstacles
+  - out of fear and judgement;
+    the fear of embarrassing ourselves to the wider audience if mistakes are shown;
+    the worst case scenario is people will simply ignore it;
+    simply put, no one truly cares;
+    while it is important to [[id:6f9c552f-055b-4238-874e-8608006ce0ca][Communicate with others to learn]], you should also tone down being self-critical
+  - [[id:0bb464a1-94c4-4130-bc7d-413465aea8e8][Procrastination]] is also one but not of the typical variety;
+    most people would see a thing for future projects and evaluate it as something that they cannot do in the current level until they can reach their desired skill level;
+    there is one more problem to this approach: we cannot simply know;
+    not only this can turn into a situation where [[id:03cd9fad-e187-4939-9347-1a034c6efbe2][Overanalyzing slow you down]], we'll eventually realize that [[id:864a9242-eb10-44ad-81b7-c237276523e5][We know more compared to what we understood]];
+    thus, the potential start for procastination will begin;
+    to mitigate this problem, the solution is simple: just start;
+    pursue the said too-advanced-for-me-type of project and use it as your jumpboard for starting out;
+    [[id:12dc8b07-ed8b-46d8-bff0-a38d9f3cb83b][Diving head-first with a difficult problem is a good indicator of progress]]

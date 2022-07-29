@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       0e2c9eaf-f12a-47b2-9c9c-d1a590db131b
+:END:
+#+title: Involuntary attention switch is good for preventing tunnel vision
+#+date: "2021-05-20 20:20:19 +08:00"
+#+date_modified: "2021-07-21 15:59:06 +08:00"
+#+language: en
+
+
+We sometimes slip into the ADHD-like tendency of involuntary attention switching.
+This can be good as [[id:c10ebbb7-2af6-419e-a8f3-3417c5b82de3][Randomness in systems introduces interest]].
+
+The more unfamiliar the topic, the less associations we make.
+Furthermore, the more time we spent on the environment that we're comfortable with, the more likely we'll be experiencing [[id:5c603e2c-4dae-465e-abb5-12897ad7466d][Tunnel vision]].
+We understand this unfamiliar topic as if an isolated land far away from the main body of familiar ideas, just waiting to drift towards them.
+This is why interleaving from our familiar can sometimes be helpful as [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]].
+
+Some examples:
+
+- Window shopping for a better [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]] workflow while you already have a working workflow.
+- Checking the new programming language or a framework even if you're already comfortable with another one.
+- Reading the trending articles of the week even if you don' have any familiarity with the related topic.
+
+This doesn't mean lack of commitment as you still have to strive to improve your own (see [[id:d885e93b-f919-4338-a6b9-3438538e18c0][Every copy of the techniques is personalized]]).
+And most of the time, it isn't really worth to switch.

@@ -1,0 +1,108 @@
+:PROPERTIES:
+:ID:       f1b21fc8-86a5-47cd-b3d8-da6ac7a34427
+:END:
+#+title: systemd timers
+#+date: 2021-07-19 21:45:47 +08:00
+#+date_modified: 2022-05-22 22:28:49 +08:00
+#+language: en
+
+
+You can schedule tasks with timers.
+If systemd is compiled with the feature, it makes cron unnecessary.
+
+
+
+
+* Timer management
+
+In a fully-installed systemd-enabled system, there are multiple ways to manage your timers.
+
+While managing them is practically the same as any other units (see [[id:20830b22-9e55-42a6-9cef-62a1697ea63d][systemd]]), there are timer-specific ways to manage them easier.
+
+- ~systemctl list-timers~ is the go-to command that displays an overview of all active timers.
+  Just give the =--all= flag to list all timers including disabled timers.
+
+- ~systemctl status ${TIMER_UNIT}~ is another way for a specific timer unit.
+  It gives the same details as the =list-timers= subcommand so you'll rarely use this subcommand in practice.
+
+
+
+
+* Timedate formats
+
+systemd has different ways to denote time.
+
+- Timespans denote the duration — e.g., =100 seconds=, =5M 3w=.
+- Timestamps refer to a specific point in time — e.g., =2021-04-02=, =today=, =now=.
+- Calendar events can refer to more than one point of time — e.g., =*-*-4/2=, =Sun,Wed,Fri *-1/2-1/8=.
+
+To find more details about time notation, you can view the =systemd.time.7= manual page.
+
+Here's an example of setting a timer for an example backup service.
+The following timer unit sets it to execute every day at 18:00.
+
+#+begin_src ini
+[Unit]
+Description=A deduplicated backup from my computer
+Documentation=man:borg(1) https://borgbackup.readthedocs.io/
+
+[Timer]
+Unit=borg-backup.service
+OnCalendar=*-*-* 18:00:00
+Persistent=true
+
+[Install]
+WantedBy=graphical.target
+#+end_src
+
+If the timer unit is started, this will trigger =borg-backup.service= from the load path.
+But you can omit =Timer.Unit= key if you named the timer unit file similarly (e.g., =borg-backup.timer= with =borg-backup.service=).
+
+You can find more information about it from the =systemd.timer.5= manual page.
+Furthermore, systemd has a testing tool for time with ~systemd-analyze {timespan,timestamp,calendar}~.
+
+#+begin_src shell  :eval yes
+printf "Timespan example:\n"
+printf "..............\n"
+systemd-analyze timespan 4000min
+printf "..............\n\n"
+
+printf "Timestamp example:\n"
+printf "..............\n"
+systemd-analyze timestamp 2021-07-01
+printf "..............\n\n"
+
+printf "Calendar example:\n"
+printf "..............\n"
+systemd-analyze calendar "*-1/4-5 0/2:00:00"
+printf "..............\n\n"
+#+end_src
+
+#+results:
+#+begin_example
+Timespan example:
+..............
+Original: 4000min
+      μs: 240000000000
+   Human: 2d 18h 40min
+..............
+
+Timestamp example:
+..............
+  Original form: 2021-07-01
+Normalized form: Thu 2021-07-01 00:00:00 PST
+       (in UTC): Wed 2021-06-30 16:00:00 UTC
+   UNIX seconds: @1625068800
+       From now: 10 months 21 days ago
+..............
+
+Calendar example:
+..............
+  Original form: *-1/4-5 0/2:00:00
+Normalized form: *-01/4-05 00/2:00:00
+    Next elapse: Mon 2022-09-05 00:00:00 PST
+       (in UTC): Sun 2022-09-04 16:00:00 UTC
+       From now: 3 months 13 days left
+..............
+
+#+end_example

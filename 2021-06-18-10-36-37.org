@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       815b2beb-40a0-4e79-9097-5b688189ad5b
+:END:
+#+title: Writing
+#+date: "2021-06-18 10:36:37 +08:00"
+#+date_modified: "2021-06-18 14:06:06 +08:00"
+#+language: en
+
+
+# TODO: Writing for fiction and non-fiction.
+Minding your writing can also improve your [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]] habit.
+This is especially useful for dealing with more technical topics that usually leaves a not-so-good impression when visiting back.
+
+One of the useful models for writing is [[id:79357d56-74bf-4854-820c-c0ad849f2468][Classic prose]].
+Since the model encourages objectivity, this [[id:785c4cc7-4a18-4546-a876-2f2c7dd8d19e][Reduce writing fluff]].
+Double-check your writing and see if reducing the words in a sentence is possible without any loss of content.
+
+[[id:b318dc2b-5fa1-48ff-9d33-6fbbdee46a2f][Write down the simplest possible example]] and [[id:b0aee2c6-f759-4b7a-829f-79781926091e][Create examples of ranking complexity when documenting your project]].
+Some topics are better explained with an example than fully explaining the concept.
+
+If you are writing for beginners, keep in mind how [[id:06df5d69-12ac-4e98-8013-ac54d29aa80c][Learning process]] work.
+Avoid overexplaining as the user can read between the lines.
+If you want to explain more details, you can add visual aids, create analogies and narratives (see [[id:cb995494-302f-4666-b56f-ea20a8adea10][Memory palace]]) to lessen the need for more words.
+
+To create some spice in your writing, consider to [[id:d024516b-35ea-40ae-9433-ceacea695073][Write paragraphs like music]] sprinkled at some point.
+
+Not all situations are applicable for dealing with various topics.
+The more important thing for writing is to make it consistent.
+[[id:40b2e1d0-0376-475e-91ff-db9fe362990e][Make a style guide for consistency]].

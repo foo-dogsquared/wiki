@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       73bca39f-e492-47aa-92e7-629d3b8b92ad
+:END:
+#+title: Neovim folds
+#+date: 2022-04-03 16:59:05 +08:00
+#+date_modified: 2022-04-03 16:59:24 +08:00
+#+language: en
+
+
+- it is a built-in feature in Neovim;
+  enables you to quickly navigate a long document by hiding them and opening them when you want
+- some keybindings for managing folds
+  | Keymap | Description                |
+  |--------+----------------------------|
+  | ~zf~   | Create a fold.             |
+  | ~zA~   | Toggle a fold recursively. |
+  | ~zM~   | Close all folds.           |
+  | ~zR~   | Open all folds.            |
+  | ~zj~   | Move one fold down.        |
+  | ~zk~   | Move one fold up.          |
+- while in insert mode, there are no folds under your cursor so you can see what you type
+- while manually managing folds can be tedious, Neovim does have a way to automatically manage folds for you;
+  this is dictated through the ~foldmethod~ variable;
+  for more information for the following methods, see ~fold-${VALUE}~ with the [[id:0a0fe63e-dcf3-4928-9e82-5513784c1244][Neovim help system]]
+  - with ~manual~ value, no additional actions are done
+  - with ~marker~ value, a fold will be created ala-HTML markers
+  - with ~expr~ value, a fold will be managed through its fold level evaluated from ~foldexpr~ function;
+    certain tools like [[https://github.com/nvim-treesitter/nvim-treesitter][nvim-treesitter]] takes advantage of this to arrange the code through its blocks, scope, etc.

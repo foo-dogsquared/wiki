@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       0ebe02bf-88fb-498e-a87e-35e09aca4424
+:END:
+#+title: All analogies are flawed
+#+date: 2022-05-22 20:59:30 +08:00
+#+date_modified: 2022-05-22 21:01:24 +08:00
+#+language: en
+
+
+- they are meant only to easily get a rough idea on a foreign topic, a mental model to make some sense
+- due to the different nature of the two objects being compared, you cannot make an analogy that fits 1:1
+- furthermore, oftentimes there are aspects that the analogy ignored for the sake of making a comparison;
+  whether or not the analogy makes more sense will depend what is being discussed and someone could add an insight on the comparison
+- examples
+  + electricity is often compared to water though it often ignored fluid dynamics that will factor differently
+  + HTML, CSS, and JavaScript are often compared to the human anatomy (e.g., HTML is skeletal system, CSS is the outside appearance, JavaScript is the circulatory system), ignoring the inner workings of each system
+- this is useful in writing with [[id:79357d56-74bf-4854-820c-c0ad849f2468][Classic prose]] to set the author's perspective especially if used with household objects or common occurences

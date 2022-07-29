@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       5149a4bf-fb1a-4256-be12-1bb61456fcd4
+:END:
+#+title: Don't get caught in the hype
+#+date: "2021-05-20 20:17:03 +08:00"
+#+date_modified: "2021-06-18 20:28:30 +08:00"
+#+language: en
+
+
+# TODO: Improve this note
+- a simple advice with a simple reason
+- oftentimes, when a thing caught mainstream attention, it mostly dives into [[id:909b4830-72c8-4943-be47-efaf77e40253][Professional narcissism]] on the thing
+- e.g., how this will make you 150% productive, up to 200k members have already registered with this tool
+- not much focus on the what and the why
+- when Roam Research caught up, most focus on the attention of how this make your note-taking improve
+- that said, we do sometimes get caught in it and [[id:0e2c9eaf-f12a-47b2-9c9c-d1a590db131b][Involuntary attention switch is good for preventing tunnel vision]]

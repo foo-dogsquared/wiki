@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       d0d97498-3cb1-4cf7-abe5-327cbb89ff29
+:END:
+#+title: Working and long-term memory
+#+date: 2021-07-21 14:59:05 +08:00
+#+date_modified: 2021-07-21 15:02:32 +08:00
+#+language: en
+
+
+Our brain has a lot of ideas and random thought that pass by each day, it also has a large space of information we can store to accommodate.
+While we can categorize many parts of the memory, we'll focus with the two main parts:
+
+- *The working memory contains all of the immediate information we have for the task at hand.*
+  This is our mental scratchpad or our working desk containing all of the tools and materials needed for the project.
+
+- *The long-term memory contains all of the information we know.*
+  This is like our notebook, formally linking all of the information with each other.
+  Continuing with the working desk analogy, this is our warehouse of our tools and materials.
+
+With time, our memory consolidates, becoming more familiar with the concept.
+From time and the process of [[id:1e135aee-0464-4756-9f55-bbf12afe8254][Chunking]] information, this is when we get out of our beginner phase to a semi-expert.
+When we retrieve a memory, it can be strengthened and even altered forming false memories.

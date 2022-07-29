@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       06df5d69-12ac-4e98-8013-ac54d29aa80c
+:END:
+#+title: Learning process
+#+date: "2021-05-14 12:37:18 +08:00"
+#+date_modified: "2021-07-28 11:08:50 +08:00"
+#+language: en
+
+
+- Know [[id:25fb4ebf-2cc4-40fe-93ad-37a79aedfb41][The basics of memory]].
+
+- [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]] — that is, starting from rote learning is a valid way to learn as much as it isn't well-accepted.
+
+- Consider to use various [[id:125ca096-9769-465f-b923-ed1fd7956ae0][Learning techniques]].
+
+- With the techniques considered, take a look at the common [[id:9dc7cb08-3aea-4f66-80ac-49a14b4b7642][Pitfalls and illusions of competence]].
+
+- After you understood the concepts, you start to see things in your own perspective.
+  [[id:d885e93b-f919-4338-a6b9-3438538e18c0][Every copy of the techniques is personalized]].

@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       9612e378-6d3f-4871-8fcf-03fe17691c55
+:END:
+#+title: Why wishing a unified Linux distro is a pointless task
+#+date: 2022-06-19 12:02:03 +08:00
+#+date_modified: 2022-06-19 12:07:17 +08:00
+#+language: en
+
+
+There's nothing wrong with wishful thinking but time and time again I've seen the complaint from other Linux users' frustrating wishful thinking how they wish all developers would stop developing more Linux distros and instead focus on one.
+The following list shows why it could be a bad idea.
+
+- Each Linux distro is its own project.
+  See [[id:c64836f4-19db-4da7-8532-4ebacf6c1ed1][How Linux distributions are technically their own operating system]].
+
+- Consequently, different projects also promote different philosophies.
+  Disagreements between projects will inevitably happen.
+  For example, [[id:f3f1201a-9fb9-4481-981f-5f50f8982a5e][Arch Linux]] represents simplicity, modernity (up-to-date packages), and pragmatism (accepting both free and non-free software) where it would contrast with roam:Debian with their mission to create a free operating system and stability.
+
+- With so many projects, there a chance one of them might get popular enough.
+  Just like what happened with some projects like Zorin OS initially created by two teenagers tackling their first computer science project and to make a more accessible version of Ubuntu for their parents.
+
+- [[id:d885e93b-f919-4338-a6b9-3438538e18c0][Every copy of the techniques is personalized]];
+  different people have different idea and understanding how to implement something.
+  Most ideas might just get stuck in a discussion by people disagreeing on one unified way, prompting people to implement it with a separate project (and rendering the unified distro development pointless).
+
+- A lot of the projects are run by volunteers.
+  What's to interest them from helping developing other distributions if they were forced to help?
+
+- This is the least important reason but Linux-based operating systems are [[id:e8c1218f-35a4-4dd3-a174-5d8f848b74b2][Free software]] therefore promoting the idea of [[id:d73e539c-5bf5-4853-99bb-ac95dd52fbc3][Openness makes diversity]].
+  There's nothing stopping someone from exploring other ideas that may or may not have been explored before.
+
+The closest thing to unify them is major distributions and projects such as [[id:20830b22-9e55-42a6-9cef-62a1697ea63d][systemd]] and roam:FreeDesktop standards.

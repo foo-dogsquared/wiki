@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af
+:END:
+#+title: We are more associative than structured
+#+date: "2021-05-08 23:12:29 +08:00"
+#+date_modified: "2021-07-22 14:13:32 +08:00"
+#+language: en
+
+
+Knowing [[id:25fb4ebf-2cc4-40fe-93ad-37a79aedfb41][The basics of memory]], our neurons represent more like a web of thoughts.
+Innovation often comes from combining aspects from a network of ideas (see [[id:af581713-d4a8-438a-84ea-9f3b8e1353e6][Creativity does not mean originality]]).
+Our brain is good at relating each topic with something else.
+To exemplify the point further, try to start at a single word and make a word map around it.
+
+This is subtly present in daily life mostly filled with links from one thing to another.
+
+- Most conversations — e.g., "X is just Y but better", "Cuphead is the Dark Souls of run-and-gun", "Markdown is simplified HTML", "Lenen is Touhou but harder".
+- In marketing — e.g., "This is just Y but cheaper", use cases presented as a narrative, comparison with other products, our tendency to equate price to quality.
+- In learning — e.g., "FANBOYS" to describe the English conjunction words, "Every good boy does fine" to describe the notes placed in the lines of the music sheet.
+- Nostalgia — e.g., whenever we walked into an old place, we may remember the olden days.
+
+When knowing a new topic, we strive to compare between the new and the familiar things.
+[[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]] including the things we already know.
+We are desperate to create a hook between the new and the old as we have an inherent understanding that newer ideas are built on top of other ideas.
+
+However, [[id:ff0d49d3-e0b3-45fe-8964-0af611eaa20f][We are more structured than associative]] at times.
+We do need some order to make some sense.

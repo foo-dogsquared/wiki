@@ -1,0 +1,75 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><title>Nix derivations</title><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script type="text/x-mathjax-config">
+                MathJax = {
+                    tex: {
+                        inlineMath: [ [&#x27;$&#x27;,&#x27;$&#x27;], [&#x27;\(&#x27;,&#x27;\)&#x27;] ],
+                        displayMath: [ [&#x27;$$&#x27;,&#x27;$$&#x27;], [&#x27;[&#x27;,&#x27;]&#x27;] ]
+                    },
+                    options = {
+                        processHtmlClass = &quot;math&quot;
+                    }
+                }
+                </script><meta name="next-head-count" content="6"/><link rel="preload" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" as="style"/><link rel="stylesheet" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" as="script"/></head><body><div id="__next"><main><h1>Nix derivations</h1><section class="post-metadata"><span>Date: <!-- -->2021-07-18 23:16:39 +08:00</span><span>Date modified: <!-- -->2021-12-28 00:16:07 +08:00</span></section><nav class="toc"><ol class="toc-level toc-level-1"></ol></nav><p>Derivations are recipes for the Nix build daemon how to build the package.
+At a glance, this is the equivalent to manifests from <a href="/wiki/packages.flatpak">Flatpak packages</a> or Guix packages.
+</p><p>The following code block shows what a derivation looks like.
+</p><pre class="src-block"><code class="language-bash">nix show-derivation nixpkgs#hello
+</code></pre><div class="exampe">{
+  &quot;/nix/store/vvb4wxmnjixmrkhmj2xb75z62hrr41i7-hello-2.10.drv&quot;: {
+    &quot;outputs&quot;: {
+      &quot;out&quot;: {
+        &quot;path&quot;: &quot;/nix/store/xcp9cav49dmsjbwdjlmkjxj10gkpx553-hello-2.10&quot;
+      }
+    },
+    &quot;inputSrcs&quot;: [
+      &quot;/nix/store/9krlzvny65gdc8s7kpb6lkx8cd02c25b-default-builder.sh&quot;
+    ],
+    &quot;inputDrvs&quot;: {
+      &quot;/nix/store/127p1886lb1q7x02wyy77ib9ghhc324v-hello-2.10.tar.gz.drv&quot;: [
+        &quot;out&quot;
+      ],
+      &quot;/nix/store/4lzwc3wzbqjq973psxkph8jjq4g6cssr-stdenv-linux.drv&quot;: [
+        &quot;out&quot;
+      ],
+      &quot;/nix/store/js6ib8zv84knb7kwnjdrqgwf86djjblk-bash-5.1-p12.drv&quot;: [
+        &quot;out&quot;
+      ]
+    },
+    &quot;system&quot;: &quot;x86_64-linux&quot;,
+    &quot;builder&quot;: &quot;/nix/store/a54wrar1jym1d8yvlijq0l2gghmy8szz-bash-5.1-p12/bin/bash&quot;,
+    &quot;args&quot;: [
+      &quot;-e&quot;,
+      &quot;/nix/store/9krlzvny65gdc8s7kpb6lkx8cd02c25b-default-builder.sh&quot;
+    ],
+    &quot;env&quot;: {
+      &quot;buildInputs&quot;: &quot;&quot;,
+      &quot;builder&quot;: &quot;/nix/store/a54wrar1jym1d8yvlijq0l2gghmy8szz-bash-5.1-p12/bin/bash&quot;,
+      &quot;configureFlags&quot;: &quot;&quot;,
+      &quot;depsBuildBuild&quot;: &quot;&quot;,
+      &quot;depsBuildBuildPropagated&quot;: &quot;&quot;,
+      &quot;depsBuildTarget&quot;: &quot;&quot;,
+      &quot;depsBuildTargetPropagated&quot;: &quot;&quot;,
+      &quot;depsHostHost&quot;: &quot;&quot;,
+      &quot;depsHostHostPropagated&quot;: &quot;&quot;,
+      &quot;depsTargetTarget&quot;: &quot;&quot;,
+      &quot;depsTargetTargetPropagated&quot;: &quot;&quot;,
+      &quot;doCheck&quot;: &quot;1&quot;,
+      &quot;doInstallCheck&quot;: &quot;&quot;,
+      &quot;name&quot;: &quot;hello-2.10&quot;,
+      &quot;nativeBuildInputs&quot;: &quot;&quot;,
+      &quot;out&quot;: &quot;/nix/store/xcp9cav49dmsjbwdjlmkjxj10gkpx553-hello-2.10&quot;,
+      &quot;outputs&quot;: &quot;out&quot;,
+      &quot;patches&quot;: &quot;&quot;,
+      &quot;pname&quot;: &quot;hello&quot;,
+      &quot;propagatedBuildInputs&quot;: &quot;&quot;,
+      &quot;propagatedNativeBuildInputs&quot;: &quot;&quot;,
+      &quot;src&quot;: &quot;/nix/store/3x7dwzq014bblazs7kq20p9hyzz0qh8g-hello-2.10.tar.gz&quot;,
+      &quot;stdenv&quot;: &quot;/nix/store/xcmlbsqabmckx42p8w18ri5zq8v2iiav-stdenv-linux&quot;,
+      &quot;strictDeps&quot;: &quot;&quot;,
+      &quot;system&quot;: &quot;x86_64-linux&quot;,
+      &quot;version&quot;: &quot;2.10&quot;
+    }
+  }
+}
+</div><p>While we can create derivations with the <code class="inline-verbatim">derivations</code> builtin from the <a href="/wiki/lang.nix">Nix language</a>, in practice you&#x27;ll use <code class="inline-verbatim">stdenv.mkDerivation</code> from nixpkgs standard library.
+</p><ul><li><p>nixpkgs also comes with several convenient functions/environments for several programming languages and frameworks including Python, Rust, Go, and Nim
+</p></li><li><p>it also includes environments for common setups such as for clang compiler
+</p></li></ul><section><h2>Backlinks</h2><ul><li><a href="/wiki/lang.nix">Nix language</a></li><li><a href="/wiki/packages.nix">Nix packages</a></li><li><a href="/wiki/tools.nix">Nix package manager</a></li></ul></section></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"metadata":{"date":"2021-07-18 23:16:39 +08:00","date_modified":"2021-12-28 00:16:07 +08:00","language":"en","source":""},"title":"Nix derivations","hast":{"type":"root","children":[{"type":"element","tagName":"nav","properties":{"className":"toc"},"children":[{"type":"element","tagName":"ol","properties":{"className":"toc-level toc-level-1"},"children":[]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Derivations are recipes for the Nix build daemon how to build the package.\nAt a glance, this is the equivalent to manifests from "},{"type":"element","tagName":"a","properties":{"href":"/packages.flatpak"},"children":[{"type":"text","value":"Flatpak packages"}]},{"type":"text","value":" or Guix packages.\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"The following code block shows what a derivation looks like.\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-bash"]},"children":[{"type":"text","value":"nix show-derivation nixpkgs#hello\n"}]}]},{"type":"element","tagName":"div","properties":{"className":["exampe"]},"children":[{"type":"text","value":"{\n  \"/nix/store/vvb4wxmnjixmrkhmj2xb75z62hrr41i7-hello-2.10.drv\": {\n    \"outputs\": {\n      \"out\": {\n        \"path\": \"/nix/store/xcp9cav49dmsjbwdjlmkjxj10gkpx553-hello-2.10\"\n      }\n    },\n    \"inputSrcs\": [\n      \"/nix/store/9krlzvny65gdc8s7kpb6lkx8cd02c25b-default-builder.sh\"\n    ],\n    \"inputDrvs\": {\n      \"/nix/store/127p1886lb1q7x02wyy77ib9ghhc324v-hello-2.10.tar.gz.drv\": [\n        \"out\"\n      ],\n      \"/nix/store/4lzwc3wzbqjq973psxkph8jjq4g6cssr-stdenv-linux.drv\": [\n        \"out\"\n      ],\n      \"/nix/store/js6ib8zv84knb7kwnjdrqgwf86djjblk-bash-5.1-p12.drv\": [\n        \"out\"\n      ]\n    },\n    \"system\": \"x86_64-linux\",\n    \"builder\": \"/nix/store/a54wrar1jym1d8yvlijq0l2gghmy8szz-bash-5.1-p12/bin/bash\",\n    \"args\": [\n      \"-e\",\n      \"/nix/store/9krlzvny65gdc8s7kpb6lkx8cd02c25b-default-builder.sh\"\n    ],\n    \"env\": {\n      \"buildInputs\": \"\",\n      \"builder\": \"/nix/store/a54wrar1jym1d8yvlijq0l2gghmy8szz-bash-5.1-p12/bin/bash\",\n      \"configureFlags\": \"\",\n      \"depsBuildBuild\": \"\",\n      \"depsBuildBuildPropagated\": \"\",\n      \"depsBuildTarget\": \"\",\n      \"depsBuildTargetPropagated\": \"\",\n      \"depsHostHost\": \"\",\n      \"depsHostHostPropagated\": \"\",\n      \"depsTargetTarget\": \"\",\n      \"depsTargetTargetPropagated\": \"\",\n      \"doCheck\": \"1\",\n      \"doInstallCheck\": \"\",\n      \"name\": \"hello-2.10\",\n      \"nativeBuildInputs\": \"\",\n      \"out\": \"/nix/store/xcp9cav49dmsjbwdjlmkjxj10gkpx553-hello-2.10\",\n      \"outputs\": \"out\",\n      \"patches\": \"\",\n      \"pname\": \"hello\",\n      \"propagatedBuildInputs\": \"\",\n      \"propagatedNativeBuildInputs\": \"\",\n      \"src\": \"/nix/store/3x7dwzq014bblazs7kq20p9hyzz0qh8g-hello-2.10.tar.gz\",\n      \"stdenv\": \"/nix/store/xcmlbsqabmckx42p8w18ri5zq8v2iiav-stdenv-linux\",\n      \"strictDeps\": \"\",\n      \"system\": \"x86_64-linux\",\n      \"version\": \"2.10\"\n    }\n  }\n}\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"While we can create derivations with the "},{"type":"element","tagName":"code","properties":{"className":["inline-verbatim"]},"children":[{"type":"text","value":"derivations"}]},{"type":"text","value":" builtin from the "},{"type":"element","tagName":"a","properties":{"href":"/lang.nix"},"children":[{"type":"text","value":"Nix language"}]},{"type":"text","value":", in practice you'll use "},{"type":"element","tagName":"code","properties":{"className":["inline-verbatim"]},"children":[{"type":"text","value":"stdenv.mkDerivation"}]},{"type":"text","value":" from nixpkgs standard library.\n"}]},{"type":"element","tagName":"ul","properties":{},"children":[{"type":"element","tagName":"li","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"nixpkgs also comes with several convenient functions/environments for several programming languages and frameworks including Python, Rust, Go, and Nim\n"}]}]},{"type":"element","tagName":"li","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"it also includes environments for common setups such as for clang compiler\n"}]}]}]}]},"backlinks":[{"path":"/lang.nix","title":"Nix language"},{"path":"/packages.nix","title":"Nix packages"},{"path":"/tools.nix","title":"Nix package manager"}]},"__N_SSG":true},"page":"/[[...slug]]","query":{"slug":["tools.nix.derivations"]},"buildId":"Ie9t5zutrXP6Of75Cb5xF","assetPrefix":"/wiki","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="/wiki/_next/static/chunks/polyfills-99d808df29361cf7ffb1.js"></script><script src="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" async=""></script><script src="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" async=""></script><script src="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" async=""></script><script src="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" async=""></script><script src="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" async=""></script><script src="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_buildManifest.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_ssgManifest.js" async=""></script></body></html>

@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       e19ca54b-74b2-436a-b3e1-a5fd4ff6ecab
+:END:
+#+title: Speedreading
+#+date: "2021-04-05 12:51:56 +08:00"
+#+date_modified: "2021-06-05 20:56:09 +08:00"
+#+language: en
+#+tags: personal-info-management
+
+
+The act of reading faster than the average speed.
+One of the common methods in shutting off your inner reading voice and replacing it with visualizing words as you read along.
+
+To understand why the surrounding skepticism, we have to look at the claims especially with anything that involves more than 1,000 words per minute (WPM) of reading speed.
+Knowing [[id:25fb4ebf-2cc4-40fe-93ad-37a79aedfb41][The basics of memory]], this is neurologically unlikely as learning takes time.
+Speedreading is also physically impossible as reading is a complex process.
+It takes time to absorb even an inch of information compared to the very fast pace of merely reading the material at double the average speed of 300 WPM.
+
+As I dive deeper into this topic, the more it appears that it is basically skimming with a fancier name.
+Thus, speedreading can be a great way to improve comprehension if one ought to think that [[id:5c1e9540-9663-4512-8c84-05529ad22212][Speedreading is all about skimming well]].

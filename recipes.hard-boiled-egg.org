@@ -1,0 +1,36 @@
+:PROPERTIES:
+:ID:       8dfb7e23-ecb2-4ebe-adc2-7dbe927d87cd
+:END:
+#+title: Recipe: Hard-boiled egg
+#+date: 2022-03-31 18:21:05 +08:00
+#+date_modified: 2022-07-19 15:23:52 +08:00
+#+language: en
+
+
+One of the simplest things to do.
+(This also serves as my reference templates for my cooking recipes.)
+
+
+* Ingredients
+
+- At least 3 cups of water.
+- An egg.
+
+
+* Instructions
+
+- Put the egg until the water boils.
+  For assurance it is hard-boiled, leave for 5 minutes (more or less) in lower heat.
+
+
+* Tips
+
+- You can easily peel off the egg shell by shaking it inside of a light bowl filled with water.
+  This will also easily cool down the heat.
+
+- It is easy to overcook the egg.
+  It might be better to set the heat to lower levels for a longer duration.
+
+- Older eggs are easier to hard boil.
+  You can find if the egg is old enough by seeing if it tilts upwards in the water.
+  (This is also how you test the egg is bad enough if it floats.)

@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       05ba4a8a-bb44-42f4-8c72-c17b98cc2818
+:END:
+#+title: Argument structure matters over accuracy when presenting information
+#+date: 2022-06-19 11:57:26 +08:00
+#+date_modified: 2022-06-19 11:57:48 +08:00
+#+language: en
+
+
+- information is infinite and there's only so little we can take;
+  the writers should take note of their target audience with the prerequisite knowledge and the average knowledge ceiling they're willing to take
+- how we take information can change given the same information when structured differently;
+  argument structure matters more
+- one way to present information is to give an overview then slowly breaking the details down;
+  a [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]]-type of ideal
+- while this point is applied mostly for roam:Writing and [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]] introductory materials, this also works with technical documents with the benefit of being easier to be referenced in the future
+- examples
+  - [[id:d0982ce9-6b39-482a-990c-f333d33a4a2a][CS50x]] is a computer science course presented with this in mind intended for people with absolute zero prequisite knowledge;
+    the introduction to strings in C, for example, is a more specific example of this by presenting them first as another type then later breaking it down as an array (of characters) which is introduced later
+  - [[https://www.youtube.com/c/inanutshell][Kurzgesagt]] is a channel that mostly does this especially given their video format;
+    in fact, they even have a [[https://www.youtube.com/watch?v=XFqn3uy238E][video]] relating to this point

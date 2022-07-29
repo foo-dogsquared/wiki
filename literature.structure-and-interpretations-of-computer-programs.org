@@ -1,0 +1,123 @@
+:PROPERTIES:
+:ID:       fab73160-1478-4c93-9326-1e7b0837e06f
+:roam_refs: @StructureInterpretationComputer
+:END:
+#+title: Structure and interpretation of computer programs
+#+date: "2020-06-02 12:41:43 +08:00"
+#+date_modified: "2021-11-07 00:39:27 +08:00"
+#+language: en
+#+tags: @fleeting courses compsci
+
+
+This is just my personal notes on [[http://mitpress.mit.edu/sicp][Structure and interpretation of computer programs]].
+I also studied with the [[https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=titleSorter][Brian Harvey's SICP lectures]] because I am a scrub. ;p
+
+
+
+
+* Elements of programming
+
+Programming often requires the following:
+
+- Simple expressions with atomic value.
+- A way to combine procedures into complex expressions.
+- A way to define procedures for abstractions of higher-level functions.
+
+In order to do programming, we must have a programming language.
+A programming language often requires the following to have an effective way of expressing code:
+
+- Expressions which varies from primitive expressions (e.g., ~42~, ~1.683~, ~53819492184~) to compound expressions (e.g., ~(+ 53 20)~, ~(- 464 254)~).
+- An environment of objects which you can refer by name either with values (e.g., ~(define x 10)~, ~(define pi 3.14)~, ~(define e 2.71828)~) or procedures (e.g., ~(define (square x) (* x x))~, ~(define (my-formula height weight length) (* 23 (/ height weight) (+ 3500 length)))~).
+- An evaluation model for expressions since certain procedures can have different output from the order of operations.
+
+A programming language lets us abstract procedures as a black box.
+Here's an example of implementing the square root given a number.
+
+#+begin_src racket  :lang sicp
+(define (square x) (* x x))
+(define (improve guess x)
+  (/ (+ guess (/ x guess)) 2))
+
+(define (good-enough? guess x)
+  (< (abs (- (square guess) x)) 0.001))
+
+(define (sqrt-iter guess x)
+  (if (good-enough? guess x)
+      guess
+      (sqrt-iter (improve guess x) x)))
+
+(define (sqrt x)
+  (sqrt-iter 1.0 x))
+
+(sqrt 4)
+(sqrt 100)
+(sqrt 45.65)
+#+end_src
+
+#+results:
+: 2.0000000929222947
+: 10.000000000139897
+: 6.756478442187127
+
+In order to do the square root extraction in our implementation, we define multiple procedures with each solving a part of the procedure: one procedure for indicating whether the guess is good enough, one for creating an improved guess for the next iteration, and one for actually doing the square root extraction.
+
+In general cases, we don't implement things as one thing as it will result in a messy state of code.
+Instead, we modularize those functions.
+We classify these procedures as a *procedural abstraction*.
+
+
+
+
+* Higher-order functions
+
+Functions and data are often separated similarly to verbs and subjects.
+We tend to think of them as different things relying on each other to do things: functions need data to manipulate while data are raw information to be arranged by a function.
+However, the reality is that there is a blurry line to how distinct both of them are.
+Functions can be treated similarly to data and vice versa.
+
+The lesson of higher-order functions proves this.
+It is one of the foundations of functional programming.
+In order to learn about it, you need to know the key: *generalizing patterns*.
+
+For example, say we have different functions for knowing the area of a shape.
+
+#+begin_src racket  :lang sicp  :results none
+(define pi 3.14)
+
+(define (square-area r) (* r r))
+(define (circle-area r) (* pi r r))
+(define (hexagon-area r) (* (sqrt 3) 1.5 r r))
+#+end_src
+
+This could pass as a decent code if each area function is distinct from each other.
+However, all of the given area functions involves squaring the given parameter (~r~).
+We can separate that step in a function like the following.
+
+#+begin_src racket  :lang sicp  :results none
+(define pi 3.14)
+(define (area shape r) (* shape r r))
+
+(define square 1)
+(define circle pi)
+(define hexagon (* (sqrt 3) 1.5))
+
+;; We can then use it like this.
+;; Calcuating the area of square with a length of 4.
+(area square 4)
+
+;; Calculating the area of a circle with a radius of 10.
+(area circle 10)
+
+;; Calculating the area of a hexagon with length of 9.
+(area hexagon 9)
+#+end_src
+
+
+
+
+* Data abstractions
+
+The idea behind data abstractions is to make procedures in a way that doesn't make assumptions to our data.
+To make this possible, we have to separate the implementation of our data and the procedures that make use of that data.
+
+One powerful way to start implementing abstract data is through wishful thinking — that is, assuming we already we have the components fully defined.

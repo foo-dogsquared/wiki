@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       9986bd9e-763e-497e-a35d-ecd0aa93f408
+:END:
+#+title: Presence of the material fools students into learning
+#+date: "2021-07-15 07:38:09 +08:00"
+#+date_modified: "2021-07-28 11:18:02 +08:00"
+#+language: en
+
+
+- this is similar to how [[id:6b0e6b75-410f-42a3-8921-bcc4589b2d2a][Collecting information only feels like progress]];
+  only then when we open a book or logged into an e-learning website, we may feel we have already learned the material
+- to pressure yourself against this, you should close the material and do some [[id:a7de7178-d674-4c86-8413-66dd8d88b4ad][Recalling]];
+  [[roam:Recall reinforces better learning]] by relying entirely from your understanding
+- additionally, you can also do [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]];
+  not only it stops you from thinking you have earned the knowledge from a material (when you didn't) but also spaces out the session like a [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]]

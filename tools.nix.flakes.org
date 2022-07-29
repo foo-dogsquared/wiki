@@ -1,0 +1,297 @@
+:PROPERTIES:
+:ID:       6873de22-9eac-492c-93a8-6cdf8cbfc0f8
+:END:
+#+title: Nix flakes
+#+date: 2021-07-18 22:34:11 +08:00
+#+date_modified: 2022-05-22 21:24:01 +08:00
+#+language: en
+
+
+#+begin_note
+As of 2021-06-30, the version used for this note is at v2.3 so it needs to be invoked with the unstable version.
+#+end_note
+
+What are Nix flakes?
+
+A self-contained Nix module that takes inputs (can be from other flakes) and create outputs.
+It is comparable to [[https://guix.gnu.org/manual/en/html_node/Channels.html][Guix channels]] (or the NUR) in the way any arbitrary value can be exported, thus extending a Nix module in any direction the author can make it to.
+Also, it supercedes Nix channels as a way to manage your system.
+
+So, why use flakes?
+
+- Since it is self-contained, it is easier to compose and develop environments for projects.
+- It is more declarative compared to Nix channels.
+- Provides a structure for discoverability through exploring the output.
+- In case you're using [[id:7e8e83d5-4b08-44f6-800d-a322f6960a62][NixOS]], it also provides an easier way to extend it with third-party custom modules.
+
+
+
+
+* Exploring a Nix flake
+
+To get started with a flake, you can quickly create one with =nix flake init=.
+This will create =flake.nix= which is also required for Nix to recognize the project as a flake.
+
+Here's the skeleton of a flake.
+
+#+begin_src nix
+{
+  description = "A basic flake.";
+  inputs = {};
+  outputs = {};
+}
+#+end_src
+
+It is really just an attribute set that mainly deals with three attributes:
+
+- =description= which is self-descriptive enough to see what's it for. ;p
+- =inputs= which contains inputs (that are other flakes) to be used for...
+- ...the =outputs= which is a set or a function that returns an attribute set to be exported.
+
+Here's a real example of a basic flake.
+
+#+begin_src nix
+{
+  description = "A basic flake with some real inputs this time.";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs";
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+  };
+  outputs = attrs@{ self, nixpkgs, home-manager, ... }: {
+    homeManagerConfiguration = import ./hmUsers;
+    packages.x86_64-linux = {
+      hello = nixpkgs.pkgs.hello;
+    };
+  };
+}
+#+end_src
+
+The flake requires other flakes from the nixpkgs and home-manager as indicated from the URL.
+This will get the latest revision of both inputs.
+
+This is not ideal as it will get the latest revisions every time it requests the inputs.
+While you can pin the version by adding more information (e.g., =nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.11"=, =home-manager.url = "github:nix-community/home-manager/781d25b315def05cd7ede3765226c54216f0b1fe"=), this isn't really necessary for the most part as we have lockfiles to secure our dependencies version.
+These lockfiles can be found at =flake.lock= where complete metadata for the flakes are found.
+
+
+
+* Selected list of attributes for outputs
+
+While you can export attributes of any type, there are common attributes you'll mostly see.
+
+As an example, here's the flake of my NixOS configuration.
+
+#+begin_src shell  :cache yes  :results output
+nix flake show github:foo-dogsquared/nixos-config | nix run nixpkgs#gnused -- 's/\x1b\[[0-9;]*m//g'
+#+end_src
+
+#+results[cf6df0202da35fbba99f7581b2655fb75d9eef8a]:
+#+begin_example
+github:foo-dogsquared/nixos-config/12077bfc601e5465e343e590a830e8d3cb6a1a59
+├───devShells
+│   ├───aarch64-darwin
+│   │   ├───flatpak: development environment 'nix-shell'
+│   │   ├───hugo: development environment 'nix-shell'
+│   │   └───rust: development environment 'nix-shell'
+│   ├───aarch64-linux
+│   │   ├───flatpak: development environment 'nix-shell'
+│   │   ├───hugo: development environment 'nix-shell'
+│   │   └───rust: development environment 'nix-shell'
+│   ├───i686-linux
+│   │   ├───flatpak: development environment 'nix-shell'
+│   │   ├───hugo: development environment 'nix-shell'
+│   │   └───rust: development environment 'nix-shell'
+│   ├───x86_64-darwin
+│   │   ├───flatpak: development environment 'nix-shell'
+│   │   ├───hugo: development environment 'nix-shell'
+│   │   └───rust: development environment 'nix-shell'
+│   └───x86_64-linux
+│       ├───flatpak: development environment 'nix-shell'
+│       ├───hugo: development environment 'nix-shell'
+│       └───rust: development environment 'nix-shell'
+├───homeManagerConfigurations: unknown
+├───homeManagerModules: unknown
+├───lib: unknown
+├───nixosConfigurations
+│   └───ni: NixOS configuration
+├───nixosModules
+│   ├───agenix: NixOS module
+│   ├───archiving: NixOS module
+│   ├───desktop: NixOS module
+│   ├───dev: NixOS module
+│   ├───hardware-setup: NixOS module
+│   ├───themes: NixOS module
+│   └───users: NixOS module
+└───packages
+    ├───aarch64-darwin
+    │   ├───doggo: package 'doggo-0.4.1'
+    │   ├───gnome-shell-extension-burn-my-windows: package 'gnome-shell-extension-burn-my-windows-2'
+    │   ├───gnome-shell-extension-desktop-cube: package 'gnome-shell-extension-desktop-cube-5'
+    │   ├───gnome-shell-extension-fly-pie: package 'gnome-shell-extension-fly-pie-12'
+    │   ├───gnome-shell-extension-pop-shell: package 'gnome-shell-extension-pop-shell-unstable-2021-11-30'
+    │   ├───libcs50: package 'libcs50-10.1.1'
+    │   ├───llama: package 'llama-1.0.2'
+    │   ├───neo: package 'neo-0.6'
+    │   ├───pop-launcher: package 'pop-launcher-1.1.0'
+    │   ├───pop-launcher-plugin-duckduckgo-bangs: package 'pop-launcher-plugin-duckduckgo-bangs-1.3.0'
+    │   ├───sioyek: package 'sioyek-1.0.0'
+    │   └───tic-80: package 'tic-80-unstable-2021-12-18'
+    ├───aarch64-linux
+    │   ├───doggo: package 'doggo-0.4.1'
+    │   ├───gnome-shell-extension-burn-my-windows: package 'gnome-shell-extension-burn-my-windows-2'
+    │   ├───gnome-shell-extension-desktop-cube: package 'gnome-shell-extension-desktop-cube-5'
+    │   ├───gnome-shell-extension-fly-pie: package 'gnome-shell-extension-fly-pie-12'
+    │   ├───gnome-shell-extension-pop-shell: package 'gnome-shell-extension-pop-shell-unstable-2021-11-30'
+    │   ├───libcs50: package 'libcs50-10.1.1'
+    │   ├───llama: package 'llama-1.0.2'
+    │   ├───neo: package 'neo-0.6'
+    │   ├───pop-launcher: package 'pop-launcher-1.1.0'
+    │   ├───pop-launcher-plugin-duckduckgo-bangs: package 'pop-launcher-plugin-duckduckgo-bangs-1.3.0'
+    │   ├───sioyek: package 'sioyek-1.0.0'
+    │   └───tic-80: package 'tic-80-unstable-2021-12-18'
+    ├───i686-linux
+    │   ├───doggo: package 'doggo-0.4.1'
+    │   ├───gnome-shell-extension-burn-my-windows: package 'gnome-shell-extension-burn-my-windows-2'
+    │   ├───gnome-shell-extension-desktop-cube: package 'gnome-shell-extension-desktop-cube-5'
+    │   ├───gnome-shell-extension-fly-pie: package 'gnome-shell-extension-fly-pie-12'
+    │   ├───gnome-shell-extension-pop-shell: package 'gnome-shell-extension-pop-shell-unstable-2021-11-30'
+    │   ├───libcs50: package 'libcs50-10.1.1'
+    │   ├───llama: package 'llama-1.0.2'
+    │   ├───neo: package 'neo-0.6'
+    │   ├───pop-launcher: package 'pop-launcher-1.1.0'
+    │   ├───pop-launcher-plugin-duckduckgo-bangs: package 'pop-launcher-plugin-duckduckgo-bangs-1.3.0'
+    │   ├───sioyek: package 'sioyek-1.0.0'
+    │   └───tic-80: package 'tic-80-unstable-2021-12-18'
+    ├───x86_64-darwin
+    │   ├───doggo: package 'doggo-0.4.1'
+    │   ├───gnome-shell-extension-burn-my-windows: package 'gnome-shell-extension-burn-my-windows-2'
+    │   ├───gnome-shell-extension-desktop-cube: package 'gnome-shell-extension-desktop-cube-5'
+    │   ├───gnome-shell-extension-fly-pie: package 'gnome-shell-extension-fly-pie-12'
+    │   ├───gnome-shell-extension-pop-shell: package 'gnome-shell-extension-pop-shell-unstable-2021-11-30'
+    │   ├───libcs50: package 'libcs50-10.1.1'
+    │   ├───llama: package 'llama-1.0.2'
+    │   ├───neo: package 'neo-0.6'
+    │   ├───pop-launcher: package 'pop-launcher-1.1.0'
+    │   ├───pop-launcher-plugin-duckduckgo-bangs: package 'pop-launcher-plugin-duckduckgo-bangs-1.3.0'
+    │   ├───sioyek: package 'sioyek-1.0.0'
+    │   └───tic-80: package 'tic-80-unstable-2021-12-18'
+    └───x86_64-linux
+        ├───doggo: package 'doggo-0.4.1'
+        ├───gnome-shell-extension-burn-my-windows: package 'gnome-shell-extension-burn-my-windows-2'
+        ├───gnome-shell-extension-desktop-cube: package 'gnome-shell-extension-desktop-cube-5'
+        ├───gnome-shell-extension-fly-pie: package 'gnome-shell-extension-fly-pie-12'
+        ├───gnome-shell-extension-pop-shell: package 'gnome-shell-extension-pop-shell-unstable-2021-11-30'
+        ├───libcs50: package 'libcs50-10.1.1'
+        ├───llama: package 'llama-1.0.2'
+        ├───neo: package 'neo-0.6'
+        ├───pop-launcher: package 'pop-launcher-1.1.0'
+        ├───pop-launcher-plugin-duckduckgo-bangs: package 'pop-launcher-plugin-duckduckgo-bangs-1.3.0'
+        ├───sioyek: package 'sioyek-1.0.0'
+        └───tic-80: package 'tic-80-unstable-2021-12-18'
+#+end_example
+
+- =defaultPackage.${system}.${package}= (or =packages.${system}.${package}=) is mainly expected for packages.
+  This allows for easy building — e.g., =nix build nixpkgs#hello= will refer to =defaultPackage.${system}.hello=.
+  Another command that expects this is =nix run ${PACKAGE}= (e.g., =nix run nixpkgs#hello=).
+
+- =nixosConfigurations.${host}= is a NixOS host configuration.
+  Each attribute contain a set similar to the traditional set from =/etc/nixos/configuration.nix=.
+  This is very beneficial for quickly installing only with flakes — e.g., =nixos-install --flake github:foo-dogsquared/nixos-config#zilch= will install with =nixosConfigurations.zilch=.
+  However, attributes should be created with =lib.nixosSystem= from =nixpkgs= flake.
+
+- =nixosModules.${module}= is a [[roam:NixOS modules]], allowing you to extend NixOS further.
+  These are expected to be similar NixOS modules from nixpkgs.
+
+- =templates.${name}= is a template that has the attribute =path= and =description=.
+  See [[Flake templates]] for more details about how it's used.
+
+- =devShell.${system}= is expected to be a derivation (mostly with =mkShell=).
+  This is the default development environment to be used.
+  This is mostly expected for projects providing an easy way to bootstrap for development (e.g., with =nix develop ${FLAKE}=).
+
+- =devShells.${system}.${name}= is an attribute set of derivations (mostly from =mkShell=).
+  This is similar to =devShell= except this is where =nix develop= subcommand finds if an attribute name is given.
+
+
+
+
+* Flake templates
+
+- Flakes can have templates to get started with.
+  They can be used with =nix flake init ${TEMPLATE}=.
+
+- You can export it in your flakes through the =templates= attribute.
+  =templates= is expected to be an attribute set with each attribute representing a template.
+
+- By default, we have the =templates= flake from the global registry pointed to [[https://github.com/NixOS/templates][NixOS/templates]] Git repo.
+
+
+
+
+* Nix registry
+
+Per the Nix manual:
+
+#+begin_quote
+Flake registries are a convenience feature that allows you to refer to flakes using symbolic identifiers such as =nixpkgs=, rather than full URLs such as =git://github.com/NixOS/nixpkgs=.
+#+end_quote
+
+Here's an example of the registry list with some overriden flakes such as the =nixpkgs= flake following from my [[https://github.com/foo-dogsquared/nixos-config][NixOS configuration]].
+
+#+begin_src shell  :cache yes
+nix registry list
+#+end_src
+
+#+results[2e793be4dcc8dcc2f0c921da5dffa1544455d14e]:
+#+begin_example
+system flake:agenix path:/nix/store/yka795vkb7ny5fnybf8dafbypcjfmi9n-source?lastModified=1638837456&narHash=sha256-WHLOxthAGx%2fwXw3QUa%2flFE3mr6cQtnXfFYZ0DNyYwt4=&rev=57806bf7e340f4cae705c91748d4fdf8519293a9
+system flake:config path:/nix/store/3nlagaj6748w4ffxx4vp5jss2k571f8i-source?lastModified=1640442672&narHash=sha256-Gkt2On9szrFlOo6QiYMOA90qTp4PICd7STHFhGA4bCs=
+system flake:home-manager path:/nix/store/ijh6v700kpssfyw44v4awbm2gmjx26qs-source?lastModified=1640296831&narHash=sha256-Mu32vTcfZru4VrvgnpvQKmwC4uY0oF3vnnC2o9SgnRU=&rev=f15b151ca1c4aea23515c241051d71f1b5cf97c8
+system flake:nixpkgs path:/nix/store/lgfhg4n6445yizgf0xjirb4bc4j86fr9-source?lastModified=1640269308&narHash=sha256-vBVwv3+kPrxbNyfo48cB5cc5%2f4tq5zlJGas%2fqw8XNBE=&rev=0c408a087b4751c887e463e3848512c12017be25
+global flake:agda github:agda/agda
+global flake:blender-bin github:edolstra/nix-warez?dir=blender
+global flake:dreampkgs github:nix-community/dreampkgs
+global flake:dwarffs github:edolstra/dwarffs
+global flake:fenix github:nix-community/fenix
+global flake:flake-utils github:flake-utils/numtide
+global flake:gemini github:nix-community/flake-gemini
+global flake:home-manager github:nix-community/home-manager
+global flake:hydra github:NixOS/hydra
+global flake:mach-nix github:DavHau/mach-nix
+global flake:nimble github:nix-community/flake-nimble
+global flake:nix github:NixOS/nix
+global flake:nixops github:NixOS/nixops
+global flake:nixos-hardware github:NixOS/nixos-hardware
+global flake:nixos-homepage github:NixOS/nixos-homepage/flake
+global flake:nur github:nix-community/NUR
+global flake:nixpkgs github:NixOS/nixpkgs/nixpkgs-unstable
+global flake:templates github:NixOS/templates
+global flake:patchelf github:NixOS/patchelf
+global flake:nix-serve github:edolstra/nix-serve
+global flake:nickel github:tweag/nickel
+#+end_example
+
+So how does a flake registry work?
+
+- It is managed through =nix registry= subcommand or set =nix.registry= in your system configuration.
+
+- Registries are primarily written as JSON files in certain files (e.g., =$XDG_CONFIG_HOME/nix/registry=, =/etc/nix/registry.json=).
+  For more information, see the [[https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-registry.html#registry-format][registry format from the manual]].
+  Unlike the traditional Nix channels, the inclusion of arbitrary files and their locations doesn't seem to affect the reproducibility since it is mostly used as a convenience feature after all.
+
+- The flakes from default registry are mostly getting the latest revisions of the flake per invocation so it is best practice to pin them (e.g., =nix registry pin=, through =nix.registry= while setting the NixOS systems in =flake.nix=).
+
+- There are primarily three registries to worry about: user, system, and global.
+
+- This is also the reason it downloads something why each time you invoke a Nix-related command (e.g., =nix search=, =nix edit=).
+  [fn:: I think pinning the flakes from the global registry will simply resolve this issue.]
+
+
+
+
+* More information about flakes
+
+- We can modify our inputs.
+  In the above example, we made =home-manager= to use our version of =nixpkgs= which will make it easier to sync.

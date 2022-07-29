@@ -1,0 +1,76 @@
+:PROPERTIES:
+:ID:       0dfbaf7f-270a-4880-91ad-0802e213daa5
+:END:
+#+title: Guix package contribution workflow
+#+date: "2021-04-21 01:46:02 +08:00"
+#+date_modified: "2021-05-04 20:51:25 +08:00"
+#+language: en
+
+
+[[roam:GNU Guix][GNU Guix]], like most GNU projects, are mainly done in collaboration through email.
+Here's the very basics of what you should do when getting the groove into contributing to the project.
+
+
+
+
+* Getting started
+
+- Basically, you have to create the build environment for the Guix source code.
+  You may want to always keep the [[https://guix.gnu.org/en/manual/][GNU Guix manual]] on the side.
+  TL;DR: get the source, ~./bootstrap~, ~./configure --localstatedir=/var~, ~make check~, and you're mostly done!
+
+- GNU projects have a [[https://debbugs.gnu.org/][global issue tracker]] with each project requiring different steps and locations.
+  As of 2021-04-21, GNU Guix has mainly two channels for their issue tracker: [[https://lists.gnu.org/mailman/listinfo/bug-guix][bug-guix]] where bug reports go and [[https://lists.gnu.org/mailman/listinfo/guix-patches][guix-patches]] where contributions are streamed.
+
+  + Both of the channels are essentially mailing lists, only an email address is required to subscribe.
+
+  + There is a [[http://issues.guix.gnu.org/][more legible frontend]] combining both the channels of the bug report and patches.
+
+- The Guix community has a [[https://ci.guix.gnu.org/][build farm]] running its [[http://guix.gnu.org/cuirass/][own CI software]].
+  Pretty useful to track the status of several channels that is happening within the package set.
+  You could also stay tuned with [[https://ci.guix.gnu.org/events/rss/][its RSS feed]].
+
+
+
+
+* Adding or updating a package
+
+- Once you want to define a package, you can either edit it by hand or [[https://guix.gnu.org/en/cookbook/en/html_node/Programmable-and-automated-package-definition.html#Programmable-and-automated-package-definition][create a template from an importer]].
+  Nonetheless, referring to the [[https://guix.gnu.org/en/manual/en/html_node/Programming-Interface.html][programming interface]] and the [[https://guix.gnu.org/en/manual/en/html_node/package-Reference.html][~package~ reference]]  is a good idea.
+
+- If your name is not added yet into the copyright header, add it to the file where the package is defined.
+  You're essentially declaring you have copyright over the piece of code you're contributing.
+
+- One of the common starting tasks when declaring a package is checking the hash of the source objects.
+  In Guix, ~guix hash~ and ~guix download~ are handy tools.
+
+- With each package has different requirements, one of the biggest differences is how they're built.
+  Thus, you'll be paying a lot of attention to [[https://guix.gnu.org/en/manual/en/html_node/Build-Systems.html][build systems]].
+  Each build system has different parameters so be sure to visit it often.
+
+- When declaring dependencies, it's a good idea to see how other packages have done in similar build systems.
+  Otherwise, it should be done on a case-by-case basis.
+  Just keep a reference to the ~package~ object on the side and it will be almost smooth sailing.
+
+- Keep in mind that they also have a guideline for writing [[https://guix.gnu.org/en/manual/en/html_node/Synopses-and-Descriptions.html][synopsis and description]].
+  + Synopsis shouldn't start with an uppercase letter, a common article (e.g., "a", "an", "the"), and doesn't end with a punctuation.
+  + Descriptions should be five to ten sentences long formatted in [[https://www.gnu.org/software/texinfo/manual/texinfo/html_node/index.html][Texinfo]] without writing like a marketing sale pitch.
+
+- Just for future reference, the popular MIT license is referred to as the [[https://directory.fsf.org/wiki/License:Expat][Expat license]].
+
+
+
+
+* Testing your package
+
+- ~guix build~
+- You can test to build in other architectures with the QEMU binaries service.
+
+
+
+
+* Creating a patch
+
+# TODO: How to test your package
+# TODO: How to make a patch from Git commits
+# TODO: Relearn about git-email

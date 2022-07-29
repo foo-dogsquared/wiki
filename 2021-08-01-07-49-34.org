@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       3a605fb2-b867-41c2-bcf9-00ef772808e5
+:END:
+#+title: Show the result at the front
+#+date: 2021-08-01 07:49:34 +08:00
+#+date_modified: 2021-08-01 07:50:23 +08:00
+#+language: en
+
+
+- it makes for a quicker time evaluating whether this is something valuable for the audience
+- assume that most of the audience does not want to read since it isn't their job unless necessary
+- a disgruntled reader from the bad would make a worse impression than a reader that didn't find the thing valuable
+- most of the audience have a rough idea of what you're about to discuss;
+  remember the [[id:79357d56-74bf-4854-820c-c0ad849f2468][Classic prose]] model, they are interested in your solution or what you have done (i.e., workflow, solutions);
+  otherwise, they wouldn't consult to your piece in the first place
+- examples:
+  + abstracts in academic papers
+  + showcases in tutorials

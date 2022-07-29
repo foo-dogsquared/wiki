@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       c05e1aa9-0619-4617-abb6-870fceca3430
+:END:
+#+title: Command line: Niv
+#+date: "2021-05-09 17:25:04 +08:00"
+#+date_modified: "2021-06-19 17:43:28 +08:00"
+#+language: en
+
+
+niv is a template generator for a quick start of creating a Nix environment with full reproducibility.
+It allows for a quick configuration of where to pin certain package sets (e.g., nixpkgs, NUR, your own package set) with a command line program.
+
+- ~niv init~
+- Configuring your pins with ~niv show $SOURCE~ and editing =nix/sources.json= generated from ~niv init~.
+- Using it by importing from your Nix files (e.g., =default.nix=, =shell.nix=).
+
+You can also update the pins with ~niv update $SOURCE~ and you don't have to manually look into the repo for updating the pins.
+Though, Nix flakes are still the more attractive options IMO.
+
+If you're looking to update the official channels, you can take a peek at [[https://status.nixos.org/][status.nixos.org]].

@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       499cd6a0-8055-4c28-8bd4-64877aa2c46f
+:END:
+#+title: Note-taking should make better thinking
+#+date: "2021-07-11 20:33:13 +08:00"
+#+date_modified: "2021-08-07 11:19:15 +08:00"
+#+language: en
+
+
+- most of the education emphasizes note-taking as an indicator of academic success;
+  while true, it misses the point of taking notes if forced among students
+- while note-taking makes to [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create an inbox to store your thoughts]] and [[id:3d1c0313-fa3d-4b18-b435-51d3837e3e2c][Fleeting notes]], it should also improve your thinking;
+  notes are just additional storage for your thoughts
+- beware of various traps with note-taking;
+  some people like to take note for the sake of taking note;
+  some may even get into addiction to optimization as [[id:b62c61f1-ee12-4bd9-b59a-ec6eafe29f38][Unnecessary optimizations cripple progress]]
+- however, this is not an [[id:1bdbdcfa-98f9-4d08-a0dc-ad2f1b9b9ec9][Advice shouldn't be taken literally]];
+  not all note-taking sessions should be striving towards better thinking as it can be used for recreational purposes
+- we can do [[id:2667d942-48b6-4d1e-b92b-15c2dab645ed][Switching between different topics makes new perspective]] by doing some writing from our stream of thoughts instead of actively restructuring how do we present the topic in some way
+- people often write down fleeting knowledge;
+  it isn't a bad practice as [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]];
+  it all comes down to how they manage them (see [[id:66337935-420c-40e6-81a6-f74ab0965ed5][Maintain your own digital library]])

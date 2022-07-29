@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       114b7874-6a20-49c8-be2c-46970c7110dc
+:END:
+#+title: Information is only acquired when you try to make sense of it
+#+date: "2021-05-14 12:15:54 +08:00"
+#+date_modified: "2021-07-19 17:40:51 +08:00"
+#+language: en
+
+
+Information that is absorbed and not applied is just something that we know.
+And knowing something is different from understanding something.
+
+No matter how many articles, videos, and images you read, information only stays in the author's intent until you take the time to make sense of it.
+It will never start unless you experiment.
+One of the simplest way to start is to sit down, [[id:b318dc2b-5fa1-48ff-9d33-6fbbdee46a2f][Write down the simplest possible example]], and work your way through those examples.
+
+We should exercise caution when we collect knowledge: collecting books, downloading eBooks, bookmarking articles, and archiving resources.
+[[id:6b0e6b75-410f-42a3-8921-bcc4589b2d2a][Collecting information only feels like progress]].
+We never used them.
+It is just the same as window shopping for that wanted thing except we bought it and just an arm's length away when we want to use it.
+
+That doesn't mean we should understand every bit of information coming our way.
+In the end, [[id:864a9242-eb10-44ad-81b7-c237276523e5][We know more compared to what we understood]].

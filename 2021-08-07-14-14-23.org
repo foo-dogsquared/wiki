@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       e44f6bd7-fd73-436a-965a-66e06f8174ab
+:END:
+#+title: Restrictions bring out creativity
+#+date: 2021-08-07 14:14:23 +08:00
+#+date_modified: 2022-06-21 20:05:36 +08:00
+#+language: en
+
+
+With practically limitless resources at your side, you'd think you have no problems into solving your solution.
+However, reality sets in and gives you potential problems such as:
+
+- If you're prone into roam:Perfectionism, you can go into a situation where [[id:03cd9fad-e187-4939-9347-1a034c6efbe2][Overanalyzing slow you down]] finding the "right" solution.
+- With great amount, comes the path of least resistance where all is nought and you can't resist finding the easiest way out.
+
+Restrictions forces you to create solutions that are within the requirements.
+These solutions are often created out of pressure where quick solutions are preferred and [[id:5c603e2c-4dae-465e-abb5-12897ad7466d][Tunnel vision]] is less intrusive.
+Furthermore, those solutions can lead into accidental discoveries, finding other solutions you haven't thought of before.
+
+Some examples:
+
+- Older software such as [[https://en.wikipedia.org/wiki/SCORE_(software)][SCORE]] and the [[https://github.com/chrislgarry/Apollo-11][Apollo-11]] where systems are often limited thus trying to squeeze every single drop of performance out of it.
+- In [[roam:Game development]], a similar idea with fantasy computers such as roam:TIC-80.
+- No budget movies with staff making the best out of what they are given.

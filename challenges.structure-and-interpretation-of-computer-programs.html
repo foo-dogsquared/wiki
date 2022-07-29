@@ -1,0 +1,355 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><title>Solutions: Structure and interpretation of computer programs</title><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script type="text/x-mathjax-config">
+                MathJax = {
+                    tex: {
+                        inlineMath: [ [&#x27;$&#x27;,&#x27;$&#x27;], [&#x27;\(&#x27;,&#x27;\)&#x27;] ],
+                        displayMath: [ [&#x27;$$&#x27;,&#x27;$$&#x27;], [&#x27;[&#x27;,&#x27;]&#x27;] ]
+                    },
+                    options = {
+                        processHtmlClass = &quot;math&quot;
+                    }
+                }
+                </script><meta name="next-head-count" content="6"/><link rel="preload" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" as="style"/><link rel="stylesheet" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" as="script"/></head><body><div id="__next"><main><h1>Solutions: Structure and interpretation of computer programs</h1><section class="post-metadata"><span>Date: <!-- -->2021-05-14 15:39:37 +08:00</span><span>Date modified: <!-- -->2021-05-16 21:58:22 +08:00</span></section><nav class="toc"><ol class="toc-level toc-level-1"><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-12" class="toc-link toc-link-h1">Exercise 1.2</a></li><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-13" class="toc-link toc-link-h1">Exercise 1.3</a></li><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-15" class="toc-link toc-link-h1">Exercise 1.5</a></li><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-16" class="toc-link toc-link-h1">Exercise 1.6</a></li><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-17" class="toc-link toc-link-h1">Exercise 1.7</a></li><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-18" class="toc-link toc-link-h1">Exercise 1.8</a></li><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-19" class="toc-link toc-link-h1">Exercise 1.9</a></li><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-110" class="toc-link toc-link-h1">Exercise 1.10</a></li><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-130" class="toc-link toc-link-h1">Exercise 1.30</a></li><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-131a" class="toc-link toc-link-h1">Exercise 1.31a</a></li><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-131b" class="toc-link toc-link-h1">Exercise 1.31b</a></li><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-132a" class="toc-link toc-link-h1">Exercise 1.32a</a></li><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-21" class="toc-link toc-link-h1">Exercise 2.1</a></li><li class="toc-item toc-item-h1"><a href="/wiki/challenges.structure-and-interpretation-of-computer-programs#exercise-22" class="toc-link toc-link-h1">Exercise 2.2</a></li></ol></nav><p>This is my exercise solutions for the <a href="/wiki/literature.structure-and-interpretations-of-computer-programs">Structure and interpretation of computer programs</a> book.
+Before you can use this document, you need to do some prerequisite installation of <a href="https://racket-lang.org/">Racket</a> and <a href="https://docs.racket-lang.org/sicp-manual/">SICP package</a>.
+</p><h1 id="exercise-12">Exercise 1.2</h1><pre class="src-block"><code class="language-racket">(/ (+ 5 4
+    (- 2
+        (- 3
+          (+ 6
+              (/ 1 3)))))
+  (* 3
+    (- 6 2)
+    (- 2 7)))
+</code></pre><h1 id="exercise-13">Exercise 1.3</h1><pre class="src-block"><code class="language-racket">(define (square x) (* x x))
+(define (sum-of-squares x y z)
+  (define sum (+ (square x) (square y) (square z)))
+  (- sum (square (min x y z))))
+</code></pre><h1 id="exercise-15">Exercise 1.5</h1><p>If the interpreter evaluates with applicative-order, it will never evaluate the if condition since <code class="inline-code">(p)</code> is now endlessly being evaluated.
+(Applicative-order evaulates each argument before passing on the function.)
+Meanwhile, if it&#x27;s evaluated at normal order, it would simply expand then start to evaluate them in order.
+It would go evaluate the <code class="inline-code">if</code> condition and proceed to return 0 (since it returns true).
+</p><h1 id="exercise-16">Exercise 1.6</h1><blockquote><p>Alyssa P. Hacker doesn&#x27;t see why if needs to be provided as a special form.
+&quot;Why can&#x27;t I just define it as an ordinary procedure in terms of cond?&quot; she asks.
+Alyssa&#x27;s friend Eva Lu Ator claims this can indeed be done, and she defines a new version of if:
+</p><div class="exampe">(define (new-if predicate then-clause else-clause)
+  (cond (predicate then-clause)
+        (else else-clause)))
+</div><p>Eva demonstrates the program for Alyssa:
+</p><div class="exampe">(new-if (= 2 3) 0 5)
+5
+
+(new-if (= 1 1) 0 5)
+0
+</div><p>Delighted, Alyssa uses new-if to rewrite the square-root program:
+</p><div class="exampe">(define (sqrt-iter guess x)
+  (new-if (good-enough? guess x)
+          guess
+          (sqrt-iter (improve guess x)
+                     x)))
+</div><p>What happens when Alyssa attempts to use this to compute square roots? Explain.
+</p></blockquote><p>The reason why <code class="inline-code">if</code> needs a special form is because of applicative-order evaluation.
+Scheme (or rather Racket with the SICP package) interprets with applicative-order evaluation which it means it has to evaluate all of the arguments first before proceeding to evaluate the procedure.
+As <code class="inline-code">new-if</code> is a procedure that we defined, it would cause an infinite loop of Racket trying to evaluate <code class="inline-code">sqrt-iter</code> inside of our <code class="inline-code">new-if</code> procedure.
+</p><h1 id="exercise-17">Exercise 1.7</h1><blockquote><p>The <code class="inline-code">good-enough?</code> test used in computing square roots will not be very effective for finding the square roots of very small numbers.
+Also, in real computers, arithmetic operations are almost always performed with limited precision. This makes our test inadequate for very large numbers.
+Explain these statements, with examples showing how the test fails for small and large numbers.
+An alternative strategy for implementing <code class="inline-code">good-enough?</code> is to watch how <code class="inline-code">guess</code> changes from one iteration to the next and to stop when the change is a very small fraction of the guess.
+Design a square-root procedure that uses this kind of end test.
+Does this work better for small and large numbers?
+</p></blockquote><p>For Exercise 1.7, I&#x27;m afraid I cannot easily answer it since the results from the example implementation is already accurate due to the interpreter.
+</p><p>For this exercise, let&#x27;s pretend the interpreter is not great.
+For example, <code class="inline-code">(sqrt 0.0001)</code> results in <code class="inline-code">.03230844833048122</code> (should be <code class="inline-code">0.01</code>).
+</p><p>The reason varies from a combination of interpreter, hardware configurations, and implementation of arithmetics.
+This is especially true with floating points arithmetics.
+</p><p>In implementing our improved square root implementation from the question, we start with editing the <code class="inline-code">improve</code> function.
+</p><pre class="src-block"><code class="language-racket">(define (square x) (* x x))
+(define (improve guess x)
+  (/ (+ guess (/ x guess)) 2))
+
+(define (good-enough? guess old-guess tolerance)
+  (&lt;= (abs (- guess old-guess)) tolerance))
+
+(define (sqrt-iter guess old-guess x)
+  (if (good-enough? guess old-guess 0.0000001)
+      guess
+      (sqrt-iter (improve guess x) guess x)))
+
+(define (sqrt x)
+  (sqrt-iter 1.0 0.0 x))
+
+(sqrt 4)
+(sqrt 1)
+(sqrt 0.0001)
+(sqrt 0.00001)
+(sqrt 123456789000000)
+</code></pre><pre class="fixed-width">2.000000000000002
+1.0
+0.01
+0.0031622776602038957
+11111111.060555555</pre><p>
+I&#x27;ve modified the <code class="inline-code">good-enough?</code> function by making the tolerance as an argument.
+Tested on the MIT Scheme v10.1.10, the results are more accurate closer to modern systems like Julia.
+Bigger numbers are also calculated quicker than the previous implementation (for some reason that I don&#x27;t know).
+</p><h1 id="exercise-18">Exercise 1.8</h1><blockquote><p>Newton&#x27;s method for cube roots is based on the fact that if y is an approximation to the cube root of x, then a better approximation is given by the value
+</p><div class="math math-display">\[<!-- -->\begin{equation*}
+    \frac{x / y^2 + 2y}{3}
+\end{equation*}<!-- -->\]</div><p>Use this formula to implement a cube-root procedure analogous to the square-root procedure.
+(In section 1.3.4 we will see how to implement Newton&#x27;s method in general as an abstraction of these square-root and cube-root procedures.)
+</p></blockquote><pre class="src-block"><code class="language-racket">(define (square x) (* x x))
+(define (improve guess x)
+  (/ (+ (- x (square guess)) (* guess 2)) 3))
+
+(define (good-enough? guess x)
+  (&lt; (abs (- (square guess) x)) 0.001))
+
+(define (cbrt-iter guess x)
+  (if (good-enough? guess x)
+      guess
+      (cbrt-iter (improve guess x) x)))
+
+(define (cbrt x)
+  (cbrt-iter 1.0 x))
+
+(cbrt 9)
+</code></pre><pre class="fixed-width">3.000163135454436</pre><p></p><h1 id="exercise-19">Exercise 1.9</h1><blockquote><p>Each of the following two procedures defines a method for adding two positive integers in terms of the procedures <code class="inline-code">inc</code>, which increments its argument by 1, and <code class="inline-code">dec</code>, which decrements its argument by 1.
+</p><div class="exampe">(define (+ a b)
+  (if (= a 0)
+      b
+      (inc (+ (dec a) b))))
+
+(define (+ a b)
+  (if (= a 0)
+      b
+      (+ (dec a) (inc b))))
+</div><p>Using the substitution model, illustrate the process generated by each procedure in evaluating (+ 4 5).
+Are these processes iterative or recursive?
+</p></blockquote><p>For the first definition, the resulting evaluation would have to look something like the following:
+</p><div class="exampe">(+ 4 5)
+(inc (+ 3 5))
+(inc (inc (+ 2 5)))
+(inc (inc (inc (+ 1 5))))
+(inc (inc (inc (inc (+ 0 5)))))
+(inc (inc (inc (inc 5))))
+(inc (inc (inc 6)))
+(inc (inc 7))
+(inc 8)
+9
+</div><p>Based from the visualization, it seems it is a recursive process.
+</p><p>As for the second definition, the resulting evaluation would look like the following:
+</p><div class="exampe">(+ 4 5)
+(+ 3 6)
+(+ 2 7)
+(+ 1 8)
+(+ 0 9)
+9
+</div><p>As each iteration does not result in embedding procedures in one big procedure, I think it is considered as an iterative process.
+</p><h1 id="exercise-110">Exercise 1.10</h1><blockquote><p>The following procedure computes a mathematical function called Ackermann&#x27;s function.
+</p><div class="exampe">(define (A x y)
+  (cond ((= y 0) 0)
+        ((= x 0) (* 2 y))
+        ((= y 1) 2)
+        (else (A (- x 1)
+                 (A x (- y 1))))))
+</div><p>What are the values of the following expressions?
+</p><div class="exampe">(A 1 10)
+
+(A 2 4)
+
+(A 3 3)
+</div><p>Consider the following procedures, where A is the procedure defined above:
+</p><div class="exampe">(define (f n) (A 0 n))
+
+(define (g n) (A 1 n))
+
+(define (h n) (A 2 n))
+
+(define (k n) (* 5 n n))
+</div><p>Give concise mathematical definitions for the functions computed by the procedures <code class="inline-code">f</code>, <code class="inline-code">g</code>, and <code class="inline-code">h</code> for positive integer values of <span class="math math-inline">\(<!-- -->n<!-- -->\)</span>.
+For example, <code class="inline-code">(k n)</code> computes <span class="math math-inline">\(<!-- -->5n^2<!-- -->\)</span>.
+</p></blockquote><p>For the sake of completeness, here is the function in question along with the given example usage (and its results in the following block):
+</p><pre class="src-block"><code class="language-racket">(define (A x y)
+  (cond ((= y 0) 0)
+        ((= x 0) (* 2 y))
+        ((= y 1) 2)
+        (else (A (- x 1)
+                 (A x (- y 1))))))
+
+(A 1 10)
+(A 2 4)
+(A 3 3)
+</code></pre><pre class="fixed-width">1024
+65536
+65536</pre><p>
+As for notating <code class="inline-code">f</code>, <code class="inline-code">g</code>, and <code class="inline-code">h</code> into mathematical definitions:
+</p><ul><li><p><code class="inline-code">f</code> is <span class="math math-inline">\(<!-- -->2n<!-- -->\)</span>.
+</p></li><li><p><code class="inline-code">g</code> is <span class="math math-inline">\(<!-- -->2^n<!-- -->\)</span>.
+</p></li><li><p><code class="inline-code">h</code> is <span class="math math-inline">\(<!-- -->2^n^2<!-- -->\)</span>.
+</p></li></ul><p>To prove the claim, let&#x27;s run the function and see if it fits.
+Let <span class="math math-inline">\(<!-- -->n = 4<!-- -->\)</span>.
+</p><pre class="src-block"><code class="language-racket">(define (A x y)
+  (cond ((= y 0) 0)
+        ((= x 0) (* 2 y))
+        ((= y 1) 2)
+        (else (A (- x 1)
+                 (A x (- y 1))))))
+
+(define (f n) (A 0 n))
+(define (g n) (A 1 n))
+(define (h n) (A 2 n))
+
+(f 4)
+(g 4)
+(h 4)
+</code></pre><pre class="fixed-width">8
+16
+65536</pre><p></p><h1 id="exercise-130">Exercise 1.30</h1><blockquote><p>The <code class="inline-code">sum</code> procedure above generates a linear recursion.
+The procedure can be rewritten so that the sum is performed iteratively.
+Show how to do this by filling in the missing expressions in the following definition:
+</p></blockquote><pre class="src-block"><code class="language-racket">(define (sum term a next b)
+  (define (iter a result)
+    (if (&gt; a b)
+        result
+        (iter (next a) (+ result a))))
+  (iter a 0))
+</code></pre><h1 id="exercise-131a">Exercise 1.31a</h1><blockquote><p>The <code class="inline-code">sum</code> procedure is only the simplest of a vast number of similar abstractions that can be captured as higher-order procedures.
+Write an analogous procedure called <code class="inline-code">product</code> that returns the product of the values of a function at points over a given range.
+Show how to define <code class="inline-code">factorial</code> in terms of <code class="inline-code">product</code>.
+Also use <code class="inline-code">product</code> to compute approximations to <!-- -->π<!-- --> using the formula.
+</p><div class="math math-display">\[<!-- -->\begin{equation*}
+\frac{\pi}{4} = \frac{2 \cdot 4 \cdot 4 \cdot 6 \cdot 6 \cdot 8 \cdots}{3 \cdot 3 \cdot 5 \cdot 5 \cdot 7 \cdot 7 \cdots}
+\end{equation*}<!-- -->\]</div></blockquote><pre class="src-block"><code class="language-racket">(define (product term a next b)
+  (if (&gt; a b)
+      term
+      (product (* (next a) term) (+ a 1) next b)))
+
+(define (factorial term)
+  (product 1  1 (lambda (a) a) term))
+
+(define (wallis_prod term)
+  (* 4 (product 1 1
+                (lambda (a) (*
+                             (/ (* 2 a) (+ (* 2 a) 1))
+                             (/ (+ (* 2 a) 2) (+ (* 2 a) 1))))
+                term)))
+
+(factorial 1) ; should return 1
+(factorial 5) ; should return 120
+(factorial 10) ; should return 3628800
+(factorial 20) ; should return 20!
+
+; With larger values should return closer to the value of pi.
+(wallis_prod 1)
+(wallis_prod 5)
+(wallis_prod 10)
+(wallis_prod 20)
+</code></pre><pre class="fixed-width">1
+120
+3628800
+2432902008176640000
+32/9
+524288/160083
+274877906944/85530896451
+302231454903657293676544/95064880114531295493525</pre><p>
+Notwithstanding related to solving the entire problem, I&#x27;ll include note on how I was able to create a procedure for the Pi value computation since it gave me the hardest time.
+In order to start creating a procedure, I&#x27;ve simply observed the given formula with the induction that it can be separated into pairs like the following.
+(I also simply didn&#x27;t observe that each pair is also an iteration of a function.)
+</p><div class="math math-display">\[<!-- -->\begin{equation*}
+\frac{\pi}{4} = \left(\frac{2}{3} \cdot \frac{4}{3} \right) \cdot \left(\frac{4}{5} \cdot \frac{6}{5} \right) \cdot \left(\frac{6}{7} \cdot \frac{8}{7} \right)
+\end{equation*}<!-- -->\]</div><p>We can then observed that it has a generalized pattern.
+Each iteration, in isolation, can be summarized as such.
+</p><div class="math math-display">\[<!-- -->\begin{equation*}
+\left(\frac{2n}{2n+1} \cdot \frac{2n+2}{2n+1}\right)
+\end{equation*}<!-- -->\]</div><p>With simple algebra, you can get the approximation of Pi by simply multiplying the equation with <span class="math math-inline">\(<!-- -->4<!-- -->\)</span>.
+Here is the finalized equation to my solution.
+</p><div class="math math-display">\[<!-- -->\begin{equation*}
+f(j) \approx \pi \approx 4 \cdot \prod_{n=1}^j \left(\frac{2n}{2n+1} \cdot \frac{2n+2}{2n+1}\right)
+\end{equation*}<!-- -->\]</div><p>With larger values, the result would be closer to the value of <!-- -->π<!-- -->.
+</p><h1 id="exercise-131b">Exercise 1.31b</h1><blockquote><p>If your <code class="inline-code">product</code> procedure generates a recursive process, write one that generates an iterative process.
+If it generates an iterative process, write one that generates a recursive process.
+</p></blockquote><p>Based from my answer in Exercise 1.31a, we can simply see whether we have created an iterative or recursive process simply with the <code class="inline-code">trace</code> function.
+</p><pre class="src-block"><code class="language-racket">(require racket/trace)
+(define (product total fn a b)
+  (if (&gt; a b)
+      total
+      (product (* total (fn a)) fn (+ a 1) b)))
+
+(define (factorial term)
+  (product 1 (lambda (a) a) 1 term))
+
+(trace product)
+(factorial 5)
+</code></pre><pre class="fixed-width">&gt;(product 1 #&lt;procedure:...00/ob-inNfez.rkt:10:13&gt; 1 5)
+&gt;(product 1 #&lt;procedure:...00/ob-inNfez.rkt:10:13&gt; 2 5)
+&gt;(product 2 #&lt;procedure:...00/ob-inNfez.rkt:10:13&gt; 3 5)
+&gt;(product 6 #&lt;procedure:...00/ob-inNfez.rkt:10:13&gt; 4 5)
+&gt;(product 24 #&lt;procedure:...00/ob-inNfez.rkt:10:13&gt; 5 5)
+&gt;(product 120 #&lt;procedure:...00/ob-inNfez.rkt:10:13&gt; 6 5)
+&lt;120
+120</pre><p>
+With our implementation, we can see it is an iterative process.
+The following code block is its recursive equivalent along with the stack trace for comprehension.
+</p><pre class="src-block"><code class="language-racket">(require racket/trace)
+(define (product total fn a b)
+  (if (&gt; a b)
+      1
+      (* (fn a) (product total fn (+ a 1) b))))
+
+(define (factorial term)
+  (product 1 (lambda (a) a) 1 term))
+
+
+(trace product)
+(factorial 5)
+</code></pre><div class="exampe">&gt;(product 1 #&lt;procedure:...00/ob-pmlb3s.rkt:10:13&gt; 1 5)
+&gt; (product 1 #&lt;procedure:...00/ob-pmlb3s.rkt:10:13&gt; 2 5)
+&gt; &gt;(product 1 #&lt;procedure:...00/ob-pmlb3s.rkt:10:13&gt; 3 5)
+&gt; &gt; (product 1 #&lt;procedure:...00/ob-pmlb3s.rkt:10:13&gt; 4 5)
+&gt; &gt; &gt;(product 1 #&lt;procedure:...00/ob-pmlb3s.rkt:10:13&gt; 5 5)
+&gt; &gt; &gt; (product 1 #&lt;procedure:...00/ob-pmlb3s.rkt:10:13&gt; 6 5)
+&lt; &lt; &lt; 1
+&lt; &lt; &lt;5
+&lt; &lt; 20
+&lt; &lt;60
+&lt; 120
+&lt;120
+120
+</div><h1 id="exercise-132a">Exercise 1.32a</h1><blockquote><p>Show that <code class="inline-code">sum</code> and <code class="inline-code">product</code> (exercise 1.31) are both special cases of a still more general notion called <code class="inline-code">accumulate</code> that combines a collection of terms, using some general accumulation function:
+</p><div class="exampe">(accumulate combiner null-value term a next b)
+</div><p><code class="inline-code">accumulate</code> takes as arguments the same term and range specifications as sum and product, together with a combiner procedure (of two arguments) that specifies how the current term is to be combined with the accumulation of the preceding terms and a null-value that specifies what base value to use when the terms run out.
+Write <code class="inline-code">accumulate</code> and show how <code class="inline-code">sum</code> and <code class="inline-code">product</code> can both be defined as simple calls to <code class="inline-code">accumulate</code>.
+</p></blockquote><pre class="src-block"><code class="language-racket">(define (accumulate combiner null-value term a next b)
+  (if (&gt; a b)
+      term
+      (accumulate combiner null-value (combiner (next a) term) (next a) next b)))
+
+(define (sum term a next b)
+  (accumulate (lambda (next a) (+ next )))
+</code></pre><h1 id="exercise-21">Exercise 2.1</h1><blockquote><p>Define a better version of <code class="inline-code">make-rat</code> that handles both positive and negative arguments.
+<code class="inline-code">Make-rat</code> should normalize the sign so that if the rational number is positive, both the numerator and denominator are positive, and if the rational number is negative, only the numerator is negative.
+</p></blockquote><pre class="src-block"><code class="language-racket">(define (Make-rat n d)
+  (let ((g (gcd n d)))
+    (cond
+      ((and (&lt; n 0) (&lt; d 0)) (cons (/ (abs n) g) (/ (abs d) g)))
+      ((and (&gt; n 0) (&lt; d 0)) (cons (/ (- n) g) (/ (abs d) g)))
+      (else (cons (/ n g) (/ d g))))))
+
+(Make-rat 4 5)
+(Make-rat -4 5)
+(Make-rat 4 -5)
+(Make-rat -4 -5)
+</code></pre><pre class="fixed-width">(4 . 5)
+(-4 . 5)
+(-4 . 5)
+(4 . 5)</pre><p></p><h1 id="exercise-22">Exercise 2.2</h1><blockquote><p>Consider the problem of representing line segments in a plane.
+Each segment is represented as a pair of points: a starting point and an ending point.
+Define a constructor make-segment and selectors start-segment and end-segment that define the representation of segments in terms of points.
+Furthermore, a point can be represented as a pair of numbers: the x coordinate and the y coordinate.
+Accordingly, specify a constructor make-point and selectors x-point and y-point that define this representation.
+Finally, using your selectors and constructors, define a procedure midpoint-segment that takes a line segment as argument and returns its midpoint (the point whose coordinates are the average of the coordinates of the endpoints).
+To try your procedures, you&#x27;ll need a way to print points:
+</p><div class="exampe">(define (print-point p)
+  (newline)
+  (display &quot;(&quot;)
+  (display (x-point p))
+  (display &quot;,&quot;)
+  (display (y-point p))
+  (display &quot;)&quot;))
+</div></blockquote></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"metadata":{"date":"\"2021-05-14 15:39:37 +08:00\"","date_modified":"\"2021-05-16 21:58:22 +08:00\"","language":"en","source":""},"title":"Solutions: Structure and interpretation of computer programs","hast":{"type":"root","children":[{"type":"element","tagName":"nav","properties":{"className":"toc"},"children":[{"type":"element","tagName":"ol","properties":{"className":"toc-level toc-level-1"},"children":[{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-12"},"children":[{"type":"text","value":"Exercise 1.2"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-12"},"children":[{"type":"text","value":"Exercise 1.2"}]}]},{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-13"},"children":[{"type":"text","value":"Exercise 1.3"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-13"},"children":[{"type":"text","value":"Exercise 1.3"}]}]},{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-15"},"children":[{"type":"text","value":"Exercise 1.5"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-15"},"children":[{"type":"text","value":"Exercise 1.5"}]}]},{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-16"},"children":[{"type":"text","value":"Exercise 1.6"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-16"},"children":[{"type":"text","value":"Exercise 1.6"}]}]},{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-17"},"children":[{"type":"text","value":"Exercise 1.7"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-17"},"children":[{"type":"text","value":"Exercise 1.7"}]}]},{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-18"},"children":[{"type":"text","value":"Exercise 1.8"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-18"},"children":[{"type":"text","value":"Exercise 1.8"}]}]},{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-19"},"children":[{"type":"text","value":"Exercise 1.9"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-19"},"children":[{"type":"text","value":"Exercise 1.9"}]}]},{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-110"},"children":[{"type":"text","value":"Exercise 1.10"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-110"},"children":[{"type":"text","value":"Exercise 1.10"}]}]},{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-130"},"children":[{"type":"text","value":"Exercise 1.30"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-130"},"children":[{"type":"text","value":"Exercise 1.30"}]}]},{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-131a"},"children":[{"type":"text","value":"Exercise 1.31a"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-131a"},"children":[{"type":"text","value":"Exercise 1.31a"}]}]},{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-131b"},"children":[{"type":"text","value":"Exercise 1.31b"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-131b"},"children":[{"type":"text","value":"Exercise 1.31b"}]}]},{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-132a"},"children":[{"type":"text","value":"Exercise 1.32a"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-132a"},"children":[{"type":"text","value":"Exercise 1.32a"}]}]},{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-21"},"children":[{"type":"text","value":"Exercise 2.1"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-21"},"children":[{"type":"text","value":"Exercise 2.1"}]}]},{"type":"element","tagName":"li","data":{"hookArgs":[{"type":"element","tagName":"h1","properties":{"id":"exercise-22"},"children":[{"type":"text","value":"Exercise 2.2"}]}]},"properties":{"className":"toc-item toc-item-h1"},"children":[{"type":"element","tagName":"a","properties":{"className":"toc-link toc-link-h1","href":"/challenges.structure-and-interpretation-of-computer-programs#exercise-22"},"children":[{"type":"text","value":"Exercise 2.2"}]}]}]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"This is my exercise solutions for the "},{"type":"element","tagName":"a","properties":{"href":"/literature.structure-and-interpretations-of-computer-programs"},"children":[{"type":"text","value":"Structure and interpretation of computer programs"}]},{"type":"text","value":" book.\nBefore you can use this document, you need to do some prerequisite installation of "},{"type":"element","tagName":"a","properties":{"href":"https://racket-lang.org/"},"children":[{"type":"text","value":"Racket"}]},{"type":"text","value":" and "},{"type":"element","tagName":"a","properties":{"href":"https://docs.racket-lang.org/sicp-manual/"},"children":[{"type":"text","value":"SICP package"}]},{"type":"text","value":".\n"}]},{"type":"element","tagName":"h1","properties":{"id":"exercise-12"},"children":[{"type":"text","value":"Exercise 1.2"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-racket"]},"children":[{"type":"text","value":"(/ (+ 5 4\n    (- 2\n        (- 3\n          (+ 6\n              (/ 1 3)))))\n  (* 3\n    (- 6 2)\n    (- 2 7)))\n"}]}]},{"type":"element","tagName":"h1","properties":{"id":"exercise-13"},"children":[{"type":"text","value":"Exercise 1.3"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-racket"]},"children":[{"type":"text","value":"(define (square x) (* x x))\n(define (sum-of-squares x y z)\n  (define sum (+ (square x) (square y) (square z)))\n  (- sum (square (min x y z))))\n"}]}]},{"type":"element","tagName":"h1","properties":{"id":"exercise-15"},"children":[{"type":"text","value":"Exercise 1.5"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"If the interpreter evaluates with applicative-order, it will never evaluate the if condition since "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"(p)"}]},{"type":"text","value":" is now endlessly being evaluated.\n(Applicative-order evaulates each argument before passing on the function.)\nMeanwhile, if it's evaluated at normal order, it would simply expand then start to evaluate them in order.\nIt would go evaluate the "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"if"}]},{"type":"text","value":" condition and proceed to return 0 (since it returns true).\n"}]},{"type":"element","tagName":"h1","properties":{"id":"exercise-16"},"children":[{"type":"text","value":"Exercise 1.6"}]},{"type":"element","tagName":"blockquote","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Alyssa P. Hacker doesn't see why if needs to be provided as a special form.\n\"Why can't I just define it as an ordinary procedure in terms of cond?\" she asks.\nAlyssa's friend Eva Lu Ator claims this can indeed be done, and she defines a new version of if:\n"}]},{"type":"element","tagName":"div","properties":{"className":["exampe"]},"children":[{"type":"text","value":"(define (new-if predicate then-clause else-clause)\n  (cond (predicate then-clause)\n        (else else-clause)))\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Eva demonstrates the program for Alyssa:\n"}]},{"type":"element","tagName":"div","properties":{"className":["exampe"]},"children":[{"type":"text","value":"(new-if (= 2 3) 0 5)\n5\n\n(new-if (= 1 1) 0 5)\n0\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Delighted, Alyssa uses new-if to rewrite the square-root program:\n"}]},{"type":"element","tagName":"div","properties":{"className":["exampe"]},"children":[{"type":"text","value":"(define (sqrt-iter guess x)\n  (new-if (good-enough? guess x)\n          guess\n          (sqrt-iter (improve guess x)\n                     x)))\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"What happens when Alyssa attempts to use this to compute square roots? Explain.\n"}]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"The reason why "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"if"}]},{"type":"text","value":" needs a special form is because of applicative-order evaluation.\nScheme (or rather Racket with the SICP package) interprets with applicative-order evaluation which it means it has to evaluate all of the arguments first before proceeding to evaluate the procedure.\nAs "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"new-if"}]},{"type":"text","value":" is a procedure that we defined, it would cause an infinite loop of Racket trying to evaluate "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"sqrt-iter"}]},{"type":"text","value":" inside of our "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"new-if"}]},{"type":"text","value":" procedure.\n"}]},{"type":"element","tagName":"h1","properties":{"id":"exercise-17"},"children":[{"type":"text","value":"Exercise 1.7"}]},{"type":"element","tagName":"blockquote","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"The "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"good-enough?"}]},{"type":"text","value":" test used in computing square roots will not be very effective for finding the square roots of very small numbers.\nAlso, in real computers, arithmetic operations are almost always performed with limited precision. This makes our test inadequate for very large numbers.\nExplain these statements, with examples showing how the test fails for small and large numbers.\nAn alternative strategy for implementing "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"good-enough?"}]},{"type":"text","value":" is to watch how "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"guess"}]},{"type":"text","value":" changes from one iteration to the next and to stop when the change is a very small fraction of the guess.\nDesign a square-root procedure that uses this kind of end test.\nDoes this work better for small and large numbers?\n"}]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"For Exercise 1.7, I'm afraid I cannot easily answer it since the results from the example implementation is already accurate due to the interpreter.\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"For this exercise, let's pretend the interpreter is not great.\nFor example, "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"(sqrt 0.0001)"}]},{"type":"text","value":" results in "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":".03230844833048122"}]},{"type":"text","value":" (should be "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"0.01"}]},{"type":"text","value":").\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"The reason varies from a combination of interpreter, hardware configurations, and implementation of arithmetics.\nThis is especially true with floating points arithmetics.\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"In implementing our improved square root implementation from the question, we start with editing the "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"improve"}]},{"type":"text","value":" function.\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-racket"]},"children":[{"type":"text","value":"(define (square x) (* x x))\n(define (improve guess x)\n  (/ (+ guess (/ x guess)) 2))\n\n(define (good-enough? guess old-guess tolerance)\n  (\u003c= (abs (- guess old-guess)) tolerance))\n\n(define (sqrt-iter guess old-guess x)\n  (if (good-enough? guess old-guess 0.0000001)\n      guess\n      (sqrt-iter (improve guess x) guess x)))\n\n(define (sqrt x)\n  (sqrt-iter 1.0 0.0 x))\n\n(sqrt 4)\n(sqrt 1)\n(sqrt 0.0001)\n(sqrt 0.00001)\n(sqrt 123456789000000)\n"}]}]},{"type":"element","tagName":"pre","properties":{"className":["fixed-width"]},"children":[{"type":"text","value":"2.000000000000002\n1.0\n0.01\n0.0031622776602038957\n11111111.060555555"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"\nI've modified the "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"good-enough?"}]},{"type":"text","value":" function by making the tolerance as an argument.\nTested on the MIT Scheme v10.1.10, the results are more accurate closer to modern systems like Julia.\nBigger numbers are also calculated quicker than the previous implementation (for some reason that I don't know).\n"}]},{"type":"element","tagName":"h1","properties":{"id":"exercise-18"},"children":[{"type":"text","value":"Exercise 1.8"}]},{"type":"element","tagName":"blockquote","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Newton's method for cube roots is based on the fact that if y is an approximation to the cube root of x, then a better approximation is given by the value\n"}]},{"type":"element","tagName":"div","properties":{"className":["math","math-display"]},"children":[{"type":"text","value":"\\["},{"type":"text","value":"\\begin{equation*}\n    \\frac{x / y^2 + 2y}{3}\n\\end{equation*}"},{"type":"text","value":"\\]"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Use this formula to implement a cube-root procedure analogous to the square-root procedure.\n(In section 1.3.4 we will see how to implement Newton's method in general as an abstraction of these square-root and cube-root procedures.)\n"}]}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-racket"]},"children":[{"type":"text","value":"(define (square x) (* x x))\n(define (improve guess x)\n  (/ (+ (- x (square guess)) (* guess 2)) 3))\n\n(define (good-enough? guess x)\n  (\u003c (abs (- (square guess) x)) 0.001))\n\n(define (cbrt-iter guess x)\n  (if (good-enough? guess x)\n      guess\n      (cbrt-iter (improve guess x) x)))\n\n(define (cbrt x)\n  (cbrt-iter 1.0 x))\n\n(cbrt 9)\n"}]}]},{"type":"element","tagName":"pre","properties":{"className":["fixed-width"]},"children":[{"type":"text","value":"3.000163135454436"}]},{"type":"element","tagName":"p","properties":{},"children":[]},{"type":"element","tagName":"h1","properties":{"id":"exercise-19"},"children":[{"type":"text","value":"Exercise 1.9"}]},{"type":"element","tagName":"blockquote","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Each of the following two procedures defines a method for adding two positive integers in terms of the procedures "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"inc"}]},{"type":"text","value":", which increments its argument by 1, and "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"dec"}]},{"type":"text","value":", which decrements its argument by 1.\n"}]},{"type":"element","tagName":"div","properties":{"className":["exampe"]},"children":[{"type":"text","value":"(define (+ a b)\n  (if (= a 0)\n      b\n      (inc (+ (dec a) b))))\n\n(define (+ a b)\n  (if (= a 0)\n      b\n      (+ (dec a) (inc b))))\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Using the substitution model, illustrate the process generated by each procedure in evaluating (+ 4 5).\nAre these processes iterative or recursive?\n"}]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"For the first definition, the resulting evaluation would have to look something like the following:\n"}]},{"type":"element","tagName":"div","properties":{"className":["exampe"]},"children":[{"type":"text","value":"(+ 4 5)\n(inc (+ 3 5))\n(inc (inc (+ 2 5)))\n(inc (inc (inc (+ 1 5))))\n(inc (inc (inc (inc (+ 0 5)))))\n(inc (inc (inc (inc 5))))\n(inc (inc (inc 6)))\n(inc (inc 7))\n(inc 8)\n9\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Based from the visualization, it seems it is a recursive process.\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"As for the second definition, the resulting evaluation would look like the following:\n"}]},{"type":"element","tagName":"div","properties":{"className":["exampe"]},"children":[{"type":"text","value":"(+ 4 5)\n(+ 3 6)\n(+ 2 7)\n(+ 1 8)\n(+ 0 9)\n9\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"As each iteration does not result in embedding procedures in one big procedure, I think it is considered as an iterative process.\n"}]},{"type":"element","tagName":"h1","properties":{"id":"exercise-110"},"children":[{"type":"text","value":"Exercise 1.10"}]},{"type":"element","tagName":"blockquote","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"The following procedure computes a mathematical function called Ackermann's function.\n"}]},{"type":"element","tagName":"div","properties":{"className":["exampe"]},"children":[{"type":"text","value":"(define (A x y)\n  (cond ((= y 0) 0)\n        ((= x 0) (* 2 y))\n        ((= y 1) 2)\n        (else (A (- x 1)\n                 (A x (- y 1))))))\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"What are the values of the following expressions?\n"}]},{"type":"element","tagName":"div","properties":{"className":["exampe"]},"children":[{"type":"text","value":"(A 1 10)\n\n(A 2 4)\n\n(A 3 3)\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Consider the following procedures, where A is the procedure defined above:\n"}]},{"type":"element","tagName":"div","properties":{"className":["exampe"]},"children":[{"type":"text","value":"(define (f n) (A 0 n))\n\n(define (g n) (A 1 n))\n\n(define (h n) (A 2 n))\n\n(define (k n) (* 5 n n))\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Give concise mathematical definitions for the functions computed by the procedures "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"f"}]},{"type":"text","value":", "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"g"}]},{"type":"text","value":", and "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"h"}]},{"type":"text","value":" for positive integer values of "},{"type":"element","tagName":"span","properties":{"className":["math","math-inline"]},"children":[{"type":"text","value":"\\("},{"type":"text","value":"n"},{"type":"text","value":"\\)"}]},{"type":"text","value":".\nFor example, "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"(k n)"}]},{"type":"text","value":" computes "},{"type":"element","tagName":"span","properties":{"className":["math","math-inline"]},"children":[{"type":"text","value":"\\("},{"type":"text","value":"5n^2"},{"type":"text","value":"\\)"}]},{"type":"text","value":".\n"}]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"For the sake of completeness, here is the function in question along with the given example usage (and its results in the following block):\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-racket"]},"children":[{"type":"text","value":"(define (A x y)\n  (cond ((= y 0) 0)\n        ((= x 0) (* 2 y))\n        ((= y 1) 2)\n        (else (A (- x 1)\n                 (A x (- y 1))))))\n\n(A 1 10)\n(A 2 4)\n(A 3 3)\n"}]}]},{"type":"element","tagName":"pre","properties":{"className":["fixed-width"]},"children":[{"type":"text","value":"1024\n65536\n65536"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"\nAs for notating "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"f"}]},{"type":"text","value":", "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"g"}]},{"type":"text","value":", and "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"h"}]},{"type":"text","value":" into mathematical definitions:\n"}]},{"type":"element","tagName":"ul","properties":{},"children":[{"type":"element","tagName":"li","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"f"}]},{"type":"text","value":" is "},{"type":"element","tagName":"span","properties":{"className":["math","math-inline"]},"children":[{"type":"text","value":"\\("},{"type":"text","value":"2n"},{"type":"text","value":"\\)"}]},{"type":"text","value":".\n"}]}]},{"type":"element","tagName":"li","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"g"}]},{"type":"text","value":" is "},{"type":"element","tagName":"span","properties":{"className":["math","math-inline"]},"children":[{"type":"text","value":"\\("},{"type":"text","value":"2^n"},{"type":"text","value":"\\)"}]},{"type":"text","value":".\n"}]}]},{"type":"element","tagName":"li","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"h"}]},{"type":"text","value":" is "},{"type":"element","tagName":"span","properties":{"className":["math","math-inline"]},"children":[{"type":"text","value":"\\("},{"type":"text","value":"2^n^2"},{"type":"text","value":"\\)"}]},{"type":"text","value":".\n"}]}]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"To prove the claim, let's run the function and see if it fits.\nLet "},{"type":"element","tagName":"span","properties":{"className":["math","math-inline"]},"children":[{"type":"text","value":"\\("},{"type":"text","value":"n = 4"},{"type":"text","value":"\\)"}]},{"type":"text","value":".\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-racket"]},"children":[{"type":"text","value":"(define (A x y)\n  (cond ((= y 0) 0)\n        ((= x 0) (* 2 y))\n        ((= y 1) 2)\n        (else (A (- x 1)\n                 (A x (- y 1))))))\n\n(define (f n) (A 0 n))\n(define (g n) (A 1 n))\n(define (h n) (A 2 n))\n\n(f 4)\n(g 4)\n(h 4)\n"}]}]},{"type":"element","tagName":"pre","properties":{"className":["fixed-width"]},"children":[{"type":"text","value":"8\n16\n65536"}]},{"type":"element","tagName":"p","properties":{},"children":[]},{"type":"element","tagName":"h1","properties":{"id":"exercise-130"},"children":[{"type":"text","value":"Exercise 1.30"}]},{"type":"element","tagName":"blockquote","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"The "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"sum"}]},{"type":"text","value":" procedure above generates a linear recursion.\nThe procedure can be rewritten so that the sum is performed iteratively.\nShow how to do this by filling in the missing expressions in the following definition:\n"}]}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-racket"]},"children":[{"type":"text","value":"(define (sum term a next b)\n  (define (iter a result)\n    (if (\u003e a b)\n        result\n        (iter (next a) (+ result a))))\n  (iter a 0))\n"}]}]},{"type":"element","tagName":"h1","properties":{"id":"exercise-131a"},"children":[{"type":"text","value":"Exercise 1.31a"}]},{"type":"element","tagName":"blockquote","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"The "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"sum"}]},{"type":"text","value":" procedure is only the simplest of a vast number of similar abstractions that can be captured as higher-order procedures.\nWrite an analogous procedure called "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"product"}]},{"type":"text","value":" that returns the product of the values of a function at points over a given range.\nShow how to define "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"factorial"}]},{"type":"text","value":" in terms of "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"product"}]},{"type":"text","value":".\nAlso use "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"product"}]},{"type":"text","value":" to compute approximations to "},{"type":"text","value":"π"},{"type":"text","value":" using the formula.\n"}]},{"type":"element","tagName":"div","properties":{"className":["math","math-display"]},"children":[{"type":"text","value":"\\["},{"type":"text","value":"\\begin{equation*}\n\\frac{\\pi}{4} = \\frac{2 \\cdot 4 \\cdot 4 \\cdot 6 \\cdot 6 \\cdot 8 \\cdots}{3 \\cdot 3 \\cdot 5 \\cdot 5 \\cdot 7 \\cdot 7 \\cdots}\n\\end{equation*}"},{"type":"text","value":"\\]"}]}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-racket"]},"children":[{"type":"text","value":"(define (product term a next b)\n  (if (\u003e a b)\n      term\n      (product (* (next a) term) (+ a 1) next b)))\n\n(define (factorial term)\n  (product 1  1 (lambda (a) a) term))\n\n(define (wallis_prod term)\n  (* 4 (product 1 1\n                (lambda (a) (*\n                             (/ (* 2 a) (+ (* 2 a) 1))\n                             (/ (+ (* 2 a) 2) (+ (* 2 a) 1))))\n                term)))\n\n(factorial 1) ; should return 1\n(factorial 5) ; should return 120\n(factorial 10) ; should return 3628800\n(factorial 20) ; should return 20!\n\n; With larger values should return closer to the value of pi.\n(wallis_prod 1)\n(wallis_prod 5)\n(wallis_prod 10)\n(wallis_prod 20)\n"}]}]},{"type":"element","tagName":"pre","properties":{"className":["fixed-width"]},"children":[{"type":"text","value":"1\n120\n3628800\n2432902008176640000\n32/9\n524288/160083\n274877906944/85530896451\n302231454903657293676544/95064880114531295493525"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"\nNotwithstanding related to solving the entire problem, I'll include note on how I was able to create a procedure for the Pi value computation since it gave me the hardest time.\nIn order to start creating a procedure, I've simply observed the given formula with the induction that it can be separated into pairs like the following.\n(I also simply didn't observe that each pair is also an iteration of a function.)\n"}]},{"type":"element","tagName":"div","properties":{"className":["math","math-display"]},"children":[{"type":"text","value":"\\["},{"type":"text","value":"\\begin{equation*}\n\\frac{\\pi}{4} = \\left(\\frac{2}{3} \\cdot \\frac{4}{3} \\right) \\cdot \\left(\\frac{4}{5} \\cdot \\frac{6}{5} \\right) \\cdot \\left(\\frac{6}{7} \\cdot \\frac{8}{7} \\right)\n\\end{equation*}"},{"type":"text","value":"\\]"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"We can then observed that it has a generalized pattern.\nEach iteration, in isolation, can be summarized as such.\n"}]},{"type":"element","tagName":"div","properties":{"className":["math","math-display"]},"children":[{"type":"text","value":"\\["},{"type":"text","value":"\\begin{equation*}\n\\left(\\frac{2n}{2n+1} \\cdot \\frac{2n+2}{2n+1}\\right)\n\\end{equation*}"},{"type":"text","value":"\\]"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"With simple algebra, you can get the approximation of Pi by simply multiplying the equation with "},{"type":"element","tagName":"span","properties":{"className":["math","math-inline"]},"children":[{"type":"text","value":"\\("},{"type":"text","value":"4"},{"type":"text","value":"\\)"}]},{"type":"text","value":".\nHere is the finalized equation to my solution.\n"}]},{"type":"element","tagName":"div","properties":{"className":["math","math-display"]},"children":[{"type":"text","value":"\\["},{"type":"text","value":"\\begin{equation*}\nf(j) \\approx \\pi \\approx 4 \\cdot \\prod_{n=1}^j \\left(\\frac{2n}{2n+1} \\cdot \\frac{2n+2}{2n+1}\\right)\n\\end{equation*}"},{"type":"text","value":"\\]"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"With larger values, the result would be closer to the value of "},{"type":"text","value":"π"},{"type":"text","value":".\n"}]},{"type":"element","tagName":"h1","properties":{"id":"exercise-131b"},"children":[{"type":"text","value":"Exercise 1.31b"}]},{"type":"element","tagName":"blockquote","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"If your "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"product"}]},{"type":"text","value":" procedure generates a recursive process, write one that generates an iterative process.\nIf it generates an iterative process, write one that generates a recursive process.\n"}]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Based from my answer in Exercise 1.31a, we can simply see whether we have created an iterative or recursive process simply with the "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"trace"}]},{"type":"text","value":" function.\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-racket"]},"children":[{"type":"text","value":"(require racket/trace)\n(define (product total fn a b)\n  (if (\u003e a b)\n      total\n      (product (* total (fn a)) fn (+ a 1) b)))\n\n(define (factorial term)\n  (product 1 (lambda (a) a) 1 term))\n\n(trace product)\n(factorial 5)\n"}]}]},{"type":"element","tagName":"pre","properties":{"className":["fixed-width"]},"children":[{"type":"text","value":"\u003e(product 1 #\u003cprocedure:...00/ob-inNfez.rkt:10:13\u003e 1 5)\n\u003e(product 1 #\u003cprocedure:...00/ob-inNfez.rkt:10:13\u003e 2 5)\n\u003e(product 2 #\u003cprocedure:...00/ob-inNfez.rkt:10:13\u003e 3 5)\n\u003e(product 6 #\u003cprocedure:...00/ob-inNfez.rkt:10:13\u003e 4 5)\n\u003e(product 24 #\u003cprocedure:...00/ob-inNfez.rkt:10:13\u003e 5 5)\n\u003e(product 120 #\u003cprocedure:...00/ob-inNfez.rkt:10:13\u003e 6 5)\n\u003c120\n120"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"\nWith our implementation, we can see it is an iterative process.\nThe following code block is its recursive equivalent along with the stack trace for comprehension.\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-racket"]},"children":[{"type":"text","value":"(require racket/trace)\n(define (product total fn a b)\n  (if (\u003e a b)\n      1\n      (* (fn a) (product total fn (+ a 1) b))))\n\n(define (factorial term)\n  (product 1 (lambda (a) a) 1 term))\n\n\n(trace product)\n(factorial 5)\n"}]}]},{"type":"element","tagName":"div","properties":{"className":["exampe"]},"children":[{"type":"text","value":"\u003e(product 1 #\u003cprocedure:...00/ob-pmlb3s.rkt:10:13\u003e 1 5)\n\u003e (product 1 #\u003cprocedure:...00/ob-pmlb3s.rkt:10:13\u003e 2 5)\n\u003e \u003e(product 1 #\u003cprocedure:...00/ob-pmlb3s.rkt:10:13\u003e 3 5)\n\u003e \u003e (product 1 #\u003cprocedure:...00/ob-pmlb3s.rkt:10:13\u003e 4 5)\n\u003e \u003e \u003e(product 1 #\u003cprocedure:...00/ob-pmlb3s.rkt:10:13\u003e 5 5)\n\u003e \u003e \u003e (product 1 #\u003cprocedure:...00/ob-pmlb3s.rkt:10:13\u003e 6 5)\n\u003c \u003c \u003c 1\n\u003c \u003c \u003c5\n\u003c \u003c 20\n\u003c \u003c60\n\u003c 120\n\u003c120\n120\n"}]},{"type":"element","tagName":"h1","properties":{"id":"exercise-132a"},"children":[{"type":"text","value":"Exercise 1.32a"}]},{"type":"element","tagName":"blockquote","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Show that "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"sum"}]},{"type":"text","value":" and "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"product"}]},{"type":"text","value":" (exercise 1.31) are both special cases of a still more general notion called "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"accumulate"}]},{"type":"text","value":" that combines a collection of terms, using some general accumulation function:\n"}]},{"type":"element","tagName":"div","properties":{"className":["exampe"]},"children":[{"type":"text","value":"(accumulate combiner null-value term a next b)\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"accumulate"}]},{"type":"text","value":" takes as arguments the same term and range specifications as sum and product, together with a combiner procedure (of two arguments) that specifies how the current term is to be combined with the accumulation of the preceding terms and a null-value that specifies what base value to use when the terms run out.\nWrite "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"accumulate"}]},{"type":"text","value":" and show how "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"sum"}]},{"type":"text","value":" and "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"product"}]},{"type":"text","value":" can both be defined as simple calls to "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"accumulate"}]},{"type":"text","value":".\n"}]}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-racket"]},"children":[{"type":"text","value":"(define (accumulate combiner null-value term a next b)\n  (if (\u003e a b)\n      term\n      (accumulate combiner null-value (combiner (next a) term) (next a) next b)))\n\n(define (sum term a next b)\n  (accumulate (lambda (next a) (+ next )))\n"}]}]},{"type":"element","tagName":"h1","properties":{"id":"exercise-21"},"children":[{"type":"text","value":"Exercise 2.1"}]},{"type":"element","tagName":"blockquote","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Define a better version of "},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"make-rat"}]},{"type":"text","value":" that handles both positive and negative arguments.\n"},{"type":"element","tagName":"code","properties":{"className":["inline-code"]},"children":[{"type":"text","value":"Make-rat"}]},{"type":"text","value":" should normalize the sign so that if the rational number is positive, both the numerator and denominator are positive, and if the rational number is negative, only the numerator is negative.\n"}]}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-racket"]},"children":[{"type":"text","value":"(define (Make-rat n d)\n  (let ((g (gcd n d)))\n    (cond\n      ((and (\u003c n 0) (\u003c d 0)) (cons (/ (abs n) g) (/ (abs d) g)))\n      ((and (\u003e n 0) (\u003c d 0)) (cons (/ (- n) g) (/ (abs d) g)))\n      (else (cons (/ n g) (/ d g))))))\n\n(Make-rat 4 5)\n(Make-rat -4 5)\n(Make-rat 4 -5)\n(Make-rat -4 -5)\n"}]}]},{"type":"element","tagName":"pre","properties":{"className":["fixed-width"]},"children":[{"type":"text","value":"(4 . 5)\n(-4 . 5)\n(-4 . 5)\n(4 . 5)"}]},{"type":"element","tagName":"p","properties":{},"children":[]},{"type":"element","tagName":"h1","properties":{"id":"exercise-22"},"children":[{"type":"text","value":"Exercise 2.2"}]},{"type":"element","tagName":"blockquote","properties":{},"children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Consider the problem of representing line segments in a plane.\nEach segment is represented as a pair of points: a starting point and an ending point.\nDefine a constructor make-segment and selectors start-segment and end-segment that define the representation of segments in terms of points.\nFurthermore, a point can be represented as a pair of numbers: the x coordinate and the y coordinate.\nAccordingly, specify a constructor make-point and selectors x-point and y-point that define this representation.\nFinally, using your selectors and constructors, define a procedure midpoint-segment that takes a line segment as argument and returns its midpoint (the point whose coordinates are the average of the coordinates of the endpoints).\nTo try your procedures, you'll need a way to print points:\n"}]},{"type":"element","tagName":"div","properties":{"className":["exampe"]},"children":[{"type":"text","value":"(define (print-point p)\n  (newline)\n  (display \"(\")\n  (display (x-point p))\n  (display \",\")\n  (display (y-point p))\n  (display \")\"))\n"}]}]}]},"backlinks":[]},"__N_SSG":true},"page":"/[[...slug]]","query":{"slug":["challenges.structure-and-interpretation-of-computer-programs"]},"buildId":"Ie9t5zutrXP6Of75Cb5xF","assetPrefix":"/wiki","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="/wiki/_next/static/chunks/polyfills-99d808df29361cf7ffb1.js"></script><script src="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" async=""></script><script src="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" async=""></script><script src="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" async=""></script><script src="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" async=""></script><script src="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" async=""></script><script src="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_buildManifest.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_ssgManifest.js" async=""></script></body></html>

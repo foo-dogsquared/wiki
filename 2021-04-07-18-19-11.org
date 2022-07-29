@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       063dfd73-dbf5-437b-b6f1-d7aeca196f31
+:END:
+#+title: Spaced repetition
+#+date: "2021-04-07 18:19:11 +08:00"
+#+date_modified: "2021-08-07 16:04:14 +08:00"
+#+language: en
+
+
+Spacing out practice sessions over a period of time is more effective than cramming it all in one evening.
+It's because our brain takes time to absorb all of the information.
+Learning is not instantaneous.
+We might know the information now by first practice but we'll forget it sooner or later especially if we don't remember it often.
+
+This could be used as a way to learn things and form habits.
+[[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]] by practicing over small units, make the unit per practice bigger, and repeat until you're confident to move on to other topics.
+For example, say you want to be efficient with competitive coding.
+You can start with solving only one problem per 3 days for a week.
+Then, you can go with 2 problems per week, then 3, then 4, and so forth.
+
+There are various tools to practice spaced repetition.
+
+- Anki is one of the most popular tool for this purpose with smart repetition and calculating the best time for you to repeat something.
+- If you're using [[id:c422175a-5b65-4311-8cc6-11efd55364e8][Org mode]], org-drill is a plugin that builds on top of it to implement a spaced repetition memory system.

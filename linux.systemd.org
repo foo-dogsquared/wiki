@@ -1,0 +1,65 @@
+:PROPERTIES:
+:ID:       20830b22-9e55-42a6-9cef-62a1697ea63d
+:END:
+#+title: systemd
+#+date: "2021-05-20 22:37:22 +08:00"
+#+date_modified: "2022-04-19 20:21:56 +08:00"
+#+language: en
+#+property: header-args  :eval no
+
+
+systemd is a big tool for a big system.
+Let's explore some of them from a perspective of a wannabe power user.
+
+Among other things, it has the following list of features.
+
+- [[id:f1b21fc8-86a5-47cd-b3d8-da6ac7a34427][systemd timers]] which can replace cron for task scheduling.
+- [[id:cd5f0d04-d9bb-44e8-a0f2-630ea58c1e94][systemd services]] along with the usual antics of a service manager such as managing dependencies and commands to run when killed.
+- [[id:a602f900-cdcf-4090-9278-d5926d80eedc][systemd transient units]] for quickly creating and scheduling one-off services.
+- [[id:14b49597-011c-4da1-b955-bed6059af4a3][systemd unit templates]] is handy for managing units that have common structure, enabling to start them quickly and dynamically.
+- [[id:3c67e623-c269-4c9b-9bdf-4ad677d46a35][systemd environment directives]] enable setting environment variables from a systemd-ful session.
+- [[id:e4dba4ef-71dd-4d30-9a2c-4ad97223510b][systemd-networkd]] is the network configuration manager in case you want to do [[id:a208dd50-2ebc-404d-b407-3ec2f556535e][Network configuration in Linux]].
+- [[id:8505f1f0-f15b-4b04-91fc-12be01913ce6][systemd-boot]] is a bootloader mainly for UEFI-based systems.
+- [[id:d83c099a-fc11-4ccc-b265-4de97c85dcbe][systemd-journald]] is the system logging service providing a structured way to manage your logs from different units.
+- [[id:7fce893f-418f-42aa-b2b1-59d9f0993406][systemd unit hardening]] can help your services secure.
+
+
+
+
+* systemd at user-level
+:PROPERTIES:
+:ID:       c7edff80-6dea-47fc-8ecd-e43b5ab8fb1e
+:END:
+
+systemd has the ability to run at user-level empowering the user to manage their own system with their own settings.
+It immensely helps separating user-specific settings from the system-wide settings.
+
+systemd looks for the units from certain paths.
+You can look for them from the =systemd.unit.5= manual page.
+
+To run systemd as a user instance, simply add a =--user= flag beforehand for =systemctl= and other systemd binaries, if applicable.
+
+#+begin_src shell  :results none
+# See how different the output when run at user- and system-level.
+systemctl --user show-units
+systemctl show-units
+
+systemctl --user show-environment
+systemctl show-environment
+
+systemctl --user start $SERVICE
+#+end_src
+
+
+
+
+* Extra information
+
+- =systemd.directives.7= is an index of configuration directives including unit keys, environment variables, and command line options for systemd-related things.
+  Also contains the related manual pages for a deeper references.
+  [fn:: How did I pass a year without knowing this?]
+
+- On a similar note, =systemd.index.7= is an alphabetical index of the important keywords found in systemd.
+
+- =systemd.mount= units require the filename to be the mountpoint.
+  Though, it has to be converted to what systemd accepts (e.g., =systemd-escape --path $PATH=).

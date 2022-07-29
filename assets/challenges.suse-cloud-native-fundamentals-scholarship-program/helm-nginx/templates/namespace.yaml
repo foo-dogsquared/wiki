@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  {{ .Values.configmap.data }}
+kind: ConfigMap
+metadata:
+  name: nginx-version
+  namespace: {{ .Values.namespace.name }}
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    tier: test
+  name: {{ .Values.namespace.name }}

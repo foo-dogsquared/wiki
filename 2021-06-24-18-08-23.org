@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       c886bc6d-e9dc-4f62-8841-59123236eda0
+:END:
+#+title: Failed ideas can be repurposed
+#+date: "2021-06-24 18:08:23 +08:00"
+#+date_modified: "2021-07-05 13:13:16 +08:00"
+#+language: en
+
+
+- oftentimes, these come from a lack of understanding (or misunderstanding)
+- this is why research exists in the first place
+- while some are taking risks investing into the new research, its concept and ideas can influence upcoming projects
+- it could also take note on the failures and flaws of the research
+- case in point:
+  + Virtual Boy that eventually popularizes virtual reality
+  + A bad animation can be used for an amateurish character
+  + A very alien concept can be remixed with a new familiar concept

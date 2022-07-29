@@ -1,0 +1,159 @@
+:PROPERTIES:
+:ID:       8135ece9-0dc0-4799-ac63-a24f9486ddd2
+:END:
+#+title: Command line: BorgBackup
+#+date: "2021-05-30 21:40:24 +08:00"
+#+date_modified: "2021-07-13 22:54:32 +08:00"
+#+language: en
+#+property: header_args :eval no
+#+property: header_args:bash  :results silent  :exports code
+
+
+BorgBackup is a deduplicating archiver with compression and encryption.
+In other words, this is the best backup tool (as of 2021-05-30).
+
+In this note, we'll be covering the following v1.1.16 and above.
+
+For more information, you can view =borg.1= manual page.
+It has all of the information you can possibly know about the tool, making it a perfect reference.
+This note rips off a few relevant pages from there.
+
+
+
+
+* Synopsis
+
+#+begin_src shell  :results silent
+borg [options...] [subcommand [subcommand_options...] [subcommand_positional_args...]]
+#+end_src
+
+Borg recommends to pass the options before the positional arguments.
+It can be picky with certain subcommands output being affected from the order of the arguments but you should be safe when you do the recommended practice.
+
+
+
+* Options
+
+Borg uses a Git-style command-line interface with subcommands and some common options to choose from.
+
+- You can set the log level of the program with =--debug=, =--info=, =--warning=, =--error=, and =--critical=.
+- =-v, --verbose= is an alias for =--info=
+- =-p, --progress= shows progress information; will be slower on certain operations due to additional passing of the metadata
+
+Keep in mind, Borg doesn't have global configuration files, only per-repo configurations.
+You can create configurations with a little hard work and shell scripts.
+But if you want a tool that already does that, you have [[https://torsion.org/borgmatic/][Borgmatic]] as an option with plain-text files in YAML format.
+
+
+** Repositories and archives
+
+Most of the subcommands take the repository path with a certain format.
+
+#+begin_src
+${REPOSITORY_URL}::${ARCHIVE_NAME}
+#+end_src
+
+#+begin_src
+# Points to an repo
+/home/foo-dogsquared/backup
+
+# Points to an archive named '2021-03-02' from the previous repo.
+/home/foo-dogsquared/backup::2021-03-02
+#+end_src
+
+You can also refer to a name dynamically with placeholders.
+
+#+begin_src
+/home/{user}/backup::{hostname}-{user}-{now}
+#+end_src
+
+For more information, you can see the related section for Borg placeholders.
+Or you can run ~borg help placeholders~.
+
+
+
+
+
+
+* Environment variables
+
+Borg will also take environment variables being used by most (if not all) of the subcommands.
+Very useful for scripting and saving time not repeating the same arguments.
+
+- =BORG_REPO= - the repo URL
+- =BORG_PASSPHRASE= - the repo passphrase, if it has encryption enabled
+- =BORG_PASSCOMMAND= - the command used to get the passphrase
+
+
+
+
+* Examples
+
+Borg is a comprehensive tool for a comprehensive backup system.
+Here are some of the real-life examples of using the program.
+
+
+** Quickstart
+
+Just from how I imagined I would start using this tool, anyway.
+
+#+begin_src shell
+# Initialize the Borg repo in the specified path with a simple passphrase.
+borg init --encryption repokey ${REPO_PATH}
+
+# Create an archive in the repo and save the documents, pictures, and videos folder.
+# This will prompt you into entering the passphrase.
+borg create --verbose --progress ${REPO_PATH}::{hostname}-{now:%F-%T-%z} ~/Documents ~/Pictures ~/Videos
+
+# Entering the passphrase can be annoying so let's save that into a variable.
+# Luckily, Borg already handles this by setting BORG_PASSPHRASE.
+# Thus, it will not bother us again.
+BORG_PASSPHRASE='gum cavity cabinet auditorium'
+
+# List all of the archives saved so far.
+borg list ${REPO_PATH}
+
+# List the files in the specified archive.
+borg list ${REPO_PATH}::${ARCHIVE_NAME}
+
+# Extract only the documents folder.
+borg extract --verbose --progress ${REPO_PATH}::{hostname}-{now:%F-%T-%z} ~/Documents
+#+end_src
+
+
+** Practicing safe backup script
+
+Better be safe than sorry.
+Here's the safe backup in all of its glory in Bash.
+
+#+begin_src bash  :tangle (my/concat-assets-folder "safe-borg-backup")  :shebang "#/usr/bin/env bash"
+if $# -eq 1; then echo "No directories and files to be saved." && exit 1; fi
+
+locations=$@
+
+borg create --verbose --stats --compression lz4 --exclude '**/.node_modules' ::{hostname}-{now:%F-%H-%M-%S-%z} ${locations[@]}
+borg check --verbose --verify-data
+borg prune --verbose --keep-daily 7 --keep-hourly 7 --keep-weekly 6 --keep-monthly 6
+#+end_src
+
+#+results:
+
+Since the script only lets you enter arguments used for saving into the archive, you have to use environment variables.
+
+#+begin_src shell
+BORG_REPO="$HOME/backups" BORG_PASSCOMMAND='gopass show misc/personal-borgbackup-repo' safe-borg-backup ~/projects ~/library ~/writings
+#+end_src
+
+
+** An interactive interface for extracting archives
+
+All-time favorite fzf (see [[id:4eb1f8b1-bc12-4a6c-8fa4-20e4c3542cf2][Command line: fzf]]) is required.
+
+#+begin_src bash
+export BORG_PASSPHRASE="oral hygiene"
+export BORG_REPO="${REPO_PATH}"
+
+borg list --format="{name}{NL}" \
+    | fzf \
+    | xargs --replace="{}" borg extract --verbose --progress ::{}
+#+end_src

@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       360f59a5-d18b-49d6-8213-062ba4bfea7e
+:END:
+#+title: Monster Hunter art style
+#+date: 2022-05-21 08:14:14 +08:00
+#+date_modified: 2022-05-21 08:48:54 +08:00
+#+language: en
+
+
+- this only applies to the mainline games and spin-offs that are very similar to it
+- [[roam:Monster Hunter]] mainly drawn in 3D roam:Anime style, akin to 3D [[roam:Phantasy Star]] games
+- the mantra of this series is an alternate universe with a grounded take on monster designs;
+  the monsters have a realistic and grounded take on their designs mostly inspired from real-life fauna;
+  all of their designs relate to their abilities and how they interact with their usual environments
+  - Ukanlos is a monster mainly found in icelands;
+    featuring a jaw shovelling through the snow;
+    its body structure also enables it to swim through the snow
+  - Tigrex is a great and simple example;
+    a combination of tyrannosaurus rex and a tiger mainly hunting with violent persistence alone
+  - Nargacuga is a monster similar to Tigrex except with a jet-black hide, bladed wings, and a spiked tail intended for quick and silent hunting;
+    it is another example of simple and great grounded design
+  - even in other installments like Monster Hunter: Rise with the presentation of the world as magical, the monsters within it still has a grounded take;
+- even in older games, there is a level of realism and can be seen up close from their 3D models;
+  it is pretty fantastic to see that kind of detail :)

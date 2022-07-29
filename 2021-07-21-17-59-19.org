@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       e158b742-53c7-4442-9af3-489ea8240af9
+:END:
+#+title: Examples and stories are more memorable than explanations
+#+date: 2021-07-21 17:59:19 +08:00
+#+date_modified: 2022-04-19 20:15:03 +08:00
+#+language: en
+
+
+- [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]];
+  we easily weave a narrative on top of an idea or remember more easily because of a story;
+  examples and stories are just one compact idea that tend to tune more into familiar things (e.g., narratives, analogies)
+- in my experience, legends and origin stories are often more memorable especially with the outlandish ones like the ancient Greek and Egyptian stories
+- in a way, we [[id:9a11ef31-b2a7-43a9-a7a9-48f191838c6e][Prefer referencing over remembering]]
+- at times, we are also more creative than logical but it does not mean that [[id:2b2a4c85-905a-478c-9e2c-2a64d08e4785][Creativity and logic are not opposites]]
+- obviously, this doesn't mean explanations should be abandoned;
+  [[id:c0e4fb0e-68f2-4db4-8c3e-f5a7845738c3][Understanding comes first from memory]] and explanations tend to be one of the first things we remember when going back to a topic
+- furthermore, those examples can serve as practical way to start learning on things;
+  [[id:1a6187c9-6c79-4378-bf8d-935c8a3d9167][Learning a new skill often starts from specific places]]

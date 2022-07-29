@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       08f43012-a152-48c4-8943-9fe557a39232
+:END:
+#+title: Cookiecutter
+#+date: "2021-07-16 16:40:44 +08:00"
+#+date_modified: "2021-07-20 01:59:09 +08:00"
+#+language: en
+#+property: header_args  :eval no
+
+
+A project scaffolding tool enabling to create projects instantly.
+You can generate projects from your own Cookiecutter template or [[https://github.com/topics/cookiecutter-template][others' template]].
+
+
+
+
+* Features
+
+- The tool makes use of Jinja2 for templating.
+- Template files and directories name.
+- Hooks either with a shell or Python script.
+
+
+
+
+* Ecosystem
+
+- [[https://github.com/topics/cookiecutter-template][Cookiecutter has plenty of templates available online]]
+- [[https://github.com/cruft/cruft][Cruft]] is a boilerplate manager allowing you to update templates after scaffolding, check and validate the templates, and 100% compatibility with Cookiecutter templates
+- a couple of Cookiecutter templates maintained by the team includes [[https://github.com/pydanny/cookiecutter-django][cookiecutter-django]] and [[https://github.com/audreyfeldroy/cookiecutter-pypackage][cookiecutter-pypackage]];
+  good examples to get started presenting how complex a template can be

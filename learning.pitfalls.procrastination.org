@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       0bb464a1-94c4-4130-bc7d-413465aea8e8
+:END:
+#+title: Procrastination
+#+date: 2021-07-21 14:38:09 +08:00
+#+date_modified: 2021-07-21 14:48:18 +08:00
+#+language: en
+
+
+As [[id:9f1f35dd-7cf9-4f47-a9a9-b647e5daa2af][We are more associative than structured]], our brain associates things we don't like as pain.
+Thus, we have the tendency to avert to them as much as possible including distracting ourselves with social media, upholding activities for tomorrow, and doing unrelated things.
+
+Procrastination is a habitual problem.
+It is a negative habit that rewards you for doing nothing thus can be compared to addiction.
+Furthermore, it leads into the habit of cramming and you'll know from [[id:25fb4ebf-2cc4-40fe-93ad-37a79aedfb41][The basics of memory]] that the [[id:06df5d69-12ac-4e98-8013-ac54d29aa80c][Learning process]] does take time to settle.
+
+There are ways to fight against this:
+
+- Just [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]].
+  With [[id:df20e58b-6d38-4ace-8468-413bc708c772][Most of the work is done from smaller amount of effort]], you'll be finding yourself making more progress over time.
+
+- Use sessions of [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]] with focus and relaxation.
+  Specifically, use a timer and make each session to end with a short period of relaxation.

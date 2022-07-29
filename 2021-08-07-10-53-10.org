@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       03289346-3154-4fa1-9bfe-70158012fb5a
+:END:
+#+title: Store a sketchbook for your narratives
+#+date: 2021-08-07 10:53:10 +08:00
+#+date_modified: 2021-08-07 11:07:31 +08:00
+#+language: en
+
+
+- [[id:810dc8b6-db64-4c80-a0aa-f9e6d5fa4acf][Create an inbox to store your thoughts]] that is dedicated for a fictional world
+- very useful for [[id:815b2beb-40a0-4e79-9097-5b688189ad5b][Writing]] narratives to create a good consistent world especially for fantasy settings
+- one of the good use cases for [[id:583852e4-e56f-469b-89bc-9e5a832c9f04][Backlinks]], creating a quick interface for linked objects
+- interestingly, note-taking systems that emphasizes linking such as [[id:4259636e-e0e8-49e4-8210-758ec59728a3][Zettelkasten]] makes this a good tool for this

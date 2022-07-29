@@ -1,0 +1,61 @@
+:PROPERTIES:
+:ID:       fa34ab22-2b49-485b-a797-cbcccb8bcd04
+:END:
+#+title: Neovim Lua integration
+#+date: "2021-07-15 07:45:50 +08:00"
+#+date_modified: "2022-04-20 21:19:43 +08:00"
+#+language: en
+
+
+- with Lua integration, you can create [[id:bdcff35e-15e1-4539-9c4e-5fdd5b978c26][Neovim Lua modules]]
+- you can start with =lua-intro= section from [[id:0a0fe63e-dcf3-4928-9e82-5513784c1244][Neovim help system]];
+  it gives all of the information on the things you need to get started with configuring Neovim with Lua as well as pointers for more things to do with Lua;
+- Neovim also extends the Lua standard library found in =vim= object;
+  see the =lua-stdlib= in [[id:0a0fe63e-dcf3-4928-9e82-5513784c1244][Neovim help system]]
+
+
+
+
+* Setting configuration with Lua
+
+There are some equivalent setting values in Lua versus Vimscript.
+For more information, see the =lua-vimscript= help section.
+
+| Description                     | Vimscript statement         | Lua equivalent                                        |
+|---------------------------------+-----------------------------+-------------------------------------------------------|
+| Setting options                 | ~set number relativenumber~ | ~vim.opt.number, vim.opt.relativenumber = true, true~ |
+| Setting local options           | ~setlocal spell~            | ~vim.opt_local.spell = true~                          |
+| Running Vimscript commands      | ~colorscheme nord~          | ~vim.cmd "colorscheme nord"~                          |
+| Setting buffer-specific options | ~b:ale-enabled=1~           | ~vim.b["ale-enabled"] = 1~                            |
+
+Some more general things you generally want to know:
+
+- You can still execute Vimscript with =vim.cmd=.
+  For more information, see =:h lua-vimscript= from the help system.
+
+- You can access environment variables through =vim.env= — e.g., ~vim.env.HOME~, ~vim.env.MYVIMRC~.
+
+- Highlight options are mostly in =vim.highlight= — e.g., ~highlight clear SpellCap~ versus ~vim.highlight~.
+
+- You can manipulate variables of various scopes from =vim.{g,b,..,t}=.
+  To see more details, see =lua-vim-variables= help section.
+
+- =vim.opt= will return an Option object, it has a common API.
+  to learn more about it, see =vim.opt= and its subsections.
+
+
+
+
+* Real-life examples making use of Neovim Lua API
+
+This is a list of [[id:bdcff35e-15e1-4539-9c4e-5fdd5b978c26][Neovim Lua modules]] that can serve as a basis for learning to interact Neovim with Lua.
+
+- [[https://github.com/savq/paq-nvim][paq-nvim]] is a simple Neovim package manager
+- [[https://github.com/wbthomason/packer.nvim][packer.nvim]] is a more comprehensive package manager
+- [[https://github.com/L3MON4D3/LuaSnip][LuaSnip]] is a snippet engine
+- [[https://github.com/nvim-telescope/telescope.nvim][telescope.nvim]] is a fuzzy finder integrated inside Neovim
+
+Several people have already replaced their already existing Vim configurations with Neovim.
+
+- TJ DeVries' [[https://github.com/tjdevries/config_manager/][Neovim config]] is fully written in Lua complete with his own plugins.
+- ThePrimeagen's [[https://github.com/ThePrimeagen/.dotfiles/][public dotfiles]] contains Neovim config written in Lua.

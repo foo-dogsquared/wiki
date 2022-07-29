@@ -1,0 +1,105 @@
+:PROPERTIES:
+:ID:       6d425762-ab9c-463f-b17a-e2a116b12fa0
+:END:
+#+title: Implementing tiered headings with CSS
+#+date: "2021-06-20 10:31:00 +08:00"
+#+date_modified: "2021-06-20 18:16:24 +08:00"
+#+language: en
+
+
+You may have seen certain documents with [[https://practicaltypography.com/hierarchical-headings.html][tiered headings]].
+To implement this with pure CSS, we'll make heavy use of [[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters][CSS counters]].
+
+Here is one rough implementation with SCSS.
+
+#+begin_src scss   :tangle (my/concat-assets-folder "naive-tiered-headings.scss")
+article {
+    // Named after the LaTeX counters after `chapter` counter.
+    counter-reset: section subsection subsubsection paragraph subparagraph;
+    --counter-spacing: 0.5rem;
+
+    // <h2> is used as a section header since <h1> is the main title
+    h2 {
+        counter-reset: subsection;
+        counter-increment: section;
+
+        &::before {
+            content: counter(section) ".";
+            margin-right: var(--counter-spacing);
+        }
+    }
+
+    h3 {
+        counter-reset: subsubsection;
+        counter-increment: subsection;
+
+        &::before {
+            content: counter(section) "." counter(subsection) ".";
+            margin-right: var(--counter-spacing);
+        }
+    }
+
+    h4 {
+        counter-reset: paragraph;
+        counter-increment: subsubsection;
+
+        &::before {
+            content: counter(section) "." counter(subsection) "." counter(subsubsection) ".";
+            margin-right: var(--counter-spacing);
+        }
+    }
+
+    h5 {
+        counter-reset: subparagraph;
+        counter-increment: paragraph;
+
+        &::before {
+            content: counter(section) "." counter(subsection) "." counter(subsubsection) "." counter(paragraph) ".";
+            margin-right: var(--counter-spacing);
+        }
+    }
+
+    h6 {
+        counter-increment: subparagraph;
+
+        &::before {
+            content: counter(section) "." counter(subsection) "." counter(subsubsection) "." counter(paragraph) "." counter(subparagraph);
+            margin-right: var(--counter-spacing);
+        }
+    }
+}
+#+end_src
+
+This is enough for CSS but since we're using SCSS, we can optimize it further.
+You may notice that each level is similar with the difference being the content and their counter name.
+
+#+begin_src scss  :tangle (my/concat-assets-folder "optimized-tiered-headings.scss")
+@use 'sass:string';
+
+@function tier-heading($counters) {
+    $str: "";
+    @for $level from 1 through $counters {
+        $str: $str + 'counter(h#{$level})"."';
+    }
+    @return string.unquote($str);
+}
+
+article {
+    --counter-spacing: 0.5rem;
+    @for $level from 1 through 6 {
+        counter-reset: h#{$level};
+
+        h#{$level}{
+            @if $level != 6 {
+                counter-reset: h#{$level + 1};
+            }
+            counter-increment: h#{$level};
+
+            &::before {
+                content: tier-heading($level);
+                margin-right: var(--counter-spacing);
+            }
+        }
+    }
+}
+#+end_src

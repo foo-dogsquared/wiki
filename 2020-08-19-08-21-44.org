@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       be917383-84c4-4bf5-9ca0-b04bfb778f4f
+:END:
+#+title: Guix package manager
+#+date: "2020-08-19 08:21:44 +08:00"
+#+date_modified: "2021-05-04 20:52:08 +08:00"
+#+language: en
+
+
+[[https://guix.gnu.org/][GNU Guix]] is a derivation of [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]] in furthering [[id:bfed6daf-4c2b-4426-bab9-2804caa5e079][Functional package management]].
+As such, it addresses the concerns and the previous mistakes that the Nix community made while developing the software.
+
+- Addresses storage issues commonly tied with reproducibility such as [[https://guix.gnu.org/manual/en/html_node/Substitutes.html#Substitutes][substitutes]] and [[https://guix.gnu.org/blog/2020/grafts-continued/][grafts]].
+- Integration with other projects such as [[https://www.gnu.org/software/guix/blog/2019/connecting-reproducible-deployment-to-a-long-term-source-code-archive/][Software Heritage]] and [[https://guix.gnu.org/manual/en/html_node/Security-Updates.html][Common Vulnerabilities and Exposures (CVE)]].
+- A focus on [[http://bootstrappable.org/][bootstrappable builds]] which [[https://guix.gnu.org/manual/en/html_node/Bootstrapping.html#Bootstrapping][includes various functions]] to setup your distribution from scratch.
+- Empowering individual users which is emphasized further with the ability to [[https://hpc.guix.info/blog/2017/10/using-guix-without-being-root/][installing packages without root privileges]], [[https://guix.gnu.org/manual/en/html_node/Invoking-guix-environment.html#Invoking-guix-environment][creating local development environments]], and [[https://www.gnu.org/software/guix/manual/en/html_node/Channels.html][using channels]].

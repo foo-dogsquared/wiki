@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       9e4f04d4-00a3-4898-ac98-924957fa868b
+:END:
+#+title: Kubernetes
+#+date: "2021-06-13 14:37:01 +08:00"
+#+date_modified: "2021-06-14 22:42:48 +08:00"
+#+language: en
+
+
+Kubernetes is a container orchestrator letting you manage hundreds of containers at a time.
+While managing multiple containers with engines such as Docker and Podman, it is not really feasible if you want hundreds of them.
+
+Kubernetes is composed of multiple components and can be intermingled with other related tools.
+For this, pre-bundled solutions (also known as distributions) such as [[http://k3s.io/][K3s]] exists with some related tools embedded to make installation easier.
+
+Most installations feature the [[id:49867854-3780-45ed-a703-4f5d22a92d39][kubectl]] that controls the Kubernetes cluster.
+This is the program that you'll most likely going to pay attention to.
+
+- composed of multiple smaller components:
+  + kubelet runs on all nodes, managing nodes — i.e., notifying the API server where the nodes belongs to
+  + kubeconfig is the term for a Kubernetes cluster configuration;
+    mainly written in YAML file
+- Kubernetes uses the building blocks structure (or resources) that composes of simple blocks that can be combined to create complex operations
+- it also has extensibility mainly through exposing the API and letting you create custom resource definitions to fully extend Kubernetes with your app
+- Kubernetes manages the cluster along with some resources
+  + *the nodes which contain multiple pods*
+    - nodes are categorized either as a master or a worker node
+    - a master node is where the control plane is located
+    - a worker node is where the data plane is located
+  + *pods which is a collection of containers*;
+    usually, they are managed indirectly with deployments or resource sets;
+    while pods can run multiple containers, it often contains one container as a recommended practice
+  + *deployments create the specification of the application state*
+  + *replica sets ensure that pods are running at any given time even while replacing the pods*
+  + *configmaps manages secrets in the cluster*;
+    this includes passing configurations between different pods;
+    secrets are either set imperatively (in the command line) or declaratively (from a file)
+  + *namespaces separates application from each other*, similarly to namespacing found in programming languages — e.g., Rust with modules, C++ namespaces, etc.
+- while you can manage resources in the command line, you can create manifests that Kubernetes can simply apply
+  + think of it as declarative way of cluster management (i.e., with files) instead of imperative (i.e., invoking in the command line)

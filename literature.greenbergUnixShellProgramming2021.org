@@ -1,0 +1,37 @@
+:PROPERTIES:
+:ID:       acab6667-11f5-4c85-93ee-627c1db6d574
+:ROAM_REFS: [cite:@greenbergUnixShellProgramming2021]
+:END:
+#+title: Unix shell programming: the next 50 years
+#+date: 2021-08-03 22:42:04 +08:00
+#+date_modified: 2022-06-11 18:23:17 +08:00
+#+published: 2021-06
+#+author: Greenberg, M., Kallas, K., & Vasilakis, N.
+#+source: https://dl.acm.org/doi/10.1145/3458336.3465294
+#+language: en
+
+
+- Unix shell is a long-standing tool with its cruft and history built over the past decades;
+- the goodies
+  - ease of composition gluing tools together easily
+  - mostly found on Unix systems
+  - capabilities for data streaming
+  - interactivity and automation
+- the blockers
+  - too dynamic with its environment that
+  - ease of composition of tools made of different programming languages with different properties made it difficult for research
+  - there's no single shell environment;
+    the current ecosystem is made of multiple implementation of the POSIX shell which is made of ~300pp describing the language, arbitrary behaviors, and extraneous tools to go along with it
+- the solvable blockers
+  - no easy way to handle errors;
+    it can mean the life or death of a system with a misspelling
+  - not-so-good framework for asynchronous jobs;
+    performance is acceptable for single-threaded systems but not for multi-threaded ones;
+    that said, it does exist once you've made yourself familiar with it
+  - redudant computation;
+    several tools like [[roam:GNU Make]] does address it but not fully
+  - not exactly fitting with the modern deployment systems
+- some projects to look forward to
+  - Jash
+  - Smoosh
+  - Posh and Pash

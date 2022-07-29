@@ -1,0 +1,8 @@
+#/usr/bin/env bash
+if $# -eq 1; then echo "No directories and files to be saved." && exit 1; fi
+
+locations=$@
+
+borg create --verbose --stats --compression lz4 --exclude '**/.node_modules' ::{hostname}-{now:%F-%H-%M-%S-%z} ${locations[@]}
+borg check --verbose --verify-data
+borg prune --verbose --keep-daily 7 --keep-hourly 7 --keep-weekly 6 --keep-monthly 6

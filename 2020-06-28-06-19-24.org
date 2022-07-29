@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       583852e4-e56f-469b-89bc-9e5a832c9f04
+:END:
+#+title: Backlinks
+#+date: "2020-06-28 06:19:24 +08:00"
+#+date_modified: "2021-05-20 20:13:13 +08:00"
+#+language: en
+
+
+# TODO: Improve this note
+- essentially gives the link two directions
+- usually in the form of an additional section listing the pages that link the node
+- it is not enough to rely on these, you should explicitly link nodes to get your point across and to make stronger associations with certain ideas
+- otherwise, they can be used for implicit listing of the nodes, giving a sense of structure of your notes

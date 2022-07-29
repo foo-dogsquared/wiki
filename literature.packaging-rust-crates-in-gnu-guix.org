@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       0a8229f2-072d-4df4-878e-6ef858cf13e0
+:END:
+#+title: Packaging Rust crates in GNU Guix
+#+author: Efraim Flashner
+#+date: "2021-04-26 02:20:34 +08:00"
+#+date_modified: "2021-05-04 20:51:31 +08:00"
+#+language: en
+#+source: https://av.tib.eu/media/47417
+
+
+- Not much people who're familiar with Rust, apparently (at least at the time of the talk).
+  Nonetheless, Rust-based tools are included.
+
+- Created an importer using the Crates.io API.
+  With the importer, it can recursively build the module all the way down (most of the time).
+
+- It pulls all of the dependencies.
+  The side effect is that every package has to be defined.
+  The importer just makes it easier.
+
+- The community have a preference to shared libraries and sources.
+  Vendoring is not much of a popular option.
+  Since Rust downloads everything and the community wants to reuse the components, it seems the solution is to package everything.

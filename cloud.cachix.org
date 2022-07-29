@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       366aeb8f-5a84-40c8-bf16-a919639790ab
+:END:
+#+title: Cachix
+#+date: "2021-07-04 11:50:51 +08:00"
+#+date_modified: "2021-07-05 01:42:34 +08:00"
+#+language: en
+
+
+- [[https://cachix.org/][website]]
+- a binary cache for Nix builds;
+  pretty convenient for distributing them from your projects
+- Cachix either uses a personal auth token key or a signing per-cache key
+- it also has an existing ecosystem of integrations with cloud tools such as GitHub actions
+
+workflow:
+
+#+begin_src shell  :eval no
+cachix authtoken ${CACHIX_AUTHTOKEN}
+
+nix-build | cachix push ${CACHIX_CACHE_NAME}
+#+end_src

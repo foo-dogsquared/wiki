@@ -1,0 +1,390 @@
+:PROPERTIES:
+:ID:       8a97d226-3dbd-4435-abf2-166395a6ede9
+:END:
+#+title: Learning how to learn
+#+date: "2021-04-04 11:24:56 +08:00"
+#+date_modified: "2021-06-05 22:33:37 +08:00"
+#+language: en
+#+source: https://www.coursera.org/learn/learning-how-to-learn
+#+tags: courses personal-info-management
+
+
+This course is one of the more popular metalearning courses especially on those who look for more ways to be more productive such as students.
+I studied with this course for the exact title: learn the mechanics of learning and how to apply it for me to learn more effectively.
+
+Not all of the details are listed here, just what I think I need for review.
+
+
+
+
+* How the brain works
+
+In order to understand the inner mechanics of metalearning, we have to familiarize with the brain (at least a little).
+The brain, while physically small, relates to a lot of things: our thought processes, motivations, emotions, tendencies, and memory.
+Thus, it is one of the more expensive organ in our body requiring more oxygen relative to its mass.
+
+Inside our brain houses a lot of smaller things called *neurons where they store information*.
+Each neuron may then form connections to other neurons called *synapses where they form neural pattern representing a web of thoughts*.
+
+There has been a staying belief from studies that the brain is in development from birth up to 25 years of age.
+With recent developments in brain imaging technology, it is shown that neurons can still develop in the adult stage.
+Furthermore, it form new synapses with changes in activity including resting.
+
+
+** Focused and diffused mode
+
+The brain goes into two modes: focused and diffused.
+
+- *Focused mode is when we actively remember familiar information.*
+  It usually occurs when we're actively doing a task like cooking a meal, solving a math problem, writing your notes, programming software, composing music, etc.
+
+- *Diffused mode is when there is state of clarity in the mind.*
+  This is when we relax: taking a break, walking in the trails, doing a power nap, sleeping for hours, hanging out with friends, etc.
+  Usually, it comes in the form of random thoughts or Eureka moments passing through our brain.
+
+In other words, our brain is working 24/7.
+Similar to ourselves, the brain has a routine to follow not only to make our body function as-is day-to-day but also improve ourselves in terms of habits and skills when we put the effort.
+Nonetheless, both of these modes can be used to our advantage to familiarize with new information, see the bigger picture, and learn a new skill.
+
+
+** Memory and sleep
+
+Similar to working out to build up muscles, a neural formation is stronger if you use it more often while it decays if you neglect for some time.
+This is the basis of memory.
+
+The memory can be separated into two parts:
+
+- The *working memory contains information that are required immediately*.
+  It is like the working desk where you place all of the required materials and tools to do your current task.
+
+- The *long-term memory contains all of the information that you've stored* and it is where your working memory gets its on-hand information from.
+  Continuing on the working desk analogy, it's like the storages of all of the materials and tools you may need in the future.
+
+*Our memory goes through the consolidation process* — that is, our memory is solidified and becames a part of the long-term memory.
+This is when we have familiarity with the topic, getting out from the beginner phase to being a semi-expert.
+It is also the reason why nostalgia occurs whenever we encounter certain things, go to locations we've visited, or watched movies in childhood.
+*When we revisit a memory, it goes through reconsolidation, strengthening that memory including imaginative situations and false memories.*
+The overarching process is the reason why [[Spaced repetition]] is effective.
+
+The following practices are recommended to strengthen your memory:
+
+- Use [[id:063dfd73-dbf5-437b-b6f1-d7aeca196f31][Spaced repetition]].
+  That is, repeating what you've practice over a period of time whether by days, weeks, or even months.
+  Similar to the previous point, cramming and repeating over a few times in one evening will dissipate the neural formation faster.
+
+- Just sleep.
+  As counterintuitive as it is, sleep does have its function that helps with the brain such as preventing sleep-related disorders (e.g., insomnia), removing toxins that accumulate while you're awake, and strengthening relevant neural structures while erasing less important ones.
+
+
+** Chunking
+
+The simple process of reading is actually complex from putting letters into words, then words into image, then images into a narrative, and so on.
+When we hear words, read sentences, solve problems, or listen music, we invoke reactions;
+it may invoke imagery, visualizations, a narrative, an association with another thing, etc.
+Those are the results of chunking.
+
+Chunking is the process of simplifying groups of information (or neural structure) as you learn and use more of them.
+Neuroscientifically speaking, a chunk is a group of neurons that learnt to sing in tune as you react to something.
+When a certain word is heard, it may invoke an imagery.
+That process comes from your neurons storing bits on information combining into the resulting imagery.
+
+A new chunk can form from the diffused mode of thinking where random bits on information are gathered while in this mode.
+The chunk may grow bigger as you use more of them or decay as you use less.
+The bigger the chunk is, the more information is condensed and this is when we start to form expertise over various skills.
+There are specific practices for forming a chunk and for that, see [[Practices in forming new chunks]].
+
+Having a group of chunks can be helpful in learning new ideas as you'll find relations between different fields/skills/ideas.
+This transfer of ideas will come in handy once you explore more.
+If you're a mathematician, for example, you'll find similarities on computer programming with the concepts of variables, looping, functions, conditionals, and so forth.
+It can even work vice-versa.
+
+
+
+
+* Practices in forming new chunks
+
+To form new chunks, one of the guidelines is to focus, understand, and practice.
+
+- Focus your undivided attention into learning.
+  If you're having trouble with it, see [[Procrastination]].
+
+- Understand the basic idea of the concept.
+  For related information, see [[Memory and sleep]].
+
+- Practice to strengthen the chunk and know the big picture.
+  Learning can go bottom-up — knowing the details of a specific problem — and top-down learning — gaining a 30,000 foot view of what you're learning and where it fits in.
+
+For specific details, you can do the following practices for hammering down the lesson.
+
+- Learn the key ideas.
+  You can skim the chapter you're supposed to study, minding all of the key words and concepts, then fill the details yourself.
+  For a related example of the practice, see [[id:0dbfee88-cdce-48d1-9a10-23fc12d9bcd5][Refer to advanced resources when skill-building for a solid short-term goal]].
+
+- Focus on the examples and exercises given.
+  Though, do focus on the bigger picture with the example (e.g., why this solution is valid, why this step is necessary) and not only how to reach that conclusion.
+  In other words, treat examples/exercises as a road map that when mastered can lead you to reach the same conclusion with a different perspective/solution.
+
+- Testing it yourself is one of the most effective indicator if you've mastered the lesson.
+  Simply recalling can be more effective than rereading.
+
+- Keep in mind about "Law of Serendipity": Lady Luck prefers the one who tries.
+  For a start, you can do something small and another until you're surprised at the results.
+
+A new chunk can also form when you're under stress impeding your understanding or when you're in diffused mode.
+That said, having a chunk does not often mean useful.
+A chunk is useless if it's isolated among the rest for some time or if it's not made to connect with other chunks.
+Furthermore, due to the semi-random way of thinking when diffused, it should be verified with a focused way of thinking.
+
+
+** Interleaving
+
+Interleaving, in general, refers to jumping between different context.
+This could be applied in different ways.
+
+- Learning more difficult concepts on the other while recalling previously learnt concepts.
+- Skipping between different chapters and problem sets.
+- Studying two wildly different subjects.
+
+This is helpful in gaining new perspectives and preventing being stuck to one idea (see [[Einstellung]]) or being overspecialized.
+While practice and repetition is important, this is where you'll be able to independently think and creating innovative ideas.
+
+
+** Regarding mistakes
+
+Mistakes are a helpful indicator of how much you've mastered the subject.
+They are also helpful at pointing out flaws from what you've learnt.
+It's better to think mistakes as a tool in preventing illusions of competence (see [[Pitfalls and illusions of competence]]).
+
+
+** Memory palace
+
+Taking advantage of our tendency to associate and to group things, we can create a technique to learn new things.
+The memory palace technique places the familiar things with the newer topics such as your house, your route to a store, or a collection of things we're familiar with.
+
+For example, you overlaid the [[https://dictionary.cambridge.org/grammar/british-grammar/conjunctions][conjunctions]] into an acronym: "FANBOYS" each letter standing for one of them — e.g., for, and, but, or, yet, so.
+There is a whole memory competition scene that famously use the technique by crafting a crazy narrative around it.
+
+What's interesting with this technique is it can be an exercise in creativity.
+Like most skills, the time to create more memorable narratives in shorter time can improve with more practice.
+
+
+
+
+
+* Pitfalls and illusions of competence
+
+Illusions of competence is one of the pitfalls when trying to learn.
+One of lesser forms of it is practicing what is proved to be ineffective — while plausible to learn with those, can entrap the learner into thinking they're making progress.
+
+
+** Presence of the material
+
+One of the reasons of illusion of competence is the presence of the material itself.
+Once seen by the student, they tend to think they have absorbed the material.
+To combat against this, simply closing the material (see [[Practices in forming new chunks]]) and testing yourself is an effective option.
+
+
+** Examples of common practices
+
+Highlighting, rereading, concept mapping = not effective than what you thought.
+
+- Highlighting can be done to a minimum, the key idea should be the focus of the highlight.
+- Rereading can be effective if done in spaced repetition and if recalling was applied.
+- Concept mapping can be effective but only if the basic chunk was formed.
+
+
+** Procrastination
+
+Procrastination is a habitual problem (see [[Habits]]) that all of us face.
+When we procastinate, the things we avert are associated with pain thus we turn our attention away from them.
+It's a negative habit that it rewards you for doing nothing thus it can be compared to addiction.
+
+To mitigate against this:
+
+- Just start working.
+  The discomfort of facing it goes away after a while.
+
+- Use the Pomodoro technique to create interleaving segments of focus and relaxation.
+
+
+** Trying to solve head-first
+
+One of the common mistakes of students is doing homeworks ahead without looking for the solution applying the sink-or-swim approach.
+While useful in training your intuition, it is not progress as you'll enforce bad habits when established solutions are more helpful.
+Looking over solutions is a helpful learning skill.
+Although there are also pitfalls for that (see [[Learning with solutions]]).
+
+
+** Overlearning
+
+Once you have understood the lesson, you may continually study away in one concept.
+This is a dangerous practice as you're wasting valuable time that could've spent on learning and practicing new concepts.
+
+Once you understood the key idea of a concept, you should move on to the next (preferably more difficult) concept (see [[id:9b669fd4-e04e-43dd-a61e-81dea5ec0764][Deliberate practice]]).
+Interleaving self-testing and study (see [[Practices in forming new chunks]]) is more than enough for your learning.
+
+
+** Learning with solutions
+
+Another example of it is learning with solutions — while helpful into learning the big picture, it can also fool students thinking the problem is easier than they thought.
+The shown solution is given and solved by others so it is easy to think that we have solved the problem as well.
+
+One of the key takeaways from this is doing the problem solving ourselves is the one of the most important step in mastering a subject.
+
+
+** Einstellung
+
+When learning a field for your career, it doesn't end with learning and mastering the concepts that you're supposed to know.
+As changes occur over time so does the required knowledge for that career with technology-related fields as one of the popular examples.
+
+Once you've mastered something, you're now vulnerable of *being entrenched of an idea preventing you from accepting newer ideas*.
+The saying "Science progresses one funeral at a time." relates to the fact that most breakthroughs are done by young people and those who are not originally trained in that discipline.
+This concept is known as einstellung.
+
+To be less vulnerable to this mindset, you have to practice interleaving and unlearning.
+
+
+
+
+* Motivations
+
+Your brain is composed of neuromodulators and chemicals that affects your learning.
+
+- Acetylcholine affects your focused attention.
+  It can affect your long-term memory and neuroplasticity.
+
+- Dopamine affects your ability to predict better rewards for the uncertain future.
+  This involves doing things that are not immediately rewarding but predicts it will bear a better reward in the future.
+  Lack of dopamine means lack of motivation.
+  While drugs exist in controlling the dopamine levels, it can be dangerous by craving for more and becoming dependent on it.
+
+- Seratonin affects risk-taking behavior.
+  Lower seratonin levels means more of behaving more of a risk-taker.
+
+Emotions and cognition are related to one another and no less important to learning.
+If you want to be an effective learner, you have to be happy or in the mood.
+
+Some tips for a happier brain:
+
+- Exercise.
+  Interestingly, while new neurons does appear in our, it can disappear once it is not used.
+  It can survive by remembering and creating new experiences but exercise can help in surviving newer neurons.
+
+
+
+
+* Habits
+
+Our brain has a preference for routines or habits.
+These routines *start from small doses with each repeat becoming larger* to the point it can affect your life for better or worse.
+It is very similar to addiction.
+
+Habits are great energy-savers as they free up our mental space to put it somewhere else.
+When we mindless do a task, it is our habits in motion.
+
+This is how procrastination (see [[Procrastination]]) also forms.
+To combat against this, we need to know the internals of habits.
+
+A habit can be sliced into several parts:
+
+- The cue which is the starter of the habit.
+  This could be something simple as seeing your todo list or your looking at the clock.
+
+- The cues are harmless but the routine, our response, is a matter of benefits or harm.
+  When we see the todo list, we either be afraid or motivated to empty it.
+  When we see the clock, the typical response will either by inaction or action to sleep.
+
+- The reward which can enforce a habit to grow into something larger.
+  This could be something like the feeling of satisfaction of doing your todo list and rewarding yourself by relaxing at the end of the day.
+  Or in the case when we see the clock, we either get rewarded by worsening our sleep cycle but more awake time or improving our sleep cycle thus reducing the chance of encountering sleep disorders.
+
+For the habit to improve, worsen, or even entirely replaced, we need to change our belief.
+Habits are enforced by the most important component: belief.
+Believing that your new system works can get you through overriding habits.
+
+
+** How to start gaining habits?
+
+Habits are one of the ways to improve without using much willpower as it is scarce.
+Nonetheless, there are ways how to start and override your habits.
+
+- Hang out with like-minded people and community.
+  This lets you remind of the things you stand out for in times of weakness.
+
+- Set in reward for a task.
+  The simplest form of starting one.
+  This step needs some form of self-reflection so you have to make some adjustments what you like and you try to avoid.
+  For example, you could set some candies, a hangout session, or a deadline time that you can then spend the rest for relaxation.
+
+- Eat your frogs in the morning — that is, do the most disliked task first thing when you wake up.
+  This makes procrastination less part of your day as you train yourself in actually doing the task.
+
+- Write your daily tasks the evening before.
+  This lets the burden of holding out the tasks in the back of your mind.
+  It also makes your brain clear on what problems it wants to solve while you're sleeping (see [[Memory and sleep]]).
+
+- Write your weekly key tasks once per week.
+  The tasks should be reasonable enough to accomplish.
+
+
+
+
+* Week 4
+
+- imposter syndrome, the feeling of incompetence
+- analogies and models, while not perfect, is a great way of making sure you understand and put it in your memory for a longer time
+  + science is, after all, mostly made up of models that eventually break down
+- having a whiff of ADHD-like behavior of shifting attention even if you don't want to can help in making new connections
+- people learn by trying to make sense of information rather than someone telling them
+- changing underlying thoughts can make for a better learning
+  + while empathy is beneficial, it is great to practice into filtering other people who are malicious or criticizing for the sake of undercutting
+  + or you can turn it around and make it as your motivation
+- study groups are also great but don't turn it into a socializing session
+
+
+
+
+* Takeaways from "Interview with Dr. Terrence Sejnowski"
+
+- Learn headfirst in a new topic by getting involved with peers and experts who are already invested in similar topics.
+
+- Active engagement > passive listening.
+
+- A method to capture your ideas before it evaporates — e.g., a portable pen and notebook, org-capture, the PARA system.
+
+- While multitasking is possible, it's not efficient.
+  However, being unable to multitask can make day-to-day basis difficult.
+  The more important skill is efficient context switching — i.e., being able to return to the original task after being interrupted mid-task and continue smoothly.
+
+- Being in a more reflective mode creates the best work.
+
+- Being in an enriched environment with creative people makes generating and processing ideas easier.
+  If being in enriched environment is not possible, exercise can be a good substitute.
+  The point is making a creative workspace for those ideas to roam and bounce off other ideas either with other people or idle time.
+
+- Passion and persistence > smarts.
+
+- Being able to see things at a different perspective.
+
+
+
+
+* Takeaways from "Interview with Dr. Robert Bilder on creativity and problem solving"
+
+- The criteria of creativity mostly applies to what is unique to you.
+  It doesn't mean that others solve it that you're not creative as long as you've solved it yourself.
+
+- A level of discomfort is always involved when trying to learn something new.
+  As they say, "no pain, no gain."
+
+- Personalities can relate to the creative achievement of a person.
+  It boils down to mainly five traits: openness, conscientiousness, extraversion, agreeableness, and neuroticism.
+  A more open person to new experiences can be more creative achiever.
+  Counterintuitively, a less agreeable or more disagreeable can find more creative success since they are the type to challenge the status quo.
+
+- Creativity walks a fine line of being novel and valuable to other people.
+  You can create pieces that are too strange but you may find less people finding it valuable.
+  It can impose a [[id:9b669fd4-e04e-43dd-a61e-81dea5ec0764][Deliberate practice]] of trying to find balance.
+
+- While our subconscious can be more right, it doesn't mean that it is never wrong.
+  Examples include people feeling more creative while under the influence of LSD but after the session they find the product is not as close as they visioned.

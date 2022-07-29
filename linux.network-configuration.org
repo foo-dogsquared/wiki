@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       a208dd50-2ebc-404d-b407-3ec2f556535e
+:END:
+#+title: Network configuration in Linux
+#+date: "2021-05-31 13:07:38 +08:00"
+#+date_modified: "2021-08-07 20:19:40 +08:00"
+#+language: en
+
+
+# TODO: Try out non-systemd way of network configuration.
+#       Now you have to try out something like FreeBSD or OpenBSD.
+To access the internet, you need the following components:
+
+- The driver of the network device installed and enabled.
+  (See [[id:a7d9897e-fbaa-4ab1-a26d-4a86d2621df8][Linux drivers]] for more details.)
+- A network manager to manage your network devices ;p
+- A DNS resolver to access domain names which are aliases to IP addresses.
+
+There are competing components to manage your network configurations.
+
+- There is [[https://networkmanager.dev/][NetworkManager]] that has been the standard way for managing networks.
+  It is being used in roam:GNOME as the backend for their network management interface.
+
+- If you're using systemd-ful environment, you can start with [[id:e4dba4ef-71dd-4d30-9a2c-4ad97223510b][systemd-networkd]].

@@ -1,0 +1,45 @@
+:PROPERTIES:
+:ID:       fdf9e3eb-02c5-47a6-b586-e71a5c92d01a
+:END:
+#+title: Look for live sessions as another form of examples
+#+date: "2021-05-05 19:43:14 +08:00"
+#+date_modified: "2022-04-19 20:36:26 +08:00"
+#+language: en
+
+
+There is something powerful in seeing others doing the task as you are now seeing the process in action.
+A possible reason is our human tendency to follow by example.
+This is why apprenticeships are a popular form of this as you can gain an upclose look of how an experienced person does things.
+
+Watching live sessions in any form can be a good way to learn and gain perspectives as you're viewing the raw footage of the task from its conception to its completion.
+This is why seeing live sessions such as live studying, live coding, and speedpainting sessions are compelling to watch.
+
+Some plausible real-life examples...
+
+- In [[id:4b33103b-7f64-4b51-8f03-cac06d4001bb][Programming]], you may have discovered alternative ways to debug or introduce you to new tools that is very relevant to you.
+
+- In [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]], you may see new approaches from drawing anatomies or quickly bootstrap a scenario.
+
+- In roam:Speedrunning, you can see optimal routes and tricks that you may not know compared to your runs.
+
+Even pre-rendered forms of live sessions such as documentaries, pre-recorded competition matches, behind-the-scenes footage, and commentaries are great to look for albeit incomplete.
+It still gives you an idea of the process behind the topic.
+
+This approach, as much as it is nice for gaining new perspectives, is not without its problems:
+
+- You cannot easily see nuances with their approaches if it has subtleties.
+  This could may or may not affect their effectiveness.
+
+- Seeing someone does something requires some prerequisite understanding of their domain.
+  It isn't exactly [[id:af0ccefe-c671-47bf-94f7-62243c805745][Skill-building]] without prerequisites.
+
+- There is always a possibility of not taking away anything other than watching a person do something.
+  This could be due to different factors: e.g., you may have missed the subtle tendencies, you didn't have any idea at all what it is about (though, it can be nice sometimes; see [[id:0e2c9eaf-f12a-47b2-9c9c-d1a590db131b][Involuntary attention switch is good for preventing tunnel vision]]), you are already familiar with their domains.
+  As finicky this approach can be, this issue along with the previously mentioned ones can really just discourage into making you think you've just wasted time.
+
+This approach will also be filled with questions as you pick up nuances and curiosities.
+Therefore, this approach is nice along with [[id:6f9c552f-055b-4238-874e-8608006ce0ca][Communicate with others to learn]].
+
+At the very least, looking for others' approaches can always show you cool new stuff.
+But how about looking at live sessions of yourself?
+(See [[id:806bf416-78fa-4136-8329-9d2c9da12485][Live sessions of yourself doing things as an example]].)

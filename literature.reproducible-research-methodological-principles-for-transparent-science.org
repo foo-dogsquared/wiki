@@ -1,0 +1,290 @@
+:PROPERTIES:
+:ID:       39e895ee-5207-4e1b-a948-e7ed3e708c47
+:roam_refs: @arnaudReproducibleResearchMethodological
+:END:
+#+title: Reproducible research: methodological principles for transparent science
+#+date: "2020-04-12 10:24:25 +08:00"
+#+date_modified: "2021-11-07 00:38:07 +08:00"
+#+language: en
+#+source: https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/about
+
+
+I'm not a researcher but I've learned so many things from this course that are applicable to general workflows: organizing your digital files for easy retrieval, creating reproducible notes, and setting out to create reproducible studies with open formats.
+In my desktop workflow, I've managed to create a generic desktop search for my projects which also serves as an format-agnostic option for personal braindump/wiki which I'll taking notes of it somewhere.
+
+This is the notes for [[https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/info][Reproducible research: methodological prinicples for transparent science]], an open course on how to create [[id:6eeb7a24-b662-46d6-9ece-00a5028ff4d8][Reproducible research]]  and notes with various tools.
+The course itself is divided into three paths for [[https://jupyter.org][Jupyter Notebooks]], R, and Org-Mode.
+There is also a [[https://gitlab.inria.fr/learninglab/mooc-rr/mooc-rr-ressources][dedicated Git repo with additional resources]] (most of them are in French but some come with English translations), be sure to check it out.
+
+Also take note some chapters of certain modules are skipped because I'm only targetting topics I'm not totally familiar with.
+I may also extend the notes with my own research.
+
+
+
+
+* Lab notes and notebooks
+
+This module also places importance on creating reproducible research notes that concerns everyone.
+Specifically, it concerns preservation of values: labeling equipments, archiving notes with contextual data (e.g., dates), and creating a sketch or blueprints of the apparatus.
+Anything to make it explicit as possible for other researchers who may want to take the mantle.
+
+
+** Brief history of notes (from a Western point of view)
+
+In a quick bullet form:
+
+- Clay tablets are the first recorded form of note-taking.
+Then, wax tablets and scrolls superceded the clay tablets.
+
+- And then, codices (or books) existed and replaced the scrolls as a common option.
+Along the fact that codices solve the common inconveniences from using a scroll (e.g., text navigation is difficult, no hard breaks for the text).
+Furthermore, it enabled notes with navigational features such as adding table of contents, an index, and paragraph indications (such as rubrics).
+
+- Eusebius, a historian, created a document referred as the "Eusebian Canons" demonstrating the first use of cross-references.
+
+- As the use of paper note-taking took off, more methods of note-taking has arised such as index notes, logbooks, and post-it notes each with their pros and cons.
+
+- However, devices such as computers and digital tablets are becoming a viable option with the use of the right technology.
+
+
+** Plain-text formatting languages
+
+Word processors such as Microsoft Word, Google Docs, and LibreOffice Writer enables you to create documents but it can only be opened by them.
+
+Plain-text files avert this problem that it can be opened by any text editors.
+However, they lack the markup formatting (e.g., inserting text in boldface and italics, attaching files, inserting images and tables) that the formatted documents possess.
+This is where markup languages such as HTML, Markdown, and PhpBB come into play giving us the ability to format our text.
+However, certain markup languages like the aforementioned HTML can be hard-to-read.
+
+Thus, a new subclass of markup languages are born, lightweight markup languages.
+It offers a content-oriented human-readable syntax in plain-text that we could open up in our text editors and format our content.
+Examples include Markdown, Asciidoctor, Org-mode, and reStructuredText.
+
+
+** Search tools and techniques
+
+I've created a dedicated note (see [[id:799c5a72-2e8f-48a3-a22d-6657b9d1c05d][Apply search tools and techniques for your digital library]]) on this as derived from this course.
+
+With digital files comes digital tools (and some techniques) to help us in searching for our notes.
+These can vary from complex technologies to simple format-agnostic techniques that can make narrow searching an easy task.
+
+- Desktop search engines such as DocFetcher and Recoll are one of your most powerful options.
+  It can search through text and metadata quite fast.
+
+- Simply creating a format-agnostic labelling system (e.g., delimiting your labels as ~::LABEL::~) can tremendously help with searching through your notes.
+  This also helps in reducing information overload when searching with a broad term.
+
+- For binary file formats like PNG, PDF, and MP4, you can embed file metadata instead.
+  There are free tools that lets you create those such as Exiftool and Exiv2.
+  It's an added bonus that some desktop search engines can also search metadata of binary files.
+
+
+
+
+* Computational documents
+
+The researching process often face issues from its conception up to publication.
+
+Some controversial studies have been popping up revealing flaws in its computation, cherry-picking data, or simple bugs/error in its setup.
+More factors include:
+
+- The usage on proprietary formats and services where the lack of promise of long-lasting storage is a valid concern.
+  Their free and open counterparts does not promise the same either but at least you could access the previous versions.
+
+- Reliance on oversimplified graphical interfaces that hide computational details or rather the lack of logging explanations.
+
+- Lack of backup systems, version control, and quality control that also degrades transparency.
+
+- Lack of technical documentation which is against the rigorous and methodical nature of science.
+
+
+
+
+* Replicable analysis
+
+- With reproducible documents come replicable analysis.
+  Obviously, the concept of research reproducibility is not valid until others can replicate the research.
+
+- Acquired data from other sources shouldn't be edited "manually" (e.g., text editor, database editor) and everything regarding it would have to be modified with code.
+  This is especially important if you've spotted a missing chunk of the data.
+
+- That said, missing and/or dubious data are normal due to lack of data collection or an error in data processing.
+  It should also be dealt with ourselves on how to handle missing or dubious data.
+
+
+
+
+* Real-life reproducible research
+
+With reproducible documents and replicable analysis, the rudimentary toolset needed for reproducible research is complete.
+However, as always in the real world, there are challenges ahead.
+
+
+** Data hell
+
+First, gathering data is often not of similar origins and nature.
+Furthermore, the data is often not heterogenous which means we cannot easily establish the relationship among them.
+
+As much as text formats are an attractive option, there are some tradeoffs you need to keep in mind.
+Data are often big and text generally consume more memory since text has to be converted into binary format.
+If we want to take less, we can consider our data to be in binary in the first place.
+
+Binary formats are good for performance but there's a factor to consider it which is the [[id:0dff95e9-3bb0-41dc-9007-fc5e9c685728][Endianness]].
+They can be read differently depending on the computer architecture so it is best practice to announce the endianness in your paper.
+
+Text formats, however, has the upper hand of easily adding *metadata* to our data which is a must for reproducible research.
+To get around this solution, we could look into established binary data formats that attempts to tackle this problem.
+It also has the advantage of using standardized tools that other researchers also use.
+Examples include [[http://fits.gsfc.nasa.gov/][Flexible image transport system (FITS)]] and [[https://www.hdfgroup.org/][Hierarchical data format (HDF)]].
+
+Data can be archived offline but it is hard to share and distribute the sources and the results to other researchers.
+One can host the data themselves but the discoverability suffers which is not really in the spirit of research.
+The professors recommend to utilize online archives such as [[https://zenodo.org/][Zenodo]] and [[https://figshare.com/][Figshare]] which solves the distribution and discoverability issues.
+
+
+** Software hell
+
+Software can get complex at a fast rate when we try to scale up our data.
+This is also added with the factor that software does not stand in the test of time, surprisingly.
+
+With our data and code becoming complex, the resources needed to calculate all of it is increasing as well.
+Not to mention the longer (reproducible) notes which can make navigation a bit of a pain.
+
+Creating a well-structured document can help our readers but it does not avoid the problem when the document is becoming too long for an overview.
+Certain notebooks like Org-mode enables folding of the document and only unfolding the sections that we want to see.
+
+Having a long reproducible document can also have a performance problem.
+Certain options are trying to get around this:
+
+- Jupyter offer the option of delegating the calcuations to a supercomputer.
+
+- As of 2021-03-31, the Emacs community is trying to bring the editor into native code which in turn improves the situation for Org-Mode. [fn:: Even though Org-Mode can be separated outside of Emacs, one cannot deny it is one of the major parts of Emacs at this point.]
+
+Another solution is introducing a *workflow engine* that takes a *workflow* as input.
+A workflow is a language describes each step of the study into a digestible graph.
+It lets you process data in different programming languages and execute them in a linear way to prevent side effects.
+The process of creating reproducible documents can get complex therefore create a complex workflow but it has the added property of reusability for certain sections which then can be used by others.
+Examples of a workflow engine include [[https://galaxyproject.org/][Galaxy]] and [[https://cknowledge.io/][Collective Knowledge]].
+
+Lighter versions of workflow engines also exists.
+Makefiles, in a way, describes the workflow so certain tools like [[https://dask.org/][Dask]] and [[https://snakemake.readthedocs.io/en/stable/][Snakemake]] tries to integrate with it.
+
+The professors recommend to think through the process before using a tool.
+It is not bad to start with the notebooks first and as the study becomes increasingly complex, you can try to migrate to using a workflow.
+
+The problems of software doesn't end there, however.
+For instance, under the popular software and libraries like R, [[https://www.scipy.org/][SciPy]], and [[https://matplotlib.org/][Matplotlib]] are full of abstractions which can mean they use a lot of packages.
+Most of the software should be able to let you know about the versions (and even the complete environment like the following R code block, for example).
+
+#+begin_src R  :results output  :exports both
+R.version
+#+end_src
+
+#+results:
+#+begin_example
+               _
+platform       x86_64-pc-linux-gnu
+arch           x86_64
+os             linux-gnu
+system         x86_64, linux-gnu
+status
+major          4
+minor          0.4
+year           2021
+month          02
+day            15
+svn rev        80002
+language       R
+version.string R version 4.0.4 (2021-02-15)
+nickname       Lost Library Book
+#+end_example
+
+
+Even then, specifying versions explicitly can only do so little since most of these libraries depend on another (SciPy, for example depends on C).
+It could still "break" if your machine or the library has been updated which may or may not contain breaking changes.
+
+To get around this, we have to capture the environment of our code.
+There are tools that specialize in this function.
+
+- Self-contained bundling tools like [[https://github.com/VIDA-NYU/reprozip][ReproZip]] freezes the environment and share it with your colleagues.
+  However, if there is an issue in your code or document, you may have to rebuild the bundle.
+
+- A more complete solution is a virtual machine (e.g., [[https://www.virtualbox.org/][VirtualBox]], [[https://www.qemu.org/][QEMU]]) but it can be heavy in resources where certain factors are not important like the operating system or the hardware.
+
+- Lighter alternatives to virtual machines like containers such as [[https://www.docker.com/][Docker]] or [[https://singularity.lbl.gov/][Singularity]] are more suitable for software environments.
+  They also offer mostly the same security as virtual machines in that the environment is isolated from the host meaning no system libraries or programs will be used;
+  you have to explicitly specify which depedencies are used.
+
+- Certain package managers like [[https://nixos.org/][Nix]] and [[https://guix.gnu.org/][GNU Guix]] specialize in retrieving reproducible environments.
+
+As mentioned before, software are fragile: they can easily evolve and break.
+This is especially true for fast-moving software and libraries like Python 3 and even Org-mode by the fact that it goes through major changes 9 times.
+These breaking changes can interrupt the workflow which is why it is important to look out for changes.
+Another solution is to force some rulings such as coding exclusively in C or only use certain libraries and reimplement anything else.
+Capturing the environments used for calculations is a matter of compromise and stability.
+
+Software can also be fragile that it can be easily deleted.
+Just like how data has dedicated archives, certain platforms have dedicated to preserve software like [[https://www.softwareheritage.org/][Software Heritage]], [[https://hal.archives-ouvertes.fr][Hyper Articles en Ligne]], and [[https://archive.org/][Internet Archive]].
+
+
+** Numeric hell
+
+In today's world where computers aids in research such as calculations, there are hidden factors looming in.
+For example, representing floating points is particularly difficult and has resulted in certain quirks like the following code in Python.
+
+#+begin_src python  :results output
+print(0.1 + 0.2)
+#+end_src
+
+#+results:
+: 0.30000000000000004
+
+Not to mention, compilers can also affect the results by optimizing the code and may result in changing the order of the computations which is not a good thing for reproducible researches.
+That said, compilers should be able to offer the option of configuring its compilation step such as disabling certain optimizations.
+
+Another problem arises is the parallel computation which supposed to make code execution faster.
+Parallel computation mainly relies on the hardware and it can affect how things are when executed on different machines.
+The study on how to minimize the impact is not yet fully realized.
+
+Last but not least are the problems when using a randomized number.
+When it comes to generating random numbers, we are not using truly random numbers but pseudo-random numbers generated by deterministic algorithms.
+One of many ways on how to generate 'random' numbers is taking an input referred as the seed.
+The seed is then computated to get the first state, then the output of the first state is being computated to get the second, and so on.
+
+To make our research reproducible, we have to hardcode the seed or at least refer to it somewhere.
+Here's an example of generating random numbers in Python with a fixed input.
+
+#+begin_src python  :results output
+import random
+
+random.seed(24)
+for i in range(5):
+    print(random.random())
+#+end_src
+
+#+results:
+: 0.7123429878269185
+: 0.8397997363118733
+: 0.18259188695451745
+: 0.9982826275179507
+: 0.19409547872374744
+
+If the same seed is used for pseudo-random number generating, we can then verify it.
+
+#+begin_src python  :results silent  :exports code
+import random
+
+random.seed(24)
+assert random.random() == 0.7123429878269185
+assert random.random() == 0.8397997363118733
+assert random.random() == 0.18259188695451745
+#+end_src
+
+
+
+
+#+latex: \appendix
+* Additional readings
+
+ - [[https://www.fun-mooc.fr/courses/course-v1:inria+41016+self-paced/info][The course link]] :: It is a great open course with great instructors, examples, and exercises to make the lessons stick with you.
+ - [[https://news.ycombinator.com/item?id=22473209][Ask HN: how to take good notes]] :: A general Q&A on how to take good notes and then some valuable insights.

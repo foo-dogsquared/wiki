@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       909b4830-72c8-4943-be47-efaf77e40253
+:END:
+#+title: Professional narcissism
+#+date: "2021-05-20 20:17:36 +08:00"
+#+date_modified: "2022-07-08 14:35:30 +08:00"
+#+language: en
+
+
+Per Pinker, coined from his book "The sense of style":
+
+#+begin_quote
+The confusion of the activities of your guild, profession, or field with the subject matter designed to deal with.
+#+end_quote
+
+To quickly understand what this means, here's some examples:
+
+- In film, instead of focusing what movie is about, they boast about the sales or views.
+- In media, "cover the coverage", a situation where multiple sources just focuses on other sources instead of the situation itself, a problem leading to echo chambers.
+- In learning, instead of focusing what and why of a note-taking method, they focus on the possible effects of your productivity as much as possible.
+
+This could also happen on yourself already.
+
+- In [[id:0d2264a6-e487-4761-818a-d17d2833120f][Note-taking]], you may focus on the number of notes, neglecting certain aspects such as the purpose and the quality of the notes.
+- In [[id:4b33103b-7f64-4b51-8f03-cac06d4001bb][Programming]], you may boast how the program is fast that is less readable instead of making sure the program is maintainable where maintaining that program for long-term use is more important.

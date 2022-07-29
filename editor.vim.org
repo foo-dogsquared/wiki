@@ -1,0 +1,67 @@
+:PROPERTIES:
+:ID:       518e8969-8181-48d7-96da-ce86da64dd61
+:END:
+#+title: Vim
+#+date: "2021-06-06 05:12:20 +08:00"
+#+date_modified: "2021-07-20 23:31:58 +08:00"
+#+language: en
+
+
+Every sysadmin's favorite default text editor.
+Is being familiar to Vim a path to productivity?
+No.
+But being good at it can make for a difference in the day-to-day life of a sysadmin for there are advanced capabilities of this editor.
+
+
+
+
+
+
+
+* The keybindings of Vim
+
+One of the things that make Vim popular is the keybindings.
+
+| Keybinding | Description                                |
+|------------+--------------------------------------------|
+| =[m=       | Go to the previous method.                 |
+| =g~w=      | Toggle letter casing.                      |
+| =2guW=     | Convert two words into lowercase.          |
+| =10d)=     | Delete 10 sentences.                       |
+| =39zz=     | Place the cursor in the middle in line 39. |
+| =3d10w=    | Delete 10 words and repeat 3 times.        |
+
+Most of the time, Vim keybindings is made of mainly two things:
+
+- *The operators denoting an action.*
+- *The motions describing the scope of the action.*
+
+There's a certain pattern to it when you use it, too.
+
+#+begin_src
+[count][operator][motion]
+#+end_src
+
+
+
+
+* Tips and tricks
+
+- =:h= is the help system of Vim.
+  It contains all of the documentation of the editor and the installed plugins.
+  I recommend to start with the default help page (e.g., =:h=).
+
+  + You can get the meaning of the keybinding with the help section — e.g., ~:h gg~, ~:h G~.
+
+- Vim has fine-grained control motions.
+  + =(= and =)= for sentences.
+  + ={= and =}= for paragraphs.
+  + =[= and =]= for sections.
+
+- There are many advanced navigation features in Vim.
+  + =gf= will go to the file at point.
+  + =K= goes to the definition of the keyword at point.
+  + =Ctrl+O= will jump back at a previous jump point.
+  + =gd= go the local definition of the keyword at point.
+  + =H=, =M=, and =L= places the cursor in higher, middle, and lower part in the current screen, respectively.
+  + =zt=, =zz=, and =zb= displays the current line in the top, middle, and bottom part of the screen, respectively.

@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       91ae7274-3775-4cb2-992d-c2bee8179349
+:END:
+#+title: Ice scramble
+#+date: 2022-07-19 15:22:48 +08:00
+#+date_modified: 2022-07-19 15:37:04 +08:00
+#+language: en
+
+
+Or =iskrambol= in localized form.
+It's basically shaved ice with some flavoring.
+
+
+* Ingredients
+
+- [[id:b0d86ffc-0531-44dc-b4ec-4389d2997007][Shaved ice]].
+
+- Flavorings of your choice.
+  In this example, we'll have chocolate powder and sugar.
+
+- Optional but toppings of your choice.
+
+
+* Instructions
+
+- Mix the flavorings in the ice until incorporated.
+  Don't stir it but rather scoop the flavorings at the bottom and repeat.
+
+- Add any toppings (or none at all).

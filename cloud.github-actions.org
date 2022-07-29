@@ -1,0 +1,202 @@
+:PROPERTIES:
+:ID:       319b52f8-5e60-4bbf-b649-73d864ed186f
+:END:
+#+title: GitHub Actions
+#+date: "2021-06-20 18:58:48 +08:00"
+#+date_modified: "2022-06-19 11:46:41 +08:00"
+#+language: en
+
+
+#+ATTR_ORG: :width 550
+[[file:assets/fds-visual-github-actions-description.png]]
+
+- a CI/CD tool integrated into GitHub
+- it is free for public repos but limited time per month for private repos
+- [[https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions][documentation]] for it
+- focused into creating workflows which can be separate and applied in different contexts
+  + a workflow is activated from an event
+  + stored in ~.github/workflows~ in the remote repo
+- each workflow can run a job which are composed of steps
+- each step make uses an action which is basically a script;
+  it can interact with the repo or do something else entirely without ever touching it
+- you can use already defined actions or with your own
+- if you want to explore other options, the [[https://github.com/marketplace][GitHub marketplace]] allows searching for various third-party actions
+
+
+
+
+* Ecosystem
+
+- there is also a [[https://docs.github.com/en/actions/guides][detailed guide]] in introducing the overall concept
+- the workflow allows you to create build artifacts;
+  you have fine-grained control such as letting you [[https://github.com/marketplace/actions/upload-a-build-artifact][upload certain files to be artifacts]] and [[https://github.com/marketplace/actions/download-a-build-artifact][downloading them]] after a workflow run;
+  it also enables sharing of data between jobs
+- it can make automated releases like what I have done with [[https://github.com/foo-dogsquared/pop-launcher-plugin-duckduckgo-bangs/blob/d878e991dbb3269b4ea520e8c41bfa3e6346e4ab/.github/workflows/release.yml][one of my projects]]
+- it can create automated Git commits with [[https://github.com/marketplace/actions/git-auto-commit][Git Auto Commit]];
+  combine with the ability to set schedules, you can create an automatic sync following a project
+- otherwise, you can also create automated release but have to go through a merge request;
+  for example, this is how [[https://github.com/simple-icons/simple-icons/blob/9020eb4a8163817813f90f493c66e8d6b565d31c/.github/workflows/create-release.yml][Simple Icons maintain their releases]]
+
+
+
+
+* Actions
+
+- each of the job is mostly built with the actions;
+  the job can be controlled further through the workflow file;
+  see the [[https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions][Workflow Syntax]] for more information
+- related information such as the current branch, runners specifics, and so forth are stored in [[https://docs.github.com/en/actions/learn-github-actions/contexts][Contexts]]
+- like previously mentioned, you can search these actions in GitHub's marketplace
+- the actions are primarily defined with =actions.yml= from the root which can serve as a documentation for the parameters
+
+
+
+
+* Examples
+
+With GitHub Actions being a massive ecosystem of integrations as of 2021-07-05, we have to find some examples in the worldwide community repos from there.
+
+
+** Python version of an installation
+
+The following block is a minimal example checking the Python version in the installation.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "minimal-python-version.yaml")
+name: Python version
+on: [push]
+jobs:
+  check-python-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: python --version
+#+end_src
+
+
+** Docker container integration
+
+GitHub workflows can make use of containers for easier delivering of dependencies and reproducing the development environment (among other things).
+This includes...
+
+- [[https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry][GitHub's own container registry]],
+- [[https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idcontainer][using a container to be used in a workflow]] which is nice for building for multiple operating systems (e.g., multiple Linux distros)
+- [[https://docs.github.com/en/actions/using-containerized-services/about-service-containers][service containers]] to make use of tools to your workflow,
+- and even [[https://docs.github.com/en/actions/publishing-packages/publishing-docker-images][publishing containers to a registry from a workflow]].
+
+In this example, we'll push an image to docker.io registry.
+Be sure to have the necessary credentials and set it to the workflow environment to successfully run this workflow.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "docker-image.yaml")
+name: Docker build image
+on: [push]
+jobs:
+    docker:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Set up QEMU
+              uses: docker/setup-qemu-action@v1
+            - name: Setup Docker Buildx
+              uses: docker/setup-buildx-action@v1
+            - name: Login to DockerHub
+              uses: docker/login-action@v1
+              with:
+                  username: ${{ secrets.DOCKERHUB_USERNAME }}
+                  password: ${{ secrets.DOCKERHUB_TOKEN }}
+            - name: Build and push
+              id: docker_build
+              uses: docker/build-push-action@v2
+              with:
+                  push: true
+                  tags: ${{ secrets.DOCKERHUB_USERNAME }}/python-helloworld:latest
+                  platforms: linux/amd64,linux/arm64
+            - name: Image digest
+              run: echo ${{ steps.docker_build.outputs.digest }}
+#+end_src
+
+
+** Building a Nix binary cache
+
+We'll use [[id:366aeb8f-5a84-40c8-bf16-a919639790ab][Cachix]] as our binary cache service which has a free 10GB space (as of 2022-06-19).
+This makes it easier to setup and distribute your own project built with [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]].
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "cachix-build.yaml")
+name: "Push packages into Cachix cache"
+on:
+  pull_request:
+  push:
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.3.4
+    - uses: cachix/install-nix-action@v13
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+    - uses: cachix/cachix-action@v10
+      with:
+        name: mycache
+        signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+    - run: nix-build
+    - run: nix-shell --run "echo OK"
+#+end_src
+
+
+** Building packages in multiple architectures
+
+This makes use of job matrix allowing to easily create similar workflows with different configurations.
+
+We'll use the GitHub Actions workflow file from the NUR template.
+It is somewhat complex and it is doing a fine job showcasing some of GitHub Actions features.
+
+#+begin_src yaml  :tangle (my/concat-assets-folder "nur-build.yaml")
+name: "Build and populate cache"
+on:
+  pull_request:
+  push:
+  schedule:
+    - cron:  '27 4 * * *'
+jobs:
+  tests:
+    strategy:
+      matrix:
+        nurRepo:
+          - '<YOUR_NUR_REPO>'
+        cachixName:
+          - '<YOUR_CACHIX_NAME>'
+        nixPath:
+          - nixpkgs=channel:nixos-unstable
+          - nixpkgs=channel:nixpkgs-unstable
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2.3.4
+    - name: Install nix
+      uses: cachix/install-nix-action@v13
+      with:
+        nix_path: "${{ matrix.nixPath }}"
+    - name: Show nixpkgs version
+      run: nix-instantiate --eval -E '(import <nixpkgs> {}).lib.version'
+    - name: Setup cachix
+      uses: cachix/cachix-action@v10
+      if: ${{ matrix.cachixName != '<YOUR_CACHIX_NAME>' }}
+      with:
+        name: ${{ matrix.cachixName }}
+        signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+    - name: Check evaluation
+      run: |
+        nix-env -f . -qa \* --meta --xml \
+          --allowed-uris https://static.rust-lang.org \
+          --option restrict-eval true \
+          --option allow-import-from-derivation true \
+          --drv-path --show-trace \
+          -I nixpkgs=$(nix-instantiate --find-file nixpkgs) \
+          -I $PWD
+    - name: Build nix packages
+      run: nix run -I 'nixpkgs=channel:nixos-unstable' nixpkgs.nix-build-uncached -c nix-build-uncached ci.nix -A cacheOutputs
+    - name: Trigger NUR update
+      if: ${{ matrix.nurRepo != <YOUR_NUR_REPO>' }}
+      run: curl -XPOST "https://nur-update.herokuapp.com/update?repo=${{ matrix.nurRepo }}"
+#+end_src

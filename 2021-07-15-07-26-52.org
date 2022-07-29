@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       03cd9fad-e187-4939-9347-1a034c6efbe2
+:END:
+#+title: Overanalyzing slow you down
+#+date: "2021-07-15 07:26:52 +08:00"
+#+date_modified: "2021-07-15 22:42:39 +08:00"
+#+language: en
+
+
+# TODO: Correct examples, please?
+- thinking too much about a thing brings out all of the unnecessary details, making it harder to act upon something
+- this is where [[id:0e2c9eaf-f12a-47b2-9c9c-d1a590db131b][Involuntary attention switch is good for preventing tunnel vision]];
+  furthermore, it mostly prevents [[id:9138397a-a965-45e9-97ea-71849e8d4f94][Overlearning]] as you choose more time into moving on to the action
+- it can be good to have too big of a list equating to more choices but for situations where we have to choose one (or a handful), this situation may rise
+- this is present in various fields:
+  + on sports, competitors tend to focus on the right way of doing things from the tiniest of details such as the stroke of the arm, grips, and so forth;
+    it often go into choking, costing their game
+  + on programming, this is present when initially thinking about the algorithm without implementing a prototype yet
+- to remedy against this: remember that [[id:df20e58b-6d38-4ace-8468-413bc708c772][Most of the work is done from smaller amount of effort]];
+  additionally, you can [[id:01459b18-3f30-418e-bd8d-42661d5ea223][Start with wishful thinking]] instead of thinking about the process;
+  this frees you from the details and think how would you directly solve the problem
+  ideally, we would have the best course of action or the solution but usually, it is not realized nor tested against reality

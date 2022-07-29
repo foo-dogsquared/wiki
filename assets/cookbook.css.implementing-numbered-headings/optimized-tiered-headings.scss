@@ -1,0 +1,28 @@
+@use 'sass:string';
+
+@function tier-heading($counters) {
+    $str: "";
+    @for $level from 1 through $counters {
+        $str: $str + 'counter(h#{$level})"."';
+    }
+    @return string.unquote($str);
+}
+
+article {
+    --counter-spacing: 0.5rem;
+    @for $level from 1 through 6 {
+        counter-reset: h#{$level};
+
+        h#{$level}{
+            @if $level != 6 {
+                counter-reset: h#{$level + 1};
+            }
+            counter-increment: h#{$level};
+
+            &::before {
+                content: tier-heading($level);
+                margin-right: var(--counter-spacing);
+            }
+        }
+    }
+}

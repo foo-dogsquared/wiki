@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       b0d86ffc-0531-44dc-b4ec-4389d2997007
+:END:
+#+title: Shaved ice
+#+date: 2022-07-19 15:27:13 +08:00
+#+date_modified: 2022-07-19 15:36:54 +08:00
+#+language: en
+
+
+A simple form of ice.
+This is useful for injecting flavors while having its icy form, perfect for something like an [[id:91ae7274-3775-4cb2-992d-c2bee8179349][Ice scramble]].
+
+
+* Ingredients and tools
+
+- A blender to crush the ice.
+
+- Ice.
+
+- Water.
+
+
+* Instructions
+
+- Put ice into the blender and fill the container with almost the same volume as the ice.
+
+- Crush the ice by turning the blender in pulse or in continuous short bursts.
+  Occasionally shake or stir the ice in the middle of mixing to mix whole chunks of ice that haven't reached the blades yet.

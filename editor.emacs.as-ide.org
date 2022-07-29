@@ -1,0 +1,45 @@
+:PROPERTIES:
+:ID:       c4e25f51-e41b-4229-ac55-e392e98ff58c
+:END:
+#+title: Emacs as an IDE
+#+date: "2021-05-09 17:28:23 +08:00"
+#+date_modified: "2021-07-20 23:31:45 +08:00"
+#+language: en
+
+
+The development of Visual Studio Code has led to several improvements that benefitted all editors for implementing IDE-like features: [[https://github.com/Microsoft/debug-adapter-protocol][Debug Adapter Protocol]] (DAP) and [[https://microsoft.github.io/language-server-protocol/][Language Server Protocol]] (LSP).
+
+
+* Language server protocol
+
+The community of Emacs was able to [[https://emacs-lsp.github.io/lsp-mode/][integrate the protocol]] enabling IDE features to be possible (e.g., autocompletion, Intellisense).
+Setting up LSP consists of installing the [[https://microsoft.github.io/language-server-protocol/implementors/servers/][language server for a specific language]] and hoping for the best if a community member has implemented LSP support for that language and the editor of choice.
+
+On Emacs, you simply have to do these things:
+
+- Install ~lsp-mode~ (or enable [[https://github.com/hlissner/doom-emacs/tree/develop/modules/tools/lsp][~tools/lsp~]] built-in module if you're using Doom Emacs).
+- Install the language server of the language/tool before enabling ~lsp-mode~.
+- If the support for the LSP support package for a specific language, enable it (or configure it in your module).
+
+While certain language servers can be automatically installed with ~lsp-mode~, it is better to be explicitly installed from the environment.
+Nix/Guix environments should be a good application here.
+
+If you're enabling ~lsp-mode~, there is a chance of encountering an error telling that the current project is not a workspace or something similar.
+You can bypass it by either setting the folder as a workspace with ~lsp-workspace-folders-add~ or running ~lsp~ which will run on a single file [fn:: If running ~lsp~ does not work, then you have to add the residing folder in the workspace list.].
+
+
+
+
+* Debug Adapter Protocol
+
+The same community of ~lsp-mode~ has gathered together to implement DAP as well.
+
+Setting up DAP is mostly similar to setting up LSP: installing a [[https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/][debug adapter server for a language]] and hoping for the best if a community member has implemented DAP support for that language and the editor of choice.
+
+On Emacs, you have to do the following:
+
+- Install ~dap-mode~ (or add a ~+dap~ feature to ~tools/lsp~ if you're using Doom Emacs).
+- Install the language server of the language/tool before starting up DAP on Emacs.
+- Create a debugging template with ~dap-debug~ or ~dap-debug-edit-template~ which will let you edit the template before running.
+- Do the usual debugging stuff (e.g., adding a breakpoint).
+- Celebrate in joy as you're one step closer to an Emacs IDE-lite.

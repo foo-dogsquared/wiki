@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       9a9163d7-502b-4540-b723-e15afba1e917
+:END:
+#+title: Tradeoffs lock yourself in a position
+#+date: "2021-07-13 20:23:13 +08:00"
+#+date_modified: "2021-07-13 20:25:08 +08:00"
+#+language: en
+
+
+- each options have its advantages and disadvantages
+- [[id:d885e93b-f919-4338-a6b9-3438538e18c0][Every copy of the techniques is personalized]];
+  choose what you're comfortable with or make a [[id:9b669fd4-e04e-43dd-a61e-81dea5ec0764][Deliberate practice]] with setting a new level (or a new perspective)
+- examples:
+  + learning a new skill versus improving your specialization at one time
+  + using one tool versus another locking yourself inside of the tool — e.g., Emacs versus Vim versus Visual Studio Code
+  + using the bare minimal of a feature set versus using it to the full potential
+- no matter what, you're locking yourself in a position but both have risks
+  + learning a new skill can make for a better skill set and it makes for a little interleaving while digging deeper into a specialization can make in-depth knowledge;
+    both have risks: vulnerability to changes rendering the time you spent for a specialization to be nearly useless, not making yourself more attractive to the job market with more specialized skills
+  + locking oneself to the text editor can mean taking advantage of the already existing ecosystem of the text editors
+  + using the bare minimum of a feature set prevents you to do other things but it also minimizes the problems for future migrations to other tools
+- that said, balancing tradeoffs is a matter of creativity to suit your ideal workflow with the things you have;
+  just be beware of going into overanalyzing as [[id:b62c61f1-ee12-4bd9-b59a-ec6eafe29f38][Unnecessary optimizations cripple progress]]

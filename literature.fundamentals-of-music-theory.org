@@ -1,0 +1,143 @@
+:PROPERTIES:
+:ID:       c6dddd6e-4f51-48db-a2ce-56ec41b7506e :END:
+:END:
+
+#+title: Fundamentals of music theory
+#+date: "2021-04-29 18:27:29 +08:00"
+#+date_modified: "2021-07-22 23:21:21 +08:00"
+#+language: en
+#+property: header_args:lilypond  :exports results  :noweb true
+#+source: https://www.coursera.org/learn/edinburgh-music-theory/
+
+#+name: lilypond-paper-config
+#+begin_src lilypond
+\paper {
+  indent=10\mm
+  oddFooterMarkup=##f
+}
+#+end_src
+
+
+The course took notes from the Edinburgh's course for musical theory.
+Keep in mind this course mainly deals with western musical concepts and notations called Common Practice.
+
+
+
+
+* Week 1
+
+- Certain sounds have a quality that makes them singable called pitch.
+  With pitch, we now have the ability to identify whether a noise sounds high or low.
+
+- In the earlier centuries, musicians have to find a way to reproduce their recordings.
+  Similar to how words and ideas can be recorded with writing, music has been recorded in paper.
+  The earlier notation uses simpler concept but as time progresses the notation does improve to be the modern musical notation that musicians around the world use today.
+
+- To easily identify the pieces of music, the notes have names.
+  Some identify them with the doremi syllables (e.g., do, re, mi, fa, so, la, ti), some name them after the letters (e.g., A, B, C, D, E, F, G), and some even with [[wikipedia:Numbered musical notation][numbers]].
+
+  + In this course, we're using letter names and it often starts with C similarly to the piano.
+
+- A set of notes called an octave is formed with the names.
+  Despite the name, it is built with 7 note names (e.g., A, B, C, D, E, F, G, and then back to A).
+
+# TODO: visual aid - Create 12 note visualization with the piano.
+- An octave, despite the number, really has 12 pitch classes.
+  The full 12 pitch classes is easily visualized with a piano.
+  Between each of the 12 pitch classes, the distance is a semitone which intuitively means half-note.
+  When the distance of each note is 2 semitone, it is considered as a tone.
+
+#+ATTR_ORG: :width 550
+[[file:assets/fds-visual-octaves-and-tones.png]]
+
+- an interval is two pitches with a certain distance
+  + starting from a note, the number of tones distanced between them is the name of an interval
+  + e.g., C and D is a second, C to E is a third, D to G is a fourth, F to C is a fifth
+
+- scales is a group of notes that give the flavor of the music (e.g., melancholic, gleeful)
+  + also describes the relationship of each note
+  + each scale has a tonic which usually named after the first note
+  + the common type of scales introduced are the diatonic scales, made up of seven notes with two semitones and five tones in it
+  + e.g., the C scale is made up of the notes C, D, E, F, G, A, B, C has a pattern of TTSTTTS (tone = T, semitone = S)
+  + a major scale has a pattern of TTSTTTS, a minor scale has a pattern of TSTTSTT
+  + different tonics = different pattern of semitones and tones = different quality and flavor = different melodies
+  + each of tonics in diatonic scale is called a mode (e.g., A is called Aeolian mode, E is Phrygian)
+  + Aeolian mode is a natural minor mode (has a pattern of TSTTSTT)
+  + Ionian mode is a natural major mode (has a pattern of TTSTTTS)
+
+#+begin_src lilypond  :file modes.png
+<<lilypond-paper-config>>
+{
+  \set Staff.instrumentName = #"Aeolian"
+  \relative a' { a b c d e f g a }
+  \addlyrics { A B C D E F G A }
+}
+
+{
+  \set Staff.instrumentName = #"Ionian"
+  \relative c' { c d e f g a b c }
+  \addlyrics { C D E F G A B C }
+}
+#+end_src
+
+#+results:
+[[file:assets/literature.fundamentals-of-music-theory/modes.png]]
+
+- chords are three or more notes played together
+  + when played with three, it is considered a triad
+  + perfect fifth + major third = major triad (Cmaj)
+  + perfect fifth + minor third = minor triad (Cmin)
+  + perfect fifth + diminished third = diminished triad (Cdim)
+  + triads are also named with the lowest notes so a triad of C, E, and G is a C triad
+  + but it is a C major triad (written as Cmaj) since C and E is a major third and C, E, and G is a perfect fifth
+  + primary major chords: tonic, dominant, subdominant — the first, fourth, and fifth chord in the scale, respectively
+
+#+begin_src lilypond  :file chords.png
+<<lilypond-paper-config>>
+\chordmode { c1 d e f g a b }
+\addlyrics { I II III IV V VI VII }
+#+end_src
+
+#+results:
+[[file:assets/literature.fundamentals-of-music-theory/chords.png]]
+
+
+
+
+* Week 2
+
+- there are mainly two accidentals
+  + a sharp will increase a note by one semitone
+  + a flat will decrease a note by one semitone
+
+#+begin_src lilypond  :file accidentals.png
+<<lilypond-paper-config>>
+\relative c' { cis dis }
+#+end_src
+
+#+results:
+[[file:assets/literature.fundamentals-of-music-theory/accidentals.png]]
+
+#+begin_src lilypond  :file accidental-with-chords.png
+<<lilypond-paper-config>>
+\chordmode { g a b c' d' e' fis' g' }
+#+end_src
+
+#+results:
+[[file:assets/literature.fundamentals-of-music-theory/accidental-with-chords.png]]
+
+- ledger lines are just extensions to the stave for lacking space
+
+#+begin_src lilypond  :file ledger-lines.png
+<<lilypond-paper-config>>
+\relative c' { c a'' }
+#+end_src
+
+#+results:
+[[file:assets/literature.fundamentals-of-music-theory/ledger-lines.png]]
+
+- keys and key signatures
+- the keys come from the keys of a scale
+- it makes the quality of the song
+  + if a song goes back to 'A' often, it has 'A' as the tonic
+- circle of fifths

@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><title>Implementing Base16 themes in Hugo</title><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script type="text/x-mathjax-config">
+                MathJax = {
+                    tex: {
+                        inlineMath: [ [&#x27;$&#x27;,&#x27;$&#x27;], [&#x27;\(&#x27;,&#x27;\)&#x27;] ],
+                        displayMath: [ [&#x27;$$&#x27;,&#x27;$$&#x27;], [&#x27;[&#x27;,&#x27;]&#x27;] ]
+                    },
+                    options = {
+                        processHtmlClass = &quot;math&quot;
+                    }
+                }
+                </script><meta name="next-head-count" content="6"/><link rel="preload" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" as="style"/><link rel="stylesheet" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" as="script"/></head><body><div id="__next"><main><h1>Implementing Base16 themes in Hugo</h1><section class="post-metadata"><span>Date: <!-- -->2021-06-22 20:31:50 +08:00</span><span>Date modified: <!-- -->2021-06-24 20:42:52 +08:00</span></section><nav class="toc"><ol class="toc-level toc-level-1"></ol></nav><p>Making use of <a href="https://github.com/chriskempson/base16">Base16</a> themes would be a great way to let users customize their sites quickly.
+It is an established project that spawned related projects and a lot of user support for it.
+Let&#x27;s implement this in Hugo for the same reason.
+</p><p>We&#x27;ll make heavy use of CSS variables, Hugo data templates, and their support for several data formats including YAML.
+</p><p>To do that, we want to convert the Base16 theme...
+</p><pre class="src-block"><code class="language-yaml">scheme: &quot;Bark on a tree&quot;
+author: &quot;Gabriel Arazas (https://foo-dogsquared.github.io)&quot;
+base00: &quot;2b221f&quot;
+base01: &quot;412c26&quot;
+base02: &quot;54352c&quot;
+base03: &quot;8d5c4c&quot;
+base04: &quot;e1bcb2&quot;
+base05: &quot;f5ecea&quot;
+base06: &quot;fefefe&quot;
+base07: &quot;eb8a65&quot;
+base08: &quot;d03e68&quot;
+base09: &quot;eb914a&quot;
+base0A: &quot;afa644&quot;
+base0B: &quot;85b26e&quot;
+base0C: &quot;df937a&quot; #accent
+base0D: &quot;a15c40&quot;
+base0E: &quot;8b7ab9&quot;
+base0F: &quot;6f3920&quot;
+</code></pre><p>...into CSS.
+</p><pre class="src-block"><code class="language-css">[data-theme=&quot;Bark on a tree&quot;]:root {
+    --base00: #2b221f;
+    --base01: #412c26;
+    --base02: #54352c;
+    --base03: #8d5c4c;
+    --base04: #e1bcb2;
+    --base05: #f5ecea;
+    --base06: #fefefe;
+    --base07: #eb8a65;
+    --base08: #d03e68;
+    --base09: #eb914a;
+    --base0A: #afa644;
+    --base0B: #85b26e;
+    --base0C: #df937a;
+    --base0D: #a15c40;
+    --base0E: #8b7ab9;
+    --base0F: #6f3920
+}
+</code></pre><p>Here&#x27;s one template to do that.
+</p><pre class="src-block"><code class="language-go">{{- $name := index $ &quot;name&quot; -}}
+{{- $scheme := index $ &quot;scheme&quot; -}}
+{{- if ne $name &quot;_index&quot; }}[data-theme=&quot;{{ $scheme.scheme }}&quot;]{{ end }}:root {
+  {{- range $i := seq 0 15 }}
+  {{- $hex := upper (printf &quot;%02x&quot; $i) }}
+  {{- $key := printf &quot;base%s&quot; $hex }}
+    --{{ $key }}: #{{ index $scheme $key }};
+  {{- end -}}
+}
+</code></pre></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"metadata":{"date":"\"2021-06-22 20:31:50 +08:00\"","date_modified":"\"2021-06-24 20:42:52 +08:00\"","language":"en","source":""},"title":"Implementing Base16 themes in Hugo","hast":{"type":"root","children":[{"type":"element","tagName":"nav","properties":{"className":"toc"},"children":[{"type":"element","tagName":"ol","properties":{"className":"toc-level toc-level-1"},"children":[]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Making use of "},{"type":"element","tagName":"a","properties":{"href":"https://github.com/chriskempson/base16"},"children":[{"type":"text","value":"Base16"}]},{"type":"text","value":" themes would be a great way to let users customize their sites quickly.\nIt is an established project that spawned related projects and a lot of user support for it.\nLet's implement this in Hugo for the same reason.\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"We'll make heavy use of CSS variables, Hugo data templates, and their support for several data formats including YAML.\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"To do that, we want to convert the Base16 theme...\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-yaml"]},"children":[{"type":"text","value":"scheme: \"Bark on a tree\"\nauthor: \"Gabriel Arazas (https://foo-dogsquared.github.io)\"\nbase00: \"2b221f\"\nbase01: \"412c26\"\nbase02: \"54352c\"\nbase03: \"8d5c4c\"\nbase04: \"e1bcb2\"\nbase05: \"f5ecea\"\nbase06: \"fefefe\"\nbase07: \"eb8a65\"\nbase08: \"d03e68\"\nbase09: \"eb914a\"\nbase0A: \"afa644\"\nbase0B: \"85b26e\"\nbase0C: \"df937a\" #accent\nbase0D: \"a15c40\"\nbase0E: \"8b7ab9\"\nbase0F: \"6f3920\"\n"}]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"...into CSS.\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-css"]},"children":[{"type":"text","value":"[data-theme=\"Bark on a tree\"]:root {\n    --base00: #2b221f;\n    --base01: #412c26;\n    --base02: #54352c;\n    --base03: #8d5c4c;\n    --base04: #e1bcb2;\n    --base05: #f5ecea;\n    --base06: #fefefe;\n    --base07: #eb8a65;\n    --base08: #d03e68;\n    --base09: #eb914a;\n    --base0A: #afa644;\n    --base0B: #85b26e;\n    --base0C: #df937a;\n    --base0D: #a15c40;\n    --base0E: #8b7ab9;\n    --base0F: #6f3920\n}\n"}]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Here's one template to do that.\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-go"]},"children":[{"type":"text","value":"{{- $name := index $ \"name\" -}}\n{{- $scheme := index $ \"scheme\" -}}\n{{- if ne $name \"_index\" }}[data-theme=\"{{ $scheme.scheme }}\"]{{ end }}:root {\n  {{- range $i := seq 0 15 }}\n  {{- $hex := upper (printf \"%02x\" $i) }}\n  {{- $key := printf \"base%s\" $hex }}\n    --{{ $key }}: #{{ index $scheme $key }};\n  {{- end -}}\n}\n"}]}]}]},"backlinks":[]},"__N_SSG":true},"page":"/[[...slug]]","query":{"slug":["cookbook.hugo.base16-themes"]},"buildId":"Ie9t5zutrXP6Of75Cb5xF","assetPrefix":"/wiki","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="/wiki/_next/static/chunks/polyfills-99d808df29361cf7ffb1.js"></script><script src="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" async=""></script><script src="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" async=""></script><script src="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" async=""></script><script src="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" async=""></script><script src="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" async=""></script><script src="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_buildManifest.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_ssgManifest.js" async=""></script></body></html>

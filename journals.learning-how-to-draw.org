@@ -1,0 +1,165 @@
+:PROPERTIES:
+:ID:       d34dafd7-9a85-42db-b72f-e3d9d4ceaeb1
+:END:
+#+title: Journals: Learning how to draw
+#+date: 2022-07-21 18:10:57 +08:00
+#+date_modified: 2022-07-28 22:56:40 +08:00
+#+language: en
+
+
+This is my journey documenting my process of learning [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]] from the very beginning.
+This is to practice my [[id:815b2beb-40a0-4e79-9097-5b688189ad5b][Writing]] and self-documenting to make an interesting future reference for any things that I will do at some point.
+
+But let's get the [[id:909b4830-72c8-4943-be47-efaf77e40253][Professional narcissism]] out of the way, shall we?
+
+To put things into perspective, I have no experience drawing things.
+The most I've done is to doodle while in school waiting for the class to end.
+I draw but not in the sense of actively pursuing it nor caring about it.
+I don't have an eye for details so that's absolutely great for observational skills. :)
+
+I've attempted learning how to draw before but all of them quickly drawn out because time and study goes first.
+All of my attempts are just one day attempts at a drawing and nothing else so I consider them not an attempt at all, more like a casual stroll.
+Now with time, I could make some "real" uninterrupted attempt this time.
+Being an ignorant casual means I should have an easy time learning from scratch, yes?
+That's just one way to found out.
+
+
+* Goals and expectations
+
+Out of this journey, I hope to reach the following solid goals:
+
+- First and foremost, draw things from imagination *accurately*.
+  At times, my imagination runs so actively but I cannot manifest those images in reality for those potentially cool (or bad, [[id:c886bc6d-e9dc-4f62-8841-59123236eda0][Failed ideas can be repurposed]] after all) ideas I want to tell.
+  Having those ideas out would be nice, yeah?
+
+- Draw some good pixel art.
+  It's one of my favorite form of digital art, after all.
+  After seeing games like [[https://www.bravefrontier.jp][Brave Frontier]] (RIP), [[https://www.finalfantasyexvius.com/][FF Brave Exvius]], [[https://www.wesnoth.org/][Battle for Wesnoth]], and [[https://thegamekitchen.com/blasphemous/][Blasphemous]] made with designs that felt like it was handcrafted, I want to craft some designs for it.
+  Or even create some mods for Wesnoth...
+
+- I want to draw animals, also accurately.
+  I'm an outsider interested in some roam:Zoology and it is interesting to sketch different animals.
+  Something like how scientific illustrators like [[https://www.ddufault.com/][Danielle Dufault]] from [[https://www.youtube.com/channel/UCwg6_F2hDHYrqbNSGjmar4w][Animalogic]] does it.
+  Or [[https://www.bahabadi.com/][Ali Bahabadi]] who is mastering animal portraits.
+  It is especially interesting to branch out into creating monster designs like in [[id:360f59a5-d18b-49d6-8213-062ba4bfea7e][Monster Hunter art style]].
+  I CAN FINALLY DRAW THOSE ORIGINAL MONSTERS I HAVE IN MIND FOR YEARS!
+
+- I want to draw anything... accurately.
+  This is getting vague but what I mean is I want to draw nice things.
+  I'm open to drawing things in various styles whether a nice [[https://www.soeymilk.com/][life-like images]], [[http://www.cmkosemen.com/snaiad_web/snduterus.html][fictional biology of an alien planet]], [[https://thegamekitchen.com/blasphemous/][a dark medieval fantasy]], or cartoonish styles like in anime or Western cartoons.
+
+- I want to get paid drawing stuff.
+  Why not?
+  It's another skill I want to get good at so why not sell yourself out to get paid, yes?
+  It's a big bonus!
+
+I want to attain as much of those in 6-12 months starting 2022-07-21.
+Yes, quite a goal.
+
+If I get paid for this, I can buy more powerful computers and branch out into [[id:022bc306-973d-4efe-ae76-d194a0ce1fca][3D modelling]] or roam:Animation.
+At that point, it could be a nice opportunity to learn about [[roam:Game development]].
+Opportunities with money is a good thing!
+
+Hurrah!
+Now what challenges would I expect from attaining those goals?
+I've done some cursory research and here's what I would encounter.
+
+- Failures.
+  Lots of failures.
+  A lot of retries, a lot of ugly drawings, ugly designs, a lot of failed drawings, in general.
+  I'm pretty sure a lot of great artists I look up to sit on top of a mountain of failed attempts.
+  I'm not a progidy or anything so I won't expect some miracle that I will smoothly sail across the cruising.
+
+- Papers.
+  Lots of papers.
+  I want to get into digital art but I find paper to be easier to deal with so that's what I will be using for now.
+  As for digital tablets, I'll just look for an affordable one to get started with.
+
+- Drawing one illustration for hours.
+  Yeah, this is apparently [[https://www.youtube.com/watch?v=t416p86xksI][how some illustration goes]].
+  I thought digital art is a process of applying your brush and the image will magically appear.
+
+- Various fights against [[id:dbb8cbc2-5821-44aa-b4b8-0014d00a6dd4][Perfectionism]].
+  I know perfection is a fruitless task so I probably would have an easier attempt to fight it back but I wouldn't count myself doing that.
+  From what I can tell, as you progress being more attentive, you can have more tendencies of being one.
+  Though, I would have to have an eye for detail in order to do that.
+
+
+* Resources, preparations, and planning for the execution
+
+Some more cursory research over what's to come.
+Not all plans will go smoothly but it's better to have one than nothing.
+Preparation is key, [[id:92a10fe2-f4d1-4e5e-b5f4-3779db13a2e5][Create roadmaps to stay on track]], so I've created [[file:~/library/writings/wiki/inbox/roadmap-illustration.org][just that]] alongside the following list of resources to keep in touch.
+
+- Various logs from artists.
+  Whether it is a YouTube video of a speedpaint, live streams from [[https://picarto.tv/][Picarto.TV]], or simply posting to Deviantart.
+  In other words, just simply [[id:7f73f745-8ce0-4a02-b454-1b7c57b1e202][Follow the experts in the field]].
+
+- [[id:f7d03d2e-53b5-4b1c-8b97-2cc07c4272fe][Drawabox course]].
+  It's a course that emphasizes on practicing certain skills to make your illustrations feel solid and reasonable.
+  This is done by repeatedly smacking you with exercises that emphasizes spatial reasoning, a perfect resource for a spatial-reasonably challenged person like me.
+  This is to first thing I've encountered and I've looked into and got the impression that it is great.
+  It's a community of learning artists so it is a nice starting point to meet your peers so that's nice!
+
+- [[https://www.ctrlpaint.com/][Ctrl+Paint]] is a nice entryway for sketching and digital art which I will do at some point.
+  It has a nice navigation in nice structure.
+
+Take note, this is not exhaustive.
+I could just refer to some random YouTube video on more detailed aspects of it.
+
+The plan?
+Pretty simple.
+
+- Progress through Drawabox course.
+  It is said that Drawabox is not the end-all-be-all point for learning to draw, the point is to be a nice starting point for you to eventually learn the other resources without getting lost too much in the process.
+
+- Fill 1-2 pages in a sketchbook every night from this point.
+  This is a non-exhaustive list of things I want to sketch a lot:
+  - Figure drawing.
+  - Monsters.
+  - Items and things.
+  - Random logos.
+
+- Get some other things from following other artists.
+
+In other words, we're going to follow the first few advice from the course (which I skimmed a little bit before writing this journal).
+It is a simple (and a surprisingly difficult) one to take but it is the most effective in my opinion.
+
+
+* 2022-07-28
+:PROPERTIES:
+:ID:       a5452efd-4e01-495a-8962-415495b08e2d
+:END:
+I've started learning with consistency a week later because I want to be consistent at this point and it's a slightly busy week.
+Anyways, I've started the [[id:f7d03d2e-53b5-4b1c-8b97-2cc07c4272fe][Drawabox course]].
+I initially skimmed Lesson 0 beforehand and reviewed it since it is important to get into the intended purpose of the course which is basically a complimentary starting point for learning [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]].
+
+I've finished the Lines part of the course in 4 pomodoro sessions so that's at least 2 hours.
+Note that I did finished the course before until the Boxes part of Lesson 1 but it is done hastily, in disconnected sessions, and without practice so it is way less effective in retaining what I've learned.
+While it feels daunting to restart, it is nice for me to [[id:788f57d1-86de-4ddd-81f5-f4680b04b0ea][Learn how to forget]] sometimes.
+Otherwise, I might find myself too entrenched in my previous experiences and that could be problematic throughout the course.
+
+As for the exercises, I could comment on it:
+
+# TODO: Get the pictures of the exercises.
+- The "Superimposed lines" is surprisingly hard with the intent of accuracy.
+  However, being an introductory exercise and it is highly encouraged to not grind, it is not too bad.
+  This is the point that I don't get the rhythm yet.
+  The only obstacle so far is my own anxiety.
+
+- "Ghosted lines" is surprisingly easy once I got the rhythm.
+  The approach of confident strokes but without the rushing is getting into my mind.
+  Some mistakes are made but it is not too bad either relative to my experience (which is absolute zero).
+  This is where I discovered I can draw straight lines even with a shaky hand. :)
+
+- "Ghosted planes", same comment.
+  Once you got the rhythm, it is easy.
+  It is a matter of patience with the amount of things to do.
+  Get used to this as it is will be the norm for later exercises even in Lesson 1.
+
+I'll apply the 50% rule cited from this course.
+For this, I'll be drawing a parrot both with a single and multiple references.
+Both are done with a purpose which will be explained tomorrow.
+
+Unfortunately, I did not fulfilled my 2 pages of sketchbook for this day since I started this in the evening.
+It should be done at roam:2022-07-30.

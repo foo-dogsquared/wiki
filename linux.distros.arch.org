@@ -1,0 +1,50 @@
+:PROPERTIES:
+:ID:       f3f1201a-9fb9-4481-981f-5f50f8982a5e
+:END:
+#+title: Arch Linux
+#+date: 2021-07-19 22:35:53 +08:00
+#+date_modified: 2021-07-21 19:22:43 +08:00
+#+language: en
+
+
+#+begin_quote
+i use arch, btw
+#+end_quote
+
+One of the more popular independent Linux distros.
+Memed as the elit3 hacker's distro with its manual installation process and rolling release model creating an impression that requires active maintenance.
+
+
+
+
+* Philosophies
+
+- simplicity and pragmatism
+- packages are in bleeding edge with a continuous update releases
+- packages are delivered from upstream as-is with little configuration and sporadic patches
+
+
+
+
+* Ecosystem
+
+- [[https://wiki.archlinux.org/title/Pacman][pacman]], the simplest package manager with their community packages delivered pre-compiled binaries (see [[id:77f3ec38-9885-4f2b-8019-9042f0c6e4cb][Command line: pacman]])
+
+- [[https://wiki.archlinux.org/title/Arch_Build_System][Arch Build System]] (ABS) is a build system to compile into appropriate package formats for pacman
+
+- creating packages requires writing [[https://wiki.archlinux.org/title/PKGBUILD][PKGBUILD]] for ABS
+
+- [[https://aur.archlinux.org][Arch User Repository]] (AUR) is a unsupported repository of packages with most of them being user-contributed package definitions;
+  while not official, it is integrated within the community;
+  it has a moderation group called Trusted Users (TUs) that carries out [[https://wiki.archlinux.org/title/AUR_Trusted_User_Guidelines][certain responsibilities with the AUR]]
+
+- as of 2021-07-20, the [[https://archlinux.org/packages/][official package set]] counts up to 13k packages;
+  smaller compared to mainstream distros such as Debian ()
+
+- Arch Linux does have an [[https://archive.archlinux.org/][archive]] for the packages, bootstrap tarballs, and snapshots;
+  it is only kept for a few years until they move into the [[https://archive.org/details/archlinuxarchive][historical archive]]
+
+- the project is also involved in getting 100% [[id:fe9e21bc-3b38-4d0f-a785-253248a38ed7][Reproducible builds]];
+  you can see the progress from their [[https://reproducible.archlinux.org/][reproducibility status page]]
+
+- SteamOS 3.0 uses Arch Linux as its base

@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       35581970-fd73-4a0e-89cd-cc496910b32e
+:END:
+#+title: Skills should be applied for the sake its own
+#+date: 2022-07-21 16:11:54 +08:00
+#+date_modified: 2022-07-21 16:43:42 +08:00
+#+language: en
+
+
+- this is especially true if you're a beginner
+- it is a simple activity with one neat rule: any amount of things spent on learning should be spent on applying
+- this means that you should apply your skill as is without the clutches of learning;
+  in most cases, you would do it for fun;
+  several examples includes [[id:4b33103b-7f64-4b51-8f03-cac06d4001bb][Programming]] side projects or sketching for [[id:cd7e8120-6953-44a6-9004-111f86ac52dc][Illustration]]
+- this idea should be cherised for several reasons
+  - this lets you into experimenting with things and not be afraid of failure
+  - applying knowledge is a skill itself
+  - it allows you to make dive into concepts that you'll be exploring eventually;
+    [[id:12dc8b07-ed8b-46d8-bff0-a38d9f3cb83b][Diving head-first with a difficult problem is a good indicator of progress]]
+- while it is nice to have additional benefits and intentions, applying this should be done on its own without any additional things in mind;
+- however, keep in mind this is not about successes or failures;
+
+Imagine the same situation but with us being more familiar with the technical topics.
+Being more technically-inclined bears with the additional expectation that we should apply the skill smoothly.
+However, applying the skill is also a skill.
+Being knowledgable is not the same as understanding how to apply.

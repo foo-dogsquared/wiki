@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       785c4cc7-4a18-4546-a876-2f2c7dd8d19e
+:END:
+#+title: Reduce writing fluff
+#+date: "2021-04-22 15:00:34 +08:00"
+#+date_modified: "2021-05-04 20:51:24 +08:00"
+#+language: en
+
+
+The problem with a lot of writings is they can be filled with unnecessary things.
+From research writings, blog posts, legal documents, and even your own notes.
+The most important factor is to be readable and well-understood by an outsider or yourself after a set amount of time.
+The following list is the things I need to keep in mind when writing.
+
+- Apologizing (e.g., "...as the theory of multiverses is not yet proven as of the time of this writing, more research is required on how we define superheroes").
+- Philosophical non-sequiturs (e.g., "In order to create a deviled egg, first we need to ask is cooking.").
+- Hedging (e.g., probably, somewhat, all I know is, I'm not an expert but).
+- Metaconcepts (e.g., perspective, approaches, identities, entities).
+- Clichés (e.g., walk in a park, knock peoples' socks off).
+- Thingification of verbs and adjectives (e.g., "make an appearance" instead of "appear", "bringing doom" instead of "destroy").
+- Scare quotes (e.g., "so-called", "in-the-know").

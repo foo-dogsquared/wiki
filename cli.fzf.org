@@ -1,0 +1,93 @@
+:PROPERTIES:
+:ID:       4eb1f8b1-bc12-4a6c-8fa4-20e4c3542cf2
+:END:
+#+title: Command line: fzf
+#+date: "2021-05-31 23:08:57 +08:00"
+#+date_modified: "2021-07-27 12:38:25 +08:00"
+#+language: en
+
+
+The family's favorite fuzzy finder.
+Basically, it takes a list then create an interface out of it.
+Not only it is easy to use and very flexible but also very configurable with the options to let you choose the keybindings and the previewer among other things.
+
+
+
+
+* Options
+
+- =-m, --multi= - enables multiple selection; by default, the keybinding to select is =Tab=
+- =-p, --prompt= - display the prompt message
+- =--disabled= - disable the search making fzf essentially a selection interface
+- =--cycle= - enables cyclic scrolling in the selection (it's annoying when it does not have those)
+
+  If no input was passed, it will recursively list all of the files in the current directory.
+  Pretty useful for a quick opening interface.
+
+
+
+
+* Examples
+
+My favorite section where I get to show off some scripts featuring the star of the show.
+And also this is where everyone is going to go first.
+
+
+** Basic command-line file selection
+
+#+begin_src bash
+fzf | xargs xdg-open
+#+end_src
+
+
+** Quick manual page selection
+
+#+begin_src shell
+apropos . \
+    | fzf --multi --prompt "Choose manual(s) to open > " \
+    | awk '{ print $1 "." gensub(/[()]/, "", "g", $2) }' \
+    | xargs man
+#+end_src
+
+Since a manual page can have the same title in different sections (e.g., =tput.1= and =tput.1p=), it is necessary to extract the sections.
+
+
+** Goto directory with fzf and Bash
+
+With my favorite =find= replacement, [[https://github.com/sharkdp/fd][=fd=]].
+It's a Bash function since [[https://stackoverflow.com/a/255415][you can't propagate directory changes with a script]].
+Just have to put it somewhere in your configuration.
+
+#+begin_src bash
+function fzf-cd() {
+    local dir=${1:-$(pwd)}
+    local dest=$(fd --type directory --hidden --base-directory "$dir" --follow | fzf --prompt "Where to go? > ")
+    [[ $dest ]] && cd "$(realpath --logical "$dir")/$dest"
+}
+#+end_src
+
+Even better when you bind it with a keyboard shortcut (e.g., ~bind '"\C-f":'fzf-cd\n"'~ on your Bash config).
+
+
+** Package selection in Arch Linux
+
+Vanilla Arch, if that matters.
+You can do this on other operating systems as long as their package manager lets you list all of the packages either from your local database or from a remote server.
+
+#+begin_src shell
+pacman -S --list --quiet \
+    | fzf --multi --prompt "Install package(s) > " \
+    | xargs doas pacman -S --noconfirm
+#+end_src
+
+
+** Create an interactive tldr list
+
+Have a [[https://github.com/tldr-pages/tldr/wiki/tldr-pages-clients][tldr client]] (e.g., tealdeer) and [[https://github.com/sharkdp/bat][bat]] installed.
+
+#+begin_src shell
+tldr --list \
+    | fzf --multi \
+    | xargs --replace="{}" tldr {} \
+    | bat
+#+end_src

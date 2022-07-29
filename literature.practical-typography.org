@@ -1,0 +1,48 @@
+#+title: Practical typography
+#+date: "2021-06-19 21:11:45 +08:00"
+#+date_modified: "2021-06-19 23:07:28 +08:00"
+#+language: en
+#+source: https://practicaltypography.com/
+#+author: Matthew Butterick
+
+
+One of my favorite books especially with well-written summaries for each topic.
+
+- typography is relevant for everyone who writes
+- what typography is:
+  + involved whenever the text is displayed by the billboard, printed in a paper, or drafted in the wall
+  + has a function just like photography or web design where practitioners will use whatever techniques to raise the level of their work
+  + *main function is to hold reader attention*
+  + a tool to improve your writing
+- what typography is not:
+  + usage of fonts (or entirely composed of fonts)
+  + a substitute for your writing
+- what good typography is:
+  + reinforces your message
+  + goal-oriented and utilitarian, not based on taste;
+    an aesthetically pleasing text that doesn't enforce your message is considered a failure;
+    otherwise, an unappealing look that does reinforce your text is considered a success
+- spacing before and after are more subtle and effective
+- prefer bold over italics since it is easier to see
+- while justified alignment looks nice, often they don't look well when applied automatically with software;
+  in such case, prefer left-align instead
+- fonts usage:
+  + prefer to use two sets of fonts for the body and the headings
+  + it doesn't mean to use two different font families, though;
+    you can use one font family by setting the headings to use bold
+  + use point size larger than 12pt, another old habit from newspapers;
+    oftentimes it is not enough to see it in our display and it forces the user to go closer to the display (not exactly what you want)
+- paragraphs:
+  + no double-spacing per sentence, it is an old and unnecessary habit picked up for today
+  + one way to mark a paragraph is first-line indents
+  + another is newlines at the end of the paragraph
+  + choose only one way to mark a paragraph otherwise it is overkill
+  + avoid widows and orphans;
+    most software lets you do this automatically
+  + line spacing shouldn't be single spaced as it will make dense lines and hard to read;
+    otherwise, it also shouldn't be doubly spaced since it will make loose lines;
+    the ideal spacing is between 120% to 150% (of course, depending on the font)
+- headings:
+  + should structure your arguments, not your document
+  + prefer in title cases because your headings are not titles
+  + limit to 2/3 levels of heading, otherwise, it will make navigation confusing (unless you're writing a technical specification)

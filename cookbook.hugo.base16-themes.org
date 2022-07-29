@@ -1,0 +1,75 @@
+:PROPERTIES:
+:ID:       24df5797-6752-470d-89f5-517853573b3d
+:END:
+#+title: Implementing Base16 themes in Hugo
+#+date: "2021-06-22 20:31:50 +08:00"
+#+date_modified: "2021-06-24 20:42:52 +08:00"
+#+language: en
+#+property: header-args  :eval no
+
+
+Making use of [[https://github.com/chriskempson/base16][Base16]] themes would be a great way to let users customize their sites quickly.
+It is an established project that spawned related projects and a lot of user support for it.
+Let's implement this in Hugo for the same reason.
+
+We'll make heavy use of CSS variables, Hugo data templates, and their support for several data formats including YAML.
+
+To do that, we want to convert the Base16 theme...
+
+#+begin_src yaml
+scheme: "Bark on a tree"
+author: "Gabriel Arazas (https://foo-dogsquared.github.io)"
+base00: "2b221f"
+base01: "412c26"
+base02: "54352c"
+base03: "8d5c4c"
+base04: "e1bcb2"
+base05: "f5ecea"
+base06: "fefefe"
+base07: "eb8a65"
+base08: "d03e68"
+base09: "eb914a"
+base0A: "afa644"
+base0B: "85b26e"
+base0C: "df937a" #accent
+base0D: "a15c40"
+base0E: "8b7ab9"
+base0F: "6f3920"
+#+end_src
+
+...into CSS.
+
+#+begin_src css
+[data-theme="Bark on a tree"]:root {
+    --base00: #2b221f;
+    --base01: #412c26;
+    --base02: #54352c;
+    --base03: #8d5c4c;
+    --base04: #e1bcb2;
+    --base05: #f5ecea;
+    --base06: #fefefe;
+    --base07: #eb8a65;
+    --base08: #d03e68;
+    --base09: #eb914a;
+    --base0A: #afa644;
+    --base0B: #85b26e;
+    --base0C: #df937a;
+    --base0D: #a15c40;
+    --base0E: #8b7ab9;
+    --base0F: #6f3920
+}
+#+end_src
+
+Here's one template to do that.
+
+#+begin_src go
+{{- $name := index $ "name" -}}
+{{- $scheme := index $ "scheme" -}}
+{{- if ne $name "_index" }}[data-theme="{{ $scheme.scheme }}"]{{ end }}:root {
+  {{- range $i := seq 0 15 }}
+  {{- $hex := upper (printf "%02x" $i) }}
+  {{- $key := printf "base%s" $hex }}
+    --{{ $key }}: #{{ index $scheme $key }};
+  {{- end -}}
+}
+#+end_src

@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       d83c099a-fc11-4ccc-b265-4de97c85dcbe
+:END:
+#+title: systemd-journald
+#+date: 2021-08-07 20:12:30 +08:00
+#+date_modified: 2021-08-07 20:17:23 +08:00
+#+language: en
+
+
+systemd has a journal service storing logs from units.
+It provides a consistent and structured way how to check the logs.
+
+The service also has the following interfaces.
+
+- =journald= is the system logging functionality of systemd.
+
+- It comes with the system daemon service and the =journalctl= command.
+  See [[id:941e0a85-1bb4-45be-a729-1b577c7ee317][Command line: journalctl]] for more details.

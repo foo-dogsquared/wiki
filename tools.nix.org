@@ -1,0 +1,60 @@
+:PROPERTIES:
+:ID:       3b3fdcbf-eb40-4c89-81f3-9d937a0be53c
+:END:
+#+title: Nix package manager
+#+date: "2021-06-05 12:34:49 +08:00"
+#+date_modified: "2021-07-28 16:31:56 +08:00"
+#+language: en
+
+
+
+[[https://nixos.org/][Nix]] is a package manager that pioneered [[id:bfed6daf-4c2b-4426-bab9-2804caa5e079][Functional package management]] which addresses the criticisms of traditional Unix systems while making it as a specialized tool for [[id:fe9e21bc-3b38-4d0f-a785-253248a38ed7][Reproducible builds]].
+It features a handrolled configuration language (also called Nix) that leans into functional paradigm, making it easier if you have experience on it.
+A popular tool mostly featured in Haskell programming projects.
+
+Eventually inspired GNU to create a fork, [[id:be917383-84c4-4bf5-9ca0-b04bfb778f4f][Guix package manager]], that takes it to another direction with more focus on reproducibility and its extensions such as bootstrapping.
+
+Among other things, Nix also has the following features to look out for.
+
+- Creating [[id:de801b92-819e-4944-9f5b-5cea145a2798][Reproducible executables with Nix]] enabling to execute with one script only requiring the package manager.
+- How the build process works along with [[id:8f23f862-a19a-4a13-8d8f-69c280a8e072][Nix derivations]].
+- With [[id:8568ce92-99a8-4d20-9723-eee41a507327][Nix overrides and overlays]], you can change parts of a system and/or packages.
+- The new way to manage channels with [[id:6873de22-9eac-492c-93a8-6cdf8cbfc0f8][Nix flakes]].
+- How [[id:963c043e-4972-4b29-8360-223ec3465203][Nix packages]] are built and eventually created an extensive package ecosystem with the [[id:a57e63a7-6daa-4639-910d-c6648df156a3][Nix language]].
+
+
+
+
+* Ecosystem
+
+The basic ropes into getting started with Nix.
+
+- [[https://github.com/NixOS/nixpkgs][nixpkgs]] is the official package set similar to Flathub for Flatpak.
+  In terms of size, nixpkgs is comparable to AUR.
+
+- [[https://github.com/nix-community/NUR][NUR]] is the user-contributed Nix packages curated by the community.
+  While most of the packages can be passed into nixpkgs, most of them are niche packages (or the package author are not interested in maintaining it).
+
+- [[https://direnv.net/][direnv]] has [[https://github.com/direnv/direnv/wiki/Nix][integration with Nix]] as well as a lot of editors.
+
+- [[https://github.com/nix-community/lorri][lorri]] replaces nix-shell integrating with direnv.
+
+- [[https://github.com/nmattia/niv][niv]] provides a easier way to manage dependencies though it will be easier with Nix flakes.
+
+- [[id:6873de22-9eac-492c-93a8-6cdf8cbfc0f8][Nix flakes]] is an upcoming feature for Nix, replacing the traditional Nix channels into a decentralized set of derivations that can be retrieved from anywhere similar to Go modules [fn:: At a glance, anyways. I'm not experienced enough with Go to say that with utmost confidence.].
+
+- [[https://cachix.org/][Cachix]] is a cache service enabling to easily distribute binaries built with Nix.
+
+- [[https://github.com/divnix/devos][DevOS]] is a configuration framework for deploying NixOS-based systems.
+
+
+
+
+* Components of the package manager
+
+Holistically, Nix is made up of at least four components: the store, the language, the derivations, and the sandbox.
+
+- The store is a immutable centralized location where all of the outputs are placed.
+- The derivations are essentially build instructions.
+- [[id:a57e63a7-6daa-4639-910d-c6648df156a3][Nix language]] is a domain-specific language for creating derivations.
+- The build process can be locked in a sandbox, improving the reproducibility of a setup and lowering the attack surface for a malicious package.

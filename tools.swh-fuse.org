@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       cf5cadae-e01b-4099-86fe-b0e05bda4d39
+:END:
+#+title: swh.fuse
+#+date: 2021-07-27 21:02:05 +08:00
+#+date_modified: 2021-07-28 00:00:24 +08:00
+#+language: en
+
+
+A tool to interact with the Software Heritage Filesystem (SwhFS);
+you can see [[id:4703f8c2-225c-4c76-a788-af04b84309ac][The Software Heritage Filesystem (SwhFS): Integrating Source Code Archival with Development]] paper for an introduction.
+
+Some details about the tool itself...
+
+- It is mainly used with the =swh fs= subcommand.
+
+- To mount the filesystem itself, use =swh fs mount DIRECTORY=.
+
+When mounted, the directory should have the following structure:
+
+#+begin_src
+swhfs
+├── archive/
+├── cache/
+├── origin/
+└── README
+#+end_src
+
+- =archive/= is the entry point for the archived repos in the library;
+  the files inside there cannot be listed (e.g., =ls=, file managers)
+  but you can access the files inside of it (e.g., text editors, file openers)
+- =cache/= contains on-disk representation of metadata
+- =origin/= is where mounting of origins with an encoded URL
+
+For up-to-date information, you can read the =README= file.
+
+With the complete setup, you are now ready to interact with the filesystem.
+The point of interest here is the =archive/= directory which holds all of the objects in the merkle tree.
+You can see the [[https://docs.softwareheritage.org/devel/swh-model/data-model.html#data-model][model data]] from their documentation.
+
+You can interact with it by accessing one of the repo through their SWHID.
+
+#+begin_src shell  :eval no
+ls swhfs/archive/${SWHID}
+#+end_src
+
+The tool lazily loads the repo, saving bandwidth and disk space.

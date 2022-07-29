@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       963c043e-4972-4b29-8360-223ec3465203
+:END:
+#+title: Nix packages
+#+date: 2021-07-18 21:23:26 +08:00
+#+date_modified: 2021-12-12 23:48:08 +08:00
+#+language: en
+
+
+- the most important component managed with [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]] are [[id:8f23f862-a19a-4a13-8d8f-69c280a8e072][Nix derivations]]
+- derivations are basically recipes how the Nix build daemon compiles the package
+- most derivations are verbose but we can easily create one with nixpkgs
+- for certain setups such as common conventions for certain programming languages like Rust and Go, nixpkgs has [[https://nixos.org/manual/nixpkgs/unstable/#chap-language-support][environments created for those]];
+  different versions may have changes so be sure to go into the appropriate documentation and create packages for a specific channel;
+  this is significantly easier with [[id:6873de22-9eac-492c-93a8-6cdf8cbfc0f8][Nix flakes]]
+
+* Ecosystems
+- while derivations can be interacted with the builtin function =builtins.derivation=, it isn't really recommended since it is very verbose;
+  instead, you use =stdenv.mkDerivation= from nixpkgs
+
+- nixpkgs is the official repository of NixOS containing the standard library extending the [[id:a57e63a7-6daa-4639-910d-c6648df156a3][Nix language]], the largest repository of packages (counting up to 80,000 as of 2021-12-12), and various NixOS modules used to build the system itself
+
+- nixpkgs contains =stdenv= which is a derivation meant to be a base for other packages
+  - stdenv contains base packages that virtually all packages have (inside nixpkgs)
+  -
+
+- =stdenv.mkDerivation= is a convenient way of creating derivations;
+  however, it is very abstract and a lot of events happening around it
+  - this is a function that accepts a large attribute set
+  - it will map its arguments corresponding to a parameter in the final derivation made with =stdenv= (which is a shell script)
+  - attributes are usually just variables;
+    this is especially prevelant if
+  - packages can also set setup hooks (i.e., =setupHook=) that are essentially shell scripts to be added in the final derivation
+    - example: [[https://github.com/NixOS/nixpkgs/tree/nixos-21.11/pkgs/development/tools/build-managers/cmake][cmake]], [[https://github.com/NixOS/nixpkgs/tree/nixos-21.11/pkgs/development/libraries/glib][glib]], and [[https://github.com/NixOS/nixpkgs/tree/nixos-21.11/pkgs/development/tools/build-managers][most of the build systems at nixpkgs]]

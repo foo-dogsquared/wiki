@@ -1,0 +1,42 @@
+:PROPERTIES:
+:ID:       29ecbd86-ad97-4882-aa3f-56b5b90025d5
+:END:
+#+title: Digital gardens
+#+date: "2020-06-04 21:32:23 +08:00"
+#+date_modified: "2021-07-25 23:21:23 +08:00"
+#+language: en
+
+
+An environment for crafting [[id:431532c3-6506-4565-b193-dbfb60eac7d6][Evergreen notes]].
+Unlike a traditional blog where it concerns the final output, a digital garden cares more on the process of creating notes even if it's incomplete.
+
+A list of examples...
+
+- One of the more popular one especially with the relatively recent note-taking craze with [[id:4259636e-e0e8-49e4-8210-758ec59728a3][Zettelkasten]], [[https://notes.andymatuschak.org/][Andy Matuschak's]] notes have always been referred to especially with the navigation of notes by stacking them horizontally.
+  It is nice to navigate representing your curiosity as most note-taking system sucks at providing navigation.
+
+- [[https://maggieappleton.com/garden][Maggie Appleton's]] is a simple one with some metadata for completion, when it was first created and updated.
+
+- [[https://www.gwern.net/index][Gwern Branwen's]] website is an aesthetically nice website with the pop-ups at hover.
+  They also address concerns of seeing changes by explicitly listing them in [[https://www.gwern.net/Red][a dedicated page]].
+  Similarly, their posts also has attached meaningful metadata with their confidence, completion status, and backlinks.
+
+In other words, wikis with a fancier name and a gardening metaphor.
+
+However, it does come with a different mindset.
+The culture emphasizes to [[id:05a39f96-fb1c-4d71-9be1-fc4c2e251e8f][Start small and improve later]], just like how you tend your own garden.
+It focuses on the growth of your notes to the point of naming the states of progress.
+First, your notes will start as a seedling, then grow as you develop more insight, it will turn into a budding note, and eventually develop into an evergreen note.
+
+Digital gardens also makes an additional point on creating a web thoughts, making them [[id:2713f862-6664-4f36-9a2a-b4ddadfe4c8b][Non-linear notes]] with associations.
+
+While digital gardens are essentially glorified personal knowledge bases, digital gardens are usually seen with the following features.
+
+- An interface focusing on freely referencing other notes.
+  Usually, this comes in the form of [[id:583852e4-e56f-469b-89bc-9e5a832c9f04][Backlinks]].
+
+- Composes of different notes of different maturity level: either an incomplete seedling of a note, a partially complete note, or a fully-developed evergreen note.
+
+- Attaching meaningful [[id:ccb3bc14-a801-4ed0-b066-50b1bcd853aa][File metadata]] to enable further tracking the status of your notes.
+
+- Sports a note-taking workflow along with a publication workflow (e.g., web, PDf documents), encouraging to work in the open.

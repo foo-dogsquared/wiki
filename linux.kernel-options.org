@@ -1,0 +1,26 @@
+#+title: Linux kernel options
+#+date: "2021-06-18 15:34:19 +08:00"
+#+date_modified: "2021-06-18 15:34:48 +08:00"
+#+language: en
+
+
+- [[https://wiki.gentoo.org/wiki/Kernel][Gentoo wiki page on kernels]]
+- Linux also has official documentation on kernel.org and tldp.org
+- the kernel is large today, most of which can be configured to be compiled or not;
+  there is a default configuration when compiling the kernel
+- most of the features you would expect can be included
+  + run ELF binaries
+  + various filesystem support
+  + virtualization support
+  + Android drivers
+  + debugging options for kernel hacking
+  + pseudo-filesystems
+  + most drivers for common hardware (e.g., LED, USB, and network devices)
+  + special hardware drivers (e.g., Steam controller, Nintendo Wii)
+- most of the options can be configured either to be included inside of the kernel image or as an external module
+- most of the features are available as kernel options
+  + =CONFIG_HID_GENERIC= enables support for generic devices such as mice, keyboards, joysticks
+  + you can know what compile options is included from the kernel with =/proc/config.gz= but only if =CONFIG_IKCONFIG_PROC= is included
+  + =CONFIG_HID_BATTERY_STRENGTH= enables reporting battery strength
+- you can know what kernel options of the compiled kernel by looking at =/proc/config.gz= (e.g., ~gunzip --stdout /proc/config.gz | bat~);
+  though, it is only possible if compiled with =CONFIG_IKCONFIG_PROC= option.

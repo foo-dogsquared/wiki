@@ -1,0 +1,99 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><title>Implementing tiered headings with CSS</title><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script type="text/x-mathjax-config">
+                MathJax = {
+                    tex: {
+                        inlineMath: [ [&#x27;$&#x27;,&#x27;$&#x27;], [&#x27;\(&#x27;,&#x27;\)&#x27;] ],
+                        displayMath: [ [&#x27;$$&#x27;,&#x27;$$&#x27;], [&#x27;[&#x27;,&#x27;]&#x27;] ]
+                    },
+                    options = {
+                        processHtmlClass = &quot;math&quot;
+                    }
+                }
+                </script><meta name="next-head-count" content="6"/><link rel="preload" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" as="style"/><link rel="stylesheet" href="/wiki/_next/static/css/52fc2ba29703df73922c.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" as="script"/><link rel="preload" href="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" as="script"/></head><body><div id="__next"><main><h1>Implementing tiered headings with CSS</h1><section class="post-metadata"><span>Date: <!-- -->2021-06-20 10:31:00 +08:00</span><span>Date modified: <!-- -->2021-06-20 18:16:24 +08:00</span></section><nav class="toc"><ol class="toc-level toc-level-1"></ol></nav><p>You may have seen certain documents with <a href="https://practicaltypography.com/hierarchical-headings.html">tiered headings</a>.
+To implement this with pure CSS, we&#x27;ll make heavy use of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters">CSS counters</a>.
+</p><p>Here is one rough implementation with SCSS.
+</p><pre class="src-block"><code class="language-scss">article {
+    // Named after the LaTeX counters after `chapter` counter.
+    counter-reset: section subsection subsubsection paragraph subparagraph;
+    --counter-spacing: 0.5rem;
+
+    // &lt;h2&gt; is used as a section header since &lt;h1&gt; is the main title
+    h2 {
+        counter-reset: subsection;
+        counter-increment: section;
+
+        &amp;::before {
+            content: counter(section) &quot;.&quot;;
+            margin-right: var(--counter-spacing);
+        }
+    }
+
+    h3 {
+        counter-reset: subsubsection;
+        counter-increment: subsection;
+
+        &amp;::before {
+            content: counter(section) &quot;.&quot; counter(subsection) &quot;.&quot;;
+            margin-right: var(--counter-spacing);
+        }
+    }
+
+    h4 {
+        counter-reset: paragraph;
+        counter-increment: subsubsection;
+
+        &amp;::before {
+            content: counter(section) &quot;.&quot; counter(subsection) &quot;.&quot; counter(subsubsection) &quot;.&quot;;
+            margin-right: var(--counter-spacing);
+        }
+    }
+
+    h5 {
+        counter-reset: subparagraph;
+        counter-increment: paragraph;
+
+        &amp;::before {
+            content: counter(section) &quot;.&quot; counter(subsection) &quot;.&quot; counter(subsubsection) &quot;.&quot; counter(paragraph) &quot;.&quot;;
+            margin-right: var(--counter-spacing);
+        }
+    }
+
+    h6 {
+        counter-increment: subparagraph;
+
+        &amp;::before {
+            content: counter(section) &quot;.&quot; counter(subsection) &quot;.&quot; counter(subsubsection) &quot;.&quot; counter(paragraph) &quot;.&quot; counter(subparagraph);
+            margin-right: var(--counter-spacing);
+        }
+    }
+}
+</code></pre><p>This is enough for CSS but since we&#x27;re using SCSS, we can optimize it further.
+You may notice that each level is similar with the difference being the content and their counter name.
+</p><pre class="src-block"><code class="language-scss">@use &#x27;sass:string&#x27;;
+
+@function tier-heading($counters) {
+    $str: &quot;&quot;;
+    @for $level from 1 through $counters {
+        $str: $str + &#x27;counter(h#{$level})&quot;.&quot;&#x27;;
+    }
+    @return string.unquote($str);
+}
+
+article {
+    --counter-spacing: 0.5rem;
+    @for $level from 1 through 6 {
+        counter-reset: h#{$level};
+
+        h#{$level}{
+            @if $level != 6 {
+                counter-reset: h#{$level + 1};
+            }
+            counter-increment: h#{$level};
+
+            &amp;::before {
+                content: tier-heading($level);
+                margin-right: var(--counter-spacing);
+            }
+        }
+    }
+}
+</code></pre></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"metadata":{"date":"\"2021-06-20 10:31:00 +08:00\"","date_modified":"\"2021-06-20 18:16:24 +08:00\"","language":"en","source":""},"title":"Implementing tiered headings with CSS","hast":{"type":"root","children":[{"type":"element","tagName":"nav","properties":{"className":"toc"},"children":[{"type":"element","tagName":"ol","properties":{"className":"toc-level toc-level-1"},"children":[]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"You may have seen certain documents with "},{"type":"element","tagName":"a","properties":{"href":"https://practicaltypography.com/hierarchical-headings.html"},"children":[{"type":"text","value":"tiered headings"}]},{"type":"text","value":".\nTo implement this with pure CSS, we'll make heavy use of "},{"type":"element","tagName":"a","properties":{"href":"https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters"},"children":[{"type":"text","value":"CSS counters"}]},{"type":"text","value":".\n"}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"Here is one rough implementation with SCSS.\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-scss"]},"children":[{"type":"text","value":"article {\n    // Named after the LaTeX counters after `chapter` counter.\n    counter-reset: section subsection subsubsection paragraph subparagraph;\n    --counter-spacing: 0.5rem;\n\n    // \u003ch2\u003e is used as a section header since \u003ch1\u003e is the main title\n    h2 {\n        counter-reset: subsection;\n        counter-increment: section;\n\n        \u0026::before {\n            content: counter(section) \".\";\n            margin-right: var(--counter-spacing);\n        }\n    }\n\n    h3 {\n        counter-reset: subsubsection;\n        counter-increment: subsection;\n\n        \u0026::before {\n            content: counter(section) \".\" counter(subsection) \".\";\n            margin-right: var(--counter-spacing);\n        }\n    }\n\n    h4 {\n        counter-reset: paragraph;\n        counter-increment: subsubsection;\n\n        \u0026::before {\n            content: counter(section) \".\" counter(subsection) \".\" counter(subsubsection) \".\";\n            margin-right: var(--counter-spacing);\n        }\n    }\n\n    h5 {\n        counter-reset: subparagraph;\n        counter-increment: paragraph;\n\n        \u0026::before {\n            content: counter(section) \".\" counter(subsection) \".\" counter(subsubsection) \".\" counter(paragraph) \".\";\n            margin-right: var(--counter-spacing);\n        }\n    }\n\n    h6 {\n        counter-increment: subparagraph;\n\n        \u0026::before {\n            content: counter(section) \".\" counter(subsection) \".\" counter(subsubsection) \".\" counter(paragraph) \".\" counter(subparagraph);\n            margin-right: var(--counter-spacing);\n        }\n    }\n}\n"}]}]},{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"This is enough for CSS but since we're using SCSS, we can optimize it further.\nYou may notice that each level is similar with the difference being the content and their counter name.\n"}]},{"type":"element","tagName":"pre","properties":{"className":["src-block"]},"children":[{"type":"element","tagName":"code","properties":{"className":["language-scss"]},"children":[{"type":"text","value":"@use 'sass:string';\n\n@function tier-heading($counters) {\n    $str: \"\";\n    @for $level from 1 through $counters {\n        $str: $str + 'counter(h#{$level})\".\"';\n    }\n    @return string.unquote($str);\n}\n\narticle {\n    --counter-spacing: 0.5rem;\n    @for $level from 1 through 6 {\n        counter-reset: h#{$level};\n\n        h#{$level}{\n            @if $level != 6 {\n                counter-reset: h#{$level + 1};\n            }\n            counter-increment: h#{$level};\n\n            \u0026::before {\n                content: tier-heading($level);\n                margin-right: var(--counter-spacing);\n            }\n        }\n    }\n}\n"}]}]}]},"backlinks":[]},"__N_SSG":true},"page":"/[[...slug]]","query":{"slug":["cookbook.css.implementing-numbered-headings"]},"buildId":"Ie9t5zutrXP6Of75Cb5xF","assetPrefix":"/wiki","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="/wiki/_next/static/chunks/polyfills-99d808df29361cf7ffb1.js"></script><script src="/wiki/_next/static/chunks/main-ae4733327bd95c4ac325.js" async=""></script><script src="/wiki/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/wiki/_next/static/chunks/framework.9d524150d48315f49e80.js" async=""></script><script src="/wiki/_next/static/chunks/commons.0e1c3f9aa780c2dfe9f0.js" async=""></script><script src="/wiki/_next/static/chunks/pages/_app-8e3d0c58a60ec788aa69.js" async=""></script><script src="/wiki/_next/static/chunks/940643274e605e7596ecea1f2ff8d83317a3fb76.4841a16762f602a59f00.js" async=""></script><script src="/wiki/_next/static/chunks/pages/%5B%5B...slug%5D%5D-1aa198f87ede1cd0e1dc.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_buildManifest.js" async=""></script><script src="/wiki/_next/static/Ie9t5zutrXP6Of75Cb5xF/_ssgManifest.js" async=""></script></body></html>
