@@ -55,30 +55,28 @@
 
 (setq
  org-roam-v2-ack 't
+ org-roam-node-display-template "${doom-hierarchy:100} ${file:45}"
+ org-roam-node-display-template
+ (format "${doom-hierarchy:*} %s %s"
+         (propertize "${doom-tags:15}" 'face 'org-tag)
+         (propertize "${file:60}" 'face 'font-lock-default-face))
+
  org-roam-capture-templates `(("e" "evergreen" plain "%?"
+                               (file ,(f-join +wiki-directory "templates" "default.org"))
                                :target
-                               (file+head ,(f-join +wiki-notebook-directory "%<%Y-%m-%d-%H-%M-%S>.org")
-                                          "#+title: ${title}
-#+date: %<%Y-%m-%d %T %:z>
-#+date_modified: %<%Y-%m-%d %T %:z>
-#+language: en")
+                               (file ,(f-join +wiki-notebook-directory "%<%Y-%m-%d-%H-%M-%S>.org"))
                                :unnarrowed t)
 
                               ("c" "cards" plain "%?"
+                               (file ,(f-join +wiki-directory "templates" "anki.org"))
                                :target
-                               (file+head ,(f-join +anki-cards-directory-name "%<%Y>.org") "#+title: Anki: ${title}
-#+date: %<%Y-%m-%d %T %:z>
-#+date_modified: %<%Y-%m-%d %T %:z>
-#+language: en
-#+property: anki_deck ${title}")
+                               (file ,(f-join +anki-cards-directory-name "%<%Y>.org"))
                                :unnarrowed t)
 
                               ("l" "literature" plain "%?"
+                               (file ,(f-join +wiki-directory "templates" "default.org"))
                                :target
-                               (file+head ,(f-join +wiki-notebook-directory "literature.${slug}.org") "#+title: ${title}
-#+date: %<%Y-%m-%d %T %:z>
-#+date_modified: %<%Y-%m-%d %T %:z>
-#+language: en")
+                               (file ,(f-join +wiki-notebook-directory "literature.${slug}.org"))
                                :unnarrowed t)
 
                               ("L" "literature reference" plain
@@ -92,23 +90,8 @@
                                (file+head ,(expand-file-name "%<%Y-%m-%d>.org" org-roam-dailies-directory) "#+title: %<%Y-%m-%d>\n"))
 
                               ("s" "structured" plain "%?"
+                               (file ,(f-join +wiki-directory "templates" "default.org"))
                                :target
-                               (file+head ,(f-join +wiki-notebook-directory "${slug}.org") "#+title: ${title}")
+                               (file ,(f-join +wiki-notebook-directory "${slug}.org"))
                                :unnarrowed t)))
-
-;; Change how slugs are generated.
-;; I prefer dashes over the default underscores.
-;;(eval-after-load "org-roam"
-;;  '(cl-defmethod org-roam-node-slug ((node org-roam-node))
-;;    (let ((title (org-roam-node-title node)))
-;;      (cl-flet* ((strip-nonspacing-marks (s)
-;;                                         (ucs-normalize-NFC-string (ucs-normalize-NFD-string s)))
-;;                 (cl-replace (title pair)
-;;                             (replace-regexp-in-string (car pair) (cdr pair) title)))
-;;        (let* ((pairs `(("[^[:alnum:][:digit:]]" . "-")
-;;                        ("--*" . "-")
-;;                        ("^-" . "")
-;;                        ("-$" . "")))
-;;               (slug (-reduce-from #'cl-replace (strip-nonspacing-marks title) pairs)))
-;;	  (downcase slug))))))
 ;;; config.el ends here
