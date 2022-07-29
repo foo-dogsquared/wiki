@@ -1,7 +1,8 @@
 name: Generate site to GitHub pages
 on:
   push:
-    - master
+    branches:
+      - master
 jobs:
   generate-site:
     runs-on: ubuntu-latest
