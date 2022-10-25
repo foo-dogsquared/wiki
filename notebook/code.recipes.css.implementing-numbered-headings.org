@@ -1,13 +1,13 @@
 :PROPERTIES:
 :ID:       6d425762-ab9c-463f-b17a-e2a116b12fa0
 :END:
-#+title: Implementing tiered headings with CSS
+#+title: Code recipes: Implementing tiered headings with CSS
 #+date: "2021-06-20 10:31:00 +08:00"
-#+date_modified: "2021-06-20 18:16:24 +08:00"
+#+date_modified: "2022-10-25 17:05:19 +08:00"
 #+language: en
 
 
-You may have seen certain documents with [[https://practicaltypography.com/hierarchical-headings.html][tiered headings]].
+You may have seen certain documents with [[https://practicaltypography.com/hierarchical-headings.html][tiered headings]] especially in technical manuals and specifications (e.g., [[https://tc39.es/ecma262/][ECMAScript]], [[https://html.spec.whatwg.org/][HTML]]).
 To implement this with pure CSS, we'll make heavy use of [[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters][CSS counters]].
 
 Here is one rough implementation with SCSS.

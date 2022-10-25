@@ -1,9 +1,9 @@
 :PROPERTIES:
 :ID:       24df5797-6752-470d-89f5-517853573b3d
 :END:
-#+title: Implementing Base16 themes in Hugo
+#+title: Code recipes: Implementing Base16 themes in Hugo
 #+date: "2021-06-22 20:31:50 +08:00"
-#+date_modified: "2021-06-24 20:42:52 +08:00"
+#+date_modified: "2022-10-25 10:38:18 +08:00"
 #+language: en
 #+property: header-args  :eval no
 

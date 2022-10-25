@@ -1,9 +1,9 @@
 :PROPERTIES:
 :ID:       8750a413-7cb8-4160-b4b3-3b54265b2825
 :END:
-#+title: Percent encoding in Bash
+#+title: Code recipes: Percent encoding in Bash
 #+date: "2021-06-23 21:10:33 +08:00"
-#+date_modified: "2022-04-16 20:17:53 +08:00"
+#+date_modified: "2022-10-25 10:38:40 +08:00"
 #+language: en
 
 
