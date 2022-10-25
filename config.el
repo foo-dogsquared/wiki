@@ -5,35 +5,42 @@
 
 (+wiki/biblio-setup)
 
-(defun my/is-in-wiki-directory ()
-    "Return t if the file buffer is in the wiki directory."
-  (if (and (not (string= (f-base (buffer-file-name))
+(defun my/is-in-wiki-directory (&optional filename)
+  "Return t if the file buffer is in the wiki directory."
+  (unless filename (setq filename (buffer-file-name)))
+  (if (and (not (string= (f-base filename)
                          my/wiki-asset-directory-name))
-           (f-descendant-of-p (buffer-file-name)
+           (f-descendant-of-p filename
                               (expand-file-name +wiki-directory)))
       t
     nil))
 
-(defun my/get-assets-folder ()
-    "Get the assets folder of the current Org mode document."
-  (if (my/is-in-wiki-directory)
-      (f-join my/wiki-asset-directory-name (f-base buffer-file-name))
+(defun my/get-assets-folder (&optional filename)
+  "Get the assets folder of the current Org mode document."
+  (unless filename (setq filename (buffer-file-name)))
+  (if (my/is-in-wiki-directory filename)
+      (f-join my/wiki-asset-directory-name (f-base filename))
     nil))
 
-(defun my/concat-assets-folder (&rest args)
+(defun my/concat-assets-folder (&optional filename &rest args)
   "Concatenate PATH to the assets folder."
-  (apply #'f-join (my/get-assets-folder) args))
+  (unless filename (setq filename (buffer-file-name)))
+  (apply #'f-join (my/get-assets-folder filename) args))
 
-(defun my/create-assets-folder ()
-  "A quick convenient function to create an assets folder in the wiki folder."
+(defun my/create-assets-folder (&optional filename)
+  "A quick convenient function to create the appropriate folder in the assets folder with its buffer filename."
   (interactive)
+  (unless filename (setq filename (buffer-file-name)))
   (if (my/is-in-wiki-directory)
-      (f-mkdir my/wiki-asset-directory-name
-               (f-join my/wiki-asset-directory-name (file-name-sans-extension (buffer-file-name))))
+      (let* ((target (f-base filename))
+             (target-dir (f-join my/wiki-asset-directory-name target)))
+        (apply #'f-mkdir (f-split target-dir))
+        (message "Directory '%s' has been created." target-dir))
     (message "Not in the wiki directory.")))
 
-(defun my/parse-links-in-org (filename)
+(defun my/parse-links-in-org (&optional filename)
   "Returns a list of links in an Org buffer."
+  (unless filename (setq filename (buffer-file-name)))
   (let ((ast (with-temp-buffer
                (insert-file-contents filename)
                (org-mode)
@@ -55,11 +62,13 @@
 
 (setq
  org-roam-v2-ack 't
- org-roam-node-display-template "${doom-hierarchy:100} ${file:45}"
  org-roam-node-display-template
  (format "${doom-hierarchy:*} %s %s"
          (propertize "${doom-tags:15}" 'face 'org-tag)
          (propertize "${file:60}" 'face 'font-lock-default-face))
+
+ citar-notes-paths `(,+wiki-directory)
+ citar-library-paths '("~/library/references" "~/Zotero")
 
  org-roam-capture-templates `(("e" "evergreen" plain "%?"
                                (file ,(f-join +wiki-directory "templates" "default.org"))
@@ -71,7 +80,8 @@
                                (file ,(f-join +wiki-directory "templates" "anki.org"))
                                :target
                                (file ,(f-join +anki-cards-directory-name "%<%Y>.org"))
-                               :unnarrowed t)
+                               :unnarrowed t
+                               :empty-lines 2)
 
                               ("l" "literature" plain "%?"
                                (file ,(f-join +wiki-directory "templates" "default.org"))
@@ -79,7 +89,7 @@
                                (file ,(f-join +wiki-notebook-directory "literature.${slug}.org"))
                                :unnarrowed t)
 
-                              ("L" "literature reference" plain
+                              ("L" "literature reference" plain "%?"
                                (file ,(f-join +wiki-directory "templates" "literature.org"))
                                :target
                                (file ,(f-join +wiki-notebook-directory "literature.${citekey}.org"))
