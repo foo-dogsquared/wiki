@@ -3,13 +3,17 @@
 :END:
 #+title: Nix flakes
 #+date: 2021-07-18 22:34:11 +08:00
-#+date_modified: 2022-05-22 21:24:01 +08:00
+#+date_modified: 2022-09-04 21:44:06 +08:00
 #+language: en
 
 
-#+begin_note
-As of 2021-06-30, the version used for this note is at v2.3 so it needs to be invoked with the unstable version.
-#+end_note
+#+name: lst:nix-version
+#+begin_src shell  :output results
+nix --version
+#+end_src
+
+#+results: lst:nix-version
+: nix (Nix) 2.11.0
 
 What are Nix flakes?
 
@@ -83,116 +87,104 @@ While you can export attributes of any type, there are common attributes you'll 
 
 As an example, here's the flake of my NixOS configuration.
 
-#+begin_src shell  :cache yes  :results output
-nix flake show github:foo-dogsquared/nixos-config | nix run nixpkgs#gnused -- 's/\x1b\[[0-9;]*m//g'
+#+begin_src shell  :cache yes :results output
+nix flake show github:foo-dogsquared/nixos-config --no-write-lock-file | nix run nixpkgs#gnused -- 's/\x1b\[[0-9;]*m//g'
 #+end_src
 
-#+results[cf6df0202da35fbba99f7581b2655fb75d9eef8a]:
+#+results[607794f9bc576f2f2325b58ca84e863e11a3b456]:
 #+begin_example
-github:foo-dogsquared/nixos-config/12077bfc601e5465e343e590a830e8d3cb6a1a59
+github:foo-dogsquared/nixos-config/a545a20880888a88b7d5217f3906c4740313f0c1
 ├───devShells
-│   ├───aarch64-darwin
-│   │   ├───flatpak: development environment 'nix-shell'
-│   │   ├───hugo: development environment 'nix-shell'
-│   │   └───rust: development environment 'nix-shell'
-│   ├───aarch64-linux
-│   │   ├───flatpak: development environment 'nix-shell'
-│   │   ├───hugo: development environment 'nix-shell'
-│   │   └───rust: development environment 'nix-shell'
-│   ├───i686-linux
-│   │   ├───flatpak: development environment 'nix-shell'
-│   │   ├───hugo: development environment 'nix-shell'
-│   │   └───rust: development environment 'nix-shell'
-│   ├───x86_64-darwin
-│   │   ├───flatpak: development environment 'nix-shell'
-│   │   ├───hugo: development environment 'nix-shell'
-│   │   └───rust: development environment 'nix-shell'
 │   └───x86_64-linux
+│       ├───default: development environment 'nix-shell'
 │       ├───flatpak: development environment 'nix-shell'
+│       ├───gnome: development environment 'nix-shell'
+│       ├───gnu: development environment 'nix-shell'
+│       ├───guile: development environment 'nix-shell'
+│       ├───guile3: development environment 'nix-shell'
 │       ├───hugo: development environment 'nix-shell'
-│       └───rust: development environment 'nix-shell'
+│       ├───nix: development environment 'nix-shell'
+│       ├───rust: development environment 'nix-shell'
+│       └───tic-80: development environment 'nix-shell'
+├───formatter
+│   └───x86_64-linux: package 'nixpkgs-fmt-1.3.0'
 ├───homeManagerConfigurations: unknown
 ├───homeManagerModules: unknown
 ├───lib: unknown
 ├───nixosConfigurations
+│   ├───bootstrap: NixOS configuration
+│   ├───graphical-installer: NixOS configuration
 │   └───ni: NixOS configuration
 ├───nixosModules
-│   ├───agenix: NixOS module
-│   ├───archiving: NixOS module
-│   ├───desktop: NixOS module
-│   ├───dev: NixOS module
-│   ├───hardware-setup: NixOS module
-│   ├───themes: NixOS module
-│   └───users: NixOS module
-└───packages
-    ├───aarch64-darwin
-    │   ├───doggo: package 'doggo-0.4.1'
-    │   ├───gnome-shell-extension-burn-my-windows: package 'gnome-shell-extension-burn-my-windows-2'
-    │   ├───gnome-shell-extension-desktop-cube: package 'gnome-shell-extension-desktop-cube-5'
-    │   ├───gnome-shell-extension-fly-pie: package 'gnome-shell-extension-fly-pie-12'
-    │   ├───gnome-shell-extension-pop-shell: package 'gnome-shell-extension-pop-shell-unstable-2021-11-30'
-    │   ├───libcs50: package 'libcs50-10.1.1'
-    │   ├───llama: package 'llama-1.0.2'
-    │   ├───neo: package 'neo-0.6'
-    │   ├───pop-launcher: package 'pop-launcher-1.1.0'
-    │   ├───pop-launcher-plugin-duckduckgo-bangs: package 'pop-launcher-plugin-duckduckgo-bangs-1.3.0'
-    │   ├───sioyek: package 'sioyek-1.0.0'
-    │   └───tic-80: package 'tic-80-unstable-2021-12-18'
-    ├───aarch64-linux
-    │   ├───doggo: package 'doggo-0.4.1'
-    │   ├───gnome-shell-extension-burn-my-windows: package 'gnome-shell-extension-burn-my-windows-2'
-    │   ├───gnome-shell-extension-desktop-cube: package 'gnome-shell-extension-desktop-cube-5'
-    │   ├───gnome-shell-extension-fly-pie: package 'gnome-shell-extension-fly-pie-12'
-    │   ├───gnome-shell-extension-pop-shell: package 'gnome-shell-extension-pop-shell-unstable-2021-11-30'
-    │   ├───libcs50: package 'libcs50-10.1.1'
-    │   ├───llama: package 'llama-1.0.2'
-    │   ├───neo: package 'neo-0.6'
-    │   ├───pop-launcher: package 'pop-launcher-1.1.0'
-    │   ├───pop-launcher-plugin-duckduckgo-bangs: package 'pop-launcher-plugin-duckduckgo-bangs-1.3.0'
-    │   ├───sioyek: package 'sioyek-1.0.0'
-    │   └───tic-80: package 'tic-80-unstable-2021-12-18'
-    ├───i686-linux
-    │   ├───doggo: package 'doggo-0.4.1'
-    │   ├───gnome-shell-extension-burn-my-windows: package 'gnome-shell-extension-burn-my-windows-2'
-    │   ├───gnome-shell-extension-desktop-cube: package 'gnome-shell-extension-desktop-cube-5'
-    │   ├───gnome-shell-extension-fly-pie: package 'gnome-shell-extension-fly-pie-12'
-    │   ├───gnome-shell-extension-pop-shell: package 'gnome-shell-extension-pop-shell-unstable-2021-11-30'
-    │   ├───libcs50: package 'libcs50-10.1.1'
-    │   ├───llama: package 'llama-1.0.2'
-    │   ├───neo: package 'neo-0.6'
-    │   ├───pop-launcher: package 'pop-launcher-1.1.0'
-    │   ├───pop-launcher-plugin-duckduckgo-bangs: package 'pop-launcher-plugin-duckduckgo-bangs-1.3.0'
-    │   ├───sioyek: package 'sioyek-1.0.0'
-    │   └───tic-80: package 'tic-80-unstable-2021-12-18'
-    ├───x86_64-darwin
-    │   ├───doggo: package 'doggo-0.4.1'
-    │   ├───gnome-shell-extension-burn-my-windows: package 'gnome-shell-extension-burn-my-windows-2'
-    │   ├───gnome-shell-extension-desktop-cube: package 'gnome-shell-extension-desktop-cube-5'
-    │   ├───gnome-shell-extension-fly-pie: package 'gnome-shell-extension-fly-pie-12'
-    │   ├───gnome-shell-extension-pop-shell: package 'gnome-shell-extension-pop-shell-unstable-2021-11-30'
-    │   ├───libcs50: package 'libcs50-10.1.1'
-    │   ├───llama: package 'llama-1.0.2'
-    │   ├───neo: package 'neo-0.6'
-    │   ├───pop-launcher: package 'pop-launcher-1.1.0'
-    │   ├───pop-launcher-plugin-duckduckgo-bangs: package 'pop-launcher-plugin-duckduckgo-bangs-1.3.0'
-    │   ├───sioyek: package 'sioyek-1.0.0'
-    │   └───tic-80: package 'tic-80-unstable-2021-12-18'
-    └───x86_64-linux
-        ├───doggo: package 'doggo-0.4.1'
-        ├───gnome-shell-extension-burn-my-windows: package 'gnome-shell-extension-burn-my-windows-2'
-        ├───gnome-shell-extension-desktop-cube: package 'gnome-shell-extension-desktop-cube-5'
-        ├───gnome-shell-extension-fly-pie: package 'gnome-shell-extension-fly-pie-12'
-        ├───gnome-shell-extension-pop-shell: package 'gnome-shell-extension-pop-shell-unstable-2021-11-30'
-        ├───libcs50: package 'libcs50-10.1.1'
-        ├───llama: package 'llama-1.0.2'
-        ├───neo: package 'neo-0.6'
-        ├───pop-launcher: package 'pop-launcher-1.1.0'
-        ├───pop-launcher-plugin-duckduckgo-bangs: package 'pop-launcher-plugin-duckduckgo-bangs-1.3.0'
-        ├───sioyek: package 'sioyek-1.0.0'
-        └───tic-80: package 'tic-80-unstable-2021-12-18'
+│   ├───programs: NixOS module
+│   ├───services: NixOS module
+│   └───workflows: NixOS module
+├───overlays
+│   └───default: Nixpkgs overlay
+├───packages
+│   └───x86_64-linux
+│       ├───artem: package 'artem-1.1.5'
+│       ├───auto-editor: package 'auto-editor-22w32a'
+│       ├───awesome-cli: package 'awesome-cli-0.7.2'
+│       ├───clidle: package 'clidle-unstable-2022-07-07'
+│       ├───cosmic-launcher: package 'cosmic-launcher-2022-08-12'
+│       ├───cursedgl: package 'cursedgl-0.4.0'
+│       ├───distant: package 'distant-0.16.4'
+│       ├───doggo: package 'doggo-0.5.4'
+│       ├───domterm: package 'domterm-unstable-2022-07-22'
+│       ├───freerct: package 'freerct-0.1'
+│       ├───furtherance: package 'furtherance-1.5.3'
+│       ├───gnome-extension-manager: package 'gnome-extension-manager-2022-07-20'
+│       ├───gnome-info-collect: package 'gnome-info-collect-1.0-7'
+│       ├───gnome-search-provider-recoll: package 'python3.10-gnome-search-provider-recoll-1.1.1'
+│       ├───gnome-shell-extension-fly-pie: package 'gnome-shell-extension-fly-pie-16'
+│       ├───gnome-shell-extension-pop-shell: package 'gnome-shell-extension-pop-shell-unstable-2022-06-25'
+│       ├───gol-c: package 'GOL-C-unstable-2022-03-25'
+│       ├───gradience: package 'gradience-0.2.2'
+│       ├───guile-config: package 'guile-config-0.5.0'
+│       ├───guile-hall: package 'guile-hall-0.4.1'
+│       ├───hush-shell: package 'hush-0.1.4-alpha'
+│       ├───ictree: package 'ictree-1.0.1'
+│       ├───libadwaita-latest: package 'libadwaita-2022-07-27'
+│       ├───libcs50: package 'libcs50-11.0.1'
+│       ├───license-cli: package 'license-cli-2.6.1'
+│       ├───moac: package 'moac-2.0.2'
+│       ├───mopidy-beets: package 'mopidy-beets-4.0.1'
+│       ├───mopidy-funkwhale: package 'mopidy-funkwhale-1.0'
+│       ├───mopidy-internetarchive: package 'mopidy-internetarchive-3.0.1'
+│       ├───nautilus-annotations: package 'nautilus-annotations-0.8.4'
+│       ├───neuwaita-icon-theme: package 'neuwaita-icon-theme-unstable-2022-05-22'
+│       ├───onagre: package 'onagre-1.0.0-alpha.0'
+│       ├───pop-launcher: package 'pop-launcher-1.2.1'
+│       ├───pop-launcher-plugin-brightness: package 'python3.10-pop-launcher-plugin-brightness-2022-08-07'
+│       ├───pop-launcher-plugin-duckduckgo-bangs: package 'pop-launcher-plugin-duckduckgo-bangs-1.3.0'
+│       ├───pop-launcher-plugin-jetbrains: package 'pop-launcher-plugin-jetbrains-2022-08-07'
+│       ├───python-material-color-utilities: package 'material-color-utilities-python-0.1.3'
+│       ├───segno: package 'python3.10-segno-1.4.1'
+│       ├───smile: package 'smile-1.7.0'
+│       ├───"swh/aiohttp-utils": package 'python3.10-aiohttp-utils-3.1.1'
+│       ├───"swh/attrs-strict": package 'python3.10-attrs_strict-1.0.0'
+│       ├───"swh/swh-auth": package 'python3.10-swh-auth-0.6.6'
+│       ├───"swh/swh-core": package 'python3.10-swh-core-2.13.1'
+│       ├───"swh/swh-fuse": package 'python3.10-swh-fuse-1.0.5'
+│       ├───"swh/swh-model": package 'python3.10-swh-model-6.3.1'
+│       ├───"swh/swh-web-client": package 'python3.10-swh-web-client-0.5.0'
+│       ├───text-engine: package 'text-engine-0.1.0'
+│       ├───thokr: package 'thokr-0.4.1'
+│       ├───tic-80: package 'tic-80-unstable-2022-01-18'
+│       ├───vgc: package 'vgc-unstable-2022-08-27'
+│       ├───vipsdisp: package 'vipsdisp-2.4.1'
+│       ├───vpaint: package 'vpaint-2022-01-11'
+│       ├───watc: package 'watc-0.1.2'
+│       ├───wayback: package 'wayback-0.17.0'
+│       └───wzmach: package 'wzmach-1.0.0'
+└───templates
+    ├───basic-devshell: template: Basic development shell template
+    ├───basic-overlay-flake: template: Basic overlay as a flake
+    └───default: template: Basic development shell template
 #+end_example
 
-- =defaultPackage.${system}.${package}= (or =packages.${system}.${package}=) is mainly expected for packages.
+- =packages.${system}.${package}= (or =packages.${system}.${package}=) is mainly expected for packages.
   This allows for easy building — e.g., =nix build nixpkgs#hello= will refer to =defaultPackage.${system}.hello=.
   Another command that expects this is =nix run ${PACKAGE}= (e.g., =nix run nixpkgs#hello=).
 
@@ -207,30 +199,30 @@ github:foo-dogsquared/nixos-config/12077bfc601e5465e343e590a830e8d3cb6a1a59
 - =templates.${name}= is a template that has the attribute =path= and =description=.
   See [[Flake templates]] for more details about how it's used.
 
-- =devShell.${system}= is expected to be a derivation (mostly with =mkShell=).
-  This is the default development environment to be used.
-  This is mostly expected for projects providing an easy way to bootstrap for development (e.g., with =nix develop ${FLAKE}=).
-
-- =devShells.${system}.${name}= is an attribute set of derivations (mostly from =mkShell=).
-  This is similar to =devShell= except this is where =nix develop= subcommand finds if an attribute name is given.
+- =devShells.${system}.${name}= is an attribute set of derivations intended for development shells which are mainly consumed by =nix develop= subcommand.
+  The subcommand will also set up some things such as the build environment containing the build inputs and environment variables.
 
 
 
 
 * Flake templates
 
-- Flakes can have templates to get started with.
-  They can be used with =nix flake init ${TEMPLATE}=.
+Flakes can have templates to get started with.
+They can be used with =nix flake init ${TEMPLATE}=.
 
-- You can export it in your flakes through the =templates= attribute.
-  =templates= is expected to be an attribute set with each attribute representing a template.
+You can export it in your flakes through the =templates= attribute.
+=templates= is expected to be an attribute set with each attribute representing a template.
+By default, we have the =templates= flake from the global registry pointed to [[https://github.com/NixOS/templates][NixOS/templates]] Git repo which can be a starting example.
 
-- By default, we have the =templates= flake from the global registry pointed to [[https://github.com/NixOS/templates][NixOS/templates]] Git repo.
+Take note templates are only static with no templating capabilities whatsoever unlike something like [[id:08f43012-a152-48c4-8943-9fe557a39232][Cookiecutter]].
 
 
 
 
-* Nix registry
+* Nix flake registry
+:PROPERTIES:
+:ID:       dd8c12d3-4f0f-452b-ab54-cc19fcb04940
+:END:
 
 Per the Nix manual:
 
@@ -246,31 +238,57 @@ nix registry list
 
 #+results[2e793be4dcc8dcc2f0c921da5dffa1544455d14e]:
 #+begin_example
-system flake:agenix path:/nix/store/yka795vkb7ny5fnybf8dafbypcjfmi9n-source?lastModified=1638837456&narHash=sha256-WHLOxthAGx%2fwXw3QUa%2flFE3mr6cQtnXfFYZ0DNyYwt4=&rev=57806bf7e340f4cae705c91748d4fdf8519293a9
-system flake:config path:/nix/store/3nlagaj6748w4ffxx4vp5jss2k571f8i-source?lastModified=1640442672&narHash=sha256-Gkt2On9szrFlOo6QiYMOA90qTp4PICd7STHFhGA4bCs=
-system flake:home-manager path:/nix/store/ijh6v700kpssfyw44v4awbm2gmjx26qs-source?lastModified=1640296831&narHash=sha256-Mu32vTcfZru4VrvgnpvQKmwC4uY0oF3vnnC2o9SgnRU=&rev=f15b151ca1c4aea23515c241051d71f1b5cf97c8
-system flake:nixpkgs path:/nix/store/lgfhg4n6445yizgf0xjirb4bc4j86fr9-source?lastModified=1640269308&narHash=sha256-vBVwv3+kPrxbNyfo48cB5cc5%2f4tq5zlJGas%2fqw8XNBE=&rev=0c408a087b4751c887e463e3848512c12017be25
+user   flake:custom-nixpkgs path:/home/foo-dogsquared/library/projects/packages/nixpkgs
+system flake:config path:/nix/store/azabk9fimqymv1wz4j2lb8jrygffvyfq-source?lastModified=1662173618&narHash=sha256-FrfrZvej2oneAvaLCJ5QB0DsA4ObDxVwyfWEmgmx+kY=
+system flake:devshell path:/nix/store/g1y1jdcjb0fvz2dgw1mbkz84d8g8j18v-source?lastModified=1660811669&narHash=sha256-V6lmsaLNFz41myppL0yxglta92ijkSvpZ+XVygAh+bU=&rev=c2feacb46ee69949124c835419861143c4016fb5
+system flake:dotfiles path:/nix/store/x0rsi5lvqzzpris4z8sh52r0qin25p6h-source?lastModified=1662114691&narHash=sha256-JvRY4qlXHuo4t7kEPD5DLbCsJqQMNJ2Lfi8Bslt5Q08=&rev=7725082138516476fa48f2b0a827bc62b3699332
+system flake:emacs-overlay path:/nix/store/37fzz6za5nqnw20ickl57wp14jb1cnfq-source?lastModified=1662144623&narHash=sha256-LhtXgXW4Ez0fiiDTZcaTbosS8KMiEm6HKJMnTxyIbq8=&rev=8707d84ec67b39d5655929fc974055bcb9a160fb
+system flake:flake-utils path:/nix/store/nbkbs33bkw54f60kv5c5y48714l00dpw-source?lastModified=1659877975&narHash=sha256-zllb8aq3YO3h8B%2fU0%2fJ1WBgAL8EX5yWf5pMj3G0NAmc=&rev=c0e246b9b83f637f4681389ecabcb2681b4f3af0
+system flake:guix-overlay path:/nix/store/warpn1k8fxl9i90ylzm59qa7479q6ka5-source?lastModified=1662119991&narHash=sha256-tzIblYhiammRfGXoXsyoPUX9iDDqYMnz1b0lJY9DloA=
+system flake:helix-editor path:/nix/store/3vik1l2ihdkx6d0jg390b41app4g0ika-source?lastModified=1662159247&narHash=sha256-D+UirTzF4gqOnSyPpd9MOrQyRV9iaK4ktY514HtlhPo=&rev=e917a8e0be29aa3f8aaa537e0aa88e6df8ce974e
+system flake:home-manager path:/nix/store/3ngcv9lamdaqsxw0bixnc3zjwbr6068z-source?lastModified=1661824092&narHash=sha256-nSWLWytlXbeLrx5A+r5Pso7CvVrX5EgmIIXW%2fEXvPHQ=&rev=5bd66dc6cd967033489c69d486402b75d338eeb6
+system flake:neovim-nightly-overlay path:/nix/store/awbf898silibkrdrslj5wg4al85873df-source?lastModified=1662106618&narHash=sha256-fawP7iB5o3ZD%2fVFcfv8gsB6lzGzxR1bfURikuVCpsMM=&rev=d3262c72f00252e00fc93ad2021f446450cc735e
+system flake:nix-alien path:/nix/store/xx9hqbq4pzcg97syqfql86g2nbh1llax-source?lastModified=1657876248&narHash=sha256-UkcXnWq9ukTFgLhxafg3cnQZmWL%2fjNgLbJbE1Geo4k4=&rev=897f10267138748956b7720c5a82bba8a90a832e
+system flake:nix-colors path:/nix/store/07zfr4blpnyxn697byahlb7znz8rm9xm-source?lastModified=1661006226&narHash=sha256-OytVjY%2fW1ASw+N+xrCRaKhcs76ZIcrVRf9xXhOnWzno=&rev=861546e123ef13c480338edbad8c6f2e7baf0777
+system flake:nix-ld path:/nix/store/53hfjz1qjg0k7w29z0c57lxjmqkimpsv-source?lastModified=1652641841&narHash=sha256-TTBz20XR2vmvOSDu8hXcbHbOEI0t%2fIWq8vZuRKyep1E=&rev=c25cc4b5ec65f03c2bb96f927ae724a59c51d7ee
+system flake:nixos-generators path:/nix/store/dawikzqa2bhnp5pqf0yiy3jiw6c8jhj0-source?lastModified=1660727616&narHash=sha256-zYTIvdPMYMx%2fEYqXODAwIIU30RiEHqNHdgarIHuEYZc=&rev=adccd191a0e83039d537e021f19495b7bad546a1
+system flake:nixpkgs path:/nix/store/8x9s4zv7dzmwxmm8lhsxk3nf8lxlh52q-source?lastModified=1662019588&narHash=sha256-oPEjHKGGVbBXqwwL+UjsveJzghWiWV0n9ogo1X6l4cw=&rev=2da64a81275b68fdad38af669afeda43d401e94b
+system flake:nur path:/nix/store/f6d0qa1pn9cljmc8xxa0bply4im4b7jj-source?lastModified=1662170849&narHash=sha256-bIY4zURNsvaUK2eVoMz02lBDZPLwXP2KzinNvEWtlsw=&rev=258028926ec1a0976a6f9ec1c106e7cc1345f0c0
+system flake:rust-overlay path:/nix/store/8pzvk34qgr1nm150g328gcd4qzrnx8vq-source?lastModified=1662173844&narHash=sha256-+ZgW98Y8fZkgFSylE+Mzalumw+kw3SVivZznbJqQaj8=&rev=8ac6d40380dc4ec86f1ff591d5c14c8ae1d77a18
+system flake:sops-nix path:/nix/store/8vk2k07z2kr8r9hhls0fgv828na4fpr7-source?lastModified=1661660105&narHash=sha256-3ITdkYwsNDh2DRqi7FZOJ92ui92NmcO6Nhj49u+JjWY=&rev=d92fba1bfc9f64e4ccb533701ddd8590c0d8c74a
 global flake:agda github:agda/agda
+global flake:arion github:hercules-ci/arion
 global flake:blender-bin github:edolstra/nix-warez?dir=blender
 global flake:dreampkgs github:nix-community/dreampkgs
 global flake:dwarffs github:edolstra/dwarffs
+global flake:emacs-overlay github:nix-community/emacs-overlay
 global flake:fenix github:nix-community/fenix
-global flake:flake-utils github:flake-utils/numtide
+global flake:flake-parts github:hercules-ci/flake-parts
+global flake:flake-utils github:numtide/flake-utils
 global flake:gemini github:nix-community/flake-gemini
+global flake:hercules-ci-effects github:hercules-ci/hercules-ci-effects
+global flake:hercules-ci-agent github:hercules-ci/hercules-ci-agent
 global flake:home-manager github:nix-community/home-manager
 global flake:hydra github:NixOS/hydra
 global flake:mach-nix github:DavHau/mach-nix
 global flake:nimble github:nix-community/flake-nimble
 global flake:nix github:NixOS/nix
+global flake:nix-darwin github:LnL7/nix-darwin
 global flake:nixops github:NixOS/nixops
 global flake:nixos-hardware github:NixOS/nixos-hardware
-global flake:nixos-homepage github:NixOS/nixos-homepage/flake
+global flake:nixos-homepage github:NixOS/nixos-homepage
+global flake:nixos-search github:NixOS/nixos-search
 global flake:nur github:nix-community/NUR
 global flake:nixpkgs github:NixOS/nixpkgs/nixpkgs-unstable
 global flake:templates github:NixOS/templates
 global flake:patchelf github:NixOS/patchelf
+global flake:poetry2nix github:nix-community/poetry2nix
 global flake:nix-serve github:edolstra/nix-serve
 global flake:nickel github:tweag/nickel
+global flake:bundlers github:NixOS/bundlers
+global flake:pridefetch github:SpyHoodle/pridefetch
+global flake:helix github:helix-editor/helix
+global flake:sops-nix github:Mic92/sops-nix
 #+end_example
 
 So how does a flake registry work?
@@ -285,13 +303,786 @@ So how does a flake registry work?
 
 - There are primarily three registries to worry about: user, system, and global.
 
-- This is also the reason it downloads something why each time you invoke a Nix-related command (e.g., =nix search=, =nix edit=).
-  [fn:: I think pinning the flakes from the global registry will simply resolve this issue.]
+This is also the reason it downloads something why each time you invoke a Nix-related command (e.g., =nix search=, =nix edit=). [fn:: Pinning the flakes from the global registry will simply resolve this issue.]
+If you're using Nix flakes for your NixOS configuration, it is recommended to set the =nixpkgs= registry item to the nixpkgs input (e.g., ~nix.registry.nixpkgs.url = nixpkgs;~).
 
 
 
 
-* More information about flakes
+* Flake lockfile
+:PROPERTIES:
+:ID:       6f261080-77da-4d75-9426-7ca6f285371c
+:END:
 
-- We can modify our inputs.
-  In the above example, we made =home-manager= to use our version of =nixpkgs= which will make it easier to sync.
+It is unreproducible to make our inputs to only set like the following list.
+
+#+name: itm:flake-inputs-urls
+- github:NixOS/nixpkgs/nixos-unstable
+- github:foo-dogsquared/nix-overlay-guix
+- github:nix-community/NUR
+- git+file:///home/user/projects/NUR
+
+That's because Nix resolves the previous list of inputs to their latest revisions each time Nix refers to the input.
+You could see this effect by making use of Nix commands that takes a flake as an input.
+
+Let's take the most common and frustrating use case that many will encounter.
+
+#+begin_src shell  :eval no
+nix search nixpkgs hello
+#+end_src
+
+Assuming =nixpkgs= from the flake registry points to =github:NixOS/nixpkgs= (which you can just replace =nixpkgs= with the URL, if you've pinned it already), this will resolve to the latest revision from the given URL.
+If you're using the above command often, you'll know this will run slow since you're fetching and evaluating a new version of the whole nixpkgs repo each time.
+
+To mitigate, we could accurately describe the inputs by including the revision hash.
+
+#+name: itm:flake-inputs-urls-accurate
+- github:NixOS/nixpkgs/nixos-unstable/2da64a81275b68fdad38af669afeda43d401e94b
+- github:foo-dogsquared/nix-overlay-guix/e35a7caf5b49fd32864027ecc644bd21a6bd8838
+- github:nix-community/NUR/d8f45eb686d855bbbaca3b39c1215675e2a5ed7a
+- git+file:///home/user/projects/NUR/thisisnotmadeupatalldontworryaboutit
+
+However, it can make for a pretty tedious user experience.
+If you want to update, you'll have to manually change the revision hash each time.
+Why don't we automate it in some way?
+
+Fortunately, *Nix already does this by capturing the resolved versions and dependencies of a list of inputs ([[list:flake-inputs-urls][this list of flake inputs]] as an example) and storing them in a file*.
+The file is specifically referred to as a lockfile.
+This is usually stored in a file called =flake.lock= alongside your flake definition file (i.e., =flake.nix=).
+With the lockfile present, Nix will now use the captured versions from the lockfile as the inputs defined in =flake.nix=.
+
+
+** Interacting with the lock file
+
+Most of the interaction with the lockfile is done with the =nix flake= subcommand.
+This subcommand encompasses other operations with the flake but to list some of them...
+
+- =nix flake update= will resolve the inputs from the flake definition and capture the updated versions to the lockfile.
+  One of the nicer features with the [[lst:nix-version][current experimental version]] of the Nix CLI is =--commit-lock-file= which creates a commit with a formatted message of updated inputs. [fn:: You can also change the commit summary with =--commit-lockfile-summary= option.]
+
+- =nix flake lock= will store missing inputs in the lockfile.
+  This command also has fine-grained control in controlling the lockfile in some ways.
+  For example, you can update a specific input =a= with =nix flake --update-input a=.
+
+
+** Lockfile format
+
+The flake lockfile format can vary especially that it has different versions.
+But for the most part, exploring a lockfile is pretty similar as a lockfile is simply a JSON file containing metadata regarding the flake inputs.
+For example, this is the whole flake lockfile of this notebook which is a simple flake intended to deliver the environment needed for this notebook including a bunch of language interpreters and programs for [[id:5569a49f-c387-4da2-8f68-d8452e35ee5b][Org mode: Babel]].
+
+#+caption: This notebook's flake lockfile as of 2022-09-04
+#+name: lst:flake-lock
+#+begin_src shell  :dir (projectile-project-root)
+jq --raw-output '.' flake.lock
+#+end_src
+
+#+results: lst:flake-lock
+#+begin_example
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1653936696,
+        "narHash": "sha256-M6bJShji9AIDZ7Kh7CPwPBPb/T7RiVev2PAcOi4fxDQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ce6aa13369b667ac2542593170993504932eb836",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "22.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
+#+end_example
+
+At least for this example, the format itself is simple as it only contains 3 keys:
+
+- =nodes= contains the graph of the inputs (and its dependencies).
+  In the
+- =root= contains the name of the root node (from =nodes=).
+- =version= is the revision number for the lockfile format.
+
+There are more complex examples such as my NixOS configuration.
+
+#+caption: My NixOS config lockfile
+#+name: lst:foo-dogsquared-nixos-config-flake-lock
+#+begin_src shell  :exports results
+curl -L https://raw.githubusercontent.com/foo-dogsquared/nixos-config/a545a20880888a88b7d5217f3906c4740313f0c1/flake.lock
+#+end_src
+
+#+results:
+#+begin_example
+{
+  "nodes": {
+    "base16-schemes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1654895891,
+        "narHash": "sha256-xYYmZkHnyLCUBAkqkZ7v1Lc5m39857MukQLMRtGuvdk=",
+        "owner": "base16-project",
+        "repo": "base16-schemes",
+        "rev": "7c247f734eac7f04518c6e28d098635ee8dcabf5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "base16-project",
+        "repo": "base16-schemes",
+        "type": "github"
+      }
+    },
+    "crane": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1661875961,
+        "narHash": "sha256-f1h/2c6Teeu1ofAHWzrS8TwBPcnN+EEu+z1sRVmMQTk=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "d9f394e4e20e97c2a60c3ad82c2b6ef99be19e24",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
+    "devshell": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1660811669,
+        "narHash": "sha256-V6lmsaLNFz41myppL0yxglta92ijkSvpZ+XVygAh+bU=",
+        "owner": "numtide",
+        "repo": "devshell",
+        "rev": "c2feacb46ee69949124c835419861143c4016fb5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "devshell",
+        "type": "github"
+      }
+    },
+    "devshell_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1660811669,
+        "narHash": "sha256-V6lmsaLNFz41myppL0yxglta92ijkSvpZ+XVygAh+bU=",
+        "owner": "numtide",
+        "repo": "devshell",
+        "rev": "c2feacb46ee69949124c835419861143c4016fb5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "devshell",
+        "type": "github"
+      }
+    },
+    "dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1662114691,
+        "narHash": "sha256-JvRY4qlXHuo4t7kEPD5DLbCsJqQMNJ2Lfi8Bslt5Q08=",
+        "owner": "foo-dogsquared",
+        "repo": "dotfiles",
+        "rev": "7725082138516476fa48f2b0a827bc62b3699332",
+        "type": "github"
+      },
+      "original": {
+        "owner": "foo-dogsquared",
+        "repo": "dotfiles",
+        "type": "github"
+      }
+    },
+    "dream2nix": {
+      "inputs": {
+        "alejandra": [
+          "helix-editor",
+          "nci",
+          "nixpkgs"
+        ],
+        "crane": "crane",
+        "devshell": [
+          "helix-editor",
+          "nci",
+          "devshell"
+        ],
+        "flake-utils-pre-commit": [
+          "helix-editor",
+          "nci",
+          "nixpkgs"
+        ],
+        "gomod2nix": [
+          "helix-editor",
+          "nci",
+          "nixpkgs"
+        ],
+        "mach-nix": [
+          "helix-editor",
+          "nci",
+          "nixpkgs"
+        ],
+        "nixpkgs": [
+          "helix-editor",
+          "nci",
+          "nixpkgs"
+        ],
+        "poetry2nix": [
+          "helix-editor",
+          "nci",
+          "nixpkgs"
+        ],
+        "pre-commit-hooks": [
+          "helix-editor",
+          "nci",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1662083074,
+        "narHash": "sha256-GL4/CLKPYUzkKD1l7oi2XB+vi3z4xGpCVLDdG3tRqvs=",
+        "owner": "nix-community",
+        "repo": "dream2nix",
+        "rev": "c6c039fcc6abdf4d828b940b576944a224cf8622",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "dream2nix",
+        "type": "github"
+      }
+    },
+    "emacs-overlay": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1662144623,
+        "narHash": "sha256-LhtXgXW4Ez0fiiDTZcaTbosS8KMiEm6HKJMnTxyIbq8=",
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "rev": "8707d84ec67b39d5655929fc974055bcb9a160fb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "type": "github"
+      }
+    },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1650374568,
+        "narHash": "sha256-Z+s0J8/r907g149rllvwhb4pKi8Wam5ij0st8PwAh+E=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "b4a34015c698c7793d592d66adbab377907a2be8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1659877975,
+        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1656928814,
+        "narHash": "sha256-RIFfgBuKz6Hp89yRr7+NR5tzIAbn52h8vT6vXkYjZoM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "7e2a3b3dfd9af950a856d66b0a7d01e3c18aa249",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_3": {
+      "locked": {
+        "lastModified": 1644229661,
+        "narHash": "sha256-1YdnJAsNy69bpcjuoKdOYQX0YxZBiCYZo4Twxerqv7k=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "3cecb5b042f7f209c56ffd8371b2711a290ec797",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "guix-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1662119991,
+        "narHash": "sha256-kpkxJioBNZm73Haob0yGJsZ+fQs0fdmBzy3Ojhcx7Ik=",
+        "owner": "foo-dogsquared",
+        "repo": "nix-overlay-guix",
+        "rev": "e35a7caf5b49fd32864027ecc644bd21a6bd8838",
+        "type": "github"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///home/foo-dogsquared/library/projects/software/nix-overlay-guix"
+      }
+    },
+    "helix-editor": {
+      "inputs": {
+        "nci": "nci",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1662159247,
+        "narHash": "sha256-D+UirTzF4gqOnSyPpd9MOrQyRV9iaK4ktY514HtlhPo=",
+        "owner": "helix-editor",
+        "repo": "helix",
+        "rev": "e917a8e0be29aa3f8aaa537e0aa88e6df8ce974e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "helix-editor",
+        "repo": "helix",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": [
+          "flake-utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1661824092,
+        "narHash": "sha256-nSWLWytlXbeLrx5A+r5Pso7CvVrX5EgmIIXW/EXvPHQ=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "5bd66dc6cd967033489c69d486402b75d338eeb6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nci": {
+      "inputs": {
+        "devshell": "devshell_2",
+        "dream2nix": "dream2nix",
+        "nixpkgs": [
+          "helix-editor",
+          "nixpkgs"
+        ],
+        "rust-overlay": [
+          "helix-editor",
+          "rust-overlay"
+        ]
+      },
+      "locked": {
+        "lastModified": 1662143940,
+        "narHash": "sha256-3eJfehnZLWJGXylfpAMeLR0Q3sx8pAjGiHBQPqOH9+U=",
+        "owner": "yusdacra",
+        "repo": "nix-cargo-integration",
+        "rev": "e83f2598aecbe1114783ff9bdae0b85939de35a3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yusdacra",
+        "repo": "nix-cargo-integration",
+        "type": "github"
+      }
+    },
+    "neovim-flake": {
+      "inputs": {
+        "flake-utils": "flake-utils_3",
+        "nixpkgs": [
+          "neovim-nightly-overlay",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "contrib",
+        "lastModified": 1662099377,
+        "narHash": "sha256-RJ3lwhDotzKO0u94/Qj93CeQ1KmPtlohUpdMYKbBjnM=",
+        "owner": "neovim",
+        "repo": "neovim",
+        "rev": "ce80b8f50d7d56ac12aa06a64a65799ec18b69af",
+        "type": "github"
+      },
+      "original": {
+        "dir": "contrib",
+        "owner": "neovim",
+        "repo": "neovim",
+        "type": "github"
+      }
+    },
+    "neovim-nightly-overlay": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "neovim-flake": "neovim-flake",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1662106618,
+        "narHash": "sha256-fawP7iB5o3ZD/VFcfv8gsB6lzGzxR1bfURikuVCpsMM=",
+        "owner": "nix-community",
+        "repo": "neovim-nightly-overlay",
+        "rev": "d3262c72f00252e00fc93ad2021f446450cc735e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "neovim-nightly-overlay",
+        "type": "github"
+      }
+    },
+    "nix-alien": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "poetry2nix": "poetry2nix"
+      },
+      "locked": {
+        "lastModified": 1657876248,
+        "narHash": "sha256-UkcXnWq9ukTFgLhxafg3cnQZmWL/jNgLbJbE1Geo4k4=",
+        "owner": "thiagokokada",
+        "repo": "nix-alien",
+        "rev": "897f10267138748956b7720c5a82bba8a90a832e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "thiagokokada",
+        "repo": "nix-alien",
+        "type": "github"
+      }
+    },
+    "nix-colors": {
+      "inputs": {
+        "base16-schemes": "base16-schemes",
+        "nixpkgs-lib": "nixpkgs-lib"
+      },
+      "locked": {
+        "lastModified": 1661006226,
+        "narHash": "sha256-OytVjY/W1ASw+N+xrCRaKhcs76ZIcrVRf9xXhOnWzno=",
+        "owner": "misterio77",
+        "repo": "nix-colors",
+        "rev": "861546e123ef13c480338edbad8c6f2e7baf0777",
+        "type": "github"
+      },
+      "original": {
+        "owner": "misterio77",
+        "repo": "nix-colors",
+        "type": "github"
+      }
+    },
+    "nix-ld": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": "utils"
+      },
+      "locked": {
+        "lastModified": 1652641841,
+        "narHash": "sha256-TTBz20XR2vmvOSDu8hXcbHbOEI0t/IWq8vZuRKyep1E=",
+        "owner": "Mic92",
+        "repo": "nix-ld",
+        "rev": "c25cc4b5ec65f03c2bb96f927ae724a59c51d7ee",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "nix-ld",
+        "type": "github"
+      }
+    },
+    "nixlib": {
+      "locked": {
+        "lastModified": 1636849918,
+        "narHash": "sha256-nzUK6dPcTmNVrgTAC1EOybSMsrcx+QrVPyqRdyKLkjA=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "28a5b0557f14124608db68d3ee1f77e9329e9dd5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "type": "github"
+      }
+    },
+    "nixos-generators": {
+      "inputs": {
+        "nixlib": "nixlib",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1660727616,
+        "narHash": "sha256-zYTIvdPMYMx/EYqXODAwIIU30RiEHqNHdgarIHuEYZc=",
+        "owner": "nix-community",
+        "repo": "nixos-generators",
+        "rev": "adccd191a0e83039d537e021f19495b7bad546a1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixos-generators",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1662019588,
+        "narHash": "sha256-oPEjHKGGVbBXqwwL+UjsveJzghWiWV0n9ogo1X6l4cw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2da64a81275b68fdad38af669afeda43d401e94b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-22_05": {
+      "locked": {
+        "lastModified": 1661656705,
+        "narHash": "sha256-1ujNuL1Tx1dt8dC/kuYS329ZZgiXXmD96axwrqsUY7w=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "290dbaacc1f0b783fd8e271b585ec2c8c3b03954",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "release-22.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-lib": {
+      "locked": {
+        "lastModified": 1655599917,
+        "narHash": "sha256-kjZbt5WdTrnjMxL79okg9TCoRUdADG50x/TWozbyTsE=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "5fb55578aa2f1a502d636a8ac71aece57cb730bb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "type": "github"
+      }
+    },
+    "nur": {
+      "locked": {
+        "lastModified": 1662170849,
+        "narHash": "sha256-bIY4zURNsvaUK2eVoMz02lBDZPLwXP2KzinNvEWtlsw=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "258028926ec1a0976a6f9ec1c106e7cc1345f0c0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
+    "poetry2nix": {
+      "inputs": {
+        "flake-utils": [
+          "nix-alien",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nix-alien",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1657626303,
+        "narHash": "sha256-O/JJ0hSBCmlx0oP8QGAlRrWn0BvlC5cj7/EZ0CCWHTU=",
+        "owner": "nix-community",
+        "repo": "poetry2nix",
+        "rev": "920ba682377d5c0d87945c5eb6141ab8447ca509",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "poetry2nix",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "devshell": "devshell",
+        "dotfiles": "dotfiles",
+        "emacs-overlay": "emacs-overlay",
+        "flake-utils": "flake-utils",
+        "guix-overlay": "guix-overlay",
+        "helix-editor": "helix-editor",
+        "home-manager": "home-manager",
+        "neovim-nightly-overlay": "neovim-nightly-overlay",
+        "nix-alien": "nix-alien",
+        "nix-colors": "nix-colors",
+        "nix-ld": "nix-ld",
+        "nixos-generators": "nixos-generators",
+        "nixpkgs": "nixpkgs",
+        "nur": "nur",
+        "rust-overlay": "rust-overlay_2",
+        "sops-nix": "sops-nix"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "helix-editor",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1662087605,
+        "narHash": "sha256-Gpf2gp2JenKGf+TylX/YJpttY2bzsnvAMLdLaxoZRyU=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "60c2cfaa8b90ed8cebd18b214fac8682dcf222dd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_2": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1662087605,
+        "narHash": "sha256-Gpf2gp2JenKGf+TylX/YJpttY2bzsnvAMLdLaxoZRyU=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "60c2cfaa8b90ed8cebd18b214fac8682dcf222dd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-22_05": "nixpkgs-22_05"
+      },
+      "locked": {
+        "lastModified": 1661660105,
+        "narHash": "sha256-3ITdkYwsNDh2DRqi7FZOJ92ui92NmcO6Nhj49u+JjWY=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "d92fba1bfc9f64e4ccb533701ddd8590c0d8c74a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
+      }
+    },
+    "utils": {
+      "locked": {
+        "lastModified": 1652372896,
+        "narHash": "sha256-lURGussfF3mGrFPQT3zgW7+RC0pBhbHzco0C7I+ilow=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "0d347c56f6f41de822a4f4c7ff5072f3382db121",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
+#+end_example

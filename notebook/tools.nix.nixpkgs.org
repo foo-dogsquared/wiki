@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       f884a71c-0a0f-4fd7-82ff-00674ed4bd66
+:END:
+#+title: nixpkgs
+#+date: 2022-09-03 15:02:21 +08:00
+#+date_modified: 2022-09-03 20:26:16 +08:00
+#+language: en
+
+
+The main repository of what [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]] mainly offers.
+This is where you get most of the updates from whether you're using [[id:7e8e83d5-4b08-44f6-800d-a322f6960a62][NixOS]] or in a foreign distro to update the list of packages.
+
+It contains a lot of stuff such as...
+
+- Massive set of package definitions (about 80k as of 2022-09-03) for various applications and dependencies.
+- [[roam:NixOS modules]] for various programs, services, and the basis for NixOS, in general.
+- A library that extends the builtin functions from [[id:a57e63a7-6daa-4639-910d-c6648df156a3][Nix language]].
+  - Includes a way to painlessly define derivations to compile with =stdenv.mkDerivation=.
+  - Various support for easily packaging projects made in different programming languages are also built on top of =mkDerivation=.
+- Various mechanisms to make packaging easier such as [[id:75790f28-48de-462d-9503-eb2d6206df72][nixpkgs setup hooks]].
+
+Being familiar with nixpkgs allows you to understand NixOS better and define packages in a more idiomatic way.
+It's a large repository with Nix code so it is a nice way to learn more about Nix.
+
+Among other things, it is made to be extensible as seen with features like...
+
+- [[id:8568ce92-99a8-4d20-9723-eee41a507327][Nix overrides and overlays]] that allows fine-grained changes to package definitions and changes part of the package set that nixpkgs has.
+- Its standard library can be extended further with =lib.extends=.

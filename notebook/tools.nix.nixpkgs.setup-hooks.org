@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       75790f28-48de-462d-9503-eb2d6206df72
+:END:
+#+title: nixpkgs setup hooks
+#+date: 2022-09-02 23:33:05 +08:00
+#+date_modified: 2022-09-03 17:41:41 +08:00
+#+language: en
+
+
+Setup hooks are additional steps given from a package typically written as a shell script.
+
+They are usually defined in a package with common build steps that would otherwise be repeated on a lot of packages such as...
+
+- [[https://github.com/NixOS/nixpkgs/blob/350fd0044447ae8712392c6b212a18bdf2433e71/pkgs/development/tools/build-managers/meson/setup-hook.sh][Meson]] where it gives common arguments such as the [[https://www.gnu.org/software/automake/manual/html_node/Standard-Directory-Variables.html][GNU directory variables]] relative to the output from the derivation (i.e., ~out~).
+- [[https://github.com/NixOS/nixpkgs/blob/350fd0044447ae8712392c6b212a18bdf2433e71/pkgs/development/interpreters/guile/setup-hook-3.0.sh][Guile]] where it set up different search paths related to GNU Guile.
+- [[https://github.com/NixOS/nixpkgs/blob/350fd0044447ae8712392c6b212a18bdf2433e71/pkgs/development/interpreters/python/wrap.sh][Python]] also works similarly to Guile's only with a lot more of setup hooks for building and wrapping programs build with Python as it is used for various functions (e.g., =buildPythonPackage=, =buildPythonApplication=).
+
+You can see more setup hooks example at ~pkgs/build-support/setup-hooks~ from roam:nixpkgs.
+
+- Adding a setup hook is made with ~setupHook~ attribute from ~stdenv.mkDerivation~ where it needs either a path or a derivation.
+
+- You could also make a setup hook with additional environment with ~makeSetupHook~ function.
