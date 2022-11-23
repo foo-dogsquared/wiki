@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+podman container list --format "{{.ID}} {{.Names}}" \
+    | fzf --multi --prompt "Choose containers to remove > " \
+    | awk '{print $1}' \
+    | xargs podman container rm

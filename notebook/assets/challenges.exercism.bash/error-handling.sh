@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 function help() {
     echo "Usage: error_handling.sh <person>"
 }

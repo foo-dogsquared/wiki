@@ -3,7 +3,7 @@
 :END:
 #+title: Exercism track: Bash
 #+date: "2021-05-11 15:06:43 +08:00"
-#+date_modified: "2021-06-22 17:50:43 +08:00"
+#+date_modified: "2022-09-04 22:17:41 +08:00"
 #+language: en
 #+source: https://exercism.io/my/tracks/bash
 #+property: header-args  :cache yes
@@ -43,7 +43,7 @@ main() {
 main
 #+end_src
 
-#+results[9110ed5ee1cd74dc35880e0e285e44fc1f04e858]:
+#+results[98aae568f58e5e1b2267b6c21e9efbb8c8a555b3]:
 : Hello, World!
 
 

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+podman image search --format "{{.Index}} {{.Name}}" alpine \
+    | fzf --multi --prompt "Choose images to install > " \
+    | awk '{print $2}' \
+    | xargs podman image pull

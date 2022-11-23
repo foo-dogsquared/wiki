@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Builds an image from the Dockerfile of the current directory.
+podman build --tag todo-list-web-app .
+
+# List the images to see if our app image has been built.
+podman image list
+
+# Assuming the app creates an HTTP server at port 5000, we'll expose it to the host, making it accessible from there.
+podman run -d -p 5111:5000 todo-list-web-app
+
+# See if we did run a containerized version of our app.
+podman container list
+
+# Tag the image with the convention seen in Docker registry.
+podman tag foodogsquared/python-helloworld:v1.0.0
+
+# Push the image to the Docker registry (assuming you've already logged in to Docker registry).
+podman push foodogsquared/python-helloworld

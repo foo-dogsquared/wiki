@@ -3,9 +3,10 @@
 :END:
 #+title: Command line: Podman
 #+date: "2021-06-10 11:51:26 +08:00"
-#+date_modified: "2021-07-20 23:31:29 +08:00"
+#+date_modified: "2022-11-23 17:48:46 +08:00"
 #+language: en
 #+property: header-args  :eval no
+#+property: header-args:bash  :shebang "#!/usr/bin/env bash"
 
 
 Podman is a daemonless container engine.
@@ -38,16 +39,18 @@ Podman has Git-style command-line interface with subcommands and exclusive optio
   + =-t, --tag [NAME]= attaches a tag to the image.
   + =-f, --file [FILE]= sets the name of the Dockerfile to be built from.
 
-- =run= will create a container from an image.
+- =run= creates a container from an image quickly with the given subcommand.
   + =-d, --detach= will make the process run in the background.
   + =-it= will make an interactive shell.
   + =-p, --publish= exposes the port of the image to the host.
 
-- =tag= will tag an existing image.
+- =tag= tags an existing image.
   Useful for correcting tags for pushing into a remote registry.
 
 - =image= is anything about interaction with images.
   In fact, a lot of the subcommands presented so far are aliases with =image= being the original — e.g., =image tag= vs =tag=, =image pull= vs =pull=, =image rm= vs =rmi=.
+
+- =commit= creates a new image from a container, allowing to easily create one with all the changes you always have to apply previously.
 
 
 
@@ -61,7 +64,7 @@ Podman is a big tool so it needs a big list of examples.
 
 As with big tools, comes with a big quickstart.
 
-#+begin_src shell
+#+begin_src bash  :tangle (my/concat-assets-folder "podman-quickstart")
 # Builds an image from the Dockerfile of the current directory.
 podman build --tag todo-list-web-app .
 
@@ -98,9 +101,21 @@ podman image list --format "{{.ID}} {{.Repository}} {{.Tag}}" \
 
 Yes, another one with fzf...
 
-#+begin_src bash
+#+begin_src bash  :tangle (my/concat-assets-folder "fzf-podman-image-pull")
 podman image search --format "{{.Index}} {{.Name}}" alpine \
     | fzf --multi --prompt "Choose images to install > " \
     | awk '{print $2}' \
     | xargs podman image pull
+#+end_src
+
+
+** Interactive container removal
+
+Basically, the previous scripts except for containers.
+
+#+begin_src bash  :tangle (my/concat-assets-folder "fzf-podman-container-rm")
+podman container list --format "{{.ID}} {{.Names}}" \
+    | fzf --multi --prompt "Choose containers to remove > " \
+    | awk '{print $1}' \
+    | xargs podman container rm
 #+end_src

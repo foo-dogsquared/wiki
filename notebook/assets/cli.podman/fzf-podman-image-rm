@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+podman image list --format "{{.ID}} {{.Repository}} {{.Tag}}" \
+    | fzf --multi --prompt "Choose images to remove > " \
+    | awk '{print $1}' \
+    | xargs podman image rm
