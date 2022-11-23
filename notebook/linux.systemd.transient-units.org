@@ -3,13 +3,13 @@
 :END:
 #+title: systemd transient units
 #+date: 2021-08-02 12:01:49 +08:00
-#+date_modified: 2022-04-16 20:01:51 +08:00
+#+date_modified: 2022-09-20 19:44:14 +08:00
 #+language: en
 
 
 You can create units on-the-go with =systemd-run=.
 Very useful for quickly creating and scheduling one-off services.
-This tool mainly involves [[id:cd5f0d04-d9bb-44e8-a0f2-630ea58c1e94][systemd services]] and [[id:f1b21fc8-86a5-47cd-b3d8-da6ac7a34427][systemd timers]].
+Among other things, this can easily create [[id:cd5f0d04-d9bb-44e8-a0f2-630ea58c1e94][systemd services]], [[id:f1b21fc8-86a5-47cd-b3d8-da6ac7a34427][systemd timers]], and [[roam:systemd path units]] which can be interacted with systemd tools as usual.
 
 Like most systemd-related binaries, this can be run at system- and user-level (see [[id:c7edff80-6dea-47fc-8ecd-e43b5ab8fb1e][systemd at user-level]]).
 
@@ -17,8 +17,14 @@ Like most systemd-related binaries, this can be run at system- and user-level (s
 # This will create a user-level service file with the given command as the task.
 systemd-run --user borgmatic --config emergency-config.yaml --verbose
 
-# Create a transient timer for the service.
-systemd-run --user borg-backup@external-drive.service --on-calendar=12:00
+# Create a transient timer for a unit.  This is useful for one-off scheduling
+# for a certain service.
+systemd-run --user --unit borg-backup@external-drive.service --on-calendar=12:00
+
+# Create a transient path unit. This is useful for situations such as debugging
+# configurations that is being used by a service. Take note, it does not
+# properly escape unit specifiers and will not be considered an absolute path.
+systemd-run --user --unit bspwm.service --path-property="PathChanged=${XDG_CONFIG_HOME}/bspwmrc"
 #+end_src
 
 The result should give you the generated name of the unit.

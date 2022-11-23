@@ -3,7 +3,7 @@
 :END:
 #+title: NixOS
 #+date: 2021-08-28 17:11:24 +08:00
-#+date_modified: 2022-05-22 21:23:19 +08:00
+#+date_modified: 2022-07-15 21:06:54 +08:00
 #+language: en
 
 
@@ -21,3 +21,19 @@
     one of them is the inability to run precompiled binaries (including AppImages which rely on system libraries) since most of them rely on the files that are expected to be present in the traditional distros like Debian and Fedora
   - because of the non-existent FHS, you have to compile and/or create a derivation for that project;
     workarounds exists for certain situations like AppImages and programs that expects a system with FHS but you still have to create a Nix package for it
+
+* Benefits of NixOS
+:PROPERTIES:
+:ID:       97b63788-e8b3-42d2-81f0-76b85b6aaf65
+:END:
+- one of the nicest advantage of Nix-based systems is having hermetic builds;
+  this means that configurations are made only from the package manager;
+  with Nix being the way it is, all of its files come from the Nix store which contains unique versions of different packages and inputs (derivations);
+  in practice, configuration are applied by building it first by the package manager then symlinking the output from the store to various points in the filesystem;
+- coming from the sysadmin perspective, hermetic builds means it has mitigations against configuration drifts;
+  - in roam:Ansible, configurations are applied by processes which can leave files behind;
+    while it can keep track of changes and processes are usually idempotent, Ansible doesn't deal with removed changes which means manual intervention and a potential configuration drift;
+    in short, Ansible looks more of a task runner than a configuration framework
+  - in Nix-based systems, configurations are built and then applied over the system by the package manager as an atomic update;
+    having the configuration seen as one output by the package manager means removed changes are not much of a problem since they are part of another output which can be reapplied if those changes are needed
+    additionally, Nix keeps track of the configurations through generations

@@ -3,7 +3,7 @@
 :END:
 #+title: systemd
 #+date: "2021-05-20 22:37:22 +08:00"
-#+date_modified: "2022-04-19 20:21:56 +08:00"
+#+date_modified: "2022-09-29 12:21:34 +08:00"
 #+language: en
 #+property: header-args  :eval no
 
@@ -53,7 +53,16 @@ systemctl --user start $SERVICE
 
 
 
-* Extra information
+* Navigating systemd documentation
+:PROPERTIES:
+:ID:       352629df-916a-442a-b81c-af71ef34a475
+:END:
+
+Because of the wide scope of the tool, it is best to know where you can find certain information.
+Here's an exhaustive list of the locations.
+
+- Most sensible distributions should include the manual pages from the software.
+  systemd has a lot of them from knowing [[id:f1b21fc8-86a5-47cd-b3d8-da6ac7a34427][systemd timers]] at =systemd.timers.5=, the unit formats and their locations at =systemd.unit.5=.
 
 - =systemd.directives.7= is an index of configuration directives including unit keys, environment variables, and command line options for systemd-related things.
   Also contains the related manual pages for a deeper references.
@@ -61,5 +70,18 @@ systemctl --user start $SERVICE
 
 - On a similar note, =systemd.index.7= is an alphabetical index of the important keywords found in systemd.
 
+
+
+
+
+* Extra information
+
 - =systemd.mount= units require the filename to be the mountpoint.
   Though, it has to be converted to what systemd accepts (e.g., =systemd-escape --path $PATH=).
+
+- systemd has a few usual units such as =default.target= which is a target for the current environment of the user.
+  It can be get with =systemctl get-default= command.
+  More can be seen with =systemd.special.7= from the manual.
+
+- Not all units are equal as systemd treats some units specially.
+  You can see what these specific units are and what it does with =systemd.special.7= from the manual.

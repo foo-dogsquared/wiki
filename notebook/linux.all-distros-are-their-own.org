@@ -3,7 +3,7 @@
 :END:
 #+title: How all Linux distros are technically operating systems of their own
 #+date: 2022-05-22 21:02:46 +08:00
-#+date_modified: 2022-06-19 12:10:16 +08:00
+#+date_modified: 2022-06-19 12:52:58 +08:00
 #+language: en
 
 
@@ -20,13 +20,15 @@ Even by then, some of them follow the standard differently with their own tweaks
 
 - Other Linux distros such as roam:GoboLinux redefines the FHS completely considering user-friendliness by making the filesystem as the database itself.
 
-- Several software have been patched differently on several Linux distributions.
-  [[roam:Fedora Linux]], for example, has patches on Firefox that eventually made their way upstream.
-  [[roam:Debian Linux]]
+- Different Linux distributions have different policies on certain things.
+  [[roam:Debian Linux]] is a major example of this with the packages modified to suit Debian's packaging policies.
+  This makes usage a bit differently: you're not using a web server in a traditional Linux way, you're using it in Debian's way.
+  [[roam:Fedora Linux]] is an example of trying to follow upstream as close as possible.
 
 - Ecosystems move at a different pace with different focus.
   [[id:f3f1201a-9fb9-4481-981f-5f50f8982a5e][Arch Linux]], for example, takes the pragmatic approach with an up-to-date list of software.
   [[roam:Fedora Linux]], as another example, is heading towards futuristic approaches for application development with a bias for Red Hat-backed products (e.g., roam:Flatpak, [[id:20830b22-9e55-42a6-9cef-62a1697ea63d][systemd]]).
+  [[roam:Debian Linux]] is focused on stability.
 
 A lot of the distros are made by small pockets of communities that also interacts with the rest of the ecosystem.
 This is where [[id:31c16009-b965-4288-8654-93a404c0961c][Collaboration through competition]] manifests from parallel efforts.
