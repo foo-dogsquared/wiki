@@ -1,4 +1,4 @@
-name: Generate site to GitHub pages
+name: Build and deploy to Netlify
 on:
   push:
     branches:
@@ -13,18 +13,23 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - name: Setup for static site generation
         run: |
-          nix-shell -p nodejs
+          nix develop
           mv notebook/ site/public/
           cd site
           npm install
           npm run build
-      - name: Deploy to GitHub Pages
-        if: success()
-        uses: crazy-max/ghaction-github-pages@v2
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
         with:
-          jekyll: false
-          target_branch: gh-pages
-          build_dir: site/out
+          publish-dir: ./site/out
+          production-branch: master
+          production-deploy: ${{ github.ref_name == 'master' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          enable-commit-status: true
+          overwrites-pull-request-comment: false
         env:
-          GITHUB_TOKEN: ${{ secrets.PAGES_TOKEN }}
-
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
