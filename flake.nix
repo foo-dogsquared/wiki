@@ -9,17 +9,26 @@
     foo-dogsquared-nixos-config.inputs.flake-utils.follows = "flake-utils";
   };
 
-  outputs = inputs@{ self, nixpkgs, ... }: let
-    overlays = [
-      inputs.foo-dogsquared-nixos-config.overlays.default
-    ];
-    defaultSystem = inputs.flake-utils.lib.system.x86_64-linux;
-    systems = with inputs.flake-utils.lib.system; [ defaultSystem ];
-    forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
-  in {
-    devShells = forAllSystems (system: let
-      pkgs = import nixpkgs { inherit system overlays; };
+  outputs = inputs@{ self, nixpkgs, ... }:
+    let
+      overlays = [
+        inputs.foo-dogsquared-nixos-config.overlays.default
+      ];
+      defaultSystem = inputs.flake-utils.lib.system.x86_64-linux;
+      systems = with inputs.flake-utils.lib.system; [ defaultSystem ];
+      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
     in
-      { default = import ./shell.nix { inherit pkgs; }; });
-  };
+    {
+      devShells = forAllSystems (system:
+        let
+          pkgs = import nixpkgs { inherit system overlays; };
+        in
+        { default = import ./shell.nix { inherit pkgs; }; });
+
+      formatter = forAllSystems (system:
+        let
+          pkgs = import nixpkgs { inherit system overlays; };
+        in
+        pkgs.treefmt);
+    };
 }

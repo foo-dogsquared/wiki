@@ -15,12 +15,19 @@ pkgs.mkShell {
     gnumake
     gnuplot
     graphviz
+    jq
     lilypond
+    libcs50
     nodejs-16_x
     octaveFull
     python3WithPackages
     racket
     R
     recoll
+
+    # A bunch of formatters...
+    stylua # ...for Lua.
+    rustfmt # ...for Rust.
+    nixpkgs-fmt # ...for Nix.
   ];
 }
