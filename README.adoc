@@ -130,6 +130,16 @@ Separate as may be, they can freely link other notes.
 ** Appendix — e.g., `#+begin_appendix`.
 ** link:https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions/[Admonition blocks] — e.g., `\#+begin_important`, `#+begin_tip`, `#+begin_warning`.
 
+* Labels are freely used for my notes as an easy way to refer to various Org mode elements.
+They are mainly inspired from how I used to label objects in LaTeX.
+
+** `lst` for source code blocks.
+** `itm` for enumerated list items.
+** `eqn` for equations.
+** `fig` for pictures and graphics.
+** `subfig` for parts of figures.
+** `tab` for tables.
+
 * All of my notes (in a normal sense) are in link:./notebook[`./notebook`].
 Mainly uses https://zk.zettel.page/types-of-notes[the convention of note categories found in zk.zettel.page].
 But in practice, the separation is a bit blurry so feel free to combine them in some way.
@@ -204,7 +214,7 @@ Just see my link:https://github.com/foo-dogsquared/dotfiles/tree/75de71b4d0dfe79
 
 * The related assets are stored in the link:./assets/[`./assets/`].
 It contains anything that a document should attach.
-In certain cases where the document has tangled files, it should be put in a separate folder with the filename of the org-mode document — e.g., `2021-04-06-15-04-11.org` should have an asset folder in `./assets/2021-04-06-15-04-11/`.
+In certain cases where the document has tangled files and the appropriate assets folder is not located at the project root, it should be put in a separate folder with the filename of the org-mode document — e.g., `./notebook/2021-04-06-15-04-11.org` should have an asset folder in `./notebook/assets/2021-04-06-15-04-11/`.
 
 ** If one of the files is being linked from more than one note, you can move the file out in the top-level of the asset folder.
 
