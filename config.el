@@ -91,6 +91,12 @@ folder with its buffer filename."
                                (file ,(f-join +wiki-notebook-directory "literature.${citekey}.org"))
                                :unnarrowed t)
 
+                              ("j" "journals" plain
+                               (file ,(f-join +wiki-directory "templates" "journal.org"))
+                               :target
+                               (file ,(f-join +wiki-notebook-directory "journals.${slug}.org"))
+                               :unnarrowed t)
+
                               ("d" "dailies" entry "* %?"
                                :target
                                (file+head ,(expand-file-name "%<%Y-%m-%d>.org" org-roam-dailies-directory) "#+title: %<%Y-%m-%d>\n"))

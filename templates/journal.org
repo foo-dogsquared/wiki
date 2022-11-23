@@ -1,0 +1,25 @@
+#+title: Journals: ${title}
+#+date: %<%Y-%m-%d %T %:z>
+#+date_modified: %<%Y-%m-%d %T %:z>
+#+language: en
+
+
+* Goals and expectations
+# Put what you expect out of your journey as well as the expected time span to
+# get to that part. For example, if you want to draw to the level of professionals
+# in 10 months. Just like in most parts, be sure to put timestamps to be absolute
+# with the ISO 8601 format (YYYY-MM-DD).
+
+* Resources, preparations, and execution
+# This is where you list a bunch of resources you scouted, the materials and
+# things that you need at some point in the future, and how to make your goals
+# come true as previously mentioned from the Goals and expectations section.
+
+* Habits and todos
+# If you want to make some skill building, you can lay all of the habits and
+# things you want to do in a solid tasklist. With the right configuration,
+# org-agenda will include the things here.
+
+* %<%Y-%m-%d>
+# With the goals and plans laid out, you can now start your journalling starting
+# today.
