@@ -1,0 +1,212 @@
+:PROPERTIES:
+:ID:       b0f0bb3f-9b8b-4035-b45f-021299918711
+:END:
+#+title: Journals: Learning how to sysadmin
+#+date: 2022-11-10 14:14:04 +08:00
+#+date_modified: 2022-11-24 16:53:09 +08:00
+#+language: en
+
+
+* Goals and expectations
+
+While I've been managing a Linux desktop installation, it isn't the same as adminstering systems in a server setting.
+So I want to learn by properly managing a server in some cloud platform (e.g., [[roam:Amazon Web Services]], [[roam:Google Cloud Platform]], [[roam:Microsoft Azure]]).
+I would want to manage one (maybe with a [[roam:Debian Linux]] installation) in at least a quarter of a year and get to a level of getting a job out of it.
+
+To be able to know the lay of the land, I'm able to find job listings from various sources [fn:: Where quality may vary but if you have no idea nor connections to start with, it's a good indicator as long as there's other more credible sources.].
+The average list of skillset required seems to lean on the following:
+
+- Knowledge in Linux components
+  - roam:nginx
+  - [[roam:Shell scripting]]
+- Development deployment tools, mostly related to containers such as...
+  - [[id:9e4f04d4-00a3-4898-ac98-924957fa868b][Kubernetes]]
+  - roam:Docker (or roam:Podman)
+- Knowledge in managing Windows servers
+  - Active Directory
+  - LDAP user and group administration
+  - roam:Powershell
+
+This means I would have to start at 2022-11-10 and reach that level at least in 2023-02-10.
+
+
+* Resources, preparations, and execution
+
+The simplest way to get started is to maintain a server for a variety of purposes.
+You could maintain a server for...
+
+#+name: lst:example-services
+- A password manager for your private accounts (e.g., Bitwarden or Vaultwarden).
+- A game server for your friends (e.g., Minecraft).
+- A code forge to store your own code (e.g., GitLab, Gitea).
+- An audio server that can be used to play anywhere on your devices (e.g., Funkwhale, Navidrome).
+- A content management system to serve your organization (e.g., Wordpress, Grav).
+- A web server for your web applications.
+- A chat server for your community (e.g., XMPP server, Matrix server).
+- A social media instance for your community (e.g., Mastodon, Pleroma, Misskey, Lemmy).
+
+In order to get started, you have to choose a virtual private server (VPS) host.
+There are several of them to get started including the big 3 web services (roam:AWS, roam:GKE, and [[roam:Microsoft Azure]]), Digital Ocean, Hetzner Cloud, Linode, and vultr.
+Each of them has a starting tier (with the big 3 has a free tier as long as you have a valid credit card information) that is under $5 dollars in average.
+
+Alongside the [[lst:example-services][list of services]] that you might be interested in, there are a lot of applications and services to be interested.
+
+- You could look into the services offered by [[https://yunohost.org/][Yunohost]], a Linux distribution that is primarily targeted to self-hosting services.
+- There's a lot of services hosted at [[https://github.com/awesome-selfhosted/awesome-selfhosted][awesome-selfhosted/awesome-selfhosted]] from GitHub.
+- Any services from [[roam:NixOS modules]].
+
+
+* Habits and todos
+
+** TODO Learn kubernetes and Google Kubernetes Engine
+SCHEDULED: <2022-11-10 Thu>
+*** TODO Deploy a Vaultwarden instance
+*** TODO Deploy an Archivebox service
+*** TODO Deploy an RSS feed service
+*** TODO Deploy a cluster
+** TODO Manage a Linux server for at least 3 months
+<2022-11-10 Thu>--<2023-02-10 Fri>
+** TODO Manage a Windows server for at least 3 months
+<2022-12-10 Sat>--<2023-03-10 Fri>
+** TODO Deploy a NixOS image in virtual private server host
+*** TODO Deploy with deploy-rs
+*** TODO Deploy in Google Cloud Platform Compute Engine
+*** TODO Deploy in Microsoft Azure Linux VM
+*** TODO Deploy in Hetzner Cloud
+
+
+* 2022-11-10
+
+Started to journal my journey for system adminstering up to semi-professional standards.
+For now, I'm scouting my options though I previously tried with Google Cloud Platform and deploying a [[id:9e4f04d4-00a3-4898-ac98-924957fa868b][Kubernetes]] cluster on it.
+I might manage a Linux virtual machine right away using Compute Engine from Google Cloud Platform.
+I'm very tempted to make it with a NixOS image as similarly laid out in [[https://ayats.org/blog/deploy-rs-example/][this blog post]] however I'm going with Debian as it is closer to traditional setup.
+I may even consider something like Red Hat Linux or Rocky Linux.
+
+
+* 2022-11-11
+
+Retested the installation for cert-manager with [[https://cert-manager.io/docs/tutorials/getting-started-with-cert-manager-on-google-kubernetes-engine-using-lets-encrypt-for-ingress-ssl/][their page with Google Kubernetes Engine]] and I still didn't able to successfully complete using only a raw IP address.
+Opportunity to buy a domain for myself and follow it the next time.
+
+I'm very very tempted to make a NixOS deployment image as I've already seen what I can do with it but for now, I'll stick with the traditional tools.
+However... managing both is an option. :)
+
+
+* 2022-11-12
+
+For now, I've been just managing a Debian virtual machine and successfully launched a publicly-accessible web server.
+Mostly involves enabling the service for the web server and configuring the firewall.
+It cannot be accessed easily since the instance's external IP is ephemeral.
+As for letting HTTPS access, there is no such thing since signing certificates is only done with domains and I'm only accessing the server with a bare IP address.
+
+This is the first time I have to worry about the lower-level things I haven't touched with the usual processes such as deploying websites and all.
+
+Anyways in case you're curious, why Debian?
+
+- It is stable.
+  Though, I have options such as deploying images with [[id:7e8e83d5-4b08-44f6-800d-a322f6960a62][NixOS]].
+
+- Support and community is large.
+  It is a battle-tested distribution with a large package set and lots of resources have been written for this system.
+
+- Consequently, it has [[https://www.debian.org/doc/][extensive documentation]] not only for beginners but also for various aspects like [[https://www.debian.org/releases/][its releases]].
+  While [[https://wiki.debian.org/][its community wiki]] is not as thoroughly documented as [[https://wiki.archlinux.org/][Arch Wiki]], it often contains enough information to get you by when managing a Debian server.
+
+
+* 2022-11-13
+
+I haven't done anything much in this day.
+On the flip side, I'm overworrying about the price considering I'm in free trial and Google will only charge if I opt-in to activate the full account.
+It turns out it isn't much of a worry if I leave it alone.
+Having an ephemeral external IP address and being so low-value might have something to do with it.
+
+For now, I'm going to plan to create a simple wiki server with the traditional LAMP stack.
+What is it going to contain?
+Simply my findings and mainly for configuring Mediawiki as I'm assuming the role of a sysadmin.
+
+
+* 2022-11-16
+
+Unfortunately, progress has stalled for now since I don't have a usable bank account for now.
+Once it is available, progress should be quick with the availability of a domain name for me to mess around with.
+
+A domain name is surprisingly affordable.
+Just the services attached to it is where most of the expenses come from such as the domain email hosting and whatnot.
+For the domain registrar, I picked Porkbun since it has a lot of sales and it is generally cheaper than something like Google Domains.
+
+
+* 2022-11-22
+
+Setup my own blog with the domain.
+It was slightly confusing at this is my first time diving into the level of server and domain management.
+First time encountered concepts like the DNS, CDNs, and managing DNS records, all of which I've learned from [[https://www.cloudflare.com/learning/][Cloudflare documentation]] of all things.
+
+With the DNS management in place, I mostly learned how it interacts with the servers and makes it discoverable for other servers such as the effect of DNS caching which can take under a day to take effect.
+
+The main problem I have encountered is redirecting my blog in https://foo-dogsquared.github.io into my custom domain.
+However, I soon found out that all of the pages  under my GitHub Pages domain is affected, making all of my project pages part of the domain.
+The "easy" solution is just deploying my blog into a separate service and deploy the main GitHub Pages with a redirection page.
+It is also the time I haven't used [[https://www.netlify.com/][Netlify]] in a long while.
+
+The chain of problem never ends as now I would like to deploy my blog with Netlify easily.
+Unfortunately, Netlify doesn't have an easy way to install and bootstrap an installation of [[id:3b3fdcbf-eb40-4c89-81f3-9d937a0be53c][Nix package manager]] unlike using with [[id:319b52f8-5e60-4bbf-b649-73d864ed186f][GitHub Actions]].
+A solution for this would be using GitHub Actions to build and Netlify to deploy which fortunately [[https://github.com/nwtgck/actions-netlify][someone has already created a solution]].
+
+Most of the problems I have are from misunderstanding and misconceptions of how DNS and server management works.
+One of the prominent misconceptions I have is the DNS management is completely on the server, neglecting how clients can also affect the browsing experience.
+This unfortunately took me two hours to figure out and completely missing the real problem.
+Whoops...
+There are some still misunderstanding with the DNS though.
+I'll have to go with the basics.
+
+I also thought GitHub Pages can be separated from domain per project page.
+So that's another concept I didn't easily able to wrap around my head.
+
+Despite the fumbling around, I would say not bad.
+Now, I'm very very motivated to go self-hosting mode as I continue to host my [[https://github.com/foo-dogsquared/wiki][personal notes]] (that I continue to neglect updating).
+I would like to self-host a Vaultwarden and Archivebox instance the next day.
+
+# TODO: Illustration of Chain of encountered problems
+
+
+* 2022-11-23
+
+Another day, another time for DNS misadventures and misunderstanding.
+This time, most of the problems come from the misunderstanding of how hosting works which is far off from my recent idea of a hosting provider where each part of different domains can be specified to make up the frontend of your website.
+It turns out this is not the case.
+
+I was able to deploy my blog with Netlify and set it to my domain.
+Now, ~foodogsquared.one~ is open for the world!
+I still haven't solved the issue of missing icons from the deployment but I'm very confident it is an DNS issue seeing as the "missing files" can be viewed, just viewed with the inappropriate headers that cause them to be blocked.
+Not to mention, there is missing redirections for the old site which makes it inconvenient.
+The only hope is nobody visits my site as I'm already dormant for the most services this year.
+
+The thing only took about an hour where most of the time are spent in questioning and swatting the cache and tumbling over Porkbun's interface as I repeatedly reset and didn't realize my DNS records are kept being reset every time I want to point the domain to my GitHub Pages instance.
+
+In any case, I'm just to going to delay fixing the issues from the blog site because I want to self-host some services. ;p
+
+In this case, I want different services as part of one domain (e.g., my Vaultwarden and Archivebox instance under ~foodogsquared.one~).
+It turns out that while Netlify allows some form of domain management, it simply isn't flexible enough especially since the services I put together are more likely to come from different sources.
+I mean, simply deploying my blog already requires Netlify for it, what more for self-hosted services that Netlify cannot simply do?
+
+To make it possible, I have to manage a proxy server that lets me sew in those services altogether under one domain.
+That is, I want to access my Vaultwarden instance in ~vault.foodogsquared.one~, I want my feeds to be accessible in ~feeds.foodogsquared.one~, I want to self-host my code in ~forge.foodogsquared.one~ among other examples.
+Luckily for me, several of them exist such as [[https://www.nginx.com/][Nginx]], [[https://caddyserver.com/][Caddy]], and the good 'ol [[https://httpd.apache.org/][Apache HTTP server]] all of which listed software have capabilities beyond a simple server.
+However, I chose Nginx seeing as it is the popular tool in hand and also because a lot of job listings that list knowledge for nginx as part of their wishlists.
+
+Currently, I gave in to the temptation to configure all of the servers with [[id:7e8e83d5-4b08-44f6-800d-a322f6960a62][NixOS]].
+Alongside the fact that I already have enough for imperatively managing them servers, there are additional three main factors to this decision:
+
+- The declarative configuration.
+- A framework for generating custom images ([[https://github.com/nix-community/nixos-generators][nixos-generators]]) that is built on top of [[id:f884a71c-0a0f-4fd7-82ff-00674ed4bd66][nixpkgs]].
+- The fact I already have [[https://github.com/foo-dogsquared/nixos-config/][an existing configuration]] that can serve as a framework to easily instantiate individual nodes.
+
+The hardest part is creating my first image which is going to be deployed in Google Cloud Platform.
+The second hardest part is managing my Google Cloud Platform account as the mountainous amount of things I have to keep in mind whenever I'm staring at the dashboard of several cloud providers.
+The third hardest part is the amount of prerequisites before I even start doing one thing which is already a thing that the second hardest part is giving me.
+Unfortunate...
+
+On the other hand, my NixOS configuration is slowly turning to be a nice monorepo for deploying everything I want.
+It is surprisingly easier to manage them but the part that's giving me the hardest part is the deployment.
+As for private files and deployments, this is easy to manage with [[https://git-scm.com/docs/git-worktree][Git worktrees]] which is somewhat tedious to make sure my public and private branches to sync.
