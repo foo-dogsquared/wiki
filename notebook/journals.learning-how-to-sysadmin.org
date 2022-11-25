@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-11-24 16:53:09 +08:00
+#+date_modified: 2022-11-25 14:54:11 +08:00
 #+language: en
 
 
@@ -210,3 +210,27 @@ Unfortunate...
 On the other hand, my NixOS configuration is slowly turning to be a nice monorepo for deploying everything I want.
 It is surprisingly easier to manage them but the part that's giving me the hardest part is the deployment.
 As for private files and deployments, this is easy to manage with [[https://git-scm.com/docs/git-worktree][Git worktrees]] which is somewhat tedious to make sure my public and private branches to sync.
+
+
+* 2022-11-24
+
+The configuration for Vaultwarden are in place in my first NixOS-powered deployment but most of the problems are from the lack of understanding the networking infrastructure.
+Fortunately for me, there is the [[https://www.debian.org/doc/manuals/debian-handbook/][Debian Handbook]] with details on each facets on the infrastructure.
+It is specifically aimed for Debian systems but it is good enough if you're familiar with the interface (which is just a command-line shell such as Bash).
+
+Before that, the trouble comes from setting up a mailer which is troublesome if you only have a GMail account.
+However, I'm also considering to move my email provider from GMail to something else.
+Candidates include Fastmail, Zoho Mail, and mailbox.org, all of which has a paid plan (and also a long trial period of at least 2 weeks).
+In the end, I decided to not use mailing services altogether for my self-hosted services for the time being.
+
+As for self-hosting my code, I did initially consider Sourcehut since I'm largely interested in how much resources it needs to host it.
+However, that didn't work out as there seems to be a lot of maintenance required for my current needs which is simple right now.
+I still heavily consider it for future endeavors though especially with its comprehensive documentation and integration of services is just nice to have.
+Not to mention, Sourcehut is still in alpha which indicates the maintainers still have plans for it.
+Its primary maintainer especially [[https://news.ycombinator.com/item?id=31964064][considers Sourcehut to be easier to self-host]] so the plan of self-hosting Sourcehut is not entirely thrown away.
+
+In the end, I decided to use [[https://gitea.io/][Gitea]] considering there is already a NixOS module for it (at least in version 22.11) and implementing a new way to communicate between forges with [[https://forgefed.org/][ForgeFed]].
+This means collaboration between different instances is very much possible and I'm in support for them.
+
+Compared to Sourcehut, Gitea is simpler to initialize which I was able to quickly start an instance.
+Most of the time came from viewing the configuration options and testing the instance.
