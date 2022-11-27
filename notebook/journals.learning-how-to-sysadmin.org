@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-11-27 11:16:58 +08:00
+#+date_modified: 2022-11-27 11:20:42 +08:00
 #+language: en
 
 
@@ -251,3 +251,25 @@ Should be fun...
 I've also decided to full gung-ho on deploying Linux-based systems with NixOS.
 I've deleted all of the non-NixOS Linux-based systems in my fleet and started generating a bunch of NixOS GCE images.
 Should be doubly fun...
+
+
+* 2022-11-27
+
+For now, I've gone back to managing a deployment with Linux-based systems and try to *properly* manage this time around.
+
+For a start, I decided to manage the static websites separately from the server since [[https://answers.netlify.com/t/support-guide-why-not-proxy-to-netlify/8869][Netlify apparently does not bode well to proxies]].
+At the very least, those websites can now go at their own pace instead of deploying them altogether.
+
+Second, most of the services are misconfigured.
+Classic...
+Most of the domains and settings are not properly configured which means I have to review the documentation for the nth time.
+It's not exactly a chore especially that this is my first time managing all these things.
+Not to mention, NixOS surely does some things differently sometimes which does not go well with me especially that I rely on resources that are mostly written with the mainstream distributions in mind (i.e., Debian, Ubuntu).
+
+Finally, I'm now going to add one more component into my server which is [[https://www.postgresql.org/][PostgreSQL]].
+All of the services I've used so far can be configured to use SQLite which makes things easier but SQLite is mainly made with the filesystem in mind unlike PostgreSQL which is primarily made with network services.
+Fortunately for me, [[https://www.postgresql.org/docs/][its documentation]] is easy to follow.
+
+At least for tomorrow, I plan to manage one more component into the mix with an [[https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol][LDAP]] server for user and group management which has a lot of presence in job listings that I've seen.
+Fortunately for me, there is an [[https://www.openldap.org/][OpenLDAP]] service module already available in NixOS.
+I just have to be careful in chewing in managing this seemingly simple server.
