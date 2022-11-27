@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-11-25 14:54:11 +08:00
+#+date_modified: 2022-11-27 11:16:58 +08:00
 #+language: en
 
 
@@ -234,3 +234,20 @@ This means collaboration between different instances is very much possible and I
 
 Compared to Sourcehut, Gitea is simpler to initialize which I was able to quickly start an instance.
 Most of the time came from viewing the configuration options and testing the instance.
+
+
+* 2022-11-26
+
+The deployment failed because I forgot secrets management is a thing.
+Each infrastructure-as-a-service apparently have their own thing such as [[https://cloud.google.com/kms][Google Cloud Platform KMS]], [[https://azure.microsoft.com/en-us/products/key-vault/][Microsoft Azure Key Vault]], [[https://aws.amazon.com/kms/][Amazon Web Services KMS]], and [[https://www.hashicorp.com/products/vault][Hashicorp Vault]].
+It's a good thing I'm using [[https://github.com/mozilla/sops][sops]] for this.
+
+It's a short time from the previous days but it should go back to normal with the time to journal this abomination.
+Around this time I also signed up for Microsoft Azure free tier subscription for trying to manage a Windows server this time around.
+It should be simpler to start since I have absolutely no idea how to provision a thing but compared to my knowledge for Linux-based systems, it is non-existent.
+So most of the time spent will be learning all of the concepts from absolute zero experience.
+Should be fun...
+
+I've also decided to full gung-ho on deploying Linux-based systems with NixOS.
+I've deleted all of the non-NixOS Linux-based systems in my fleet and started generating a bunch of NixOS GCE images.
+Should be doubly fun...
