@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-11-27 11:20:42 +08:00
+#+date_modified: 2022-11-29 12:46:11 +08:00
 #+language: en
 
 
@@ -273,3 +273,28 @@ Fortunately for me, [[https://www.postgresql.org/docs/][its documentation]] is e
 At least for tomorrow, I plan to manage one more component into the mix with an [[https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol][LDAP]] server for user and group management which has a lot of presence in job listings that I've seen.
 Fortunately for me, there is an [[https://www.openldap.org/][OpenLDAP]] service module already available in NixOS.
 I just have to be careful in chewing in managing this seemingly simple server.
+
+
+* 2022-11-28
+
+Welp, most of the configurations of the services should be fixed but the last thing that remains is proper deployment with the secrets.
+While I could do that by simply transferring the private key into the virtual machine, it just misses the point of using a key management system which GCP already has.
+Pretty much, I'm missing out on it if I didn't use it so I have to use it. :)
+
+From what I can understand, with sops, you have to set the [[https://cloud.google.com/docs/authentication/application-default-credentials][proper credentials]] to be able to decrypt it.
+That's fine for local development environment but it isn't nice for deployed systems.
+One of the ways to properly set it is by using [[https://cloud.google.com/docs/authentication/provide-credentials-adc#attached-sa][a service account]] with the proper permissions which in this case for encrypting and decrypting GCP KMS keys.
+
+So I created a user-managed service account to be used for the server, set the proper permissions, and [[https://cloud.google.com/iam/docs/impersonating-service-accounts][make the user-managed account impersonate as the default service account]] because I don't want to manually manage that.
+Be sure to read up more on [[https://cloud.google.com/iam/docs/best-practices-service-accounts][how to properly manage service accounts]].
+
+The reason why I laid it all down in this writing is because the documentation of Google Cloud Platform is surprisingly nice to use... sometimes.
+The way they show different ways to accomplish a task with different tools (e.g., Console, ~gcloud~) is a nice touch.
+However, the amount of looping links makes it easy to get overwhelmed.
+Am I the only who just repeatedly visit between different pages just to get the idea from a single page?
+I understand the reasoning as a knowledge base that caters both to new and experienced users but it is something that I experienced.
+
+I feel like the process of simply doing those steps previously mentioned should take way shorter time than it should be.
+Most of the time is spent in staring at those pages, trying to see if I'm following it right.
+This is where I feel like I should've really started with [[https://go.qwiklabs.com/][Qwiklabs]] which I didn't is a thing when I started.
+Welp...
