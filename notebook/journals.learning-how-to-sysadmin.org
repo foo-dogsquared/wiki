@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-11-29 12:46:11 +08:00
+#+date_modified: 2022-12-02 12:30:09 +08:00
 #+language: en
 
 
@@ -298,3 +298,96 @@ I feel like the process of simply doing those steps previously mentioned should 
 Most of the time is spent in staring at those pages, trying to see if I'm following it right.
 This is where I feel like I should've really started with [[https://go.qwiklabs.com/][Qwiklabs]] which I didn't is a thing when I started.
 Welp...
+
+
+* 2022-12-01
+
+Here we go, start of December.
+Only two months to go before the deadline to become halfway to professional-level (or at least getting paid).
+
+I haven't done anything from the last two days so there's no entry for it.
+
+Still having some problems, mainly from PostgreSQL service this time.
+I'll use this opportunity to experiment debugging and maintaining services with PostgreSQL.
+Thankfully, its [[https://www.postgresql.org/docs/][documentation]] is very comprehensive especially that it has a dedicated chapter for server management.
+I'm only starting to wrap around my head with the concepts of a database and its management.
+
+The errors from the database service are more likely from the lack of proper privileges.
+From the Vaultwarden service, the new error this time looks like this.
+
+#+begin_src log
+Dec 01 01:41:03 localhost vaultwarden[762]: [2022-12-01 01:41:03.533][vaultwarden::util][WARN] Can't connect to database, retrying: DieselMig.
+Dec 01 01:41:03 localhost vaultwarden[762]: [CAUSE] QueryError(
+Dec 01 01:41:03 localhost vaultwarden[762]:     DatabaseError(
+Dec 01 01:41:03 localhost vaultwarden[762]:         __Unknown,
+Dec 01 01:41:03 localhost vaultwarden[762]:         "permission denied for schema public",
+Dec 01 01:41:03 localhost vaultwarden[762]:     ),
+Dec 01 01:41:03 localhost vaultwarden[762]: )
+#+end_src
+
+The error is a bit intuitive with the intuition being a permission error with the 'public' schema.
+I've simply resolved the error by adding the permissions from the NixOS config like the following snippet.
+
+#+begin_src nix
+{
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ vaultwardenDbName ];
+    ensureUsers = [
+      {
+        name = vaultwardenUserName;
+        ensurePermissions = {
+          "DATABASE ${vaultwardenUserName}" = "ALL PRIVILEGES";
+          "ALL TABLES IN SCHEMA public" = "ALL PRIVILEGES";
+        };
+      }
+    ];
+  };
+}
+#+end_src
+
+As an additional fact, I've quickly come across from the documentation that [[https://www.postgresql.org/docs/15/ddl-schemas.html#DDL-SCHEMAS-PUBLIC]['public' schema is the fallback schema for databases without names]].
+That's something to keep in mind in the future.
+
+But anyways, here's a light writing on the summarized version of my understanding of the database starting with its authorization process, the part where I'm spending the most time on understanding it.
+
+#+begin_quote
+Being accessible through different ways, widely available to other users, and globally contains various application data, the PostgreSQL service has ways to make sure access to the database is only done by trusted users.
+This is where authorization comes in similar to POSIX-based systems when authorizing access to various services.
+
+Inside of the database, various services (which serves as clients) want to access their data which the database contains a variety of them.
+In order to safely access them without much problems, PostgreSQL plants some ways to verify its client.
+There are different ways PostgreSQL can authorize access to different users.
+
+- Tried-and-true password authentication for the user it tries to access as.
+
+- LDAP authentication.
+
+- Another way is simply leaving a map of connections and their trusted users in a file (e.g., =pg_hba.conf=).
+
+- Accessing the database as one of the user of the system with the same name as the user of the database.
+  This makes sense: it is more likely a dedicated user specifically created for a certain service alongside a database for that service.
+  This authorization is referred to as an *ident authorization*.
+  Several examples include hosted services with dedicated setup (e.g., user and user group, database) as they're logically mapped from the operating system and its different components.
+#+end_quote
+
+As for the plan to maintain an LDAP server and user management with it, I'll start around this week hopefully.
+For now, the focus is debugging and maintaining a server.
+Mainly, by SSHing into the server and getting used to the maintenance tools with [[id:20830b22-9e55-42a6-9cef-62a1697ea63d][systemd]].
+
+There are also some things I've learned such as:
+
+- Creating a new unit file easily with ~systemctl edit --full --force $UNIT~ and it will just place it in one of the unit paths.
+- Easily viewing how much journal files took space with ~journalctl --disk-usage~ which also supports it at [[id:c7edff80-6dea-47fc-8ecd-e43b5ab8fb1e][systemd at user-level]] with =--user= flag.
+- Flushing all ephemeral journal files from =/run= to a persistent storage with ~journalctl --flush~.
+- Log rotation with ~journalctl --rotate~.
+- Ports lower than 1024 is a privileged port and normal users cannot use it. [fn:: It's a basic fact, yes, but I haven't paid attention to these details yet.]
+
+I'll get around to using a traditional Linux distro (Debian, again).
+While server management with NixOS is nice, I think getting used to the traditional environment nets more credibility.
+Though, it is getting easier to map concepts I'm getting from NixOS to the traditional setup with time.
+Especially that most of the things from NixOS are setting up services which could be done in any Linux environment anyways.
+
+While I'm at it, I'm starting to look into backup services.
+I'm already using [[https://borgbase.com][Borgbase]] with only the free 10 GB but it quickly ran out.
+For now, I'm looking for a cheaper option if there's any.
