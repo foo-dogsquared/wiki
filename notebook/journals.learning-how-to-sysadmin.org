@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-12-02 12:30:09 +08:00
+#+date_modified: 2022-12-04 00:00:16 +08:00
 #+language: en
 
 
@@ -391,3 +391,16 @@ Especially that most of the things from NixOS are setting up services which coul
 While I'm at it, I'm starting to look into backup services.
 I'm already using [[https://borgbase.com][Borgbase]] with only the free 10 GB but it quickly ran out.
 For now, I'm looking for a cheaper option if there's any.
+
+
+* 2022-12-02
+
+Hey, the Sendgrid account application has been approved.
+Well, that's one more service component to enable.
+
+There's also one very stupid mistake I didn't realize I'm making at this point from the very beginning: I keep hitting the [[https://letsencrypt.org/docs/duplicate-certificate-limit/][duplicate certification limit]] and I keep forgetting to backup the certificates.
+I KEEP DOING THIS FOR THE PRODUCTION DEPLOYMENT, WHAT THE HELL!
+I always thought the production only makes the same error as the development deployment.
+Welp, I'll just wait for a week then everything should be fine and dandy for the production.
+I'll just use test environments with domains with test subdomains on them while I'm at it.
+Or I could just generate a new request with a different "exact set" of domains as already mentioned from the Workarounds section from the aforementioned page.
