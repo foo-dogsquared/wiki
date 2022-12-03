@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-12-04 00:00:16 +08:00
+#+date_modified: 2022-12-04 00:01:47 +08:00
 #+language: en
 
 
@@ -404,3 +404,27 @@ I always thought the production only makes the same error as the development dep
 Welp, I'll just wait for a week then everything should be fine and dandy for the production.
 I'll just use test environments with domains with test subdomains on them while I'm at it.
 Or I could just generate a new request with a different "exact set" of domains as already mentioned from the Workarounds section from the aforementioned page.
+
+
+* 2022-12-03
+
+Today's theme for misconfigurations are permissions.
+Permission error for inaccessibility for PostgreSQL schemas for a certain user, permission error because the users does not have the permission to access the files, et cetera, et cetera.
+Though, we're now in the home stretch without much shenanigans.
+I'm now slowly chewing all of the things I bit off.
+
+On the other hand, I found out about how certificates are generated in NixOS with the default workflow.
+It is using [[https://go-acme.github.io/lego/][lego]] which has support for [[https://go-acme.github.io/lego/dns/][tons of DNS providers]] including Porkbun which is the domain registrar I used to buy my domain name.
+Nice!
+Now, there is more automation including taking care of setting the appropriate DNS records and now the shenanigans with certificates is on the past (or at least significantly reduced).
+All I have to take care of is my secrets file and managing my servers with some security which I created the following initial guidelines as a start.
+
+- Starting with removing the keys from various KMS such as from Google Cloud Platform.
+  This makes it easier to decrypt keys if someone has access to one of the users from its respective virtual machine instances since all of them are configured with their respective KMS enabled.
+  So they have to go.
+
+- Giving some more thought about managing secrets with their respective keys.
+  Some examples include giving the least privileges with the minimal number of keys plus a fallback key for emergency. [fn:: Which I don't know if that's even safer but as long as the emergency is exclusively used for its purpose, I think it's safe.]
+
+Also, while taking care of that, I also found out about [[https://kb.porkbun.com/article/190-getting-started-with-the-porkbun-api][Porkbun API]] which means I could create a simple program to interact with my DNS records instead of going to the website.
+There are still some things to set up in the website but that's not much of a problem.
