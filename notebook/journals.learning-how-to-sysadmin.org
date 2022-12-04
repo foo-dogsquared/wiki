@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-12-04 00:01:47 +08:00
+#+date_modified: 2022-12-04 22:07:31 +08:00
 #+language: en
 
 
@@ -55,25 +55,34 @@ Alongside the [[lst:example-services][list of services]] that you might be inter
 - There's a lot of services hosted at [[https://github.com/awesome-selfhosted/awesome-selfhosted][awesome-selfhosted/awesome-selfhosted]] from GitHub.
 - Any services from [[roam:NixOS modules]].
 
+Take note, each daily entry is made progress with 4 pomodoro sessions (2 hours) a day.
+Then, the writing is done after, trying to recollect my experience as much detail as possible.
+Anything more should explicitly be listed in the entry.
+
 
 * Habits and todos
 
-** TODO Learn kubernetes and Google Kubernetes Engine
+** DONE Learn kubernetes and Google Kubernetes Engine
 SCHEDULED: <2022-11-10 Thu>
-*** TODO Deploy a Vaultwarden instance
-*** TODO Deploy an Archivebox service
-*** TODO Deploy an RSS feed service
-*** TODO Deploy a cluster
+*** DONE Deploy a Vaultwarden instance
+*** DONE Deploy an Archivebox service
+*** DONE Deploy an RSS feed service
+*** DONE Deploy a cluster
 ** TODO Manage a Linux server for at least 3 months
 <2022-11-10 Thu>--<2023-02-10 Fri>
 ** TODO Manage a Windows server for at least 3 months
 <2022-12-10 Sat>--<2023-03-10 Fri>
 ** TODO Deploy a NixOS image in virtual private server host
-*** TODO Deploy with deploy-rs
-*** TODO Deploy in Google Cloud Platform Compute Engine
-*** TODO Deploy in Microsoft Azure Linux VM
+*** DONE Deploy with deploy-rs
+*** DONE Deploy in Google Cloud Platform Compute Engine
+*** HOLD Deploy in Microsoft Azure Linux VM
 *** TODO Deploy in Hetzner Cloud
-
+** TODO Self-hosted services
+*** DONE Vaultwarden
+*** DONE Gitea
+*** TODO Sourcehut
+*** TODO LDAP
+*** TODO MinIO
 
 * 2022-11-10
 
