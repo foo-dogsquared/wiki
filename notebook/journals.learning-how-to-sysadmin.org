@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-12-04 22:07:31 +08:00
+#+date_modified: 2022-12-06 14:32:38 +08:00
 #+language: en
 
 
@@ -437,3 +437,46 @@ All I have to take care of is my secrets file and managing my servers with some 
 
 Also, while taking care of that, I also found out about [[https://kb.porkbun.com/article/190-getting-started-with-the-porkbun-api][Porkbun API]] which means I could create a simple program to interact with my DNS records instead of going to the website.
 There are still some things to set up in the website but that's not much of a problem.
+
+
+* 2022-12-04
+
+Took a more serious approach to learning PostgreSQL this time because of primarily two reasons:
+
+- Apparently, there are [[https://www.postgresql.org/docs/15/release-15.html#id-1.11.6.6.4][changes related to the =public= schema]] which is where most of the problems are from.
+  That is indeed something to keep in mind as [[2022-12-01]] has already mentioned.
+
+- I only haphazardly glanced of the documentation before.
+  Really, the approach is more scattered: just debug the errors from the services and go to the appropriate chapters.
+  Which is fine for the most part but it can completely screw me over if I'm not mindful of the concepts.
+
+With the listed information in mind, I deduced the problems are really coming from the applications to use the default schema which is in =public= (which is problematic for my configuration).
+But I missed a very *very* crucial information that made me bash my head to this simple problem for hours over the previous days.
+Apparently, most of them services can be configured to use another schema.
+Yeah.
+That's it.
+What the hail...
+
+However, there are consequences that made me understanding a bit how to properly manage a PostgreSQL database.
+
+Specifically, what I've done after is trying to understand is how permissions and other objects are handled through the entire clusters.
+More specifically: schemas and roles which my understanding is proven to be lackluster.
+
+With the new understanding, I came across a new way to manage them schemas.
+The maintainers of PostgreSQL encourages a more secure usage pattern for managing schema referring to as *secure schema usage pattern*.
+In the encouraged practice, database users have their own schema (with the similar name for their schema, of course) and encouraged to set the schema search path to be set only for the user themselves (e.g., =search_path = "$user"=).
+Then, with the applications lending a setting to configure the schema, you could make use of the appropriate schema for the appropriate user for that certain service.
+
+I can see what the maintainers are encouraging here.
+With the different ways to authenticate (especially with the ident authentication and the like), each service which may be running with their corresponding operating system user has a corresponding database user that owns a corresponding schema for the service data and whatever objects they want to access.
+It's a nice, easy-to-understand practice that easily maps between the operating system and the database objects.
+With the secure schema usage pattern, you're essentially playing Match-3 for the sake of simplifying the system.
+Anything that reduces cognitive load for that is good enough for me.
+
+On the other hand, the workflow for deployment NixOS-based systems is great with [[https://github.com/serokell/deploy-rs][deploy-rs]].
+Though, the only issue is [[https://github.com/serokell/deploy-rs/issues/78][I cannot deploy the config with user passwords]].
+The terminal is usually mangled up while using it with the SSH'd process.
+Thankfully, [[https://github.com/serokell/deploy-rs/issues/78#issuecomment-989069609][one of the comment has shown a solution by disabling magic rollbacks]] which is unfortunate as I really would like to have those but it works.
+There is [[https://github.com/serokell/deploy-rs/issues/78#issuecomment-1133054583][another comment that shows what's really happening under the hood]] which I can confirm with the part about how the input is echoed and fits with my experience of seemingly janky input with the mangled output.
+Another quick solution is configuring the SSH user to be passwordless with sudo which is not great to me.
+Don't like passwordless sudo especially that I've set a password for the user, making it essentially useless.
