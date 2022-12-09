@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-12-06 14:32:38 +08:00
+#+date_modified: 2022-12-08 20:10:21 +08:00
 #+language: en
 
 
@@ -480,3 +480,26 @@ Thankfully, [[https://github.com/serokell/deploy-rs/issues/78#issuecomment-98906
 There is [[https://github.com/serokell/deploy-rs/issues/78#issuecomment-1133054583][another comment that shows what's really happening under the hood]] which I can confirm with the part about how the input is echoed and fits with my experience of seemingly janky input with the mangled output.
 Another quick solution is configuring the SSH user to be passwordless with sudo which is not great to me.
 Don't like passwordless sudo especially that I've set a password for the user, making it essentially useless.
+
+
+* 2022-12-05 - 2022-12-07
+
+Nothing much happened here aside from sporadic debugging sessions.
+I took this opportunity to learn how to debug the system mainly with [[id:20830b22-9e55-42a6-9cef-62a1697ea63d][systemd]] and PostgreSQL components.
+
+More specifically, some new things found:
+
+- I found how great =systemctl show= subcommand is.
+  You can view the properties of a unit which is nicer for debugging [[id:cd5f0d04-d9bb-44e8-a0f2-630ea58c1e94][systemd services]].
+  Not to mention, you can specify the properties with the =-P= flag (e.g., =-P User=, =-P Group=).
+
+- Some facts with networking ports.
+  This is not something I managed over the days since Google Compute Engine firewall has an easy setup.
+
+  - Ports under 1024 are considered privileged (or system) ports and normal users cannot use them.
+    Ports on 1024-49151 are registered (or user) ports and are maintained by IANA to assign and map ports to services.
+    Ports on 49152-65535 are private ports and often ephemeral. [fn:: They're also called dynamic and/or private ports.]
+
+  - There are [[https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers][conventional port numbers used for certain services]] especially in privileged ports.
+
+  - [[https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml][IANA does have a registry of port numbers]] for services with databases in different formats available for download.
