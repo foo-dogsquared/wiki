@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-12-08 20:10:21 +08:00
+#+date_modified: 2022-12-09 10:44:10 +08:00
 #+language: en
 
 
@@ -503,3 +503,56 @@ More specifically, some new things found:
   - There are [[https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers][conventional port numbers used for certain services]] especially in privileged ports.
 
   - [[https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml][IANA does have a registry of port numbers]] for services with databases in different formats available for download.
+
+
+* 2022-12-08
+
+TL;DR - I've looked into managing emails with my system which is a responsibility for administering systems, yeah?
+
+Anyways, I've been looking for an alternative email hosting provider that is not Google and found out about mailbox.org from [[https://www.privacyguides.org][Privacy Guides]].
+[[https://mailbox.org/en/post/christmas-voucher-2022][They happened to have an annual Christmas campaign]] which nets me free usage of their standard plan for six months.
+Talk about timing.
+
+What makes mailbox.org odd to me is the amount of services they provide and its pricing.
+For €3 (about ₱180), you have basically the equivalent of Google Workspace suite including 10 GB of space for email (which is huge for me excluding mailing list discussions) and 5 GB of cloud storage which is not much but it is nice.
+I would overlook mailbox.org's other services and only in it for the email provider buuuut I have found some neat things about their services.
+I first misjudged that it would be just some low-quality office suite services with the email service as the forerunner but it apparently uses [[https://www.open-xchange.com/][Open-Xchange]] (OX) which means it can work with OX-compatible apps.
+Not to mention, their interface and infrastructure are built on it which [[https://mailbox.org/en/post/ox-summit-2019-in-madrid-mailbox-org-and-enterprise-partners-meet][the maintainers of the service are also involved with the development of the OX app suite]].
+Aaaaand that opened up the world (or rabbithole) of office suites to me, out of all things.
+
+Aside from the services, there are some neat things with the email service itself.
+One such example is [[https://kb.mailbox.org/en/private/e-mail-article/ensuring-e-mails-are-sent-securely][secure emails]] which is sent through an email address through =secure.mailbox.org=. [fn:: Not supported for all providers, though.]
+
+Sorry for misjudging mailbox.org as it turning out to be a solid provider the more I look into it.
+It turns out what mailbox.org provides is an office suite, basically an all-around alternative to Google Workspace.
+I can see myself being their customer for years though I'm mostly feel like it's a waste especially I'm looking only into email hosting.
+However, it is nice for a non-Google Workspace/Microsoft 365 setup if you want a more privacy-oriented workspace suite for your family or group.
+
+At any rate, there are some services that are exclusively focused on email hosting such as...
+
+- [[https://mxroute.com/][MXroute]] which has a nice option considering you have unlimited domains with unlimited email addresses.
+  It costs $45 for a year which is cheaper compared to other services but it isn't for me (and I just missed the Black Friday sale, CRAP!).
+  Comparing this option to my current needs and situation (only using one domain and using mailbox.org), it isn't the suitable choice considering the price is slightly close (without sales discount or anything).
+
+- [[https://purelymail.com/][Purelymail]] is another service that is purely focused on email.
+  As it motto says, "Cheap, no-nonsense email".
+  It only costs $10 a year and already allows custom domain
+
+One criteria I left out in the list is the spam filtering.
+Ideally, it should be done on the service provider side which is present on all listed alternatives so far.
+The question is how active and the quality of the spam filtering service.
+MXroute seems to be more on the active side and reportedly has more positive review especially with the way how emails are sent through their service.
+As for Purelymail, I don't see much things in that side.
+
+At this point, MXroute is going to be my secondary choice for email hosting.
+For now, mailbox.org is enough for my needs.
+Both services required to be configured for sensible spam filtering anyways and I am currently under free credit anyways so I should have time to know about some details about email service in general.
+
+There is also little trivia I've learned specifically with email aliases.
+In mailbox.org, there are multiple email aliases that can be acquired for free (e.g., =postmaster@ADDRESS=, =hostmaster@ADDRESS=, =webmaster@ADDRESS=, =abuse@ADDRESS=).
+This is apparently a convention for it, specifically [[https://www.ietf.org/rfc/rfc2142.txt][RFC2142]] that highly encourages certain aliases for different parts of the services provider.
+Here's some examples from the document:
+
+- =abuse@= is for public inappropriate behavior.
+- =webmaster@= is for handling HTTP but practically it's the account for handling issues in the website.
+- =postmaster@= is for SMTP, typically used for mail services.
