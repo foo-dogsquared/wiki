@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-12-09 10:44:10 +08:00
+#+date_modified: 2022-12-10 22:48:41 +08:00
 #+language: en
 
 
@@ -80,9 +80,10 @@ SCHEDULED: <2022-11-10 Thu>
 ** TODO Self-hosted services
 *** DONE Vaultwarden
 *** DONE Gitea
-*** TODO Sourcehut
-*** TODO LDAP
+*** HOLD Sourcehut
+*** TODO OpenLDAP
 *** TODO MinIO
+*** TODO OpenVPN
 
 * 2022-11-10
 
@@ -556,3 +557,28 @@ Here's some examples from the document:
 - =abuse@= is for public inappropriate behavior.
 - =webmaster@= is for handling HTTP but practically it's the account for handling issues in the website.
 - =postmaster@= is for SMTP, typically used for mail services.
+
+
+* 2022-12-10
+
+The server is mostly operational but it required some non-declarative setup beforehand.
+Not exactly close to what I'm aiming for but it is close enough.
+Really, the problems mostly comes from the way PostgreSQL 15 handles the schema which I would like to take advantage not only with the latest improvements on the package but also its recommended practices.
+It seems like the current service NixOS module is not modelled after those practices.
+The practices I tried to apply are highly encouraged in version 15 especially with its changes.
+The NixOS module tries to cater for the majority of available versions.
+
+On the other hand, I've configured my server to have backups for anything appropriate though most of the focus is on application data.
+Most of the services have a documentation for dumping data like in [[https://github.com/dani-garcia/vaultwarden/wiki/Backing-up-your-vault][Vaultwarden]], [[https://docs.gitea.io/en-us/backup-and-restore/][Gitea]], and [[https://www.postgresql.org/docs/15/backup.html][PostgreSQL]].
+All I have to do at this point is to back them all up with [[https://www.borgbackup.org/][Borg]] which I have a remote backup hosting at [[https://www.borgbase.com/][Borgbase]].
+
+It's seriously NICE to have the configuration coming together in a neat little package.
+Aaaaaaand the LDAP server is becoming more of an afterthought.
+Aaaaaaand speaking of afterthought, I'm considering to host a VPN service for my own connections.
+
+On yet another hand, I've been considering about the VPS hosting provider, preparing to move away from Google Cloud Platform.
+It is a shame as the platform is a nice tool.
+I easily created an automated workflow that'll deploy my existing configurations in the cloud somewhere especially with [[https://cloud.google.com/sdk/gcloud][gcloud]] tool.
+I've considered [[https://hetzner.com/cloud][Hetzner Cloud]] as the VPS host lately as the server options is ridiculously cheap.
+About €5 for a complete server with a public external IP compared to about [[https://cloud.google.com/products/calculator#id=227e202d-86cb-478b-94d4-296ccc72f805][$30 in Google Cloud]].
+It also has a [[https://github.com/hetznercloud/cli][command-line utility humorously named =hcloud=]] which I should be able to easily automate it.
