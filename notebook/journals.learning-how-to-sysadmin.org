@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-12-10 22:48:41 +08:00
+#+date_modified: 2022-12-12 20:15:27 +08:00
 #+language: en
 
 
@@ -582,3 +582,37 @@ I easily created an automated workflow that'll deploy my existing configurations
 I've considered [[https://hetzner.com/cloud][Hetzner Cloud]] as the VPS host lately as the server options is ridiculously cheap.
 About €5 for a complete server with a public external IP compared to about [[https://cloud.google.com/products/calculator#id=227e202d-86cb-478b-94d4-296ccc72f805][$30 in Google Cloud]].
 It also has a [[https://github.com/hetznercloud/cli][command-line utility humorously named =hcloud=]] which I should be able to easily automate it.
+
+
+* 2022-12-12
+
+The test Linux server is now mostly operational.
+It is nigh time for managing a Windows server and make them communicate with each other, probably with services with Active Directory which is apparently an LDAP server with Windows-specific bells and whistles.
+
+Today, I've also learned about the existence of =systemd-tmpfiles= for customizing Gitea from my NixOS configuration.
+
+However, there are some things left to do in this production server in development.
+Most of them are involved with authentication services.
+
+- For one, I would surely create an LDAP server just for the kicks, specficially kick up an [[https://www.openldap.org/][OpenLDAP]] server.
+
+- I've decided to add one more authentication service, mainly for the web with single sign-on and social logins.
+  This is apparently a separate service to an LDAP directory service.
+  For this, I decided to host with [[https://www.keycloak.org][Keycloak]].
+
+- Add the appropriate settings for the already existing services.
+  Since the additional services listed here require more caution for using it, we may as well make it for the rest of the system.
+  This includes adding [[https://www.postgresql.org/docs/15/ssl-tcp.html#SSL-CERTIFICATE-CREATION][secure TCP/IP connections with SSL]] for my PostreSQL service.
+
+Aside from these authentication services, I reviewed my understanding of CA certificates in relation to HTTP(S).
+As HTTP is stateless, it isn't concerned who is communicating between each endpoint.
+However with HTTPS, it is a different story.
+
+HTTPS is essentially HTTP + SSL/TLS. [fn:: An important detail is SSL is a predecessor of TLS and TLS is used as a replacement nowadays but most documents still refer to it. In other words, they are interchangeable.]
+From what I can understand in TLS, the certificates are composed of a keypair: one issued as a public key for clients to communicate with the server and the private key to verify them so the server can communicate with the client securely.
+
+# TODO: Workflow illustration of the SSL for applications
+
+In order for applications to make use of this, you can either configure them to point the certificate files.
+This is commonly used for web servers (e.g., Nginx, Apache, Caddy).
+There are also other applications that make use of this such as databases (e.g., PostgreSQL, MySQL), [[id:9e4f04d4-00a3-4898-ac98-924957fa868b][Kubernetes]], and authorization services (e.g., Keycloak).
