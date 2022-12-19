@@ -616,3 +616,25 @@ From what I can understand in TLS, the certificates are composed of a keypair: o
 In order for applications to make use of this, you can either configure them to point the certificate files.
 This is commonly used for web servers (e.g., Nginx, Apache, Caddy).
 There are also other applications that make use of this such as databases (e.g., PostgreSQL, MySQL), [[id:9e4f04d4-00a3-4898-ac98-924957fa868b][Kubernetes]], and authorization services (e.g., Keycloak).
+
+
+* 2022-12-15
+
+Today's theme for management is: secrets management.
+While this is already done for my NixOS setup which is done with sops, keeping those secret keys is now a matter of securely keeping it.
+
+To solve this problem, we have to lay out all of the information of our current situation:
+
+- There are private keys for different formats: GPG, SSH, and age.
+  Not to mention, remote secrets such as from GCP KMS, Azure Vault, Hashicorp Vault, and AWS KMS.
+
+- Proper storage for these keys.
+  This is especially important for GPG where it revolves around your identity.
+  As I don't have an iota how to do it *right*, I followed [[https://alexcabal.com/creating-the-perfect-gpg-keypair][someone's guide for this]] instead.
+  More specifically, I followed the recommended resource from that post which is from [[http://wiki.debian.org/subkeys][the subkeys management page from the Debian Wiki]].
+
+- Multiple keys management.
+  I want to properly learn how to manage
+
+- Backing up properly which is already done with borg.
+  Hoorah for me...
