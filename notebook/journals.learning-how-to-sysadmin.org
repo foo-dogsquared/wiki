@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-12-12 20:15:27 +08:00
+#+date_modified: 2022-12-19 14:32:05 +08:00
 #+language: en
 
 
@@ -638,3 +638,33 @@ To solve this problem, we have to lay out all of the information of our current 
 
 - Backing up properly which is already done with borg.
   Hoorah for me...
+
+
+* 2022-12-18
+
+Now, the start of properly setting up them authorization services.
+More specifically: Keycloak and OpenLDAP.
+
+- For OpenLDAP, the project has a nice [[https://www.openldap.org/doc/][documentation]] for configuring and administrating an LDAP server.
+  I practically have no choice since other alternatives such as FreeIPA and Authelia is not exactly present as part of the available NixOS modules.
+
+- For Keycloak, the [[https://www.keycloak.org/documentation][documentation]] has a nice structure to it including references and "Getting started" guides.
+
+Though, all of the time are spent on learning OpenLDAP instead.
+Looking at the examples, it is quite verbose.
+It is becoming similar to the Google Cloud Platform documentation problem where it is becoming overwhelming and requires through pages back and forth.
+Don't get me wrong, it is nicely structured but it is verbose.
+I think I need some more time to absorb this.
+Even if I skimmed it, I cannot get a bigger picture clearly.
+
+Looking at the whole picture, it is pretty simple as to what it is.
+Most of the details are hidden behind conventions which is where my problems lie.
+It really requires familiarity which is acquired with time.
+Not to mention there's not much examples I can see in the whole wide web so I cannot freely experiment some things.
+(Thank good God for NixOS enabling easy experiment with building VMs easily though.)
+
+I'll put up with studying about Keycloak later.
+While I can see myself using Keycloak more, LDAP seems to be more common judging from the job listings which is why I'm studying this in the first place.
+Active Directory being one of the most prominent example for this.
+Speaking of which, I should really get with managing a Windows server at some point.
+Preferably, they would have to be done in early January as I'm not done configuring the (NixOS) Linux server yet.
