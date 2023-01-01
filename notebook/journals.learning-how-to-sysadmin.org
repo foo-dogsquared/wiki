@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2022-12-19 14:32:05 +08:00
+#+date_modified: 2023-01-01 22:58:45 +08:00
 #+language: en
 
 
@@ -668,3 +668,18 @@ While I can see myself using Keycloak more, LDAP seems to be more common judging
 Active Directory being one of the most prominent example for this.
 Speaking of which, I should really get with managing a Windows server at some point.
 Preferably, they would have to be done in early January as I'm not done configuring the (NixOS) Linux server yet.
+
+
+* 2023-01-01
+
+Took some holiday vacation.
+Back to normal scheduling.
+
+I've been deciding on migrating host to Hetzner Cloud since it is way cheaper compared to Google Cloud Platform.
+The disadvantage is there's no way to make into provisioning with a custom ISO except with a kexec-based image.
+However, you can easily initialize a NixOS system with [[https://github.com/elitak/nixos-infect/][nixos-infect]], a script that converts a traditional Linux system into NixOS.
+
+That's pretty much it for the most part.
+Most of the things done is only for migrating and getting familiar with Hetzner Cloud.
+It is pretty light on the thing but most of the system are not working due to ACME.
+I'll just wait for some time and tinker with it some more.
