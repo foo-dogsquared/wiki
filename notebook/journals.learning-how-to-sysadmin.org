@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-01 22:58:45 +08:00
+#+date_modified: 2023-01-07 01:16:29 +08:00
 #+language: en
 
 
@@ -697,3 +697,30 @@ Fun and beneficial: double the benefits!
 
 For now, the self-managed server has been stopped since I'm just waiting for the certificate cooldown.
 The server should be backed up a couple days from now.
+
+
+* 2023-01-06
+
+The server is back up and running!
+
+I also added an Atuin sync server especially that I use more often now and slowly needing to sync the history.
+While the sync server from the developer is nice, I decided at the end that I would like to manage it for a try.
+Fortunately, the service is already available as a NixOS module so there's not much problem there.
+
+Next up, I also replaced the OpenLDAP server to be managed with [[https://github.com/majewsky/portunus][Portunus]] which is already available as a NixOS module.
+I haven't tried completely managing it yet, though.
+I only scratched the very surface of managing and using LDAP.
+I should find out more about it once I continued with my courses I previously mentioned in this journal.
+
+There is another thing which is adding a new component in my server: a nice storage box.
+Specifically, I added a storage box from Hetzner which is surprisingly cheap with €4 for a terabyte.
+What's more, this storage box has some neat features including an SSH and Borg server.
+This instantly replaces my decision to go with a Hetzner storage box instead of Borgbase which is nice but with the budget in mind, I get more mileage from Hetzner's offer.
+
+A complete self-managed setup for €8 a month?
+That is very nice especially with a budget.
+I'm very satisfied with Hetzner so far.
+
+Even with a meager job pay, my whole setup is quite cheap.
+Adding some more things in mind such as my mailbox.org account (€3) and my domain (which counts at €2 a month), it totals up to €13 a month.
+Nice for a entry-level setup.
