@@ -683,3 +683,17 @@ That's pretty much it for the most part.
 Most of the things done is only for migrating and getting familiar with Hetzner Cloud.
 It is pretty light on the thing but most of the system are not working due to ACME.
 I'll just wait for some time and tinker with it some more.
+
+
+* 2023-01-04
+
+I'm now trying to get a concrete step into showing some credentials by completing certain courses in Coursera.
+It is mostly for certificates just to show that I have self-drive.
+Fortunately, Coursera has a financial aid initiative which is quite easy to get approved of but it does take some time.
+
+For now, I've been completing a part of the [[https://www.coursera.org/professional-certificates/google-it-support][Google IT Support Professional Certificate]], mostly in the security side as it is the weakest side that I know.
+I'm also taking the [[https://www.coursera.org/specializations/cloud-native-development-openshift-kubernetes][Cloud-Native Development with OpenShift and Kubernetes specialization]] also for the certificate but learning more about Red Hat systems seems to be interesting.
+Fun and beneficial: double the benefits!
+
+For now, the self-managed server has been stopped since I'm just waiting for the certificate cooldown.
+The server should be backed up a couple days from now.
