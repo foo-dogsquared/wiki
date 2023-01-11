@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-07 01:16:29 +08:00
+#+date_modified: 2023-01-12 00:46:08 +08:00
 #+language: en
 
 
@@ -733,3 +733,25 @@ Here's a table of the expenses.
 |--------------------------+-----------------------------|
 | Total                    |                       13.85 |
 #+TBLFM: @>$2=vsum(@I..@-I)
+
+
+* 2023-01-11
+
+Looked into properly configuring [[https://www.fail2ban.org/][fail2ban]] which apparently does not do much by default.
+
+The documentation of the project is a bit scattered throughout its website, wiki, and the source code.
+Most of the knowledge I picked up came from the already existing configurations from [[https://github.com/fail2ban/fail2ban/tree/0.11.2/config][upstream]] with the [[https://www.fail2ban.org/wiki/index.php/MANUAL_0_8][manual]] as the accompanying starting point all to make things connect.
+
+Another thing that is neat is it can handle systemd journals apparently.
+This make it easier for me as I would like to keep my services managed with systemd.
+
+At this time, this is where I learned about matching with journal fields which journalctl is primarily used for.
+Even the =-u UNIT= option that I always use is just generating certain journal fields under the hood.
+My usage with journalctl is pretty basic as seen from [[id:941e0a85-1bb4-45be-a729-1b577c7ee317][Command line: journalctl]].
+I only done like the basic matching of a unit, some basic journal management (e.g., log rotation, pruning), and monitoring them services.
+
+Overall, diving into configuring fail2ban is not exactly a great experience.
+Reminds me of the situation for the Nix ecosystem: it is a great tool hindered by its sorry state of documentation.
+Except this time, it's somewhat worse with the outdated manual and the scattered state of picking up the pieces together.
+I don't know enough to make more insightful comments but this is coming from my experience as an outsider trying to dive into using it.
+Delving into Nix has prepared me for this type of situation and I'm not liking it.
