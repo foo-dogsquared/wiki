@@ -634,7 +634,7 @@ To solve this problem, we have to lay out all of the information of our current 
   More specifically, I followed the recommended resource from that post which is from [[http://wiki.debian.org/subkeys][the subkeys management page from the Debian Wiki]].
 
 - Multiple keys management.
-  I want to properly learn how to manage
+  I want to properly learn how to manage them keys for different purposes.
 
 - Backing up properly which is already done with borg.
   Hoorah for me...
@@ -722,5 +722,14 @@ That is very nice especially with a budget.
 I'm very satisfied with Hetzner so far.
 
 Even with a meager job pay, my whole setup is quite cheap.
-Adding some more things in mind such as my mailbox.org account (€3) and my domain (which counts at €2 a month), it totals up to €13 a month.
-Nice for a entry-level setup.
+Here's a table of the expenses.
+
+| Thing                    | Expenses (in EUR per month) |
+|--------------------------+-----------------------------|
+| Hetzner VPS              |                        5.35 |
+| Hetzner storage box      |                         3.5 |
+| mailbox.org account      |                           3 |
+| foodogsquared.one domain |                           2 |
+|--------------------------+-----------------------------|
+| Total                    |                       13.85 |
+#+TBLFM: @>$2=vsum(@I..@-I)
