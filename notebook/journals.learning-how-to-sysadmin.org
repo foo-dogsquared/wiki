@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-12 00:46:08 +08:00
+#+date_modified: 2023-01-12 20:44:09 +08:00
 #+language: en
 
 
@@ -755,3 +755,31 @@ Reminds me of the situation for the Nix ecosystem: it is a great tool hindered b
 Except this time, it's somewhat worse with the outdated manual and the scattered state of picking up the pieces together.
 I don't know enough to make more insightful comments but this is coming from my experience as an outsider trying to dive into using it.
 Delving into Nix has prepared me for this type of situation and I'm not liking it.
+
+At the end of the day, fail2ban is a great tool just hindered by its documentation.
+The lack of good user documentation just means you'll have a harder time getting to know things if starting out and wanting to know more beyond the basic things.
+
+To quickly get up to speed with fail2ban, I recommend starting out with the previously linked manual and see the upstream config files for examples which is commented at some parts.
+[[https://github.com/fail2ban/fail2ban/blob/0.11.2/config/filter.d/common.conf][Some of the comments]] from the upstream config files are even repeated with basic documentation as if someone is expecting an admin to just jump in to see how things work behind-the-scenes which I think it is what is intended.
+
+
+* 2023-01-12
+
+Just a quick update on fail2ban regarding its state of documentation: apparently it has manual pages which I completely missed because the package from nixpkgs doesn't have them.
+I added it to the package definition and created a pull request for it.
+
+Now, the manual pages are the user documentation that I'm looking for.
+It's actually very nice complete with details starting with =jail.conf.5= being a go-to reference and its manual pages for executables (e.g., =fail2ban-regex.1=, =fail2ban.1=) is nice and brief.
+Sure, it's scattered but that's just the state of being a Unix manual page.
+I'm retracting my statements which I unfairly described the state of documentation as a poor one.
+Instead, I'm replacing it with it's pretty good and the opinion of Nix is a great tool with poor documentation is still unchanged. :)
+
+On the other hand, I started configuring with Portunus as an LDAP server.
+I really want to make this work despite having not much use out of it just for the sake of learning other ways how to authenticate outside of the web logins.
+One of the handy features with Portunus is applying a seed file which essentially declares the groups and users for that LDAP server.
+
+I've also started to modularize my Plover NixOS config since it is getting started to become really big.
+An embarassing side story with this is that I once accidentally deleted the modularized Nix files and I have to rewrite them, not realizing that Neovim still have those files as a buffer stored in-memory.
+So there's one thing that is hopefully helpful to remember next time you find yourself in that kind of situation.
+Most text editors can do this including Visual Studio Code and Emacs so you can just restore them back by saving them.
+Though, if you close those buffers in the event of deletion, it's deleted for good.
