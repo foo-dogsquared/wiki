@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-12 20:44:09 +08:00
+#+date_modified: 2023-01-14 10:28:07 +08:00
 #+language: en
 
 
@@ -783,3 +783,29 @@ An embarassing side story with this is that I once accidentally deleted the modu
 So there's one thing that is hopefully helpful to remember next time you find yourself in that kind of situation.
 Most text editors can do this including Visual Studio Code and Emacs so you can just restore them back by saving them.
 Though, if you close those buffers in the event of deletion, it's deleted for good.
+
+
+* 2023-01-13
+
+Continued my progress of the self-studying for the Coursera certificates.
+Despite seemingly only doing it for the certificates (which you could describe it like that and I'm not denying any of it), the courses I've chosen is pretty interesting.
+Especially with the IT fundamentals specialization from Google.
+I mostly proceeded to the part where they discuss about cryptography and its applications.
+
+There is an interesting thing going on especially that it is leading me to several stuff such as the practical uses of a VPN.
+I always thought a VPN is mainly used to anonymously browse the internet but it turns out, it isn't the case.
+A VPN service can be used for several things.
+
+- Getting around geo-restricted content.
+- Safely accessing sensitive services from a different network (e.g., your VPS's, your own home network) from an outside source.
+- Piracy.
+
+You can still use a self-managed VPN in a VPS as a privacy tool but that will depend on your trust towards the hosting provider and your care towards privacy (if at all).
+However, you're pretty much limited with the configuration of the system such as the location which is most likely only hosted on one location which is pretty much the main incentive for using a VPN service provider such as Mullvad and NordVPN.
+Not to mention that you share the self-managed VPN service with the VPS provider.
+It is a matter of judgement whether you tolerate that.
+
+So far, I've only considered self-managing a VPN service in my VPS instance which is most likely happening anyways.
+For now, I'm just scouting for resources for configuring OpenVPN which is already available as a NixOS module.
+I have a feeling I'll have some difficulty facing in the next day.
+Especially with networking parts of the system configuration.
