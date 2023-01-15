@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-14 10:28:07 +08:00
+#+date_modified: 2023-01-15 20:06:33 +08:00
 #+language: en
 
 
@@ -809,3 +809,26 @@ So far, I've only considered self-managing a VPN service in my VPS instance whic
 For now, I'm just scouting for resources for configuring OpenVPN which is already available as a NixOS module.
 I have a feeling I'll have some difficulty facing in the next day.
 Especially with networking parts of the system configuration.
+
+
+* 2023-01-14
+
+My feeling of dread from yesterday is right on the mark.
+(I guess it's not exactly surprising that it will happen considering I have practically absolute zero experience and knowledge regarding networking.)
+
+I started from the bottom-up knowing a little bit on networking.
+More specifically, I'm trying to configure my networking setup on my server starting with supporting IPv6 which is already a thing in Hetzner Cloud.
+I just have to figure out how to do that with my system tinkering with these network-related thingamajigs.
+Thankfully, Hetzner does have a [[https://docs.hetzner.com/robot/dedicated-server/ip/ip-basics/][dedicated page on the basics of IPv4 and IPv6]] which is very helpful in making me understand the basics.
+
+Most of the resources for configuring network-related settings for Hetzner Cloud servers are aimed for the traditional Linux distros.
+Searching through the NixOS Discourse instance, however, netted [[https://discourse.nixos.org/t/nixos-on-hetzner-cloud-servers-ipv6/221][some discussions]] on that exact topic which is convenient.
+More specifically, [[https://discourse.nixos.org/t/nixos-on-hetzner-cloud-servers-ipv6/221/6][this post which describes setting the network with systemd-network]] made me learn about setting up networks with systemd directly.
+
+I've learnt more about IPs with the following resources.
+
+- [[https://docs.hetzner.com/robot/dedicated-server/ip/ip-basics/][As aforementioned, Hetzner has a dedicated page on the basics of IPv4 and IPv6.]]
+- [[https://en.wikipedia.org/wiki/Reserved_IP_addresses][Wikipedia has a page of reserved IP addresses which is handy.]]
+- [[https://www.rfc-editor.org/rfc/rfc4864][IETF RFC4864 where it showcases some features of IPv6 alongside its use cases.]]
+- [[https://www.rfc-editor.org/rfc/rfc1918][IETF RCF1918 where it describes allocating IPv4 private addresses.]]
+- [[https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/uc_system/IPv6/vtgs_b_ipv6-deployment-guide-for-cisco/vtgs_b_ipv6-deployment-guide-for-cisco_chapter_01.pdf][Cisco has a document on the overview of IPv6.]]
