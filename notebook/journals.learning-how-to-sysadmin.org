@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-15 20:06:33 +08:00
+#+date_modified: 2023-01-16 00:20:47 +08:00
 #+language: en
 
 
@@ -832,3 +832,33 @@ I've learnt more about IPs with the following resources.
 - [[https://www.rfc-editor.org/rfc/rfc4864][IETF RFC4864 where it showcases some features of IPv6 alongside its use cases.]]
 - [[https://www.rfc-editor.org/rfc/rfc1918][IETF RCF1918 where it describes allocating IPv4 private addresses.]]
 - [[https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/uc_system/IPv6/vtgs_b_ipv6-deployment-guide-for-cisco/vtgs_b_ipv6-deployment-guide-for-cisco_chapter_01.pdf][Cisco has a document on the overview of IPv6.]]
+
+
+* 2023-01-15
+
+More studying about networking.
+Specifically, trying to configure my networking setup with systemd-networkd replacing the traditional script-based networking that is done in NixOS.
+I've been tempted to learn it seeing as it has some nice features compared to the traditional networking done by NixOS.
+
+The first try is a disaster because I didn't know I misconfigured the routes for the network.
+More specifically, I misunderstood the gateway address is the private IP address connected to my Hetzner server, not realizing the gateway address is in private address =172.16.0.1=.
+This resulted in the following error logs.
+
+#+begin_src
+Jan 15 05:47:19 nixos systemd-networkd[18933]: ens3: Could not set route: Nexthop has invalid gateway. Invalid argument
+Jan 15 05:47:19 nixos systemd-networkd[18933]: ens3: Failed
+#+end_src
+
+I'm also trying to start an OpenVPN server for the local network at the deployed server.
+This is also for practical purposes, hiding some of the more sensitive services such as my Keycloak instance and LDAP server. [fn:: Though, I'm not sure whether some services are appropriate for it to be hidden behind.]
+Apparently, it doesn't have username/password authentication and has to be implemented by installing a module.
+I'll try that route but I'm also very tempted to try using LDAP for it considering it also has support for it and a valid excuse now for using it.
+
+The OpenVPN documentation is very nice with a [[https://openvpn.net/community-resources/][directory of community resources]] of which has things like a [[https://openvpn.net/community-resources/how-to/][a HOW-TO document]], [[https://openvpn.net/community-resources/reference-manual-for-openvpn-2-4/][a reference manual]], [[https://openvpn.net/community-resources/hardening-openvpn-security/][a document for hardening OpenVPN security]], and [[https://openvpn.net/community-resources/ethernet-bridging/][a tutorial for ethernet bridging]].
+Not to mention, OpenVPN has [[https://community.openvpn.net/openvpn][a community wiki]] containing lots of explanation for concepts.
+Most importantly, it has a set of offline documents which should be included with the package when installing them.
+I recommend to start with the offline documents especially if you're unsure where to start with the online documents.
+
+The only thing I fear with a VPN service is the amount of bandwidth it will send out but seeing as Hetzner Cloud has 20TB worth of outgoing traffic for free which is more than enough (an understatement), I don't know it will be a problem.
+With that said, I haven't fully configured OpenVPN yet as I'm just exploring the documentation and creating a basic configuration out of it.
+It's not yet complete with configuring profiles for the client and server but it is getting there.
