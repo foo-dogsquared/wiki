@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-16 00:20:47 +08:00
+#+date_modified: 2023-01-17 17:21:30 +08:00
 #+language: en
 
 
@@ -862,3 +862,54 @@ I recommend to start with the offline documents especially if you're unsure wher
 The only thing I fear with a VPN service is the amount of bandwidth it will send out but seeing as Hetzner Cloud has 20TB worth of outgoing traffic for free which is more than enough (an understatement), I don't know it will be a problem.
 With that said, I haven't fully configured OpenVPN yet as I'm just exploring the documentation and creating a basic configuration out of it.
 It's not yet complete with configuring profiles for the client and server but it is getting there.
+
+
+* 2023-01-16
+
+I've been recommended to look into [[https://www.wireguard.com/][Wireguard]] which is supposed to be more performant than OpenVPN and it is baked into the Linux kernel.
+Aaaaaand it is easier to use.
+Not to mention, it is also supported by systemd.
+Looking into the ecosystem, I see that Wireguard has an [[https://play.google.com/store/apps/details?id=com.wireguard.android&hl=en_US][Android app]] which is very nice to my checklist.
+However for the time being, I'm continuing with OpenVPN especially that it has more authentication options whereas with Wireguard being certificate-based.
+
+From what I can see, Wireguard is simpler and faster.
+In my understanding, Wireguard is indeed simpler in the way of configuring.
+In Wireguard, there is no server and it instead interfaces with peers where each peer in the network is configured with each other's public key.
+From the initial reading, I was able to easily configure Wireguard.
+However, I'm more interested in configuring it with =systemd-networkd= which did took some time since I'm still grokking the service.
+In the short run, I was able to figure out to configure a peer but eventually found out I also have to configure it to my desktop.
+For now, I'll leave the progress here as I'm continuing to configure OpenVPN just for the time being.
+
+A VPN is an interesting (and a must-have at this point) component to add to my server for not only learning networking concepts but also practical reasons.
+Very nice.
+I just have to figure out how to configure it like in the following plan.
+
+#+caption: The planned network layout for the self-managed server
+#+attr_org: :width 550
+#+name: fig:self-managed-server-network-layout
+[[file:../assets/visual-aids/self-managed-server-plan.png]]
+
+As for configuring OpenVPN, I've not yet to run a server since I'm still figuring out network devices in general.
+The concepts are still bouncing in my head as I'm trying to make sense where things to be put together.
+=systemd-networkd=, while interesting, is a bit overwhelming with the concepts.
+For this, I'll leave a short list of guidelines how to get started with it.
+
+- Start with the =systemd-networkd.service(8)= manual page.
+  It is the root of the concepts not to mention it quickly introduces to the related components of the service.
+
+- Its manual pages to its related configuration files (i.e., =systemd.link(5)=, =systemd.netdev(5)=, =systemd.network(5)=) are all must-haves to read.
+  Especially that it contains a comprehensive list of examples showcasing different setups on the later parts of the manual page.
+
+- =networkctl= is going to be your best friend for managing networking setup with system.
+  Don't forget to refer to =networkctl(1)= manual page for more details.
+
+I think I bit more than I chew, juggling between configuring the networking setup to my setup, OpenVPN, and Wireguard.
+It is an interesting experience as I'm trying to map things together just from reading its documentation.
+Though, I feel it is somewhat wasted effort as most of the time, I'm only trying to map things together while being overwhelmed.
+Not exactly a good practice.
+
+I'm slowly gaining confidence with my networking concepts.
+At some point, I'm going to review them with a related course from Coursera for it.
+
+Next up, I think I will configure =systemd-resolved= as I'm having a little trouble with understanding related parts of network configuration such as DHCP and  DNSSEC.
+What are all these, man?!
