@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-17 17:21:30 +08:00
+#+date_modified: 2023-01-18 22:27:44 +08:00
 #+language: en
 
 
@@ -913,3 +913,49 @@ At some point, I'm going to review them with a related course from Coursera for 
 
 Next up, I think I will configure =systemd-resolved= as I'm having a little trouble with understanding related parts of network configuration such as DHCP and  DNSSEC.
 What are all these, man?!
+
+
+* 2023-01-17
+
+I am familiar enough with IP addresses so I'm moving on to understanding DNS.
+The primary reason: systemd has a resolver service so I'm interested on interacting with it.
+
+But first, I have to understand what DNS even is.
+Fortunately for me, there is a [[https://howdns.works/][comic series]] that explains that very same thing I'm trying to understand. [fn:: Just found it in the first page which is nice for me. Though, it is at the bottom on Google results while in the middle for Brave. I'm guessing because most Brave users are already tech-savvy thus tend to get higher quality when it comes to these types of topics.]
+I highly recommend it.
+
+At this point, I'm juggling between configuring Wireguard for the network and preparing to configure systemd-resolved at a later time (or at least trying to understand it).
+I'm also adding properly configuring a software firewall like nftables although it is blocked from being problematic in the associated NixOS module.
+It doesn't seem to properly generate a configuration without errors.
+Previously, I've used iptables for a short while until it was apparently deprecated so I hold it off.
+Though, it also had problems with the resulting firewall making the network reject all incoming connections.
+
+So, for this firewall problem, I tried the simplest solution: trying with the most sensible and minimal configuration.
+I tried the following nftables-based firewall configuration with following snippet on my desktop:
+
+#+begin_src nix
+{
+  networking = {
+    nftables.enable = true;
+    firewall = {
+      enable = true;
+      allowedUDPPorts = [ wireguardPort ];
+    };
+  };
+}
+#+end_src
+
+This works on the desktop workstation host so far.
+It does serve as a nice starting point for learning about nftables.
+There are other resources I recommend:
+
+- Start with the =nft.8= manual page.
+  It is the canonical user reference with nice introductions to the related concepts, syntax, and options.
+
+- For potentially looking out to other documents, their [[https://wiki.nftables.org/wiki-nftables/index.php/Main_Page][community wiki]] has a nice list of nftables-related documents.
+
+For now, I haven't created a nftables script yet.
+Looking at the documents, it should be take an afternoon to learn just enough to be dangerous but make stupid decisions.
+
+So far, my experience with software firewalls are not great but that won't deter me from it.
+I want to have an operating system with such features especially integrating with tools like fail2ban where it can use the firewall to completely ban the host.
