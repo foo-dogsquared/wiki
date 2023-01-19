@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-19 21:09:20 +08:00
+#+date_modified: 2023-01-19 21:59:54 +08:00
 #+language: en
 
 
@@ -1008,3 +1008,49 @@ This pretty much makes it unreachable from the outside.
 Thankfully, it is successfully configured to reach global networks from the inside.
 While access through SSH is no longer possible, Hetzner's cloud console saves the day.
 It works by booting the server as if you're physically there so it can still be recovered.
+
+
+* 2023-01-19
+
+Welp, decided to take a different approach to journalling.
+Here's what I want to do and whether or not I completed it on time.
+
+- [X] Configure systemd-networkd to properly configure network devices with automatic IPv6.
+- [ ] Learn nftables for IP forwarding and additional Wireguard setup
+
+I was not able to learn about nftables at time.
+Most of the time, I've been trying to parse what is going on exactly with IP addresses and how to setup a networking setup with a system.
+I found myself overwhelmed with the concepts of dynamically generating IPs which apparently has multiple ways to generate them which is especially true with IPv6 which is already something that I'm barely familiar with.
+
+For a short recap, similarly to IPv4, IPv6 have assigned address ranges for private networks.
+These interfaces are not going to generate and assign IP themselves, you still have to assign it.
+However, you're dealing with IPv6.
+Manually assigning IPv6 IPs is not often worth especially with subnetting.
+And so there are ways to generate them...
+
+- [[https://www.rfc-editor.org/rfc/rfc4862][Stateless Address Autoconfiguration (SLAAC)]] generates IP addresses by its nearby network links that are sending "Router Advertisement".
+  No additional servers and manual configuration of hosts necessary.
+  One neat thing with this is the process is decentralized, the minimal amount of changes to make, and only requiring local information.
+  I recommend to stick to this.
+
+- Good ol' DHCP server except for IPv6, referred to as [[https://www.rfc-editor.org/rfc/rfc3315][DHCPv6]].
+  Simiarly, a request will be sent to the server and receives an address which can be used to automatically assign to a network link.
+  While this can be nice for restricting what addresses can be published for that zone, it is centralized.
+  Once the server has shut down, the network will likely fall as the IPs the links hold are dynamically configured.
+
+One more thing: apparently, you can combine static and dynamically configured IP addresses.
+I always thought it is only given a choice of static and dynamic IP configuration considering most interfaces I've interacted presents it this way (or at least my impressions of it).
+It makes sense once you know that multiple addresses can be assigned to an interface and dynamically generated IPs have virtually no difference to distinguish themselves from statically assigned IPs.
+It's just IPs on the way down.
+
+I also discovered a valuable tool which I should've thought of at the beginning of my struggle understanding IPs: an IP calculator.
+More specifically, [[https://gitlab.com/ipcalc/ipcalc][ipcalc]] because it is in the same environment you'll be configuring them networking setups anyway.
+
+#+begin_src shell
+nix run nixpkgs#ipcalc -- 2001:5eca:de53::3
+#+end_src
+
+#+results:
+: Full Address:	2001:5eca:de53:0000:0000:0000:0000:0003
+: Address:	2001:5eca:de53::3
+: Address space:	Global Unicast
