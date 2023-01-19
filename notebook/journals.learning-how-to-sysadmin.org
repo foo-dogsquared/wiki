@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-18 22:27:44 +08:00
+#+date_modified: 2023-01-19 21:09:20 +08:00
 #+language: en
 
 
@@ -959,3 +959,52 @@ Looking at the documents, it should be take an afternoon to learn just enough to
 
 So far, my experience with software firewalls are not great but that won't deter me from it.
 I want to have an operating system with such features especially integrating with tools like fail2ban where it can use the firewall to completely ban the host.
+
+
+* 2023-01-18
+
+Welp, today's theme is unfortunate server update timing.
+Let's start with the end state of the server for the unfortunate time: its network became unreachable from the outside.
+
+This story starts with an impatient person as they try to upgrade repeatedly without success similarly encountering problems as described from [[https://github.com/serokell/deploy-rs/issues/68][this issue]].
+I cannot exactly reproduce this bug as I don't have enough understanding how deploy-rs really works but I mostly think this is a server issue.
+To be more specific, what really happened is I cannot successfully deploy the updates as they always end with a timeout for whatever reason.
+As described from the linked, this is specifically tied to the magic rollback feature as seen from the following logs from a deploy attempt:
+
+#+begin_src
+⭐ ℹ️ [activate] [INFO] Magic rollback is enabled, setting up confirmation hook...
+👀 ℹ️ [wait] [INFO] Found canary file, done waiting!
+🚀 ℹ️ [deploy] [INFO] Success activating, attempting to confirm activation
+⭐ ℹ️ [activate] [INFO] Waiting for confirmation event...
+#+end_src
+
+Anyways, as this impatient person grew tired, they decided to go with the updates but without the rollback feature.
+It's a fatal mistake.
+This is pretty much where I feel NixOS configuration rollback capabilities would be very useful.
+
+The temporary outage is caused by improper routing configuration as I haphazardly copy-pasted the configuration from the internet without taking a closer look.
+The following code listing is the erroneous part of the configuration.
+
+#+begin_src nix
+{
+  systemd.network.networks."20-wan" = {
+    routes = [
+      # Configuring the route with the gateway addresses for this network.
+      { routeConfig.Gateway = "fe80::1"; }
+      { routeConfig.Destination = privateNetworkGatewayIP; }
+      { routeConfig = { Gateway = privateNetworkGatewayIP; GatewayOnLink = true; }; }
+
+      # Private addresses.
+      { routeConfig = { Destination = "172.16.0.0/12"; Type = "unreachable"; }; }
+      { routeConfig = { Destination = "192.168.0.0/16"; Type = "unreachable"; }; }
+      { routeConfig = { Destination = "10.0.0.0/8"; Type = "unreachable"; }; }
+      { routeConfig = { Destination = "fc00::/7"; Type = "unreachable"; }; }
+    ];
+  };
+}
+#+end_src
+
+This pretty much makes it unreachable from the outside.
+Thankfully, it is successfully configured to reach global networks from the inside.
+While access through SSH is no longer possible, Hetzner's cloud console saves the day.
+It works by booting the server as if you're physically there so it can still be recovered.
