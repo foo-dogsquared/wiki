@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-19 21:59:54 +08:00
+#+date_modified: 2023-01-21 22:30:02 +08:00
 #+language: en
 
 
@@ -1054,3 +1054,44 @@ nix run nixpkgs#ipcalc -- 2001:5eca:de53::3
 : Full Address:	2001:5eca:de53:0000:0000:0000:0000:0003
 : Address:	2001:5eca:de53::3
 : Address space:	Global Unicast
+
+
+* 2023-01-21
+
+Stumbling into IP problems.
+Again.
+
+This time, it's about application services.
+It challenges my understanding of the relations of it with applications because I didn't know they can be hosted in a different interface other than localhost.
+Now, those =host= options or what have you makes sense.
+The solution is to simply reconfigure them to go to a different host interface.
+The most tedious part is manually assigning and remembering them so I put the interface hosts in a set and just refer to that instead.
+
+With this in mind, I fell into a mini-rabbithole for networking-related things.
+Most notably, I was looking for a way to automatically assign IPs to applications if possible.
+
+The closest thing I have seen so far is network namespacing which is a [[https://man7.org/linux/man-pages/man7/network_namespaces.7.html][thing in a Linux kernel]].
+Aside from isolation and controlled sharing, network namespaces allows you to assign prefixes to interfaces.
+This seems to be fitted for my use case for a way to assign IPs to different services without manually assigning them.
+I checked to see if [[id:20830b22-9e55-42a6-9cef-62a1697ea63d][systemd]] can do this which apparently isn't.
+However, [[https://github.com/systemd/systemd/issues/11103][there is an interest for it]] and while there is [[https://github.com/systemd/systemd/pull/14915][an impending implementation for it]], it seems to be dormant which is unfortunate considering fellow systemd contributors also expressed interest for this feature to manifest.
+
+Another point of interest I was in is "properly" deploying a Keycloak instance.
+I haven't managed it since I was supposed to after I configured the VPN or whatever tunneling service I want to manage.
+This is where I found an alternative to Keycloak named [[https://zitadel.com/][Zitadel]].
+It seems nice considering it can be self-hosted and deployed from a single binary.
+As of this entry, there is no package, module, or even just a mention from the nixpkgs repository.
+Seems like a nice time to try out packaging and creating a module out of it.
+But right now, I have no interest in fully self-managing it considering Keycloak is a popular option.
+
+While I found an alternative for Keycloak, I also found a complement for Keycloak (or at least the type of service that Keycloak offers) called [[https://www.privacyidea.org/][privacyIDEA]] which focuses on 2-factor authentication.
+While Keycloak supports 2-factor authentication, it is only through TOTP/HOTP.
+privacyIDEA supports more than that through its [[https://privacyidea.readthedocs.io/en/master/application_plugins/index.html#pam-plugin][ecosystem of modules]].
+Not to mention, privacyIDEA has a [[https://github.com/privacyidea/keycloak-provider][Keycloak provider]], making it nicer to integrate between the two.
+I may consider to add it in my half-full plate of self-managed services.
+
+I'm also reconsidering to deploy back to a bare OpenLDAP server but it may be just me.
+Portunus is pretty great so far but I didn't properly made (nor even connect to) a LDAP profile yet.
+I need to properly configure Portunus especially that it has options to stay only in the private network.
+It's just not an option with its NixOS module which should be trivial to add.
+I'll have to keep in mind with a PR in the future once I properly deployed the previously mentioned services.
