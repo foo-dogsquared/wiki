@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-21 22:30:02 +08:00
+#+date_modified: 2023-01-23 09:20:34 +08:00
 #+language: en
 
 
@@ -1095,3 +1095,23 @@ Portunus is pretty great so far but I didn't properly made (nor even connect to)
 I need to properly configure Portunus especially that it has options to stay only in the private network.
 It's just not an option with its NixOS module which should be trivial to add.
 I'll have to keep in mind with a PR in the future once I properly deployed the previously mentioned services.
+
+
+* 2023-01-22
+
+As for properly configuring my network interfaces, they are assigned with a DHCPv4 server which apparently can take some options which you can do in [[id:e4dba4ef-71dd-4d30-9a2c-4ad97223510b][systemd-networkd]] with =DHCPv4.SendOption= and =DHCPv6.SendOption= for DHCPv4 and DHCPv6 servers respectively.
+For getting started into configuring your interfaces, I recommend to read the following resources:
+
+- [[https://www.rfc-editor.org/rfc/rfc2131][The document for DHCP]] and its [[https://www.rfc-editor.org/rfc/rfc2132][DHCP options and vendor extensions]] which systemd-network also supports sending.
+- [[https://www.rfc-editor.org/rfc/rfc8415][A complete RFC document for DHCPv6]] including information on DHCP options, prefix delegation, and stateless DHCPv6.
+- A little background reading on the [[https://www.rfc-editor.org/rfc/rfc1497][how extensions are used in BOOTP]].
+- A list of [[https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml][DHCPv4 options]] and [[https://www.iana.org/assignments/dhcpv6-parameters/dhcpv6-parameters.xhtml][DHCPv6 options]] to be sent to the DHCP server.
+
+I mostly used them for referential use in tandem with some other tools like systemd-networkd, not exactly informational cases.
+But still, I'm slowly grokking the documents if I have the time.
+
+DHCP clients send some options that the DHCP server may accept or reject.
+These options include subnet mask, certain IP address, or the various URLs for the web server, SMTP server, etc.
+These may be used for more complex setups.
+
+I've learned how to look at debug logs from the =systemd-networkd.service= especially that it can show the requests and responses of the DHCP client.
