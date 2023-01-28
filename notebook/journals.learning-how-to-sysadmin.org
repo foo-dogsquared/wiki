@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-23 09:20:34 +08:00
+#+date_modified: 2023-01-28 11:42:37 +08:00
 #+language: en
 
 
@@ -1115,3 +1115,15 @@ These options include subnet mask, certain IP address, or the various URLs for t
 These may be used for more complex setups.
 
 I've learned how to look at debug logs from the =systemd-networkd.service= especially that it can show the requests and responses of the DHCP client.
+
+
+* 2023-01-23
+
+I became frustrated as I clearly don't understanding about networking so I took a [[https://www.coursera.org/learn/computer-networking/][networking course from Google IT specialization]] on it for at least 2 hours.
+More specifically, on the Week 1 material.
+Because of this understanding, I also simplified the networking setup of my server which is relieving.
+
+This misunderstanding basically leads to a distratrous chain of events such as possible misconfigurations with subnetting, Wireguard not working properly, and the private network not exactly configured as I would like to be in several interfaces.
+Ehhh, anyways, I've continued the course and it gave some more context but not enough.
+I'm continuing it all the way through from start to finish though despite looking for certain information to have a stronger foundational knowledge on networking.
+Really made me stumped for it.
