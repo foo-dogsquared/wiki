@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-01-28 11:42:37 +08:00
+#+date_modified: 2023-02-05 22:59:14 +08:00
 #+language: en
 
 
@@ -1127,3 +1127,88 @@ This misunderstanding basically leads to a distratrous chain of events such as p
 Ehhh, anyways, I've continued the course and it gave some more context but not enough.
 I'm continuing it all the way through from start to finish though despite looking for certain information to have a stronger foundational knowledge on networking.
 Really made me stumped for it.
+
+
+
+* 2023-01-24
+
+Here's the things I want to do today:
+
+- [X] Continue my self-study courses
+- [-] Properly configure my network interfaces with the services in mind in the private network
+- [ ] Administer my Keycloak instance
+- [ ] Install a self-managed instance of privacyIDEA
+
+I continued the IT networking and the security course from Coursera today.
+The one I look forward the most is the networking course since it is the thing that gave me the most problems.
+I did study the concepts that I look forward to in the Week 2 material where it introduces the networking layer where IP started.
+The lesson is rapid in pace, introducing concepts and things related to networking per video.
+It does come with nice background reading in-between which sometimes introduces more things.
+Overall, I liked the introduction for what it is even if I knew some of them already from the networking wrangling done earlier.
+I look forward to the later modules of the course.
+
+After that, I revised the networking setup which is the one that took the most time, unsurprisingly.
+Not only I discovered a network misconfiguration, I also discovered my own systemd-networkd is misconfigured.
+
+The main culprit here is the ordering.
+systemd-networkd will load the units in alphanumeric order.
+Here's the setup for my server looked like before the fix:
+
+#+begin_src tree
+/etc/systemd/network
+├── 60-dhcpv6-pd-downstreams.network -> /etc/static/systemd/network/60-dhcpv6-pd-downstreams.network
+├── 60-lan.network -> /etc/static/systemd/network/60-lan.network
+├── 60-wan.network -> /etc/static/systemd/network/60-wan.network
+├── 99-wireguard0.netdev -> /etc/static/systemd/network/99-wireguard0.netdev
+└── 99-wireguard0.network -> /etc/static/systemd/network/99-wireguard0.network
+#+end_src
+
+This is supposed to configure my interfaces which is automatically configured for me.
+In this server, all hardware interfaces are Ethernet interfaces (e.g., =ens3=, =ens10=).
+
+Since systemd-networkd applies them in alphabetical order, =60-dhcpv6-pd-downstreams.network= is going to be applied first.
+Let's see what this network does.
+
+#+begin_src ini
+[Match]
+Name=en*
+
+[Network]
+DHCP=yes
+
+[DHCPv6]
+PrefixDelegationHint=fdee:b0de:5685:43ff::/64
+#+end_src
+
+Ohhh...
+
+My intended configuration for systemd-networkd service is there are only two main nodes that are configured statically but all of them are applied with DHCP.
+This pretty much causes the supposedly statically configured networks to not be configured statically since they are already configured.
+The overall server is still working fine but not for internal servers.
+
+Fortunately, the fix is simple: just reorder them and make sure that the statically configured IPs are applied first.
+In this case, just lower the number prefix (=60=) to something else (=50=).
+
+As for considering having a self-managed instance of privacyIDEA, I'll do it after the tunneling service has been properly configured.
+
+
+* 2023-02-01 - 2023-02-05
+
+I just continued the self-studied courses from Coursera.
+That's pretty much it for the most part.
+
+At 2023-02-04, I've solved most of the networking issues especially with DHCP.
+It is resolved by reducing the network interfaces connected to the server.
+The DHCP server seems to prioritize the IP addresses from the internal networks before the public-facing IPs which is why I mostly puzzled with this situation.
+On the other hand, networking setup in my server is also simplified which is always a plus to me.
+
+I'll be considering using a DNS server (likely using dnsmasq) for my internal network.
+I don't know how to do this and I'll be continuing this for tomorrow session but I think I got the idea.
+
+For future references, here's my tentative recipe:
+
+- Configure the DNS server to add names to a list of addresses.
+- Configure the reverse proxy to listen to those names.
+
+As for considering the domain names, it will most likely go with =.internal= as the top-level domain.
+So, my Keycloak admin console web page should be accessible in =auth.foodogsquared.internal=, etc.
