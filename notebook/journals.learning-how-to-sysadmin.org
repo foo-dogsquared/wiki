@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-02-05 22:59:14 +08:00
+#+date_modified: 2023-02-07 22:05:58 +08:00
 #+language: en
 
 
@@ -1212,3 +1212,24 @@ For future references, here's my tentative recipe:
 
 As for considering the domain names, it will most likely go with =.internal= as the top-level domain.
 So, my Keycloak admin console web page should be accessible in =auth.foodogsquared.internal=, etc.
+
+
+* 2023-02-06
+
+Almost got tempted to look into another VPS provider since I got my first invoice from Hetzner today.
+I'm trying to look into cheaper solutions but it seems Hetzner quality services is worth it.
+
+Anyways, I looked further into what services Hetzner provide and why I still chose it.
+For the cost of at least €9, I have: a decent server with sufficient cores (2 with at least 2.2 Ghz) and memory (4 GB which is definitely enough), a 1TB worth of storage, and other niceties.
+Those other niceties such as DDoS protection and free DNS servers bring it all together.
+
+Speaking of DNS servers, I've decided to host a service but primarily for my own purposes.
+As I've seen from [[https://jvns.ca/blog/2022/01/05/why-might-you-run-your-own-dns-server-/][one of Julia Evan's posts about this exact question]], apparently, you can host your own DNS server and pass the responsibility to secondary name servers of which Hetzner has... for FREE!
+Thus, making your primary authoritative server to be hidden.
+I can certainly take advantage of that but now I'm deciding what applications to use.
+
+I've narrowed two answers so far: Bind and CoreDNS, both of which are available to be used as a NixOS module.
+Bind seems to be nice especially with its maturity and widespread usage.
+CoreDNS, on the other hand, also sees widespread usage especially with its integration with Kubernetes which is one of the reasons I'm considering it in the first place.
+Hard to choose but for now I'm scouting the tools.
+One of the main things I'm looking for is the ease of setting up the primary server to pass the records to "slave" servers which should be easy to find.
