@@ -3,7 +3,7 @@
 :END:
 #+title: Command line: systemctl
 #+date: 2021-07-27 13:47:34 +08:00
-#+date_modified: 2021-07-27 14:06:35 +08:00
+#+date_modified: 2022-12-06 18:25:19 +08:00
 #+language: en
 #+property: header_args  :eval no
 
@@ -32,10 +32,30 @@ systemctl [OPTIONS...] COMMAND [COMMAND_ARGS...] [COMMAND_OPTIONS...]
 - =--help= is an obvious one.
   It prints a detailed help section of the command.
 
+- =--host= controls a remote system.
+  Meaning, you can manage services and timers remotely.
+  Will not work on certain subcommands such as =edit=.
+
+- =--container= is similar to =--host= but operates on a local container.
+
+- =--with-dependencies= will show the output of the unit specified along with its dependencies.
+  This is only effective on certain subcommands such as =status=, =list-units=, =cat=, and =list-unit-files=.
+
+- =-p PROPERTIES= shows only the listed properties.
+  Very useful for filtering the properties for =systemctl show= subcommand.
+  Take note =PROPERTIES= can be a list of properties to show delimited with a comma.
+
+- =-P PROPERTIES= shows the value of the listed properies.
+  Similar to =-p=, =PROPERTIES= can be a comma-delimited list of properties to be shown.
+
 
 
 
 * Subcommands
+
+- =show PATTERN= shows the properties of the matched units.
+  It can also show with multiple units with a helpful label and proper formatting (which is very nice).
+  This is the go-to subcommand for debugging a service.
 
 - =enable UNIT= and =disable UNIT= enables and disables units.
   It mainly adds the unit activation at startup.
@@ -59,3 +79,5 @@ systemctl [OPTIONS...] COMMAND [COMMAND_ARGS...] [COMMAND_OPTIONS...]
 - =list-units [PATTERN...]= is self-explanatory ;p.
 
 - =is-active PATTERN...= prints the status of the matched unit and exits successfully if it's active.
+
+- =cat PATTERN...= shows contents of the given units in a neat formatted page.

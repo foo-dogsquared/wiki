@@ -3,10 +3,10 @@
 :END:
 #+title: Command line: BorgBackup
 #+date: "2021-05-30 21:40:24 +08:00"
-#+date_modified: "2021-07-13 22:54:32 +08:00"
+#+date_modified: "2022-11-23 17:52:38 +08:00"
 #+language: en
 #+property: header_args :eval no
-#+property: header_args:bash  :results silent  :exports code
+#+property: header_args:bash  :results silent  :exports code  :shebang "#!/usr/bin/env bash"
 
 
 BorgBackup is a deduplicating archiver with compression and encryption.
@@ -126,7 +126,7 @@ borg extract --verbose --progress ${REPO_PATH}::{hostname}-{now:%F-%T-%z} ~/Docu
 Better be safe than sorry.
 Here's the safe backup in all of its glory in Bash.
 
-#+begin_src bash  :tangle (my/concat-assets-folder "safe-borg-backup")  :shebang "#/usr/bin/env bash"
+#+begin_src bash  :tangle (my/concat-assets-folder "safe-borg-backup")
 if $# -eq 1; then echo "No directories and files to be saved." && exit 1; fi
 
 locations=$@
@@ -149,7 +149,7 @@ BORG_REPO="$HOME/backups" BORG_PASSCOMMAND='gopass show misc/personal-borgbackup
 
 All-time favorite fzf (see [[id:4eb1f8b1-bc12-4a6c-8fa4-20e4c3542cf2][Command line: fzf]]) is required.
 
-#+begin_src bash
+#+begin_src bash  :tangle (my/concat-assets-folder "fzf-interactive-extract")
 export BORG_PASSPHRASE="oral hygiene"
 export BORG_REPO="${REPO_PATH}"
 

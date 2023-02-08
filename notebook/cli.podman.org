@@ -89,7 +89,7 @@ podman push foodogsquared/python-helloworld
 
 What would be an example script without something like [[id:4eb1f8b1-bc12-4a6c-8fa4-20e4c3542cf2][fzf]]?
 
-#+begin_src bash
+#+begin_src bash  :tangle (my/concat-assets-folder "fzf-podman-image-rm")
 podman image list --format "{{.ID}} {{.Repository}} {{.Tag}}" \
     | fzf --multi --prompt "Choose images to remove > " \
     | awk '{print $1}' \
