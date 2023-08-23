@@ -3,7 +3,7 @@
 :END:
 #+title: Journals: Learning how to sysadmin
 #+date: 2022-11-10 14:14:04 +08:00
-#+date_modified: 2023-02-07 22:05:58 +08:00
+#+date_modified: 2023-02-12 10:13:10 +08:00
 #+language: en
 
 
@@ -76,14 +76,15 @@ SCHEDULED: <2022-11-10 Thu>
 *** DONE Deploy with deploy-rs
 *** DONE Deploy in Google Cloud Platform Compute Engine
 *** HOLD Deploy in Microsoft Azure Linux VM
-*** TODO Deploy in Hetzner Cloud
+*** DONE Deploy in Hetzner Cloud
 ** TODO Self-hosted services
 *** DONE Vaultwarden
 *** DONE Gitea
 *** HOLD Sourcehut
-*** TODO OpenLDAP
-*** TODO MinIO
-*** TODO OpenVPN
+*** DONE OpenLDAP
+*** HOLD MinIO
+*** DONE OpenVPN
+*** DONE Wireguard
 
 * 2022-11-10
 
@@ -1233,3 +1234,81 @@ Bind seems to be nice especially with its maturity and widespread usage.
 CoreDNS, on the other hand, also sees widespread usage especially with its integration with Kubernetes which is one of the reasons I'm considering it in the first place.
 Hard to choose but for now I'm scouting the tools.
 One of the main things I'm looking for is the ease of setting up the primary server to pass the records to "slave" servers which should be easy to find.
+
+
+* 2023-02-07
+
+Still cannot decide which application is which but being paralyzed to just two choices is one of the worst things you can do so I proceeded to test both.
+The first tool to be tested is CoreDNS simply because of its integration with Kubernetes.
+
+It is very easy once I understood the syntax but its manual threw me off because of the how CoreDNS works with its plugins architecture which took me staring for minutes confused at where to look.
+Turns out all CoreDNS does is create a DNS zone which would then be configured by plugins which does the things that you may want to do.
+
+With the plugins architecture, CoreDNS is very interesting to configure because in order to extend its functionalities, you need to include other plugins.
+Plugins, however, are embedded as in compiled within the executable and not in runtime which goes against my impression of a CoreDNS plugin (and one of the reason why I was off-guard with it).
+This unfortunately means you have to recompile CoreDNS just to include third-party plugins.
+I do wonder how this works with the NixOS which makes it (somewhat) easy with nixpkgs overrides but looking at the [[https://github.com/NixOS/nixpkgs/blob/40c137ceb7b0f46890636059a6471d8244bbc49a/pkgs/servers/dns/coredns/default.nix][current Nix package definition]], I think it will go smoothly for the most part.
+Not to mention, it is very easy to modify by changing the [[https://github.com/coredns/coredns/blob/055b2c31a9cf28321734e5f71613ea080d216cd3/plugin.cfg][=plugin.cfg=]].
+Thank you, nixpkgs overrides and CoreDNS for making it easy (at least)!
+Fortunately for me, there's no need to do some recompiling since all of the features that I want and I set out to do with a DNS server is within the built-in plugins anyways.
+I think I'll stay with CoreDNS for a little while.
+I'm convinced it will require less maintenance (configuration-wise) compared to Bind which [[https://github.com/NixOS/nixpkgs/blob/40c137ceb7b0f46890636059a6471d8244bbc49a/nixos/modules/services/networking/bind.nix][already does a lot under-the-hood when looking at the service implementation at the respective NixOS module]].
+
+
+* 2023-02-08 - 2023-02-10
+
+Two days of DNS server debugging.
+Pretty frustrating but I learnt a lot of things from that experience such as practically interacting with DNS queries from looking at the server logs and using tools such as =dig= and =ss=.
+This is where I my understanding with networking really ramped up built from the foundations I've learnt from the Coursera courses.
+
+But experience mostly comes from debugging and solving problems.
+And there's a ton of them.
+
+One of the problems is coming from misconfiguring your DNS servers which is frustrating to deal with the first time.
+This problem, however, is further split into tiny pieces.
+While I understood the basics of DNS (well, I think anyways), one of the pieces caused from misunderstanding how CoreDNS server blocks interacts with the system.
+More specifically, each server block attaches on every interface on your system when it listens which you can control them with the =bind= plugin.
+This way, you can control your internal network further with the appropriate server block.
+
+I keep persisting that there should be separate server blocks for =foodogsquared.one= and =plover.foodogsquared.one=, not knowing that: 1) this will cause the server blocks to fight over to listen to the same interface, 2) this can be done on one server block.
+At the end, I opted for setting up the server with only one server block and assign it to listen it to all interfaces in the system explicitly with the =bind= plugin.
+It's much easier and sufficient to manage it in this way.
+
+On the other hand, I found this DNS setup to be nice that I can easily manage both for the public-facing side of the server and the internal network.
+Though, I didn't set up the appropriate network configuration for the clients in the VPN tunnel: networking, routing, and all.
+At some point, I want to be able to get into the services with the domain names.
+
+Another problem encountered is the firewall...
+Just had the wrong port for HTTPS makes my self-managed services to be inaccessible for a short while externally.
+I should have really seen this coming.
+I checked the logs from nginx and seeing no such access made it.
+There is also the fact that accessing the HTTP does work but redirecting it causes a timeout.
+It turns out it has been misconfigured for a long while.
+I just previously relied on the VPS firewall before since the resulting firewall configuration does not work for some reason.
+
+There is also another thing special with this entry.
+It's the end of the journal.
+The original objective, after all, is to manage an external server for some time and learn a lot of sysadmin-related things along the way.
+I don't think I've managed to understand much of the required things in an average job listing.
+Instead, what I got is more foundational with the resources I eventually found.
+Not to mention, it is a plan after all.
+No plans are perfectly executed (at least in my experience).
+
+I would summarize this portion to:
+
+- Managed a Linux server in the span of 3 months (practically 2.5 months considering I took a break in most of December).
+
+- Learned and dove into networking basics: the network layers and how they all work together.
+  Some nice practical usage with the networking concepts with low-level tools such as setting up a DNS server, learning how networking is set in your system, and how applications are making use of these concepts.
+
+- Expanding more on the idea of deploying a system with Git and NixOS with infrastructure as code (IaC).
+  It is very interesting in concept and worked well as a result.
+  It is pretty fun especially with NixOS with its ability to easily interact with the deployments as generations.
+  Practically, it means you can roll back the previous deployment if something goes wrong.
+
+A lot of the concepts are foundational especially once I get into [[id:9e4f04d4-00a3-4898-ac98-924957fa868b][Kubernetes]] which I didn't touch on this span unfortunately.
+It seems like Kubernetes is pretty much an integration of all of the things I've used wrapped into a nice package: a toolset made up of smaller components that make up deployments similarly to [[id:20830b22-9e55-42a6-9cef-62a1697ea63d][systemd]] for being a toolset made up of smaller components that make up a system.
+Although I personally don't see much benefits especially that I use NixOS, it seems Kubernetes is not that bad.
+I'll have to try using it.
+
+This will have to be done in part 2.
