@@ -1,2 +1,0 @@
-@image{notes-1}
-@c eof
