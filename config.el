@@ -3,8 +3,6 @@
 (defvar +wiki-notebook-directory (f-join +wiki-directory +wiki-notebook-name))
 (defvar my/wiki-asset-directory-name "assets")
 
-(+wiki/biblio-setup)
-
 (defun my/is-in-wiki-directory (&optional filename)
   "Return t if the file buffer is in the wiki directory."
   (unless filename (setq filename (buffer-file-name)))
@@ -63,9 +61,19 @@ folder with its buffer filename."
 (setq
  org-roam-v2-ack 't
 
+ org-roam-directory "~/library/writings/wiki"
+ org-roam-dailies-directory (f-join org-roam-directory "daily")
+ org-roam-db-location (f-join org-roam-directory "org-roam.db")
+ org-agenda-files '("~/library/writings/wiki/inbox")
+
+ ;; Setting up the bibliography-related stuff for this notebook.
+ org-cite-global-bibliography (f-join +wiki-directory "references.bib")
  citar-notes-paths `(,+wiki-directory)
  citar-library-paths '("~/library/references" "~/Zotero")
+ citar-bibliography (f-join +wiki-directory "references.bib")
+ citar-notes-paths `(,+wiki-directory)
 
+ ;; The capture templates for org-roam.
  org-roam-capture-templates `(("e" "evergreen" plain
                                (file ,(f-join +wiki-directory "templates" "default.org"))
                                :target
