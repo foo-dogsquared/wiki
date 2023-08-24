@@ -1,7 +1,9 @@
 (defvar +wiki-directory "~/writings/wiki")
 (defvar +wiki-notebook-name "notebook")
 (defvar +wiki-notebook-directory (f-join +wiki-directory +wiki-notebook-name))
+
 (defvar my/wiki-asset-directory-name "assets")
+(defvar my/wiki-exercises-directory "challenges")
 
 (defun my/is-in-wiki-directory (&optional filename)
   "Return t if the file buffer is in the wiki directory."
@@ -12,6 +14,18 @@
                               (expand-file-name +wiki-directory)))
       t
     nil))
+
+;; Automate updating timestamps on save.
+(add-hook! 'before-save-hook 'time-stamp)
+
+;; Custom keybindings
+(map!
+ (:when (modulep! :tools wiki)
+  :leader
+  :prefix "nr" :desc "Create the asset folder" "m" #'my/create-assets-folder)
+
+ (:when (modulep! :editor format)
+  :n "g=" #'+format/buffer))
 
 (defun my/get-assets-folder (&optional filename)
   "Get the assets folder of the current Org mode document."
